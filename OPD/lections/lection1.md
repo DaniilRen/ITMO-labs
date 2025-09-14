@@ -67,7 +67,6 @@ cd /.. - switch to /
     * "-i" - dont check register
     * "-v" - inverse match
 ### RegExp
-<<<<<<< HEAD
 "*" - every count of symbols  
 "+" - one symbol  
 "." - random symbol  
@@ -89,29 +88,6 @@ or
 ``` drwxrwxrwx ```  
 
 'd' stand for directory  
-=======
-"*" - every count of symbols 
-"+" - one symbol
-"." - random symbol
-"/." - dot symbol
-"^" - start of string 
-{1,3} - range from 1 to 3
-{1,} - range from 1 to inf
-{3} - only 3 times
-
-### File modes (chmod)
-Group -> users
-
-Modes: read(r), write(w), execute(x)
-each mode can be set for group and user
-
-If you ls dir, files will have such permission info:
-``` -rwxrwxrwx ```
-or 
-``` drwxrwxrwx ``` 
-
-'d' stand for directory
->>>>>>> 1787e2fea77bfbc3613c4c6226e2e9db852a8e26
 Permissions order: for user, group, everyone else
 
 you can numbers to set rigths. Example:
