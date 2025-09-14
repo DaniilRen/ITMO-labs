@@ -1,19 +1,34 @@
 # Lection 1
 ## Unix
 ### Root directory
+<<<<<<< HEAD
 /dev - devices  
 /bin - binary exxecutable files  
 /etc - system settings  
 /home - all users`s data  
+=======
+/dev - devices
+/bin - binary exxecutable files
+/etc - system settings
+/home - all users`s data
+>>>>>>> 1787e2fea77bfbc3613c4c6226e2e9db852a8e26
 
 ### Paths
 1. Absolute (relative to root dir)
 2. Relative
 
+<<<<<<< HEAD
 . - link current dir  
 .. - link to parent dir  
 
 **Example**: cd /.. - switch to /
+=======
+. - link current dir
+.. - link to parent dir
+
+**Example**
+cd /.. - switch to /
+>>>>>>> 1787e2fea77bfbc3613c4c6226e2e9db852a8e26
 
 ### Base commands
 * man - check manual
@@ -52,6 +67,7 @@
     * "-i" - dont check register
     * "-v" - inverse match
 ### RegExp
+<<<<<<< HEAD
 "*" - every count of symbols  
 "+" - one symbol  
 "." - random symbol  
@@ -73,6 +89,29 @@ or
 ``` drwxrwxrwx ```  
 
 'd' stand for directory  
+=======
+"*" - every count of symbols 
+"+" - one symbol
+"." - random symbol
+"/." - dot symbol
+"^" - start of string 
+{1,3} - range from 1 to 3
+{1,} - range from 1 to inf
+{3} - only 3 times
+
+### File modes (chmod)
+Group -> users
+
+Modes: read(r), write(w), execute(x)
+each mode can be set for group and user
+
+If you ls dir, files will have such permission info:
+``` -rwxrwxrwx ```
+or 
+``` drwxrwxrwx ``` 
+
+'d' stand for directory
+>>>>>>> 1787e2fea77bfbc3613c4c6226e2e9db852a8e26
 Permissions order: for user, group, everyone else
 
 you can numbers to set rigths. Example:
@@ -84,6 +123,7 @@ For dir (x) mode means that you can/cannot cd to this dir. However you can 'ls' 
 
 
 
+<<<<<<< HEAD
 **Example:** `chmod a+x exec_file` 
 
 ### File descriptors
@@ -97,3 +137,21 @@ cat <<< 'text' - will just display 'text'
 
 2>&1 - redirects data from std.error to std.output  
 '$' symbol needs to specify that '1' is descriptor, not a file  
+=======
+Example: `chmod a+x exec_file` 
+
+### File descriptors
+0 for standard input, 1 for standard output, and 2 for standard error. 
+
+### Output redirection
+">" - overwrite file
+">>" - append data to file
+"<< EOF" - cat prints input data until you type EOF
+cat <<< 'text' - will just display 'text'
+
+2>&1 - redirects data from std.error to std.output
+'$' symbol needs to specify that '1' is descriptor, not a file
+
+
+### Pipes
+>>>>>>> 1787e2fea77bfbc3613c4c6226e2e9db852a8e26
