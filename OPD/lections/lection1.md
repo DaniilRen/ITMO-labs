@@ -99,7 +99,6 @@ For dir (x) mode means that you can/cannot cd to this dir. However you can 'ls' 
 
 
 
-<<<<<<< HEAD
 **Example:** `chmod a+x exec_file` 
 
 ### File descriptors
@@ -113,21 +112,3 @@ cat <<< 'text' - will just display 'text'
 
 2>&1 - redirects data from std.error to std.output  
 '$' symbol needs to specify that '1' is descriptor, not a file  
-=======
-Example: `chmod a+x exec_file` 
-
-### File descriptors
-0 for standard input, 1 for standard output, and 2 for standard error. 
-
-### Output redirection
-">" - overwrite file
-">>" - append data to file
-"<< EOF" - cat prints input data until you type EOF
-cat <<< 'text' - will just display 'text'
-
-2>&1 - redirects data from std.error to std.output
-'$' symbol needs to specify that '1' is descriptor, not a file
-
-
-### Pipes
->>>>>>> 1787e2fea77bfbc3613c4c6226e2e9db852a8e26
