@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1758645823.28169 "d:/Code/ITMO-labs/Informatics/Lab1/docs/main.tex" "latex_result/main.pdf" "main" 1758645824.68996 0
+["pdflatex"] 1758646080.41999 "d:/Code/ITMO-labs/Informatics/Lab1/docs/main.tex" "latex_result/main.pdf" "main" 1758646081.79122 0
   "assets/image.png" 1758645801 40055 a1a0239d2919c737888340d940f2d5cf ""
   "biblist.tex" 1758645801 746 b9315ea2f1bee52e0b89f4fd33f535f4 ""
   "c:/Users/Tayzeront/.texlive2025/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm" 1758438175 3304 6a543c07045572737981351171e0505e ""
@@ -191,11 +191,11 @@
   "d:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1758046232 5574045 31c70adfd225bf86458fbde5ef80c86e ""
   "d:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1758046467 3605768 4b64b30c1eae2d15163f80e288bef811 ""
   "d:/texlive/2025/texmf.cnf" 1758046216 713 e69b156964470283e0530f5060668171 ""
-  "latex_result/biblist.aux" 1758645824 828 0e6891406c9c2bc6489050b41c8f5506 "pdflatex"
-  "latex_result/main.aux" 1758645824 1182 4128414a72b33032a1c365bde8ccf297 "pdflatex"
-  "latex_result/main.out" 1758645824 720 577e1d398a584d13ebd872e460dccda4 "pdflatex"
-  "latex_result/main.toc" 1758645824 325 ddfa30bf0a1c6c0deba4704ee4dbb72d "pdflatex"
-  "latex_result/titlepage.aux" 1758645824 797 d07a65941d4d1c6cf10b90103274c037 "pdflatex"
+  "latex_result/biblist.aux" 1758646081 828 0e6891406c9c2bc6489050b41c8f5506 "pdflatex"
+  "latex_result/main.aux" 1758646081 1182 4128414a72b33032a1c365bde8ccf297 "pdflatex"
+  "latex_result/main.out" 1758646081 720 577e1d398a584d13ebd872e460dccda4 "pdflatex"
+  "latex_result/main.toc" 1758646081 325 ddfa30bf0a1c6c0deba4704ee4dbb72d "pdflatex"
+  "latex_result/titlepage.aux" 1758646081 797 d07a65941d4d1c6cf10b90103274c037 "pdflatex"
   "main.tex" 1758645801 42907 5526fe6dad8799871ebe8d7e05a39309 ""
   "titlepage.tex" 1758645801 1249 a25bb1db565dc6da14f0ddc5de2ad2ce ""
   (generated)

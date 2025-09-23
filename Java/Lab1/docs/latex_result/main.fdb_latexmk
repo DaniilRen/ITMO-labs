@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1758645865.27872 "d:/Code/ITMO-labs/Java/Lab1/docs/main.tex" "latex_result/main.pdf" "main" 1758645866.85835 0
+["pdflatex"] 1758646023.24327 "d:/Code/ITMO-labs/Java/Lab1/docs/main.tex" "latex_result/main.pdf" "main" 1758646024.73329 0
   "../src/Lab1.java" 1758645801 1806 842d180814f23d88a7b65c219748a754 ""
   "assets/itmo_logo.png" 1758645801 13873 06bd6ab077b24bd26b1aacd5f3184ad7 ""
   "biblist.tex" 1758645801 1216 e3feb066f71a43f30b1298a0475d6dce ""
@@ -218,11 +218,11 @@
   "d:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1758046232 5574045 31c70adfd225bf86458fbde5ef80c86e ""
   "d:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1758046467 3605768 4b64b30c1eae2d15163f80e288bef811 ""
   "d:/texlive/2025/texmf.cnf" 1758046216 713 e69b156964470283e0530f5060668171 ""
-  "latex_result/biblist.aux" 1758645866 912 5f48425a2f036bb7ef7743e2f6bdc5f7 "pdflatex"
-  "latex_result/main.aux" 1758645866 1644 2a69941f6ea25e166ab250fd473f180d "pdflatex"
-  "latex_result/main.out" 1758645866 1643 8f25c5d5a31f9f7e391c709b257c09e9 "pdflatex"
-  "latex_result/main.toc" 1758645866 657 8a11c8b85b289dfe3939cdb35585ca95 "pdflatex"
-  "latex_result/titlepage.aux" 1758645866 797 d07a65941d4d1c6cf10b90103274c037 "pdflatex"
+  "latex_result/biblist.aux" 1758646024 912 5f48425a2f036bb7ef7743e2f6bdc5f7 "pdflatex"
+  "latex_result/main.aux" 1758646024 1644 2a69941f6ea25e166ab250fd473f180d "pdflatex"
+  "latex_result/main.out" 1758646024 1643 8f25c5d5a31f9f7e391c709b257c09e9 "pdflatex"
+  "latex_result/main.toc" 1758646024 657 8a11c8b85b289dfe3939cdb35585ca95 "pdflatex"
+  "latex_result/titlepage.aux" 1758646024 797 d07a65941d4d1c6cf10b90103274c037 "pdflatex"
   "main.tex" 1758645801 30859 a642ef24aae1deea2f8ee300159719ec ""
   "titlepage.tex" 1758645801 1258 c334a7468b23d64b9cd977117ac22f1e ""
   (generated)
