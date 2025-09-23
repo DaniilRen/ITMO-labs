@@ -1,5 +1,0 @@
-\babel@toc {russian}{}\relax 
-\contentsline {section}{1. Задание}{2}{section*.2}%
-\contentsline {section}{2. Основные этапы вычислений}{3}{section*.3}%
-\contentsline {section}{3. Дополнительное задание}{8}{section*.4}%
-\contentsline {section}{4. Вывод}{9}{section*.6}%
