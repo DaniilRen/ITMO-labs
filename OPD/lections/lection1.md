@@ -111,4 +111,4 @@ For dir (x) mode means that you can/cannot cd to this dir. However you can 'ls' 
 cat <<< 'text' - will just display 'text'  
 
 2>&1 - redirects data from std.error to std.output  
-'$' symbol needs to specify that '1' is descriptor, not a file  
+'&' symbol needs to specify that '1' is descriptor, not a file  
