@@ -1,15 +1,26 @@
 public class Task11 {
-    public static void main(String[] args) {
-        System.out.println(convertNotation(730));
+    public static String convertToBaseMinus10(int num) {
+        if (num == 0) return "0";
+
+        StringBuilder sb = new StringBuilder();
+        int number = num;
+        while (number != 0) {
+            int remainder = number % (-10);
+            number = number / (-10);
+
+            if (remainder < 0) {
+                remainder += 10;
+                number += 1;
+            }
+            sb.append(remainder);
+        }
+        return sb.reverse().toString();
     }
 
-    private static String convertNotation(int number) {
-        StringBuilder result = new StringBuilder();
-        while (Math.abs(number) > 0) {
-            System.out.println(String.format("div: %d, mod: %d", number / -10, number % -10));
-            result.append(Math.abs(number % (-10)));
-            number = number / -10;
-        }
-        return result.reverse().toString();
+    public static void main(String[] args) {
+        int decimalNumber = 1937;
+        String baseMinus10 = convertToBaseMinus10(decimalNumber);
+        System.out.println("Число " + decimalNumber + " в системе с основанием -10: " + baseMinus10);
     }
 }
+
