@@ -143,6 +143,7 @@ echo -e "--> Starting task 4\n..."
 echo -e "\ntask 4.1 ->\n"
 echo -e "* Output will be redirected to /tmp/task_4_1.log, Errors will be supressed\n"
 wc -l $(ls -Rp ./*/* 2>/dev/null | grep -v /$ | grep o$) 1>/tmp/task_4_1.log
+wc -l *o */*o */*/*o 2>/dev/null 1>/tmp/task_4_1.log
 
 # 4.2
 echo -e "\ntask 4.2 ->\n"
@@ -153,6 +154,9 @@ ls -Rp ./*/* 2>&1 | grep -v /$ | grep du | tail -4
 echo -e "\ntask 4.3 ->\n"
 x=$(ls -Rp ./*/* | grep -v /$ | grep u$)
 [ ! -z "${x}" ] && cat ${x} | sort
+ls -p ./*/* | grep -v /$ | grep u$
+
+grep *u */*u */*/*u 2>/dev/null | sort 
 
 # 4.4
 echo -e "\ntask 4.4 ->\n"
@@ -162,11 +166,12 @@ ls -lRSr . 2>/tmp/task_4_4.log | grep ca
 # 4.5
 echo -e "\ntask 4.5 ->\n"
 echo -e "* Errors will be redirected to /tmp/task_4_5.log\n"
-(ls -ltr $(ls -Rp . | grep -v "/$") | head -3) 2>/tmp/task_4_5.log
+ls -trRp . | grep -v "/$" 2>/tmp/task_4_5.log | head -3
 
 # 4.6
 echo -e "\ntask 4.6 ->\n"
 wc -m $(ls -Rp ./*/*/*/* | grep -v /$ | grep -v :$ | grep "/p") | sort -nk1
+grep *p */*p */*/*p | wc -m | sort -nk1,1
 
 echo -e "--> Task 4 completed!\n\n"
 

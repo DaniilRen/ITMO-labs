@@ -32,6 +32,8 @@ shopt -s globstar
 
 
 
+
+
 # OLD varinants of task 4 with (lovely) globstar
 # Task 4
 # echo -e "--> Starting task 4\n..."

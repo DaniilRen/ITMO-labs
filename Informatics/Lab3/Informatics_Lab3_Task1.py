@@ -11,7 +11,7 @@ class Task1:
 		self.tests = tests
 
 	def check(self, text: str) -> list:
-		pattern = r"\bВТ\b(?:\W+\w+){0,4}?\W+\bИТМО\b"
+		pattern = r"\bВТ\b(?:\W+\w+){0,4}\W+\bИТМО\b"
 		return findall(pattern, text)
 
 	def test(self) -> None:
