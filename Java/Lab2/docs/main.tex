@@ -472,34 +472,84 @@ tabsize=2
 %        Описание
 %    }
 
+ На основе базового класса \verb|Pokemon| написать свои классы для заданных видов покемонов.
+    Каждый вид покемона должен иметь один или два типа и стандартные базовые характеристики:
+    \begin{itemize}
+        \item очки здоровья (HP)
+        \item атака (attack)
+        \item защита (defense)
+        \item специальная атака (special attack)
+        \item специальная защита (special defense)
+        \item скорость (speed)
+    \end{itemize}
+
+    Классы покемонов должны наследоваться в соответствии с цепочкой эволюции покемонов.
+    На основе базовых классов \verb|PhysicalMove|,\verb|SpecialMove| и \verb|StatusMove| реализовать свои классы для заданных видов атак.
+
+    Атака должна иметь стандартные тип, силу (power) и точность (accuracy).
+    Должны быть реализованы стандартные эффекты атаки.
+    Назначить каждому виду покемонов атаки в соответствии с вариантом.
+    Уровень покемона выбирается минимально необходимым для всех реализованных атак.
+
+    Используя класс симуляции боя \verb|Battle|, создать 2 команды покемонов (каждый покемон должен иметь имя) и запустить бой.
+
+    Базовые классы и симулятор сражения находятся в \href{https://se.ifmo.ru/documents/10180/660917/Pokemon.jar/a7ce60af-6ee6-47d0-a95e-e5ed9a697bd2}{jar-архиве}(обновлен 9.10.2018, исправлен баг с добавлением атак и кодировкой).
+    Документация в формате javadoc - \href{https://se.ifmo.ru/~tony/doc/}{здесь}.
+
+    Информацию о покемонах, цепочках эволюции и атаках можно найти на сайтах \href{https://poke-universe.ru/}{https://poke-universe.ru}, \href{https://pokemondb.net/}{https://pokemondb.net},\href{https://veekun.com/dex/pokemon}{https://veekun.com/dex/pokemon}
+
+    \subsubsection*{Комментарии}
+    Цель работы: на простом примере разобраться с основными концепциями ООП и научиться использовать их в программах.
+
+    Что надо сделать (краткое описание)
+
     \begin{enumerate}
         \setlength{\itemsep}{0pt} % Сокращение межстрочных расстояний
         \setlength{\parskip}{0pt}
         \setlength{\parsep}{0pt}
-        \item Создать одномерный массив n типа int. Заполнить его числами от 6 до 20 включительно в порядке возрастания.
-        \item Создать одномерный массив x типа double. Заполнить его 10-ю случайными числами в диапазоне от -10.0 до 10.0.
-        \item Создать двумерный массив w размером 15x10. Вычислить его элементы по следующей формуле (где $x = x[j]$): 
-
-        \begin{itemize}
-            \setlength{\itemsep}{0pt} % Сокращение межстрочных расстояний
-            \setlength{\parskip}{0pt}
-            \setlength{\parsep}{0pt}
-            \item если $\displaystyle n[i] = 20\text{,}$\\$\displaystyle \text{то }w[i][j] = \left(\frac{0.5}{(\pi\cdot(x)^\frac{\frac{3}{4}-x}{x})^2}\right)^{\tan(\ln(|x|))}$;
-            \item если $\displaystyle n[i] \in\{8, 11, 13, 14, 17, 18, 19\}\text{,}$\\ $\displaystyle \text{то } w[i][j] = \left(\frac{\arcsin(\sin(x))+1}{1}/2\right)^2$;
-            \item  для остальных значений $\displaystyle n[i]:$\\ $\displaystyle w[i][j] = e^{\sin(\sqrt[3]{(\frac{x+1}{x})^x})}$.
-        \end{itemize}
-
-        \item Напечатать полученный в результате массив в формате с четырьмя знаками после запятой.
+        \item Ознакомиться с \href{https://se.ifmo.ru/~tony/doc/}{документацией}, обращая особое внимание на классы \verb|Pokemon| и \verb|Move|.
+        При дальнейшем выполнении лабораторной работы читать документацию еще несколько раз.
+        \item Скачать файл Pokemon.jar.
+        Его необходимо будет использовать как для компиляции, так и для запуска программы.
+        Распаковывать его не надо!
+        Нужно научиться подключать внешние jar-файлы к своей программе.
+        \item Написать минимально работающую программу и посмотреть как она работает.
+        \lstinputlisting[label={lst:java1},language=Java]{../example/MainExample.java}
+        \item Создать один из классов покемонов для своего варианта.
+        Класс должен наследоваться от базового класса \verb|Pokemon|.
+        В конструкторе нужно будет задать типы покемона и его базовые характеристики.
+        После этого попробуйте добавить покемона в сражение.
+        \item Создать один из классов атак для своего варианта (лучше всего начать с физической или специальной атаки).
+        Класс должен наследоваться от класса \verb|PhysicalMove| или \verb|SpecialMove|.
+        В конструкторе нужно будет задать тип атаки, ее силу и точность.
+        После этого добавить атаку покемону и проверить ее действие в сражении.
+        Не забудьте переопределить метод \verb|describe|, чтобы выводилось нужное сообщение.
+        \item Если действие атаки отличается от стандартного, например, покемон не промахивается, либо атакующий покемон также получает повреждение, то в классе атаки нужно дополнительно переопределить соответствующие методы (см.
+        документацию).
+        При реализации атак, которые меняют статус покемона (наследники \verb|StatusMove|), скорее всего придется разобраться с классом \verb|Effect|.
+        Он позволяет на один или несколько ходов изменить состояние покемона или модификатор его базовых характеристик.
+        \item Доделать все необходимые атаки и всех покемонов, распределить покемонов по командам, запустить сражение.
     \end{enumerate}
+    \begin{figure}[H] % 'H' -- вставить тут же (подключен модуль), обычный вариант: 'htpb'
+        \centering
+        % { граница для иллюстрации
+        % \setlength{\fboxsep}{0pt}% убрать отсутп от границы
+        % \setlength{\fboxrule}{1pt}%
+        % \fbox{%
+        \includegraphics[width=\textwidth]{pokemons.png}
+        % }} % ограничение области действия параметров
+        \caption{Покемоны и их атаки}
+        \label{fig:enter-label}
+    \end{figure}
 
 
     \newpage
     \Section{Выполнение задания.}
-    Задание было выполнено в редакторе кода, позже собрано с помощью \verb|javac| в \verb|jar| файл \verb|lab1.jar| непосредственно на сервере.
+Задание было выполнено в редакторе кода Visual Studio Code, собрано в \verb|jar| файл \verb|lab2.jar| и загружено в Git репозиторий на GitHub.
 %    \newpage
     \Subsection{Листинги кода}
-    % Листинг из файла \ref{lst:java}
-    % \lstinputlisting[caption={Исходный код программы},label={lst:java},language=Java]{../src/Lab1.java}
+    Листинг из файла~\ref{lst:java}
+    \lstinputlisting[caption={Исходный код главного класса программы},label={lst:java},language=Java]{../src/Main.java}
 
 %    Листинг в код latex \ref{lst:sql}
 %    \begin{lstlisting}[caption={SQL},label={lst:sql}]
@@ -511,28 +561,215 @@ tabsize=2
 %    Листинг прямо в текст: \lstinline[columns=fixed]{declare}. Либо еще так: \verb|declare|.
 
 %    Вставленное изображение с описанием и шириной по тексту.
-%    \begin{figure}[H] % 'H' -- вставить тут же (подключен модуль), обычный вариант: 'htpb'
-%        \centering
-%        % { граница для иллюстрации
-%        % \setlength{\fboxsep}{0pt}% убрать отсутп от границы
-%        % \setlength{\fboxrule}{1pt}%
-%        % \fbox{%
-%        \includegraphics[width=\textwidth]{res/UML-class-diagram.png}
-%        % }} % ограничение области действия параметров
-%        \caption{Caption}
-%        \label{fig:enter-label}
-%    \end{figure}
+    \begin{figure}[H] % 'H' -- вставить тут же (подключен модуль), обычный вариант: 'htpb'
+        \centering
+        % { граница для иллюстрации
+        % \setlength{\fboxsep}{0pt}% убрать отсутп от границы
+        % \setlength{\fboxrule}{1pt}%
+        % \fbox{%
+        \includegraphics[width=\textwidth]{project_diagram.png}
+        % }} % ограничение области действия параметров
+        \caption{UML диаграмма классов с методами и полями}
+        \label{fig:enter-label2}
+    \end{figure}
 
 
 % Выполнение задания...
     \Section{Результат работы программы.}
 
+        \begin{lstlisting}[caption={Результат выполнения программы},label={lst:result}]
+Numel Numel from the team Greren enters the battle!
+Azelf Azelf from the team White enters the battle!
+Azelf Azelf is using Energy Ball. The pokemon lowers the target’s Special Defense by one stage. 
+Numel Numel loses 6 hit points.
+
+Numel Numel is using Flame charge. The pokemon deals damage and raises its Speed by one stage. 
+Azelf Azelf loses 8 hit points.
+Numel Numel increases speed.
+
+Azelf Azelf misses
+
+Numel Numel is using Flame charge. The pokemon deals damage and raises its Speed by one stage. 
+Azelf Azelf loses 6 hit points.
+Numel Numel increases speed.
+Azelf Azelf faints.
+Clefairy Clefairy from the team White enters the battle!
+Numel Numel is using Rest. The pokemon sleeps for two turns, completely healing itself.. 
+Numel Numel is sleeping
+Numel Numel restores 6 hit points.
+
+Clefairy Clefairy is using Growl. The pokemon lowers the target's Attack by one stage. 
+Numel Numel decreases attack.
+
+Numel Numel is using Flame charge. The pokemon deals damage and raises its Speed by one stage. 
+Clefairy Clefairy loses 5 hit points.
+Numel Numel increases speed.
+
+Clefairy Clefairy is using Growl. The pokemon lowers the target's Attack by one stage. 
+Numel Numel decreases attack.
+
+Numel Numel is using Flame charge. The pokemon deals damage and raises its Speed by one stage. 
+Clefairy Clefairy restores 1 hit points.
+Numel Numel increases speed.
+
+Clefairy Clefairy is using Growl. The pokemon lowers the target's Attack by one stage. 
+Numel Numel decreases attack.
+
+Numel Numel is using Rest. The pokemon sleeps for two turns, completely healing itself.. 
+Numel Numel is sleeping
+
+Clefairy Clefairy is using Growl. The pokemon lowers the target's Attack by one stage. 
+Numel Numel decreases attack.
+
+Numel Numel is using Rest. The pokemon sleeps for two turns, completely healing itself.. 
+
+Clefairy Clefairy is using Growl. The pokemon lowers the target's Attack by one stage. 
+Numel Numel decreases attack.
+
+Numel Numel is using Rest. The pokemon sleeps for two turns, completely healing itself.. 
+Numel Numel is sleeping
+
+Clefairy Clefairy is using Growl. The pokemon lowers the target's Attack by one stage. 
+Numel Numel decreases attack.
+
+Numel Numel misses
+
+Clefairy Clefairy is using Growl. The pokemon lowers the target's Attack by one stage. 
+Numel Numel decreases attack.
+
+Numel Numel is using Flame charge. The pokemon deals damage and raises its Speed by one stage. 
+Clefairy Clefairy loses 7 hit points.
+Numel Numel increases speed.
+
+Clefairy Clefairy is using Growl. The pokemon lowers the target's Attack by one stage. 
+Numel Numel decreases attack.
+
+Numel Numel misses
+
+Clefairy Clefairy is using Growl. The pokemon lowers the target's Attack by one stage. 
+Numel Numel decreases attack.
+
+Numel Numel is using Rest. The pokemon sleeps for two turns, completely healing itself.. 
+Numel Numel is sleeping
+
+Clefairy Clefairy is using Growl. The pokemon lowers the target's Attack by one stage. 
+Numel Numel decreases attack.
+
+Numel Numel misses
+
+Clefairy Clefairy is using Growl. The pokemon lowers the target's Attack by one stage. 
+Numel Numel decreases attack.
+
+Numel Numel is using Rest. The pokemon sleeps for two turns, completely healing itself.. 
+Numel Numel is sleeping
+
+Clefairy Clefairy is using Growl. The pokemon lowers the target's Attack by one stage. 
+Numel Numel decreases attack.
+
+Numel Numel misses
+
+Clefairy Clefairy is using Growl. The pokemon lowers the target's Attack by one stage. 
+Numel Numel decreases attack.
+
+Numel Numel misses
+
+Clefairy Clefairy is using Growl. The pokemon lowers the target's Attack by one stage. 
+Numel Numel decreases attack.
+
+Numel Numel is using Flame charge. The pokemon deals damage and raises its Speed by one stage. 
+Clefairy Clefairy loses 6 hit points.
+Numel Numel increases speed.
+Clefairy Clefairy faints.
+Camerupt Camerupt from the team White enters the battle!
+Numel Numel is using Rest. The pokemon sleeps for two turns, completely healing itself.. 
+Numel Numel is sleeping
+
+Camerupt Camerupt is using Rock Polish. The pokemon raises its Speed by two stages. 
+Camerupt Camerupt increases speed.
+
+Numel Numel is using Flame charge. The pokemon deals damage and raises its Speed by one stage. 
+Camerupt Camerupt loses 3 hit points.
+Numel Numel increases speed.
+
+Camerupt Camerupt is using Rock Polish. The pokemon raises its Speed by two stages. 
+Camerupt Camerupt increases speed.
+
+Numel Numel misses
+
+Camerupt Camerupt is using Rock Polish. The pokemon raises its Speed by two stages. 
+Camerupt Camerupt increases speed.
+
+Camerupt Camerupt is using Rock Polish. The pokemon raises its Speed by two stages. 
+Camerupt Camerupt increases speed.
+
+Numel Numel is using Flame charge. The pokemon deals damage and raises its Speed by one stage. 
+Camerupt Camerupt loses 3 hit points.
+Numel Numel increases speed.
+
+Camerupt Camerupt is using Rock Polish. The pokemon raises its Speed by two stages. 
+Camerupt Camerupt increases speed.
+
+Numel Numel misses
+
+Camerupt Camerupt is using Rock Polish. The pokemon raises its Speed by two stages. 
+Camerupt Camerupt increases speed.
+
+Numel Numel misses
+
+Camerupt Camerupt is using Rock Polish. The pokemon raises its Speed by two stages. 
+Camerupt Camerupt increases speed.
+
+Numel Numel is using Rest. The pokemon sleeps for two turns, completely healing itself.. 
+Numel Numel is sleeping
+
+Camerupt Camerupt is using Rock Polish. The pokemon raises its Speed by two stages. 
+Camerupt Camerupt increases speed.
+
+Numel Numel misses
+
+Camerupt Camerupt is using Rock Polish. The pokemon raises its Speed by two stages. 
+Camerupt Camerupt increases speed.
+
+Numel Numel misses
+
+Camerupt Camerupt is using Rock Polish. The pokemon raises its Speed by two stages. 
+Camerupt Camerupt increases speed.
+
+Numel Numel is using Rest. The pokemon sleeps for two turns, completely healing itself.. 
+Numel Numel is sleeping
+
+Camerupt Camerupt is using Rock Polish. The pokemon raises its Speed by two stages. 
+Camerupt Camerupt increases speed.
+
+Numel Numel is using Flame charge. The pokemon deals damage and raises its Speed by one stage. 
+Camerupt Camerupt loses 3 hit points.
+Numel Numel increases speed.
+
+Camerupt Camerupt is using Rock Polish. The pokemon raises its Speed by two stages. 
+Camerupt Camerupt increases speed.
+
+Numel Numel is using Flame charge. The pokemon deals damage and raises its Speed by one stage. 
+Camerupt Camerupt loses 3 hit points.
+Numel Numel increases speed.
+
+Camerupt Camerupt is using Rock Polish. The pokemon raises its Speed by two stages. 
+Camerupt Camerupt increases speed.
+
+Numel Numel is using Flame charge. The pokemon deals damage and raises its Speed by one stage. 
+Camerupt Camerupt loses 2 hit points.
+Numel Numel increases speed.
+Camerupt Camerupt faints.
+Team White loses its last Pokemon.
+The team Greren wins the battle!
+
+        \end{lstlisting}
+
     \newpage
 
     \Section{Вывод}
 % Вывод...
-    Во время выполнения лабораторной работы я изучил принципы ООП, научился импортировать \verb|jar| файлы как библиотеки, научился расширять классы и рабоать с модификаторами доступа, ознакомился с системой сборки \verb|Gradle|, \verb|IDEA|. Также в процессе выполения я тесно работал с документацией\cite{sedoc} на библиотеку для покемонов и сторонними сайтами для поиска информации о покемонах (PokemonDB\cite{pokemondb}). Полученные мною знания являются необходимой базой для дальнейшего изучения языка и разработки уже более комлпексных проектов.\\
-    Помимо этого, я ознакомился с способами создания UML диаграм и сделал диаграмму на практике при помощи встроенных в IDE средств.
+    Во время выполнения лабораторной работы я изучил принципы ООП, научился импортировать \verb|jar| файлы как библиотеки, научился расширять классы и рабоать с модификаторами доступа. Также в процессе выполения я тесно работал с документацией\cite{sedoc} на библиотеку для покемонов и сторонними сайтами для поиска информации о покемонах (PokemonDB\cite{pokemondb}). Полученные мною знания являются необходимой базой для дальнейшего изучения языка и разработки уже более комлпексных проектов.\\
+    Помимо этого, я ознакомился с способами создания UML диаграм и сделал диаграмму на практике при помощи PlantUML.
 % -- из biblist
     \newpage
 %<<<<<<<<<<<<<<<<<<<<<< КОД РАБОТЫ <<<<<<<<<<<<<<<<<<<<<<<<

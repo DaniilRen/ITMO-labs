@@ -1,0 +1,99 @@
+@startuml
+title Lab2 Diagram
+
+package ru.ifmo.se.pokemon {
+    class Move 
+    class Pokemon
+    class StatusMove extends Move
+    class PhysicalMove extends Move
+    class SpecialMove extends Move
+}
+
+package moves.status {
+    class Confide extends StatusMove {
+        (+) Confide() : void
+        (#) applyOppEffects(pokemon: Pokemon) : void
+        (#) describe() : String
+    }
+    class DoubleTeam extends StatusMove {
+        (+) DoubleTeam() : void
+        (#) applySelfEffects(pokemon: Pokemon) : void
+        (#) describe() : String
+    }
+    class Growl extends StatusMove {
+        (+) Growl() : void
+        (#) applyOppEffects(pokemon: Pokemon) : void
+        (#) describe() : String
+    } 
+    class Rest extends StatusMove {
+        (+) Rest() : void
+        (#) applySelfEffects(pokemon: Pokemon) : void
+        (#) describe() : String
+    }
+    class RockPolish extends StatusMove {
+        (+) RockPolish() : void
+        (#) applySelfEffects(pokemon: Pokemon) : void
+        (#) describe() : String
+    }
+    class Sing extends StatusMove {
+        (+) Sing() : void
+        (#) applyOppEffects(pokemon: Pokemon) : void
+        (#) describe() : String
+    }
+}
+
+package moves.physical {
+    class FlameCharge extends PhysicalMove {
+        (+) FlameCharge() : void
+        (#) applySelfEffects(pokemon: Pokemon) : void
+        (#) applyOppEffects(pokemon: Pokemon) : void
+        (#) describe() : String
+    }
+}
+
+package moves.special {
+    class EnergyBall extends SpecialMove {
+        (+) EnergyBall() : void
+        (#) applyOppEffects(pokemon: Pokemon) : void
+        (#) describe() : String
+    }
+    class FireBlast extends SpecialMove {
+        (+) FireBlast() : void
+        (#) applyOppEffects(pokemon: Pokemon) : void
+        (#) describe() : String
+    }
+    class ShadowBall extends SpecialMove {
+        (+) ShadowBall() : void
+        (#) applyOppEffects(pokemon: Pokemon) : void
+        (#) describe() : String
+    }
+}
+
+
+package pokemons {
+    class Azelf extends Pokemon {
+        (+) Azelf(name: String, level: int)
+    }
+
+    class Camerupt extends Numel {
+        (+) Camerupt(name: String, level: int)
+    }
+
+    class Clefable extends Clefairy {
+        (+) Clefable(name: String, level: int)
+    }
+
+    class Clefairy extends Cleffa {
+        (+) Clefairy(name: String, level: int)
+    }
+
+    class Cleffa extends Pokemon {
+        (+) Cleffa(name: String, level: int)
+    }
+
+    class Numel extends Pokemon {
+        (+) Numel(name: String, level: int)
+    }
+}
+
+@enduml
