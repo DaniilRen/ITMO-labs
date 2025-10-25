@@ -149,13 +149,9 @@ echo -e "\ntask 4.2 ->\n"
 echo -e "* Errors will be redirected to stdout\n"
 ls -Rp ./*/* 2>&1 | grep -v /$ | grep du | tail -4
 
-# # 4.3
+# 4.3
 echo -e "\ntask 4.3 ->\n"
-x=$(ls -Rp ./*/* | grep -v /$ | grep u$)
-[ ! -z "${x}" ] && cat ${x} | sort
-ls -p ./*/* | grep -v /$ | grep u$
-
-grep *u */*u */*/*u 2>/dev/null | sort
+cat ./*u | sort
 
 # 4.4
 echo -e "\ntask 4.4 ->\n"

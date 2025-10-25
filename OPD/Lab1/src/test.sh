@@ -53,6 +53,9 @@ cd lab0
 # # # 4.3
 # echo -e "\ntask 4.3 ->\n"
 # [ ! -z "$(ls -dp **/*u | grep -v "/$")" ] && cat $(ls -dp **/*u | grep -v "/$") | sort
+# ls -dp **/*u | grep -v "/$"
+ls -p | grep -v "/$" | grep ""
+cat -n ./* | grep -v "*u$" | sort
 
 # # 4.4
 # echo -e "\ntask 4.4 ->\n"
