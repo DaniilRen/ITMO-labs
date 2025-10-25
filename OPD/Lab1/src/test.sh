@@ -1,8 +1,8 @@
 #!/bin/bash
 cd lab0
-shopt -s globstar
+# shopt -s globstar
 
-# done: 1, 2, 3, 4, 5, 
+# done: 1, 2, 3, 4, 5,
 
 # # 4.1
 # echo -e "\ntask 4.1 ->\n"
@@ -28,6 +28,8 @@ shopt -s globstar
 # # 4.6
 # echo -e "\ntask 4.6 ->\n"
 # wc -m $(ls -Rp ./*/*/*/* | grep -v /$ | grep -v :$ | grep "/p") | sort -nk1
+# grep *p */*p */*/*p | wc -m | sort -nk1,1
+# ls -1dp ./*/*/*/p* | grep -v /$  | grep -v /$ | wc -m | sort -nk1
 
 
 
@@ -50,7 +52,7 @@ shopt -s globstar
 
 # # # 4.3
 # echo -e "\ntask 4.3 ->\n"
-# [ ! -z "$(ls -dp **/*u | grep -v "/$")" ] && cat $(ls -dp **/*u | grep -v "/$") | sort 
+# [ ! -z "$(ls -dp **/*u | grep -v "/$")" ] && cat $(ls -dp **/*u | grep -v "/$") | sort
 
 # # 4.4
 # echo -e "\ntask 4.4 ->\n"

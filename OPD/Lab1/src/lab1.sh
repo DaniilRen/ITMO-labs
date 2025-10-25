@@ -76,9 +76,9 @@ chmod 771 magmar9/chinchou
 chmod 006 magmar9/paras
 chmod 624 magmar9/carvanha
 chmod 551 magmar9/typhlosion
-chmod u=rw tyranitar3 
-chmod g=w tyranitar3 
-chmod o= tyranitar3 
+chmod u=rw tyranitar3
+chmod g=w tyranitar3
+chmod o= tyranitar3
 
 echo -e "--> Task 2 completed!\n\n"
 
@@ -142,8 +142,7 @@ echo -e "--> Starting task 4\n..."
 # 4.1
 echo -e "\ntask 4.1 ->\n"
 echo -e "* Output will be redirected to /tmp/task_4_1.log, Errors will be supressed\n"
-wc -l $(ls -Rp ./*/* 2>/dev/null | grep -v /$ | grep o$) 1>/tmp/task_4_1.log
-wc -l *o */*o */*/*o 2>/dev/null 1>/tmp/task_4_1.log
+ls -1dp ./*/*/*/p* 2>/dev/null | grep -v /$  | grep -v o$ | wc -l 1>/tmp/task_4_1.log
 
 # 4.2
 echo -e "\ntask 4.2 ->\n"
@@ -156,7 +155,7 @@ x=$(ls -Rp ./*/* | grep -v /$ | grep u$)
 [ ! -z "${x}" ] && cat ${x} | sort
 ls -p ./*/* | grep -v /$ | grep u$
 
-grep *u */*u */*/*u 2>/dev/null | sort 
+grep *u */*u */*/*u 2>/dev/null | sort
 
 # 4.4
 echo -e "\ntask 4.4 ->\n"
@@ -170,8 +169,7 @@ ls -trRp . | grep -v "/$" 2>/tmp/task_4_5.log | head -3
 
 # 4.6
 echo -e "\ntask 4.6 ->\n"
-wc -m $(ls -Rp ./*/*/*/* | grep -v /$ | grep -v :$ | grep "/p") | sort -nk1
-grep *p */*p */*/*p | wc -m | sort -nk1,1
+ls -1dp ./*/*/*/p* | grep -v /$  | grep -v /$ | wc -m | sort -nk1
 
 echo -e "--> Task 4 completed!\n\n"
 
