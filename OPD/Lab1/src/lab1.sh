@@ -165,7 +165,7 @@ ls -trRp . | grep -v "/$" 2>/tmp/task_4_5.log | head -3
 
 # 4.6
 echo -e "\ntask 4.6 ->\n"
-ls -1dp ./*/*/*/p* | grep -v /$  | grep -v /$ | wc -m | sort -nk1
+ls -1dp ./*/*/*/p* | grep -v /$ | wc -m | sort -nk1
 
 echo -e "--> Task 4 completed!\n\n"
 
