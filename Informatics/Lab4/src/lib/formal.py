@@ -8,7 +8,7 @@ from abc import ABC
 
 
 class Wrapper:
-	def __init__(self, sections: List[Section]=list()) -> None:
+	def __init__(self, sections: List[Section]=[]) -> None:
 		self.__sections = sections
 
 	def add_section(self, section: Section) -> None:
@@ -19,9 +19,9 @@ class Wrapper:
 
 
 class Section:
-	def __init__(self, name: str, fields: List[Type[Field]]=list()) -> None:
+	def __init__(self, name: str, fields: List[Type[Field]]=[]) -> None:
 		self.__name = name
-		self.__fields = fields
+		self.__fields = fields.copy()
 
 	def add_field(self, field: Field) -> None:
 		self.__fields.append(field)
@@ -34,7 +34,6 @@ class Section:
 	
 
 class Field(ABC):
-	# type can be 'field', 'nested', 'comment'
 	def __init__(self, key, value, type):
 		self.__key = key
 		self.__value = value
@@ -52,7 +51,7 @@ class Field(ABC):
 
 class NestedField(Field):
 	def __init__(self, key: str):
-		self.__value: List[Type[Field]] = list()
+		self.__value: List[Type[Field]] = []
 		super().__init__(key, self.__value, "nested_field")
 
 	def add_field(self, field: ValueField) -> None:
