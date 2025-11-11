@@ -12,7 +12,7 @@ from typing import Type, List
 import os
 
 
-class RawConvertor(Convertor):
+class HandWrittenConvertor(Convertor):
 	@staticmethod
 	def read_file(src: os.path):
 		with open(src, 'r', encoding='UTF-8') as f:
@@ -32,16 +32,14 @@ class RawConvertor(Convertor):
 			nested = NestedField(key=prefix)
 			fields = list(filter(lambda f: f.split('=')[0].startswith(prefix), fields))
 			for field in fields:
-				full_field_key = field.split('=')[0]
+				full_field_key, value = field.split('=')[:2]
 				actual_field_key = full_field_key[len(prefix)+1:]
-				value = field.split('=')[1]
 				if not '.' in actual_field_key:
 					nested.add_field(ValueField(key=actual_field_key, value=value))
 				else:
 					nested.add_field(find_subfields(full_field_key, fields))
 			return nested
 
-		
 		wrapper = Wrapper()
 
 		sections = '\n'.join(file_content).split('[')[1:]
@@ -58,7 +56,7 @@ class RawConvertor(Convertor):
 					nested_fields = []
 					wrapper.add_section(section)
 
-				if row[0] == '#' or row[0] == ';':
+				if row[0] == '!' or row[0] == ';':
 					section.add_field(CommentField(value=row[1:].strip()))
 				
 				elif is_nested(row):
@@ -69,24 +67,47 @@ class RawConvertor(Convertor):
 				else:
 					section.add_field(ValueField(*row.split('=')))
 
-
-		sections = wrapper.get_sections()
-		# print([sec.get_name()+' --- '+str(len(sec.get_fields()))+' --- '+str(sec.get_fields()) for sec in sections])
-		for sec in sections:
-			print('-'*40+'<')
-			print(sec.get_name())
-			print('-'*40+'>')
-
-			for field in sec.get_fields():
-				print(field.get_key(), [f.get_key()+'='+f.get_value() for f in field.get_value()])
-
+		# sections = wrapper.get_sections()
+		# for sec in sections:
+		# 	print(sec.get_name())
+		# 	for field in sec.get_fields():
+		# 		print(field.get_key(), [f"key={f.get_key()} value={f.get_value()} type={f.get_type()}" for f in field.get_value()])
+		# 	print('-'*40+'<')
 
 		return wrapper
 
 
-
-
 	@staticmethod
-	def serialize(serialized_object, format: str):
-		...
-		
+	def serialize(object: Wrapper, format: str):
+		if format.lower() == 'ron':
+
+			def write_field(out, key, value, type, indent):
+				if type == "value_field":
+					out.write(f"{indent}{key}: {value}\n")
+					return
+				if type == "comment_field":
+					out.write(f"{indent}//{value}\n")
+					return
+				out.write(f"{indent}{key}: {{\n")
+				for field in value:
+					write_field(out, field.get_key(), field.get_value(), field.get_type(), indent+indent)
+				out.write(f"{indent}}}\n")
+			
+
+			output = os.path.abspath(os.path.join(os.path.dirname('__file__'), 'output', 'schedule.ron'))
+			with open(output, 'w', encoding='utf-8') as out:
+				out.write("Schedule(\n")
+
+				indent = "	"
+				for section in object.get_sections():
+					out.write(f"{indent}{section.get_name()}: {{\n")
+
+					for field in section.get_fields():
+						field_type = field.get_type()
+						field_key = field.get_key()
+						field_value = field.get_value()
+						write_field(out, field_key, field_value, field_type, indent*2)
+								
+					out.write(f"{indent}}}\n")
+
+				out.write(")")

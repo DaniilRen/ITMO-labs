@@ -65,4 +65,4 @@ class ValueField(Field):
 
 class CommentField(Field):
 	def __init__(self, value: str):
-		super().__init__("#", value, "comment_field")
+		super().__init__("!", value, "comment_field")
