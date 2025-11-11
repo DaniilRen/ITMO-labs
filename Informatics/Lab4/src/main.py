@@ -24,5 +24,6 @@ if __name__ == "__main__":
 	HandWrittenConvertor.serialize(object=deserialized_raw, format='xml')
 	
 	# Дополнительное задание 4
-	
+	TestRunner.run_handwritten_test(INPUT_FILE_SRC)
+	TestRunner.run_advanced_test(INPUT_FILE_SRC)
 

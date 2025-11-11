@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <main>
 	<Schedule>
-		<Четверг>
+		<Понедельник>
 			<lesson1>
 						<subject>Основы дискретной математики (базовый уровень)</subject>
 						<type>Лекции</type>
@@ -56,7 +56,7 @@
 						<room>1338</room>
 						<building>Кронверкский пр., д.49, лит.А</building>
 			</lesson6>
-		</Четверг>
+		</Понедельник>
 		<Суббота>
 			<lesson1>
 						<subject>Основы профессиональной деятельности</subject>
