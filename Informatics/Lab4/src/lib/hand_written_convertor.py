@@ -1,7 +1,7 @@
 """ 
 Конвертор для обязательного задания, дополнительного задания №1 и №3.
 Без использования сторонних библиотек осуществляет: 
-- десериалиацию данных в формате INI ,
+- десериалиацию данных в формате INI,
 - сериализацию в формат RON,
 - сериализацию в формат XML
 """
@@ -90,9 +90,8 @@ class HandWrittenConvertor(Convertor):
 					return
 				out.write(f"{indent}{key}: {{\n")
 				for field in value:
-					write_field(out, field.get_key(), field.get_value(), field.get_type(), indent+indent)
+					write_field(out, field.get_key(), field.get_value(), field.get_type(), indent*2)
 				out.write(f"{indent}}}\n")
-			
 
 			output = os.path.abspath(os.path.join(os.path.dirname('__file__'), 'output', 'schedule.ron'))
 			with open(output, 'w', encoding='utf-8') as out:
@@ -111,3 +110,38 @@ class HandWrittenConvertor(Convertor):
 					out.write(f"{indent}}}\n")
 
 				out.write(")")
+
+		elif format.lower() == 'xml':
+
+			def write_field(out, key, value, type, indent):
+				if type == "value_field":
+					out.write(f"{indent}<{key}>{value}</{key}>\n")
+					return
+				if type == "comment_field":
+					out.write(f"{indent}<!-- {value} -->\n")
+					return
+				out.write(f"{indent}<{key}>\n")
+				for field in value:
+					write_field(out, field.get_key(), field.get_value(), field.get_type(), indent*2)
+				out.write(f"{indent}</{key}>\n")
+
+			output = os.path.abspath(os.path.join(os.path.dirname('__file__'), 'output', 'schedule.xml'))
+			with open(output, 'w', encoding='utf-8') as out:
+				out.write("""<?xml version="1.0" encoding="UTF-8"?>\n""")
+				out.write("<main>\n")
+
+				indent = "	"
+				out.write(f"{indent}<Schedule>\n")
+
+				for section in object.get_sections():
+					out.write(f"{indent*2}<{section.get_name()}>\n")
+
+					for field in section.get_fields():
+						field_type = field.get_type()
+						field_key = field.get_key()
+						field_value = field.get_value()
+						write_field(out, field_key, field_value, field_type, indent*3)
+					out.write(f"{indent*2}</{section.get_name()}>\n")
+
+				out.write(f"{indent}</Schedule>\n")
+				out.write("</main>\n")

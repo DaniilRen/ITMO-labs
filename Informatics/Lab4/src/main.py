@@ -9,7 +9,14 @@ if __name__ == "__main__":
 	print(f"Вариант: {501993 % 132}\n------------<")
 
 	ini_file_content = HandWrittenConvertor.read_file(INPUT_FILE_SRC)
+	# Обязательное задание
 	deserialized = HandWrittenConvertor.deserialize(file_content=ini_file_content)
+	# Дополнительное задание 1
 	HandWrittenConvertor.serialize(object=deserialized, format='ron')
-	# print(f"Обязательное задание (десериализация):\n{ini_file_content}")
+	# Дополнительное задание 2
+	
+	# Дополнительное задание 3
+	HandWrittenConvertor.serialize(object=deserialized, format='xml')
+	# Дополнительное задание 4
+	
 

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<main>
+	<Schedule>
+		<Четверг>
+			<lesson1>
+						<subject>Основы дискретной математики (базовый уровень)</subject>
+						<type>Лекции</type>
+						<start>09:50</start>
+						<end>11:20</end>
+						<teacher>Поляков Владимир Иванович</teacher>
+						<room>2337</room>
+						<building>Кронверкский пр., д.49, лит.А</building>
+			</lesson1>
+			<lesson2>
+						<subject>Основы дискретной математики (базовый уровень)</subject>
+						<type>Лекции</type>
+						<start>11:30</start>
+						<end>13:00</end>
+						<teacher>Поляков Владимир Иванович</teacher>
+						<room>2337</room>
+						<building>Кронверкский пр., д.49, лит.А</building>
+			</lesson2>
+			<lesson3>
+						<subject>Информатика</subject>
+						<type>Лабораторные занятия</type>
+						<start>13:30</start>
+						<end>15:00</end>
+						<teacher>Малышева Татьяна Алексеевна</teacher>
+						<room>1338</room>
+						<building>Кронверкский пр., д.49, лит.А</building>
+			</lesson3>
+			<lesson4>
+						<subject>Информатика</subject>
+						<type>Лабораторные занятия</type>
+						<start>15:30</start>
+						<end>17:00</end>
+						<teacher>Малышева Татьяна Алексеевна</teacher>
+						<room>1338</room>
+						<building>Кронверкский пр., д.49, лит.А</building>
+			</lesson4>
+			<lesson5>
+						<subject>Программирование</subject>
+						<type>Лабораторные занятия</type>
+						<start>17:10</start>
+						<end>18:40</end>
+						<teacher>Наумова Надежда Александровна</teacher>
+						<room>1338</room>
+						<building>Кронверкский пр., д.49, лит.А</building>
+			</lesson5>
+			<lesson6>
+						<subject>Программирование</subject>
+						<type>Лабораторные занятия</type>
+						<start>18:50</start>
+						<end>20:20</end>
+						<teacher>Наумова Надежда Александровна</teacher>
+						<room>1338</room>
+						<building>Кронверкский пр., д.49, лит.А</building>
+			</lesson6>
+		</Четверг>
+		<Суббота>
+			<lesson1>
+						<subject>Основы профессиональной деятельности</subject>
+						<type>Лабораторные занятия</type>
+						<start>13:30</start>
+						<end>15:00</end>
+						<teacher>Деменев Тимур Гурбанович</teacher>
+						<room>1328</room>
+						<building>Кронверкский пр., д.49, лит.А</building>
+			</lesson1>
+			<lesson2>
+						<subject>Основы профессиональной деятельности</subject>
+						<type>Лабораторные занятия</type>
+						<start>15:30</start>
+						<end>17:00</end>
+						<teacher>Деменев Тимур Гурбанович</teacher>
+						<room>1328</room>
+						<building>Кронверкский пр., д.49, лит.А</building>
+			</lesson2>
+		</Суббота>
+	</Schedule>
+</main>
