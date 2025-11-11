@@ -6,17 +6,23 @@ from os import path
 if __name__ == "__main__":
 	INPUT_FILE_SRC = path.abspath(path.join(path.dirname('__file__'), 'input', 'schedule.ini'))
 
-	print(f"Вариант: {501993 % 132}\n------------<")
+	print(f"Вариант: {501993 % 132}\n------------|")
 
-	ini_file_content = HandWrittenConvertor.read_file(INPUT_FILE_SRC)
 	# Обязательное задание
-	deserialized = HandWrittenConvertor.deserialize(file_content=ini_file_content)
+	ini_file_content = HandWrittenConvertor.read_file(INPUT_FILE_SRC)
+	deserialized_raw = HandWrittenConvertor.deserialize(file_content=ini_file_content)
+	
 	# Дополнительное задание 1
-	HandWrittenConvertor.serialize(object=deserialized, format='ron')
+	HandWrittenConvertor.serialize(object=deserialized_raw, format='ron')
+
 	# Дополнительное задание 2
+	ini_parser = AdvancedConvertor.read_file(INPUT_FILE_SRC)
+	deserialized_advanced = AdvancedConvertor.deserialize(parse_object=ini_parser)
+	AdvancedConvertor.serialize(deserialized_advanced, format='ron')
 	
 	# Дополнительное задание 3
-	HandWrittenConvertor.serialize(object=deserialized, format='xml')
+	HandWrittenConvertor.serialize(object=deserialized_raw, format='xml')
+	
 	# Дополнительное задание 4
 	
 

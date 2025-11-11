@@ -93,7 +93,7 @@ class HandWrittenConvertor(Convertor):
 					write_field(out, field.get_key(), field.get_value(), field.get_type(), indent*2)
 				out.write(f"{indent}}}\n")
 
-			output = os.path.abspath(os.path.join(os.path.dirname('__file__'), 'output', 'schedule.ron'))
+			output = os.path.abspath(os.path.join(os.path.dirname('__file__'), 'output', 'schedule_hand_written.ron'))
 			with open(output, 'w', encoding='utf-8') as out:
 				out.write("Schedule(\n")
 
@@ -125,7 +125,7 @@ class HandWrittenConvertor(Convertor):
 					write_field(out, field.get_key(), field.get_value(), field.get_type(), indent*2)
 				out.write(f"{indent}</{key}>\n")
 
-			output = os.path.abspath(os.path.join(os.path.dirname('__file__'), 'output', 'schedule.xml'))
+			output = os.path.abspath(os.path.join(os.path.dirname('__file__'), 'output', 'schedule_hand_written.xml'))
 			with open(output, 'w', encoding='utf-8') as out:
 				out.write("""<?xml version="1.0" encoding="UTF-8"?>\n""")
 				out.write("<main>\n")
