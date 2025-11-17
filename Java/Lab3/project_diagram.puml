@@ -1,0 +1,108 @@
+@startuml
+title Lab3 Diagram
+
+class Main {
+    (+) main() : void;
+}
+
+package model {
+    class TaskStory extends Story {
+        (+) TaskStory() : TaskStory
+        (+) tell() : void
+    }
+}
+
+package model.abstracted {
+    interface Character {
+        getName() : String
+    }
+    abstract class Person implements Character {
+        (+) Person(String name) : Person
+        (+) getName() : String
+        (+) feal(String message) : void
+        (+) equals(Object o) : boolean
+        (+) hashCode() : int
+        (+) toString() : String
+    }
+    enum Distance {
+        Distance(String text) : Distance
+        (+) toString() : String
+    }
+    enum Hour {
+        Hour(String text) : Hour
+        (+) toString() : String
+    }
+    enum Measure {
+        Measure(String text) : Measure
+        (+) toString() : String
+    }
+    abstract class Story {
+        (+) Story() : Story
+        (+) addCharacter(Person person) : void
+    }
+}
+
+package model.exceptions {
+    class CharacterNotFoundException extends RuntimeException {
+        (+) CharacterNotFoundException(String message) : CharacterNotFoundException
+        (+) getMessage() : String
+    }
+    class StoryException extends Exception {
+        (+) StoryException(String message) : StoryException
+        (+) getMessage() : String
+    }
+}
+
+package model.characters {
+    class Neznaika extends Person {
+        (+) Neznaika() : Neznaika
+        (+) isWishingToEat() : boolean
+        (+) setWishingToEat(boolean wishing) : void
+        (+) lookAt(Object object) : void
+        (+) see(String message) : void
+        (+) couldStopLooking() : void
+        (+) feal(String message) : void
+        (+) think(String message) : void 
+        (+) realise(String message) : void 
+        (+) move_down_to(String message) : void 
+    }
+    class Ponchik extends Person {
+        (+) Ponchik() : Ponchik
+        (+) feal(String message) : void
+        (+) setIsEating(boolean eating) : void
+        (+) setIsSleeping(boolean sleeping) : void
+        (+) IsEating()  : boolean
+        (+) isSleeping()  : boolean
+        (+) isWokenUp() : String
+        (+) eat(Measure measure) : String
+    }
+}
+
+package model.objects {
+    class Rocket implements Character {
+        (+) Rocket(String name, Distance speed) : Rocket
+        (+) getSpeed() : String
+        (+) coverDistance() : String
+        (+) rush(Measure measure) : void
+        (+) freeze() : String
+        (+) approaching(Planet planet, Measure measure) : String
+        (+) getName() : String
+        (+) toString() : String
+    }
+    class Environment {
+        (+) explains_with(String message) : String
+        (+) could_be(String message) : String
+        (+) located_in(Object place) : String
+        (+) time_went(Hour hour) : String
+    }
+    class Compartment {
+        (+) Compartment(String name) : Compartment
+    }
+    class Planet {
+        (+) Planet(String name) : Planet
+        (+) attract(Person person) : void
+    }
+}
+
+
+@enduml

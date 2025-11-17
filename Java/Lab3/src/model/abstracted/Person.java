@@ -7,13 +7,12 @@ public abstract class Person implements Character {
         this.name = name;
     }
 
+    public abstract void feal(String message);
+
     @Override
     public String getName() {
         return name;
     }
-
-    @Override
-    public abstract void speak(String message);
 
     @Override
     public boolean equals(Object o) {
