@@ -5,6 +5,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -81,6 +95,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -157,6 +185,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -233,6 +275,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -309,6 +365,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -385,6 +455,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -461,6 +545,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -537,6 +635,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -613,6 +725,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -689,6 +815,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -765,6 +905,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -841,6 +995,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -917,6 +1085,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -993,6 +1175,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -1069,6 +1265,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -1145,6 +1355,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -1221,6 +1445,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -1297,6 +1535,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -1373,6 +1625,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -1449,6 +1715,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -1525,6 +1805,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -1601,6 +1895,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -1677,6 +1985,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -1753,6 +2075,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -1829,6 +2165,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -1905,6 +2255,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -1981,6 +2345,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -2057,6 +2435,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -2133,6 +2525,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -2209,6 +2615,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -2285,6 +2705,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -2361,6 +2795,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -2437,6 +2885,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -2513,6 +2975,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -2589,6 +3065,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -2665,6 +3155,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -2741,6 +3245,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -2817,6 +3335,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -2893,6 +3425,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -2969,6 +3515,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -3045,6 +3605,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -3121,6 +3695,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -3197,6 +3785,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -3273,6 +3875,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -3349,6 +3965,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -3425,6 +4055,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -3501,6 +4145,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -3577,6 +4235,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -3653,6 +4325,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -3729,6 +4415,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -3805,6 +4505,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -3881,6 +4595,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -3957,6 +4685,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -4033,6 +4775,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -4109,6 +4865,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -4185,6 +4955,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -4261,6 +5045,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -4337,6 +5135,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -4413,6 +5225,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -4489,6 +5315,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -4565,6 +5405,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -4641,6 +5495,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -4717,6 +5585,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -4793,6 +5675,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -4869,6 +5765,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -4945,6 +5855,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -5021,6 +5945,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -5097,6 +6035,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -5173,6 +6125,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -5249,6 +6215,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -5325,6 +6305,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -5401,6 +6395,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -5477,6 +6485,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -5553,6 +6575,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -5629,6 +6665,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -5705,6 +6755,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -5781,6 +6845,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -5857,6 +6935,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -5933,6 +7025,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -6009,6 +7115,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -6085,6 +7205,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -6161,6 +7295,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -6237,6 +7385,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -6313,6 +7475,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -6389,6 +7565,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -6465,6 +7655,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -6541,6 +7745,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -6617,6 +7835,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -6693,6 +7925,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -6769,6 +8015,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -6845,6 +8105,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -6921,6 +8195,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -6997,6 +8285,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -7073,6 +8375,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -7149,6 +8465,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -7225,6 +8555,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -7301,6 +8645,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -7377,6 +8735,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -7453,6 +8825,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -7529,6 +8915,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А
@@ -7605,6 +9005,20 @@ Schedule(
 				type: Лекции
 				start: 09:50
 				end: 11:20
+				start.test1: {
+								: 11111
+				}
+				end.test2: {
+								: 22222
+								lol: 33
+								kek: 44
+				}
+				end.test2.lol: {
+								: 33
+				}
+				end.test2.kek: {
+								: 44
+				}
 				teacher: Поляков Владимир Иванович
 				room: 2337
 				building: Кронверкский пр., д.49, лит.А

@@ -1,0 +1,83 @@
+%2025_Шаблон аннотации (.tex)
+\documentclass[12pt]{article}
+\pagestyle{empty}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[top=1cm,left=1cm,right=2cm, bottom=1cm]{geometry}
+\usepackage{tabularx}% http://ctan.org/pkg/tabularx
+%\usepackage{hyperref}
+\begin{document}
+
+\begin{center}
+\quad Университет ИТМО, факультет программной инженерии и компьютерной техники \\
+\quad Двухнедельная отчётная работа по «Информатике»: аннотация к статье\\
+\end{center}
+
+\begin{tabular}{
+	|p{\dimexpr.1\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 1
+	|p{\dimexpr.1\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 2
+	|p{\dimexpr.47\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 3
+	|p{\dimexpr.13\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 4
+	|p{\dimexpr.1\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 5
+	|p{\dimexpr.1\linewidth-2\tabcolsep-1.3333\arrayrulewidth}|% column 6
+	}
+	\hline
+	\centering\small{Дата прошедшей лекции} & \centering\small{Номер прошедшей лекции} & \centering\small{Название статьи/главы книги/видеолекции} & \centering\small{Дата публикации} & \centering\small{Размер статьи} & \centering\arraybackslash \small{Дата сдачи} \\ 
+	\hline
+	\centering 10.09.25 & \centering 1 & Использование изменения системы отсчета для улучшения результатов анализа с помощью закона бенфорда & \centering 31.03.2025 & \centering 1208 & 24.09.25  \\
+	\hline
+	\centering 24.09.25 & \centering 2 & Метод регенерационного блочного кодирования & \centering 13.10.2023 & \centering 3356 & 08.10.25  \\
+	\hline
+	\centering 08.10.25 & \centering 3 & Многоцелевая фильтрация текста с использованием регулярных выражений & \centering 10.06.2024 & \centering 2124 & 05.11.25  \\
+	\hline
+	\centering 22.10.25 & \centering 4 & Формат PARQUET: Обзор структуры и методы оптимизации для высокой производительности в распределённых системах & \centering 11.04.2025 & \centering 3651 & 05.11.25  \\
+	\hline
+	\centering 05.11.25 & \centering 5 & Классификация определений в математических LaTeX статьях & \centering 17.05.2024 & \centering 3471 & 22.11.25 \\
+	\hline
+	\centering 19.11.25 & \centering 6 & Способ синтеза интерактивных образовательных ресурсов формата PDF с применением LuaLaTeX & \centering 11.02.2023 & \centering 2547 & 22.11.25 \\
+	\hline
+	\centering 03.12.25 & \centering 7 & & & & \\
+\hline
+
+\hline
+\end{tabular}
+
+\begin{center}
+\quad Выполнил(а) \underline{\hspace{1.5cm}Бых Даниил Максимович\hspace{1.5cm}}, № группы \underline{ P3109 }, оценка \underline{\hspace{2cm}}
+\end{center}
+
+\begin{tabularx}{\textwidth} { 
+	| >{\raggedright\arraybackslash}X|} \hline
+		\textbf{Прямая полная ссылка на источник или сокращённая ссылка} \\
+		\url{https://cyberleninka.ru/article/n/sposob-sinteza-interaktivnyh-obrazovatelnyh-resursov-formata-pdf-s-primeneniem-lualatex/viewer}
+		\smallskip\\
+		\hline
+		\textbf{Теги, ключевые слова или словосочетания}\\
+		Обучающие тексты, lualatex, latex, образовательный ресурс.
+		\smallskip\\
+		\hline
+		\textbf{Перечень фактов, упомянутых в статье}\\
+		1) Способ синтеза интерактивных образовательных PDF-ресурсов основан на бесплатной системе LuaLaTeX. \\
+		2) LuaLaTeX использует язык Lua для создания и перемешивания заданий, TeX — для оформления, а JavaScript — для интерактивности. \\
+		3) Позволяет генерировать тесты с перемешанными заданиями и вариантами ответов, используя любые системные шрифты.\\
+		4) Решение повысило эффективность самостоятельной и дистанционной учебной работы. \\
+		\hline
+		\textbf{Позитивные следствия и/или достоинства описанной в статье технологии}\\
+		1) Бесплатность и доступность ПО. \\
+		2) Гибкость в создании разнообразных тестов с помощью Lua-скриптов. \\
+		3) Удобный интерактивный интерфейс через PDF и JavaScript. \\
+		\hline
+		\textbf{Негативные следствия и/или достоинства описанной в статье технологии}\\
+		1) LuaLaTeX медленнее классического LaTeX. \\
+		2) Требует технических навыков для настройки и программирования. \\
+		3) Ограничения интерактивности из-за возможностей PDF-ридеров. \\
+		\hline
+		\textbf{Ваши замечания, пожелания преподавателю или анекдот о программистах}\\
+		:)
+		\bigskip\\
+		\hline
+		
+\end{tabularx}
+
+
+\end{document}
