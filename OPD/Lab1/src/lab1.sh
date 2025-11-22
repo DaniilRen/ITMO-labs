@@ -140,32 +140,22 @@ ls -lR . 2>/dev/null
 echo -e "--> Starting task 4\n..."
 
 # 4.1
-echo -e "\ntask 4.1 ->\n"
-echo -e "* Output will be redirected to /tmp/task_4_1.log, Errors will be supressed\n"
-ls -1dp ./*/*/*/p* 2>/dev/null | grep -v /$  | grep -v o$ | wc -l 1>/tmp/task_4_1.log
+wc -l ./*/*o 2>/dev/null 1>/tmp/task_4_1.log
 
 # 4.2
-echo -e "\ntask 4.2 ->\n"
-echo -e "* Errors will be redirected to stdout\n"
 ls -Rp ./*/* 2>&1 | grep -v /$ | grep du | tail -4
 
 # 4.3
-echo -e "\ntask 4.3 ->\n"
 cat ./*u | sort
 
 # 4.4
-echo -e "\ntask 4.4 ->\n"
-echo -e "* Errors will be redirected to /tmp/task_4_4.log\n"
 ls -lRSr . 2>/tmp/task_4_4.log | grep ca
 
 # 4.5
-echo -e "\ntask 4.5 ->\n"
-echo -e "* Errors will be redirected to /tmp/task_4_5.log\n"
 ls -trRp . | grep -v "/$" 2>/tmp/task_4_5.log | head -3
 
 # 4.6
-echo -e "\ntask 4.6 ->\n"
-ls -1dp ./*/*/*/p* | grep -v /$ | wc -m | sort -nk1
+wc -m ./*/*/*/p* | sort -nk1  
 
 echo -e "--> Task 4 completed!\n\n"
 

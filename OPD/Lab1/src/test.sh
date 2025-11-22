@@ -7,6 +7,8 @@ cd lab0
 # # 4.1
 # echo -e "\ntask 4.1 ->\n"
 # wc -l $(ls -Rp ./*/* 2>/dev/null | grep -v /$ | grep o$) 1>/tmp/task_4_1.log
+# ls -R1p ./*/* 2>/dev/null 
+# wc -l ./*/*o 2>/dev/null 1>/tmp/task_4_1.log
 
 # # 4.2
 # echo -e "\ntask 4.2 ->\n"
@@ -16,10 +18,13 @@ cd lab0
 # echo -e "\ntask 4.3 ->\n"
 # x=$(ls -Rp ./*/* | grep -v /$ | grep u$)
 # [ ! -z "${x}" ] && cat ${x} | sort
+# cat ./*u | sort
 
 # # 4.4
 # echo -e "\ntask 4.4 ->\n"
 # ls -lRSr . 2>/tmp/task_4_4.log | grep ca
+# ls -lRSr . 2>/tmp/task_4_4.log | grep ca
+# grep -Rl "ca" ./ 2>/tmp/errors.log 
 
 # # 4.5
 # echo -e "\ntask 4.5 ->\n"
@@ -29,8 +34,8 @@ cd lab0
 # echo -e "\ntask 4.6 ->\n"
 # wc -m $(ls -Rp ./*/*/*/* | grep -v /$ | grep -v :$ | grep "/p") | sort -nk1
 # grep *p */*p */*/*p | wc -m | sort -nk1,1
-# ls -1dp ./*/*/*/p* | grep -v /$  | grep -v /$ | wc -m | sort -nk1
-
+# ls -1dp ./*/*/*/p* | grep -v /$ | wc -m | sort -nk1
+wc -m ./*/*/*/p* | sort -nk1  
 
 
 
@@ -53,9 +58,10 @@ cd lab0
 # # # 4.3
 # echo -e "\ntask 4.3 ->\n"
 # [ ! -z "$(ls -dp **/*u | grep -v "/$")" ] && cat $(ls -dp **/*u | grep -v "/$") | sort
-# ls -dp **/*u | grep -v "/$"
-ls -p | grep -v "/$" | grep ""
-cat -n ./* | grep -v "*u$" | sort
+# ls -p | grep -v "/$" | grep ""
+# ls -1Rp ./* | grep "u$" | cat
+# cat ./*u | sort
+# cat -n ./* | grep -v "*u$" | sort
 
 # # 4.4
 # echo -e "\ntask 4.4 ->\n"
