@@ -62,6 +62,7 @@ class HandWrittenConvertor(Convertor):
 
 				if row[0] == '#' or row[0] == ';':
 					section.add_field(CommentField(value=row[1:].strip()))
+					print()
 				
 				elif is_nested(row):
 					if row.split('.')[0] in [field.get_key() for field in nested_fields]:
@@ -70,13 +71,6 @@ class HandWrittenConvertor(Convertor):
 
 				else:
 					section.add_field(ValueField(*row.split('=')))
-
-		# sections = wrapper.get_sections()
-		# for sec in sections:
-		# 	print(sec.get_name())
-		# 	for field in sec.get_fields():
-		# 		print(field.get_key(), [f"key={f.get_key()} value={f.get_value()} type={f.get_type()}" for f in field.get_value()])
-		# 	print('-'*40+'<')
 
 		return wrapper
 
@@ -92,10 +86,10 @@ class HandWrittenConvertor(Convertor):
 				if type == "comment_field":
 					out.write(f"{indent}//{value}\n")
 					return
-				out.write(f"{indent}{key}: {{\n")
+				out.write(f"{indent}{key}: (\n")
 				for field in value:
 					write_field(out, field.get_key(), field.get_value(), field.get_type(), indent*2)
-				out.write(f"{indent}}}\n")
+				out.write(f"{indent})\n")
 
 			output = os.path.abspath(os.path.join(os.path.dirname('__file__'), 'output', 'schedule_hand_written.ron'))
 			with open(output, 'w', encoding='utf-8') as out:
