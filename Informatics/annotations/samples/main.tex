@@ -1,0 +1,84 @@
+%2025_Шаблон аннотации (.tex)
+\documentclass[12pt]{article}
+\pagestyle{empty}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[top=1cm,left=1cm,right=2cm, bottom=1cm]{geometry}
+\usepackage{tabularx}% http://ctan.org/pkg/tabularx
+%\usepackage{hyperref}
+\begin{document}
+
+\begin{center}
+\quad Университет ИТМО, факультет программной инженерии и компьютерной техники \\
+\quad Двухнедельная отчётная работа по «Информатике»: аннотация к статье\\
+\end{center}
+
+\begin{tabular}{
+  |p{\dimexpr.1\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 1
+  |p{\dimexpr.1\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 2
+  |p{\dimexpr.47\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 3
+  |p{\dimexpr.13\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 4
+  |p{\dimexpr.1\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 5
+  |p{\dimexpr.1\linewidth-2\tabcolsep-1.3333\arrayrulewidth}|% column 6
+  }
+  \hline
+  %\small{
+  %\footnotesize
+  \centering\small{Дата прошедшей лекции} & \centering\small{Номер прошедшей лекции} & \centering\small{Название статьи/главы книги/видеолекции} & \centering\small{Дата публикации (не старше 2022 года)} & \centering\small{Размер статьи (от 400 слов)} & \centering\arraybackslash \small{Дата сдачи} \\ 
+ \hline
+ \centering 10.09.25 & \centering 1 & Текст заменить! Эту строку тоже можно использовать! & \centering 31.08.24 & \centering $\sim$997 & 24.09.25  \\
+  \hline
+ \centering 24.09.25 & \centering 2 & & & &  \\
+ \hline
+ \centering ..25 & \centering 3 & & & &  \\
+ \hline
+ \centering ..25 & \centering 4 & & & &  \\
+ \hline
+ \centering ..25 & \centering 5 & & & &  \\
+ \hline
+ \centering ..25 & \centering 6 & & & &  \\
+ \hline
+ \centering ..25 & \centering 7 & & & & \\
+\hline
+\end{tabular}
+
+\begin{center}
+\quad Выполнил(а) \underline{\hspace{5cm}}, № группы \underline{ P31XX }, оценка \underline{\hspace{2cm}}
+\end{center}
+
+\begin{tabularx}{\textwidth} { 
+  | >{\raggedright\arraybackslash}X|} \hline
+    \textbf{Прямая полная ссылка на источник или сокращённая ссылка (bit.ly, tr.im и т.п.)} \\
+    Например, прямая ссылка \url{https://itmo.ru/ru/page/252/pervokursnikam.htm}
+    \smallskip\\
+    \hline
+    \textbf{Теги, ключевые слова или словосочетания}\\
+    \\
+    %\smallskip\\
+    \hline
+    \textbf{Перечень фактов, упомянутых в статье (минимум четыре пункта)}\\
+    1) \\
+    ...\\
+    n)\\
+    \textit{Каждый из n пунктов должен представлять из себя ровно одно предложение, написанное своими словами (прямые цитаты из исходного документа недопустимы). Предложения не должны быть связанны друг с другом грамматически. Наличие грамматических и пунктуационных ошибок не влияет на оценку. Допускается привести только такое число фактов, чтобы вся аннотация умещалась на одну страницу А4. Порядок перечисления должен совпадать с порядком описания фактов в оригинальном источнике.}
+    \smallskip\\
+    \textit{При выборе статьи следует ориентироваться на «критерий Пушкина»: статья должна содержать такое количество технической информации, чтобы человек с гуманитарным образованием достаточно мало бы понял при чтении (описание алгоритмов, формулы, концепции языков программирования, физические принципы, IT-технологии и т.п.).}
+    \hline
+    \textbf{Позитивные следствия и/или достоинства описанной в статье технологии (минимум три пункта)}\\
+    1) \\
+    2) \\
+    3) \\
+    \hline
+    \textbf{Негативные следствия и/или достоинства описанной в статье технологии (минимум три пункта)}\\
+    1) \\
+    2) \\
+    3) \\
+    \hline
+    \textbf{Ваши замечания, пожелания преподавателю или анекдот о программистах}\footnote{Наличие этой графы не влияет на оценку}\\
+    \bigskip\\
+    \hline
+    
+\end{tabularx}
+
+
+\end{document}
