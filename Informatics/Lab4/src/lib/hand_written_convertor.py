@@ -8,7 +8,7 @@
 
 from .convertor import Convertor
 from .formal import Wrapper, Section, ValueField, CommentField, NestedField
-from typing import List
+from typing import Sequence
 import os
 
 
@@ -19,7 +19,7 @@ class HandWrittenConvertor(Convertor):
 			return list(filter(lambda row: row != "", map(lambda row: row.strip(), f.readlines())))
 		
 	@staticmethod
-	def deserialize(file_content: List[str]):
+	def deserialize(file_content: Sequence[str]):
 		
 		def is_section(row):
 			return row.startswith('[') and row.endswith(']')
@@ -28,7 +28,7 @@ class HandWrittenConvertor(Convertor):
 			prefix = row.split('.')[0]
 			return not is_section(row) and row.find(prefix)+len(prefix) < row.find('=')
 		
-		def find_subfields(prefix: str, fields: list=[], nested_prefix: str="") -> NestedField:
+		def find_subfields(prefix: str, fields: Sequence, nested_prefix: str="") -> NestedField:
 			if nested_prefix == "":
 				nested_prefix = prefix
 			nested = NestedField(key=nested_prefix)
@@ -36,24 +36,13 @@ class HandWrittenConvertor(Convertor):
 			for field in fields:
 				full_field_key, value = field.split('=')[:2]
 				actual_field_key = full_field_key[len(prefix)+1:]
-				print(full_field_key, value, actual_field_key)
-				if not '.' in actual_field_key:
-					nested.add_field(ValueField(key=actual_field_key, value=value))
-				else:
-					nested.add_field(find_subfields(full_field_key, fields, actual_field_key))
-			return nested
 
-		# def find_subfields(field, fields: list=[], used_prefixes: list=[]) -> NestedField:
-		# 	root_prefix = field.split('.')[0]
-		# 	root_field = NestedField(key=root_prefix)
-		# 	for nested_field in filter(lambda f: f.split('=')[0].startswith(root_prefix) and f.split('=')[0] != root_prefix, fields):
-		# 		field_prefix, field_value = nested_field.split('=')[:2]
-		# 		nested_field_prefix = field_prefix[len(root_prefix)+1:]
-		# 		if is_nested(nested_field):
-		# 			used_prefixes.append(root_prefix)
-		# 			root_field.add_field(find_subfields(nested_field_prefix, fields, used_prefixes))
-		# 		else:
-		# 			root_field.add_field(ValueField(key=nested_field_prefix, value=field_value))
+				if not '.' in actual_field_key:
+					nested.add_field(ValueField(key=full_field_key.split('.')[-1], value=value))
+				else:
+					nested.add_field(find_subfields(full_field_key, fields, actual_field_key.split('.')[0]))
+			return nested
+		
 		
 		wrapper = Wrapper()
 
@@ -71,14 +60,13 @@ class HandWrittenConvertor(Convertor):
 					nested_fields = []
 					wrapper.add_section(section)
 
-				if row[0] == '!' or row[0] == ';':
+				if row[0] == '#' or row[0] == ';':
 					section.add_field(CommentField(value=row[1:].strip()))
 				
 				elif is_nested(row):
 					if row.split('.')[0] in [field.get_key() for field in nested_fields]:
 						continue
 					nested_fields.append(find_subfields(prefix=row.split('.')[0], fields=section_fields))
-					# nested_fields.append(find_subfields(field=row, fields=section_fields))
 
 				else:
 					section.add_field(ValueField(*row.split('=')))

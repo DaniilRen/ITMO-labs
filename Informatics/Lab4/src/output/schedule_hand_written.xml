@@ -2,25 +2,17 @@
 <main>
 	<Schedule>
 		<Понедельник>
+			<!-- lesson1.type=Лекции -->
 			<lesson1>
 						<subject>Основы дискретной математики (базовый уровень)</subject>
-						<type>Лекции</type>
+						<type>
+												<subtype>Математика</subtype>
+						</type>
+						<type>
+												<mood>Зачет</mood>
+						</type>
 						<start>09:50</start>
 						<end>11:20</end>
-						<start.test1>
-												<>11111</>
-						</start.test1>
-						<end.test2>
-												<>22222</>
-												<lol>33</lol>
-												<kek>44</kek>
-						</end.test2>
-						<end.test2.lol>
-												<>33</>
-						</end.test2.lol>
-						<end.test2.kek>
-												<>44</>
-						</end.test2.kek>
 						<teacher>Поляков Владимир Иванович</teacher>
 						<room>2337</room>
 						<building>Кронверкский пр., д.49, лит.А</building>
