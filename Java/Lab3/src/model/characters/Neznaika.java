@@ -37,8 +37,8 @@ public class Neznaika extends Person {
     }
 
     @Override
-    public void feal(String message) {
-        System.out.println(name + " почуствовал " + message);
+    public void describeFeeling() {
+        System.out.println(name + " почуствовал " + this.feeling);
     }
 
     public void think(String message) {

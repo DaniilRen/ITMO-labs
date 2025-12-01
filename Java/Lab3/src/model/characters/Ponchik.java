@@ -1,11 +1,14 @@
 package model.characters;
 
-import model.abstracted.Measure;
+import model.abstracted.Eatable;
 import model.abstracted.Person;
+import model.exceptions.WrongFoodException;
+import model.objects.Food;
 
 public class Ponchik extends Person {
     private boolean isEating;
     private boolean isSleeping;
+    private Eatable chewingObject;
 
     public Ponchik() {
         super("Пончик");
@@ -14,35 +17,42 @@ public class Ponchik extends Person {
     }
 
     @Override
-    public void feal(String message) {
-        System.out.println(name + " почуствовал что \"" + message + "\"");
+    public void describeFeeling() {
+        System.out.println(name + " почуствовал" + feeling);
     }
 
     public void setIsEating(boolean eating) {
-        this.isEating = eating;
+        isEating = eating;
     }
 
     public void setIsSleeping(boolean sleeping) {
-        this.isSleeping = sleeping;
+        isSleeping = sleeping;
     }
 
-    public boolean IsEating() {
+    public boolean getIsEating() {
         return isEating;
     }
 
-    public boolean isSleeping() {
+    public boolean getIsSleeping() {
         return isSleeping;
     }
 
-    public String isWokenUp() {
-        if (this.isSleeping()) {
+    public String isSleeping() {
+        if (getIsSleeping()) {
             return name + " еще не проснулся";
         }
         return name + " уже проснулся";
     }
 
-    public String eat(Measure measure) {
-        return name + " уже что-то жует с " + measure.toString();
+    public void setChewingObject(Eatable object) {
+        chewingObject = object;
     }   
+
+    public String chew() {
+        if (chewingObject instanceof Food) {
+            throw new WrongFoodException(chewingObject.toString() + "should not be chewed !");
+        }
+        return name + " уже жует" + chewingObject.toString() + "с аппетитом";
+    }
     
 }

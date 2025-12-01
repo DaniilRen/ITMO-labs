@@ -2,17 +2,31 @@ package model.abstracted;
 
 
 public enum Distance {
-    PLANET_DISTANCE("четыреста тысяч"), 
-    ROCKET_DISTANCE_PER_SECOND("двенадцать");
+    ONE("один", 1),
+    TWO("два", 2),
+    TWELVE("двенадцать", 12),
+    ONE_THOUSAND("тысяча", 1000),
+    TWO_THOUSAND("две тысячи", 4000),
+    FOUR_HUNDRED_THOUSAND("четыреста тысяч", 400000);
 
-    private final String distance;
 
-    Distance(String distance) {
-        this.distance = distance;
+    private final String distanceText;
+    private final int integerRepresentation;
+
+    Distance(String distanceText, int integerRepresentation) {
+        this.distanceText = distanceText;
+        this.integerRepresentation = integerRepresentation;
+    }
+
+    public int toInteger() {
+        return integerRepresentation;
     }
 
     @Override
     public String toString() {
-        return distance + " километров";
+        if (this == Distance.ONE) {
+            return distanceText + "километр";
+        }
+        return distanceText + " километров";
     }
 }

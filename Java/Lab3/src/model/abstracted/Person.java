@@ -1,13 +1,24 @@
 package model.abstracted;
 
-public abstract class Person implements Character {
+public abstract class Person implements Character, Lookable {
     protected String name;
+    protected Feeling feeling;
+    protected Location location;
+
 
     public Person(String name) {
         this.name = name;
     }
 
-    public abstract void feal(String message);
+    public void setFealing(Feeling feeling) {
+        this.feeling = feeling;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public abstract void describeFeeling();
 
     @Override
     public String getName() {
