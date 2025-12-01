@@ -4,12 +4,7 @@
     <Понедельник>
       <lesson1>
         <subject>Основы дискретной математики (базовый уровень)</subject>
-        <type>
-          <subtype1>Лекции</subtype1>
-        </type>
-        <type>
-          <subtype2>Лекции</subtype2>
-        </type>
+        <type>Лекции</type>
         <start>09:50</start>
         <end>11:20</end>
         <teacher>Поляков Владимир Иванович</teacher>
@@ -62,25 +57,5 @@
         <building>Кронверкский пр., д.49, лит.А</building>
       </lesson6>
     </Понедельник>
-    <Суббота>
-      <lesson1>
-        <subject>Основы профессиональной деятельности</subject>
-        <type>Лабораторные занятия</type>
-        <start>13:30</start>
-        <end>15:00</end>
-        <teacher>Деменев Тимур Гурбанович</teacher>
-        <room>1328</room>
-        <building>Кронверкский пр., д.49, лит.А</building>
-      </lesson1>
-      <lesson2>
-        <subject>Основы профессиональной деятельности</subject>
-        <type>Лабораторные занятия</type>
-        <start>15:30</start>
-        <end>17:00</end>
-        <teacher>Деменев Тимур Гурбанович</teacher>
-        <room>1328</room>
-        <building>Кронверкский пр., д.49, лит.А</building>
-      </lesson2>
-    </Суббота>
   </Schedule>
 </main>

@@ -32,16 +32,25 @@ class HandWrittenConvertor(Convertor):
             if nested_prefix == "":
                 nested_prefix = prefix
             nested = NestedField(key=nested_prefix)
-            fields = list(filter(lambda f: f.split('=')[0].startswith(prefix), fields))
-            for field in fields:
-                full_field_key, value = field.split('=')[:2]
-                actual_field_key = full_field_key[len(prefix) + 1:]
+            # Фильтруем поля начинающиеся с префикса
+            relevant_fields = [f for f in fields if f.split('=')[0].startswith(prefix)]
 
-                if '.' not in actual_field_key:
-                    nested.add_field(ValueField(key=full_field_key.split('.')[-1], value=value))
+            # Словарь для группировки по следующему уровню вложенности
+            groups = {}
+            for field in relevant_fields:
+                full_key, value = field.split('=', 1)
+                sub_key = full_key[len(prefix) + 1:]
+                if '.' not in sub_key:
+                    nested.add_field(ValueField(key=sub_key, value=value))
                 else:
-                    nested.add_field(find_subfields(full_field_key, fields, actual_field_key.split('.')[0]))
+                    group_key = sub_key.split('.')[0]
+                    groups.setdefault(group_key, []).append(field)
+
+            for group_key, group_fields in groups.items():
+                nested.add_field(find_subfields(prefix=f"{prefix}.{group_key}", fields=group_fields, nested_prefix=group_key))
+
             return nested
+
 
         wrapper = Wrapper()
 
@@ -50,25 +59,28 @@ class HandWrittenConvertor(Convertor):
             nested_fields = []
             section_fields = list(filter(lambda r: r != '', section_string.split('\n')))
             section = Section(name=section_fields[0][:-1])
-
+            
             for i in range(1, len(section_fields)):
                 row = section_fields[i]
+
                 if i == len(section_fields) - 1:
                     for nested in nested_fields:
                         section.add_field(nested)
-                    nested_fields = []
                     wrapper.add_section(section)
 
                 if row[0] == '#' or row[0] == ';':
                     section.add_field(CommentField(value=row[1:].strip()))
                 elif is_nested(row):
-                    if row.split('.')[0] in [field.get_key() for field in nested_fields]:
-                        continue
-                    nested_fields.append(find_subfields(prefix=row.split('.')[0], fields=section_fields))
+                    prefix = row.split('.')[0]
+                    # Проверяем, есть ли уже NestedField с этим ключом
+                    existing = next((f for f in nested_fields if f.get_key() == prefix), None)
+                    if existing is None:
+                        nested_fields.append(find_subfields(prefix=prefix, fields=section_fields))
                 else:
-                    section.add_field(ValueField(*row.split('=')))
+                    section.add_field(ValueField(*row.split('=', 1)))
 
-        return wrapper
+            return wrapper
+
 
     @staticmethod
     def serialize(obj: Wrapper, format: str):
