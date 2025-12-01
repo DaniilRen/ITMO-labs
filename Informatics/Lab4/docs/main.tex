@@ -553,18 +553,22 @@ tabsize=2
 			\item данный метод проходит в цикле по каждой секции бинарного объекта, определяет тип поля, и в зависимости от него добавялет соотвествующий элемент RON
 		\end{itemize}
 
-		Результат: \href{run:../src/output/schedule_hand_written.ron}{../src/output/schedule\_hand\_written.ron}
+		Результат: \ref{lst:ron1}
 
-		\Subsection{Дополнительные задание 2}
+		\lstinputlisting[caption={самописная сериализация},label={lst:ron1}]{../src/output/schedule_hand_written.ron}		
+
+	\Subsection{Дополнительные задание 2}
 		Разберем детально решение дополнительного задания 2.
 		\begin{itemize}
 			\item для сериализации и десериализации исходных данных был создан класс AdvancedConvertor в файле \ref{lst:auto}
 			\item данный класс содержит методы методы read\_file, deserialize и serialize аналочичные HandWrittenConvertor, но написанные при помощи библиотек "configparser" для RON и "xml" для XML
 		\end{itemize}
 
-		Результат ручного перевода: \href{run:../src/output/schedule_hand_written.ron}{../src/output/schedule\_hand\_written.ron} \\
+		Результат моего алгоритма: \ref{lst:ron1}	
 
-		Результат с использованием библиотек: \href{run:../src/output/schedule_advanced.ron}{../src/output/schedule\_advenced.ron} \\
+		Результат с использованием библиотек: \ref{lst:ron2}
+
+		\lstinputlisting[caption={сериализация через библиотеки},label={lst:ron2}]{../src/output/schedule_advanced.ron}	
 
 		Результаты, полученные при помощи самописного парсера и парсера с использованием готовых бибилиотек имеют некторые сходства и раличия. \\
 		Сходства состоят в том, что оба класса одинаково хорошо справляются с десериализацией исходного файла в бинарный объект. \\
@@ -576,14 +580,14 @@ tabsize=2
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth/3*2]{example_hand_written_ron.png}
-			\caption{ручной перевод}
+			\caption{самописная сериализация}
 			\label{fig:hand}
     \end{figure}
 
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=\textwidth/3*2]{example_advanced_ron.png}
-			\caption{перевод через библиотеку}
+			\caption{с использованием библиотек}
 			\label{fig:auto}
     \end{figure}
 
@@ -598,7 +602,9 @@ tabsize=2
 			\item логика сериализации в XML практически не отличается от таковой в случае RON, за исключением видоизмененных полей файла в соотвествии с форматом данных.
 		\end{itemize}
 
-		Результат: \href{run:../src/output/schedule_hand_written.xml}{../src/output/schedule\_hand\_written.ron}
+		Результат: \ref{lst:xml}
+
+		\lstinputlisting[caption={самописная сериализация},label={lst:xml}]{../src/output/schedule_hand_written.xml}	
 
 		\Subsection{Дополнительные задание 4}
 		Разберем детально решение дополнительного задания 4.
