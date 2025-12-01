@@ -1,9 +1,9 @@
 """ 
-Конвертор для обязательного задания, дополнительного задания №1 и №3.
+Самописный конвертор для обязательного задания, дополнительного задания №1 и №3.
 Без использования сторонних библиотек осуществляет: 
-- десериалиацию данных в формате INI,
-- сериализацию в формат RON,
-- сериализацию в формат XML
+- десериалиацию данных из формата INI в бинарный объект,
+- сериализацию из бинарного объекта в формат RON,
+- сериализацию из бинарного объекта в формат XML
 """
 
 import os
@@ -84,11 +84,18 @@ class HandWrittenConvertor(Convertor):
 
     @staticmethod
     def serialize(obj: Wrapper, format: str):
+        # Используется для правильного отображения строк и чисел в RON файле
+        def wrapp_field_type(indent: str, key: str, value: str) -> str:
+            if value.isnumeric() and value != "true" and value != "false":
+                return f"{indent}{key}: {value}\n"
+            return f"{indent}{key}: \"{value}\"\n"
+
+
         format = format.lower()
         if format == 'ron':
             def write_field(out, key, value, type, indent):
                 if type == "value_field":
-                    out.write(f"{indent}{key}: {value}\n")
+                    out.write(wrapp_field_type(indent, key, value))
                     return
                 if type == "comment_field":
                     out.write(f"{indent}//{value}\n")

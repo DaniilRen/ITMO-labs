@@ -1,7 +1,8 @@
 {
     Понедельник: {
         lesson1.subject: 'Основы дискретной математики (базовый уровень)',
-        lesson1.type: 'Лекции',
+        lesson1.type.subtype1: 'Лекции',
+        lesson1.type.subtype2: 'Лекции',
         lesson1.start: '09:50',
         lesson1.end: '11:20',
         lesson1.teacher: 'Поляков Владимир Иванович',

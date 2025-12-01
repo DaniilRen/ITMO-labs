@@ -9,7 +9,7 @@ if __name__ == "__main__":
     INPUT_FILE_SRC = path.abspath(path.join(path.dirname('__file__'), 'input', 'schedule.ini'))
     BIN_FILE_PATH = path.abspath(path.join(path.dirname('__file__'), 'output', 'schedule_hand_written.bin'))
 
-    print(f"Вариант: {501993 % 132}\n------------|")
+    print(f"Вариант: {501993 % 132}")
 
     # Обязательное задание: десериализация в бинарный объект
     ini_file_content = HandWrittenConvertor.read_file(INPUT_FILE_SRC)
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     loaded_obj = BinarySerializer.load_from_file(BIN_FILE_PATH)
     HandWrittenConvertor.serialize(obj=loaded_obj, format='ron')
 
-    # Дополнительное задание 2
+    # Дополнительное задание 2: парсинг через библиотеки
     ini_parser = AdvancedConvertor.read_file(INPUT_FILE_SRC)
     deserialized_advanced = AdvancedConvertor.deserialize(parse_object=ini_parser)
     AdvancedConvertor.serialize(deserialized_advanced, format='ron')
@@ -29,6 +29,6 @@ if __name__ == "__main__":
     loaded_obj_xml = BinarySerializer.load_from_file(BIN_FILE_PATH)
     HandWrittenConvertor.serialize(obj=loaded_obj_xml, format='xml')
 
-    # Дополнительное задание 4
+    # Дополнительное задание 4: 100 итераций тестов
     TestRunner.run_handwritten_test(INPUT_FILE_SRC, BIN_FILE_PATH, 100)
-    TestRunner.run_advanced_test(INPUT_FILE_SRC)
+    TestRunner.run_advanced_test(INPUT_FILE_SRC, 100)
