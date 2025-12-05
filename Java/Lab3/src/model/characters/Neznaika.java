@@ -1,15 +1,15 @@
 package model.characters;
 
 import model.abstracted.Person;
+import model.abstracted.Lookable;
+import model.objects.Planet;
 
 public class Neznaika extends Person {
     private boolean isWishingToEat;
-    private boolean isWishingToLook;
 
     public Neznaika() {
         super("Незнайка");
         isWishingToEat = true;
-        isWishingToLook = false;
     }
 
     public boolean isWishingToEat() {
@@ -20,20 +20,19 @@ public class Neznaika extends Person {
         this.isWishingToEat = wishing;
     }
 
-    public void lookAt(Object object) {
-        this.isWishingToLook = true;
-        System.out.println(name + " смотрел на " + object.toString());
+    public void lookAt(Lookable object) {
+        System.out.println(name + " смотрел на " + object.toString() + " и " + this.couldStopLooking(object));
     }
 
     public void see(String message) {
         System.out.println(name + " увидел что " + message);
     }
 
-    public void couldStopLooking() {
-        if (isWishingToLook) {
-            System.out.println("не мог оторваться"); 
+    public String couldStopLooking(Lookable object) {
+        if (object instanceof Planet planet &&  planet.name().equals("Луна")) {
+            return "не мог оторваться\n" + planet.attractViews(); 
         }
-        System.out.println("мог оторваться"); 
+        return "вполне мог перестать"; 
     }
 
     @Override

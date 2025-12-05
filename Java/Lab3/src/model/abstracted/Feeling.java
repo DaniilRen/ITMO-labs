@@ -1,23 +1,28 @@
 package model.abstracted;
 
 public enum Feeling {
-    JOY("РАДОСТЬ"),  
-    SADNESS("ГРУСТЬ"),
-    ANGER("ЗЛОСТЬ"),    
-    SURPRISE("УДИВЛЕНИЕ"), 
-    FEAR("СТРАХ"),
-    CALMNESS("СПОКОЙСТВИЕ"),  
-    DELIGHT("ВОСТОРГ"),
-    SCARY("СТРАХ");
+    JOY("радость", "радостный"),  
+    SADNESS("грусть", "грустный"),
+    ANGER("злость", "злой"),    
+    SURPRISE("удивление", "удивительный"), 
+    CALMNESS("спокойствие", "спокойный"),  
+    DELIGHT("восторг", "восторженный"),
+    SCARY("страх", "страшный");
 
-    private String russianTranslation;
+    private String noun;
+    private String adjective;
 
-    Feeling(String translation) {
-        this.russianTranslation = translation;
+    Feeling(String translation, String adjective) {
+        this.noun = translation;
+        this.adjective = adjective;
+    }
+
+    public String toAdjective() {
+        return this.adjective;
     }
 
     @Override
     public String toString() {
-        return this.russianTranslation;
+        return this.noun;
     }
 }

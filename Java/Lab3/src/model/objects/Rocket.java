@@ -2,7 +2,6 @@ package model.objects;
 
 import java.util.ArrayList;
 import model.abstracted.Character;
-import model.abstracted.Distance;
 import model.abstracted.Feeling;
 import model.abstracted.Lookable;
 import model.abstracted.Speed;
@@ -16,6 +15,7 @@ public class Rocket implements Character, Lookable {
     private Feeling speedFeeling;
     private Path path;
     private boolean isRushing;
+    private String ApproachingMeasure;
 
     public Rocket(String name, ArrayList<Compartment> compartments) {
         this.name = name;
@@ -38,8 +38,10 @@ public class Rocket implements Character, Lookable {
     public void setSpeedFeeling() {
         if (this.speed.distance().toInteger() > 10 && this.speed.timeUnit() == TimeUnit.SECOND) {
             this.speedFeeling = Feeling.SCARY;
+            this.ApproachingMeasure = "ни на пол пальца не";
         } else {
             this.speedFeeling = Feeling.CALMNESS;
+            this.ApproachingMeasure = "быстро";
         }
     }
 
@@ -56,21 +58,12 @@ public class Rocket implements Character, Lookable {
         return speed;
     }
 
-    public void DescribeRush() {
-        System.out.println(name + " мчалась со " + this.speedFeeling + " скоростью " + this.speed.toString());
+    public void describeRush() {
+        System.out.println(name + " мчалась со " + this.speedFeeling.toAdjective() + " скоростью " + this.speed.toString());
     }
 
-    public String coverDistance() {
-        return " покрывая пространство в " + this.getSpeed();
-    }
-
-
-    public String Describefreezing() {
-        return name + " застыла на месте";
-    }
-
-    public String DescribeApproaching() {
-        return name + " приближается к " + this.path.endPoint(); 
+    public String describeApproaching() {
+        return this.name + " " + this.ApproachingMeasure + "приближается к " + this.path.endPoint().name();
     }
 
     @Override

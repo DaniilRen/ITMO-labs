@@ -12,14 +12,9 @@ import model.abstracted.Path;
 import model.abstracted.Speed;
 import model.objects.Planet;
 import model.objects.Rocket;
-import model.objects.Compartment;
-import model.objects.Environment;
 
 import model.characters.Neznaika;
 import model.characters.Ponchik;
-
-import model.exceptions.CharacterNotFoundException;
-import model.exceptions.StoryException;
 
 
 public class TaskStory extends Story {
@@ -53,7 +48,12 @@ public class TaskStory extends Story {
         rocket.setSpeed(this.rocketSpeed);
         rocket.setPath(this.rocketPath);
         rocket.setIsRushing(true);
-        rocket.DescribeRush();
+        rocket.describeRush();
+        neznaika.think(rocket.describeApproaching());
+        rocket.getPath().describe();
+        System.out.println("прошло " + Hour.TWO.toString() + " или " + Hour.THREE.toString());
+        neznaika.lookAt(rocket.getPath().endPoint());
+
         // neznaika.think(rocket.freeze() + " и " + rocket.approaching(moon, Measure.NOT_A_FINGER_HALF));
         
         // System.out.println("Это " + Environment.explains_with(
