@@ -17,12 +17,13 @@ import model.objects.Rocket;
 
 import model.characters.Neznaika;
 import model.characters.Ponchik;
+import model.exceptions.NotUniqueCompartments;
 
 
 public class TaskStory extends Story {
     private final Neznaika neznaika;
     private final Ponchik ponchick;
-    private final Rocket rocket;
+    private Rocket rocket;
     private final Speed rocketSpeed;
     private final Path rocketPath;
     private final Distance pathDistance;
@@ -40,7 +41,9 @@ public class TaskStory extends Story {
         for (String compartmentName: compartmentNames) {
             compartments.add(new Compartment(compartmentName));
         }
-        this.rocket = new Rocket("ракета", compartments);
+        try {
+            this.rocket = new Rocket("ракета", compartments);
+        } catch (NotUniqueCompartments e) {}
 
         this.pathDistance = Distance.FOUR_HUNDRED_THOUSAND;
         this.rocketSpeed = new Speed(Distance.TWELVE, TimeUnit.SECOND);

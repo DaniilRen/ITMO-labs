@@ -1,11 +1,17 @@
 package model.objects;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import model.abstracted.Character;
 import model.abstracted.Feeling;
 import model.abstracted.Lookable;
 import model.abstracted.Speed;
 import model.abstracted.TimeUnit;
+import model.exceptions.CannotDescribeSpeedException;
+import model.exceptions.NotUniqueCompartments;
 import model.abstracted.Path;
 
 public class Rocket implements Character, Lookable {
@@ -15,10 +21,10 @@ public class Rocket implements Character, Lookable {
     private Feeling speedFeeling;
     private Path path;
     private boolean isRushing;
-    private String ApproachingMeasure;
 
-    public Rocket(String name, ArrayList<Compartment> compartments) {
+    public Rocket(String name, ArrayList<Compartment> compartments) throws NotUniqueCompartments {
         this.name = name;
+        this.checkUniqueCompartments(compartments);
         this.compartments = compartments;
     }
 
@@ -32,19 +38,16 @@ public class Rocket implements Character, Lookable {
 
     public void setSpeed(Speed speed) {
         this.speed = speed;
-        this.setSpeedFeeling();
+        this.setSpeedFeeling();;
     }
 
     public void setSpeedFeeling() {
-        if (this.speed.distance().toInteger() > 10 && this.speed.timeUnit() == TimeUnit.SECOND) {
+        if (this.getSpeed().distance().toInteger() > 10 && this.getSpeed().timeUnit() == TimeUnit.SECOND) {
             this.speedFeeling = Feeling.SCARY;
-            this.ApproachingMeasure = "ни на пол пальца не";
         } else {
             this.speedFeeling = Feeling.CALMNESS;
-            this.ApproachingMeasure = "быстро";
         }
     }
-
 
     public boolean getIsRushing() {
         return this.isRushing;
@@ -62,12 +65,32 @@ public class Rocket implements Character, Lookable {
         return this.compartments;
     }
 
+    public void checkUniqueCompartments(List<Compartment> compartments) 
+            throws NotUniqueCompartments {
+        Set<String> types = new HashSet<>();
+        for (Compartment c : compartments) {
+            if (!types.add(c.type())) {
+                throw new NotUniqueCompartments("Duplicate type: " + c.type());
+            }
+        }
+    }
+
     public void describeRush() {
         System.out.println(name + " мчалась со " + this.speedFeeling.toAdjective() + " скоростью " + this.speed.toString());
     }
 
-    public String describeApproaching() {
-        return this.name + " " + this.ApproachingMeasure + "приближается к " + this.path.endPoint().name();
+    public String describeApproaching() throws CannotDescribeSpeedException {
+        if (this.getSpeed() == null || this.getPath() == null) {
+            throw new CannotDescribeSpeedException("you need not set rocket speed and path to get approaching description!");
+        }
+
+        String ApproachingMeasure;
+        if (this.getPath().distance().toInteger() / this.getSpeed().distance().toInteger() < 1000) {
+            ApproachingMeasure = "быстро ";
+        } else {
+            ApproachingMeasure = "ни на пол пальца не ";
+        }
+        return this.name + " " + ApproachingMeasure + "приближается к " + this.path.endPoint().name();
     }
 
     @Override
