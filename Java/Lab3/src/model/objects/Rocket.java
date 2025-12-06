@@ -70,7 +70,7 @@ public class Rocket implements Character, Lookable {
         Set<String> types = new HashSet<>();
         for (Compartment c : compartments) {
             if (!types.add(c.type())) {
-                throw new NotUniqueCompartments("Duplicate type: " + c.type());
+                throw new NotUniqueCompartments("compartments shall have unique 'type' field; got duplicate field: " + c.type());
             }
         }
     }

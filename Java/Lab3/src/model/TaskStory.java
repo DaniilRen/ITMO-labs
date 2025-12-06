@@ -20,39 +20,34 @@ import model.characters.Ponchik;
 import model.exceptions.NotUniqueCompartments;
 
 
-public class TaskStory extends Story {
+public class TaskStory extends Story  {
     private final Neznaika neznaika;
     private final Ponchik ponchick;
-    private Rocket rocket;
+    private final Rocket rocket;
     private final Speed rocketSpeed;
     private final Path rocketPath;
-    private final Distance pathDistance;
-    private final Planet moon;
-    private final Planet earth;
 
-    public TaskStory() {
+    public TaskStory() throws NotUniqueCompartments {
         super();
 
         this.neznaika = new Neznaika();
         this.ponchick = new Ponchik();
-
-        ArrayList<Compartment> compartments = new ArrayList<Compartment>();
-        String[] compartmentNames = {"приборный", "пищевой", "носовой"};
-        for (String compartmentName: compartmentNames) {
-            compartments.add(new Compartment(compartmentName));
-        }
-        try {
-            this.rocket = new Rocket("ракета", compartments);
-        } catch (NotUniqueCompartments e) {}
-
-        this.pathDistance = Distance.FOUR_HUNDRED_THOUSAND;
-        this.rocketSpeed = new Speed(Distance.TWELVE, TimeUnit.SECOND);
-        this.moon = new Planet("Луна");
-        this.earth = new Planet("Земля");
-        this.rocketPath = new Path(this.pathDistance, this.earth, this.moon);
-
         addCharacter(neznaika);
         addCharacter(ponchick);
+
+        this.rocketSpeed = new Speed(Distance.TWELVE, TimeUnit.SECOND);
+        this.rocketPath = new Path(Distance.FOUR_HUNDRED_THOUSAND, new Planet("Луна"), new Planet("Земля"));
+        ArrayList<Compartment> compartments = createCompartments();
+        this.rocket = new Rocket("ракета", compartments);
+    }
+
+    private ArrayList<Compartment> createCompartments() {
+        ArrayList<Compartment> compartments = new ArrayList<>();
+        String[] names = {"приборный", "пищевой", "носовой"};
+        for (String name : names) {
+            compartments.add(new Compartment(name));
+        }
+        return compartments;
     }
 
     @Override
