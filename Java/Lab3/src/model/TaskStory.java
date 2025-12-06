@@ -2,14 +2,16 @@ package model;
 
 import java.util.ArrayList;
 
-import javax.print.DocFlavor.STRING;
-
 import model.abstracted.Distance;
+import model.abstracted.Feeling;
 import model.abstracted.Hour;
 import model.abstracted.Story;
 import model.abstracted.TimeUnit;
+import model.abstracted.Wish;
 import model.abstracted.Path;
 import model.abstracted.Speed;
+import model.abstracted.State;
+import model.objects.Compartment;
 import model.objects.Planet;
 import model.objects.Rocket;
 
@@ -27,12 +29,19 @@ public class TaskStory extends Story {
     private final Planet moon;
     private final Planet earth;
 
-    public TaskStory(Neznaika neznaika, Ponchik ponchick, Rocket rocket) {
+    public TaskStory() {
         super();
 
-        this.neznaika = neznaika;
-        this.ponchick = ponchick;
-        this.rocket = rocket;
+        this.neznaika = new Neznaika();
+        this.ponchick = new Ponchik();
+
+        ArrayList<Compartment> compartments = new ArrayList<Compartment>();
+        String[] compartmentNames = {"приборный", "пищевой", "носовой"};
+        for (String compartmentName: compartmentNames) {
+            compartments.add(new Compartment(compartmentName));
+        }
+        this.rocket = new Rocket("ракета", compartments);
+
         this.pathDistance = Distance.FOUR_HUNDRED_THOUSAND;
         this.rocketSpeed = new Speed(Distance.TWELVE, TimeUnit.SECOND);
         this.moon = new Planet("Луна");
@@ -49,32 +58,25 @@ public class TaskStory extends Story {
         rocket.setPath(this.rocketPath);
         rocket.setIsRushing(true);
         rocket.describeRush();
-        neznaika.think(rocket.describeApproaching());
+        neznaika.setThoughts(rocket.describeApproaching());
+        neznaika.describeThoughts();
         rocket.getPath().describe();
         System.out.println("прошло " + Hour.TWO.toString() + " или " + Hour.THREE.toString());
-        neznaika.lookAt(rocket.getPath().endPoint());
-
-        // neznaika.think(rocket.freeze() + " и " + rocket.approaching(moon, Measure.NOT_A_FINGER_HALF));
-        
-        // System.out.println("Это " + Environment.explains_with(
-        //     "расстояние от " + moon.name() + " до " + earth.name() + " " +
-        //     Measure.VERY_BIG.toString() + " -- " + Measure.APPROXIMATELY.toString() + " " + Distance.PLANET_DISTANCE.toString())
-        //     );
-
-        // System.out.println("При таком " + Measure.HUGE.toString() + " расстоянии скорость " +
-        //     rocket.getSpeed() + " " + Measure.NOT_SO_BIG.toString() + " чтоб ее " + Environment.could_be("было заметить на глаз") +
-        //     ", да еще и " + Environment.located_in(rocket)
-        //     );
-        
-        // System.out.println(Environment.time_went(Hour.TWO) + " или " + Environment.time_went(Hour.THREE));
-        // neznaika.lookAt(moon);
-        // neznaika.couldStopLooking();
-        // moon.attract(neznaika);
-
-        // neznaika.feal("какое-то мучительное посасывание в животе");
-        // neznaika.realise("наступила пора обедать");
-        // neznaika.move_down_to(food_compartment.name());
-        // neznaika.see(ponchick.isSleeping());
-        // neznaika.see(ponchick.chew());
+        neznaika.setObservedObject(rocket.getPath().endPoint());
+        neznaika.describeObserve();
+        neznaika.setFealing(Feeling.HUNGER);
+        neznaika.describeFeeling();
+        neznaika.setWish(Wish.EAT);
+        neznaika.setRealisation(neznaika.isTimeToWish());
+        neznaika.describeRealisation();
+        Compartment foodCompartment = rocket.getCompartments().stream()
+            .filter(c -> c.type().equals("пищевой"))
+            .findFirst().orElse(null);
+        neznaika.setLocation(foodCompartment);
+        neznaika.describeLocation(" спустиля в ");
+        ponchick.setState(State.EATING);
+        // ponchick.setChewingObject(new Food("food"));
+        neznaika.setNoticed(ponchick.describeSleeping() + " и " + ponchick.describeEating());
+        neznaika.describeNotice();
     }
 }

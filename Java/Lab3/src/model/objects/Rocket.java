@@ -58,6 +58,10 @@ public class Rocket implements Character, Lookable {
         return speed;
     }
 
+    public ArrayList<Compartment> getCompartments() {
+        return this.compartments;
+    }
+
     public void describeRush() {
         System.out.println(name + " мчалась со " + this.speedFeeling.toAdjective() + " скоростью " + this.speed.toString());
     }
