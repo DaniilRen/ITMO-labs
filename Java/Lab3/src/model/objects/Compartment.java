@@ -1,6 +1,6 @@
 package model.objects;
 
-import model.abstracted.Location;
+import model.abstracted.interfaces.Location;
 
 public record Compartment (String type) implements Location{
     @Override

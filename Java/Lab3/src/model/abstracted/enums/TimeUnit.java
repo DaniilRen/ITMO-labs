@@ -1,4 +1,4 @@
-package model.abstracted;
+package model.abstracted.enums;
 
 public enum TimeUnit {
     SECOND("сек"),

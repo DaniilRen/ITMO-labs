@@ -1,4 +1,4 @@
-package model.abstracted;
+package model.abstracted.enums;
 
 public enum Wish {
     EAT("поесть"),

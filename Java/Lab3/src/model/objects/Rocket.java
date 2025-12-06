@@ -5,11 +5,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import model.abstracted.Character;
-import model.abstracted.Feeling;
-import model.abstracted.Lookable;
 import model.abstracted.Speed;
-import model.abstracted.TimeUnit;
+import model.abstracted.enums.Feeling;
+import model.abstracted.enums.TimeUnit;
+import model.abstracted.interfaces.Character;
+import model.abstracted.interfaces.Lookable;
 import model.exceptions.CannotDescribeSpeedException;
 import model.exceptions.NotUniqueCompartments;
 import model.abstracted.Path;

@@ -1,8 +1,8 @@
 package model.characters;
 
-import model.abstracted.Eatable;
 import model.abstracted.Person;
-import model.abstracted.State;
+import model.abstracted.enums.State;
+import model.abstracted.interfaces.Eatable;
 
 
 public class Ponchik extends Person {

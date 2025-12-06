@@ -2,15 +2,15 @@ package model;
 
 import java.util.ArrayList;
 
-import model.abstracted.Distance;
-import model.abstracted.Feeling;
-import model.abstracted.Hour;
 import model.abstracted.Story;
-import model.abstracted.TimeUnit;
-import model.abstracted.Wish;
+import model.abstracted.enums.Distance;
+import model.abstracted.enums.Feeling;
+import model.abstracted.enums.Hour;
+import model.abstracted.enums.State;
+import model.abstracted.enums.TimeUnit;
+import model.abstracted.enums.Wish;
 import model.abstracted.Path;
 import model.abstracted.Speed;
-import model.abstracted.State;
 import model.objects.Compartment;
 import model.objects.Planet;
 import model.objects.Rocket;
@@ -36,7 +36,7 @@ public class TaskStory extends Story  {
         addCharacter(ponchick);
 
         this.rocketSpeed = new Speed(Distance.TWELVE, TimeUnit.SECOND);
-        this.rocketPath = new Path(Distance.FOUR_HUNDRED_THOUSAND, new Planet("Луна"), new Planet("Земля"));
+        this.rocketPath = new Path(Distance.FOUR_HUNDRED_THOUSAND, new Planet("Земля"),  new Planet("Луна"));
         ArrayList<Compartment> compartments = createCompartments();
         this.rocket = new Rocket("ракета", compartments);
     }

@@ -2,6 +2,12 @@ package model.abstracted;
 
 import java.util.ArrayList;
 
+import model.abstracted.enums.Feeling;
+import model.abstracted.enums.State;
+import model.abstracted.interfaces.Character;
+import model.abstracted.interfaces.Location;
+import model.abstracted.interfaces.Lookable;
+
 public abstract class Person implements Character, Lookable {
     protected String name;
     protected Feeling feeling;

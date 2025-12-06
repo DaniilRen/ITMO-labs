@@ -1,4 +1,6 @@
 package model.abstracted;
+import model.abstracted.enums.Distance;
+import model.abstracted.enums.Size;
 import model.objects.Planet;
 
 public record Path(Distance distance, Planet startPoint, Planet endPoint, Size distanceLength) {

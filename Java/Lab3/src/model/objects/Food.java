@@ -1,6 +1,6 @@
 package model.objects;
-import model.abstracted.Eatable;
-import model.abstracted.Lookable;
+import model.abstracted.interfaces.Eatable;
+import model.abstracted.interfaces.Lookable;
 
 public record Food (String name) implements Eatable, Lookable {
     @Override

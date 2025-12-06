@@ -1,8 +1,8 @@
 package model.characters;
 
 import model.abstracted.Person;
-import model.abstracted.Wish;
-import model.abstracted.Lookable;
+import model.abstracted.enums.Wish;
+import model.abstracted.interfaces.Lookable;
 import model.objects.Planet;
 
 public class Neznaika extends Person {

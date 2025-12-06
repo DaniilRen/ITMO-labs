@@ -1,8 +1,8 @@
 package model.objects;
 
-import model.abstracted.Location;
-import model.abstracted.Lookable;
 import model.abstracted.Person;
+import model.abstracted.interfaces.Location;
+import model.abstracted.interfaces.Lookable;
 
 
 public record Planet(String name) implements Location, Lookable {

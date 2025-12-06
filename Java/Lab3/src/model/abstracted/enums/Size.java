@@ -1,4 +1,4 @@
-package model.abstracted;
+package model.abstracted.enums;
 
 public enum Size {
     NOT_SO_BIG("не так велико"),
