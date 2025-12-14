@@ -1,0 +1,3 @@
+pandas
+dataframe-image
+openpyxl
