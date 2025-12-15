@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Story {
-    protected List<Person> characters;
+    protected List<Character> characters;
 
     public Story() {
         this.characters = new ArrayList<>();
     }
 
-    public void addCharacter(Person person) {
-        characters.add(person);
+    public void addCharacter(Character character) {
+        characters.add(character);
     }
 
     public abstract void tell();

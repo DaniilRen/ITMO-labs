@@ -1,16 +1,27 @@
 import pandas as pd
 import dataframe_image as dfi
 
-columns = [chr(65 + i) for i in range(len(pd.read_excel('task.xlsm', sheet_name='Лист1', nrows=1).columns))]
+top2 = pd.read_excel(
+    'task.xlsm',
+    sheet_name='Лист1',
+    header=None,
+    nrows=2,
+    usecols='A:Y'
+)
+top2.columns = [chr(65 + i) for i in range(25)]
 
-data = pd.read_excel('task.xlsm', sheet_name='Лист1', skiprows=2, nrows=12, usecols='A:Y', names=columns)
-data_filtered = data.drop(columns=['F']).fillna('')
+data = pd.read_excel(
+    'task.xlsm',
+    sheet_name='Лист1',
+    skiprows=2,
+    nrows=12,
+    usecols='A:Y',
+)
+data.columns = [chr(65 + i) for i in range(25)]
 
-# new_columns = data_filtered.columns.tolist()
-# for i in range(4, len(new_columns)):
-#     new_columns[i] = ''
+full = pd.concat([data, top2], ignore_index=True)
 
-# data_filtered.columns = new_columns
+data_filtered = full.drop(columns=['F']).fillna('')
 
 styled = data_filtered.style.set_table_styles([
     {'selector': 'table', 'props': 'border: 2px solid blue; border-collapse: collapse;'},

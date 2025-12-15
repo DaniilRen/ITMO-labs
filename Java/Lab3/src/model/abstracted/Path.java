@@ -15,9 +15,10 @@ public record Path(Distance distance, Planet startPoint, Planet endPoint, Size d
         this(distance, startPoint, endPoint, distance.toInteger() > 100000 ? Size.HUGE : Size.NOT_SO_BIG);
     }
 
-    public void describe() {
-        System.out.println("расстояние от " + this.startPoint().name() +
+    @Override
+    public String toString() {
+        return "расстояние от " + this.startPoint().name() +
          " до " + this.endPoint().name() + " " + this.distanceLength.toString() + " -- около " +
-         this.distance.toString());
+         this.distance.toString();
     }
 }

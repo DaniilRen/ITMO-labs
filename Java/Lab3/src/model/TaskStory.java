@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import model.abstracted.Story;
 import model.abstracted.enums.Distance;
-import model.abstracted.enums.Feeling;
 import model.abstracted.enums.Hour;
 import model.abstracted.enums.State;
 import model.abstracted.enums.TimeUnit;
@@ -17,7 +16,7 @@ import model.objects.Rocket;
 
 import model.characters.Neznaika;
 import model.characters.Ponchik;
-import model.exceptions.NotUniqueCompartments;
+import model.exceptions.NotUniqueCompartmentsException;
 
 
 public class TaskStory extends Story  {
@@ -27,7 +26,7 @@ public class TaskStory extends Story  {
     private final Speed rocketSpeed;
     private final Path rocketPath;
 
-    public TaskStory() throws NotUniqueCompartments {
+    public TaskStory() throws NotUniqueCompartmentsException {
         super();
 
         this.neznaika = new Neznaika();
@@ -54,27 +53,12 @@ public class TaskStory extends Story  {
     public void tell() {
         rocket.setSpeed(this.rocketSpeed);
         rocket.setPath(this.rocketPath);
-        rocket.setIsRushing(true);
-        rocket.describeRush();
-        neznaika.setThoughts(rocket.describeApproaching());
-        neznaika.describeThoughts();
-        rocket.getPath().describe();
+        neznaika.setLocation(rocket);
         System.out.println("прошло " + Hour.TWO.toString() + " или " + Hour.THREE.toString());
-        neznaika.setObservedObject(rocket.getPath().endPoint());
-        neznaika.describeObserve();
-        neznaika.setFealing(Feeling.HUNGER);
-        neznaika.describeFeeling();
+        neznaika.setObservedObject(rocket.getPath().endPoint());        
         neznaika.setWish(Wish.EAT);
-        neznaika.setRealisation(neznaika.isTimeToWish());
-        neznaika.describeRealisation();
-        Compartment foodCompartment = rocket.getCompartments().stream()
-            .filter(c -> c.type().equals("пищевой"))
-            .findFirst().orElse(null);
-        neznaika.setLocation(foodCompartment);
-        neznaika.describeLocation(" спустиля в ");
+        neznaika.setLocation(new Compartment("пищевой"));
         ponchick.setState(State.EATING);
-        // ponchick.setChewingObject(new Food("food"));
-        neznaika.setNoticed(ponchick.describeSleeping() + " и " + ponchick.describeEating());
-        neznaika.describeNotice();
+        neznaika.setObservedObject(ponchick);
     }
 }

@@ -1,108 +1,279 @@
-@startuml
-title Lab3 Diagram
+@startuml Lab3
+left to right direction
 
-class Main {
-    (+) main() : void;
-}
-
-package model {
-    class TaskStory extends Story {
-        (+) TaskStory() : TaskStory
-        (+) tell() : void
-    }
-}
 
 package model.abstracted {
-    interface Character {
-        getName() : String
+    abstract class Story <<Abstract>> {
+        # characters: List<Character>
+        + Story()
+        + addCharacter(character: Character): void
     }
-    abstract class Person implements Character {
-        (+) Person(String name) : Person
-        (+) getName() : String
-        (+) feal(String message) : void
-        (+) equals(Object o) : boolean
-        (+) hashCode() : int
-        (+) toString() : String
+
+    record Path {
+        - distance: Distance
+        - startPoint: Planet
+        - endPoint: Planet
+        - distanceLength: Size
+        + Path(distance: Distance, startPoint: Planet, endPoint: Planet)
+        + describe(): void
     }
-    enum Distance {
-        Distance(String text) : Distance
-        (+) toString() : String
-    }
-    enum Hour {
-        Hour(String text) : Hour
-        (+) toString() : String
-    }
-    enum Measure {
-        Measure(String text) : Measure
-        (+) toString() : String
-    }
-    abstract class Story {
-        (+) Story() : Story
-        (+) addCharacter(Person person) : void
+    
+    abstract class Character <<Abstract>> {
+        # name: String
+        # state: State
+        # location: Location
+        # observedObject: Lookable
+        + Character(name: String)
+        # describeLocation(): void
+        + setLocation(location: Location): void
+        + setObservedObject(observedObject: Lookable): void
+        + setState(state: State): void
+        + getName(): String
+        + getLocation(): Location
+        + getState(): State
+        + equals(): boolean
+        + hashCode(): int
+        + toString(): String
+    } 
+
+    record Speed {
+        - speed: Speed
+        - timeUnit: TimeUnit
+        + Speed(speed: Speed, timeUnit: TimeUnit)
+        + toString(): String
     }
 }
 
-package model.exceptions {
-    class CharacterNotFoundException extends RuntimeException {
-        (+) CharacterNotFoundException(String message) : CharacterNotFoundException
-        (+) getMessage() : String
+
+package model.abstracted.enums {
+    enum Distance {
+        ONE
+        TWO
+        TWELVE
+        ONE_THOUSAND
+        TWO_THOUSAND
+        FOUR_HUNDRED_THOUSAND
+        - distanceText: String
+        - integerRepresentation: int
+        + Distance(distanceText: String, integerRepresentation: int)
+        + toInteger(): int
+        + toString(): String
     }
-    class StoryException extends Exception {
-        (+) StoryException(String message) : StoryException
-        (+) getMessage() : String
+
+    enum Feeling {
+        JOY
+        SADNESS
+        ANGER
+        HUNGER
+        CALMNESS
+        DELIGHT
+        SCARY
+        - noun: String
+        - adjective: String
+        + Feeling(noun: String, adjective: String)
+        + toAdjective(): String
+        + toNoun(): String
     }
+
+    enum Hour {
+        ONE
+        TWO
+        THREE
+        FOUR
+        FIVE
+        SIX
+        SEVEN
+        EIGHT
+        NINE
+        TEN
+        ELEVEN
+        TWELVE
+        - text: String
+        + Hour(text: String)
+        + toString(): String
+    }
+
+    enum Size {
+        NOT_SO_BIG
+        BIG
+        BIGVERY_BIG
+        HUGE
+        - text: String
+        + Size(text: String)
+        + toString(): String
+    }
+
+    enum State {
+        EATING
+        SLEEPING
+        WALKING
+        - text: String
+        + State(text: String)
+        + toString(): String
+    }
+
+    enum TimeUnit {
+        SECOND
+        MINUTE
+        HOUR
+        - text: String
+        + TimeUnit(text: String)
+        + toString(): String
+    }
+
+    enum Wish {
+        EAT
+        SLEEP
+        REST
+        - text: String
+        - feeling: Feeling
+        + Wish(text: String, feeling: Feeling)
+        + toString(): String
+        + toFeeling(): Feeling
+    }
+}
+
+package model.abstracted.interfaces {
+    interface Eatable <<Interface>> {}
+    interface Lookable <<Interface>> {}
+    interface Location <<Interface>> {}
 }
 
 package model.characters {
-    class Neznaika extends Person {
-        (+) Neznaika() : Neznaika
-        (+) isWishingToEat() : boolean
-        (+) setWishingToEat(boolean wishing) : void
-        (+) lookAt(Object object) : void
-        (+) see(String message) : void
-        (+) couldStopLooking() : void
-        (+) feal(String message) : void
-        (+) think(String message) : void 
-        (+) realise(String message) : void 
-        (+) move_down_to(String message) : void 
+    class Neznaika {
+        - wish: Wish
+        + setLocation(): void
+        - describeRocketSpeed(): void
+        - describeRocketApproaching(): void
+        - couldStopLooking(object: Lookable): String
+        + getWish(): Wish
+        + setWish(wish: Wish): void
+        + setNoticed(noticed: String): void
+        + setObservedObject(): void
+        + describeObserve(): void
+        # describeLocation(): void
     }
-    class Ponchik extends Person {
-        (+) Ponchik() : Ponchik
-        (+) feal(String message) : void
-        (+) setIsEating(boolean eating) : void
-        (+) setIsSleeping(boolean sleeping) : void
-        (+) IsEating()  : boolean
-        (+) isSleeping()  : boolean
-        (+) isWokenUp() : String
-        (+) eat(Measure measure) : String
+
+    class Ponchik {
+        - chewingObject: Eatable
+        + Ponchik()
+        + setChewingObject(object: Eatable): void
+        + getChewingObject(): Eatable
+        - checkState(): void
+        + describeEating(): String
+        + describeSleeping(): String
+        # describeLocation(): void
+
     }
 }
 
 package model.objects {
-    class Rocket implements Character {
-        (+) Rocket(String name, Distance speed) : Rocket
-        (+) getSpeed() : String
-        (+) coverDistance() : String
-        (+) rush(Measure measure) : void
-        (+) freeze() : String
-        (+) approaching(Planet planet, Measure measure) : String
-        (+) getName() : String
-        (+) toString() : String
+    record Compartment {
+        - type: String
+        + toString(): String
     }
-    class Environment {
-        (+) explains_with(String message) : String
-        (+) could_be(String message) : String
-        (+) located_in(Object place) : String
-        (+) time_went(Hour hour) : String
+
+    record Food {
+        - name: String
+        + toString(): String
     }
-    class Compartment {
-        (+) Compartment(String name) : Compartment
+
+    record Planet {
+        - name: String
+        + toString(): String
+        + attractViews(): String
     }
-    class Planet {
-        (+) Planet(String name) : Planet
-        (+) attract(Person person) : void
+
+    class Rocket {
+        - compartments: ArrayList<Compartment>
+        - name: String
+        - speed: Speed
+        - path: Path
+        + Rocket(name: String, compartments: ArrayList<Compartment>)
+        + setPath(path: Path): void
+        + setSpeed(speed: Speed): void
+        + getPath(): Path
+        + getSpeed(): Speed
+        + getCompartments(): ArrayList<Compartment>
+        + checkUniqueCompartments(compartments: ArrayList<Compartment>): void
+        + getName(): String
+        + toString(): String
     }
 }
 
+package model.exceptions {
+    exception StateFieldNotSetException {
+        + StateFieldNotSetException(message: String)
+        + getMessage(): String
+    }
+
+    exception NotUniqueCompartmentsException {
+        + NotUniqueCompartmentsException(message: String)
+        + getMessage(): String
+    }
+}
+
+package model {
+    class TaskStory extends model.abstracted.Story {
+        - neznaika: Neznaika
+        - ponchick: Ponchik
+        - rocket: Rocket
+        - rocketSpeed: Speed
+        - rocketPath: Path
+        + TaskStory()
+        + tell(): void
+        - createCompartments(): ArrayList<Compartment>
+    }
+}
+
+model.abstracted.Story <|-- TaskStory
+
+TaskStory --> Character
+TaskStory *--  Neznaika
+TaskStory *-- Ponchik
+TaskStory *-- Rocket
+TaskStory *-- Speed
+TaskStory *-- Path
+
+Path --> Distance
+Path --> Planet
+
+Lookable <|.. Character
+Lookable <|.. Compartment
+Lookable <|.. Food
+Lookable <|.. Planet
+
+Eatable <|.. Food
+
+Location <|.. Compartment
+Location <|.. Planet
+
+Character <|-- Neznaika
+Character <|-- Ponchik
+Character --> State
+Character --> Location
+
+Speed --> Distance
+Speed --> TimeUnit
+
+Neznaika --> Feeling
+Neznaika --> State
+Neznaika --> Location
+Neznaika --> Wish
+Neznaika --> TimeUnit
+Neznaika --> Planet
+Neznaika --> Rocket
+
+Ponchik --> Feeling
+Ponchik --> State
+Ponchik --> Location
+Ponchik --> Eatable
+Ponchik ..> StateFieldNotSetException 
+
+Rocket --> Compartment
+Rocket --> Path
+Rocket --> Speed
+Rocket --> Location
+Rocket ..> NotUniqueCompartmentsException
 
 @enduml

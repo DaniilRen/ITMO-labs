@@ -5,7 +5,7 @@ public enum State {
     SLEEPING("спит"),
     WALKING("гуляет");
 
-    private String text;
+    private final String text;
 
     State(String text) {
         this.text = text;

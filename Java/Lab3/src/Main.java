@@ -1,5 +1,5 @@
 import model.TaskStory;
-import model.exceptions.NotUniqueCompartments;
+import model.exceptions.NotUniqueCompartmentsException;
 
 
 public class Main {
@@ -7,7 +7,7 @@ public class Main {
         try {
             TaskStory story = new TaskStory();
             story.tell();
-        } catch(NotUniqueCompartments e) {
+        } catch(NotUniqueCompartmentsException e) {
             System.err.println(e.getMessage());
             System.exit(1);
         }

@@ -1,7 +1,7 @@
 package model.exceptions;
 
-public class NotUniqueCompartments extends Exception {
-    public NotUniqueCompartments(String message) {
+public class NotUniqueCompartmentsException extends Exception {
+    public NotUniqueCompartmentsException(String message) {
         super(message);
     }
 

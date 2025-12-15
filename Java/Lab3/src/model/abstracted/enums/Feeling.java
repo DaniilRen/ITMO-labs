@@ -7,7 +7,8 @@ public enum Feeling {
     HUNGER("голод", "голодный"), 
     CALMNESS("спокойствие", "спокойный"),  
     DELIGHT("восторг", "восторженный"),
-    SCARY("страх", "страшный");
+    SCARY("страх", "страшный"),
+    SLEEPY("сонливость", "сонливый");
 
     private String noun;
     private String adjective;
@@ -21,8 +22,7 @@ public enum Feeling {
         return this.adjective;
     }
 
-    @Override
-    public String toString() {
+    public String toNoun() {
         return this.noun;
     }
 }

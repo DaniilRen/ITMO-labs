@@ -10,7 +10,9 @@ public enum Hour {
     SEVEN("семь"),
     EIGHT("восемь"),
     NINE("девять"),
-    TEN("десять");
+    TEN("десять"),
+    ELEVEN("часов"),
+    TWELVE("двенадцать");
 
     private final String text;
 
