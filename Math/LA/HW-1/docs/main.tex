@@ -1,0 +1,181 @@
+\documentclass[a4paper,14pt]{article}
+\usepackage{amsmath}
+\usepackage[russian]{babel}
+\usepackage{xcolor}
+\usepackage[margin=1.3cm]{geometry}
+\usepackage{enumitem}
+
+\begin{document}
+
+\large
+
+\subsection*{\textcolor{blue}{Цель}}
+Изучить и сделать анализ различных методов векторной алгебры, аналитической геометрии, сравнить эти методы для решения задачи на определение принадлежности точки тетраэдру. Рассмотреть варианты расположения этой точки: внутри, снаружи, на грани, на ребре, совпадение с вершиной. Оценить эффективность и применимость каждого исследуемого метода.
+
+\subsection*{\textcolor{blue}{Постановка задачи}}
+Установить, принадлежит ли точка \(P(x, y, z)\) тетраэдра \(ABCD\), который определяется вершинами \(A, B, C, D\). Исследовать случаи:
+
+\begin{enumerate}[nosep, leftmargin=*]
+    \item точка находится внутри тетраэдра
+    \item точка находится на грани тетраэдра
+    \item точка находится на ребре тетраэдра
+    \item точка совпадает с вершиной тетраэдра
+    \item точка находится снаружи тетраэдра
+\end{enumerate}
+
+\subsection*{\textcolor{blue}{Вершины пирамиды}}
+\noindent
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Вершина} & \textbf{Координаты} \\
+\hline
+A & $(1,1,1)$ \\
+\hline
+B & $(2,2,0)$ \\
+\hline
+C & $(0,2,2)$ \\
+\hline
+D & $(2,0,2)$ \\
+\hline
+\end{tabular}
+
+\vspace{1.0em}
+\noindent Тетраэдр не является вырожденным т.к.: \\
+$\overrightarrow{AB} = (1, 1, -1)$ \\
+$\overrightarrow{AC} = (-1, 1, 1)$ \\
+$\overrightarrow{AD} = (1, -1, 1)$
+
+\noindent
+$(\overrightarrow{AB} \times \overrightarrow{AC}) \cdot \overrightarrow{AD} = 
+\begin{vmatrix}
+1 & 1 & -1 \\
+-1 & 1 & 1 \\
+1 & -1 & 1 \\
+\end{vmatrix} = 4$
+
+\vspace{0.8em}
+\noindent
+\[
+V_{ABCD} = \frac{1}{6} \left| (\overrightarrow{AB} \times \overrightarrow{AC}) \cdot \overrightarrow{AD} \right| 
+= \frac{1}{6} \cdot |4| 
+= \frac{2}{3} \neq 0 \quad \Rightarrow \quad \text{тетраэдр задан верно}
+\]
+
+\subsection*{\textcolor{blue}{Методы решения}}
+\subsubsection*{\textcolor{blue}{Метод 1: Метод объёмов (через смешанное произведение)}}
+
+\paragraph{Основная идея}
+Вычисляем объём тетраэдра $ABCD$ и объёмы четырёх тетраэдров с вершиной в точке $P$: $PBCD$, $APCD$, $ABPD$, $ABCP$ с помощью смешанного произведения векторов. Сравниваем сумму объёмов $V_{PBCD} + V_{APCD} + V_{ABPD} + V_{ABCP}$ с объёмом $V_{ABCD}$. Каждый объём должен быть больше 0.
+
+\paragraph{Описание математической реализации}
+Метод основан на геометрическом свойстве: точка $P$ принадлежит тетраэдру $ABCD$ тогда и только тогда, когда сумма объёмов четырёх тетраэдров с общей вершиной $P$ равна объёму исходного тетраэдра.
+
+\begin{enumerate}[leftmargin=*, itemsep=0.5em]
+
+
+    \item \textbf{Точка внутри тетраэдра} \\
+    Возьмём точку $P\left(\frac{5}{4}, \frac{5}{4}, \frac{5}{4}\right)$ (центроид)
+    
+    Вычисляем векторы:
+    \begin{align*}
+    \overrightarrow{AP} &= \left(\frac{1}{4},\ \frac{1}{4},\ \frac{1}{4}\right) \\
+    \overrightarrow{PB} &= \left(\frac{3}{4},\ \frac{3}{4},\ -\frac{5}{4}\right) \\
+    \overrightarrow{PC} &= \left(-\frac{5}{4},\ \frac{3}{4},\ \frac{3}{4}\right) \\
+    \overrightarrow{PD} &= \left(\frac{3}{4},\ -\frac{5}{4},\ \frac{3}{4}\right) \\
+    \overrightarrow{AB} &= \left(1,\ 1,\ -1\right) \\
+    \overrightarrow{AC} &= \left(-1,\ 1,\ 1\right) \\
+    \overrightarrow{AD} &= \left(1,\ -1,\ 1\right)
+    \end{align*}
+    
+    Вычисляем объёмы:
+    \begin{align*}
+    V_{PBCD} &= \frac{1}{6} \left| 
+    \begin{vmatrix}
+    \frac{3}{4} & \frac{3}{4} & -\frac{5}{4} \\
+    -\frac{5}{4} & \frac{3}{4} & \frac{3}{4} \\
+    \frac{3}{4} & -\frac{5}{4} & \frac{3}{4}
+    \end{vmatrix} \right| = \frac{1}{6} > 0 \\
+    V_{APCD} &= \frac{1}{6} \left| 
+    \begin{vmatrix}
+    \frac{1}{4} & \frac{1}{4} & \frac{1}{4} \\
+    -1 & 1 & 1 \\
+    1 & -1 & 1
+    \end{vmatrix} \right| = \frac{1}{6} > 0  \\
+    V_{ABPD} &= \frac{1}{6} \left| 
+    \begin{vmatrix}
+    1 & 1 & -1 \\
+    \frac{1}{4} & \frac{1}{4} & \frac{1}{4} \\
+    1 & -1 & 1
+    \end{vmatrix} \right| = \frac{1}{6} > 0  \\
+    V_{ABCP} &= \frac{1}{6} \left| 
+    \begin{vmatrix}
+    1 & 1 & -1 \\
+    -1 & 1 & 1 \\
+    \frac{1}{4} & \frac{1}{4} & \frac{1}{4}
+    \end{vmatrix} \right| = \frac{1}{6} > 0 
+    \end{align*}
+    
+    Проверяем: $V_{PBCD} + V_{APCD} + V_{ABPD} + V_{ABCP} = \frac{1}{6} + \frac{1}{6} + \frac{1}{6} + \frac{1}{6} = \frac{4}{6} = \frac{2}{3} = V_{ABCD}$
+    
+
+    \item \textbf{Точка на грани (правильный пример)} \\
+    Точка $P$ = $\alpha$$A$ + $\beta$$B$ + $\gamma$$C$ в грани $(ABC)$ \\
+    $\alpha$ + $\beta$ + $\gamma$ = 1  \\  Тогда возьмём $\alpha$=0.4, $\beta$=0.3, $\gamma$=0.3 \\  $\alpha$ > 0,  $\beta$ > 0,  $\gamma$ > 0 \\
+    $P(1, 1.6, 1)$ на грани $ABC$ (получена как $P = 0.4A + 0.3B + 0.3C$)
+    
+    Вычисляем векторы:
+    \begin{align*}
+    \overrightarrow{AP} &= (0,\ 0.6,\ 0) \\
+    \overrightarrow{PB} &= (1,\ 0.4,\ -1) \\
+    \overrightarrow{PC} &= (-1,\ 0.4,\ 1) \\
+    \overrightarrow{PD} &= (1,\ -1.6,\ 1) \\
+    \overrightarrow{AB} &= (1,\ 1,\ -1) \\
+    \overrightarrow{AC} &= (-1,\ 1,\ 1) \\
+    \overrightarrow{AD} &= (1,\ -1,\ 1)
+    \end{align*}
+    
+    Вычисляем объёмы:
+    \begin{align*}
+    V_{PBCD} &= \frac{1}{6} \left| 
+    \begin{vmatrix}
+    1 & 0.4 & -1 \\
+    -1 & 0.4 & 1 \\
+    1 & -1.6 & 1
+    \end{vmatrix} \right| > 0 \\
+    V_{APCD} &= \frac{1}{6} \left| 
+    \begin{vmatrix}
+    0 & 0.6 & 0 \\
+    -1 & 1 & 1 \\
+    1 & -1 & 1
+    \end{vmatrix} \right| > 0 \\
+    V_{ABPD} &= \frac{1}{6} \left| 
+    \begin{vmatrix}
+    1 & 1 & -1 \\
+    0 & 0.6 & 0 \\
+    1 & -1 & 1
+    \end{vmatrix} \right| > 0 \\
+    V_{ABCP} &= \frac{1}{6} \left| 
+    \begin{vmatrix}
+    1 & 1 & -1 \\
+    -1 & 1 & 1 \\
+    0 & 0.6 & 0
+    \end{vmatrix} \right| = 0 \quad \text{(точка в плоскости ABC)}
+    \end{align*}
+
+    Проверяем: $V_{PBCD} + V_{APCD} + V_{ABPD} + 0 = V_{ABCD}$
+
+
+
+
+
+    
+
+    \item \textbf{Точка на грани тетрадэдра} \\
+    Точка $P$ = $\alpha$$A$ + $\beta$$B$ + $\gamma$$C$ в грани $(ABC)$ \\
+    $\alpha$ + $\beta$ + $\gamma$ = 1  \\  Тогда $\alpha$=0.2, $\beta$=0.3, $\gamma$=0.5 \\  $\alpha$ > 0,  $\beta$ > 0,  $\gamma$ > 0
+    
+
+\end{enumerate}
+
+\end{document}
