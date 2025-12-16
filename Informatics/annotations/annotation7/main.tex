@@ -1,0 +1,83 @@
+%2025_Шаблон аннотации (.tex)
+\documentclass[12pt]{article}
+\pagestyle{empty}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[top=1cm,left=1cm,right=2cm, bottom=1cm]{geometry}
+\usepackage{tabularx}% http://ctan.org/pkg/tabularx
+%\usepackage{hyperref}
+\begin{document}
+
+\begin{center}
+\quad Университет ИТМО, факультет программной инженерии и компьютерной техники \\
+\quad Двухнедельная отчётная работа по «Информатике»: аннотация к статье\\
+\end{center}
+
+\begin{tabular}{
+	|p{\dimexpr.1\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 1
+	|p{\dimexpr.1\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 2
+	|p{\dimexpr.47\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 3
+	|p{\dimexpr.13\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 4
+	|p{\dimexpr.1\linewidth-2\tabcolsep-1.3333\arrayrulewidth}% column 5
+	|p{\dimexpr.1\linewidth-2\tabcolsep-1.3333\arrayrulewidth}|% column 6
+	}
+	\hline
+	\centering\small{Дата прошедшей лекции} & \centering\small{Номер прошедшей лекции} & \centering\small{Название статьи/главы книги/видеолекции} & \centering\small{Дата публикации} & \centering\small{Размер статьи} & \centering\arraybackslash \small{Дата сдачи} \\ 
+	\hline
+	\centering 10.09.25 & \centering 1 & Использование изменения системы отсчета для улучшения результатов анализа с помощью закона бенфорда & \centering 31.03.2025 & \centering 1208 & 24.09.25  \\
+	\hline
+	\centering 24.09.25 & \centering 2 & Метод регенерационного блочного кодирования & \centering 13.10.2023 & \centering 3356 & 08.10.25  \\
+	\hline
+	\centering 08.10.25 & \centering 3 & Многоцелевая фильтрация текста с использованием регулярных выражений & \centering 10.06.2024 & \centering 2124 & 05.11.25  \\
+	\hline
+	\centering 22.10.25 & \centering 4 & Формат PARQUET: Обзор структуры и методы оптимизации для высокой производительности в распределённых системах & \centering 11.04.2025 & \centering 3651 & 05.11.25  \\
+	\hline
+	\centering 05.11.25 & \centering 5 & Классификация определений в математических LaTeX статьях & \centering 17.05.2024 & \centering 3471 & 22.11.25 \\
+	\hline
+	\centering 19.11.25 & \centering 6 & Способ синтеза интерактивных образовательных ресурсов формата PDF с применением LuaLaTeX & \centering 11.02.2023 & \centering 2547 & 22.11.25 \\
+	\hline
+	\centering 03.12.25 & \centering 7 & Разработка через тестирование (TDD) & \centering 10.08.2023 & \centering 1676 & 18.12.25 \\
+\hline
+
+\hline
+\end{tabular}
+
+\begin{center}
+\quad Выполнил(а) \underline{\hspace{1.5cm}Бых Даниил Максимович\hspace{1.5cm}}, № группы \underline{ P3109 }, оценка \underline{\hspace{2cm}}
+\end{center}
+
+\begin{tabularx}{\textwidth} { 
+	| >{\raggedright\arraybackslash}X|} \hline
+		\textbf{Прямая полная ссылка на источник или сокращённая ссылка} \\
+		\url{https://cyberleninka.ru/article/n/razrabotka-cherez-testirovanie-tdd/viewer}
+		\smallskip\\
+		\hline
+		\textbf{Теги, ключевые слова или словосочетания}\\
+		tdd, разработка через тестировение, рефакторинг, методология разработки
+		\smallskip\\
+		\hline
+		\textbf{Перечень фактов, упомянутых в статье}\\
+		1) TDD (Test Driven Development, «разработка через тестирование») - методология, при которой сначала пишутся тесты на новый функционал, а затем код. \\
+		2) Тестирование может быть ручным и автоматизированным. \\
+		3) Цикл TDD: создать тест для нового функционала, убедиться, что тест падает, написать реализацию, снова запустить тесты.\\
+		4) «Чистый тест» независим от других тестов и быстро воспроизводимость в любой среде. \\
+		\hline
+		\textbf{Позитивные следствия и/или достоинства описанной в статье технологии}\\
+		1) Повышение стабильности и качества кода. \\
+		2) Упрощение поддержки и рефакторинга. \\
+		3) Сокращение объёма ручного тестирования и времени на тестирование в целом за счёт автоматизации. \\
+		\hline
+		\textbf{Негативные следствия и/или достоинства описанной в статье технологии}\\
+		1) TDD применим не всегда. \\
+		2) Для применения TDD требуется дополнительное время и усилия на написание и поддержку тестов,. \\
+		3) Есть риск, что тесты будут подстраиваться не под реальные требования, а под текущую реализацию. \\
+		\hline
+		\textbf{Ваши замечания, пожелания преподавателю или анекдот о программистах}\\
+		С наступающим, Павел Валерьевич!
+		\bigskip\\
+		\hline
+		
+\end{tabularx}
+
+
+\end{document}
