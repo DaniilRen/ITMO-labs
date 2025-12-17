@@ -1,3 +1,4 @@
 # ignore latex temp files except output pdf
 **/latex_result/*
 !**/latex_result/*.pdf
+.venv
