@@ -30,13 +30,13 @@ def set_blue_borders(x):
     side_cols_left_right = ['A', 'B', 'C', 'Y']
     for col in side_cols_left_right:
         if col in x.columns:
-            mask = ~x.index.isin([0, 1, 2])
-            for idx in x.index[mask]:
-                current_style = styles.loc[idx, col]
-                if current_style:
-                    styles.loc[idx, col] = f"{current_style}; border-left: 2px solid blue !important; border-right: 2px solid blue !important"
-                else:
-                    styles.loc[idx, col] = 'border-left: 2px solid blue !important; border-right: 2px solid blue !important'
+            for idx in x.index:
+                if idx not in (0, 1, 2): # do not draw for 0-2 rows
+                    current_style = styles.loc[idx, col]
+                    if current_style:
+                        styles.loc[idx, col] = f"{current_style}; border-left: 2px solid blue !important; border-right: 2px solid blue !important"
+                    else:
+                        styles.loc[idx, col] = 'border-left: 2px solid blue !important; border-right: 2px solid blue !important'
 
     if 'E' in x.columns:
         mask = ~x.index.isin([0, 1, 2])
@@ -46,6 +46,7 @@ def set_blue_borders(x):
                 styles.loc[idx, 'E'] = f"{current_style}; border-right: 2px solid blue !important"
             else:
                 styles.loc[idx, 'E'] = 'border-right: 2px solid blue !important'
+
 
     return styles
 
