@@ -462,27 +462,29 @@ tabsize=2
 
     \newpage
     \Section{Ход работы}
+    \Subsection{Исходная программа}
+    \noindent
     \begin{tabularx}{\textwidth}{|c|c|c|X|}
         \hline
         \textbf{Адрес} & \textbf{Код команды} & \textbf{Мнемоника} & \textbf{Комментарии} \\
         \hline
-        176 & 0200 & - & переменная A \\
+        176 & 0200 & - & Итоговый результат A \\
         \hline
-        177 & 2182 & - & переменная B \\
+        177 & 2182 & - & Промежуточный результат P \\
         \hline
         178 & 0200 & CLA & Очистить аккумулятор \newline AC $\to$ 0 \\
         \hline
-        179 & 0280 & NOT & Инвертировать содержимое аккумулятора \newline (\^{}AC) $\to$ AC \\
+        179 & 0280 & NOT & Инвертировать аккумулятор \newline (\^{}AC) $\to$ AC \\
         \hline
         17A & 2182 & AND 182 & AC $\&$ D $\to$ AC \\
         \hline
         17B & 3181 & OR 181 & AC $\|$ C $\to$ AC \\
         \hline
-        17C & E177 & ST 177 & AC $\to$ 177 \\
+        17C & E177 & ST 177 & AC $\to$ P \\
         \hline
         17D & A183 & LD 183 & E $\to$ AC \\
         \hline
-        17E & 4177 & ADD 177 & AC + B $\to$ AC \\
+        17E & 4177 & ADD 177 & AC + P $\to$ AC \\
         \hline
         17F & E176 & ST 176 & AC $\to$ A \\
         \hline
@@ -495,23 +497,161 @@ tabsize=2
         183 & 0100 & - & переменная E \\
         \hline
     \end{tabularx}
+
+\Subsection{Описание исходной программы}
+\begin{itemize}
+    \item P = (1111.1111.1111.1111 $\&$ D) $\|$ C = D $\|$ C
+    \item R = P + E = (1111.1111.1111.1111 $\&$ D) $\|$ C + E = D $\|$ C + E
+\end{itemize}
+\noindent
+\textbf{Таблица трассировки} \\ \\
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{0.8cm}|>{\centering\arraybackslash}p{1.4cm}|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{1.2cm}|}
+\hline
+\textbf{Адр} & \textbf{Знач} & \textbf{IP} & \textbf{CR} & \textbf{AR} & \textbf{DR} & \textbf{SP} & \textbf{BR} & \textbf{AC} & \textbf{PS} & \textbf{NZVC} & \textbf{Адр} & \textbf{Знач} \\
+\hline
+176 & 0200 & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
+\hline
+177 & 2182 & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
+\hline
+178 & +0200 & 178 & 0000 & 000 & 0000 & 000 & 0000 & 0000 & 004 & 0100 & $-$ & $-$ \\
+\hline
+178 & 0200 & 179 & 0200 & 178 & 0200 & 000 & 0178 & 0000 & 004 & 0100 & $-$ & $-$ \\
+\hline
+179 & 0280 & 17A & 0280 & 179 & 0280 & 000 & 0179 & FFFF & 008 & 1000 & $-$ & $-$ \\
+\hline
+17A & 2182 & 17B & 2182 & 182 & 0100 & 000 & 017A & 0100 & 000 & 0000 & $-$ & $-$ \\
+\hline
+17B & 3181 & 17C & 3181 & 181 & 3181 & 000 & CE7E & 3181 & 000 & 0000 & $-$ & $-$ \\
+\hline
+17C & E177 & 17D & E177 & 177 & 3181 & 000 & 017C & 3181 & 000 & 0000 & 17 & 3181 \\
+\hline
+17D & A183 & 17E & A183 & 183 & 0100 & 000 & 017D & 0100 & 000 & 0000 & $-$ & $-$ \\
+\hline
+17E & 4177 & 17F & 4177 & 177 & 3181 & 000 & 017E & 3281 & 000 & 0000 & $-$ & $-$ \\
+\hline
+17F & E176 & 180 & E176 & 176 & 3281 & 000 & 017F & 3281 & 000 & 0000 & 176 & 3281 \\
+\hline
+180 & 0100 & 181 & 0100 & 180 & 0100 & 000 & 0180 & 3281 & 000 & 0000 & $-$ & $-$ \\
+\hline
+181 & 3181 & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
+\hline
+182 & 0100 & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
+\hline
+183 & 0100 & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
+\hline
+\end{tabularx}
+
+
+    \Subsection{Вариант с меньшим числом команд}
+    \noindent
+    \begin{tabularx}{\textwidth}{|c|c|c|X|}
+        \hline
+        \textbf{Адрес} & \textbf{Код команды} & \textbf{Мнемоника} & \textbf{Комментарии} \\
+        \hline
+        176 & 0200 & - & Итоговый результат A \\
+        \hline
+        177 & 0100 & - & переменная B \\
+        \hline
+        178 & 3181 & - & переменная C \\
+        \hline
+        179 & 0100 & - & переменная D \\
+        \hline
+        17A & 2177 & AND 177 & AC $\&$ B $\to$ AC \\
+        \hline
+        17B & 3178 & OR 178 & AC $\|$ C $\to$ AC \\
+        \hline
+        17C & 4179 & ADD 183 & AC + D $\to$ AC \\
+        \hline
+        17D & E176 & ST 176 & AC $\to$ A \\
+        \hline
+        17E & 0100 & HLT & Остановка программы \\
+        \hline
+    \end{tabularx}
+
+    \Subsection{Получившаяся программа}
+    \noindent
+    176: 0200 \\
+    177: 0100 \\
+    178: 3181 \\
+    179: 0100 \\
+    17A: + 2177 \\
+    17B: 3178 \\
+    17C: 4179 \\
+    17D: E176 \\
+    17E: 0100 \\
+
+    \Subsection{Описание получившейся программы}
+    \begin{itemize}
+        \item R = (B $\|$ C) + D \\
+    \end{itemize}
+
+    \Subsection{ОПИ и ОДЗ}
+    \begin{itemize}
+        \item R - знаковое, 16-ти разрядное число. $2^{-15}$ $\leq$ R $\leq$ $2^{15} - 1$ 
+        \item B, C - набор из 16 однобитовых логически значений, \\
+            (B $\|$ C) - знаковое, 16-ти разрядное число. \\
+            \begin{align}
+            \begin{cases}
+            2^{-14} \leq (B \| C) \cdot D \leq 2^{14} \\
+            B_{15} = 0, \quad C_{15} = 0 \\
+            B_i, C_i \in \{0, 1\}, \quad 0 \leq i \leq 14
+            \end{cases}
+            \\
+            \begin{cases}
+            2^{14} \leq D \leq 2^{15}-1 \\
+            B_{15} = 1, \quad C_{15} = 1 \\
+            B_i, C_i \in \{0, 1\}, \quad 0 \leq i \leq 14
+            \end{cases}
+            \\
+            \begin{cases}
+            -2^{15} \leq D \leq -2^{14}-1 \\
+            B_{15} = 0,\ C_{15} = 0 \\
+            \quad \lor\ B_{15} = 1,\ C_{15} = 0 \\
+            \quad \lor\ B_{15} = 0,\ C_{15} = 1 \\
+            B_i, C_i \in \{0, 1\}, \quad 0 \leq i \leq 14
+            \end{cases}
+            \end{align}
+
+
+
+        \item D - знаковое, 16-ти разрядное число. $2^{-15}$ $\leq$ D $\leq$ $2^{15} - 1$ 
+    \end{itemize}
+    
+    \noindent
+    \textbf{Таблица трассировки} \\ \\
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{0.8cm}|>{\centering\arraybackslash}p{1.4cm}|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{1.2cm}|}
+\hline
+\textbf{Адр} & \textbf{Знач} & \textbf{IP} & \textbf{CR} & \textbf{AR} & \textbf{DR} & \textbf{SP} & \textbf{BR} & \textbf{AC} & \textbf{PS} & \textbf{NZVC} & \textbf{Адр} & \textbf{Знач} \\
+\hline
+176 & 0200 & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
+\hline
+177 & 0100 & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
+\hline
+178 & 3181 & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
+\hline
+179 & 0100 & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
+\hline
+17A & 2177 & 17A & 0000 & 000 & 0000 & 000 & 0000 & 0000 & 004 & 0100 & $-$ & $-$ \\
+\hline
+17A & 2177 & 17B & 2177 & 177 & 0100 & 000 & 017A & 0000 & 004 & 0100 & $-$ & $-$ \\
+\hline
+17B & 3178 & 17C & 3178 & 178 & 3181 & 000 & CE7E & 3181 & 000 & 0000 & $-$ & $-$ \\
+\hline
+17C & 4179 & 17D & 4179 & 179 & 0100 & 000 & 017C & 3281 & 000 & 0000 & $-$ & $-$ \\
+\hline
+17D & E176 & 17E & E176 & 176 & 3281 & 000 & 017D & 3281 & 000 & 0000 & 176 & 3281 \\
+\hline
+17E & 0100 & 17F & 0100 & 17E & 0100 & 000 & 017E & 3281 & 000 & 0000 & $-$ & $-$ \\
+\hline
+\end{tabularx}
+
     \newpage
 
     \Section{Вывод}
-        В процессе выполнения лабораторной работы по информатике я вспомнил методы перевода чисел между различными системами счисления \cite{1}, а также ознакомился и научился работать с незнакомыми мне раннее системами счисления Бергмана, фибоначчиевой и факториальной \cite{2}.
+        В процессе выполнения лабораторной работы я познакомился со структурой БЭВМ, узнал, как устроены и связаны его основные элементы, научился определять ОДЗ. Узнал структуру и виды команд, способы представления данных в БЭВМ \cite{2}.
     \newpage
-%<<<<<<<<<<<<<<<<<<<<<< КОД РАБОТЫ <<<<<<<<<<<<<<<<<<<<<<<<
 
-
-%>>>>>>>>>>>>>>>> СПИСОК ЛИТЕРАТУРЫ >>>>>>>>>>>>>>>>>>>>>>>
-    \include{biblist}  % Для соответсвия гост, придется доработать. Нужен файл .bib
-%<<<<<<<<<<<<<<<<<<<< СПИСОК ЛИТЕРАТУРЫ <<<<<<<<<<<<<<<<<<<
-
-    % \Section{Список использованных источников}
-    % \begin{thebibliography}{}
-    %     \bibitem{1}Орлов С. А., Цилькер Б. Я. Организация ЭВМ и систем: Учебник для вузов. 2-е изд. – СПб.: Питер, 2011. – 688 с.: ил., Приложение А «Арифметические основы вычислительных машин». URL: \url{https://bit.ly/4dzgo3u} (Дата обращения: 10.09.25) \\
-    %     \bibitem{2}Алексеев Е.Г., Богатырев С.Д. Информатика. Мультимедийный электронный учебник. Раздел 3 «Системы счисления». URL: \url{http://inf.e-alekseev.ru/text/Schisl.html} (Дата обращения: 10.09.25)
-    % \end{thebibliography}
-    \end{document}
-%<<<<<<<<<<<<<<<< ,,,,,,,,,,,,,,,,,,,,,,, <<<<<<<<<<<<<<<<<
-%<<<<<<<<<<<<<<<<<<< СОДЕРЖИМОЕ ОТЧЕТА <<<<<<<<<<<<<<<<<<<<
+\include{biblist}  % Для соответсвия гост, придется доработать. Нужен файл .bib
+\end{document}
