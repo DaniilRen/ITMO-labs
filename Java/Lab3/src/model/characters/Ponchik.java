@@ -4,6 +4,7 @@ import model.abstracted.Character;
 import model.abstracted.enums.State;
 import model.abstracted.interfaces.Eatable;
 import model.exceptions.StateFieldNotSetException;
+import model.objects.Food;
 
 
 public class Ponchik extends Character {
@@ -15,26 +16,17 @@ public class Ponchik extends Character {
 
     @Override
     protected void describeLocation() {
-        System.out.println(name + " находился в " + this.location);
+        System.out.println(name + " гулял в " + this.location);
     }
 
-    public String describeSleeping() {
+    public String describeState() {
         this.checkState();
-        if (this.state.equals(State.SLEEPING)) {
-            return name + " еще не проснулся";
-        }
-        return name + " уже проснулся";
-    }
-
-    public String describeEating() {
-        this.checkState();
-        if (this.getState().equals(State.EATING)) {
-            if (this.chewingObject == null) {
-                return this.getName() + " " + State.EATING + " что-то";
-            }
-            return this.getName() + " " + State.EATING + " " + this.getChewingObject();
-        }
-        return this.getName() + " ничего не ест";
+        String eating = this.getState().equals(State.EATING) ? 
+            State.EATING + " " + this.getChewingObject() 
+            : "ничего не ест";
+        return this.state.equals(State.SLEEPING) ? 
+            this.getName() + " еще не проснулся" : 
+            this.getName() + " уже проснулся" + " и " + eating;
     }
 
     private void checkState() {
@@ -48,6 +40,6 @@ public class Ponchik extends Character {
     }
 
     public Eatable getChewingObject() {
-        return this.chewingObject;
+        return this.chewingObject == null ? new Food("что-то") : this.chewingObject;
     }
 }

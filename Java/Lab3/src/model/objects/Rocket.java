@@ -45,9 +45,9 @@ public class Rocket implements Lookable, Location {
 
     public void checkUniqueCompartments(ArrayList<Compartment> compartments) 
             throws NotUniqueCompartmentsException {
-        Set<String> types = new HashSet<>();
+        Set<String> compartmentNames = new HashSet<>();
         for (Compartment c : compartments) {
-            if (!types.add(c.type())) {
+            if (!compartmentNames.add(c.type())) {
                 throw new NotUniqueCompartmentsException("compartments shall have unique 'type' field; got duplicate field: " + c.type());
             }
         }

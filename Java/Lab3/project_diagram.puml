@@ -3,7 +3,7 @@ left to right direction
 
 
 package model.abstracted {
-    abstract class Story <<Abstract>> {
+    abstract class Story {
         # characters: List<Character>
         + Story()
         + addCharacter(character: Character): void
@@ -13,12 +13,12 @@ package model.abstracted {
         - distance: Distance
         - startPoint: Planet
         - endPoint: Planet
-        - distanceLength: Size
+        - distanceDescription: DistanceDescription
         + Path(distance: Distance, startPoint: Planet, endPoint: Planet)
-        + describe(): void
+        + toString(): String
     }
     
-    abstract class Character <<Abstract>> {
+    abstract class Character {
         # name: String
         # state: State
         # location: Location
@@ -37,9 +37,9 @@ package model.abstracted {
     } 
 
     record Speed {
-        - speed: Speed
+        - distance: Distance
         - timeUnit: TimeUnit
-        + Speed(speed: Speed, timeUnit: TimeUnit)
+        + Speed(distance: Distance, timeUnit: TimeUnit)
         + toString(): String
     }
 }
@@ -65,14 +65,10 @@ package model.abstracted.enums {
         SADNESS
         ANGER
         HUNGER
-        CALMNESS
         DELIGHT
-        SCARY
-        - noun: String
-        - adjective: String
-        + Feeling(noun: String, adjective: String)
-        + toAdjective(): String
-        + toNoun(): String
+        - text: String
+        + Feeling(text: String)
+        + toString(): String
     }
 
     enum Hour {
@@ -93,13 +89,21 @@ package model.abstracted.enums {
         + toString(): String
     }
 
-    enum Size {
-        NOT_SO_BIG
+    enum DistanceDescription {
+        LITTLE
         BIG
-        BIGVERY_BIG
         HUGE
         - text: String
-        + Size(text: String)
+        + DistanceDescription(text: String)
+        + toString(): String
+    }
+
+    enum SpeedDescription {
+        CALM
+        SCARY
+        STRANGE
+        - text: String
+        + SpeedDescription(text: String)
         + toString(): String
     }
 
@@ -134,9 +138,9 @@ package model.abstracted.enums {
 }
 
 package model.abstracted.interfaces {
-    interface Eatable <<Interface>> {}
-    interface Lookable <<Interface>> {}
-    interface Location <<Interface>> {}
+    interface Eatable {}
+    interface Lookable {}
+    interface Location {}
 }
 
 package model.characters {
@@ -160,10 +164,8 @@ package model.characters {
         + setChewingObject(object: Eatable): void
         + getChewingObject(): Eatable
         - checkState(): void
-        + describeEating(): String
-        + describeSleeping(): String
+        + describeState(): String
         # describeLocation(): void
-
     }
 }
 
@@ -211,6 +213,11 @@ package model.exceptions {
         + NotUniqueCompartmentsException(message: String)
         + getMessage(): String
     }
+
+    exception EmptyParamsException {
+        + EmptyParamsException(message: String)
+        + getMessage(): String
+    }
 }
 
 package model {
@@ -229,7 +236,7 @@ package model {
 model.abstracted.Story <|-- TaskStory
 
 TaskStory --> Character
-TaskStory *--  Neznaika
+TaskStory *-- Neznaika
 TaskStory *-- Ponchik
 TaskStory *-- Rocket
 TaskStory *-- Speed
@@ -263,6 +270,7 @@ Neznaika --> Wish
 Neznaika --> TimeUnit
 Neznaika --> Planet
 Neznaika --> Rocket
+Neznaika --> EmptyParamsException
 
 Ponchik --> Feeling
 Ponchik --> State

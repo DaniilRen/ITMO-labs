@@ -13,6 +13,7 @@ import model.abstracted.Speed;
 import model.objects.Compartment;
 import model.objects.Planet;
 import model.objects.Rocket;
+import model.objects.Food;
 
 import model.characters.Neznaika;
 import model.characters.Ponchik;
@@ -42,7 +43,7 @@ public class TaskStory extends Story  {
 
     private ArrayList<Compartment> createCompartments() {
         ArrayList<Compartment> compartments = new ArrayList<>();
-        String[] names = {"приборный", "пищевой", "носовой"};
+        String[] names = {"приборный", "пищевой", "спальный"};
         for (String name : names) {
             compartments.add(new Compartment(name));
         }
@@ -57,8 +58,8 @@ public class TaskStory extends Story  {
         System.out.println("прошло " + Hour.TWO.toString() + " или " + Hour.THREE.toString());
         neznaika.setObservedObject(rocket.getPath().endPoint());        
         neznaika.setWish(Wish.EAT);
-        neznaika.setLocation(new Compartment("пищевой"));
         ponchick.setState(State.EATING);
+        // ponchick.setChewingObject(new Food("some food"));
         neznaika.setObservedObject(ponchick);
     }
 }

@@ -1,11 +1,13 @@
 package model.characters;
 
 import model.abstracted.Character;
-import model.abstracted.enums.Feeling;
 import model.abstracted.enums.TimeUnit;
+import model.abstracted.enums.SpeedDescription;
 import model.abstracted.enums.Wish;
 import model.abstracted.interfaces.Lookable;
+import model.exceptions.EmptyParamsException;
 import model.abstracted.interfaces.Location;
+import model.objects.Compartment;
 import model.objects.Planet;
 import model.objects.Rocket;
 
@@ -33,13 +35,16 @@ public class Neznaika extends Character {
     }
 
     private void describeRocketSpeed(Rocket rocket) {
-        Feeling speedFeeling;
-        if (rocket.getSpeed().distance().toInteger() > 10 && rocket.getSpeed().timeUnit() == TimeUnit.SECOND) {
-            speedFeeling = Feeling.SCARY;
-        } else {
-            speedFeeling = Feeling.CALMNESS;
+        if (rocket.getSpeed() == null || rocket.getPath() == null) {
+            throw new EmptyParamsException("you should specify rocket`s path and speed");
         }
-        System.out.println(rocket.getName() + " мчалась со " + speedFeeling.toAdjective() + " скоростью " + rocket.getSpeed().toString());
+        SpeedDescription speedDescription;
+        if (rocket.getSpeed().distance().toInteger() > 10 && rocket.getSpeed().timeUnit() == TimeUnit.SECOND) {
+            speedDescription = SpeedDescription.SCARY;
+        } else {
+            speedDescription = SpeedDescription.CALM;
+        }
+        System.out.println(rocket.getName() + " мчалась со " + speedDescription.toString() + " скоростью " + rocket.getSpeed().toString());
     }
 
     private void describeRocketApproaching(Rocket rocket) {
@@ -54,8 +59,13 @@ public class Neznaika extends Character {
 
     public void setWish(Wish wish) {
         this.wish = wish;
-        System.out.println(this.getName() + " почувстовал " + this.wish.toFeeling().toNoun());
+        System.out.println(this.getName() + " почувстовал " + this.wish.toFeeling().toString());
         System.out.println(this.getName() + " сообразил, что настало время " + this.wish);
+        if (this.getWish().equals(Wish.EAT)) {
+            this.setLocation(new Compartment("пищевой"));
+        } else if (this.getWish().equals(Wish.SLEEP)) {
+            this.setLocation(new Compartment("спальный"));
+        }
     }
 
     public Wish getWish() {
@@ -78,7 +88,7 @@ public class Neznaika extends Character {
 
     private void describeObserve() {
         if (this.observedObject instanceof Ponchik ponchik) {
-            System.out.println(this.getName() + " увидел, что " + ponchik.describeSleeping() + " и " + ponchik.describeEating());
+            System.out.println(this.getName() + " увидел, что " + ponchik.describeState());
         } else{ 
             System.out.println(this.getName() + " смотрел на " + this.observedObject + " и " + this.couldStopObserving());
         }
