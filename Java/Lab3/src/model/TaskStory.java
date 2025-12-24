@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import model.abstracted.Story;
 import model.abstracted.enums.Distance;
@@ -10,6 +11,7 @@ import model.abstracted.enums.TimeUnit;
 import model.abstracted.enums.Wish;
 import model.abstracted.Path;
 import model.abstracted.Speed;
+
 import model.objects.Compartment;
 import model.objects.Planet;
 import model.objects.Rocket;
@@ -17,6 +19,7 @@ import model.objects.Food;
 
 import model.characters.Neznaika;
 import model.characters.Ponchik;
+
 import model.exceptions.NotUniqueCompartmentsException;
 
 
@@ -43,7 +46,7 @@ public class TaskStory extends Story  {
 
     private ArrayList<Compartment> createCompartments() {
         ArrayList<Compartment> compartments = new ArrayList<>();
-        String[] names = {"приборный", "пищевой", "спальный"};
+        String[] names = {"прогулочный", "пищевой", "спальный"};
         for (String name : names) {
             compartments.add(new Compartment(name));
         }
@@ -52,14 +55,27 @@ public class TaskStory extends Story  {
 
     @Override
     public void tell() {
+        ponchick.setLocation(new Compartment("спальный"));
         rocket.setSpeed(this.rocketSpeed);
         rocket.setPath(this.rocketPath);
         neznaika.setLocation(rocket);
-        System.out.println("прошло " + Hour.TWO.toString() + " или " + Hour.THREE.toString());
         neznaika.setObservedObject(rocket.getPath().endPoint());        
-        neznaika.setWish(Wish.EAT);
         ponchick.setState(State.EATING);
-        // ponchick.setChewingObject(new Food("some food"));
-        neznaika.setObservedObject(ponchick);
+        var rnd = Math.random();
+        if (rnd < 0.3) {
+            neznaika.setWish(Wish.EAT);
+        } else   if (rnd >= 0.3 && rnd < 0.6)  {
+            neznaika.setWish(Wish.SLEEP);
+        } else {
+            neznaika.setWish(Wish.REST);
+        }
+        // ponchick.setChewingObject(new Food("sdadsadas"));
+        if (ponchick.getLocation() instanceof Compartment compartment) {
+            if (compartment.equals(neznaika.getLocation())) {
+                neznaika.setObservedObject(ponchick);
+            }
+        }    else {
+                System.out.println(neznaika.getName() + " никого не увидел");
+            }
     }
 }

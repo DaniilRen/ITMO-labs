@@ -10,6 +10,7 @@ import model.abstracted.interfaces.Location;
 import model.objects.Compartment;
 import model.objects.Planet;
 import model.objects.Rocket;
+import model.abstracted.enums.Hour;
 
 public class Neznaika extends Character {
     private Wish wish;
@@ -66,6 +67,9 @@ public class Neznaika extends Character {
         } else if (this.getWish().equals(Wish.SLEEP)) {
             this.setLocation(new Compartment("спальный"));
         }
+        else if (this.getWish().equals(Wish.REST)) {
+            this.setLocation(new Compartment("прогулочный"));
+        }
     }
 
     public Wish getWish() {
@@ -83,6 +87,9 @@ public class Neznaika extends Character {
     @Override
     public void setObservedObject(Lookable observedObject) {
         this.observedObject = observedObject;
+        if (this.observedObject instanceof Planet && this.getLocation() instanceof Rocket) {
+            System.out.println("Прошло " + Hour.TWO.toString() + " или " + Hour.THREE.toString());
+        }
         this.describeObserve();
     }
 

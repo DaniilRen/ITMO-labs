@@ -5,7 +5,11 @@ import model.objects.Planet;
 
 public record Path(Distance distance, Planet startPoint, Planet endPoint, DistanceDescription distanceDescription) {
     public Path(Distance distance, Planet startPoint, Planet endPoint) {
-        this(distance, startPoint, endPoint, distance.toInteger() > 100000 ? DistanceDescription.HUGE : DistanceDescription.LITTLE);
+        this(distance, startPoint, endPoint, 
+            distance.toInteger() > 100000 ? 
+                DistanceDescription.HUGE :
+                DistanceDescription.LITTLE
+        );
     }
 
     @Override
