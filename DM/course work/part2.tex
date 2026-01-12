@@ -1,0 +1,366 @@
+\documentclass{article}
+
+\usepackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=1cm,footskip=.5cm]{geometry}
+
+\usepackage{fontspec}
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+
+\usepackage[russian]{babel}
+
+\usepackage{mathtools}
+\usepackage{karnaugh-map}
+\usepackage{tikz}
+\usetikzlibrary {circuits.logic.IEC}
+
+\begin{document}
+
+\begin{center}
+    УНИВЕРСИТЕТ ИТМО \\
+    Факультет программной инженерии и компьютерной техники \\
+    Дисциплина «Дискретная математика»
+    
+    \vspace{5cm}
+
+    \large
+    \textbf{Курсовая работа} \\
+    Часть 2 \\
+    Вариант 26
+\end{center}
+
+\vspace{2cm}
+
+\hfill\begin{minipage}{0.35\linewidth}
+Студент \\
+Бых Даниил Максимович \\
+P3109 \\
+
+Преподаватель \\
+Поляков Владимир Иванович
+\end{minipage}
+
+\vfill
+
+\begin{center}
+    Санкт-Петербург, 2025 г.
+\end{center}
+
+\thispagestyle{empty}
+\newpage
+
+\section*{Задание}
+Построить комбинационную схему реализующую вычитающий двоичный счетчик $C = (A - 1)_{\mod 29}$ ($C$ и $A$ по 5 бит).
+\section*{Таблица истинности}
+\begin{center}\begin{tabular}{|c|ccccc|ccccc|}
+    \hline № & $a_1$ & $a_2$ & $a_3$ & $a_4$ & $a_5$ & $c_1$ & $c_2$ & $c_3$ & $c_4$ & $c_5$ \\ \hline
+    0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 0 \\ \hline
+    1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\ \hline
+    2 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1 \\ \hline
+    3 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 0 \\ \hline
+    4 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 1 \\ \hline
+    5 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 \\ \hline
+    6 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 1 \\ \hline
+    7 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 1 & 1 & 0 \\ \hline
+    8 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 \\ \hline
+    9 & 0 & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 \\ \hline
+    10 & 0 & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 \\ \hline
+    11 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 0 \\ \hline
+    12 & 0 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 1 \\ \hline
+    13 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 0 \\ \hline
+    14 & 0 & 1 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 \\ \hline
+    15 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 1 & 0 \\ \hline
+    16 & 1 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\ \hline
+    17 & 1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 \\ \hline
+    18 & 1 & 0 & 0 & 1 & 0 & 1 & 0 & 0 & 0 & 1 \\ \hline
+    19 & 1 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 1 & 0 \\ \hline
+    20 & 1 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 & 1 \\ \hline
+    21 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 0 & 0 \\ \hline
+    22 & 1 & 0 & 1 & 1 & 0 & 1 & 0 & 1 & 0 & 1 \\ \hline
+    23 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 1 & 0 \\ \hline
+    24 & 1 & 1 & 0 & 0 & 0 & 1 & 0 & 1 & 1 & 1 \\ \hline
+    25 & 1 & 1 & 0 & 0 & 1 & 1 & 1 & 0 & 0 & 0 \\ \hline
+    26 & 1 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 0 & 1 \\ \hline
+    27 & 1 & 1 & 0 & 1 & 1 & 1 & 1 & 0 & 1 & 0 \\ \hline
+    28 & 1 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 1 & 1 \\ \hline
+    29 & 1 & 1 & 1 & 0 & 1 & d & d & d & d & d \\ \hline
+    30 & 1 & 1 & 1 & 1 & 0 & d & d & d & d & d \\ \hline
+    31 & 1 & 1 & 1 & 1 & 1 & d & d & d & d & d \\ \hline
+\end{tabular}\end{center}
+
+\section*{Минимизация булевых функций на картах Карно}
+\noindent\begin{minipage}{\textwidth}
+\begin{karnaugh-map}[4][4][2][$a_4$$a_5$][$a_2$$a_3$][$a_1$]
+    \minterms{0,17,18,19,20,21,22,23,24,25,26,27,28}
+    \terms{29,30,31}{d}
+    \implicant{12}{10}[1]
+    \implicant{4}{14}[1]
+    \implicant{3}{10}[1]
+    \implicant{1}{11}[1]
+    \implicant{0}{0}[0]
+\end{karnaugh-map}
+\[c_1 = a_1\,a_2 \lor a_1\,a_3 \lor a_1\,a_4 \lor a_1\,a_5 \lor \overline{a_1}\,\overline{a_2}\,\overline{a_3}\,\overline{a_4}\,\overline{a_5} \quad (S_Q = 18)\] \\ \phantom{0}
+\end{minipage}
+\noindent\begin{minipage}{\textwidth}
+\begin{karnaugh-map}[4][4][2][$a_4$$a_5$][$a_2$$a_3$][$a_1$]
+    \minterms{0,9,10,11,12,13,14,15,16,25,26,27,28}
+    \terms{29,30,31}{d}
+    \implicant{12}{14}[0,1]
+    \implicant{15}{10}[0,1]
+    \implicant{13}{11}[0,1]
+    \implicant{0}{0}[0,1]
+\end{karnaugh-map}
+\[c_2 = a_2\,a_3 \lor a_2\,a_4 \lor a_2\,a_5 \lor \overline{a_2}\,\overline{a_3}\,\overline{a_4}\,\overline{a_5} \quad (S_Q = 14)\] \\ \phantom{0}
+\end{minipage}
+\noindent\begin{minipage}{\textwidth}
+\begin{karnaugh-map}[4][4][2][$a_4$$a_5$][$a_2$$a_3$][$a_1$]
+    \minterms{0,5,6,7,8,13,14,15,16,21,22,23,24}
+    \terms{29,30,31}{d}
+    \implicant{7}{14}[0,1]
+    \implicant{5}{15}[0,1]
+    \implicantedge{0}{0}{8}{8}[0,1]
+\end{karnaugh-map}
+\[c_3 = a_3\,a_4 \lor a_3\,a_5 \lor \overline{a_3}\,\overline{a_4}\,\overline{a_5} \quad (S_Q = 10)\] \\ \phantom{0}
+\end{minipage}
+\noindent\begin{minipage}{\textwidth}
+\begin{karnaugh-map}[4][4][2][$a_4$$a_5$][$a_2$$a_3$][$a_1$]
+    \minterms{3,4,7,8,11,12,15,16,19,20,23,24,27,28}
+    \terms{29,30,31}{d}
+    \implicant{3}{11}[0,1]
+    \implicant{0}{8}[1]
+    \implicant{12}{8}[0,1]
+    \implicant{4}{12}[0,1]
+\end{karnaugh-map}
+\[c_4 = a_4\,a_5 \lor a_1\,\overline{a_4}\,\overline{a_5} \lor a_2\,\overline{a_4}\,\overline{a_5} \lor a_3\,\overline{a_4}\,\overline{a_5} \quad (S_Q = 15)\] \\ \phantom{0}
+\end{minipage}
+\noindent\begin{minipage}{\textwidth}
+\begin{karnaugh-map}[4][4][2][$a_4$$a_5$][$a_2$$a_3$][$a_1$]
+    \minterms{2,4,6,8,10,12,14,16,18,20,22,24,26,28}
+    \terms{29,30,31}{d}
+    \implicantedge{0}{8}{2}{10}[1]
+    \implicantedge{12}{8}{14}{10}[0,1]
+    \implicantedge{4}{12}{6}{14}[0,1]
+    \implicant{2}{10}[0,1]
+\end{karnaugh-map}
+\[c_5 = a_1\,\overline{a_5} \lor a_2\,\overline{a_5} \lor a_3\,\overline{a_5} \lor a_4\,\overline{a_5} \quad (S_Q = 12)\] \\ \phantom{0}
+\end{minipage}
+\section*{Преобразование системы булевых функций}
+\[\begin{matrix}
+    \begin{cases}
+        c_1 = a_1\,a_2 \lor a_1\,a_3 \lor a_1\,a_4 \lor a_1\,a_5 \lor \overline{a_1}\,\overline{a_2}\,\overline{a_3}\,\overline{a_4}\,\overline{a_5} & (S_Q^{c_1} = 18) \\
+        c_2 = a_2\,a_3 \lor a_2\,a_4 \lor a_2\,a_5 \lor \overline{a_2}\,\overline{a_3}\,\overline{a_4}\,\overline{a_5} & (S_Q^{c_2} = 14) \\
+        c_3 = a_3\,a_4 \lor a_3\,a_5 \lor \overline{a_3}\,\overline{a_4}\,\overline{a_5} & (S_Q^{c_3} = 10) \\
+        c_4 = a_4\,a_5 \lor a_1\,\overline{a_4}\,\overline{a_5} \lor a_2\,\overline{a_4}\,\overline{a_5} \lor a_3\,\overline{a_4}\,\overline{a_5} & (S_Q^{c_4} = 15) \\
+        c_5 = a_1\,\overline{a_5} \lor a_2\,\overline{a_5} \lor a_3\,\overline{a_5} \lor a_4\,\overline{a_5} & (S_Q^{c_5} = 12) \\
+    \end{cases} \\ (S_Q = 69)
+\end{matrix}\] \\ \phantom{0}
+\noindent\begin{minipage}{\textwidth}
+Проведем раздельную факторизацию системы.
+\[\begin{matrix}
+    \begin{cases}
+        c_1 = a_1\,\left(a_2 \lor a_3 \lor a_4 \lor a_5\right) \lor \overline{a_1}\,\overline{a_2}\,\overline{a_3}\,\overline{a_4}\,\overline{a_5} & (S_Q^{c_1} = 13) \\
+        c_2 = a_2\,\left(a_3 \lor a_4 \lor a_5\right) \lor \overline{a_2}\,\overline{a_3}\,\overline{a_4}\,\overline{a_5} & (S_Q^{c_2} = 11) \\
+        c_3 = a_3\,\left(a_4 \lor a_5\right) \lor \overline{a_3}\,\overline{a_4}\,\overline{a_5} & (S_Q^{c_3} = 9) \\
+        c_4 = a_4\,a_5 \lor \overline{a_4}\,\overline{a_5}\,\left(a_1 \lor a_2 \lor a_3\right) & (S_Q^{c_4} = 10) \\
+        c_5 = \overline{a_5}\,\left(a_1 \lor a_2 \lor a_3 \lor a_4\right) & (S_Q^{c_5} = 6) \\
+    \end{cases} \\ (S_Q = 49)
+\end{matrix}\] \\ \phantom{0}
+\end{minipage}
+\noindent\begin{minipage}{\textwidth}
+Проведем совместную декомпозицию системы. \[\varphi_{0} = \overline{a_3}\,\overline{a_4}\,\overline{a_5}, \quad \overline{\varphi_{0}} = a_3 \lor a_4 \lor a_5\]
+\[\begin{matrix}
+    \begin{cases}
+        \varphi_{0} = \overline{a_3}\,\overline{a_4}\,\overline{a_5} & (S_Q^{\varphi_{0}} = 3) \\
+        c_1 = a_1\,\left(\overline{\varphi_{0}} \lor a_2\right) \lor \varphi_{0}\,\overline{a_1}\,\overline{a_2} & (S_Q^{c_1} = 9) \\
+        c_2 = \varphi_{0}\,\overline{a_2} \lor \overline{\varphi_{0}}\,a_2 & (S_Q^{c_2} = 6) \\
+        c_3 = \varphi_{0} \lor a_3\,\left(a_4 \lor a_5\right) & (S_Q^{c_3} = 6) \\
+        c_4 = a_4\,a_5 \lor \overline{a_4}\,\overline{a_5}\,\left(a_1 \lor a_2 \lor a_3\right) & (S_Q^{c_4} = 10) \\
+        c_5 = \overline{a_5}\,\left(a_1 \lor a_2 \lor a_3 \lor a_4\right) & (S_Q^{c_5} = 6) \\
+    \end{cases} \\ (S_Q = 41)
+\end{matrix}\] \\ \phantom{0}
+\end{minipage}
+\noindent\begin{minipage}{\textwidth}
+Проведем совместную декомпозицию системы. \[\varphi_{1} = \varphi_{0}\,\overline{a_2}, \quad \overline{\varphi_{1}} = \overline{\varphi_{0}} \lor a_2\]
+\[\begin{matrix}
+    \begin{cases}
+        \varphi_{0} = \overline{a_3}\,\overline{a_4}\,\overline{a_5} & (S_Q^{\varphi_{0}} = 3) \\
+        c_3 = \varphi_{0} \lor a_3\,\left(a_4 \lor a_5\right) & (S_Q^{c_3} = 6) \\
+        c_4 = a_4\,a_5 \lor \overline{a_4}\,\overline{a_5}\,\left(a_1 \lor a_2 \lor a_3\right) & (S_Q^{c_4} = 10) \\
+        c_5 = \overline{a_5}\,\left(a_1 \lor a_2 \lor a_3 \lor a_4\right) & (S_Q^{c_5} = 6) \\
+        \varphi_{1} = \varphi_{0}\,\overline{a_2} & (S_Q^{\varphi_{1}} = 2) \\
+        c_1 = \varphi_{1}\,\overline{a_1} \lor \overline{\varphi_{1}}\,a_1 & (S_Q^{c_1} = 6) \\
+        c_2 = \varphi_{1} \lor \overline{\varphi_{0}}\,a_2 & (S_Q^{c_2} = 4) \\
+    \end{cases} \\ (S_Q = 39)
+\end{matrix}\] \\ \phantom{0}
+\end{minipage}
+\noindent\begin{minipage}{\textwidth}
+Проведем совместную декомпозицию системы. \[\varphi_{2} = a_1 \lor a_2 \lor a_3\]
+\[\begin{matrix}
+    \begin{cases}
+        \varphi_{2} = a_1 \lor a_2 \lor a_3 & (S_Q^{\varphi_{2}} = 3) \\
+        \varphi_{0} = \overline{a_3}\,\overline{a_4}\,\overline{a_5} & (S_Q^{\varphi_{0}} = 3) \\
+        c_3 = \varphi_{0} \lor a_3\,\left(a_4 \lor a_5\right) & (S_Q^{c_3} = 6) \\
+        c_4 = a_4\,a_5 \lor \varphi_{2}\,\overline{a_4}\,\overline{a_5} & (S_Q^{c_4} = 7) \\
+        c_5 = \overline{a_5}\,\left(\varphi_{2} \lor a_4\right) & (S_Q^{c_5} = 4) \\
+        \varphi_{1} = \varphi_{0}\,\overline{a_2} & (S_Q^{\varphi_{1}} = 2) \\
+        c_1 = \varphi_{1}\,\overline{a_1} \lor \overline{\varphi_{1}}\,a_1 & (S_Q^{c_1} = 6) \\
+        c_2 = \varphi_{1} \lor \overline{\varphi_{0}}\,a_2 & (S_Q^{c_2} = 4) \\
+    \end{cases} \\ (S_Q = 37)
+\end{matrix}\] \\ \phantom{0}
+\end{minipage}
+\noindent\begin{minipage}{\textwidth}
+Проведем совместную декомпозицию системы. \[\varphi_{3} = \overline{a_4}\,\overline{a_5}, \quad \overline{\varphi_{3}} = a_4 \lor a_5\]
+\[\begin{matrix}
+    \begin{cases}
+        \varphi_{3} = \overline{a_4}\,\overline{a_5} & (S_Q^{\varphi_{3}} = 2) \\
+        \varphi_{2} = a_1 \lor a_2 \lor a_3 & (S_Q^{\varphi_{2}} = 3) \\
+        \varphi_{0} = \varphi_{3}\,\overline{a_3} & (S_Q^{\varphi_{0}} = 2) \\
+        c_3 = \varphi_{0} \lor \overline{\varphi_{3}}\,a_3 & (S_Q^{c_3} = 4) \\
+        c_4 = \varphi_{2}\,\varphi_{3} \lor a_4\,a_5 & (S_Q^{c_4} = 6) \\
+        c_5 = \overline{a_5}\,\left(\varphi_{2} \lor a_4\right) & (S_Q^{c_5} = 4) \\
+        \varphi_{1} = \varphi_{0}\,\overline{a_2} & (S_Q^{\varphi_{1}} = 2) \\
+        c_1 = \varphi_{1}\,\overline{a_1} \lor \overline{\varphi_{1}}\,a_1 & (S_Q^{c_1} = 6) \\
+        c_2 = \varphi_{1} \lor \overline{\varphi_{0}}\,a_2 & (S_Q^{c_2} = 4) \\
+    \end{cases} \\ (S_Q = 36)
+\end{matrix}\] \\ \phantom{0}
+\end{minipage}
+\clearpage
+\section*{Синтез комбинационной схемы в булемов базисе}
+Будем анализировать схему на следующем наборе аргументов:
+\[a_1 = 0,\:a_2 = 1,\:a_3 = 1,\:a_4 = 1,\:a_5 = 0\]
+Выходы схемы из таблицы истинности:
+\[c_1 = \text{0},\:c_2 = \text{1},\:c_3 = \text{1},\:c_4 = \text{0},\:c_5 = \text{1}\]
+\begin{center}\begin{tikzpicture}[circuit logic IEC]
+\node[and gate,inputs={nn}] at (0,-0.5) (n1) {};
+\node at (-1.5,-0.6666667) (n2) {$\overline{a_5}$};
+\draw (n1.input 2) -- ++(left:2mm) |- (n2.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $1$};
+\node at (-1.5,-0.33333334) (n3) {$\overline{a_4}$};
+\draw (n1.input 1) -- ++(left:2mm) |- (n3.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $0$};
+\node[or gate,inputs={nnn}] at (0,-2.5) (n4) {};
+\node at (-1.5,-2.8333335) (n5) {$a_3$};
+\draw (n4.input 3) -- ++(left:2mm) |- (n5.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $1$};
+\node at (-1.5,-2.5) (n6) {$a_2$};
+\draw (n4.input 2) -- ++(left:3.5mm) |- (n6.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $1$};
+\node at (-1.5,-2.1666665) (n7) {$a_1$};
+\draw (n4.input 1) -- ++(left:2mm) |- (n7.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $0$};
+\node[and gate,inputs={nn}] at (0,-4.5) (n8) {};
+\node at (-1.5,-4.6666665) (n9) {$\overline{a_3}$};
+\draw (n8.input 2) -- ++(left:2mm) |- (n9.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $0$};
+\node at (-1.5,-4.333333) (n10) {$\varphi_{3}$};
+\draw (n8.input 1) -- ++(left:2mm) |- (n10.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $0$};
+\node[or gate,inputs={nn}] at (0,-6.6666665) (n11) {};
+\node[and gate,inputs={nn}] at (-1.5,-6.833333) (n12) {};
+\node at (-3,-6.9999995) (n13) {$a_3$};
+\draw (n12.input 2) -- ++(left:2mm) |- (n13.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $1$};
+\node at (-3,-6.666666) (n14) {$\overline{\varphi_{3}}$};
+\draw (n12.input 1) -- ++(left:2mm) |- (n14.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $1$};
+\draw (n11.input 2) -- ++(left:2mm) |- (n12.output) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $1$};
+\node at (-1.5,-6.1166663) (n15) {$\varphi_{0}$};
+\draw (n11.input 1) -- ++(left:2mm) |- (n15.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $0$};
+\node[or gate,inputs={nn}] at (0,-9.383333) (n16) {};
+\node[and gate,inputs={nn}] at (-1.5,-9.933333) (n17) {};
+\node at (-3,-10.1) (n18) {$a_5$};
+\draw (n17.input 2) -- ++(left:2mm) |- (n18.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $0$};
+\node at (-3,-9.766667) (n19) {$a_4$};
+\draw (n17.input 1) -- ++(left:2mm) |- (n19.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $1$};
+\draw (n16.input 2) -- ++(left:2mm) |- (n17.output) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $0$};
+\node[and gate,inputs={nn}] at (-1.5,-8.833333) (n20) {};
+\node at (-3,-9) (n21) {$\varphi_{3}$};
+\draw (n20.input 2) -- ++(left:2mm) |- (n21.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $0$};
+\node at (-3,-8.666667) (n22) {$\varphi_{2}$};
+\draw (n20.input 1) -- ++(left:2mm) |- (n22.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $1$};
+\draw (n16.input 1) -- ++(left:2mm) |- (n20.output) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $0$};
+\node[and gate,inputs={nn}] at (0,-12.1) (n23) {};
+\node[or gate,inputs={nn}] at (-1.5,-12.266667) (n24) {};
+\node at (-3,-12.433334) (n25) {$a_4$};
+\draw (n24.input 2) -- ++(left:2mm) |- (n25.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $1$};
+\node at (-3,-12.100001) (n26) {$\varphi_{2}$};
+\draw (n24.input 1) -- ++(left:2mm) |- (n26.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $1$};
+\draw (n23.input 2) -- ++(left:2mm) |- (n24.output) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $1$};
+\node at (-1.5,-11.55) (n27) {$\overline{a_5}$};
+\draw (n23.input 1) -- ++(left:2mm) |- (n27.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $1$};
+\node[and gate,inputs={nn}] at (0,-14.266667) (n28) {};
+\node at (-1.5,-14.433334) (n29) {$\overline{a_2}$};
+\draw (n28.input 2) -- ++(left:2mm) |- (n29.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $0$};
+\node at (-1.5,-14.100001) (n30) {$\varphi_{0}$};
+\draw (n28.input 1) -- ++(left:2mm) |- (n30.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $0$};
+\node[or gate,inputs={nn}] at (0,-16.816668) (n31) {};
+\node[and gate,inputs={nn}] at (-1.5,-17.366667) (n32) {};
+\node at (-3,-17.533333) (n33) {$a_1$};
+\draw (n32.input 2) -- ++(left:2mm) |- (n33.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $0$};
+\node at (-3,-17.199999) (n34) {$\overline{\varphi_{1}}$};
+\draw (n32.input 1) -- ++(left:2mm) |- (n34.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $1$};
+\draw (n31.input 2) -- ++(left:2mm) |- (n32.output) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $0$};
+\node[and gate,inputs={nn}] at (-1.5,-16.266666) (n35) {};
+\node at (-3,-16.433332) (n36) {$\overline{a_1}$};
+\draw (n35.input 2) -- ++(left:2mm) |- (n36.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $1$};
+\node at (-3,-16.099998) (n37) {$\varphi_{1}$};
+\draw (n35.input 1) -- ++(left:2mm) |- (n37.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $0$};
+\draw (n31.input 1) -- ++(left:2mm) |- (n35.output) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $0$};
+\node[or gate,inputs={nn}] at (0,-19.533333) (n38) {};
+\node[and gate,inputs={nn}] at (-1.5,-19.699999) (n39) {};
+\node at (-3,-19.866665) (n40) {$a_2$};
+\draw (n39.input 2) -- ++(left:2mm) |- (n40.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $1$};
+\node at (-3,-19.53333) (n41) {$\overline{\varphi_{0}}$};
+\draw (n39.input 1) -- ++(left:2mm) |- (n41.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $1$};
+\draw (n38.input 2) -- ++(left:2mm) |- (n39.output) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $1$};
+\node at (-1.5,-18.983332) (n42) {$\varphi_{1}$};
+\draw (n38.input 1) -- ++(left:2mm) |- (n42.east) node[at end, above, xshift=2.0mm, yshift=-2pt]{\scriptsize $0$};
+\draw (n1.output) -- ++(right:15mm) node[midway, above, yshift=-2pt]{\scriptsize $\varphi_{3} = 0$};
+\node[not gate] at (2.125,-0.5) (n43) {};
+\draw (n43.output) -- (3.0,-0.5);
+\node[circle, fill=black, inner sep=0pt, minimum size=3pt] (c0) at (1.0625,-0.5) {};
+\draw (3,-0.5) -- (3,-1.5);
+\draw (3,-1.5) -- (-4.5,-1.5);
+\draw (-4.5,-6.666666) -- (n14.west);
+\draw (-4.5,-6.666666) -- (-4.5,-1.5);
+\draw (1.0625,-0.5) -- (1.0625,-1.25);
+\draw (1.0625,-1.25) -- (-4.75,-1.25);
+\node[circle, fill=black, inner sep=0pt, minimum size=3pt] (c0) at (-4.75,-4.333333) {};
+\draw (-4.75,-4.333333) -- (n10.west);
+\draw (-4.75,-9) -- (n21.west);
+\draw (-4.75,-9) -- (-4.75,-1.25);
+\draw (n4.output) -- ++(right:15mm) node[midway, above, yshift=-2pt]{\scriptsize $\varphi_{2} = 1$};
+\draw (1.8125,-2.5) -- (1.8125,-3.25);
+\draw (1.8125,-3.25) -- (-5,-3.25);
+\node[circle, fill=black, inner sep=0pt, minimum size=3pt] (c0) at (-5,-8.666667) {};
+\draw (-5,-8.666667) -- (n22.west);
+\draw (-5,-12.100001) -- (n26.west);
+\draw (-5,-12.100001) -- (-5,-3.25);
+\draw (n8.output) -- ++(right:15mm) node[midway, above, yshift=-2pt]{\scriptsize $\varphi_{0} = 0$};
+\node[not gate] at (2.125,-4.5) (n44) {};
+\draw (n44.output) -- (3.0,-4.5);
+\node[circle, fill=black, inner sep=0pt, minimum size=3pt] (c0) at (1.0625,-4.5) {};
+\draw (3,-4.5) -- (3,-5.5);
+\draw (3,-5.5) -- (-5.25,-5.5);
+\draw (-5.25,-19.53333) -- (n41.west);
+\draw (-5.25,-19.53333) -- (-5.25,-5.5);
+\draw (1.0625,-4.5) -- (1.0625,-5.25);
+\draw (1.0625,-5.25) -- (-5.5,-5.25);
+\node[circle, fill=black, inner sep=0pt, minimum size=3pt] (c0) at (-5.5,-6.1166663) {};
+\draw (-5.5,-6.1166663) -- (n15.west);
+\draw (-5.5,-14.100001) -- (n30.west);
+\draw (-5.5,-14.100001) -- (-5.5,-5.25);
+\draw (n11.output) -- ++(right:15mm) node[midway, above, yshift=-2pt]{\scriptsize $c_3 = 1$};
+\draw (n16.output) -- ++(right:15mm) node[midway, above, yshift=-2pt]{\scriptsize $c_4 = 0$};
+\draw (n23.output) -- ++(right:15mm) node[midway, above, yshift=-2pt]{\scriptsize $c_5 = 1$};
+\draw (n28.output) -- ++(right:15mm) node[midway, above, yshift=-2pt]{\scriptsize $\varphi_{1} = 0$};
+\node[not gate] at (2.125,-14.266667) (n45) {};
+\draw (n45.output) -- (3.0,-14.266667);
+\node[circle, fill=black, inner sep=0pt, minimum size=3pt] (c0) at (1.0625,-14.266667) {};
+\draw (3,-14.266667) -- (3,-15.266667);
+\draw (3,-15.266667) -- (-5.75,-15.266667);
+\draw (-5.75,-17.199999) -- (n34.west);
+\draw (-5.75,-17.199999) -- (-5.75,-15.266667);
+\draw (1.0625,-14.266667) -- (1.0625,-15.016667);
+\draw (1.0625,-15.016667) -- (-6,-15.016667);
+\node[circle, fill=black, inner sep=0pt, minimum size=3pt] (c0) at (-6,-16.099998) {};
+\draw (-6,-16.099998) -- (n37.west);
+\draw (-6,-18.983332) -- (n42.west);
+\draw (-6,-18.983332) -- (-6,-15.016667);
+\draw (n31.output) -- ++(right:15mm) node[midway, above, yshift=-2pt]{\scriptsize $c_1 = 0$};
+\draw (n38.output) -- ++(right:15mm) node[midway, above, yshift=-2pt]{\scriptsize $c_2 = 1$};
+\end{tikzpicture}\end{center}
+\begin{center}Цена схемы: $S_Q = 36$. Задержка схемы: $T = 6\tau$.\end{center}
+
+\end{document}
