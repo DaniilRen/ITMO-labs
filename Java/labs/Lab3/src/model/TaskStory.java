@@ -1,11 +1,9 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 import model.abstracted.Story;
 import model.abstracted.enums.Distance;
-import model.abstracted.enums.Hour;
 import model.abstracted.enums.State;
 import model.abstracted.enums.TimeUnit;
 import model.abstracted.enums.Wish;
@@ -15,7 +13,6 @@ import model.abstracted.Speed;
 import model.objects.Compartment;
 import model.objects.Planet;
 import model.objects.Rocket;
-import model.objects.Food;
 
 import model.characters.Neznaika;
 import model.characters.Ponchik;
