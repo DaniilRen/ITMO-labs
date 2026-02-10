@@ -72,7 +72,7 @@ public class TaskStory extends Story  {
         // ponchick.setChewingObject(new Food("sdadsadas"));
         if (ponchick.getLocation() instanceof Compartment compartment) {
             if (compartment.equals(neznaika.getLocation())) {
-                neznaika.setObservedObject(ponchick);
+                neznaika.setObservedObject(ponchick);=
             }
         }    else {
                 System.out.println(neznaika.getName() + " никого не увидел");
