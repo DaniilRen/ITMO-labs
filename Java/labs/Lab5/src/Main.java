@@ -4,7 +4,6 @@ import managers.CommandManager;
 import managers.DatabaseManager;
 import runtime.client.LocalRuntime;
 import runtime.server.RemoteRuntime;
-import util.console.*;
 
 
 public class Main {
@@ -14,19 +13,18 @@ public class Main {
             System.exit(0);
         }
 
-        LocalRuntime localRuntime = new LocalRuntime();
         RemoteRuntime remoteRuntime = new RemoteRuntime(args[0]);
+        LocalRuntime localRuntime = new LocalRuntime(remoteRuntime);
 
-        
 
         String fileName = args[0];
-        DatabaseManager databaseManager = new DatabaseManager(fileName, console);
+        DatabaseManager databaseManager = new DatabaseManager(fileName);
 
-        CollectionManager collectionManager = new CollectionManager(console, databaseManager);
+        CollectionManager collectionManager = new CollectionManager(databaseManager);
 
         CommandManager commandManager = new CommandManager();
         commandManager.register("add", new Add(collectionManager));
 
-        currentRuntime.interactiveMode();
+        localRuntime.run("interactuve");
     }
 }

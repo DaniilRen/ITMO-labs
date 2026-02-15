@@ -11,7 +11,7 @@ public abstract class Command implements Executable, Describable {
         this.name = name;
         this.description = description;
     }
-
+    
     public String getName() {
         return name;
     }

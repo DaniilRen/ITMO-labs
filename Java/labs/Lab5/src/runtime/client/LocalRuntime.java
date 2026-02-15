@@ -4,16 +4,12 @@ import util.Request;
 import util.Response;
 import util.Status;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
-
-import commands.Command;
-import managers.CommandManager;
 import runtime.Runtime;
 import runtime.server.RemoteRuntime;
 import util.console.Console;
 import util.console.DefaultConsole;
+
 
 public class LocalRuntime extends Runtime{
     private final Console console;
@@ -27,7 +23,7 @@ public class LocalRuntime extends Runtime{
 
 
     public void run(String... args) {
-        String mode = args[0];
+        String mode = args[0].toLowerCase();
 
         if (mode == "interactive") {
             runInteractiveMode();

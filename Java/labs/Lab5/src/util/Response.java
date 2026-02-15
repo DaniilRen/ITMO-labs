@@ -1,6 +1,6 @@
 package util;
 
-import java.util.ArrayList;
+import java.util.List;
 
 
-public record Response(ArrayList<?> body, Status status) {};
+public record Response(List<?> body, Status status) {};
