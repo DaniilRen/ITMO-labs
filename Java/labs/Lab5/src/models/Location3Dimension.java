@@ -9,7 +9,7 @@ public class Location3Dimension implements Validatable{
     private final Integer z;
     private String name;
 
-    public Location3Dimension(Integer x, double y, Integer z, String name) {
+    public Location3Dimension(double x, Double y, Integer z, String name) {
         this.x = x;
         this.y = y;
         this.z = z;

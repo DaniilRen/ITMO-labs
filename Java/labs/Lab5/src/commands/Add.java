@@ -1,8 +1,9 @@
 package commands;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import util.Response;
+import util.Status;
 import managers.CollectionManager;
 import models.Route;
 
@@ -15,8 +16,14 @@ public class Add extends Command {
         this.collectionManager = collectionManager;
     }
     
-    public CommandResponse<?> execute(String... args) {
-        collectionManager.addToCollection(new Route());
-        return new CommandResponse<String>(new ArrayList<>());
+    public Response<?> execute(List<?> args) {
+        if (args.isEmpty()) {
+            return new Response<>(Status.INPUT);
+        } else if (args.size() == 1) {
+            collectionManager.addToCollection((Route) args.get(0));
+            return new Response<String>();
+        } else {
+            return new Response<>(Status.ERROR);
+        }
     }
 }

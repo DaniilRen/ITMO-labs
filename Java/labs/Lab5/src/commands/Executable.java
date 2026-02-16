@@ -1,6 +1,9 @@
 package commands;
 
+import java.util.List;
+import util.Payload;
+
 
 public interface Executable {
-    CommandResponse<?> execute(String... args);
+    Payload<?> execute(List<?> args);
 }

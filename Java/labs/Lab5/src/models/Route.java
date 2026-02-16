@@ -11,10 +11,10 @@ public class Route extends Entity {
     private Coordinates coordinates;
     private LocalDateTime creationDate;
     private Location2Dimension from;
-    private Location2Dimension to;
+    private Location3Dimension to;
 
     public Route(String name, Coordinates coordinates, LocalDateTime creationDate, 
-            Location2Dimension from, Location2Dimension to) {
+            Location2Dimension from, Location3Dimension to) {
         this.id = currentId;
         this.name = name;
         this.coordinates = coordinates;

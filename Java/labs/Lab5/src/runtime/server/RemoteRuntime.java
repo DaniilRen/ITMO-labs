@@ -1,10 +1,9 @@
 package runtime.server;
 
-import java.util.ArrayList;
 import java.util.Set;
+import java.util.List;
 import commands.Add;
 import commands.Command;
-import commands.CommandResponse;
 import commands.Help;
 import managers.CollectionManager;
 import managers.CommandManager;
@@ -12,6 +11,7 @@ import managers.DatabaseManager;
 import runtime.Runtime;
 import util.Request;
 import util.Response;
+import util.Payload;
 import util.Status;
 
 
@@ -26,7 +26,6 @@ public class RemoteRuntime extends Runtime {
         this.databaseManager = new DatabaseManager(fileName);
         this.collectionManager = new CollectionManager(databaseManager);
         this.commandManager = new CommandManager();
-
         registerCommands();
     }
 
@@ -37,29 +36,21 @@ public class RemoteRuntime extends Runtime {
         commandManager.register("add", new Add(collectionManager));
     }
 
-    private CommandResponse<?> executeCommand(String commandName, String argument){
+    public <T> Response<?> proccessRequest(Request<T> request) {
+        return (Response<?>) executeCommand(request.getName(), request.getBody());
+    }
+
+    private Payload<?> executeCommand(String commandName, List<?> args){
+        if (validateCommandName(commandName) == false) {
+            return new Response<>(Status.ERROR);
+        }
         Command command = commandManager.getCommands().get(commandName);
         commandManager.addToHistory(command.getName());
-        return command.execute(argument);
+        return command.execute(args);
     };
 
-    public Response proccessRequest(Request request) {
-        String commandName = request.name();
-        String argument = request.argument();
-
-        if (validateCommand(commandName) == false) { 
-            return makeResponse(new CommandResponse<String>(new ArrayList<String>()), Status.ERROR);
-        }
-
-        return makeResponse(executeCommand(commandName, argument), Status.OK);
-    }
-
-    private boolean validateCommand(String command) {
+    private boolean validateCommandName(String command) {
         Set<String> commandsNames = commandManager.getCommands().keySet();
         return commandsNames.contains(command);
-    }
-
-    private Response makeResponse(CommandResponse<?> commandResponse, Status status) {
-        return commandResponse.wrapToResponse(status);
     }
 }
