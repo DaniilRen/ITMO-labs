@@ -23,7 +23,7 @@ public class Add extends Command {
             collectionManager.addToCollection((Route) args.get(0));
             return new Response<String>();
         } else {
-            return new Response<>(Status.ERROR);
+            return new Response<>(List.of("Invalid argument length"), Status.ERROR);
         }
     }
 }

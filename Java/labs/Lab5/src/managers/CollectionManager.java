@@ -1,5 +1,6 @@
 package managers;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +10,8 @@ import models.Entity;
 public class CollectionManager {
     List<Entity> collection = new ArrayList<>();
     private final DatabaseManager databaseManager;
+    private LocalDateTime lastInitTime;
+    private LocalDateTime lastSaveTime;
 
     public CollectionManager(DatabaseManager databaseManager) {
         this.databaseManager = databaseManager;
@@ -19,6 +22,7 @@ public class CollectionManager {
 
     private void loadCollection(){
         collection = (ArrayList<Entity>) databaseManager.readCollectionFromFile();
+        lastInitTime = LocalDateTime.now();
         validateAll();
     }
 
@@ -26,6 +30,7 @@ public class CollectionManager {
 
     public void saveCollection(){
         databaseManager.writeCollectionToFile();
+        this.lastSaveTime = LocalDateTime.now();
     }
 
 
@@ -51,11 +56,34 @@ public class CollectionManager {
         return false;
     }
 
+    public Entity getById(int id) {
+        for (Entity element : collection) {
+        if (element.getId() == id) return element;
+        }
+        return null;
+    }
+
     public Entity getByValue(Entity targetElement) {
         for (Entity element : collection) {
             if (element.equals(targetElement)) return element;
         }
         return null;
+    }
+
+    public String getCollectionType() {
+        return collection.getClass().getName();
+    }
+
+    public int getCollectionSize() {
+        return collection.size();
+    }
+
+    public LocalDateTime getLastInitTime() {
+        return this.lastInitTime;
+    }
+
+    public LocalDateTime getLastSaveTime() {
+        return this.lastSaveTime;
     }
 
     @Override

@@ -42,7 +42,7 @@ public class RemoteRuntime extends Runtime {
 
     private Payload<?> executeCommand(String commandName, List<?> args){
         if (validateCommandName(commandName) == false) {
-            return new Response<>(Status.ERROR);
+            return new Response<>(List.of("Unknown command"), Status.ERROR);
         }
         Command command = commandManager.getCommands().get(commandName);
         commandManager.addToHistory(command.getName());

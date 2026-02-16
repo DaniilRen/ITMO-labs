@@ -4,9 +4,12 @@ import util.Request;
 import util.Response;
 import util.Status;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import models.Route;
 import runtime.Runtime;
 import runtime.server.RemoteRuntime;
 import util.console.Console;
@@ -19,7 +22,8 @@ public class LocalRuntime extends Runtime{
     private final Console console;
     private final Scanner scanner;
     private final RemoteRuntime remoteRuntime;
-    private String lastExecutedCommand;
+    private String lastExecutedCommandName;
+    private List<?> lastExecutedCommandArgs;
 
     public LocalRuntime(RemoteRuntime remoteRuntime) {
         this.console = new DefaultConsole();
@@ -64,7 +68,7 @@ public class LocalRuntime extends Runtime{
             return;
         }
         Response<?> response = makeRequest(commandName, args);
-        this.lastExecutedCommand = commandName;
+        this.lastExecutedCommandName = commandName;
         Status status = response.getStatus();
         if (status == Status.OK) {
             var body = response.getBody();
@@ -78,9 +82,9 @@ public class LocalRuntime extends Runtime{
         } else if (status == Status.INPUT) {
             try {
                 Builder builder = new Builder(console, scanner);
-                var result = builder.build();
-                // if (result == null) {throw new BuildException("Invalid build form");}
-                executeCommand(lastExecutedCommand, List.of(result));   
+                ArrayList<Object> newArgs = new ArrayList<> (lastExecutedCommandArgs); 
+                newArgs.add(builder.build());
+                executeCommand(lastExecutedCommandName, newArgs);   
             } catch (BuildException e) {
                 return;
             }

@@ -1,4 +1,4 @@
-package commands;
+package commands.interfaces;
 
 
 public interface Describable {

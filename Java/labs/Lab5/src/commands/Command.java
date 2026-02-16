@@ -2,6 +2,9 @@ package commands;
 
 import java.util.Objects;
 
+import commands.interfaces.Describable;
+import commands.interfaces.Executable;
+
 
 public abstract class Command implements Executable, Describable {
     private final String name;

@@ -23,7 +23,14 @@ public class Route extends Entity {
         this.to = to;
     }
 
-    @Override
+    public void update(Route newRoute) {
+        this.name = newRoute.name;
+        this.coordinates = newRoute.coordinates;
+        this.creationDate = newRoute.creationDate;
+        this.from = newRoute.from;
+        this.to = newRoute.to;
+    }
+
     public int getId() {
         return id;
     }
