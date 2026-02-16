@@ -1,0 +1,85 @@
+Item
+* - id *
+- type
+
+Person
+* - id *
+- name
+- sex
+(- item_id)
+
+Spaceship
+* - id *
+(- item_id)
+
+CelestialBody
+* - id *
+- type
+- distance_description
+- light_color
+(- item_id)
+
+Orbit
+* - id *
+- type
+(- item_id)
+(- celestial_body_id)
+
+Atmosphere
+* - id *
+- presence
+- has_atmosphere
+(- item_id)
+(- celestial_body_id)
+
+Light
+* - id *
+- light_color
+- mood
+(- item_id)
+(- celestial_body_id)
+
+Shadow
+* - id *
+- is_sharp
+(- item_id)
+(- landscape_id)
+
+Landscape
+* - id *
+- appearance_description
+(- item_id)
+(- celestial_body_id)
+
+Location
+* - id *
+- name 
+- position
+(- item_id)
+(- celestial_body_id)
+
+------------------
+
+Action
+* - id *
+- type
+(- subject_id)
+(- object_id)
+
+------------------
+
+Spaceship_orbits
+(- orbit_id)
+(- spaceship_id)
+
+Satellite_planets
+(- satellite_id)
+(- planet_id)
+
+Orbit_locations
+(- orbit_id)
+(- location_id)
+
+Landscape_lights
+(- landscape_id)
+(- light_id)
