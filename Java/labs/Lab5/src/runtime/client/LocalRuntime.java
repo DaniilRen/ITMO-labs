@@ -5,11 +5,9 @@ import util.Response;
 import util.Status;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import models.Route;
 import runtime.Runtime;
 import runtime.server.RemoteRuntime;
 import util.console.Console;
@@ -57,15 +55,15 @@ public class LocalRuntime extends Runtime{
             userCommand[1] = userCommand[1].trim();
             String commandName = userCommand[0];
             List<?> args = List.of(userCommand[1]);
-            executeCommand(commandName, args);
+            currentStatus = executeCommand(commandName, args);
         } while (currentStatus != Status.EXIT);
 
         scanner.close();
     };
 
-    private void executeCommand(String commandName, List<?> args) {
+    private Status executeCommand(String commandName, List<?> args) {
         if (commandName.isEmpty()) {
-            return;
+            return Status.ERROR;
         }
         Response<?> response = makeRequest(commandName, args);
         this.lastExecutedCommandName = commandName;
@@ -86,9 +84,10 @@ public class LocalRuntime extends Runtime{
                 newArgs.add(builder.build());
                 executeCommand(lastExecutedCommandName, newArgs);   
             } catch (BuildException e) {
-                return;
+                return Status.ERROR;
             }
         }
+        return status;
     }
 
 

@@ -70,6 +70,10 @@ public class CollectionManager {
         return null;
     }
 
+    public List<Entity> getCollection() {
+        return collection;
+    }
+
     public String getCollectionType() {
         return collection.getClass().getName();
     }

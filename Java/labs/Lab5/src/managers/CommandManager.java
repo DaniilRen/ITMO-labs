@@ -24,6 +24,10 @@ public class CommandManager {
         return commandHistory;
     }
 
+    public List<String> getCommandHistory(int number) {
+        return commandHistory.subList(0, Math.min(number, commandHistory.size()));
+    }
+
     public void addToHistory(String command) {
         commandHistory.add(command);
     }

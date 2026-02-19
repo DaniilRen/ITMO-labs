@@ -2,7 +2,6 @@ package util;
 
 import models.Route;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
