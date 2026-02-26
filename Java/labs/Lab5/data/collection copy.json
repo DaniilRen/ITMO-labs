@@ -1,0 +1,170 @@
+[
+  {
+    "id": 1,
+    "name": "Highway 101",
+    "coordinates": {
+      "x": 45.2,
+      "y": 75
+    },
+    "creationDate": "2026-02-16T14:54:00",
+    "from": {
+      "x": 150,
+      "y": 55.123,
+      "name": "Saint Petersburg"
+    },
+    "to": {
+      "x": 200.5,
+      "y": 75.2,
+      "z": 300,
+      "name": "Moscow"
+    },
+    "distance": 450
+  },
+  {
+    "id": 2,
+    "name": "Coastal Route",
+    "coordinates": {
+      "x": 12.8,
+      "y": 42
+    },
+    "creationDate": "2026-02-15T09:30:00",
+    "from": {
+      "x": 80,
+      "y": 23.456,
+      "name": "Sochi"
+    },
+    "to": {
+      "x": 120.0,
+      "y": 45.7,
+      "z": 125,
+      "name": null
+    },
+    "distance": 320
+  },
+  {
+    "id": 3,
+    "name": "Mountain Pass",
+    "coordinates": {
+      "x": 78.9,
+      "y": 99
+    },
+    "creationDate": "2026-02-14T16:20:00",
+    "from": {
+      "x": 250,
+      "y": 67.89,
+      "name": "Kazan"
+    },
+    "to": {
+      "x": 310.25,
+      "y": 88.1,
+      "z": 450,
+      "name": "Ufa"
+    },
+    "distance": 680
+  },
+  {
+    "id": 4,
+    "name": "Expressway A1",
+    "coordinates": {
+      "x": 33.5,
+      "y": 106
+    },
+    "creationDate": "2026-02-13T11:45:00",
+    "from": {
+      "x": 95,
+      "y": 34.567,
+      "name": "Novosibirsk"
+    },
+    "to": {
+      "x": 175.8,
+      "y": 52.3,
+      "z": 220,
+      "name": null
+    },
+    "distance": 290
+  },
+  {
+    "id": 5,
+    "name": "River Road",
+    "coordinates": {
+      "x": 67.1,
+      "y": 23
+    },
+    "creationDate": "2026-02-12T07:15:00",
+    "from": {
+      "x": 320,
+      "y": 12.789,
+      "name": "Rostov"
+    },
+    "to": {
+      "x": 380.9,
+      "y": 28.4,
+      "z": 180,
+      "name": "Volgograd"
+    },
+    "distance": 510
+  },
+  {
+    "id": 6,
+    "name": "Northern Trail",
+    "coordinates": {
+      "x": 89.7,
+      "y": 81
+    },
+    "creationDate": "2026-02-11T19:05:00",
+    "from": {
+      "x": 410,
+      "y": 71.234,
+      "name": "Arkhangelsk"
+    },
+    "to": {
+      "x": 470.6,
+      "y": 89.9,
+      "z": 95,
+      "name": null
+    },
+    "distance": 420
+  },
+  {
+    "id": 7,
+    "name": "Trans-Siberian Link",
+    "coordinates": {
+      "x": 22.4,
+      "y": 56
+    },
+    "creationDate": "2026-02-10T13:25:00",
+    "from": {
+      "x": 180,
+      "y": 45.678,
+      "name": "Irkutsk"
+    },
+    "to": {
+      "x": 240.3,
+      "y": 63.2,
+      "z": 380,
+      "name": "Chita"
+    },
+    "distance": 750
+  },
+  {
+    "id": 8,
+    "name": "Urban Bypass",
+    "coordinates": {
+      "x": 55.3,
+      "y": 34
+    },
+    "creationDate": "2026-02-09T08:40:00",
+    "from": {
+      "x": 60,
+      "y": 19.012,
+      "name": "Yekaterinburg"
+    },
+    "to": {
+      "x": 110.7,
+      "y": 37.8,
+      "z": 260,
+      "name": "Perm"
+    },
+    "distance": 180
+  }
+]

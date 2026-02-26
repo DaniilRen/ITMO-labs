@@ -1,0 +1,40 @@
+package util.console;
+
+import java.util.Scanner;
+
+public class IOConsole implements Console {
+    private Scanner userScanner;
+    private boolean fileMode = false;
+
+    public Scanner getUserScanner() {
+        return this.userScanner;
+    }
+
+    public void setUserScanner(Scanner userScanner) {
+        this.userScanner = userScanner;
+    }
+
+    public boolean fileMode() {
+        return fileMode;
+    }
+
+    public void setUserMode() {
+        this.fileMode = false;
+    }
+
+    public void setFileMode() {
+        this.fileMode = true;
+    }
+
+    public void print(Object obj) {
+        System.out.print(obj.toString());
+    }
+
+    public void println(Object obj) {
+        System.out.println(obj.toString());
+    }
+
+    public void printError(Object obj) {
+        System.out.println("[Error]: " + obj.toString());
+    }
+}
