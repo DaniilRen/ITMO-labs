@@ -4,12 +4,12 @@ import java.util.Objects;
 import util.Validatable;
 
 public class Location3Dimension implements Validatable{
-    private final double x;
+    private final Double x;
     private final Double y;
     private final Integer z;
     private String name;
 
-    public Location3Dimension(double x, Double y, Integer z, String name) {
+    public Location3Dimension(Double x, Double y, Integer z, String name) {
         this.x = x;
         this.y = y;
         this.z = z;
@@ -18,7 +18,7 @@ public class Location3Dimension implements Validatable{
 
     @Override
     public boolean validate() {
-        return y != null && z != null && !(name == null || name.isEmpty());
+        return y != null && z != null && name != null;
     }
 
     @Override

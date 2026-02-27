@@ -41,6 +41,7 @@ public class LocalRuntime extends Runtime{
             remoteRuntime.registerCommands();
         } catch (CollectionLoadException e) {
             console.printError(e.getMessage());
+            System.exit(0);
         }
         
         String mode = args[0].toLowerCase();
@@ -61,14 +62,27 @@ public class LocalRuntime extends Runtime{
     
 
     public Status runScriptMode(String fileName) {
-        console.println(String.format(">--- RUNNING SCRIPT %s ---", fileName));
         String[] userCommand = {"", ""};
         Status commandStatus;
         scriptStack.add(fileName);
-        if (!new File(fileName).exists()) {
-            fileName = "../" + fileName;
-        }
+
         try (Scanner scriptScanner = new Scanner(new File(fileName))) {
+            console.println(String.format(">--- RUNNING SCRIPT %s ---", fileName));
+
+            File file = new File(fileName);
+
+            if (!file.exists()) {
+                throw new FileNotFoundException("File does not exist");
+            }
+
+            if (!file.canRead()) {
+                throw new SecurityException("No read permission for file: " + file.getAbsolutePath());
+            }
+
+            if (!file.canWrite()) {
+                throw new SecurityException("No write permission for file: " + file.getAbsolutePath());
+            }
+            
             if (!scriptScanner.hasNext()) throw new NoSuchElementException();
 
             Scanner tmpScanner = console.getUserScanner();
@@ -116,6 +130,8 @@ public class LocalRuntime extends Runtime{
         } catch (IllegalStateException exception) {
             console.printError("Unknowm error");
             System.exit(0);
+        } catch (SecurityException e) {
+            console.printError(e.getMessage());
         } finally {
             scriptStack.remove(scriptStack.size() - 1);
         }
@@ -150,17 +166,14 @@ public class LocalRuntime extends Runtime{
             return Status.ERROR;
         }
         Response<?> response = makeRequest(commandName, args);
-        // console.println(response);
         this.lastExecutedCommandName = commandName;
         Status status = response.getStatus();
         if (status == Status.OK) {
             var body = response.getBody();
             if (!body.isEmpty()) {
-                // console.println("----------");
                 body.forEach((element) -> {
                     console.println(element);
                 });
-                // console.println("----------");
             }
         } else if (status == Status.ERROR) {
             console.printError(response.getBody().getFirst());

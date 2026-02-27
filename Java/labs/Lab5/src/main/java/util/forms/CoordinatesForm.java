@@ -23,7 +23,7 @@ public class CoordinatesForm extends Form<Coordinates> {
         Float x;
         while (true) {
             try {
-                console.println("Enter coordinate X:");
+                console.println("Enter coordinate X (Float): ");
                 String strX = console.getUserScanner().nextLine().trim();
                 x = Float.parseFloat(strX);
                 break;
@@ -40,8 +40,9 @@ public class CoordinatesForm extends Form<Coordinates> {
         Long y;
         while (true) {
             try {
-                console.println("Enter coordinate Y:");
+                console.println("Enter coordinate Y (Long): ");
                 String strY = console.getUserScanner().nextLine().trim();
+                if (strY == "") {return null;}
                 y = Long.parseLong(strY);
                 break;
             } catch (NoSuchElementException exception) {

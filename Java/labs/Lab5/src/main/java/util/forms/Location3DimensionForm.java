@@ -19,12 +19,13 @@ public class Location3DimensionForm extends Form<Location3Dimension>{
         return location;
     }
 
-    public double askX() {
-        double x;
+    public Double askX() {
+        Double x;
         while (true) {
             try {
-                console.println("Enter location TO X: ");
+                console.println("Enter location TO X (Double): ");
                 String strX = console.getUserScanner().nextLine().trim();
+                if (strX == "") {return null;}
                 x = Double.parseDouble(strX);
                 break;
             } catch (NoSuchElementException exception) {
@@ -40,7 +41,7 @@ public class Location3DimensionForm extends Form<Location3Dimension>{
         Double y;
         while (true) {
             try {
-                console.println("Enter location TO Y: ");
+                console.println("Enter location TO Y (Double): ");
                 String strY = console.getUserScanner().nextLine().trim();
                 y = Double.parseDouble(strY);
                 break;
@@ -57,7 +58,7 @@ public class Location3DimensionForm extends Form<Location3Dimension>{
         Integer z;
         while (true) {
             try {
-                console.println("Enter location TO Z: ");
+                console.println("Enter location TO Z (Integer): ");
                 String strZ = console.getUserScanner().nextLine().trim();
                 z = Integer.parseInt(strZ);
                 break;
@@ -74,7 +75,7 @@ public class Location3DimensionForm extends Form<Location3Dimension>{
         String name;
         while (true) {
             try {
-                console.print("Enter location TO name: ");
+                console.print("Enter location TO name (String): ");
                 name = console.getUserScanner().nextLine().trim();
                 if (name.equals("")) throw new InvalidFormException("Name cannot be empty string");
                 break;

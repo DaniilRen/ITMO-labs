@@ -23,7 +23,7 @@ public class Location2DimensionForm extends Form<Location2Dimension>{
         Integer x;
         while (true) {
             try {
-                console.println("Enter location FROM X: ");
+                console.println("Enter location FROM X (Integer): ");
                 String strX = console.getUserScanner().nextLine().trim();
                 x = Integer.parseInt(strX);
                 break;
@@ -36,12 +36,13 @@ public class Location2DimensionForm extends Form<Location2Dimension>{
         return x;
     }
 
-    public double askY() {
-        double y;
+    public Double askY() {
+        Double y;
         while (true) {
             try {
-                console.println("Enter location FROM Y:");
+                console.println("Enter location FROM Y (Double): ");
                 String strY = console.getUserScanner().nextLine().trim();
+                if (strY == "") {return null;}
                 y = Double.parseDouble(strY);
                 break;
             } catch (NoSuchElementException exception) {
@@ -57,7 +58,7 @@ public class Location2DimensionForm extends Form<Location2Dimension>{
         String name;
         while (true) {
             try {
-                console.print("Enter location FROM name: ");
+                console.print("Enter location FROM name (String): ");
                 name = console.getUserScanner().nextLine().trim();
                 if (name.equals("")) throw new InvalidFormException("Name cannot be empty string");
                 break;

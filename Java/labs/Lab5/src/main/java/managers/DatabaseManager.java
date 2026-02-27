@@ -32,15 +32,24 @@ public class DatabaseManager {
 
 
     public DatabaseManager(String fileName) {
-        if (!(new File(fileName).exists())) {
-            fileName = "../" + fileName;
-        }
         this.fileName = fileName;
     }
     
     public Collection<Route> readCollectionFromFile() throws CollectionLoadException {
         if (fileName != null && !fileName.isEmpty()) {
             try (var fileReader = new FileReader(fileName)) {
+                File file = new File(fileName); 
+                if (!(file.exists())) {
+                    throw new FileNotFoundException("File does not exist");
+                }
+                if (!file.canRead()) {
+                    throw new SecurityException("No read permission for file: " + file.getAbsolutePath());
+                }
+
+                if (!file.canWrite()) {
+                    throw new SecurityException("No write permission for file: " + file.getAbsolutePath());
+                }
+                
                 var collectionType = new TypeToken<ArrayList<Route>>() {}.getType();
                 var reader = new BufferedReader(fileReader);
 
@@ -55,7 +64,6 @@ public class DatabaseManager {
                 }
 
                 if (jsonString.length() == 0) {
-                    // System.out.println("<Empty JSON file>");
                     jsonString = new StringBuilder("[]");
                 }
 
@@ -70,6 +78,8 @@ public class DatabaseManager {
                 throw new CollectionLoadException("Invalid collection in file");
             } catch (IllegalStateException | IOException exception) {
                 throw new CollectionLoadException("Unknown error");
+            } catch (SecurityException e) {
+                throw new CollectionLoadException(e.getMessage());
             }
     }
         return new ArrayList<>();

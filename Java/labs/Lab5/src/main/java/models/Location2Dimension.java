@@ -5,10 +5,10 @@ import util.Validatable;
 
 public class Location2Dimension implements Validatable {
     private final Integer x;
-    private final double y;
+    private final Double y;
     private String name;
 
-    public Location2Dimension(Integer x, double y, String name) {
+    public Location2Dimension(Integer x, Double y, String name) {
         this.x = x;
         this.y = y;
         this.name = name;
@@ -16,7 +16,7 @@ public class Location2Dimension implements Validatable {
 
     @Override
     public boolean validate() {
-        return x != null && !(name == null || name.isEmpty());
+        return x != null && !(name.isEmpty());
     }
 
 

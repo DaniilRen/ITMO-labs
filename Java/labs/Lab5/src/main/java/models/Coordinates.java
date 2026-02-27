@@ -15,7 +15,7 @@ public class Coordinates implements Validatable {
 
     @Override
     public boolean validate() {
-        return x != null && y != null;
+        return x != null && (Objects.equals(y, null) || (y != null && y <= 106));
     }
 
     @Override
