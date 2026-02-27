@@ -37,4 +37,9 @@ public class Response<T> extends Payload<T> {
         body.add(element);
     };
 
+    @Override
+    public String toString() {
+        return String.format("{\n\tstatus: %s,\n\tbody: %s\n}", status, body);
+    }
+
 };

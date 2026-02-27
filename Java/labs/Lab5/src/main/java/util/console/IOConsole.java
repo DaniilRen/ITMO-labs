@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class IOConsole implements Console {
     private Scanner userScanner;
     private boolean fileMode = false;
+    private final String promptSymbol = "$ ";
 
     public Scanner getUserScanner() {
         return this.userScanner;
@@ -36,5 +37,13 @@ public class IOConsole implements Console {
 
     public void printError(Object obj) {
         System.out.println("[Error]: " + obj.toString());
+    }
+
+    public void printPromptSymbol() {
+        print(promptSymbol);
+    }
+
+    public String getPromptSymbol() {
+        return promptSymbol;
     }
 }

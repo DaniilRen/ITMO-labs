@@ -30,6 +30,7 @@
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/runtime/client/LocalRuntime.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/runtime/server/RemoteRuntime.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/LocalDateTimeAdapter.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/LocalEnvironment.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/Payload.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/Request.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/Response.java

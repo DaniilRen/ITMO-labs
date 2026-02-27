@@ -95,12 +95,13 @@ public class Route extends Entity {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
-        result.append(String.format("creation date=%s", creationDate) + "\n\n");
-        result.append(String.format("name=%s", name) + "\n\n");
-        result.append(String.format("coordinates=%s", coordinates) + "\n\n");
-        result.append(String.format("from=%s", from) + "\n\n");
-        result.append(String.format("to=%s", to) + "\n\n");
-        result.append(String.format("distance=%d", distance) + "\n\n");
+        result.append(String.format("id=%d", id) + "\n");
+        result.append(String.format("creation date=%s", creationDate) + "\n");
+        result.append(String.format("name=%s", name) + "\n");
+        result.append(String.format("coordinates=%s", coordinates) + "\n");
+        result.append(String.format("from=%s", from) + "\n");
+        result.append(String.format("to=%s", to) + "\n");
+        result.append(String.format("distance=%d", distance) + "\n");
         return result.toString();
     }
 

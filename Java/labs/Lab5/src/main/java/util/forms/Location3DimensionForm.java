@@ -23,7 +23,7 @@ public class Location3DimensionForm extends Form<Location3Dimension>{
         double x;
         while (true) {
             try {
-                console.println("Enter coordinate X:");
+                console.println("Enter location TO X: ");
                 String strX = console.getUserScanner().nextLine().trim();
                 x = Double.parseDouble(strX);
                 break;
@@ -40,7 +40,7 @@ public class Location3DimensionForm extends Form<Location3Dimension>{
         Double y;
         while (true) {
             try {
-                console.println("Enter coordinate Y:");
+                console.println("Enter location TO Y: ");
                 String strY = console.getUserScanner().nextLine().trim();
                 y = Double.parseDouble(strY);
                 break;
@@ -57,7 +57,7 @@ public class Location3DimensionForm extends Form<Location3Dimension>{
         Integer z;
         while (true) {
             try {
-                console.println("Enter coordinate Z:");
+                console.println("Enter location TO Z: ");
                 String strZ = console.getUserScanner().nextLine().trim();
                 z = Integer.parseInt(strZ);
                 break;
@@ -74,7 +74,7 @@ public class Location3DimensionForm extends Form<Location3Dimension>{
         String name;
         while (true) {
             try {
-                console.print("Enter name: ");
+                console.print("Enter location TO name: ");
                 name = console.getUserScanner().nextLine().trim();
                 if (name.equals("")) throw new InvalidFormException("Name cannot be empty string");
                 break;

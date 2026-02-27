@@ -4,6 +4,7 @@ import java.util.List;
 
 import runtime.client.LocalRuntime;
 import runtime.server.RemoteRuntime;
+import util.LocalEnvironment;
 import util.Response;
 import util.Status;
 
@@ -16,9 +17,11 @@ public class ExecuteScript extends Command {
     public Response<?> execute(List<?> args) {
         if (args.size() == 1) {
             String fileName = (String) args.get(0);
-            if (fileName == "") {return new Response<>(List.of("Invalid file name"), Status.ERROR);}
+            if (fileName == "") {return new Response<>(List.of("Invalid script name"), Status.ERROR);}
 
-            RemoteRuntime remoteRuntime = new RemoteRuntime(fileName);
+            String collectionFilePath = LocalEnvironment.getCollectionPath();
+            if (collectionFilePath == null) {return new Response<>(List.of("Invalid collection path"), Status.ERROR);}
+            RemoteRuntime remoteRuntime = new RemoteRuntime(collectionFilePath);
 
             LocalRuntime localRuntime = new LocalRuntime(remoteRuntime);
             localRuntime.run("script", fileName);

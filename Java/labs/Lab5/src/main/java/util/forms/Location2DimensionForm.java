@@ -23,7 +23,7 @@ public class Location2DimensionForm extends Form<Location2Dimension>{
         Integer x;
         while (true) {
             try {
-                console.println("Enter coordinate X:");
+                console.println("Enter location FROM X: ");
                 String strX = console.getUserScanner().nextLine().trim();
                 x = Integer.parseInt(strX);
                 break;
@@ -40,7 +40,7 @@ public class Location2DimensionForm extends Form<Location2Dimension>{
         double y;
         while (true) {
             try {
-                console.println("Enter coordinate Y:");
+                console.println("Enter location FROM Y:");
                 String strY = console.getUserScanner().nextLine().trim();
                 y = Double.parseDouble(strY);
                 break;
@@ -57,7 +57,7 @@ public class Location2DimensionForm extends Form<Location2Dimension>{
         String name;
         while (true) {
             try {
-                console.print("Enter name: ");
+                console.print("Enter location FROM name: ");
                 name = console.getUserScanner().nextLine().trim();
                 if (name.equals("")) throw new InvalidFormException("Name cannot be empty string");
                 break;

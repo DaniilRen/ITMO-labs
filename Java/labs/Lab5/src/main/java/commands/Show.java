@@ -17,6 +17,6 @@ public class Show extends Command {
     public Response<?> execute(List<?> args) {
         if (args.size() > 0) { return new Response<>(List.of("Invalid argument number"), Status.ERROR); }
 
-        return new Response<>(List.of(collectionManager));
+        return new Response<>(collectionManager.getCollection());
     }
 }

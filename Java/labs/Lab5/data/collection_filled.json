@@ -1,26 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Highway 101",
-    "coordinates": {
-      "x": 45.2,
-      "y": 75
-    },
-    "creationDate": "2026-02-16T14:54:00",
-    "from": {
-      "x": 150,
-      "y": 55.123,
-      "name": "Saint Petersburg"
-    },
-    "to": {
-      "x": 200.5,
-      "y": 75.2,
-      "z": 300,
-      "name": "Moscow"
-    },
-    "distance": 450
-  },
-  {
     "id": 2,
     "name": "Coastal Route",
     "coordinates": {
@@ -166,5 +145,26 @@
       "name": "Perm"
     },
     "distance": 180
+  },
+  {
+    "id": 10,
+    "name": "Test NAME",
+    "coordinates": {
+      "x": 1.2,
+      "y": 1222
+    },
+    "creationDate": "2026-02-27T11:16:13.747924611",
+    "from": {
+      "x": 232,
+      "y": 1.23,
+      "name": "locafrom"
+    },
+    "to": {
+      "x": 23.0,
+      "y": 55.0,
+      "z": 2,
+      "name": "locato"
+    },
+    "distance": 23232
   }
 ]

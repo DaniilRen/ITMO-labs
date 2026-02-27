@@ -41,7 +41,7 @@ public class RouteForm extends Form<Route> {
         String name;
         while (true) {
             try {
-                console.print("Enter name: ");
+                console.print("Enter Route name: ");
                 name = console.getUserScanner().nextLine().trim();
                 if (name.equals("")) throw new InvalidFormException("Name cannot be empty string");
                 break;
@@ -69,7 +69,7 @@ public class RouteForm extends Form<Route> {
 
         while (true) {
             try {
-                console.print("Enter distance: ");
+                console.print("Enter Route distance: ");
                 String strDistance = console.getUserScanner().nextLine().trim();
                 distance = Integer.parseInt(strDistance);
                 break;

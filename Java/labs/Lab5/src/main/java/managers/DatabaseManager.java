@@ -49,14 +49,13 @@ public class DatabaseManager {
                 String line;
                 while((line = reader.readLine()) != null) {
                     line = line.trim();
-                    System.out.println("--- "+line);
                     if (!line.equals("")) {
                         jsonString.append(line);
                     }
                 }
 
                 if (jsonString.length() == 0) {
-                    System.out.println("<Empty JSON file>");
+                    // System.out.println("<Empty JSON file>");
                     jsonString = new StringBuilder("[]");
                 }
 

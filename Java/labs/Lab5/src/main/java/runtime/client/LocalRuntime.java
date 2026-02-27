@@ -25,7 +25,7 @@ public class LocalRuntime extends Runtime{
     private final Scanner scanner;
     private final RemoteRuntime remoteRuntime;
     private String lastExecutedCommandName;
-    private List<?> lastExecutedCommandArgs;
+    private ArrayList<Object> lastExecutedCommandArgs = new ArrayList<>();
     private final List<String> scriptStack = new ArrayList<>();
 
     public LocalRuntime(RemoteRuntime remoteRuntime) {
@@ -45,14 +45,12 @@ public class LocalRuntime extends Runtime{
         
         String mode = args[0].toLowerCase();
 
-        console.println(">--- Running ---<");
-
         if (mode == "interactive") {
             runInteractiveMode();
         } else if (mode == "script") {
             String fileName = args[1];
             if (fileName == "") {
-                console.printError("Invalid local runtime mode: "+mode);
+                console.printError("Invalid script file name: "+mode);
                 System.exit(0);
             }
             runScriptMode(fileName);
@@ -63,6 +61,7 @@ public class LocalRuntime extends Runtime{
     
 
     public Status runScriptMode(String fileName) {
+        console.println(String.format(">--- RUNNING SCRIPT %s ---", fileName));
         String[] userCommand = {"", ""};
         Status commandStatus;
         scriptStack.add(fileName);
@@ -83,7 +82,7 @@ public class LocalRuntime extends Runtime{
                     userCommand = (scriptScanner.nextLine().trim() + " ").split(" ", 2);
                     userCommand[1] = userCommand[1].trim();
                 }
-                console.println(String.join(" ", userCommand));
+                console.println(console.getPromptSymbol() + String.join(" ", userCommand));
 
                 if (userCommand[0].equals("execute_script")) {
                     for (String script : scriptStack) {
@@ -92,6 +91,9 @@ public class LocalRuntime extends Runtime{
                 }
                 String commandName = userCommand[0];
                 List<?> args = List.of(userCommand[1]);
+                if (args.size() == 1 && args.get(0) == "") {
+                    args = List.of();
+                }
                 commandStatus = executeCommand(commandName, args);
 
             } while (commandStatus != Status.EXIT && scriptScanner.hasNextLine());
@@ -122,10 +124,13 @@ public class LocalRuntime extends Runtime{
 
     
     public void runInteractiveMode(){
+        console.println(">----- COLLECTION MANAGER CLI -----");
         String[] userCommand = {"", ""};
         Status commandStatus = Status.OK;
 
         do {
+            console.printPromptSymbol();
+
             userCommand = (scanner.nextLine().trim() + " ").split(" ", 2);
             userCommand[1] = userCommand[1].trim();
             
@@ -145,21 +150,27 @@ public class LocalRuntime extends Runtime{
             return Status.ERROR;
         }
         Response<?> response = makeRequest(commandName, args);
+        // console.println(response);
         this.lastExecutedCommandName = commandName;
         Status status = response.getStatus();
         if (status == Status.OK) {
             var body = response.getBody();
-            if (body.isEmpty() == false) {
+            if (!body.isEmpty()) {
+                // console.println("----------");
                 body.forEach((element) -> {
                     console.println(element);
                 });
+                // console.println("----------");
             }
         } else if (status == Status.ERROR) {
-            console.printError(response.getBody());
+            console.printError(response.getBody().getFirst());
         } else if (status == Status.INPUT) {
             try {
                 RouteForm form = new RouteForm(console);
-                ArrayList<Object> newArgs = new ArrayList<> (lastExecutedCommandArgs); 
+                ArrayList<Object> newArgs = lastExecutedCommandArgs != null 
+                    ? new ArrayList<>(lastExecutedCommandArgs) 
+                    : new ArrayList<>();
+  
                 var result = form.build();
                 if (result == null) {
                    throw new InvalidFormException("Entity wasn`t built due to main form validation error");
