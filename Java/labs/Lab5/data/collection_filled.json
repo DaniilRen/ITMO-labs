@@ -58,7 +58,7 @@
       "x": 175.8,
       "y": 52.3,
       "z": 220,
-      "name": null
+      "name": "ewfefew"
     },
     "distance": 290
   },
@@ -100,7 +100,7 @@
       "x": 470.6,
       "y": 89.9,
       "z": 95,
-      "name": null
+      "name": "sdsd"
     },
     "distance": 420
   },
@@ -147,13 +147,13 @@
     "distance": 180
   },
   {
-    "id": 10,
-    "name": "Test NAME",
+    "id": 9,
+    "name": "Test1",
     "coordinates": {
       "x": 1.2,
-      "y": 1222
+      "y": 22
     },
-    "creationDate": "2026-02-27T11:16:13.747924611",
+    "creationDate": "2026-02-27T11:16:13",
     "from": {
       "x": 232,
       "y": 1.23,

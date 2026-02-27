@@ -18,7 +18,7 @@ public class Location3Dimension implements Validatable{
 
     @Override
     public boolean validate() {
-        return y != null && z != null && name != null;
+        return y != null && z != null;
     }
 
     @Override

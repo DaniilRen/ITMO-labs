@@ -1,0 +1,329 @@
+@startuml Lab5
+
+
+package commands.interfaces {
+    interface Describable {}
+    interface Executable {}
+}
+
+package commands {
+    abstract class Command {
+        + Command()
+        + getDescription(): String
+        + getName(): String
+    }
+
+    class Add {
+        + Add()
+        + execute(): Response
+    }
+
+    class Clear {
+        + Clear()
+        + execute(): Response
+    }
+
+    class ExecuteScript {
+        + ExecuteScript()
+        + execute(): Response
+    }
+
+    class Exit {
+        + Exit()
+        + execute(): Response
+    }
+
+    class FilterStartsWithName {
+        + FilterStartsWithName()
+        + execute(): Response
+    }
+
+    class Help {
+        + Help()
+        + execute(): Response
+    }
+
+    class History {
+        + History()
+        + execute(): Response
+    }
+
+    class Info {
+        + Info()
+        + execute(): Response
+    }
+
+    class PrintFieldDescendingDistance {
+        + PrintFieldDescendingDistance()
+        + execute(): Response
+    }
+
+    class PrintUniqueDistances {
+        + PrintUniqueDistances()
+        + execute(): Response
+    }
+
+    class RemoveById {
+        + RemoveById()
+        + execute(): Response
+    }
+
+    class RemoveLower {
+        + RemoveLower()
+        + execute(): Response
+    }
+
+    class Save {
+        + Save()
+        + execute(): Response
+    }
+
+    class Show {
+        + Show()
+        + execute(): Response
+    }
+
+    class Sort {
+        + Sort()
+        + execute(): Response
+    }
+
+    class Update {
+        + Update()
+        + execute(): Response
+    }
+}
+
+package managers {
+    class CollectionManager {
+        - collection: ArrayList<Route>
+        - databaseManager: DatabaseManager
+        - lastInitTime: LocalDateTime
+        - lastSaveTime: LocalDateTime
+        + CollectionManager()
+        + loadCollection(): void
+        - validateAll(): void
+        + saveCollection(): void
+        + clearCollection(): ArrayList
+        + removeFromCollection(): ArrayList
+        + addToCollection(): ArrayList
+        + checkExist(): boolean
+        + getById(): Entity
+        + getByValue(): Entity
+        + getCollection(): ArrayList
+        + getCollectionType(): String
+        + getCollectionSize(): int
+        + getLastInitTime(): LocalDateTime
+        + getLastSaveTime(): LocalDateTime
+    }
+
+    class CommandManager {
+        - commands: Map<String, Command>
+        - commandHistory: List<String>
+        + register(): void
+        + getCommands(): Map
+        + getCommandHistory(): List
+        + addToHistory(): void
+    }
+
+    class DatabaseManager {
+        - fileName: String
+        - gson: Gson
+        + DatabaseManager()
+        + readCollectionFromFile(): Collection
+        + writeCollectionToFile(): void
+    }
+}
+
+package models {
+    abstract class Entity {
+        + getId(): int
+        # getComparator(): Comparator
+        + compareTo(): int
+    }
+
+    class Route {
+        - nextId: int
+        - id: int
+        - name: String
+        - coordinates: Coordinates
+        - creationDate: LocalDateTime
+        - from: Location2Dimension
+        - to: Location3Dimension
+        - distance: int
+        + Route()
+        + update(): void
+        + updateNextId(): void
+        + IncNextId(): void
+        + getId(): int
+        + getName(): String
+        + getDistance(): int
+    }
+
+    class Coordinates {
+        - x: Float
+        - y: Long
+        + Coordinates()
+    }
+
+    class Location2Dimension {
+        - x: Integer
+        - y: Double
+        - name: String
+        + Location2Dimension()
+    }
+
+    class Location3Dimension {
+        - x: Double
+        - y: Double
+        - z: Integer
+        - name: String
+        + Location3Dimension()
+    }
+}
+
+package runtime {
+    abstract class Runtime {
+        + run(): void
+    }
+}
+
+package runtime.client {
+    class LocalRuntime {
+        - console: IOConsole
+        - scanner: Scanner
+        - remoteRuntime: RemoteRuntime
+        - lastExecutedCommandName: String
+        - lastExecutedCommandArgs: ArrayList<Object>
+        - scriptStack: List<String>
+        + LocalRuntime()
+        + run(): void
+        - runScriptMode(): Status
+        - runInteractiveMode(): void
+        - executeCommand(): Status
+        - makeRequest(): Request
+    }
+}
+
+package runtime.server {
+    class RemoteRuntime {
+        - databaseManager: DatabaseManager
+        - commandManager: CommandManager
+        + RemoteRuntime()
+        + registerCommands(): void
+        + proccessRequest(): Response
+        - executeCommand(): Response
+        - validateCommandName(): boolean
+    }
+}
+
+package util.console {
+    interface Console {
+        print(): void
+        println(): void
+        printError(): void
+        printPromptSymbol(): void
+        getPromptSymbol(): Strings
+    }
+    
+    class IOConsole {
+        - userScanner: Scanner
+        - fileMode: boolean
+        - promptSymbol: String
+        + getUserScanner(): Scanner
+        + setUserScanner(): void
+        + fileMode(): boolean
+        + setUserMode(): void
+        + setFileMode(): void
+    }
+}
+
+package util.exceptions {
+    class CollectionLoadException {}
+    class InvalidFormException {}
+    class ScriptRecursionException {}
+}
+
+package util.forms {
+    abstract class Form {
+        + build()
+    }
+
+    class RouteForm {
+        - console: IOConsole
+        + RouteForm()
+        - askName(): String
+        - askCoordinates(): Coordinates
+        - askLocationFrom(): Location2Dimension
+        - askLocationTo(): askLocationTo
+        - askDistance(): int
+    }
+
+    class CoordinatesForm {
+        - console: IOConsole
+        + CoordinatesForm()
+        - askX(): Float
+        - askY(): 
+    }
+
+    class Location2DimensionForm {
+        - console: IOConsole
+        + Location2DimensionForm()
+        - askX(): Integer
+        - askY(): Double
+        - askName(): String
+    }
+
+    class Location3DimensionForm {
+        - console: IOConsole
+        + Location3DimensionForm()
+        - askX(): Double
+        - askY(): Double
+        - askZ(): Integer
+        - askName(): String
+    }
+}
+
+package util {
+    class LocalDateTimeAdapter {}
+
+    class LocalEnvironment {
+        + getCollectionPath(): String
+    }
+
+    abstract class Payload {
+        # body: ArrayList
+        + setBody(): void
+        + getBody(): List
+    }
+
+    class Request {
+        - name: String
+        + Request()
+        + setName(): void
+        + getName(): String
+    }
+
+    class Response {
+        - status: Status
+        + Response()
+        + setStatus(): void
+        + getStatus(): Status
+        + IsEmpty(): boolean
+        + put(): void
+    }
+
+    enum Status {
+        OK
+        ERROR
+        EXIT
+        INPUT
+    }
+
+    interface Validatable {
+        validate()
+    }
+}
+
+
+@enduml

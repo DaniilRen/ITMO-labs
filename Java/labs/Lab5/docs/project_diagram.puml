@@ -1,0 +1,287 @@
+@startuml Lab5
+left to right direction
+
+
+package model.abstracted {
+    abstract class Story {
+        # characters: List<Character>
+        + Story()
+        + addCharacter(character: Character): void
+    }
+
+    record Path {
+        - distance: Distance
+        - startPoint: Planet
+        - endPoint: Planet
+        - distanceDescription: DistanceDescription
+        + Path(distance: Distance, startPoint: Planet, endPoint: Planet)
+        + toString(): String
+    }
+    
+    abstract class Character {
+        # name: String
+        # state: State
+        # location: Location
+        # observedObject: Lookable
+        + Character(name: String)
+        # describeLocation(): void
+        + setLocation(location: Location): void
+        + setObservedObject(observedObject: Lookable): void
+        + setState(state: State): void
+        + getName(): String
+        + getLocation(): Location
+        + getState(): State
+        + equals(): boolean
+        + hashCode(): int
+        + toString(): String
+    } 
+
+    record Speed {
+        - distance: Distance
+        - timeUnit: TimeUnit
+        + Speed(distance: Distance, timeUnit: TimeUnit)
+        + toString(): String
+    }
+}
+
+
+package model.abstracted.enums {
+    enum Distance {
+        ONE
+        TWO
+        TWELVE
+        ONE_THOUSAND
+        TWO_THOUSAND
+        FOUR_HUNDRED_THOUSAND
+        - distanceText: String
+        - integerRepresentation: int
+        + Distance(distanceText: String, integerRepresentation: int)
+        + toInteger(): int
+        + toString(): String
+    }
+
+    enum Feeling {
+        JOY
+        SADNESS
+        ANGER
+        HUNGER
+        DELIGHT
+        - text: String
+        + Feeling(text: String)
+        + toString(): String
+    }
+
+    enum Hour {
+        ONE
+        TWO
+        THREE
+        FOUR
+        FIVE
+        SIX
+        SEVEN
+        EIGHT
+        NINE
+        TEN
+        ELEVEN
+        TWELVE
+        - text: String
+        + Hour(text: String)
+        + toString(): String
+    }
+
+    enum DistanceDescription {
+        LITTLE
+        BIG
+        HUGE
+        - text: String
+        + DistanceDescription(text: String)
+        + toString(): String
+    }
+
+    enum SpeedDescription {
+        CALM
+        SCARY
+        STRANGE
+        - text: String
+        + SpeedDescription(text: String)
+        + toString(): String
+    }
+
+    enum State {
+        EATING
+        SLEEPING
+        WALKING
+        - text: String
+        + State(text: String)
+        + toString(): String
+    }
+
+    enum TimeUnit {
+        SECOND
+        MINUTE
+        HOUR
+        - text: String
+        + TimeUnit(text: String)
+        + toString(): String
+    }
+
+    enum Wish {
+        EAT
+        SLEEP
+        REST
+        - text: String
+        - feeling: Feeling
+        + Wish(text: String, feeling: Feeling)
+        + toString(): String
+        + toFeeling(): Feeling
+    }
+}
+
+package model.abstracted.interfaces {
+    interface Eatable {}
+    interface Lookable {}
+    interface Location {}
+}
+
+package model.characters {
+    class Neznaika {
+        - wish: Wish
+        + setLocation(): void
+        - describeRocketSpeed(): void
+        - describeRocketApproaching(): void
+        - couldStopLooking(object: Lookable): String
+        + getWish(): Wish
+        + setWish(wish: Wish): void
+        + setNoticed(noticed: String): void
+        + setObservedObject(): void
+        + describeObserve(): void
+        # describeLocation(): void
+    }
+
+    class Ponchik {
+        - chewingObject: Eatable
+        + Ponchik()
+        + setChewingObject(object: Eatable): void
+        + getChewingObject(): Eatable
+        - checkState(): void
+        + describeState(): String
+        # describeLocation(): void
+    }
+}
+
+package model.objects {
+    record Compartment {
+        - type: String
+        + toString(): String
+    }
+
+    record Food {
+        - name: String
+        + toString(): String
+    }
+
+    record Planet {
+        - name: String
+        + toString(): String
+        + attractViews(): String
+    }
+
+    class Rocket {
+        - compartments: ArrayList<Compartment>
+        - name: String
+        - speed: Speed
+        - path: Path
+        + Rocket(name: String, compartments: ArrayList<Compartment>)
+        + setPath(path: Path): void
+        + setSpeed(speed: Speed): void
+        + getPath(): Path
+        + getSpeed(): Speed
+        + getCompartments(): ArrayList<Compartment>
+        + checkUniqueCompartments(compartments: ArrayList<Compartment>): void
+        + getName(): String
+        + toString(): String
+    }
+}
+
+package model.exceptions {
+    exception StateFieldNotSetException {
+        + StateFieldNotSetException(message: String)
+        + getMessage(): String
+    }
+
+    exception NotUniqueCompartmentsException {
+        + NotUniqueCompartmentsException(message: String)
+        + getMessage(): String
+    }
+
+    exception EmptyParamsException {
+        + EmptyParamsException(message: String)
+        + getMessage(): String
+    }
+}
+
+package model {
+    class TaskStory extends model.abstracted.Story {
+        - neznaika: Neznaika
+        - ponchick: Ponchik
+        - rocket: Rocket
+        - rocketSpeed: Speed
+        - rocketPath: Path
+        + TaskStory()
+        + tell(): void
+        - createCompartments(): ArrayList<Compartment>
+    }
+}
+
+model.abstracted.Story <|-- TaskStory
+
+TaskStory --> Character
+TaskStory *-- Neznaika
+TaskStory *-- Ponchik
+TaskStory *-- Rocket
+TaskStory *-- Speed
+TaskStory *-- Path
+
+Path --> Distance
+Path --> Planet
+
+Lookable <|.. Character
+Lookable <|.. Compartment
+Lookable <|.. Food
+Lookable <|.. Planet
+
+Eatable <|.. Food
+
+Location <|.. Compartment
+Location <|.. Planet
+
+Character <|-- Neznaika
+Character <|-- Ponchik
+Character --> State
+Character --> Location
+
+Speed --> Distance
+Speed --> TimeUnit
+
+Neznaika --> Feeling
+Neznaika --> State
+Neznaika --> Location
+Neznaika --> Wish
+Neznaika --> TimeUnit
+Neznaika --> Planet
+Neznaika --> Rocket
+Neznaika --> EmptyParamsException
+
+Ponchik --> Feeling
+Ponchik --> State
+Ponchik --> Location
+Ponchik --> Eatable
+Ponchik ..> StateFieldNotSetException 
+
+Rocket --> Compartment
+Rocket --> Path
+Rocket --> Speed
+Rocket --> Location
+Rocket ..> NotUniqueCompartmentsException
+
+@enduml

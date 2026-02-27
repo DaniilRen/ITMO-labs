@@ -9,7 +9,7 @@ import util.exceptions.CollectionLoadException;
 
 
 public class CollectionManager {
-    ArrayList<Route> collection = new ArrayList<>();
+    private ArrayList<Route> collection = new ArrayList<>();
     private final DatabaseManager databaseManager;
     private LocalDateTime lastInitTime;
     private LocalDateTime lastSaveTime;
@@ -28,14 +28,13 @@ public class CollectionManager {
         }
     }
 
-    private void validateAll() {
-        (new ArrayList<>(this.getCollection())).forEach(route -> {
+    private void validateAll() throws CollectionLoadException {
+        for (Route route : this.getCollection()) {
             if (!route.validate()) {
-                // System.err.println("element id=" + route.getId() + " has invalid fields");
+                throw new CollectionLoadException("element id=" + route.getId() + " has invalid fields");
             }
-        });
-    };
-
+        }
+    }
     public void saveCollection(){
         databaseManager.writeCollectionToFile(collection);
         this.lastSaveTime = LocalDateTime.now();

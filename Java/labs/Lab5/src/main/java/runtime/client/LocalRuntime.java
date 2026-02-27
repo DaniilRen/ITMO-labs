@@ -54,14 +54,15 @@ public class LocalRuntime extends Runtime{
                 console.printError("Invalid script file name: "+mode);
                 System.exit(0);
             }
-            runScriptMode(fileName);
+            Status scriptModeStatus = runScriptMode(fileName);
+            console.println("--- FINISHED SCRIPT WITH STATUS: "+scriptModeStatus+" ---");
         } else {
             console.printError("Invalid local runtime mode: "+mode);
         }
     }
     
 
-    public Status runScriptMode(String fileName) {
+    private Status runScriptMode(String fileName) {
         String[] userCommand = {"", ""};
         Status commandStatus;
         scriptStack.add(fileName);
@@ -139,7 +140,7 @@ public class LocalRuntime extends Runtime{
     }
 
     
-    public void runInteractiveMode(){
+    private void runInteractiveMode(){
         console.println(">----- COLLECTION MANAGER CLI -----");
         String[] userCommand = {"", ""};
         Status commandStatus = Status.OK;

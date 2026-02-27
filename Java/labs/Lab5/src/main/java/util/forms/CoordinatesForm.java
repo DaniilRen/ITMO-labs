@@ -19,7 +19,7 @@ public class CoordinatesForm extends Form<Coordinates> {
         return coordinates;
     }
 
-    public Float askX() {
+    private Float askX() {
         Float x;
         while (true) {
             try {
@@ -36,7 +36,7 @@ public class CoordinatesForm extends Form<Coordinates> {
         return x;
     }
 
-    public Long askY() {
+    private Long askY() {
         Long y;
         while (true) {
             try {

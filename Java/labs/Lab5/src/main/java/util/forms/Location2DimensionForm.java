@@ -19,7 +19,7 @@ public class Location2DimensionForm extends Form<Location2Dimension>{
         return location;
     }
 
-    public Integer askX() {
+    private Integer askX() {
         Integer x;
         while (true) {
             try {
@@ -36,7 +36,7 @@ public class Location2DimensionForm extends Form<Location2Dimension>{
         return x;
     }
 
-    public Double askY() {
+    private Double askY() {
         Double y;
         while (true) {
             try {
