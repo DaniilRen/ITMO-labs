@@ -30,7 +30,7 @@ public class RemoteRuntime extends Runtime {
 
             commandManager.register("help", new Help(commandManager));
             commandManager.register("info", new Info(collectionManager));
-            commandManager.register("add", new Show(collectionManager));
+            commandManager.register("show", new Show(collectionManager));
             commandManager.register("add", new Add(collectionManager));
             commandManager.register("update", new Update(collectionManager));
             commandManager.register("remove_by_id", new RemoveById(collectionManager));
@@ -64,7 +64,6 @@ public class RemoteRuntime extends Runtime {
 
     private boolean validateCommandName(String command) {
         Set<String> commandsNames = commandManager.getCommands().keySet();
-        System.out.println("<"+command+">");
         return commandsNames.contains(command);
     }
 }

@@ -31,7 +31,7 @@ public class CollectionManager {
     private void validateAll() {
         (new ArrayList<>(this.getCollection())).forEach(route -> {
             if (!route.validate()) {
-                System.err.println("id=" + route.getId() + " имеет невалидные поля.");
+                System.err.println("element id=" + route.getId() + " has invalid fields");
             }
         });
     };

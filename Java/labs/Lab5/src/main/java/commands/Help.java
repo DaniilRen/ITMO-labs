@@ -15,8 +15,6 @@ public class Help extends Command {
   }
 
   public Response<?> execute(List<?> args) {
-    System.out.println(args);
-    System.out.println(args.size());
     if (args.size() > 0) { return new Response<>(List.of("Invalid argument number"), Status.ERROR); }
     
     StringBuilder infoText = new StringBuilder();
