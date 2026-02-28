@@ -7,6 +7,10 @@ import java.util.List;
 import util.Response;
 import util.Status;
 
+/**
+ * Команда 'clear'. Очищает коллекцию.
+ * @author Septyq
+ */
 public class Clear extends Command {
     private final CollectionManager collectionManager;
 

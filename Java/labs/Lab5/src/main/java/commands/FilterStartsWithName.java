@@ -9,6 +9,10 @@ import models.Route;
 import util.Response;
 import util.Status;
 
+/**
+ * Команда 'filter_starts_with_name'. Выводит элементы, значение поля name которых начинается с заданной подстроки.
+ * @author Septyq
+ */
 public class FilterStartsWithName extends Command {
     private final CollectionManager collectionManager;
 

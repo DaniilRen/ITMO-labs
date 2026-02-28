@@ -9,6 +9,11 @@ import models.Route;
 import util.Response;
 import util.Status;
 
+
+/**
+ * Команда 'print_unique_distance'. Выводит уникальные значения поля distance всех элементов в коллекции.
+ * @author Septyq
+ */
 public class PrintUniqueDistances extends Command {
     private CollectionManager collectionManager;
 

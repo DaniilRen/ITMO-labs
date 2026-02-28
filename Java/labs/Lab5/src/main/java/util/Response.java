@@ -3,6 +3,10 @@ package util;
 import java.util.List;
 
 
+/**
+ * Класс ответа.
+ * @author Septyq
+ */
 public class Response<T> extends Payload<T> {
     private Status status = Status.OK;
 

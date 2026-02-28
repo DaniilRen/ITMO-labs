@@ -4,6 +4,10 @@ import java.util.Objects;
 import util.Validatable;
 
 
+/**
+ * Класс координат.
+ * @author Septyq
+ */
 public class Coordinates implements Validatable {
     private final Float x;
     private final Long y;

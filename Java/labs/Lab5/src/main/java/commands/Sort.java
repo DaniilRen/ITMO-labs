@@ -10,6 +10,11 @@ import util.Status;
 
 import models.Route;
 
+
+/**
+ * Команда 'sort'. Сортирует коллекцию в естественном порядке.
+ * @author Septyq
+ */
 public class Sort extends Command {
     private final CollectionManager collectionManager;
 

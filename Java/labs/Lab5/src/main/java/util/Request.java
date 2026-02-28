@@ -3,6 +3,10 @@ package util;
 import java.util.List;
 
 
+/**
+ * Класс запроса.
+ * @author Septyq
+ */
 public class Request<T> extends Payload<T> {
     private String name = "";
 

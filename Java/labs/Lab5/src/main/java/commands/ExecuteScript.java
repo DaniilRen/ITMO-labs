@@ -7,6 +7,10 @@ import runtime.server.RemoteRuntime;
 import util.Response;
 import util.Status;
 
+/**
+ * Команда 'execute_script'. Исполняет скрипт из указанного файла.
+ * @author Septyq
+ */
 public class ExecuteScript extends Command {
     private final RemoteRuntime remoteRuntime;
     

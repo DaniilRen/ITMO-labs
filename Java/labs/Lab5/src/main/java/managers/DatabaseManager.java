@@ -21,6 +21,10 @@ import util.LocalDateTimeAdapter;
 import util.exceptions.CollectionLoadException;
 
 
+/**
+ * Использует файл для сохранения и загрузки коллекции.
+ * @author Septyq
+ */
 public class DatabaseManager {
     private final String fileName;
     

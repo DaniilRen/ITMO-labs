@@ -9,6 +9,10 @@ import models.Route;
 import util.exceptions.CollectionLoadException;
 
 
+/**
+ * Оперирует коллекцией.
+ * @author Septyq
+ */
 public class CollectionManager {
     private ArrayList<Route> collection = new ArrayList<>();
     private final DatabaseManager databaseManager;
@@ -23,7 +27,8 @@ public class CollectionManager {
         try {
             collection = (ArrayList<Route>) databaseManager.readCollectionFromFile();
             lastInitTime = LocalDateTime.now();
-            validateAll();   
+            validateAll();
+            Route.updateNextId(this);
         } catch (CollectionLoadException e) {
             throw e;
         }

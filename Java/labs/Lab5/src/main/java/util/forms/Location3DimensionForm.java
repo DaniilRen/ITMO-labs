@@ -6,6 +6,11 @@ import models.Location3Dimension;
 import util.console.IOConsole;
 import util.exceptions.InvalidFormException;
 
+
+/**
+ * Класс формы для локации (куда).
+ * @author Septyq
+ */
 public class Location3DimensionForm extends Form<Location3Dimension>{
     private final IOConsole console;
 

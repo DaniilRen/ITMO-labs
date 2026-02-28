@@ -8,6 +8,10 @@ import managers.CollectionManager;
 import models.Route;
 
 
+/**
+ * Команда 'add'. Добавляет новый элемент в коллекцию.
+ * @author Septyq
+ */
 public class Add extends Command {
     private final CollectionManager collectionManager;
 

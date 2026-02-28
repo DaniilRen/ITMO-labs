@@ -6,6 +6,10 @@ import models.Coordinates;
 import util.console.IOConsole;
 import util.exceptions.InvalidFormException;
 
+/**
+ * Класс формы для координат.
+ * @author Septyq
+ */
 public class CoordinatesForm extends Form<Coordinates> {
     private final IOConsole console;
 

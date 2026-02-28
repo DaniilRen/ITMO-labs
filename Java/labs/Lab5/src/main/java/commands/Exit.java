@@ -5,6 +5,10 @@ import util.Status;
 
 import java.util.List;
 
+/**
+ * Команда 'exit'. Завершиет программу (без сохранения в файл).
+ * @author Septyq
+ */
 public class Exit extends Command {
     public Exit() {
         super("exit", "завершить программу (без сохранения в файл)");

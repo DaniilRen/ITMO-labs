@@ -7,6 +7,11 @@ import util.Status;
 
 import java.util.List;
 
+
+/**
+ * Команда 'save'. Сохраняет коллекцию в файл.
+ * @author Septyq
+ */
 public class Save extends Command {
     private final CollectionManager collectionManager;
 

@@ -7,6 +7,11 @@ import models.Route;
 import util.Response;
 import util.Status;
 
+
+/**
+ * Команда 'update'. Обновляет значение элемента коллекции по ID.
+ * @author Septyq
+ */
 public class Update extends Command {
     private final CollectionManager collectionManager;
 

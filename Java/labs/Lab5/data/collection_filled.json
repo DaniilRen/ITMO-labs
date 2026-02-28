@@ -84,27 +84,6 @@
     "distance": 510
   },
   {
-    "id": 9,
-    "name": "Test1",
-    "coordinates": {
-      "x": 1.2,
-      "y": 22
-    },
-    "creationDate": "2026-02-27T11:16:13",
-    "from": {
-      "x": 232,
-      "y": 1.23,
-      "name": "locafrom"
-    },
-    "to": {
-      "x": 23.0,
-      "y": 55.0,
-      "z": 2,
-      "name": "locato"
-    },
-    "distance": 23232
-  },
-  {
     "id": 7,
     "name": "Trans-Siberian Link",
     "coordinates": {
@@ -145,5 +124,26 @@
       "name": "Perm"
     },
     "distance": 180
+  },
+  {
+    "id": 9,
+    "name": "NAME",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1
+    },
+    "creationDate": "2026-02-28T13:00:57.753265883",
+    "from": {
+      "x": 2,
+      "y": 2.0,
+      "name": "FROM"
+    },
+    "to": {
+      "x": 3.0,
+      "y": 3.0,
+      "z": 3,
+      "name": "TO"
+    },
+    "distance": 4
   }
 ]

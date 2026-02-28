@@ -2,6 +2,11 @@ package util.console;
 
 import java.util.Scanner;
 
+
+/**
+ * Консоль воода-вывода.
+ * @author Septyq
+ */
 public class IOConsole implements Console {
     private Scanner userScanner;
     private boolean fileMode = false;

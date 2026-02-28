@@ -6,6 +6,11 @@ import managers.CollectionManager;
 import util.Response;
 import util.Status;
 
+
+/**
+ * Команда 'show'. Выводит все элементы коллекции.
+ * @author Septyq
+ */
 public class Show extends Command {
     private final CollectionManager collectionManager;
 

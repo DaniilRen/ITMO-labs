@@ -3,6 +3,11 @@ package models;
 import java.util.Objects;
 import util.Validatable;
 
+
+/**
+ * Класс локации (куда).
+ * @author Septyq
+ */
 public class Location3Dimension implements Validatable{
     private final Double x;
     private final Double y;

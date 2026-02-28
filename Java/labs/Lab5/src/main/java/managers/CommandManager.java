@@ -8,6 +8,10 @@ import java.util.Map;
 import commands.*;
 
 
+/**
+ * Оперирует списком комманд и историей выполнения.
+ * @author Septyq
+ */
 public class CommandManager {
     private final Map<String, Command> commands = new HashMap<>();
     private final List<String> commandHistory = new ArrayList<>();

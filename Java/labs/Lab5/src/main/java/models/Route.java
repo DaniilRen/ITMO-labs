@@ -6,8 +6,13 @@ import java.util.Objects;
 
 import managers.CollectionManager;
 
+
+/**
+ * Класс пути.
+ * @author Septyq
+ */
 public class Route extends Entity {
-    private static int nextId = 1;
+    private static int nextId = 0;
 
     private int id;
     private String name;
@@ -27,15 +32,6 @@ public class Route extends Entity {
         this.to = to;
         this.distance = distance;
     }
-
-    // public void update(Route newRoute) {
-    //     this.name = newRoute.getName();
-    //     this.coordinates = newRoute.getCoordinates();
-    //     this.creationDate = newRoute.getCreationDate();
-    //     this.from = newRoute.getLocationFrom();
-    //     this.to = newRoute.getLocationTo();
-    //     this.distance = newRoute.getDistance();
-    // }
     
     public static void updateNextId(CollectionManager collectionManager) {
         var maxId = collectionManager

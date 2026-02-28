@@ -7,6 +7,11 @@ import util.Status;
 import java.time.LocalDateTime;
 import java.util.List;
 
+
+/**
+ * Команда 'info'. Выводит информацию о коллекции.
+ * @author Septyq
+ */
 public class Info extends Command {
     private final CollectionManager collectionManager;
 

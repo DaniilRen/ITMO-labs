@@ -11,6 +11,10 @@ import util.Status;
 import util.exceptions.CollectionLoadException;
 
 
+/**
+ * Обрабатывает запросы на исполнение комманд.
+ * @author Septyq
+ */
 public class RemoteRuntime extends Runtime {
     private final DatabaseManager databaseManager;
     private final CommandManager commandManager;

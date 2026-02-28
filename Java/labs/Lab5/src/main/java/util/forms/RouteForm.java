@@ -11,6 +11,11 @@ import models.Coordinates;
 import models.Location2Dimension;
 import models.Location3Dimension;
 
+
+/**
+ * Класс формы для пути.
+ * @author Septyq
+ */
 public class RouteForm extends Form<Route> {
     private final IOConsole console;
 

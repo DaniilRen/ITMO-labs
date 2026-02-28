@@ -1,0 +1,73 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+@argfile
+-classpath
+'/home/danb/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/home/danb/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'11'
+-sourcepath
+'/home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java:/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2026. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'lab5 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/11/docs/api' '/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'lab5 1.0-SNAPSHOT API'
+commands
+commands.interfaces
+util
+util.forms
+util.console
+util.exceptions
+models
+managers
+runtime.client
+runtime.server
+runtime
+'/home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/Main.java'
+/home/danb/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar = 1716144881000
+/home/danb/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar = 1714146969000
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/Main.java = 1772189915064
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java = 1772132698829
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/generated-sources/annotations = 1772276946400
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/allclasses-index.html = 1772276956447
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/search-page.js = 1772276956487
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/package-use.html = 1772276956395
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/index.html = 1772276956422
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/script.js = 1772276956485
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/overview-tree.html = 1772276956419
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/type-search-index.js = 1772276956450
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/package-summary.html = 1772276956188
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/module-search-index.js = 1772276956449
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/tag-search-index.js = 1772276956451
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/member-search-index.js = 1772276956450
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/package-tree.html = 1772276956193
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/overview-summary.html = 1772276956476
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/package-search-index.js = 1772276956449
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/search.html = 1772276956476
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/serialized-form.html = 1772276956281
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/stylesheet.css = 1772276956483
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/Main.html = 1772276956028
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/allpackages-index.html = 1772276956449
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/copy.svg = 1772276956485
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/help-doc.html = 1772276956482
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/element-list = 1772276956182
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/index-all.html = 1772276956475
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/search.js = 1772276956487
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/target/apidocs/link.svg = 1772276956486

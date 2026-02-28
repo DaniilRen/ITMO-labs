@@ -4,6 +4,10 @@ import java.util.Comparator;
 
 import util.Validatable;
 
+/**
+ * Абстрактный класс элементов коллекции.
+ * @author Septyq
+ */
 public abstract class Entity implements Validatable, Comparable<Entity> {
     abstract public int getId();
     public void update(Entity newEntity) {}

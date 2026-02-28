@@ -7,6 +7,11 @@ import models.Route;
 import util.Response;
 import util.Status;
 
+
+/**
+ * Команда 'remove_by_id'. Удаляет элемент из коллекции по ID.
+ * @author Septyq
+ */
 public class RemoveById extends Command {
     private final CollectionManager collectionManager;
 

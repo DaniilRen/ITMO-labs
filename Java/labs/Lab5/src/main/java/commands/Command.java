@@ -6,6 +6,10 @@ import commands.interfaces.Describable;
 import commands.interfaces.Executable;
 
 
+/**
+ * Абстрактная команда с именем и описанием
+ * @author Septyq
+ */
 public abstract class Command implements Executable, Describable {
     private final String name;
     private final String description;

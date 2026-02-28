@@ -9,6 +9,11 @@ import models.Route;
 import util.Response;
 import util.Status;
 
+
+/**
+ * Команда 'print_field_descending_distance'. Выводит значения поля distance всех элементов в порядке убывания.
+ * @author Septyq
+ */
 public class PrintFieldDescendingDistance extends Command {
         private CollectionManager collectionManager;
 

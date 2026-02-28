@@ -6,6 +6,10 @@ import managers.CommandManager;
 import util.Response;
 import util.Status;
 
+/**
+ * Команда 'history'. Выводит последние 13 команд (без их аргументов).
+ * @author Septyq
+ */
 public class History extends Command {
     private final CommandManager commandManager;
 

@@ -6,6 +6,10 @@ import util.Status;
 import managers.CommandManager;
 
 
+/**
+ * Команда 'help'. Выводит справку по доступным командам.
+ * @author Septyq
+ */
 public class Help extends Command {
   private final CommandManager commandManager;
 

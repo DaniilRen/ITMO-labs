@@ -20,6 +20,10 @@ import util.exceptions.ScriptRecursionException;
 import util.forms.RouteForm;
 
 
+/**
+ * Считывает команды из консоли или скрипта, выводит результат.
+ * @author Septyq
+ */
 public class LocalRuntime extends Runtime{
     private final IOConsole console;
     private final Scanner scanner;

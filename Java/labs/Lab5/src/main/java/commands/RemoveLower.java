@@ -9,6 +9,11 @@ import util.Status;
 import models.Entity;
 import models.Route;;
 
+
+/**
+ * Команда 'remove_lower'. Удаляет из коллекции все элементы, меньшие, чем заданный.
+ * @author Septyq
+ */
 public class RemoveLower extends Command {
     private final CollectionManager collectionManager;
 
