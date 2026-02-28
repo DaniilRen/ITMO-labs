@@ -8,6 +8,6 @@ import commands.Command;
 public interface CommandManager {
     void register(String commandName, Command command);
     Map<String, Command> getCommands();
-    List<String> getCommandHistory();
+    List<String> getCommandHistory(int number);
     void addToHistory(String command);
 }

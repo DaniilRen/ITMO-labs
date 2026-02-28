@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 import models.Entity;
 import util.Status;
@@ -22,9 +21,7 @@ public class ArrayListCollectionManager<T extends Entity> implements CollectionM
     private int maxId;
 
     public ArrayListCollectionManager(Collection<T> collection) {
-        this.collection = collection.stream()
-            .filter(route -> route.validate())
-            .collect(Collectors.toList());
+        this.collection = collection;
     }
 
 

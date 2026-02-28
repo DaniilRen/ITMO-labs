@@ -24,10 +24,6 @@ public class DefaultCommandManager implements CommandManager {
         return commands;
     }
 
-    public List<String> getCommandHistory() {
-        return commandHistory;
-    }
-
     public List<String> getCommandHistory(int number) {
         return commandHistory.subList(0, Math.min(number, commandHistory.size()));
     }
