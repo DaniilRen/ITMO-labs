@@ -1,12 +1,14 @@
 @startuml Lab5
+' left to right direction
 
-
-package commands.interfaces {
-    interface Describable {}
-    interface Executable {}
-}
 
 package commands {
+    package commands.interfaces {
+        interface Describable {}
+        interface Executable {}
+    }
+
+
     abstract class Command {
         + Command()
         + getDescription(): String
@@ -183,108 +185,108 @@ package models {
 }
 
 package runtime {
+    package runtime.client {
+        class LocalRuntime {
+            - console: IOConsole
+            - scanner: Scanner
+            - remoteRuntime: RemoteRuntime
+            - lastExecutedCommandName: String
+            - lastExecutedCommandArgs: ArrayList<Object>
+            - scriptStack: List<String>
+            + LocalRuntime()
+            + run(): void
+            - runScriptMode(): Status
+            - runInteractiveMode(): void
+            - executeCommand(): Status
+            - makeRequest(): Request
+        }
+    }
+
+    package runtime.server {
+        class RemoteRuntime {
+            - databaseManager: DatabaseManager
+            - commandManager: CommandManager
+            + RemoteRuntime()
+            + registerCommands(): void
+            + proccessRequest(): Response
+            - executeCommand(): Response
+            - validateCommandName(): boolean
+        }
+    }
+
     abstract class Runtime {
         + run(): void
     }
 }
 
-package runtime.client {
-    class LocalRuntime {
-        - console: IOConsole
-        - scanner: Scanner
-        - remoteRuntime: RemoteRuntime
-        - lastExecutedCommandName: String
-        - lastExecutedCommandArgs: ArrayList<Object>
-        - scriptStack: List<String>
-        + LocalRuntime()
-        + run(): void
-        - runScriptMode(): Status
-        - runInteractiveMode(): void
-        - executeCommand(): Status
-        - makeRequest(): Request
-    }
-}
-
-package runtime.server {
-    class RemoteRuntime {
-        - databaseManager: DatabaseManager
-        - commandManager: CommandManager
-        + RemoteRuntime()
-        + registerCommands(): void
-        + proccessRequest(): Response
-        - executeCommand(): Response
-        - validateCommandName(): boolean
-    }
-}
-
-package util.console {
-    interface Console {
-        print(): void
-        println(): void
-        printError(): void
-        printPromptSymbol(): void
-        getPromptSymbol(): Strings
-    }
-    
-    class IOConsole {
-        - userScanner: Scanner
-        - fileMode: boolean
-        - promptSymbol: String
-        + getUserScanner(): Scanner
-        + setUserScanner(): void
-        + fileMode(): boolean
-        + setUserMode(): void
-        + setFileMode(): void
-    }
-}
-
-package util.exceptions {
-    class CollectionLoadException {}
-    class InvalidFormException {}
-    class ScriptRecursionException {}
-}
-
-package util.forms {
-    abstract class Form {
-        + build()
-    }
-
-    class RouteForm {
-        - console: IOConsole
-        + RouteForm()
-        - askName(): String
-        - askCoordinates(): Coordinates
-        - askLocationFrom(): Location2Dimension
-        - askLocationTo(): askLocationTo
-        - askDistance(): int
-    }
-
-    class CoordinatesForm {
-        - console: IOConsole
-        + CoordinatesForm()
-        - askX(): Float
-        - askY(): 
-    }
-
-    class Location2DimensionForm {
-        - console: IOConsole
-        + Location2DimensionForm()
-        - askX(): Integer
-        - askY(): Double
-        - askName(): String
-    }
-
-    class Location3DimensionForm {
-        - console: IOConsole
-        + Location3DimensionForm()
-        - askX(): Double
-        - askY(): Double
-        - askZ(): Integer
-        - askName(): String
-    }
-}
 
 package util {
+    package util.console {
+        interface Console {
+            print(): void
+            println(): void
+            printError(): void
+            printPromptSymbol(): void
+            getPromptSymbol(): Strings
+        }
+        
+        class IOConsole {
+            - userScanner: Scanner
+            - fileMode: boolean
+            - promptSymbol: String
+            + getUserScanner(): Scanner
+            + setUserScanner(): void
+            + fileMode(): boolean
+            + setUserMode(): void
+            + setFileMode(): void
+        }
+    }
+
+    package util.exceptions {
+        class CollectionLoadException {}
+        class InvalidFormException {}
+        class ScriptRecursionException {}
+    }
+
+    package util.forms {
+        abstract class Form {
+            + build()
+        }
+
+        class RouteForm {
+            - console: IOConsole
+            + RouteForm()
+            - askName(): String
+            - askCoordinates(): Coordinates
+            - askLocationFrom(): Location2Dimension
+            - askLocationTo(): askLocationTo
+            - askDistance(): int
+        }
+
+        class CoordinatesForm {
+            - console: IOConsole
+            + CoordinatesForm()
+            - askX(): Float
+            - askY(): 
+        }
+
+        class Location2DimensionForm {
+            - console: IOConsole
+            + Location2DimensionForm()
+            - askX(): Integer
+            - askY(): Double
+            - askName(): String
+        }
+
+        class Location3DimensionForm {
+            - console: IOConsole
+            + Location3DimensionForm()
+            - askX(): Double
+            - askY(): Double
+            - askZ(): Integer
+            - askName(): String
+        }
+    }
     class LocalDateTimeAdapter {}
 
     class LocalEnvironment {
@@ -325,5 +327,96 @@ package util {
     }
 }
 
+
+Executable <|.. Command
+Describable <|.. Command
+
+Command <|.. Add
+Command <|.. CLear
+Command <|.. ExecuteScript
+Command <|.. Exit
+Command <|.. FilterStartsWithName
+Command <|.. Help
+Command <|.. History
+Command <|.. Info
+Command <|.. PrintFieldDescendingDistance
+Command <|.. PrintUniqueDistances
+Command <|.. RemoveById
+Command <|.. RemoveLower
+Command <|.. Save
+Command <|.. Show
+Command <|.. Sort
+Command <|.. Update
+
+CollectionManager --> Entity
+CollectionManager --> Route
+CollectionManager --> CollectionLoadException
+
+CommandManager --> Command
+
+DatabaseManager --> LocalDateTimeAdapter
+DatabaseManager --> CollectionLoadException
+
+Entity <|.. Validatable
+
+Coordinates <|.. Validatable
+Location2Dimension <|.. Validatable
+Location3Dimension <|.. Validatable
+Route <|.. Validatable
+
+Route --> CollectionManager
+Route --> Coordinates
+Route --> Location2Dimension
+Route --> Location3Dimension
+
+LocalRuntime <|.. Runtime
+RemoteRuntime <|.. Runtime
+
+LocalRuntime --> Request
+LocalRuntime --> Response
+LocalRuntime --> Status
+LocalRuntime --> RemoteRuntime
+LocalRuntime --> CollectionLoadException
+LocalRuntime --> InvalidFormException
+LocalRuntime --> ScriptRecursionException
+LocalRuntime --> RouteForm
+
+RemoteRuntime --> Request
+RemoteRuntime --> Response
+RemoteRuntime --> Status
+RemoteRuntime --> CollectionLoadException
+RemoteRuntime --> Command
+RemoteRuntime --> DatabaseManager
+RemoteRuntime --> CollectionManager
+RemoteRuntime --> CommandManager
+RemoteRuntime --> Command
+
+IOConsole <|.. Console
+
+RouteForm <|.. Form
+CoordinatesForm <|.. Form
+Location2Dimension <|.. Form
+Location3Dimension <|.. Form
+
+RouteForm --> Route
+RouteForm --> IOConsole
+RouteForm --> Coordinates
+RouteForm --> Location2Dimension
+RouteForm --> Location3Dimension
+
+CoordinatesForm --> Coordinates
+CoordinatesForm --> IOConsole
+
+Location2Dimension --> IOConsole
+Location2DimensionForm --> Location2Dimension
+
+Location3DimensionForm --> IOConsole
+Location3DimensionForm --> Location3Dimension
+
+Request <|.. Payload
+Response <|.. Payload
+
+Request --> Status
+Request --> Status
 
 @enduml
