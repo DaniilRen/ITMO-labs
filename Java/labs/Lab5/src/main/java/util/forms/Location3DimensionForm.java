@@ -25,69 +25,81 @@ public class Location3DimensionForm extends Form<Location3Dimension>{
     }
 
     private Double askX() {
-        Double x;
-        while (true) {
-            try {
+        Double x = 0.0;
+        boolean asked = false;
+        do {
+             try {
                 console.println("Enter location TO X (Double): ");
                 String strX = console.getUserScanner().nextLine().trim();
                 if (strX == "") {return null;}
                 x = Double.parseDouble(strX);
+                asked = true;
                 break;
             } catch (NoSuchElementException exception) {
                 console.printError("Coordinate X was not recognized!");
             } catch (NumberFormatException exception) {
                 console.printError("Coordinate X should be a number!");
             }
-        }
+        } while (!asked);
+
         return x;
     }
 
     private Double askY() {
-        Double y;
-        while (true) {
-            try {
+        Double y = 0.0;
+        boolean asked = false;
+        do {
+             try {
                 console.println("Enter location TO Y (Double): ");
                 String strY = console.getUserScanner().nextLine().trim();
                 y = Double.parseDouble(strY);
+                asked = true;
                 break;
             } catch (NoSuchElementException exception) {
                 console.printError("Coordinate Y was not recognized!");
             } catch (NumberFormatException exception) {
                 console.printError("Coordinate Y should be a number!");
             }
-        }
+        } while (!asked);
+
         return y;
     }
 
     private Integer askZ() {
-        Integer z;
-        while (true) {
+        Integer z = 0;
+        boolean asked = false;
+        do {
             try {
                 console.println("Enter location TO Z (Integer): ");
                 String strZ = console.getUserScanner().nextLine().trim();
                 z = Integer.parseInt(strZ);
+                asked = true;
                 break;
             } catch (NoSuchElementException exception) {
                 console.printError("Coordinate Y was not recognized!");
             } catch (NumberFormatException exception) {
                 console.printError("Coordinate Y should be a number!");
-            }
-        }
+            }            
+        } while (!asked);
+
         return z;
     }
 
     private String askName() throws InvalidFormException {
-        String name;
-        while (true) {
+        String name = "";
+        boolean asked = false;
+        do {
             try {
                 console.print("Enter location TO name (String): ");
                 name = console.getUserScanner().nextLine().trim();
                 if (name.equals("")) throw new InvalidFormException("Name cannot be empty string");
+                asked = true;
                 break;
             } catch (InvalidFormException e) {
                 console.printError(e.getMessage());
-            }
-        }
+            }            
+        } while (!asked);
+
         return name;
     };
 }

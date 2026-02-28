@@ -43,17 +43,20 @@ public class RouteForm extends Form<Route> {
     };
 
     private String askName() throws InvalidFormException {
-        String name;
-        while (true) {
+        String name = "";
+        boolean asked = false;
+        do {
             try {
                 console.print("Enter Route name: ");
                 name = console.getUserScanner().nextLine().trim();
                 if (name.equals("")) throw new InvalidFormException("Name cannot be empty string");
+                asked = true;
                 break;
             } catch (InvalidFormException e) {
                 console.printError(e.getMessage());
-            }
-        }
+            }            
+        } while (!asked);
+
         return name;
     };
 
@@ -70,20 +73,22 @@ public class RouteForm extends Form<Route> {
     };
 
     private int askDistance() throws InvalidFormException {
-        int distance;
-
-        while (true) {
+        int distance = 0;
+        boolean asked = false;
+        do {
             try {
                 console.print("Enter Route distance: ");
                 String strDistance = console.getUserScanner().nextLine().trim();
                 distance = Integer.parseInt(strDistance);
+                asked = true;
                 break;
             } catch (NoSuchElementException exception) {
                 console.printError("Distance was not recognized!");
             } catch (NumberFormatException exception) {
                 console.printError("Distance should be a number!");
-            }
-        }
+            } 
+        } while (!asked);
+
         return distance;
     }
 }

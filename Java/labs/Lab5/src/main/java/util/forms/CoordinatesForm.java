@@ -24,37 +24,43 @@ public class CoordinatesForm extends Form<Coordinates> {
     }
 
     private Float askX() {
-        Float x;
-        while (true) {
+        Float x = Float.valueOf(0);
+        boolean asked = false;
+        do {
             try {
                 console.println("Enter coordinate X (Float): ");
                 String strX = console.getUserScanner().nextLine().trim();
                 x = Float.parseFloat(strX);
+                asked = true;
                 break;
             } catch (NoSuchElementException exception) {
                 console.printError("Coordinate X was not recognized!");
             } catch (NumberFormatException exception) {
                 console.printError("Coordinate X should be a number!");
-            }
-        }
+            }  
+        } while (!asked);
+
         return x;
     }
 
     private Long askY() {
-        Long y;
-        while (true) {
+        Long y = Long.valueOf(0);
+        boolean asked = false;
+        do {
             try {
                 console.println("Enter coordinate Y (Long): ");
                 String strY = console.getUserScanner().nextLine().trim();
                 if (strY == "") {return null;}
                 y = Long.parseLong(strY);
+                asked = true;
                 break;
             } catch (NoSuchElementException exception) {
                 console.printError("Coordinate Y was not recognized!");
             } catch (NumberFormatException exception) {
                 console.printError("Coordinate Y should be a number!");
             }
-        }
+        } while (!asked);
+    
         return y;
     }
     
