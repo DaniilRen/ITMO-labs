@@ -36,7 +36,7 @@ public class RemoteRuntime extends Runtime {
             commandManager.register("remove_by_id", new RemoveById(collectionManager));
             commandManager.register("clear", new Clear(collectionManager));
             commandManager.register("save", new Save(collectionManager));
-            commandManager.register("execute_script", new ExecuteScript());
+            commandManager.register("execute_script", new ExecuteScript(this));
             commandManager.register("exit", new Exit());
             commandManager.register("remove_lower", new RemoveLower(collectionManager));
             commandManager.register("sort", new Sort(collectionManager));

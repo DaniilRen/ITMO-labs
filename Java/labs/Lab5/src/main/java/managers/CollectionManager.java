@@ -2,6 +2,7 @@ package managers;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import models.Entity;
 import models.Route;
@@ -56,6 +57,23 @@ public class CollectionManager {
         Route.IncNextId();
         return new ArrayList<>();
     }
+
+    public boolean updateById(int id, Route newRoute) {
+        newRoute.setId(id);
+        boolean updated = false;
+        Iterator<Route> iterator = this.collection.iterator();
+        while (iterator.hasNext()) {
+            Route route = iterator.next();
+            if (route.getId() == id) {
+                iterator.remove();
+                this.collection.add(newRoute);
+                updated = true;
+                break;
+            }
+        }
+        return updated;
+    }
+
 
     public boolean checkExist(int id) {
         for (Entity element : collection) {

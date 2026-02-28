@@ -156,6 +156,7 @@ public class LocalRuntime extends Runtime{
             if (args.size() == 1 && args.get(0) == "") {
                 args = List.of();
             }
+
             commandStatus = executeCommand(commandName, args);
         } while (commandStatus != Status.EXIT);
 
@@ -167,7 +168,9 @@ public class LocalRuntime extends Runtime{
             return Status.ERROR;
         }
         Response<?> response = makeRequest(commandName, args);
+
         this.lastExecutedCommandName = commandName;
+        this.lastExecutedCommandArgs = new ArrayList<>(args);
         Status status = response.getStatus();
         if (status == Status.OK) {
             var body = response.getBody();
@@ -189,6 +192,7 @@ public class LocalRuntime extends Runtime{
                 if (result == null) {
                    throw new InvalidFormException("Entity wasn`t built due to main form validation error");
                 }
+    
                 newArgs.add(result);
                 executeCommand(lastExecutedCommandName, newArgs);   
             } catch (InvalidFormException e) {

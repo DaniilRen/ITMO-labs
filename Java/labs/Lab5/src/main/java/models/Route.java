@@ -9,7 +9,7 @@ import managers.CollectionManager;
 public class Route extends Entity {
     private static int nextId = 1;
 
-    private final int id;
+    private int id;
     private String name;
     private Coordinates coordinates;
     private LocalDateTime creationDate;
@@ -28,14 +28,14 @@ public class Route extends Entity {
         this.distance = distance;
     }
 
-    public void update(Route newRoute) {
-        this.name = newRoute.name;
-        this.coordinates = newRoute.coordinates;
-        this.creationDate = newRoute.creationDate;
-        this.from = newRoute.from;
-        this.to = newRoute.to;
-        this.distance = newRoute.distance;
-    }
+    // public void update(Route newRoute) {
+    //     this.name = newRoute.getName();
+    //     this.coordinates = newRoute.getCoordinates();
+    //     this.creationDate = newRoute.getCreationDate();
+    //     this.from = newRoute.getLocationFrom();
+    //     this.to = newRoute.getLocationTo();
+    //     this.distance = newRoute.getDistance();
+    // }
     
     public static void updateNextId(CollectionManager collectionManager) {
         var maxId = collectionManager
@@ -46,8 +46,29 @@ public class Route extends Entity {
         nextId = maxId + 1;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
     public static void IncNextId() {
         nextId ++;
+    }
+
+    public Coordinates getCoordinates() {
+        return coordinates;
+    }
+
+    public LocalDateTime getCreationDate() {
+        return creationDate;
+    }
+
+    public Location2Dimension getLocationFrom() {
+        return from;
+    }
+
+    public Location3Dimension getLocationTo() {
+        return to;
     }
 
     public int getId() {
