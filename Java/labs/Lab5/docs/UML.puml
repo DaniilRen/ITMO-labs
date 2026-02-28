@@ -1,5 +1,5 @@
 @startuml Lab5
-' left to right direction
+left to right direction
 
 
 package commands {
