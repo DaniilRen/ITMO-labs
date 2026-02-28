@@ -10,4 +10,8 @@ public interface CommandManager {
     Map<String, Command> getCommands();
     List<String> getCommandHistory(int number);
     void addToHistory(String command);
+    void putToScriptStack(String script);
+    List<String> getScriptStack();
+    void clearScriptStack();
+    boolean checkRecursion(String currentScript);
 }

@@ -14,9 +14,7 @@ import java.util.Scanner;
 import runtime.Runtime;
 import runtime.server.RemoteRuntime;
 import util.console.IOConsole;
-import util.exceptions.CollectionLoadException;
 import util.exceptions.InvalidFormException;
-import util.exceptions.ScriptRecursionException;
 import util.forms.RouteForm;
 
 
@@ -37,16 +35,11 @@ public class LocalRuntime extends Runtime{
         console.setUserScanner(new Scanner(System.in));
         this.scanner = this.console.getUserScanner();
         this.remoteRuntime = remoteRuntime;
+        this.remoteRuntime.registerCommands();
     }
 
 
     public void run(String... args) {
-        try {
-            remoteRuntime.registerCommands();
-        } catch (CollectionLoadException e) {
-            console.printError(e.getMessage());
-            System.exit(0);
-        }
         
         String mode = args[0].toLowerCase();
 
@@ -103,11 +96,6 @@ public class LocalRuntime extends Runtime{
                 }
                 console.println(console.getPromptSymbol() + String.join(" ", userCommand));
 
-                if (userCommand[0].equals("execute_script")) {
-                    for (String script : scriptStack) {
-                        if (userCommand[1].equals(script)) throw new ScriptRecursionException();
-                    }
-                }
                 String commandName = userCommand[0];
                 List<?> args = List.of(userCommand[1]);
                 if (args.size() == 1 && args.get(0) == "") {
@@ -130,8 +118,6 @@ public class LocalRuntime extends Runtime{
             console.printError("File not found");
         } catch (NoSuchElementException exception) {
             console.printError("File is empty");
-        } catch (ScriptRecursionException exception) {
-            console.printError("Script has recursion");
         } catch (IllegalStateException exception) {
             console.printError("Unknowm error");
             System.exit(0);
@@ -185,6 +171,9 @@ public class LocalRuntime extends Runtime{
             }
         } else if (status == Status.ERROR) {
             console.printError(response.getBody().getFirst());
+        } else if (status == Status.RECURSION) {
+            console.printError("Script has recurison");
+            status = Status.EXIT;
         } else if (status == Status.INPUT) {
             try {
                 RouteForm form = new RouteForm(console);
