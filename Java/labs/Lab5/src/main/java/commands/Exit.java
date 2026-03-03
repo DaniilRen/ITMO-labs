@@ -1,23 +1,24 @@
 package commands;
 
-import util.Response;
 import util.Status;
+import util.transfer.Response;
+import util.transfer.request.standart.StandartRequest;
 
-import java.util.List;
 
 /**
  * Команда 'exit'. Завершиет программу (без сохранения в файл).
  * @author Septyq
  */
-public class Exit extends Command {
+public class Exit extends Command<StandartRequest> {
     public Exit() {
-        super("exit", "завершить программу (без сохранения в файл)");
+        super(new CommandAttribute(
+            "exit", 
+            "завершить программу (без сохранения в файл)", 
+            StandartRequest.class
+            ));
     }
 
-    public Response<?> execute(List<?> args) {
-        if (args.size() != 0) {
-            return new Response<>(Status.ERROR);
-        }
+    public Response<?> execute(StandartRequest request) {
         return new Response<>(Status.EXIT);
     }
 }

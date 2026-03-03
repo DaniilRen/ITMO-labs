@@ -1,13 +1,13 @@
 package commands.interfaces;
 
-import java.util.List;
-import util.Payload;
+import util.transfer.Response;
+import util.transfer.request.standart.StandartRequest;
 
 
 /**
  * Определяет классы с возможностью запуска.
  * @author Septyq
  */
-public interface Executable {
-    Payload<?> execute(List<?> args);
+public interface Executable<T extends StandartRequest> {
+    Response<?> execute(T request);
 }

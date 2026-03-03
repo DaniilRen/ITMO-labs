@@ -1,28 +1,31 @@
 package commands;
 
-import managers.CollectionManager;
-import util.Response;
-import util.Status;
+import util.transfer.Response;
+import util.transfer.request.standart.StandartRequest;
 
 import java.time.LocalDateTime;
-import java.util.List;
+
+import managers.CollectionManager;
+import models.Entity;
 
 
 /**
  * Команда 'info'. Выводит информацию о коллекции.
  * @author Septyq
  */
-public class Info extends Command {
-    private final CollectionManager collectionManager;
+public class Info extends Command<StandartRequest> {
+    private final CollectionManager<Entity> collectionManager;
 
-    public Info(CollectionManager collectionManager) {
-        super("info", "вывести информацию о коллекции");
+    public Info(CollectionManager<Entity> collectionManager) {
+        super(new CommandAttribute(
+            "info",
+            "вывести информацию о коллекции",
+            StandartRequest.class
+            ));
         this.collectionManager = collectionManager;
     }
 
-    public Response<?> execute(List<?> args) {
-        if (args.size() > 0) { return new Response<>(List.of("Invalid argument number"), Status.ERROR); }
-        
+    public Response<?> execute(StandartRequest request) {
         LocalDateTime lastInitTime = collectionManager.getLastInitTime();
         String lastInitTimeString = (lastInitTime == null) ? "no collection init (load) occured in current session" :
             lastInitTime.toLocalDate().toString() + " " + lastInitTime.toLocalTime().toString();
@@ -32,6 +35,7 @@ public class Info extends Command {
             lastSaveTime.toLocalDate().toString() + " " + lastSaveTime.toLocalTime().toString();
 
         Response<String> response = new Response<>();
+  
         response.put("Collection info:");
         response.put(String.format("Collection Type (Class): %s", collectionManager.getCollectionType()));
         response.put(String.format("Collection size: %d", collectionManager.getCollectionSize()));

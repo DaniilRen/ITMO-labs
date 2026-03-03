@@ -1,42 +1,45 @@
 package commands;
 
-import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import managers.CollectionManager;
-import util.Response;
-import util.Status;
+import util.transfer.Response;
+import util.transfer.request.standart.EntityRequest;
 import models.Entity;
 import models.Route;;
 
 
 /**
- * Команда 'remove_lower'. Удаляет из коллекции все элементы, меньшие, чем заданный.
+ * Команда 'remove_lower {element}'. Удаляет из коллекции все элементы, меньшие, чем заданный.
  * @author Septyq
  */
-public class RemoveLower extends Command {
-    private final CollectionManager collectionManager;
+public class RemoveLower extends Command<EntityRequest> {
+    private final CollectionManager<Entity> collectionManager;
 
-    public RemoveLower(CollectionManager collectionManager) {
-        super("remove_lower {element}", "удалить из коллекции все элементы, меньшие, чем заданный");
+    public RemoveLower(CollectionManager<Entity> collectionManager) {
+        super(new CommandAttribute(
+            "remove_lower {element}", 
+            "удалить из коллекции все элементы, меньшие, чем заданный",
+            EntityRequest.class
+            ));
         this.collectionManager = collectionManager;
     }
 
-    public Response<?> execute(List<?> args) {
-        if (args.isEmpty()) {
-            return new Response<>(Status.INPUT);
-        } else if (args.size() == 1) {
-            Route target_route = (Route) args.get(0);
-            ArrayList<Route> collection = collectionManager.getCollection();
-            for (Entity entity: collection) {
-                Route route = (Route) entity;
-                if (route.compareTo(target_route) < 0) {
-                    collectionManager.removeFromCollection(route);
-                }
+    public Response<?> execute(EntityRequest request) {
+        Route targetRoute = (Route) request.getEntity(); 
+        
+        Iterator<Entity> iterator = collectionManager.getCollection().iterator();
+        int removedCount = 0;
+        
+        while (iterator.hasNext()) {
+            Route route = (Route) iterator.next();
+            if (route.compareTo(targetRoute) < 0) {
+                iterator.remove();
+                removedCount++;
             }
-            return new Response<String>();
-        } else {
-            return new Response<>(List.of("Invalid argument length"), Status.ERROR);
         }
+        
+        return new Response<>(List.of("Removed " + removedCount + " elements"));
     }
 }

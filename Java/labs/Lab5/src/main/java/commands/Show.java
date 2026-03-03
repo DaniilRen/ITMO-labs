@@ -1,27 +1,30 @@
 package commands;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import managers.CollectionManager;
-import util.Response;
-import util.Status;
+import models.Entity;
+import util.transfer.Response;
+import util.transfer.request.standart.StandartRequest;
 
 
 /**
  * Команда 'show'. Выводит все элементы коллекции.
  * @author Septyq
  */
-public class Show extends Command {
-    private final CollectionManager collectionManager;
+public class Show extends Command<StandartRequest> {
+    private final CollectionManager<Entity>collectionManager;
 
-    public Show(CollectionManager collectionManager) {
-        super("show", "вывести все элементы коллекции");
+    public Show(CollectionManager<Entity> collectionManager) {
+        super(new CommandAttribute(
+            "show", 
+            "вывести все элементы коллекции",
+            StandartRequest.class
+            ));
         this.collectionManager = collectionManager;
     }
 
-    public Response<?> execute(List<?> args) {
-        if (args.size() > 0) { return new Response<>(List.of("Invalid argument number"), Status.ERROR); }
-
-        return new Response<>(collectionManager.getCollection());
+    public Response<?> execute(StandartRequest request) {
+        return new Response<>(new ArrayList<>(collectionManager.getCollection()));
     }
 }

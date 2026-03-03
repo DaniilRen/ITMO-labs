@@ -4,16 +4,12 @@ import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.Objects;
 
-import managers.CollectionManager;
-
 
 /**
  * Класс пути.
  * @author Septyq
  */
 public class Route extends Entity {
-    private static int nextId = 0;
-
     private int id;
     private String name;
     private Coordinates coordinates;
@@ -24,7 +20,6 @@ public class Route extends Entity {
 
     public Route(String name, Coordinates coordinates, LocalDateTime creationDate, 
             Location2Dimension from, Location3Dimension to, int distance) {
-        this.id = nextId;
         this.name = name;
         this.coordinates = coordinates;
         this.creationDate = creationDate;
@@ -32,24 +27,11 @@ public class Route extends Entity {
         this.to = to;
         this.distance = distance;
     }
-    
-    public static void updateNextId(CollectionManager collectionManager) {
-        var maxId = collectionManager
-            .getCollection()
-            .stream().filter(Objects::nonNull)
-            .map(Entity::getId)
-            .mapToInt(Integer::intValue).max().orElse(0);
-        nextId = maxId + 1;
-    }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-
-    public static void IncNextId() {
-        nextId ++;
-    }
 
     public Coordinates getCoordinates() {
         return coordinates;
@@ -81,8 +63,7 @@ public class Route extends Entity {
 
     @Override
     public boolean validate() {
-        return id > 0
-            && distance > 1
+        return distance > 1
             && name != null && !(name.isEmpty())
             && creationDate != null
             && coordinates.validate()

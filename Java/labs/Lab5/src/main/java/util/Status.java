@@ -8,5 +8,5 @@ public enum Status {
     OK,
     ERROR,
     EXIT,
-    INPUT;
+    RECURSION;
 }

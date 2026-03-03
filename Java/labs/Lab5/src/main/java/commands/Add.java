@@ -2,32 +2,30 @@ package commands;
 
 import java.util.List;
 
-import util.Response;
-import util.Status;
 import managers.CollectionManager;
-import models.Route;
+import models.Entity;
+import util.transfer.Response;
+import util.transfer.request.standart.EntityRequest;
 
 
 /**
  * Команда 'add'. Добавляет новый элемент в коллекцию.
  * @author Septyq
  */
-public class Add extends Command {
-    private final CollectionManager collectionManager;
+public class Add extends Command<EntityRequest> {
+    private final CollectionManager<Entity> collectionManager;
 
-    public Add(CollectionManager collectionManager) {
-        super("add {element}", "добавить новый элемент в коллекцию");
+    public Add(CollectionManager<Entity> collectionManager) {
+        super(new CommandAttribute(
+            "add {element}", 
+            "добавить новый элемент в коллекцию", 
+            EntityRequest.class
+            ));
         this.collectionManager = collectionManager;
     }
     
-    public Response<?> execute(List<?> args) {
-        if (args.isEmpty()) {
-            return new Response<>(Status.INPUT);
-        } else if (args.size() == 1) {
-            collectionManager.addToCollection((Route) args.get(0));
-            return new Response<>();
-        } else {
-            return new Response<>(List.of("Invalid argument length"), Status.ERROR);
-        }
+    public Response<?> execute(EntityRequest request) {
+        collectionManager.addToCollection(request.getEntity());
+        return new Response<>(List.of("element added"));
     }
 }

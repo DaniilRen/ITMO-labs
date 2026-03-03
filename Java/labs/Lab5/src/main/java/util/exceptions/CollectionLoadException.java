@@ -1,7 +1,7 @@
 package util.exceptions;
 
 /**
- * Исключение для обработки ошибок загрузки коллекции
+ * Исключение для ошибок загрузки коллекции
  * @author Septyq
  */
 public class CollectionLoadException extends Exception {

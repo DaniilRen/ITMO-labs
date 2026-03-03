@@ -24,7 +24,7 @@ public class RouteForm extends Form<Route> {
     }
 
     @Override
-    public Route build() throws InvalidFormException {
+    public Route build() {
         try {
             Route route = new Route(
                 askName(),

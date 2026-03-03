@@ -2,7 +2,7 @@ package util.exceptions;
 
 
 /**
- * Исключение для обработки ошибок заполнения формы
+ * Исключение для ошибок заполнения формы нового элемента коллекции
  * @author Septyq
  */
 public class InvalidFormException extends Exception {

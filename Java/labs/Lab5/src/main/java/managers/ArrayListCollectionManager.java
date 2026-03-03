@@ -11,7 +11,8 @@ import util.Status;
 
 
 /**
- * CRUD операции для коллекции.
+ * Класс для манипуляций элементами коллекции вида Arraylist.
+ * @param <T> создаваемый объект
  * @author Septyq
  */
 public class ArrayListCollectionManager<T extends Entity> implements CollectionManager<T> {
@@ -22,6 +23,7 @@ public class ArrayListCollectionManager<T extends Entity> implements CollectionM
 
     public ArrayListCollectionManager(Collection<T> collection) {
         this.collection = collection;
+        updateMaxId();
     }
 
 
@@ -67,6 +69,8 @@ public class ArrayListCollectionManager<T extends Entity> implements CollectionM
     public Status addToCollection(T element) {
         try {
             element.setId(maxId+1);
+            System.out.println(maxId+1);
+            System.out.println(element.getId());
             collection.add(element);
             updateMaxId();
             return Status.OK;

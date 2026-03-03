@@ -1,28 +1,26 @@
 package commands;
 
-import java.util.List;
-
 import managers.CommandManager;
-import util.Response;
-import util.Status;
+import util.transfer.Response;
+import util.transfer.request.standart.StandartRequest;
 
 /**
  * Команда 'history'. Выводит последние 13 команд (без их аргументов).
  * @author Septyq
  */
-public class History extends Command {
+public class History extends Command<StandartRequest> {
     private final CommandManager commandManager;
 
     public History(CommandManager commandManager) {
-        super("help", "вывести последние 13 команд (без их аргументов)");
+        super(new CommandAttribute(
+            "help", 
+            "вывести последние 13 команд (без их аргументов)",
+            StandartRequest.class
+            ));
         this.commandManager = commandManager;
     }
 
-    public Response<?> execute(List<?> args) {
-        if (args.size() != 0) {
-            return new Response<>(List.of("Invalid argument length"), Status.ERROR);
-        } else {
-            return new Response<>(commandManager.getCommandHistory(13));
-        }
+    public Response<?> execute(StandartRequest request) {
+        return new Response<>(commandManager.getCommandHistory(13));
     }
 }

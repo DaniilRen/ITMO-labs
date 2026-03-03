@@ -1,8 +1,9 @@
 package commands;
 
 import java.util.List;
-import util.Response;
-import util.Status;
+
+import util.transfer.Response;
+import util.transfer.request.standart.StandartRequest;
 import managers.CommandManager;
 
 
@@ -10,20 +11,22 @@ import managers.CommandManager;
  * Команда 'help'. Выводит справку по доступным командам.
  * @author Septyq
  */
-public class Help extends Command {
+public class Help extends Command<StandartRequest> {
   private final CommandManager commandManager;
 
   public Help(CommandManager commandManager) {
-    super("help", "вывести справку по доступным командам");
+    super(new CommandAttribute(
+      "help", 
+      "вывести справку по доступным командам",
+      StandartRequest.class
+      ));
     this.commandManager = commandManager;
   }
 
-  public Response<?> execute(List<?> args) {
-    if (args.size() > 0) { return new Response<>(List.of("Invalid argument number"), Status.ERROR); }
-    
+  public Response<?> execute(StandartRequest request) {
     StringBuilder infoText = new StringBuilder();
     commandManager.getCommands().values().forEach(command -> {
-      infoText.append(command.getName() + ": " + command.getDescription() + "\n\n");
+      infoText.append(command.getAttribute().getName() + ": " + command.getAttribute().getDescription() + "\n\n");
     });
     return new Response<String>(List.of(infoText.toString()));
   }

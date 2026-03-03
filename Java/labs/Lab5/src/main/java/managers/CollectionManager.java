@@ -8,6 +8,11 @@ import java.util.Collection;
 import models.Entity;
 
 
+/**
+ * Абстрактный класс для манипуляций элементами коллекции.
+ * @author Septyq
+ * @param <T> элемент коллекции
+ */
 public interface CollectionManager<T extends Entity> {
     Collection<T> getCollection();
     int getCollectionSize();

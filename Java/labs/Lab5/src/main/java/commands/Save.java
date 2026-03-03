@@ -1,9 +1,10 @@
 package commands;
 
 import managers.CollectionManager;
-
-import util.Response;
-import util.Status;
+import managers.FileManager;
+import models.Entity;
+import util.transfer.Response;
+import util.transfer.request.standart.StandartRequest;
 
 import java.util.List;
 
@@ -12,19 +13,22 @@ import java.util.List;
  * Команда 'save'. Сохраняет коллекцию в файл.
  * @author Septyq
  */
-public class Save extends Command {
-    private final CollectionManager collectionManager;
+public class Save extends Command<StandartRequest> {
+    private final CollectionManager<Entity> collectionManager;
+    private final FileManager fileManager;
 
-    public Save(CollectionManager collectionManager) {
-        super("save", "сохранить коллекцию в файл");
+    public Save(CollectionManager<Entity> collectionManager, FileManager fileManager) {
+        super(new CommandAttribute(
+            "save", 
+            "сохранить коллекцию в файл",
+            StandartRequest.class
+            ));
         this.collectionManager = collectionManager; 
+        this.fileManager = fileManager;
     }
     
-    public Response<?> execute(List<?> args) {
-        if (args.size() > 0) {
-            return new Response<>(Status.ERROR);
-        }
-        collectionManager.saveCollection();
-        return new Response<>();
+    public Response<?> execute(StandartRequest request) {
+        collectionManager.saveCollection(fileManager);
+        return new Response<>(List.of("collection saved"));
     }
 }

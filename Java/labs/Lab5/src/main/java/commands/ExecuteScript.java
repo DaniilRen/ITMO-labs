@@ -2,34 +2,35 @@ package commands;
 
 import java.util.List;
 
-import runtime.client.LocalRuntime;
-import runtime.server.RemoteRuntime;
-import util.Response;
+import runtime.LocalRuntime;
+import runtime.RemoteRuntime;
 import util.Status;
+import util.transfer.Response;
+import util.transfer.request.standart.StringRequest;
 
 /**
  * Команда 'execute_script'. Исполняет скрипт из указанного файла.
  * @author Septyq
  */
-public class ExecuteScript extends Command {
+public class ExecuteScript extends Command<StringRequest> {
     private final RemoteRuntime remoteRuntime;
     
     public ExecuteScript(RemoteRuntime remoteRuntime) {
-        super("execute_script <file_name>", "исполнить скрипт из указанного файла");
+        super(new CommandAttribute(
+            "execute_script <file_name>", 
+            "исполнить скрипт из указанного файла", 
+            StringRequest.class
+            ));
         this.remoteRuntime = remoteRuntime;
     }
 
-    public Response<?> execute(List<?> args) {
-        if (args.size() == 1) {
-            String fileName = (String) args.get(0);
-            if (fileName == "") {return new Response<>(List.of("Invalid script name"), Status.ERROR);}
+    public Response<?> execute(StringRequest request) {
+        String fileName = request.getRow();
+        if (fileName == "") {return new Response<>(List.of("Invalid script name"), Status.ERROR);}
 
-            LocalRuntime localRuntime = new LocalRuntime(remoteRuntime);
-            localRuntime.run("script", fileName);
+        LocalRuntime localRuntime = new LocalRuntime(remoteRuntime);
+        localRuntime.run("script", fileName);
 
-            return new Response<>();
-        } else {
-            return new Response<>(List.of("Invalid argument length"), Status.ERROR);
-        }
+        return new Response<>();
     }
 }

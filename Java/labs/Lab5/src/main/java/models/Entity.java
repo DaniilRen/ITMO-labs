@@ -10,7 +10,10 @@ import util.Validatable;
  */
 public abstract class Entity implements Validatable, Comparable<Entity> {
     abstract public int getId();
+
     public void update(Entity newEntity) {}
+
+    public abstract void setId(Integer id);
     
     protected Comparator<Entity> getComparator() {
         return Comparator.comparingInt(Entity::getId);

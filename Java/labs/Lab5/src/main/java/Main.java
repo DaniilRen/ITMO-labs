@@ -1,6 +1,7 @@
-import runtime.client.LocalRuntime;
-import runtime.server.RemoteRuntime;
+import runtime.LocalRuntime;
+import runtime.RemoteRuntime;
 import util.LocalEnvironment;
+import util.exceptions.RuntimeInitException;
 
 
 public class Main {
@@ -10,9 +11,13 @@ public class Main {
             System.exit(0);
         }
 
-        RemoteRuntime remoteRuntime = new RemoteRuntime(filePath);
-        LocalRuntime localRuntime = new LocalRuntime(remoteRuntime);
-
-        localRuntime.run("interactive");
+        try {
+            RemoteRuntime remoteRuntime = new RemoteRuntime(filePath); 
+            LocalRuntime localRuntime = new LocalRuntime(remoteRuntime);
+            localRuntime.run("interactive");  
+        } catch (RuntimeInitException e) {
+            System.out.println(e.getMessage());
+            System.exit(0);
+        }
     }
 }

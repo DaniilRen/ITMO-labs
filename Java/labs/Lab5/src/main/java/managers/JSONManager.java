@@ -25,7 +25,7 @@ import util.exceptions.CollectionWriteException;
 
 
 /**
- * Использует файл для сохранения и загрузки коллекции.
+ * Класс для сохранения и загрузки коллекции из файла JSON.
  * @author Septyq
  */
 public class JSONManager implements FileManager {

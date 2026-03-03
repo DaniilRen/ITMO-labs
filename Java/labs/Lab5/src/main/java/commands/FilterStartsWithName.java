@@ -1,40 +1,39 @@
 package commands;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 import managers.CollectionManager;
 import models.Entity;
 import models.Route;
-import util.Response;
-import util.Status;
+import util.transfer.Response;
+import util.transfer.request.standart.StringRequest;
 
 /**
  * Команда 'filter_starts_with_name'. Выводит элементы, значение поля name которых начинается с заданной подстроки.
  * @author Septyq
  */
-public class FilterStartsWithName extends Command {
-    private final CollectionManager collectionManager;
+public class FilterStartsWithName extends Command<StringRequest> {
+    private final CollectionManager<Entity> collectionManager;
 
-    public FilterStartsWithName(CollectionManager collectionManager) {
-        super("filter_starts_with_name name <name>", "вывести элементы, значение поля name которых начинается с заданной подстроки");
+    public FilterStartsWithName(CollectionManager<Entity> collectionManager) {
+        super(new CommandAttribute(
+            "filter_starts_with_name name <name>", 
+            "вывести элементы, значение поля name которых начинается с заданной подстроки",
+            StringRequest.class
+            ));
         this.collectionManager = collectionManager;
     }
 
-    public Response<?> execute(List<?> args) {
-        if (args.size() != 1) {
-            return new Response<>(List.of("Invalid argument length"), Status.ERROR);
-        } else {
-            String name = (String) args.get(0);
-            ArrayList<Route> filteredCollection = new ArrayList<>();
-            ArrayList<Route> collection = collectionManager.getCollection();
-            for (Entity entity: collection) {
-                Route route = (Route) entity;
-                if (route.getName().startsWith(name)) {
-                    filteredCollection.add(route);
-                }
+    public Response<?> execute(StringRequest request) {
+        Collection<Entity> filteredCollection = new ArrayList<>();
+        Collection<Entity> collection = collectionManager.getCollection();
+        for (Entity entity: collection) {
+            Route route = (Route) entity;
+            if (route.getName().startsWith(request.getRow())) {
+                filteredCollection.add(route);
             }
-            return new Response<>(filteredCollection);
         }
+        return new Response<>(new ArrayList<>(filteredCollection));
     }
 }

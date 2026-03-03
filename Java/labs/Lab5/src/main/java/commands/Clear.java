@@ -1,29 +1,31 @@
 package commands;
 
 import managers.CollectionManager;
+import models.Entity;
 
 import java.util.List;
 
-import util.Response;
-import util.Status;
+import util.transfer.Response;
+import util.transfer.request.standart.StandartRequest;
 
 /**
  * Команда 'clear'. Очищает коллекцию.
  * @author Septyq
  */
-public class Clear extends Command {
-    private final CollectionManager collectionManager;
+public class Clear extends Command<StandartRequest> {
+    private final CollectionManager<Entity> collectionManager;
 
-    public Clear(CollectionManager collectionManager) {
-        super("clear", "очистить коллекцию");
+    public Clear(CollectionManager<Entity> collectionManager) {
+        super(new CommandAttribute(
+            "clear", 
+            "очистить коллекцию", 
+            StandartRequest.class
+            ));
         this.collectionManager = collectionManager;
     }
 
-    public Response<?> execute(List<?> args) {
-        if (args.size() > 0) {
-            return new Response<>(List.of("Invalid argument length"), Status.ERROR);
-        }
+    public Response<?> execute(StandartRequest request) {
         collectionManager.clearCollection();
-        return new Response<>();
+        return new Response<>(List.of("collection cleared"));
     }
 }
