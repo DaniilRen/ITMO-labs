@@ -29,7 +29,8 @@ public class Update extends Command<CombinedRequest> {
         try {
             Integer id = request.getId();
             Entity entity = request.getEntity();
-            if (collectionManager.getById(id) != null) {
+            
+            if (collectionManager.getById(id) == null) {
                 return new Response<>(List.of("Item not found"), Status.ERROR);
             }   
 

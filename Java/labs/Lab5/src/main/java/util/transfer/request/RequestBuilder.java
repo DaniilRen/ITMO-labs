@@ -28,7 +28,7 @@ public class RequestBuilder {
             throw new IncorrectRequestException("Unknown command: " + name);
         }
 
-        if (requestType == StandartRequest.class) {
+        if (requestType == StandartRequest.class && args.size() == 0) {
             return new StandartRequest(name);
         } else if (requestType == StringRequest.class && StringRequest.validate(args)) {
             return new StringRequest(name, (String) args.get(0));
@@ -41,12 +41,17 @@ public class RequestBuilder {
                 throw new IncorrectRequestException("Invalid request");
             }
             return new EntityRequest(name, result);
-        } else if (requestType == CombinedRequest.class && args.size() >= 2) {
-            Entity result = buildEntity(console);
-            if (result == null || !CombinedRequest.validate(List.of(result, args.get(1)))) {
+        } else if (requestType == CombinedRequest.class && args.size() == 1) {
+            try {
+                Integer id = Integer.valueOf((String) args.get(0));
+                Entity result = buildEntity(console);
+                if (result == null || !CombinedRequest.validate(List.of(result, id))) {
+                    throw new IncorrectRequestException("Invalid request");
+                }
+                return new CombinedRequest(name, result, id);
+            } catch (NumberFormatException e) {
                 throw new IncorrectRequestException("Invalid request");
             }
-            return new CombinedRequest(name, result, Integer.valueOf((String) args.get(1)));
         }
         
         throw new IncorrectRequestException("Invalid request");
