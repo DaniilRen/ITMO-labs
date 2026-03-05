@@ -11,6 +11,7 @@ public class IOConsole implements Console {
     private Scanner userScanner;
     private boolean fileMode = false;
     private final String promptSymbol = "$ ";
+    private final String scriptPrompotySymbol = ":> ";
 
     public Scanner getUserScanner() {
         return this.userScanner;
@@ -50,5 +51,9 @@ public class IOConsole implements Console {
 
     public String getPromptSymbol() {
         return promptSymbol;
+    }
+
+    public String getScriptPromptSymbol() {
+        return scriptPrompotySymbol;
     }
 }

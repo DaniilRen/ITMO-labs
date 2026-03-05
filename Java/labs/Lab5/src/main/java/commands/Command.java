@@ -3,8 +3,8 @@ package commands;
 import java.util.Objects;
 
 import commands.interfaces.Executable;
-import util.transfer.Response;
 import util.transfer.request.standart.StandartRequest;
+import util.transfer.response.Response;
 /**
  * Абстрактная класс для реализации выполнения команды
  * @param <T> тип запроса

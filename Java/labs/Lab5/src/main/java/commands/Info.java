@@ -1,7 +1,7 @@
 package commands;
 
-import util.transfer.Response;
 import util.transfer.request.standart.StandartRequest;
+import util.transfer.response.Response;
 
 import java.time.LocalDateTime;
 

@@ -1,4 +1,4 @@
-package util.transfer;
+package util.transfer.response;
 
 import java.util.ArrayList;
 import java.util.List;

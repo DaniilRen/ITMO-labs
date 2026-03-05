@@ -27,7 +27,6 @@ commands/ExecuteScript.class
 commands/Show.class
 commands/Save.class
 util/transfer/request/standart/EntityRequest.class
-util/transfer/Response.class
 commands/Info.class
 models/Location3Dimension.class
 util/exceptions/InvalidFormException.class
@@ -35,6 +34,7 @@ managers/CollectionManager.class
 commands/interfaces/Describable.class
 models/Coordinates.class
 commands/Update.class
+util/transfer/response/Response.class
 util/console/IOConsole.class
 Main.class
 managers/FileManager.class

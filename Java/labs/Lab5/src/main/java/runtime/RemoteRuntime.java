@@ -10,10 +10,10 @@ import models.Entity;
 import util.Status;
 import util.exceptions.CollectionLoadException;
 import util.exceptions.RuntimeInitException;
-import util.transfer.Response;
 import util.transfer.request.empty.InitRequest;
 import util.transfer.request.standart.StandartRequest;
 import util.transfer.request.standart.StringRequest;
+import util.transfer.response.Response;
 import util.transfer.request.Request;
 
 

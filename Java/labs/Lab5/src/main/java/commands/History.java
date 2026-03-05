@@ -1,8 +1,8 @@
 package commands;
 
 import managers.CommandManager;
-import util.transfer.Response;
 import util.transfer.request.standart.StandartRequest;
+import util.transfer.response.Response;
 
 /**
  * Команда 'history'. Выводит последние 13 команд (без их аргументов).

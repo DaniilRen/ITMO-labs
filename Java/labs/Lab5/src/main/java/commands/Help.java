@@ -2,8 +2,8 @@ package commands;
 
 import java.util.List;
 
-import util.transfer.Response;
 import util.transfer.request.standart.StandartRequest;
+import util.transfer.response.Response;
 import managers.CommandManager;
 
 

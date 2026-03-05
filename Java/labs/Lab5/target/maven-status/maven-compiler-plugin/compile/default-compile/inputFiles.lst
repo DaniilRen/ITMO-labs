@@ -49,7 +49,6 @@
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/forms/Location2DimensionForm.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/forms/Location3DimensionForm.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/forms/RouteForm.java
-/home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/transfer/Response.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/transfer/request/Request.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/transfer/request/RequestBuilder.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/transfer/request/empty/InitRequest.java
@@ -58,3 +57,4 @@
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/transfer/request/standart/IdRequest.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/transfer/request/standart/StandartRequest.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/transfer/request/standart/StringRequest.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/transfer/response/Response.java

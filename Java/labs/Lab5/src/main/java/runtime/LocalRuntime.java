@@ -14,10 +14,10 @@ import java.util.Scanner;
 import util.console.IOConsole;
 import util.exceptions.IncorrectRequestException;
 import util.exceptions.RuntimeInitException;
-import util.transfer.Response;
 import util.transfer.request.Request;
 import util.transfer.request.RequestBuilder;
 import util.transfer.request.empty.InitRequest;
+import util.transfer.response.Response;
 
 
 /**
@@ -41,47 +41,36 @@ public class LocalRuntime extends Runtime{
 
 
     public void run(String... args) {
-        
-        String mode = args[0].toLowerCase();
-
-        if (mode == "interactive") {
-            runInteractiveMode();
-        } else if (mode == "script") {
-            String fileName = args[1];
-            if (fileName == "") {
-                console.printError("Invalid script file name: "+mode);
-                System.exit(0);
-            }
-            Status scriptModeStatus = runScriptMode(fileName);
-            console.println("--- FINISHED SCRIPT WITH STATUS: "+scriptModeStatus+" ---");
-        } else {
-            console.printError("Invalid local runtime mode: "+mode);
+        switch (args[0].toLowerCase()) {
+            case "interactive":
+                runInteractiveMode();
+                break;
+            case "script":
+                String fileName = args[1];
+                if (fileName == "") {
+                    console.printError("Invalid script file name: "+fileName);
+                    System.exit(0);
+                }
+                runScriptMode(fileName);
+                break;
+            default:
+                console.printError("Invalid local runtime mode");
         }
     }
     
 
-    private Status runScriptMode(String fileName) {
+    private void runScriptMode(String fileName) {
         String[] userCommand = {"", ""};
         Status commandStatus = setCommandAttributes();
         scriptStack.add(fileName);
 
         try (Scanner scriptScanner = new Scanner(new File(fileName))) {
-            console.println(String.format(">--- RUNNING SCRIPT %s ---", fileName));
+            console.println(String.format("--> RUNNING SCRIPT: %s ...", fileName));
 
             File file = new File(fileName);
-
-            if (!file.exists()) {
-                throw new FileNotFoundException("File does not exist");
-            }
-
-            if (!file.canRead()) {
-                throw new SecurityException("No read permission for file: " + file.getAbsolutePath());
-            }
-
-            if (!file.canWrite()) {
-                throw new SecurityException("No write permission for file: " + file.getAbsolutePath());
-            }
-            
+            if (!file.exists()) throw new FileNotFoundException("File does not exist");
+            if (!file.canRead()) throw new SecurityException("No read permission for file: " + file.getAbsolutePath());
+            if (!file.canWrite()) throw new SecurityException("No write permission for file: " + file.getAbsolutePath());
             if (!scriptScanner.hasNext()) throw new NoSuchElementException();
 
             Scanner tmpScanner = console.getUserScanner();
@@ -95,7 +84,7 @@ public class LocalRuntime extends Runtime{
                     userCommand = (scriptScanner.nextLine().trim() + " ").split(" ", 2);
                     userCommand[1] = userCommand[1].trim();
                 }
-                console.println(console.getPromptSymbol() + String.join(" ", userCommand));
+                console.println(console.getScriptPromptSymbol() + String.join(" ", userCommand));
 
                 String commandName = userCommand[0];
                 List<?> args = List.of(userCommand[1]);
@@ -113,8 +102,6 @@ public class LocalRuntime extends Runtime{
                 console.println("Invalid script");
             }
 
-            return commandStatus;
-
         } catch (FileNotFoundException exception) {
             console.printError("File not found");
         } catch (NoSuchElementException exception) {
@@ -127,12 +114,11 @@ public class LocalRuntime extends Runtime{
         } finally {
             scriptStack.remove(scriptStack.size() - 1);
         }
-        return Status.ERROR;
     }
 
     
     private void runInteractiveMode() {
-        console.println(">----- COLLECTION MANAGER CLI -----");
+        console.println("<----- COLLECTION MANAGER CLI STARTED ----->");
 
         String[] userCommand = {"", ""};
         Status commandStatus = setCommandAttributes();
@@ -156,20 +142,14 @@ public class LocalRuntime extends Runtime{
     };
 
     private Status executeCommand(String commandName, List<?> args) {
-        if (commandName == "" || commandName == null) {
-            return Status.ERROR;
-        }
-        Response<?> response = makeRequest(commandName, args);
+        if (commandName == "" || commandName == null) return Status.ERROR;
+        return processCommandResponse(makeRequest(commandName, args));
+    }
 
+    private Status processCommandResponse(Response<?> response) {
         Status status = response.getStatus();
         if (status == Status.OK) {
-            var body = response.getBody();
-
-            if (!(body == null || body.isEmpty())) {
-                body.forEach((element) -> {
-                    console.println(element);
-                });
-            }
+            printCommandResponse(response.getBody());
         } else if (status == Status.ERROR) {
             console.printError(response.getBody().getFirst());
         } else if (status == Status.RECURSION) {
@@ -179,6 +159,13 @@ public class LocalRuntime extends Runtime{
         return status;
     }
 
+    private void printCommandResponse(List<?> body) {
+        if (!(body == null || body.isEmpty())) {
+            body.forEach((element) -> {
+                console.println(element);
+            });
+        }
+    }
 
     @SuppressWarnings("unchecked")
     private Status setCommandAttributes() {

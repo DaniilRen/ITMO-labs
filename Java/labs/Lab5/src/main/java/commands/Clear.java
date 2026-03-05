@@ -5,8 +5,8 @@ import models.Entity;
 
 import java.util.List;
 
-import util.transfer.Response;
 import util.transfer.request.standart.StandartRequest;
+import util.transfer.response.Response;
 
 /**
  * Команда 'clear'. Очищает коллекцию.

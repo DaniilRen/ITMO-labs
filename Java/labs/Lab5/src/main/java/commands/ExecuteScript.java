@@ -5,8 +5,8 @@ import java.util.List;
 import runtime.LocalRuntime;
 import runtime.RemoteRuntime;
 import util.Status;
-import util.transfer.Response;
 import util.transfer.request.standart.StringRequest;
+import util.transfer.response.Response;
 
 /**
  * Команда 'execute_script'. Исполняет скрипт из указанного файла.

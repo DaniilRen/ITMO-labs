@@ -10,4 +10,5 @@ public interface Console {
     void printError(Object obj);
     void printPromptSymbol();
     String getPromptSymbol();
+    String getScriptPromptSymbol();
 }

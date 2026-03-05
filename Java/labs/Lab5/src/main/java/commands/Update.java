@@ -5,8 +5,8 @@ import java.util.List;
 import managers.CollectionManager;
 import models.Entity;
 import util.Status;
-import util.transfer.Response;
 import util.transfer.request.standart.CombinedRequest;
+import util.transfer.response.Response;
 
 
 /**
