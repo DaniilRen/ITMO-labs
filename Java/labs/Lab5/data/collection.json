@@ -126,24 +126,24 @@
     "distance": 750
   },
   {
-    "id": 8,
-    "name": "Urban Bypass",
+    "id": 10,
+    "name": "NAME",
     "coordinates": {
-      "x": 55.3,
-      "y": 34
+      "x": 1.0,
+      "y": 1
     },
-    "creationDate": "2026-02-09T08:40:00",
+    "creationDate": "2026-03-04T11:22:57.926140246",
     "from": {
-      "x": 60,
-      "y": 19.012,
-      "name": "Yekaterinburg"
+      "x": 2,
+      "y": 2.0,
+      "name": "FROM"
     },
     "to": {
-      "x": 110.7,
-      "y": 37.8,
-      "z": 260,
-      "name": "Perm"
+      "x": 3.0,
+      "y": 3.0,
+      "z": 3,
+      "name": "TO"
     },
-    "distance": 180
+    "distance": 4
   }
 ]

@@ -23,7 +23,7 @@ public class IdRequest extends StandartRequest {
         return (args.size() == 1 && isNumeric(args.get(0)));
     }
 
-    private static boolean isNumeric(Object obj) {
+    public static boolean isNumeric(Object obj) {
         if (obj instanceof Number) {
             return true;
         }
