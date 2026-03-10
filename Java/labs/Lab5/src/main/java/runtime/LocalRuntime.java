@@ -78,7 +78,7 @@ public class LocalRuntime extends Runtime{
             console.setUserScanner(scriptScanner);
             console.setFileMode();
 
-            do {
+            while (commandStatus != Status.EXIT && scriptScanner.hasNextLine()) {
                 userCommand = (scriptScanner.nextLine().trim() + " ").split(" ", 2);
                 userCommand[1] = userCommand[1].trim();
                 while (scriptScanner.hasNextLine() && userCommand[0].isEmpty()) {
@@ -93,9 +93,7 @@ public class LocalRuntime extends Runtime{
                     args = List.of();
                 }
                 commandStatus = executeCommand(commandName, args);
-
-            } while (commandStatus != Status.EXIT && scriptScanner.hasNextLine());
-
+            }
             console.setUserScanner(tmpScanner);
             console.setUserMode();
 
@@ -124,7 +122,7 @@ public class LocalRuntime extends Runtime{
         String[] userCommand = {"", ""};
         Status commandStatus = setCommandAttributes();
 
-        do {
+        while (commandStatus != Status.EXIT) {
             console.printPromptSymbol();
 
             userCommand = (scanner.nextLine().trim() + " ").split(" ", 2);
@@ -137,9 +135,7 @@ public class LocalRuntime extends Runtime{
             }
 
             commandStatus = executeCommand(commandName, args);
-        } while (commandStatus != Status.EXIT);
-
-        scanner.close();
+        }
     };
 
     private Status executeCommand(String commandName, List<?> args) {

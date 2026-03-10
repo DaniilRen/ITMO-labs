@@ -17,8 +17,7 @@ public interface CommandManager {
     List<String> getCommandHistory(int number);
     Map<String, Class<? extends Request>> getCommandAttributes();
     void addToHistory(String command);
-    void putToScriptStack(String script);
-    List<String> getScriptStack();
-    void clearScriptStack();
+    void pushScript(String script);
+    void popScript(String script);
     boolean checkRecursion(String currentScript);
 }

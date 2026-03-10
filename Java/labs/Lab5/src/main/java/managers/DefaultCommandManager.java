@@ -2,8 +2,10 @@ package managers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import commands.Command;
 import util.transfer.request.Request;
@@ -16,7 +18,7 @@ import util.transfer.request.Request;
 public class DefaultCommandManager implements CommandManager {
     private final Map<String, Command<?>> commands = new HashMap<>();
     private final List<String> commandHistory = new ArrayList<>();
-    private List<String> scriptStack = new ArrayList<>();
+    private Set<String> scriptStack = new HashSet<>();
 
     public void register(String commandName, Command<?> command) {
         commands.put(commandName, command);
@@ -42,26 +44,19 @@ public class DefaultCommandManager implements CommandManager {
         commandHistory.add(command);
     }
 
-    public void putToScriptStack(String script) {
+    public void pushScript(String script) {
         scriptStack.add(script);
     }
 
-    public List<String> getScriptStack() {
-        return scriptStack;
+    public void popScript(String script) {
+        scriptStack.remove(script);
     }
 
-    public void clearScriptStack() {
-        scriptStack = new ArrayList<>();
-    }
-
-    public boolean checkRecursion(String currentScript) {
-        for (String script : scriptStack) {
-            if (script.equals(currentScript)) {
-                clearScriptStack();
-                return true;
-            }
+    public boolean checkRecursion(String script) {
+        if (scriptStack.contains(script)) {
+            scriptStack.clear();
+            return true;
         }
-        putToScriptStack(currentScript);
         return false;
     }
 }

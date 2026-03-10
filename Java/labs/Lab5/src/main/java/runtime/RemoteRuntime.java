@@ -52,7 +52,7 @@ public class RemoteRuntime extends Runtime {
         commandManager.register("remove_by_id", new RemoveById(collectionManager));
         commandManager.register("clear", new Clear(collectionManager));
         commandManager.register("save", new Save(collectionManager, fileManager));
-        commandManager.register("execute_script", new ExecuteScript(this));
+        commandManager.register("execute_script", new ExecuteScript(this, commandManager));
         commandManager.register("exit", new Exit());
         commandManager.register("remove_lower", new RemoveLower(collectionManager));
         commandManager.register("sort", new Sort(collectionManager));
@@ -80,7 +80,7 @@ public class RemoteRuntime extends Runtime {
         if (commandName.equals("execute_script")) {
             StringRequest strRequest = (StringRequest) request;
             if (commandManager.checkRecursion(strRequest.getRow())) {
-                return new Response<>(List.of("Script has recursion"), Status.ERROR);
+                return new Response<>(List.of("Script has recursion!"), Status.ERROR);
             }
         }
         Command<?> command = commandManager.getCommands().get(commandName);
