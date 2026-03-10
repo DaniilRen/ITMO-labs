@@ -1,2 +1,2 @@
-show
-execute_script data/script1.script
+info
+execute_script data/script3.script

@@ -7,6 +7,5 @@ package util;
 public enum Status {
     OK,
     ERROR,
-    EXIT,
-    RECURSION;
+    EXIT;
 }

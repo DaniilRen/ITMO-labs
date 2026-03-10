@@ -149,9 +149,6 @@ public class LocalRuntime extends Runtime{
             printCommandResponse(response.getBody());
         } else if (status == Status.ERROR) {
             console.printError(response.getBody().getFirst());
-        } else if (status == Status.RECURSION) {
-            console.printError("Script has recurison");
-            status = Status.EXIT;
         }
         return status;
     }
