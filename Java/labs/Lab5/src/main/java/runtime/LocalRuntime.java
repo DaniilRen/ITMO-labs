@@ -14,6 +14,7 @@ import java.util.Scanner;
 import util.console.IOConsole;
 import util.exceptions.IncorrectRequestException;
 import util.exceptions.RuntimeInitException;
+import util.exceptions.ScriptSyntaxException;
 import util.transfer.request.Request;
 import util.transfer.request.RequestBuilder;
 import util.transfer.request.empty.InitRequest;
@@ -198,9 +199,12 @@ public class LocalRuntime extends Runtime{
             request = new InitRequest();
         } else {
             try {
-                request = RequestBuilder.buildRequest(commandsAttributes, name, args, console);   
+                RequestBuilder requestBuilder = new RequestBuilder(console);
+                request = requestBuilder.buildRequest(commandsAttributes, name, args);   
             } catch (IncorrectRequestException e) {
                 return new Response<>(List.of(e.getMessage()), Status.ERROR);
+            } catch (ScriptSyntaxException e) {
+                return new Response<>(List.of(e.getMessage()), Status.EXIT);
             }
         }
         return remoteRuntime.proccessRequest(request);

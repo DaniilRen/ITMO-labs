@@ -6,6 +6,7 @@ import java.util.Map;
 import models.Entity;
 import util.console.IOConsole;
 import util.exceptions.IncorrectRequestException;
+import util.exceptions.ScriptSyntaxException;
 import util.forms.RouteForm;
 import util.transfer.request.standart.CombinedRequest;
 import util.transfer.request.standart.EntityRequest;
@@ -19,9 +20,14 @@ import util.transfer.request.standart.StringRequest;
  * @author Septyq
  */
 public class RequestBuilder {
-    public static Request buildRequest(Map<String, Class<? extends Request>> commandsAttributes, 
-                                        String name, List<?> args, IOConsole console) 
-                                        throws IncorrectRequestException {
+    private final IOConsole console;
+
+    public RequestBuilder(IOConsole console) {
+        this.console = console;
+    }
+
+    public Request buildRequest(Map<String, Class<? extends Request>> commandsAttributes, String name, List<?> args) 
+                                        throws IncorrectRequestException, ScriptSyntaxException {
 
         Class<? extends Request> requestType = commandsAttributes.get(name);
         if (requestType == null) {
@@ -35,16 +41,19 @@ public class RequestBuilder {
         } else if (requestType == IdRequest.class && IdRequest.validate(args)) {
             return new IdRequest(name, Integer.valueOf((String) args.get(0)));
         } else if (requestType == EntityRequest.class) {
-            Entity result = buildEntity(console);
+            Entity result = buildEntity();
 
             if (result == null || !EntityRequest.validate(List.of(result))) {
+                if (console.fileMode()) {
+                    throw new ScriptSyntaxException("Stopped script running because of invalid syntax");
+                }
                 throw new IncorrectRequestException("Invalid request");
             }
             return new EntityRequest(name, result);
         } else if (requestType == CombinedRequest.class && args.size() == 1) {
             try {
                 Integer id = Integer.valueOf((String) args.get(0));
-                Entity result = buildEntity(console);
+                Entity result = buildEntity();
                 if (result == null || !CombinedRequest.validate(List.of(result, id))) {
                     throw new IncorrectRequestException("Invalid request");
                 }
@@ -58,7 +67,7 @@ public class RequestBuilder {
     }
 
 
-    private static Entity buildEntity(IOConsole console) {
+    private Entity buildEntity() {
         RouteForm form = new RouteForm(console);
         return form.build();
     }

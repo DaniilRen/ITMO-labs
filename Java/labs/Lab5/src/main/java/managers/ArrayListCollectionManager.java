@@ -69,8 +69,6 @@ public class ArrayListCollectionManager<T extends Entity> implements CollectionM
     public Status addToCollection(T element) {
         try {
             element.setId(maxId+1);
-            System.out.println(maxId+1);
-            System.out.println(element.getId());
             collection.add(element);
             updateMaxId();
             return Status.OK;

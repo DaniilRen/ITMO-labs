@@ -16,6 +16,7 @@ managers/DefaultCommandManager.class
 util/forms/Location2DimensionForm.class
 commands/Sort.class
 util/forms/Form.class
+util/exceptions/ScriptSyntaxException.class
 runtime/RemoteRuntime.class
 models/Entity.class
 runtime/LocalRuntime.class

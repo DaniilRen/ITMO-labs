@@ -5,6 +5,7 @@ import java.util.NoSuchElementException;
 import models.Location2Dimension;
 import util.console.IOConsole;
 import util.exceptions.InvalidFormException;
+import util.exceptions.ScriptSyntaxException;
 
 
 /**
@@ -13,70 +14,89 @@ import util.exceptions.InvalidFormException;
  */
 public class Location2DimensionForm extends Form<Location2Dimension>{
     private final IOConsole console;
+    private final boolean fileMode;
 
     public Location2DimensionForm(IOConsole console) {
         this.console = console;
+        this.fileMode = console.fileMode();
     }
 
     public Location2Dimension build() throws InvalidFormException {
-        Location2Dimension location = new Location2Dimension(askX(), askY(), askName());
-        if (!location.validate()) throw new InvalidFormException("Location From validation failed");
-        return location;
+        try {
+            Location2Dimension location = new Location2Dimension(askX(), askY(), askName());
+            if (!location.validate()) throw new InvalidFormException("Location FROM validation failed");
+            return location;   
+        } catch (InvalidFormException | ScriptSyntaxException e) {
+            throw new InvalidFormException(e.getMessage());
+        }
     }
 
-    private Integer askX() {
+    private Integer askX() throws ScriptSyntaxException {
         Integer x = 0;
         boolean asked = false;
         do {
             try {
-                console.println("Enter location FROM X (Integer): ");
+                console.print("Enter location FROM X (Integer): ");
                 String strX = console.getUserScanner().nextLine().trim();
+                if (fileMode) console.println(strX);
                 x = Integer.parseInt(strX);
                 asked = true;
                 break;
-            } catch (NoSuchElementException exception) {
-                console.printError("Coordinate X was not recognized!");
-            } catch (NumberFormatException exception) {
-                console.printError("Coordinate X should be a number!");
+            } catch (NoSuchElementException | NumberFormatException e) {
+                if (fileMode) {
+                    asked = true;
+                    throw new ScriptSyntaxException("Invalid input data in script -> operation stopped");
+                } else {
+                    console.printError("Coordinate X was not recognized, enter it again");
+                }
             }
         } while (!asked);
         
         return x;
     }
 
-    private Double askY() {
+    private Double askY() throws ScriptSyntaxException {
         Double y = 0.0;
         boolean asked = false;
         do {
             try {   
-                console.println("Enter location FROM Y (Double): ");
+                console.print("Enter location FROM Y (Double): ");
                 String strY = console.getUserScanner().nextLine().trim();
+                if (fileMode) console.println(strY);
                 if (strY == "") {return null;}
                 y = Double.parseDouble(strY);
                 asked = true;
                 break;
-            } catch (NoSuchElementException exception) {
-                console.printError("Coordinate Y was not recognized!");
-            } catch (NumberFormatException exception) {
-                console.printError("Coordinate Y should be a number!");
+            } catch (NoSuchElementException | NumberFormatException e) {
+                if (fileMode) {
+                    asked = true;
+                    throw new ScriptSyntaxException("Invalid input data in script -> operation stopped");
+                } else {
+                    console.printError("Coordinate Y was not recognized, enter it again");
+                }
             }
         } while (!asked);
 
         return y;
     }
 
-    private String askName() throws InvalidFormException {
+    private String askName() throws ScriptSyntaxException {
         String name = "";
         boolean asked = false;
         do {
             try {
                 console.print("Enter location FROM name (String): ");
                 name = console.getUserScanner().nextLine().trim();
-                if (name.equals("")) throw new InvalidFormException("Name cannot be empty string");
-                asked = true;
+                if (fileMode) console.println(name);
+                if (name.equals("")) throw new InvalidFormException("");
                 break;
             } catch (InvalidFormException e) {
-                console.printError(e.getMessage());
+                if (fileMode) {
+                    asked = true;
+                    throw new ScriptSyntaxException("Invalid input data in script -> operation stopped");
+                } else {
+                    console.printError("Name was not recognized, enter it again");
+                }
             }          
         } while (!asked);
  

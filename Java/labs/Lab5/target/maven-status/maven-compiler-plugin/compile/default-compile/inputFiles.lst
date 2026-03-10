@@ -44,6 +44,7 @@
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/exceptions/IncorrectRequestException.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/exceptions/InvalidFormException.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/exceptions/RuntimeInitException.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/exceptions/ScriptSyntaxException.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/forms/CoordinatesForm.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/forms/Form.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab5/src/main/java/util/forms/Location2DimensionForm.java
