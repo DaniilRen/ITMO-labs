@@ -1,0 +1,74 @@
+// ENUMs
+Enum sex { М, Ж }
+Enum action_types { опустить, поднять }
+Enum celestial_types { спутник, планета }
+Enum orbit_types { круговая, цилиндрическая }
+Enum light_colors { красный, синий, зеленый }
+Enum moods { унылый, веселый, нейтральный }
+
+Table people {
+  id serial [pk]
+  name varchar(50) [not null]
+  sex sex [not null]
+  current_ship int
+}
+
+Table orbits {
+  id serial [pk]
+  type orbit_types [not null]
+}
+
+Table spaceships {
+  id serial [pk]
+  name varchar(50)
+  location int
+}
+
+Table landscapes {
+  id serial [pk]
+  appearance_description text [not null]
+}
+
+Table shadows {
+  id serial [pk]
+  is_sharp boolean [default: `FALSE`, not null]
+}
+
+Table lights {
+  id serial [pk]
+  light_color light_colors [not null]
+  mood moods [not null]
+}
+
+Table athmospheres {
+  id serial [pk]
+  shadow int
+  light int
+}
+
+Table celestial_bodies {
+  id serial [pk]
+  type celestial_types [not null]
+  distance_description text
+  orbit int
+  landscape int
+  athmosphere int
+}
+
+Table actions {
+  id serial [pk]
+  type action_types [not null]
+  object int
+  subject int
+}
+
+// Связи (Foreign Keys)
+Ref: people.current_ship > spaceships.id
+Ref: spaceships.location > orbits.id
+Ref: actions.object > spaceships.id 
+Ref: actions.subject > people.id
+Ref: celestial_bodies.orbit > orbits.id
+Ref: celestial_bodies.landscape > landscapes.id
+Ref: celestial_bodies.athmosphere > athmospheres.id
+Ref: athmospheres.shadow > shadows.id
+Ref: athmospheres.light > lights.id
