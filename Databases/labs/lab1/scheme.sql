@@ -1,30 +1,8 @@
 BEGIN;
 
-CREATE TYPE sex AS ENUM ('М', 'Ж');
-
-CREATE TYPE action_types AS ENUM (
-    'опустить', 'поднять'
-);
-
-CREATE TYPE celestial_types AS ENUM (
-    'спутник', 'планета'
-);
-
-CREATE TYPE orbit_types AS ENUM (
-    'круговая', 'эллиптическая'
-);
-
-CREATE TYPE light_colors AS ENUM (
-    'красный', 'синий', 'зеленый'
-);
-
-CREATE TYPE moods AS ENUM (
-    'унылый', 'веселый', 'нейтральный'
-);
-
 CREATE TABLE orbits (
     id SERIAL PRIMARY KEY,
-    type orbit_types NOT NULL UNIQUE
+    type VARCHAR(20) NOT NULL UNIQUE
 );
 
 CREATE TABLE spaceships (
@@ -36,7 +14,7 @@ CREATE TABLE spaceships (
 CREATE TABLE people (
     id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
-    sex sex NOT NULL,
+    sex VARCHAR(2) NOT NULL CHECK (sex in ('М', 'Ж')),
     current_ship INT REFERENCES spaceships(id)
 );
 
@@ -52,8 +30,9 @@ CREATE TABLE shadows (
 
 CREATE TABLE lights (
     id SERIAL PRIMARY KEY,
-    light_color light_colors NOT NULL,
-    mood moods NOT NULL
+    light_color VARCHAR(20) NOT NULL,
+    mood VARCHAR(20) NOT NULL,
+    UNIQUE (light_color, mood)
 );
 
 CREATE TABLE athmospheres (
@@ -64,7 +43,7 @@ CREATE TABLE athmospheres (
 
 CREATE TABLE celestial_bodies (
     id SERIAL PRIMARY KEY,
-    type celestial_types NOT NULL,
+    type VARCHAR(20) NOT NULL,
     distance_description TEXT,
     orbit INT NOT NULL REFERENCES orbits(id),
     landscape INT REFERENCES landscapes(id),
@@ -72,10 +51,10 @@ CREATE TABLE celestial_bodies (
 );
 
 CREATE TABLE actions (
-    id SERIAL PRIMARY KEY,
-    type action_types NOT NULL,
+    type VARCHAR(20) NOT NULL,
     object INT NOT NULL REFERENCES spaceships(id),
-    subject INT NOT NULL REFERENCES people(id)
+    subject INT NOT NULL REFERENCES people(id),
+    PRIMARY KEY (type, object, subject)
 );
 
 INSERT INTO people(name, sex, current_ship) VALUES
@@ -102,8 +81,8 @@ INSERT INTO lights(light_color, mood) VALUES
 
 INSERT INTO shadows(is_sharp) VALUES (TRUE), (FALSE);
 
-INSERT INTO athmospheres(presence, shadow, light) VALUES 
-(TRUE, 1, 1), (FALSE, 1, 2);
+INSERT INTO athmospheres(shadow, light) VALUES 
+(1, 1), (1, 2);
 
 INSERT INTO celestial_bodies(type, distance_description, orbit, landscape, athmosphere) VALUES 
 ('спутник', 'не потребовалось предупреждения от сложной системы защиты, чтобы понять, что атмосферы здесь нет', 1, 1, 1),
