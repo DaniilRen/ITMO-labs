@@ -57,7 +57,10 @@
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 %\usepackage{bookmark}
 
+\usepackage{longtable} % Добавьте в преамбулу
+
 \usepackage[dvipsnames]{xcolor}
+\usepackage[table]{xcolor}
 \usepackage{hyperref}  % Использование ссылок
 \hypersetup{%  % Настройка разметки ссылок
     colorlinks=true,
@@ -109,6 +112,12 @@
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{blue}{rgb}{0.5,0.55,1}    % Light sky blue
+\definecolor{red}{rgb}{1,0.52,0.52}     % Light coral red
+\definecolor{lightyellow}{rgb}{1,1,0.9} % Soft yellow
+\definecolor{softgreen}{rgb}{0.9,1,0.9}    % Light mint green
+\definecolor{softblue}{rgb}{0.9,0.95,1}    % Light sky blue
+\definecolor{softred}{rgb}{1,0.92,0.92}     % Light coral red
 
 \lstdefinestyle{mystyle}{
 backgroundcolor=\color{backcolour},
@@ -464,217 +473,251 @@ tabsize=2
     \Section{Ход работы}
     \Subsection{Исходная программа}
     \noindent
-    \begin{tabularx}{\textwidth}{|c|c|c|X|}
-        \hline
-        \textbf{Адрес} & \textbf{Код команды} & \textbf{Мнемоника} & \textbf{Комментарии} \\
-        \hline
-        2EA & 0300 & - & Адрес первого элемента \\
-        \hline
-        2EB & A000 & - & Адрес текущего элемента \\
-        \hline
-        2EC & 4000 & - & Длина массива \\
-        \hline
-        2ED & 0280 & - & Результат \\
-        \hline
-        2EE & 0200 & CLA & 0 $\to$ AC \\
-        \hline
-        2EF & EEFD & ST EFD & AC $\to$ 2ED \\
-        \hline
-        2F0 & AF05 & LD F05 & 0005 $\to$ AC \\
-        \hline
-        2F1 & EEFA & ST EFA & AC $\to$ 2EC \\
-        \hline
-        2F2 & AEF7 & LD EF7 & MEM(2EA) $\to$ AC \\
-        \hline
-        2F3 & EEF7 & ST EF7 & AC $\to$ 2EB \\
-        \hline
-        2F4 & AAF6 & LD AF6 & MEM(300) $\to$ AC \\
-        \hline
-        2F5 & F002 & BEQ 2 & Переход к 2F8 если Z == 1 \\
-        \hline
-        2F6 & 0300 & CLC & 0 $\to$ C \\
-        \hline
-        2F7 & 0380 & CMC & (\^{}C) $\to$ C \\
-        \hline
-        2F8 & 0200 & CLA & AC $\to$ 0 \\
-        \hline
-        2F9 & 0280 & NOT & (\^{}AC) $\to$ AC \\
-        \hline
-        2FA & 2EF2 & AND EF2 & AC \& MEM(2ED) $\to$ AC \\
-        \hline
-        2FB & 0400 & ROL & AC * 2 $\to$ AC \\
-        \hline
-        2FC & EEF0 & ST EF0 & MEM(2ED) $\to$ AC \\
-        \hline
-        2FD & 82EC & LOOP 2EC & 2EC - 1 $\to$ 2EC; Если 2EC $\leq$ 0, \newline то IP + 1 $\to$ IP \\
-        \hline
-        2FE & CEF5 & JUMP EF5 & Переход EF5 $\to$ IP \\
-        \hline
-        2FF & 0100 & HLT & Остановка программы \\
-        \hline
-        300 & F600 & - & Элемент массива \\
-        \hline
-        301 & 0000 & - & Элемент массива \\
-        \hline
-        302 & 0700 & - & Элемент массива \\
-        \hline
-        303 & 0000 & - & Элемент массива \\
-        \hline
-        304 & 0000 & - & Элемент массива \\
-        \hline
-    \end{tabularx}
+{\small
+    \begin{tabularx}{\textwidth}{|c|c|l|X|l|}
+\hline
+\textbf{Адрес} & \textbf{Код} & \textbf{Мнемоника} & \textbf{Комментарии} & \textbf{Адресация} \\
+\hline
+2EA & 0300 & -- & Адрес первого элемента & -- \\
+\hline
+2EB & A000 & -- & Адрес текущего элемента & -- \\
+\hline
+2EC & 4000 & -- & Длина массива & -- \\
+\hline
+\rowcolor{softgreen}
+2ED & 0280 & -- & Результат & -- \\
+\hline
+\rowcolor{blue}
+2EE & 0200 & CLA & $0 \to$ AC & -- \\
+\hline
+\rowcolor{softblue}
+2EF & EEFD & ST IP-3 & AC $\to$ 2ED & Прямая относительная \\
+\hline
+\rowcolor{softblue}
+2F0 & AF05 & LD \#5 & 0005 $\to$ AC & Прямая загрузка \\
+\hline
+\rowcolor{softblue}
+2F1 & EEFA & ST IP-6 & AC $\to$ 2EC & Прямая относительная \\
+\hline
+\rowcolor{softblue}
+2F2 & AEF7 & LD IP-9 & MEM(2EA) $\to$ AC & Прямая относительная \\
+\hline
+\rowcolor{softblue}
+2F3 & EEF7 & ST IP-9 & AC $\to$ 2EB & Прямая относительная \\
+\hline
+\rowcolor{yellow!30} % 30% yellow (lighter)
+2F4 & AAF6 & LD (IP-10)+ & Загрузка текущего элемента в AC & Косвенная автоинкрементная \\
+\hline
+\rowcolor{yellow!30} % 30% yellow (lighter)
+2F5 & F002 & BEQ 2 & Переход к 2F8 если Z == 1 & Прямая относительная \\
+\hline
+\rowcolor{yellow!30} % 30% yellow (lighter)
+2F6 & 0300 & CLC & $0 \to$ C & -- \\
+\hline
+\rowcolor{yellow!30} % 30% yellow (lighter)
+2F7 & 0380 & CMC & $(\hat{C}) \to$ C & -- \\
+\hline
+\rowcolor{yellow!30}
+2F8 & 0200 & CLA & AC $\to$ 0 & -- \\
+\hline
+\rowcolor{yellow!30} % 30% yellow (lighter)
+2F9 & 0280 & NOT & $(\hat{AC}) \to$ AC & -- \\
+\hline
+\rowcolor{yellow!30} % 30% yellow (lighter)
+2FA & 2EF2 & AND (IP-14) & 2ED $\to$ AC & Прямая относительная \\
+\hline
+\rowcolor{yellow!30} % 30% yellow (lighter)
+2FB & 0400 & ROL & AC$\times 2 \to$ AC & -- \\
+\hline
+\rowcolor{yellow!30} % 30% yellow (lighter)
+2FC & EEF0 & ST EF0 & Сохранение результата AC $\to$ 2ED & Прямая относительная \\
+\hline
+\rowcolor{yellow!30} % 30% yellow (lighter)
+2FD & 82EC & LOOP 2EC & 2EC - 1 $\to$ 2EC; Если 2EC $\leq$ 0, то IP + 1 $\to$ IP & Прямая абсолютная \\
+\hline
+\rowcolor{yellow!30} % 30% yellow (lighter)
+2FE & CEF5 & JUMP IP-11 & Переход к 2F4 $\to$ IP & Прямая относительная \\
+\hline
+\rowcolor{red}
+2FF & 0100 & HLT & Остановка программы & -- \\
+\hline
+300 & F600 & -- & Элемент массива & -- \\
+\hline
+301 & 0000 & -- & Элемент массива & -- \\
+\hline
+302 & 0700 & -- & Элемент массива & -- \\
+\hline
+303 & 0000 & -- & Элемент массива & -- \\
+\hline
+304 & 0000 & -- & Элемент массива & -- \\
+\hline
+\end{tabularx}
+}
 
-\Subsection{Описание исходной программы}
+\Subsection{Таблица трассировки}
 
-\noindent
-\textbf{Таблица трассировки} \\ \\
-\setlength{\tabcolsep}{3pt}
-\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{0.8cm}|>{\centering\arraybackslash}p{1.4cm}|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{1.2cm}|}
+
+\footnotesize
+
+\begin{longtable}{|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.7cm}|>{\centering\arraybackslash}p{0.7cm}|>{\centering\arraybackslash}p{0.7cm}|>{\centering\arraybackslash}p{0.7cm}|>{\centering\arraybackslash}p{0.7cm}|>{\centering\arraybackslash}p{0.8cm}|>{\centering\arraybackslash}p{0.8cm}|>{\centering\arraybackslash}p{0.6cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|}
 \hline
 \textbf{Адр} & \textbf{Знач} & \textbf{IP} & \textbf{CR} & \textbf{AR} & \textbf{DR} & \textbf{SP} & \textbf{BR} & \textbf{AC} & \textbf{PS} & \textbf{NZVC} & \textbf{Адр} & \textbf{Знач} \\
 \hline
-176 & 0200 & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
-\hline
-177 & 2182 & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
-\hline
-178 & +0200 & 178 & 0000 & 000 & 0000 & 000 & 0000 & 0000 & 004 & 0100 & $-$ & $-$ \\
-\hline
-178 & 0200 & 179 & 0200 & 178 & 0200 & 000 & 0178 & 0000 & 004 & 0100 & $-$ & $-$ \\
-\hline
-179 & 0280 & 17A & 0280 & 179 & 0280 & 000 & 0179 & FFFF & 008 & 1000 & $-$ & $-$ \\
-\hline
-17A & 2182 & 17B & 2182 & 182 & 0100 & 000 & 017A & 0100 & 000 & 0000 & $-$ & $-$ \\
-\hline
-17B & 3181 & 17C & 3181 & 181 & 3181 & 000 & CE7E & 3181 & 000 & 0000 & $-$ & $-$ \\
-\hline
-17C & E177 & 17D & E177 & 177 & 3181 & 000 & 017C & 3181 & 000 & 0000 & 17 & 3181 \\
-\hline
-17D & A183 & 17E & A183 & 183 & 0100 & 000 & 017D & 0100 & 000 & 0000 & $-$ & $-$ \\
-\hline
-17E & 4177 & 17F & 4177 & 177 & 3181 & 000 & 017E & 3281 & 000 & 0000 & $-$ & $-$ \\
-\hline
-17F & E176 & 180 & E176 & 176 & 3281 & 000 & 017F & 3281 & 000 & 0000 & 176 & 3281 \\
-\hline
-180 & 0100 & 181 & 0100 & 180 & 0100 & 000 & 0180 & 3281 & 000 & 0000 & $-$ & $-$ \\
-\hline
-181 & 3181 & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
-\hline
-182 & 0100 & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
-\hline
-183 & 0100 & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
-\hline
-\end{tabularx}
+\endfirsthead
 
-
-    \Subsection{Вариант с меньшим числом команд}
-    \noindent
-    \begin{tabularx}{\textwidth}{|c|c|c|X|}
-        \hline
-        \textbf{Адрес} & \textbf{Код команды} & \textbf{Мнемоника} & \textbf{Комментарии} \\
-        \hline
-        176 & 0200 & - & Итоговый результат A \\
-        \hline
-        177 & 0100 & - & переменная B \\
-        \hline
-        178 & 3181 & - & переменная C \\
-        \hline
-        179 & 0100 & - & переменная D \\
-        \hline
-        17A & 2177 & AND 177 & AC $\&$ B $\to$ AC \\
-        \hline
-        17B & 3178 & OR 178 & AC $\|$ C $\to$ AC \\
-        \hline
-        17C & 4179 & ADD 183 & AC + D $\to$ AC \\
-        \hline
-        17D & E176 & ST 176 & AC $\to$ A \\
-        \hline
-        17E & 0100 & HLT & Остановка программы \\
-        \hline
-    \end{tabularx}
-
-    \Subsection{Получившаяся программа}
-    \noindent
-    176: 0200 \\
-    177: 0100 \\
-    178: 3181 \\
-    179: 0100 \\
-    17A: + 2177 \\
-    17B: 3178 \\
-    17C: 4179 \\
-    17D: E176 \\
-    17E: 0100 \\
-
-    \Subsection{Описание получившейся программы}
-    \begin{itemize}
-        \item R = (B $\|$ C) + D \\
-    \end{itemize}
-
-    \Subsection{ОПИ и ОДЗ}
-    \begin{itemize}
-        \item R - знаковое, 16-ти разрядное число. $2^{-15}$ $\leq$ R $\leq$ $2^{15} - 1$ 
-        \item B, C - набор из 16 однобитовых логически значений, \\
-            (B $\|$ C) - знаковое, 16-ти разрядное число. \\
-            \begin{align}
-            \begin{cases}
-            2^{-14} \leq (B \| C) \cdot D \leq 2^{14} \\
-            B_{15} = 0, \quad C_{15} = 0 \\
-            B_i, C_i \in \{0, 1\}, \quad 0 \leq i \leq 14
-            \end{cases}
-            \\
-            \begin{cases}
-            2^{14} \leq D \leq 2^{15}-1 \\
-            B_{15} = 1, \quad C_{15} = 1 \\
-            B_i, C_i \in \{0, 1\}, \quad 0 \leq i \leq 14
-            \end{cases}
-            \\
-            \begin{cases}
-            -2^{15} \leq D \leq -2^{14}-1 \\
-            B_{15} = 0,\ C_{15} = 0 \\
-            \quad \lor\ B_{15} = 1,\ C_{15} = 0 \\
-            \quad \lor\ B_{15} = 0,\ C_{15} = 1 \\
-            B_i, C_i \in \{0, 1\}, \quad 0 \leq i \leq 14
-            \end{cases}
-            \end{align}
-
-
-
-        \item D - знаковое, 16-ти разрядное число. $2^{-15}$ $\leq$ D $\leq$ $2^{15} - 1$ 
-    \end{itemize}
-    
-    \noindent
-    \textbf{Таблица трассировки} \\ \\
-\setlength{\tabcolsep}{3pt}
-\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{0.8cm}|>{\centering\arraybackslash}p{1.4cm}|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{1.2cm}|}
 \hline
 \textbf{Адр} & \textbf{Знач} & \textbf{IP} & \textbf{CR} & \textbf{AR} & \textbf{DR} & \textbf{SP} & \textbf{BR} & \textbf{AC} & \textbf{PS} & \textbf{NZVC} & \textbf{Адр} & \textbf{Знач} \\
 \hline
-176 & 0200 & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
-\hline
-177 & 0100 & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
-\hline
-178 & 3181 & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
-\hline
-179 & 0100 & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ & $-$ \\
-\hline
-17A & 2177 & 17A & 0000 & 000 & 0000 & 000 & 0000 & 0000 & 004 & 0100 & $-$ & $-$ \\
-\hline
-17A & 2177 & 17B & 2177 & 177 & 0100 & 000 & 017A & 0000 & 004 & 0100 & $-$ & $-$ \\
-\hline
-17B & 3178 & 17C & 3178 & 178 & 3181 & 000 & CE7E & 3181 & 000 & 0000 & $-$ & $-$ \\
-\hline
-17C & 4179 & 17D & 4179 & 179 & 0100 & 000 & 017C & 3281 & 000 & 0000 & $-$ & $-$ \\
-\hline
-17D & E176 & 17E & E176 & 176 & 3281 & 000 & 017D & 3281 & 000 & 0000 & 176 & 3281 \\
-\hline
-17E & 0100 & 17F & 0100 & 17E & 0100 & 000 & 017E & 3281 & 000 & 0000 & $-$ & $-$ \\
-\hline
-\end{tabularx}
+\endhead
 
-    \newpage
+\endfoot
 
-    \Section{Вывод}
-        В процессе выполнения лабораторной работы я познакомился со структурой БЭВМ, узнал, как устроены и связаны его основные элементы, научился определять ОДЗ. Узнал структуру и виды команд, способы представления данных в БЭВМ \cite{2}.
-    \newpage
+\hline
+\endlastfoot
+
+2EE & 0200 & 2EE & 0000 & 000 & 0000 & 000 & 0000 & 0000 & 004 & 0100 & $-$ & $-$ \\
+\hline
+2EE & 0200 & 2EF & 0200 & 2EE & 0200 & 000 & 02EE & 0000 & 004 & 0100 & $-$ & $-$ \\
+\hline
+2EF & EEFD & 2F0 & EEFD & 2ED & 0000 & 000 & FFFD & 0000 & 004 & 0100 & 2ED & 0000 \\
+\hline
+2F0 & AF05 & 2F1 & AF05 & 2F0 & 0005 & 000 & 0005 & 0005 & 000 & 0000 & $-$ & $-$ \\
+\hline
+2F1 & EEFA & 2F2 & EEFA & 2EC & 0005 & 000 & FFFA & 0005 & 000 & 0000 & 2EC & 0005 \\
+\hline
+2F2 & AEF7 & 2F3 & AEF7 & 2EA & 0300 & 000 & FFF7 & 0300 & 000 & 0000 & $-$ & $-$ \\
+\hline
+2F3 & EEF7 & 2F4 & EEF7 & 2EB & 0300 & 000 & FFF7 & 0300 & 000 & 0000 & 2EB & 0300 \\
+\hline
+2F4 & AAF6 & 2F5 & AAF6 & 300 & 6000 & 000 & FFF6 & 6000 & 000 & 0000 & 2EB & 0301 \\
+\hline
+2F5 & F002 & 2F6 & F002 & 2F5 & F002 & 000 & 02F5 & 6000 & 000 & 0000 & $-$ & $-$ \\
+\hline
+2F6 & 0300 & 2F7 & 0300 & 2F6 & 0300 & 000 & 02F6 & 6000 & 000 & 0000 & $-$ & $-$ \\
+\hline
+2F7 & 0380 & 2F8 & 0380 & 2F7 & 0380 & 000 & 02F7 & 6000 & 001 & 0001 & $-$ & $-$ \\
+\hline
+2F8 & 0200 & 2F9 & 0200 & 2F8 & 0200 & 000 & 02F8 & 0000 & 005 & 0101 & $-$ & $-$ \\
+\hline
+2F9 & 0280 & 2FA & 0280 & 2F9 & 0280 & 000 & 02F9 & FFFF & 009 & 1001 & $-$ & $-$ \\
+\hline
+2FA & 2EF2 & 2FB & 2EF2 & 2ED & 0000 & 000 & FFF2 & 0000 & 005 & 0101 & $-$ & $-$ \\
+\hline
+2FB & 0400 & 2FC & 0400 & 2FB & 0400 & 000 & 02FB & 0001 & 000 & 0000 & $-$ & $-$ \\
+\hline
+2FC & EEF0 & 2FD & EEF0 & 2ED & 0001 & 000 & FFF0 & 0001 & 000 & 0000 & 2ED & 0001 \\
+\hline
+2FD & 82EC & 2FE & 82EC & 2EC & 0004 & 000 & 0003 & 0001 & 000 & 0000 & 2EC & 0004 \\
+\hline
+2FE & CEF5 & 2F4 & CEF5 & 2FE & 02F4 & 000 & FFF5 & 0001 & 000 & 0000 & $-$ & $-$ \\
+\hline
+2F4 & AAF6 & 2F5 & AAF6 & 301 & 0000 & 000 & FFF6 & 0000 & 004 & 0100 & 2EB & 0302 \\
+\hline
+2F5 & F002 & 2F8 & F002 & 2F5 & F002 & 000 & 0002 & 0000 & 004 & 0100 & $-$ & $-$ \\
+\hline
+2F8 & 0200 & 2F9 & 0200 & 2F8 & 0200 & 000 & 02F8 & 0000 & 004 & 0100 & $-$ & $-$ \\
+\hline
+2F9 & 0280 & 2FA & 0280 & 2F9 & 0280 & 000 & 02F9 & FFFF & 008 & 1000 & $-$ & $-$ \\
+\hline
+2FA & 2EF2 & 2FB & 2EF2 & 2ED & 0001 & 000 & FFF2 & 0001 & 000 & 0000 & $-$ & $-$ \\
+\hline
+2FB & 0400 & 2FC & 0400 & 2FB & 0400 & 000 & 02FB & 0002 & 000 & 0000 & $-$ & $-$ \\
+\hline
+2FC & EEF0 & 2FD & EEF0 & 2ED & 0002 & 000 & FFF0 & 0002 & 000 & 0000 & 2ED & 0002 \\
+\hline
+2FD & 82EC & 2FE & 82EC & 2EC & 0003 & 000 & 0002 & 0002 & 000 & 0000 & 2EC & 0003 \\
+\hline
+2FE & CEF5 & 2F4 & CEF5 & 2FE & 02F4 & 000 & FFF5 & 0002 & 000 & 0000 & $-$ & $-$ \\
+\hline
+2F4 & AAF6 & 2F5 & AAF6 & 302 & F700 & 000 & FFF6 & F700 & 008 & 1000 & 2EB & 0303 \\
+\hline
+2F5 & F002 & 2F6 & F002 & 2F5 & F002 & 000 & 02F5 & F700 & 008 & 1000 & $-$ & $-$ \\
+\hline
+2F6 & 0300 & 2F7 & 0300 & 2F6 & 0300 & 000 & 02F6 & F700 & 008 & 1000 & $-$ & $-$ \\
+\hline
+2F7 & 0380 & 2F8 & 0380 & 2F7 & 0380 & 000 & 02F7 & F700 & 009 & 1001 & $-$ & $-$ \\
+\hline
+2F8 & 0200 & 2F9 & 0200 & 2F8 & 0200 & 000 & 02F8 & 0000 & 005 & 0101 & $-$ & $-$ \\
+\hline
+2F9 & 0280 & 2FA & 0280 & 2F9 & 0280 & 000 & 02F9 & FFFF & 009 & 1001 & $-$ & $-$ \\
+\hline
+2FA & 2EF2 & 2FB & 2EF2 & 2ED & 0002 & 000 & FFF2 & 0002 & 001 & 0001 & $-$ & $-$ \\
+\hline
+2FB & 0400 & 2FC & 0400 & 2FB & 0400 & 000 & 02FB & 0005 & 000 & 0000 & $-$ & $-$ \\
+\hline
+2FC & EEF0 & 2FD & EEF0 & 2ED & 0005 & 000 & FFF0 & 0005 & 000 & 0000 & 2ED & 0005 \\
+\hline
+2FD & 82EC & 2FE & 82EC & 2EC & 0002 & 000 & 0001 & 0005 & 000 & 0000 & 2EC & 0002 \\
+\hline
+2FE & CEF5 & 2F4 & CEF5 & 2FE & 02F4 & 000 & FFF5 & 0005 & 000 & 0000 & $-$ & $-$ \\
+\hline
+2F4 & AAF6 & 2F5 & AAF6 & 303 & 0000 & 000 & FFF6 & 0000 & 004 & 0100 & 2EB & 0304 \\
+\hline
+2F5 & F002 & 2F8 & F002 & 2F5 & F002 & 000 & 0002 & 0000 & 004 & 0100 & $-$ & $-$ \\
+\hline
+2F8 & 0200 & 2F9 & 0200 & 2F8 & 0200 & 000 & 02F8 & 0000 & 004 & 0100 & $-$ & $-$ \\
+\hline
+2F9 & 0280 & 2FA & 0280 & 2F9 & 0280 & 000 & 02F9 & FFFF & 008 & 1000 & $-$ & $-$ \\
+\hline
+2FA & 2EF2 & 2FB & 2EF2 & 2ED & 0005 & 000 & FFF2 & 0005 & 000 & 0000 & $-$ & $-$ \\
+\hline
+2FB & 0400 & 2FC & 0400 & 2FB & 0400 & 000 & 02FB & 000A & 000 & 0000 & $-$ & $-$ \\
+\hline
+2FC & EEF0 & 2FD & EEF0 & 2ED & 000A & 000 & FFF0 & 000A & 000 & 0000 & 2ED & 000A \\
+\hline
+2FD & 82EC & 2FE & 82EC & 2EC & 0001 & 000 & 0000 & 000A & 000 & 0000 & 2EC & 0001 \\
+\hline
+2FE & CEF5 & 2F4 & CEF5 & 2FE & 02F4 & 000 & FFF5 & 000A & 000 & 0000 & $-$ & $-$ \\
+\hline
+2F4 & AAF6 & 2F5 & AAF6 & 304 & 0000 & 000 & FFF6 & 0000 & 004 & 0100 & 2EB & 0305 \\
+\hline
+2F5 & F002 & 2F8 & F002 & 2F5 & F002 & 000 & 0002 & 0000 & 004 & 0100 & $-$ & $-$ \\
+\hline
+2F8 & 0200 & 2F9 & 0200 & 2F8 & 0200 & 000 & 02F8 & 0000 & 004 & 0100 & $-$ & $-$ \\
+\hline
+2F9 & 0280 & 2FA & 0280 & 2F9 & 0280 & 000 & 02F9 & FFFF & 008 & 1000 & $-$ & $-$ \\
+\hline
+2FA & 2EF2 & 2FB & 2EF2 & 2ED & 000A & 000 & FFF2 & 000A & 000 & 0000 & $-$ & $-$ \\
+\hline
+2FB & 0400 & 2FC & 0400 & 2FB & 0400 & 000 & 02FB & 0014 & 000 & 0000 & $-$ & $-$ \\
+\hline
+2FC & EEF0 & 2FD & EEF0 & 2ED & 0014 & 000 & FFF0 & 0014 & 000 & 0000 & 2ED & 0014 \\
+\hline
+2FD & 82EC & 2FF & 82EC & 2EC & 0000 & 000 & FFFF & 0014 & 000 & 0000 & 2EC & 0000 \\
+\hline
+2FF & 0100 & 300 & 0100 & 2FF & 0100 & 000 & 02FF & 0014 & 000 & 0000 & $-$ & $-$ \\
+\hline
+\end{longtable}
+
+\Subsection{Описание программы}
+Программа сначала устанавливает длину массива, загружает в текущий адрес адрес первого элемента массива. 
+Затем циклически вычисляет битовую маску, где единица соответствует ненулевому элементу в массиве.
+
+\Subsection{ОПИ и ОДЗ}
+
+\textbf{Область представления}
+\begin{itemize}
+    \item 2EA, 2EB (адреса элементов массива) 11-разрядные числа, адрес памяти БЭВМ
+    \item 2EC (длина массива) - 16-ти разрядное беззнаковое целое число
+    \item 300-304 (элементы массива),  2ED (результат) - 16-ти разрядные знаковое целые числа
+\end{itemize}
+
+\textbf{Область допустимых значений}
+\begin{itemize}
+    \item 2EA (длина массива) $\in$ [0; 1280]
+    \item 2EB (результат) $\in$ [$-2^{15}$; $2^{15}-1$]
+    \item 2EC (первый элемент) $\in$ [0; 2EA-длина массива] $\lor$ [2FF; 7FF-длина массива]
+    \item 2ED (текущий элемент) $\in$ [первый элемент; первый элемент + длина массива - 1]
+    \item 300-304 (элементы массива) $\in$ [$-2^{15}$; $2^{15}-1$]
+\end{itemize}
+
+\newpage
+
+\Section{Вывод}
+    Во время выполнения лабораторной работы я научился работать в БЭВМ с массивами,
+    ветвлением и циклами. Я изучил прямую и косвенную адресацию и цикл выполнения
+    таких команд, как LOOP и JUMP.
+\newpage
 
 \include{biblist}  % Для соответсвия гост, придется доработать. Нужен файл .bib
 \end{document}
