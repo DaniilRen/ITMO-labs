@@ -1,0 +1,22 @@
+; Приведите пример оптимизации __loop invertion__ (выворачивание цикла) для цикла типа while
+ORG 2EA
+arr_first_elem: WORD 0x02FC     ; адрес 1 элемента
+arr_last_elem: WORD 0x0000      ; адрес текущего элемента
+arr_length: WORD 0x0005         ; длина массива (счётчик)
+result: WORD 0x0000             ; результат
+START:
+    LD arr_first_elem
+    ST arr_last_elem
+    LD arr_length
+    BMI exit                    ; проверка < 0
+    BEQ exit                    ; проверка = 0
+    CLA
+    ClC
+    repeat: 
+        LD (arr_last_elem)+
+        ADD result
+        ST result               ; result += element
+        LOOP $arr_length
+        JUMP repeat
+    exit: HLT
+arr: WORD 0x0002, 0x0002, 0x0002, 0x0002, 0x0001

@@ -2,7 +2,7 @@ ORG 2EA
 arr_first_elem: WORD 0x0300
 arr_last_elem: WORD 0xA000
 arr_length: WORD 0x4000
-result: WORD 0x0280
+result: WORD 0x0200
 START:
     CLA
     ST result
@@ -11,7 +11,7 @@ START:
     LD arr_first_elem
     ST arr_last_elem
     repeat: LD (arr_last_elem)+
-    BEQ is_z_1
+    BEQ x
     CLC
     CMC
     is_z_1: CLA
