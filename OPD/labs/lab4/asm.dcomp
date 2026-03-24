@@ -1,0 +1,49 @@
+ORG 0x141
+START:
+    CLA
+    ST result
+    LD z
+    PUSH
+    CALL $function
+    POP
+    DEC
+    SUB result
+    ST result
+    LD x
+    DEC
+    PUSH
+    CALL $function
+    POP
+    SUB result
+    ST result
+    LD y
+    PUSH
+    CALL $function
+    POP
+    SUB result
+    ST result
+    HLT
+
+    z: WORD 0x001E  ; 30
+    y: WORD 0x0014  ; 20
+    x: WORD 0x000A  ; 10
+    result: WORD 0x0B3F
+
+
+ORG 0x666
+function:
+    LD &1
+    BPL main_equation
+    CMP q_var
+    BMI main_equation
+    JUMP q_load
+    main_equation: ASL
+                    ASL
+                    ADD &1
+                    ADD w_var
+    JUMP return
+    q_load: LD q_var
+    return: ST &1
+            RET
+    q_var: WORD 0xF55A
+    w_var: WORD 0x004D
