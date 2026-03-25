@@ -1,9 +1,9 @@
-package util;
+package util.controller;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class RecursionController {
+public class DefaultRecursionController implements RecursionController {
     private Set<String> scriptStack = new HashSet<>();
 
     public void pushScript(String script) {

@@ -1,6 +1,5 @@
 package runtime;
 
-import util.RecursionController;
 import util.Status;
 
 import java.io.File;
@@ -13,6 +12,7 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import util.console.IOConsole;
+import util.controller.RecursionController;
 import util.exceptions.IncorrectRequestException;
 import util.exceptions.RuntimeInitException;
 import util.exceptions.ScriptSyntaxException;
