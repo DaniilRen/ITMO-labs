@@ -1,5 +1,6 @@
 package runtime;
 
+import util.RecursionController;
 import util.Status;
 
 import java.io.File;
@@ -31,8 +32,10 @@ public class LocalRuntime extends Runtime{
     private final RemoteRuntime remoteRuntime;
     private Map<String, Class<? extends Request>> commandsAttributes = new HashMap<>(); 
     private final List<String> scriptStack = new ArrayList<>();
+    private RecursionController recursionController;
 
-    public LocalRuntime(RemoteRuntime remoteRuntime) {
+    public LocalRuntime(RemoteRuntime remoteRuntime, RecursionController recursionController) {
+        this.recursionController = recursionController;
         this.console = new IOConsole();
         console.setUserScanner(new Scanner(System.in));
         this.scanner = this.console.getUserScanner();
@@ -140,6 +143,29 @@ public class LocalRuntime extends Runtime{
 
     private Status executeCommand(String commandName, List<?> args) {
         if (commandName == "" || commandName == null) return Status.ERROR;
+
+        console.println(commandName);
+        if (commandName.equals("execute_script")) {
+            Response<?> scriptResponse = new Response<>();
+            String fileName = (String) args.get(0);
+            if (recursionController.checkRecursion(fileName)) {
+                scriptResponse = new Response<>(List.of("Script has recursion!"), Status.ERROR);
+            } else {
+                if (fileName == "") scriptResponse  = new Response<>(List.of("Invalid script name"), Status.ERROR);
+
+                recursionController.pushScript(fileName);
+
+                LocalRuntime localRuntime = new LocalRuntime(remoteRuntime, recursionController);
+                localRuntime.run("script", fileName);
+
+                recursionController.popScript(fileName);
+
+                scriptResponse  = new Response<>();
+            }
+
+            return processCommandResponse(scriptResponse);
+        }
+
         return processCommandResponse(makeRequest(commandName, args));
     }
 

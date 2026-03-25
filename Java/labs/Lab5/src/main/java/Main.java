@@ -1,6 +1,7 @@
 import runtime.LocalRuntime;
 import runtime.RemoteRuntime;
 import util.LocalEnvironment;
+import util.RecursionController;
 import util.exceptions.RuntimeInitException;
 
 
@@ -13,7 +14,7 @@ public class Main {
 
         try {
             RemoteRuntime remoteRuntime = new RemoteRuntime(filePath); 
-            LocalRuntime localRuntime = new LocalRuntime(remoteRuntime);
+            LocalRuntime localRuntime = new LocalRuntime(remoteRuntime, new RecursionController());
             localRuntime.run("interactive");  
         } catch (RuntimeInitException e) {
             System.out.println(e.getMessage());

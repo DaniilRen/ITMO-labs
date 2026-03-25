@@ -12,7 +12,6 @@ import util.exceptions.CollectionLoadException;
 import util.exceptions.RuntimeInitException;
 import util.transfer.request.empty.InitRequest;
 import util.transfer.request.standart.StandartRequest;
-import util.transfer.request.standart.StringRequest;
 import util.transfer.response.Response;
 import util.transfer.request.Request;
 
@@ -52,7 +51,6 @@ public class RemoteRuntime extends Runtime {
         commandManager.register("remove_by_id", new RemoveById(collectionManager));
         commandManager.register("clear", new Clear(collectionManager));
         commandManager.register("save", new Save(collectionManager, fileManager));
-        commandManager.register("execute_script", new ExecuteScript(this, commandManager));
         commandManager.register("exit", new Exit());
         commandManager.register("remove_lower", new RemoveLower(collectionManager));
         commandManager.register("sort", new Sort(collectionManager));
@@ -64,7 +62,7 @@ public class RemoteRuntime extends Runtime {
 
     public Response<?> proccessRequest(Request request) {
         if (request instanceof InitRequest) {
-               return new Response<>(List.of(commandManager.getCommandAttributes()));
+            return new Response<>(List.of(commandManager.getCommandAttributes()));
         } else if (request instanceof StandartRequest) {
             return executeCommand((StandartRequest) request);
         } else {
@@ -76,12 +74,6 @@ public class RemoteRuntime extends Runtime {
         String commandName = request.getName();
         if (!validateCommandName(commandName)) {
             return new Response<>(List.of("Unknown command"), Status.ERROR);
-        }
-        if (commandName.equals("execute_script")) {
-            StringRequest strRequest = (StringRequest) request;
-            if (commandManager.checkRecursion(strRequest.getRow())) {
-                return new Response<>(List.of("Script has recursion!"), Status.ERROR);
-            }
         }
         Command<?> command = commandManager.getCommands().get(commandName);
         commandManager.addToHistory(command.getAttribute().getName());
