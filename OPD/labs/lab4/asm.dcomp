@@ -24,9 +24,9 @@ START:
     ST result
     HLT
 
-    z: WORD 0x001E  ; 30
-    y: WORD 0x0014  ; 20
-    x: WORD 0x000A  ; 10
+    z: WORD 0x0065  ; 101
+    y: WORD 0x0064  ; 100
+    x: WORD 0x0064  ; 100
     result: WORD 0x0B3F
 
 
