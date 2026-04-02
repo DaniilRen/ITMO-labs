@@ -1,0 +1,87 @@
+ORG 0x100
+START:
+    LD src  ; STACK VAR 4
+    PUSH
+    LD dst  ; STACK VAR 3
+    PUSH
+    LD len  ; STACK VAR 2
+    PUSH
+    LD prog ; STACK VAR 1
+    PUSH
+
+    CALL $FUNCTION
+    HLT
+
+    src: WORD 0x300  ; src buffer address
+    dst: WORD 0x400  ; dst buffer address
+    len: WORD 0x005  ; command array length
+    prog: WORD 0x302 ; first command address
+
+
+ORG 0x600
+FUNCTION:   LD &2
+            CMP 0x0
+            BEQ EXIT        ; check len <> 0
+
+            LD &3
+            SUB &4
+            ST offset       ; offset = dst - src
+
+            LD &1
+            ADD &2
+            ST prog_end     ; prog_end = prog + len
+
+            MAIN_LOOP:
+                        ; getting new address with offset
+                        LD &1
+                        ADD index
+                        ST old_address
+                        ADD offset
+                        ST new_address
+
+                        ; check command addressation type
+                        LD (old_address)
+                        ST new_command
+                        AND adr_type
+                        CMP abs_type
+                        ; if > 0 go to standart exec
+                        BPL STANDART_EXECUTION
+
+                        ; check if original command refers to address inside src buffer
+                        LD (old_address)
+                        AND address_mask 
+                        CMP &1
+                        BMI STANDART_EXECUTION
+                        CMP prog_end
+                        BPL STANDART_EXECUTION
+
+                        LD (old_address)
+                        ADD offset
+                        ST new_command
+
+                        STANDART_EXECUTION: LD new_command
+                                            ST (new_address)
+                                            LD index
+                                            INC
+                                            ST index
+                                            CMP &2      ; if index = len, exit
+                                            BEQ EXIT
+
+            EXIT: RET
+
+            ; local variablesafter offset
+            offset: WORD 0x0000    ; dst - src
+            index: WORD 0x0000     ; command position in buffer
+            prog_end: WORD 0x0000  ; prog + len
+            new_address: WORD 0x0000    ; address in dst buffer
+            old_address: WORD 0x0000    ; address in src buffer
+            new_command: WORD 0x0000    ; new command
+            ; bitmasks
+            adr_type: WORD 0x0F00  ; mask to check command addressation type
+            abs_type: WORD 0x0700  ; mask for absolute addressation
+            address_mask: WORD 0x07FF  ; mask for absolute command address part 
+
+
+
+ORG 0x300
+arr: WORD 0xAE14, 0x4301, 0xAE14, 0x4506, 0x4301
