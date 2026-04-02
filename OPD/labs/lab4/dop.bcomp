@@ -14,8 +14,8 @@ START:
 
     src: WORD 0x300  ; src buffer address
     dst: WORD 0x400  ; dst buffer address
-    len: WORD 0x005  ; command array length
-    prog: WORD 0x302 ; first command address
+    len: WORD 0x003  ; command array length
+    prog: WORD 0x300 ; first command address
 
 
 ORG 0x600
@@ -44,20 +44,9 @@ FUNCTION:   LD &2
                         ST new_command
                         AND adr_type
                         CMP abs_type
-                        ; if > 0 go to standart exec
-                        BPL STANDART_EXECUTION
-
-                        ; check if original command refers to address inside src buffer
-                        LD (old_address)
-                        AND address_mask 
-                        CMP &1
-                        BMI STANDART_EXECUTION
-                        CMP prog_end
-                        BPL STANDART_EXECUTION
-
-                        LD (old_address)
-                        ADD offset
-                        ST new_command
+                        BPL CHECK_RELATIVE      ; if not absolute go to relative check
+                        JUMP CHECK_ABSOLUTE     ; otherwise go straigt to absolute check
+                        
 
                         STANDART_EXECUTION: LD new_command
                                             ST (new_address)
@@ -69,6 +58,36 @@ FUNCTION:   LD &2
 
             EXIT: RET
 
+            CHECK_ABSOLUTE: LD (old_address)
+                            AND abs_payload 
+                            CMP &1
+                            BMI CHECK_RELATIVE
+                            CMP prog_end
+                            BPL CHECK_RELATIVE
+                            LD (old_address)
+                            ADD offset
+                            ST new_command
+                            JUMP STANDART_EXECUTION
+
+            CHECK_RELATIVE: LD (old_address)
+                            AND adr_type
+                            CMP rel_type
+                            BNE STANDART_EXECUTION
+
+                            LD (old_address)
+                            AND rel_payload
+                            ADD old_address
+                            INC
+                            CMP &1
+                            BMI STANDART_EXECUTION
+                            CMP prog_end
+                            BPL STANDART_EXECUTION
+                            LD (old_address)
+                            ADD offset
+                            ST new_command
+                            JUMP STANDART_EXECUTION
+
+
             ; local variablesafter offset
             offset: WORD 0x0000    ; dst - src
             index: WORD 0x0000     ; command position in buffer
@@ -76,12 +95,16 @@ FUNCTION:   LD &2
             new_address: WORD 0x0000    ; address in dst buffer
             old_address: WORD 0x0000    ; address in src buffer
             new_command: WORD 0x0000    ; new command
+
             ; bitmasks
-            adr_type: WORD 0x0F00  ; mask to check command addressation type
-            abs_type: WORD 0x0700  ; mask for absolute addressation
-            address_mask: WORD 0x07FF  ; mask for absolute command address part 
+            adr_type: WORD 0x0F00  ; to check addressation type
 
+            abs_type: WORD 0x0700  ; absolute addressation
+            abs_payload: WORD 0x07FF  ; absolute command payload
 
+            rel_type: WORD 0x0800   ; relative addressation
+            rel_payload: WORD 0x00FF    ; relative command payload
+            
 
 ORG 0x300
-arr: WORD 0xAE14, 0x4301, 0xAE14, 0x4506, 0x4301
+arr: WORD 0x4801, 0xAE14, 0x4301
