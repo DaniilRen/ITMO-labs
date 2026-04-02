@@ -1,3 +1,8 @@
+; FUNCTION - adds offset to absolute addr commands and adds offset to relative addresses for relative commands
+; Example: 0x48AA (0x0AA = 0x300) -> 0x48AA (0x0AA = 0x400), offset=100
+
+
+
 ORG 0x100
 START:
     LD src  ; STACK VAR 4
@@ -72,39 +77,62 @@ FUNCTION:   LD &2
             CHECK_RELATIVE: LD (old_address)
                             AND adr_type
                             CMP rel_type
-                            BNE STANDART_EXECUTION
+                            BEQ PAYLOAD_CHECK
 
                             LD (old_address)
-                            AND rel_payload
-                            ADD old_address
-                            INC
-                            CMP &1
-                            BMI STANDART_EXECUTION
-                            CMP prog_end
-                            BPL STANDART_EXECUTION
+                            AND adr_type
+                            CMP rel_inc_type
+                            BEQ PAYLOAD_CHECK
+
                             LD (old_address)
-                            ADD offset
-                            ST new_command
+                            AND adr_type
+                            CMP rel_dec_type
+                            BEQ PAYLOAD_CHECK
+                            
                             JUMP STANDART_EXECUTION
 
+                            PAYLOAD_CHECK:  LD (old_address)
+                                            AND rel_payload  
+                                            ST temp
+                                            LD (temp)
+                                            ST 0xE      ; WRITES HERE 0x302
+                                            CMP &1
+                                            BMI STANDART_EXECUTION
+                                            CMP prog_end
+                                            BPL STANDART_EXECUTION
+                                            LD (temp)
+                                            ADD offset
+                                            ST 0xF      ; WRITES HERE 0x402
+                                            ST (temp)
+                                            JUMP STANDART_EXECUTION
 
-            ; local variablesafter offset
-            offset: WORD 0x0000    ; dst - src
-            index: WORD 0x0000     ; command position in buffer
-            prog_end: WORD 0x0000  ; prog + len
+
+            ; local variables
+            offset: WORD 0x0000         ; dst - src
+            index: WORD 0x0000          ; command position in buffer
+            prog_end: WORD 0x0000       ; prog + len
             new_address: WORD 0x0000    ; address in dst buffer
             old_address: WORD 0x0000    ; address in src buffer
             new_command: WORD 0x0000    ; new command
+            temp: WORD 0x0000           ; needed for relative address change
 
             ; bitmasks
-            adr_type: WORD 0x0F00  ; to check addressation type
+            adr_type: WORD 0x0F00       ; to check addressation type
 
-            abs_type: WORD 0x0700  ; absolute addressation
-            abs_payload: WORD 0x07FF  ; absolute command payload
+            abs_type: WORD 0x0700       ; absolute addressation
+            abs_payload: WORD 0x07FF    ; absolute command payload
 
-            rel_type: WORD 0x0800   ; relative addressation
+            rel_type: WORD 0x0800       ; relative addressation
+            rel_inc_type: WORD 0x0A00   ; relative autoincrement addressation
+            rel_dec_type: WORD 0x0B00   ; relative autodecrement addressation
             rel_payload: WORD 0x00FF    ; relative command payload
-            
 
 ORG 0x300
-arr: WORD 0x4801, 0xAE14, 0x4301
+; commands with different addressation types (relative, relative inc, absolute, relative dec)
+; expected output: 0x48AA, 0xAAAB, 0x4401, 0x4BAC
+
+arr: WORD 0x48AA, 0xAAAB, 0x4301, 0x4BAC
+
+; relative addresses from previous arr
+ORG 0x0AA
+arr_rel: WORD 0x300, 0x301, 0x302
