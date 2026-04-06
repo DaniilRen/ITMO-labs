@@ -1,11 +1,11 @@
-package util.forms;
+package forms;
 
 import java.util.NoSuchElementException;
 
-import models.Coordinates;
-import util.console.IOConsole;
-import util.exceptions.InvalidFormException;
-import util.exceptions.ScriptSyntaxException;
+import common.models.Coordinates;
+import console.IOConsole;
+import common.exceptions.InvalidFormException;
+import common.exceptions.ScriptSyntaxException;
 
 /**
  * Класс формы для координат.

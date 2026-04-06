@@ -1,18 +1,19 @@
-package common.transfer.request;
+package util;
 
 import java.util.List;
 import java.util.Map;
 
-import models.Entity;
-import common.console.IOConsole;
+import common.models.Entity;
+import console.IOConsole;
 import common.exceptions.IncorrectRequestException;
-import util.exceptions.ScriptSyntaxException;
-import util.forms.RouteForm;
-import util.transfer.request.standart.CombinedRequest;
-import util.transfer.request.standart.EntityRequest;
-import util.transfer.request.standart.IdRequest;
-import util.transfer.request.standart.StandartRequest;
-import util.transfer.request.standart.StringRequest;
+import common.exceptions.ScriptSyntaxException;
+import forms.RouteForm;
+import common.transfer.request.Request;
+import common.transfer.request.standart.CombinedRequest;
+import common.transfer.request.standart.EntityRequest;
+import common.transfer.request.standart.IdRequest;
+import common.transfer.request.standart.StandartRequest;
+import common.transfer.request.standart.StringRequest;
 
 
 /**

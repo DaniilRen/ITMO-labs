@@ -1,11 +1,11 @@
-package util.forms;
+package forms;
 
 import java.util.NoSuchElementException;
 
-import models.Location3Dimension;
-import util.console.IOConsole;
-import util.exceptions.InvalidFormException;
-import util.exceptions.ScriptSyntaxException;
+import common.models.Location3Dimension;
+import console.IOConsole;
+import common.exceptions.InvalidFormException;
+import common.exceptions.ScriptSyntaxException;
 
 
 /**

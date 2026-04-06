@@ -1,4 +1,4 @@
-package util.console;
+package console;
 
 /**
  * Определяет поведение консоли.

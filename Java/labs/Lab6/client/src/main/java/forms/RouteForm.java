@@ -1,16 +1,15 @@
-package util.forms;
-
-import models.Route;
+package forms;
 
 import java.time.LocalDateTime;
 import java.util.NoSuchElementException;
 
-import util.console.IOConsole;
-import util.exceptions.InvalidFormException;
-import util.exceptions.ScriptSyntaxException;
-import models.Coordinates;
-import models.Location2Dimension;
-import models.Location3Dimension;
+import console.IOConsole;
+import common.exceptions.InvalidFormException;
+import common.exceptions.ScriptSyntaxException;
+import common.models.Route;
+import common.models.Coordinates;
+import common.models.Location2Dimension;
+import common.models.Location3Dimension;
 
 
 /**
