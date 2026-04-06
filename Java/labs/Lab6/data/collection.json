@@ -1,0 +1,443 @@
+[
+  {
+    "id": 1,
+    "name": "Expressway A1",
+    "coordinates": {
+      "x": 33.5,
+      "y": 106
+    },
+    "creationDate": "2026-02-13T11:45:00",
+    "from": {
+      "x": 95,
+      "y": 34.567,
+      "name": "Novosibirsk"
+    },
+    "to": {
+      "x": 175.8,
+      "y": 52.3,
+      "z": 220,
+      "name": "ewfefew"
+    },
+    "distance": 290
+  },
+  {
+    "id": 3,
+    "name": "Mountain Pass",
+    "coordinates": {
+      "x": 78.9,
+      "y": 99
+    },
+    "creationDate": "2026-02-14T16:20:00",
+    "from": {
+      "x": 250,
+      "y": 67.89,
+      "name": "Kazan"
+    },
+    "to": {
+      "x": 310.25,
+      "y": 88.1,
+      "z": 450,
+      "name": "Ufa"
+    },
+    "distance": 680
+  },
+  {
+    "id": 9,
+    "name": "NAME",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1
+    },
+    "creationDate": "2026-02-28T13:00:57.753265883",
+    "from": {
+      "x": 2,
+      "y": 2.0,
+      "name": "FROM"
+    },
+    "to": {
+      "x": 3.0,
+      "y": 3.0,
+      "z": 3,
+      "name": "TO"
+    },
+    "distance": 4
+  },
+  {
+    "id": 6,
+    "name": "Northern Trail",
+    "coordinates": {
+      "x": 89.7,
+      "y": 81
+    },
+    "creationDate": "2026-02-11T19:05:00",
+    "from": {
+      "x": 410,
+      "y": 71.234,
+      "name": "Arkhangelsk"
+    },
+    "to": {
+      "x": 470.6,
+      "y": 89.9,
+      "z": 95,
+      "name": "sdsd"
+    },
+    "distance": 420
+  },
+  {
+    "id": 5,
+    "name": "River Road",
+    "coordinates": {
+      "x": 67.1,
+      "y": 23
+    },
+    "creationDate": "2026-02-12T07:15:00",
+    "from": {
+      "x": 320,
+      "y": 12.789,
+      "name": "Rostov"
+    },
+    "to": {
+      "x": 380.9,
+      "y": 28.4,
+      "z": 180,
+      "name": "Volgograd"
+    },
+    "distance": 510
+  },
+  {
+    "id": 7,
+    "name": "Trans-Siberian Link",
+    "coordinates": {
+      "x": 22.4,
+      "y": 56
+    },
+    "creationDate": "2026-02-10T13:25:00",
+    "from": {
+      "x": 180,
+      "y": 45.678,
+      "name": "Irkutsk"
+    },
+    "to": {
+      "x": 240.3,
+      "y": 63.2,
+      "z": 380,
+      "name": "Chita"
+    },
+    "distance": 750
+  },
+  {
+    "id": 10,
+    "name": "NAME",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1
+    },
+    "creationDate": "2026-03-04T11:22:57.926140246",
+    "from": {
+      "x": 2,
+      "y": 2.0,
+      "name": "FROM"
+    },
+    "to": {
+      "x": 3.0,
+      "y": 3.0,
+      "z": 3,
+      "name": "TO"
+    },
+    "distance": 4
+  },
+  {
+    "id": 11,
+    "name": "NAME",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1
+    },
+    "creationDate": "2026-03-05T14:02:38.58297609",
+    "from": {
+      "x": 2,
+      "y": 2.0,
+      "name": "FROM"
+    },
+    "to": {
+      "x": 3.0,
+      "y": 3.0,
+      "z": 3,
+      "name": "TO"
+    },
+    "distance": 4
+  },
+  {
+    "id": 12,
+    "name": "NAME",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1
+    },
+    "creationDate": "2026-03-05T14:05:57.131637935",
+    "from": {
+      "x": 2,
+      "y": 2.0,
+      "name": "FROM"
+    },
+    "to": {
+      "x": 3.0,
+      "y": 3.0,
+      "z": 3,
+      "name": "TO"
+    },
+    "distance": 4
+  },
+  {
+    "id": 13,
+    "name": "NAME",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1
+    },
+    "creationDate": "2026-03-05T16:40:23.179839587",
+    "from": {
+      "x": 2,
+      "y": 2.0,
+      "name": "FROM"
+    },
+    "to": {
+      "x": 3.0,
+      "y": 3.0,
+      "z": 3,
+      "name": "TO"
+    },
+    "distance": 4
+  },
+  {
+    "id": 14,
+    "name": "2",
+    "coordinates": {
+      "x": 3.0,
+      "y": null
+    },
+    "creationDate": "2026-03-10T12:19:04.810561421",
+    "from": {
+      "x": 4,
+      "y": null,
+      "name": "ww"
+    },
+    "to": {
+      "x": null,
+      "y": 23.0,
+      "z": 23,
+      "name": "sds"
+    },
+    "distance": 3
+  },
+  {
+    "id": 15,
+    "name": "NAME",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1
+    },
+    "creationDate": "2026-03-10T12:20:45.863567205",
+    "from": {
+      "x": 2,
+      "y": 2.0,
+      "name": "FROM"
+    },
+    "to": {
+      "x": 3.0,
+      "y": 3.0,
+      "z": 3,
+      "name": "TO"
+    },
+    "distance": 4
+  },
+  {
+    "id": 16,
+    "name": "sd",
+    "coordinates": {
+      "x": 232.0,
+      "y": null
+    },
+    "creationDate": "2026-03-10T12:25:28.046112067",
+    "from": {
+      "x": 2,
+      "y": 2.0,
+      "name": "3"
+    },
+    "to": {
+      "x": null,
+      "y": 3.0,
+      "z": 2,
+      "name": "2"
+    },
+    "distance": 2
+  },
+  {
+    "id": 17,
+    "name": "NAME",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1
+    },
+    "creationDate": "2026-03-10T12:45:02.896338222",
+    "from": {
+      "x": 2,
+      "y": 2.0,
+      "name": "FROM"
+    },
+    "to": {
+      "x": 3.0,
+      "y": 3.0,
+      "z": 3,
+      "name": "TO"
+    },
+    "distance": 4
+  },
+  {
+    "id": 18,
+    "name": "NAME",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1
+    },
+    "creationDate": "2026-03-10T12:45:06.716830182",
+    "from": {
+      "x": 2,
+      "y": 2.0,
+      "name": "FROM"
+    },
+    "to": {
+      "x": 3.0,
+      "y": 3.0,
+      "z": 3,
+      "name": "TO"
+    },
+    "distance": 4
+  },
+  {
+    "id": 19,
+    "name": "NAME",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1
+    },
+    "creationDate": "2026-03-10T13:43:34.504340677",
+    "from": {
+      "x": 2,
+      "y": 2.0,
+      "name": "FROM"
+    },
+    "to": {
+      "x": 3.0,
+      "y": 3.0,
+      "z": 3,
+      "name": "TO"
+    },
+    "distance": 4
+  },
+  {
+    "id": 20,
+    "name": "NAME",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1
+    },
+    "creationDate": "2026-03-10T13:43:35.446077727",
+    "from": {
+      "x": 2,
+      "y": 2.0,
+      "name": "FROM"
+    },
+    "to": {
+      "x": 3.0,
+      "y": 3.0,
+      "z": 3,
+      "name": "TO"
+    },
+    "distance": 4
+  },
+  {
+    "id": 21,
+    "name": "NAME",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1
+    },
+    "creationDate": "2026-03-10T13:43:36.26611418",
+    "from": {
+      "x": 2,
+      "y": 2.0,
+      "name": "FROM"
+    },
+    "to": {
+      "x": 3.0,
+      "y": 3.0,
+      "z": 3,
+      "name": "TO"
+    },
+    "distance": 4
+  },
+  {
+    "id": 22,
+    "name": "NAME",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1
+    },
+    "creationDate": "2026-03-10T13:43:37.330356842",
+    "from": {
+      "x": 2,
+      "y": 2.0,
+      "name": "FROM"
+    },
+    "to": {
+      "x": 3.0,
+      "y": 3.0,
+      "z": 3,
+      "name": "TO"
+    },
+    "distance": 4
+  },
+  {
+    "id": 23,
+    "name": "NAME",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1
+    },
+    "creationDate": "2026-03-10T17:20:31.866996059",
+    "from": {
+      "x": 2,
+      "y": 2.0,
+      "name": "FROM"
+    },
+    "to": {
+      "x": 3.0,
+      "y": 3.0,
+      "z": 3,
+      "name": "TO"
+    },
+    "distance": 4
+  },
+  {
+    "id": 24,
+    "name": "NAME",
+    "coordinates": {
+      "x": 1.0,
+      "y": 1
+    },
+    "creationDate": "2026-03-25T18:24:35.668461461",
+    "from": {
+      "x": 2,
+      "y": 2.0,
+      "name": "FROM"
+    },
+    "to": {
+      "x": 3.0,
+      "y": 3.0,
+      "z": 3,
+      "name": "TO"
+    },
+    "distance": 4
+  }
+]
