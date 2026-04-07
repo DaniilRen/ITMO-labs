@@ -4,21 +4,21 @@
 @packages
 @argfile
 -classpath
-'/home/danb/Code/ITMO-labs/Java/labs/Lab6/common/target/common-1.0-SNAPSHOT.jar:/home/danb/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/home/danb/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar'
+'D:/Code/ITMO-labs/Java/labs/Lab6/common/target/common-1.0-SNAPSHOT.jar;C:/Users/Tayzeront/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar;C:/Users/Tayzeront/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar'
 -encoding
 'UTF-8'
 -protected
 -source
 '21'
 -sourcepath
-'/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java:/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/generated-sources/annotations'
+'D:/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java;D:/Code/ITMO-labs/Java/labs/Lab6/server/target/generated-sources/annotations'
 -author
 -bottom
 'Copyright &#169; 2026. All rights reserved.'
 -charset
 'UTF-8'
 -d
-'/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs'
+'D:/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs'
 -docencoding
 'UTF-8'
 -doctitle
@@ -29,44 +29,44 @@
 'server 1.0-SNAPSHOT API'
 commands
 commands.interfaces
-util
-network
 managers
-'/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/Server.java'
-'/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/Main.java'
-'/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/NetServer.java'
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/common/target/common-1.0-SNAPSHOT.jar = 1775571869097
-/home/danb/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar = 1716144881000
-/home/danb/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar = 1714146969000
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/Server.java = 1775571387776
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/Main.java = 1775565017812
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/NetServer.java = 1775571849810
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java = 1775560341107
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/generated-sources/annotations = 1775571872078
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/allclasses-index.html = 1775571877634
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/search-page.js = 1775571877719
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/package-use.html = 1775571877534
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/index.html = 1775571877574
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/script.js = 1775571877713
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/overview-tree.html = 1775571877566
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/type-search-index.js = 1775571877640
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/package-summary.html = 1775571877237
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/module-search-index.js = 1775571877639
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/tag-search-index.js = 1775571877643
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/member-search-index.js = 1775571877641
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/package-tree.html = 1775571877244
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/overview-summary.html = 1775571877700
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/package-search-index.js = 1775571877639
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/search.html = 1775571877698
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/serialized-form.html = 1775571877371
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/stylesheet.css = 1775571877712
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/NetServer.html = 1775571877037
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/Server.html = 1775571877134
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/Main.html = 1775571877010
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/allpackages-index.html = 1775571877637
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/copy.svg = 1775571877714
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/help-doc.html = 1775571877708
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/element-list = 1775571877223
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/index-all.html = 1775571877696
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/search.js = 1775571877717
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/target/apidocs/link.svg = 1775571877715
+network
+util
+'D:/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/Main.java'
+'D:/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/NetServer.java'
+'D:/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/Server.java'
+D:\Code\ITMO-labs\Java\labs\Lab6\common\target\common-1.0-SNAPSHOT.jar = 1775587389326
+C:\Users\Tayzeront\.m2\repository\com\google\code\gson\gson\2.11.0\gson-2.11.0.jar = 1772215135888
+C:\Users\Tayzeront\.m2\repository\com\google\errorprone\error_prone_annotations\2.27.0\error_prone_annotations-2.27.0.jar = 1772215136359
+D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\Main.java = 1775585524150
+D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\NetServer.java = 1775585524150
+D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\Server.java = 1775585524150
+D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java = 1775585524158
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\generated-sources\annotations = 1775587391724
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\allclasses-index.html = 1775587394396
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\allpackages-index.html = 1775587394399
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\copy.svg = 1775587394450
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\element-list = 1775587394112
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\help-doc.html = 1775587394437
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\index-all.html = 1775587394426
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\index.html = 1775587394359
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\link.svg = 1775587394451
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\Main.html = 1775587394029
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\member-search-index.js = 1775587394406
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\module-search-index.js = 1775587394400
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\NetServer.html = 1775587394038
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\overview-summary.html = 1775587394431
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\overview-tree.html = 1775587394354
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\package-search-index.js = 1775587394404
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\package-summary.html = 1775587394120
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\package-tree.html = 1775587394124
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\package-use.html = 1775587394327
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\script.js = 1775587394444
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\search-page.js = 1775587394459
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\search.html = 1775587394429
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\search.js = 1775587394454
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\serialized-form.html = 1775587394201
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\Server.html = 1775587394074
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\stylesheet.css = 1775587394439
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\tag-search-index.js = 1775587394407
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\type-search-index.js = 1775587394405

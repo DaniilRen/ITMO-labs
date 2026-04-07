@@ -1,5 +1,7 @@
 package console;
 
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 
@@ -12,6 +14,7 @@ public class IOConsole implements Console {
     private boolean fileMode = false;
     private final String promptSymbol = "$ ";
     private final String scriptPrompotySymbol = ":> ";
+		private final PrintStream out = new PrintStream(System.out, true, StandardCharsets.UTF_8);
 
     public Scanner getUserScanner() {
         return this.userScanner;
@@ -34,19 +37,19 @@ public class IOConsole implements Console {
     }
 
     public void print(Object obj) {
-        System.out.print(obj.toString());
+        out.print(obj.toString());
     }
 
     public void println(Object obj) {
-        System.out.println(obj.toString());
+        out.println(obj.toString());
     }
 
     public void printError(Object obj) {
-        System.out.println("[Error]: " + obj.toString());
+        out.println("[Error]: " + obj.toString());
     }
 
     public void printConnectionError(Object obj) {
-        System.out.println("[Connection Error]: " + obj.toString());
+        out.println("[Connection Error]: " + obj.toString());
     }
 
     public void printPromptSymbol() {

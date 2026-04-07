@@ -39,24 +39,14 @@ public class NetClient implements Client {
     }
 
 
-    public void run(String... args) {
+    public void run() {
         try {
             network.connect();
         } catch (IOException e) {
             console.printConnectionError("Failed to connect to server: " + e.getMessage());
             return;
         }
-        
-        if (args.length == 0) {
-            runInteractiveMode();
-        } else {
-            String fileName = args[0];
-            if (fileName.isEmpty()) {
-                console.printError("Invalid script file name: " + fileName);
-                System.exit(0);
-            }
-            runScriptMode(fileName);
-        }
+        runInteractiveMode();
         network.close();
     }
     
@@ -212,8 +202,8 @@ public class NetClient implements Client {
             allData.addAll((List<Object>) firstChunk.getBody());
         }
         
-        console.println(String.format("Loading data (%d/%d chunks)...", 1, totalChunks));
-        
+        console.println(String.format("Loading data (%d chunks)...", totalChunks));
+				int loadBarSectionIdx = totalChunks / 10;
         for (int chunkNum = 2; chunkNum <= totalChunks; chunkNum++) {
             try {
                 NextChunkRequest chunkRequest = new NextChunkRequest(streamId, chunkNum);
@@ -229,17 +219,15 @@ public class NetClient implements Client {
                     allData.addAll((List<Object>) nextChunk.getBody());
                 }
                 
-                console.print(".");
-                
+								if (chunkNum % loadBarSectionIdx == 0) {
+									console.println("o".repeat(chunkNum / loadBarSectionIdx) + "-".repeat(10-(chunkNum / loadBarSectionIdx)));
+								}                
             } catch (IOException | ClassNotFoundException e) {
                 console.printError("\nFailed to load chunk " + chunkNum + ": " + e.getMessage());
                 return Status.ERROR;
             }
         }
-        
-        console.println(" Done!");
         printCommandResponse(allData);
-        
         return Status.OK;
     }
 
