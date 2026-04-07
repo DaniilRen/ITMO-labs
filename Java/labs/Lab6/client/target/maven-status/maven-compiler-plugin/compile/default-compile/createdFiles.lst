@@ -5,7 +5,6 @@ forms/RouteForm.class
 forms/Location2DimensionForm.class
 forms/Location3DimensionForm.class
 console/IOConsole.class
-controller/DefaultRecursionController.class
 console/Console.class
 forms/CoordinatesForm.class
 Main.class

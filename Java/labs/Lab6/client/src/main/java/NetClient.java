@@ -32,12 +32,10 @@ public class NetClient implements Client {
     private final Scanner scanner;
     private Map<String, Class<? extends Request>> commandsAttributes = new HashMap<>(); 
     private final List<String> scriptStack = new ArrayList<>();
-    private final RecursionController recursionController;
     private final String address;
     private final int port;
 
-    public NetClient(String address, int port, RecursionController recursionController) {
-        this.recursionController = recursionController;
+    public NetClient(String address, int port) {
         this.address = address;
         this.port = port;
         this.console = new IOConsole();
@@ -141,24 +139,23 @@ public class NetClient implements Client {
     private Status executeCommand(String commandName, List<?> args) {
         if (commandName == "" || commandName == null) return Status.ERROR;
 
-        console.println(commandName);
         if (commandName.equals("exit")) {
             return Status.EXIT;
         }
         if (commandName.equals("execute_script")) {
             Response<?> scriptResponse = new Response<>();
             String fileName = (String) args.get(0);
-            if (recursionController.checkRecursion(fileName)) {
+            if (RecursionController.checkRecursion(fileName)) {
                 scriptResponse = new Response<>(List.of("Script has recursion!"), Status.ERROR);
             } else {
                 if (fileName == "") scriptResponse  = new Response<>(List.of("Invalid script name"), Status.ERROR);
 
-                recursionController.pushScript(fileName);
+                RecursionController.pushScript(fileName);
 
-                NetClient nestedRuntime = new NetClient(address, port, recursionController);
+                NetClient nestedRuntime = new NetClient(address, port);
                 nestedRuntime.run(fileName);
 
-                recursionController.popScript(fileName);
+                RecursionController.popScript(fileName);
 
                 scriptResponse  = new Response<>();
             }
