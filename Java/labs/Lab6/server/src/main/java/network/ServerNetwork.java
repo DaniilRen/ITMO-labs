@@ -15,7 +15,7 @@ public class ServerNetwork implements Network {
     private Socket clientSocket;
     private ServerSocket serverSocket;
     private final int port;
-    private boolean connected = false;
+    private boolean connectedToClient = false;
 
     public ServerNetwork(int port) {
         this.port = port;
@@ -24,19 +24,17 @@ public class ServerNetwork implements Network {
     public void connect() throws IOException {
         try {
             serverSocket = new ServerSocket(port);
-            System.out.println("Server started on port " + port);
-            System.out.println("Waiting for client connection...");
+            System.out.println("waiting for connection...");
             
             clientSocket = serverSocket.accept();
-            System.out.println("Client connected from " + clientSocket.getInetAddress());
+            System.out.println("new connection: " + clientSocket.getInetAddress());
             
             oos = new ObjectOutputStream(clientSocket.getOutputStream());
             oos.flush();
             
             ois = new ObjectInputStream(clientSocket.getInputStream());
             
-            connected = true;
-            System.out.println("Streams initialized successfully");
+            connectedToClient = true;
             
         } catch (IOException e) {
             System.err.println("Server error: " + e.getMessage());
@@ -44,8 +42,8 @@ public class ServerNetwork implements Network {
         }
     }
 
-    public void writeObject(Object object) throws IOException {
-        if (!connected || oos == null) {
+    public void write(Object object) throws IOException {
+        if (!connectedToClient || oos == null) {
             throw new IOException("Not connected");
         }
         oos.writeObject(object);
@@ -53,35 +51,34 @@ public class ServerNetwork implements Network {
     }
 
     public Object read() throws IOException, ClassNotFoundException {
-        if (!connected || ois == null) {
+        if (!connectedToClient || ois == null) {
             throw new IOException("Not connected");
         }
         try {
             return ois.readObject();
         } catch (SocketException e) {
             System.err.println("Client disconnected: " + e.getMessage());
-            connected = false;
+            connectedToClient = false;
             throw e;
         }
     }
 
     public void close() throws IOException {
-        connected = false;
-        if (ois != null) {
-            try { ois.close(); } catch (IOException e) {}
-        }
-        if (oos != null) {
-            try { oos.close(); } catch (IOException e) {}
-        }
-        if (clientSocket != null) {
-            try { clientSocket.close(); } catch (IOException e) {}
-        }
-        if (serverSocket != null) {
-            try { serverSocket.close(); } catch (IOException e) {}
-        }
-    }
-    
-    public boolean isConnected() {
-        return connected && clientSocket != null && !clientSocket.isClosed();
+        connectedToClient = false;
+        ois.close();
+        oos.close();
+        serverSocket.close();
+        // if (ois != null) {
+        //     try { ois.close(); } catch (IOException e) {}
+        // }
+        // if (oos != null) {
+        //     try { oos.close(); } catch (IOException e) {}
+        // }
+        // if (clientSocket != null) {
+        //     try { clientSocket.close(); } catch (IOException e) {}
+        // }
+        // if (serverSocket != null) {
+        //     try { serverSocket.close(); } catch (IOException e) {}
+        // }
     }
 }

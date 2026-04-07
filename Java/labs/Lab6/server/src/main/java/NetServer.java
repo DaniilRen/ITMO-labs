@@ -6,6 +6,7 @@ import java.util.List;
 import commands.*;
 import managers.*;
 import network.ServerNetwork;
+import util.LocalEnvironment;
 import common.models.Entity;
 import common.network.Network;
 import common.transfer.Status;
@@ -26,12 +27,19 @@ public class NetServer implements Server {
     private final CollectionManager<Entity> collectionManager;
     private final CommandManager commandManager;
     private final Network networkManager;
+    private final int port;
     
 
-    public NetServer(String collectionFile, int port) throws RuntimeInitException {
+    public NetServer(int port) throws RuntimeInitException {
         this.commandManager = new DefaultCommandManager();
-        this.fileManager = new JSONManager(collectionFile);
+        this.port = port;
         this.networkManager = new ServerNetwork(port);
+
+        String collectionFile = LocalEnvironment.getCollectionPath();
+        if (collectionFile == null) {
+            throw new RuntimeInitException("Invalid collection path");
+        }
+        this.fileManager = new JSONManager(collectionFile);
 
         Collection<Entity> collection = new ArrayList<>();
         try {
@@ -46,17 +54,17 @@ public class NetServer implements Server {
 
     public void run() {
         try {
+            boolean running = true;
             networkManager.connect();
+            System.out.println("Server started on port " + port);
             
-            while (true) {
+            while (running) {
                 try {
                     Request request = (Request) networkManager.read();
                     Response<?> response = proccessRequest(request);
-                    networkManager.writeObject(response);
+                    networkManager.write(response);
                     
                 } catch (IOException e) {
-                    System.out.println("Waiting for new client connection...");
-                    
                     networkManager.close();
                     networkManager.connect();
                     

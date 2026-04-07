@@ -45,6 +45,10 @@ public class IOConsole implements Console {
         System.out.println("[Error]: " + obj.toString());
     }
 
+    public void printConnectionError(Object obj) {
+        System.out.println("[Connection Error]: " + obj.toString());
+    }
+
     public void printPromptSymbol() {
         print(promptSymbol);
     }

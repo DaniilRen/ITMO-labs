@@ -18,7 +18,6 @@ import common.transfer.request.Request;
 import util.RequestBuilder;
 import common.transfer.request.empty.InitRequest;
 import common.transfer.response.Response;
-import common.network.Network;
 import controller.RecursionController;
 import network.ClientNetwork;
 
@@ -32,71 +31,73 @@ public class NetClient implements Client {
     private final Scanner scanner;
     private Map<String, Class<? extends Request>> commandsAttributes = new HashMap<>(); 
     private final List<String> scriptStack = new ArrayList<>();
-    private final String address;
-    private final int port;
+    private final ClientNetwork network;
+    private boolean attributesLoaded = false;
 
     public NetClient(String address, int port) {
-        this.address = address;
-        this.port = port;
         this.console = new IOConsole();
+        this.network = new ClientNetwork(address, port, console);
         console.setUserScanner(new Scanner(System.in));
         this.scanner = this.console.getUserScanner();
     }
 
 
     public void run(String... args) {
+        try {
+            network.connect();
+        } catch (IOException e) {
+            console.printConnectionError("Failed to connect to server: " + e.getMessage());
+            return;
+        }
+        
         if (args.length == 0) {
             runInteractiveMode();
         } else {
             String fileName = args[0];
-            if (fileName == "") {
-                console.printError("Invalid script file name: "+fileName);
+            if (fileName.isEmpty()) {
+                console.printError("Invalid script file name: " + fileName);
                 System.exit(0);
             }
             runScriptMode(fileName);
         }
+        network.close();
     }
     
 
     private void runScriptMode(String fileName) {
-        String[] userCommand = {"", ""};
-        Status commandStatus = setCommandAttributes();
+        Status commandStatus = Status.OK;
         scriptStack.add(fileName);
 
+        Scanner oldScanner = console.getUserScanner();
+        
         try (Scanner scriptScanner = new Scanner(new File(fileName))) {
             console.println(String.format("--> RUNNING SCRIPT: %s ...", fileName));
 
             File file = new File(fileName);
             if (!file.exists()) throw new FileNotFoundException("File does not exist");
             if (!file.canRead()) throw new SecurityException("No read permission for file: " + file.getAbsolutePath());
-            if (!file.canWrite()) throw new SecurityException("No write permission for file: " + file.getAbsolutePath());
             if (!scriptScanner.hasNext()) throw new NoSuchElementException();
 
-            Scanner tmpScanner = console.getUserScanner();
             console.setUserScanner(scriptScanner);
             console.setFileMode();
 
             while (commandStatus != Status.EXIT && scriptScanner.hasNextLine()) {
-                userCommand = (scriptScanner.nextLine().trim() + " ").split(" ", 2);
-                userCommand[1] = userCommand[1].trim();
-                while (scriptScanner.hasNextLine() && userCommand[0].isEmpty()) {
-                    userCommand = (scriptScanner.nextLine().trim() + " ").split(" ", 2);
-                    userCommand[1] = userCommand[1].trim();
+                String line = scriptScanner.nextLine().trim();
+                
+                while (line.isEmpty() && scriptScanner.hasNextLine()) {
+                    line = scriptScanner.nextLine().trim();
                 }
-                console.println(console.getScriptPromptSymbol() + String.join(" ", userCommand));
+                if (line.isEmpty()) continue;
+                
+                console.println(console.getScriptPromptSymbol() + line);
 
-                String commandName = userCommand[0];
-                List<?> args = List.of(userCommand[1]);
-                if (args.size() == 1 && args.get(0) == "") {
-                    args = List.of();
-                }
+                String[] parts = line.split(" ", 2);
+                String commandName = parts[0];
+                String arg = parts.length > 1 ? parts[1] : "";
+                
+                List<?> args = arg.isEmpty() ? List.of() : List.of(arg);
+                
                 commandStatus = executeCommand(commandName, args);
-            }
-            console.setUserScanner(tmpScanner);
-            console.setUserMode();
-
-            if (commandStatus == Status.ERROR && !(userCommand[0].equals("execute_script") && !userCommand[1].isEmpty())) {
-                console.println("Invalid script");
             }
 
         } catch (FileNotFoundException exception) {
@@ -104,11 +105,13 @@ public class NetClient implements Client {
         } catch (NoSuchElementException exception) {
             console.printError("File is empty");
         } catch (IllegalStateException exception) {
-            console.printError("Unknowm error");
+            console.printError("Unknown error");
             System.exit(0);
         } catch (SecurityException e) {
             console.printError(e.getMessage());
         } finally {
+            console.setUserScanner(oldScanner);
+            console.setUserMode();
             scriptStack.remove(scriptStack.size() - 1);
         }
     }
@@ -118,9 +121,18 @@ public class NetClient implements Client {
         console.println("<----- COLLECTION MANAGER CLIENT ----->");
 
         String[] userCommand = {"", ""};
-        Status commandStatus = setCommandAttributes();
+        
+        // Загружаем атрибуты команд
+        if (!attributesLoaded) {
+            Status status = setCommandAttributes();
+            if (status != Status.OK) {
+                console.printError("Failed to load command attributes");
+                return;
+            }
+            attributesLoaded = true;
+        }
 
-        while (commandStatus != Status.EXIT) {
+        while (true) {
             console.printPromptSymbol();
 
             userCommand = (scanner.nextLine().trim() + " ").split(" ", 2);
@@ -128,39 +140,47 @@ public class NetClient implements Client {
             
             String commandName = userCommand[0];
             List<?> args = List.of(userCommand[1]);
-            if (args.size() == 1 && args.get(0) == "") {
+            if (args.size() == 1 && args.get(0).equals("")) {
                 args = List.of();
             }
 
-            commandStatus = executeCommand(commandName, args);
+            Status commandStatus = executeCommand(commandName, args);
+            if (commandStatus == Status.EXIT) {
+                break;
+            }
         }
-    };
+    }
 
     private Status executeCommand(String commandName, List<?> args) {
-        if (commandName == "" || commandName == null) return Status.ERROR;
+        if (commandName == null || commandName.isEmpty()) return Status.ERROR;
 
         if (commandName.equals("exit")) {
             return Status.EXIT;
         }
+        
         if (commandName.equals("execute_script")) {
-            Response<?> scriptResponse = new Response<>();
-            String fileName = (String) args.get(0);
-            if (RecursionController.checkRecursion(fileName)) {
-                scriptResponse = new Response<>(List.of("Script has recursion!"), Status.ERROR);
-            } else {
-                if (fileName == "") scriptResponse  = new Response<>(List.of("Invalid script name"), Status.ERROR);
-
-                RecursionController.pushScript(fileName);
-
-                NetClient nestedRuntime = new NetClient(address, port);
-                nestedRuntime.run(fileName);
-
-                RecursionController.popScript(fileName);
-
-                scriptResponse  = new Response<>();
+            if (args.isEmpty()) {
+                console.printError("No script file specified");
+                return Status.ERROR;
             }
-
-            return processCommandResponse(scriptResponse);
+            
+            String fileName = (String) args.get(0);
+            
+            if (fileName == null || fileName.isEmpty()) {
+                console.printError("Invalid script name");
+                return Status.ERROR;
+            }
+            
+            if (RecursionController.checkRecursion(fileName)) {
+                console.printError("Script has recursion!");
+                return Status.ERROR;
+            }
+            
+            RecursionController.pushScript(fileName);
+            runScriptMode(fileName);
+            RecursionController.popScript(fileName);
+            
+            return Status.OK;
         }
 
         return processCommandResponse(makeRequest(commandName, args));
@@ -171,13 +191,18 @@ public class NetClient implements Client {
         if (status == Status.OK) {
             printCommandResponse(response.getBody());
         } else if (status == Status.ERROR) {
-            console.printError(response.getBody().getFirst());
+            List<?> body = response.getBody();
+            if (body != null && !body.isEmpty()) {
+                console.printError(body.getFirst().toString());
+            } else {
+                console.printError("Unknown error occurred");
+            }
         }
         return status;
     }
 
     private void printCommandResponse(List<?> body) {
-        if (!(body == null || body.isEmpty())) {
+        if (body != null && !body.isEmpty()) {
             body.forEach((element) -> {
                 console.println(element);
             });
@@ -211,7 +236,7 @@ public class NetClient implements Client {
 
     private Response<?> makeRequest(String name, List<?> args) {
         Request request;
-        if (name == "init") {
+        if (name.equals("init")) {
             request = new InitRequest();
         } else {
             try {
@@ -224,28 +249,26 @@ public class NetClient implements Client {
             }
         }
 
-            Network tempManager = null;
+        try {
+            network.write(request);
+            return (Response<?>) network.read();
+            
+        } catch (IOException e) {            
             try {
-                tempManager = new ClientNetwork(address, port);
-                tempManager.connect(); // Подключаемся
+                console.printConnectionError("Connection lost: attempting to reconnect...");
+                network.close();
+                network.connect();
                 
-                tempManager.writeObject(request); // Отправляем запрос
-                Response<?> response = (Response<?>) tempManager.read(); // Читаем ответ
+                network.write(request);
+                return (Response<?>) network.read();
                 
-                return response;
-                
-            } catch (IOException e) {
-                console.printError("Server error: " + e.getMessage());
+            } catch (IOException | ClassNotFoundException ex) {
+                console.printConnectionError("Failed to reconnect: " + ex.getMessage());
                 return new Response<>(List.of("Server unavailable"), Status.ERROR);
-            } catch (ClassNotFoundException e) {
-                return new Response<>(List.of("Protocol error"), Status.ERROR);
-            } finally {
-                if (tempManager != null) {
-                    try { tempManager.close(); } catch (IOException e) {}
-                }
             }
-    
+            
+        } catch (ClassNotFoundException e) {
+            return new Response<>(List.of("Protocol error"), Status.ERROR);
+        }
     }
-
-
 }
