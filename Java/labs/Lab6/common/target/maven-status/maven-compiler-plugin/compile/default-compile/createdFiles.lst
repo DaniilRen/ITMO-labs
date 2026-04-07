@@ -4,6 +4,7 @@ common/transfer/Status.class
 common/exceptions/IncorrectRequestException.class
 common/transfer/request/standart/EntityRequest.class
 common/exceptions/ScriptSyntaxException.class
+common/network/Network.class
 common/transfer/request/standart/CombinedRequest.class
 common/transfer/request/Request.class
 common/models/Entity.class
@@ -11,7 +12,6 @@ common/models/Location2Dimension.class
 common/exceptions/RuntimeInitException.class
 common/transfer/request/standart/StandartRequest.class
 common/exceptions/CollectionLoadException.class
-common/network/NetworkManager.class
 common/models/Coordinates.class
 common/models/Validatable.class
 common/transfer/request/empty/InitRequest.class

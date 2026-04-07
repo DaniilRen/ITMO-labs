@@ -18,9 +18,9 @@ import common.transfer.request.Request;
 import util.RequestBuilder;
 import common.transfer.request.empty.InitRequest;
 import common.transfer.response.Response;
-import common.network.NetworkManager;
-import managers.ClientNetworkManager;
+import common.network.Network;
 import controller.RecursionController;
+import network.ClientNetwork;
 
 
 /**
@@ -33,7 +33,6 @@ public class NetClient implements Client {
     private Map<String, Class<? extends Request>> commandsAttributes = new HashMap<>(); 
     private final List<String> scriptStack = new ArrayList<>();
     private final RecursionController recursionController;
-    private final NetworkManager networkManager;
     private final String address;
     private final int port;
 
@@ -41,7 +40,6 @@ public class NetClient implements Client {
         this.recursionController = recursionController;
         this.address = address;
         this.port = port;
-        this.networkManager = new ClientNetworkManager(address, port);
         this.console = new IOConsole();
         console.setUserScanner(new Scanner(System.in));
         this.scanner = this.console.getUserScanner();
@@ -49,21 +47,15 @@ public class NetClient implements Client {
 
 
     public void run(String... args) {
-        switch (args[0].toLowerCase()) {
-            case "interactive":
-                runInteractiveMode();
-                break;
-            case "script":
-                String fileName = args[1];
-                if (fileName == "") {
-                    console.printError("Invalid script file name: "+fileName);
-                    System.exit(0);
-                }
-                runScriptMode(fileName);
-                break;
-            default:
-                console.printError("Client runtime mode not set -> starting as 'interactive' by default");
-                runInteractiveMode();
+        if (args.length == 0) {
+            runInteractiveMode();
+        } else {
+            String fileName = args[0];
+            if (fileName == "") {
+                console.printError("Invalid script file name: "+fileName);
+                System.exit(0);
+            }
+            runScriptMode(fileName);
         }
     }
     
@@ -150,6 +142,9 @@ public class NetClient implements Client {
         if (commandName == "" || commandName == null) return Status.ERROR;
 
         console.println(commandName);
+        if (commandName.equals("exit")) {
+            return Status.EXIT;
+        }
         if (commandName.equals("execute_script")) {
             Response<?> scriptResponse = new Response<>();
             String fileName = (String) args.get(0);
@@ -161,7 +156,7 @@ public class NetClient implements Client {
                 recursionController.pushScript(fileName);
 
                 NetClient nestedRuntime = new NetClient(address, port, recursionController);
-                nestedRuntime.run("script", fileName);
+                nestedRuntime.run(fileName);
 
                 recursionController.popScript(fileName);
 
@@ -231,12 +226,27 @@ public class NetClient implements Client {
                 return new Response<>(List.of(e.getMessage()), Status.EXIT);
             }
         }
-        try {
-            networkManager.writeObject(request);
-            return (Response<?>) networkManager.read();        
-        } catch (IOException | ClassNotFoundException e) {
-            return new Response<>(List.of("Error while receiving response"), Status.ERROR);
-        }
+
+            Network tempManager = null;
+            try {
+                tempManager = new ClientNetwork(address, port);
+                tempManager.connect(); // Подключаемся
+                
+                tempManager.writeObject(request); // Отправляем запрос
+                Response<?> response = (Response<?>) tempManager.read(); // Читаем ответ
+                
+                return response;
+                
+            } catch (IOException e) {
+                console.printError("Server error: " + e.getMessage());
+                return new Response<>(List.of("Server unavailable"), Status.ERROR);
+            } catch (ClassNotFoundException e) {
+                return new Response<>(List.of("Protocol error"), Status.ERROR);
+            } finally {
+                if (tempManager != null) {
+                    try { tempManager.close(); } catch (IOException e) {}
+                }
+            }
     
     }
 

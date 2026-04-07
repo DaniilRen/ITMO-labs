@@ -10,5 +10,5 @@
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/client/src/main/java/forms/Location2DimensionForm.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/client/src/main/java/forms/Location3DimensionForm.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/client/src/main/java/forms/RouteForm.java
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/client/src/main/java/managers/ClientNetworkManager.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab6/client/src/main/java/network/ClientNetwork.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/client/src/main/java/util/RequestBuilder.java

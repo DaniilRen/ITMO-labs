@@ -14,6 +14,8 @@ import common.transfer.response.Response;
  * @author Septyq
  */
 public class Sort extends Command<StandartRequest> {
+    private static final long serialVersionUID = 8765332L;
+
     private final CollectionManager<Entity> collectionManager;
 
     public Sort(CollectionManager<Entity> collectionManager) {

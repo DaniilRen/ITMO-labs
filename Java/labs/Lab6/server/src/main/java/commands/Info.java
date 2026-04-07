@@ -14,6 +14,8 @@ import common.models.Entity;
  * @author Septyq
  */
 public class Info extends Command<StandartRequest> {
+    private static final long serialVersionUID = 134654192L;
+
     private final CollectionManager<Entity> collectionManager;
 
     public Info(CollectionManager<Entity> collectionManager) {

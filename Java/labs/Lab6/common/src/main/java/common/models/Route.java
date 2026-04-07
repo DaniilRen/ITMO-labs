@@ -10,6 +10,8 @@ import java.util.Objects;
  * @author Septyq
  */
 public class Route extends Entity {
+    private static final long serialVersionUID = 19388910L;
+
     private int id;
     private String name;
     private Coordinates coordinates;

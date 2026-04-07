@@ -16,6 +16,8 @@ import common.transfer.response.Response;
  * @author Septyq
  */
 public class PrintFieldDescendingDistance extends Command<StandartRequest> {
+    private static final long serialVersionUID = 65829432L;
+
     private CollectionManager<Entity> collectionManager;
 
     public PrintFieldDescendingDistance(CollectionManager<Entity> collectionManager) {

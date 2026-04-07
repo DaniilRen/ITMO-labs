@@ -1,6 +1,10 @@
 package commands;
 
 import managers.CommandManager;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.response.Response;
 
@@ -9,11 +13,13 @@ import common.transfer.response.Response;
  * @author Septyq
  */
 public class History extends Command<StandartRequest> {
+    private static final long serialVersionUID = 436542L;
+
     private final CommandManager commandManager;
 
     public History(CommandManager commandManager) {
         super(new CommandAttribute(
-            "help", 
+            "history", 
             "вывести последние 13 команд (без их аргументов)",
             StandartRequest.class
             ));
@@ -21,6 +27,8 @@ public class History extends Command<StandartRequest> {
     }
 
     public Response<?> execute(StandartRequest request) {
-        return new Response<>(commandManager.getCommandHistory(13));
+        List<String> history = (List<String>) commandManager.getCommandHistory(13);
+        List<String> body = new ArrayList<>(history);
+        return new Response<>(body);
     }
 }

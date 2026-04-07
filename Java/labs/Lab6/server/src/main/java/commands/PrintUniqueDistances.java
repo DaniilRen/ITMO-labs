@@ -16,6 +16,8 @@ import common.transfer.response.Response;;
  * @author Septyq
  */
 public class PrintUniqueDistances extends Command<StandartRequest> {
+    private static final long serialVersionUID = 88282837L;
+
     private CollectionManager<Entity> collectionManager;
 
     public PrintUniqueDistances(CollectionManager<Entity> collectionManager) {

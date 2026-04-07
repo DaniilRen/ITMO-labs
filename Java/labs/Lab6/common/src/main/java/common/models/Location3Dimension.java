@@ -1,5 +1,6 @@
 package common.models;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 
@@ -7,7 +8,9 @@ import java.util.Objects;
  * Класс локации (куда).
  * @author Septyq
  */
-public class Location3Dimension implements Validatable{
+public class Location3Dimension implements Validatable, Serializable{
+    private static final long serialVersionUID = 9873292L;
+
     private final Double x;
     private final Double y;
     private final Integer z;

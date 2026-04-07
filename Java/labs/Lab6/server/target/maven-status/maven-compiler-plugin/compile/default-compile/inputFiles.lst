@@ -5,7 +5,6 @@
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/commands/Clear.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/commands/Command.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/commands/CommandAttribute.java
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/commands/Exit.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/commands/FilterStartsWithName.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/commands/Help.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/commands/History.java
@@ -25,6 +24,6 @@
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/managers/DefaultCommandManager.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/managers/FileManager.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/managers/JSONManager.java
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/managers/ServerNetworkManager.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/network/ServerNetwork.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/util/LocalDateTimeAdapter.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/util/LocalEnvironment.java

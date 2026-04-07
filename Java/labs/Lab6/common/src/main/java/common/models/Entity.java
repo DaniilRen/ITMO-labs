@@ -1,5 +1,6 @@
 package common.models;
 
+import java.io.Serializable;
 import java.util.Comparator;
 
 
@@ -7,7 +8,7 @@ import java.util.Comparator;
  * Абстрактный класс элементов коллекции.
  * @author Septyq
  */
-public abstract class Entity implements Validatable, Comparable<Entity> {
+public abstract class Entity implements Validatable, Comparable<Entity>, Serializable {
     abstract public int getId();
 
     public void update(Entity newEntity) {}

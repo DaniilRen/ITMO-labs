@@ -1,7 +1,7 @@
-commands/Exit.class
 commands/interfaces/Describable.class
 commands/FilterStartsWithName.class
 util/LocalDateTimeAdapter.class
+network/ServerNetwork.class
 commands/RemoveLower.class
 commands/Update.class
 commands/Command.class
@@ -22,7 +22,6 @@ commands/Show.class
 commands/Add.class
 managers/CommandManager.class
 commands/CommandAttribute.class
-managers/ServerNetworkManager.class
 Server.class
 commands/Info.class
 commands/interfaces/Executable.class

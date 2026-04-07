@@ -13,6 +13,8 @@ import common.transfer.response.Response;
  * @author Septyq
  */
 public class Show extends Command<StandartRequest> {
+    private static final long serialVersionUID = 6099871L;
+
     private final CollectionManager<Entity>collectionManager;
 
     public Show(CollectionManager<Entity> collectionManager) {

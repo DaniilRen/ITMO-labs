@@ -5,8 +5,9 @@ import java.util.Collection;
 import java.util.List;
 import commands.*;
 import managers.*;
+import network.ServerNetwork;
 import common.models.Entity;
-import common.network.NetworkManager;
+import common.network.Network;
 import common.transfer.Status;
 import common.exceptions.CollectionLoadException;
 import common.exceptions.RuntimeInitException;
@@ -24,13 +25,13 @@ public class NetServer implements Server {
     private final FileManager fileManager;
     private final CollectionManager<Entity> collectionManager;
     private final CommandManager commandManager;
-    private final NetworkManager networkManager;
+    private final Network networkManager;
     
 
     public NetServer(String collectionFile, int port) throws RuntimeInitException {
         this.commandManager = new DefaultCommandManager();
         this.fileManager = new JSONManager(collectionFile);
-        this.networkManager = new ServerNetworkManager(port);
+        this.networkManager = new ServerNetwork(port);
 
         Collection<Entity> collection = new ArrayList<>();
         try {
@@ -44,13 +45,29 @@ public class NetServer implements Server {
 
 
     public void run() {
-        boolean ok = true;
         try {
-            do { 
-                networkManager.writeObject(proccessRequest((Request) networkManager.read()));
-            } while (ok);
-        } catch (IOException | ClassNotFoundException e) {}
-    };
+            networkManager.connect();
+            
+            while (true) {
+                try {
+                    Request request = (Request) networkManager.read();
+                    Response<?> response = proccessRequest(request);
+                    networkManager.writeObject(response);
+                    
+                } catch (IOException e) {
+                    System.out.println("Waiting for new client connection...");
+                    
+                    networkManager.close();
+                    networkManager.connect();
+                    
+                } catch (ClassNotFoundException e) {
+                    System.err.println("Protocol error: " + e.getMessage());
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Server failed to start: " + e.getMessage());
+        }
+    }
 
 
     private void registerCommands() {
@@ -61,7 +78,6 @@ public class NetServer implements Server {
         commandManager.register("update", new Update(collectionManager));
         commandManager.register("remove_by_id", new RemoveById(collectionManager));
         commandManager.register("clear", new Clear(collectionManager));
-        commandManager.register("exit", new Exit());
         commandManager.register("remove_lower", new RemoveLower(collectionManager));
         commandManager.register("sort", new Sort(collectionManager));
         commandManager.register("history", new History(commandManager));

@@ -1,5 +1,6 @@
 package common.models;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 
@@ -7,7 +8,9 @@ import java.util.Objects;
  * Класс координат.
  * @author Septyq
  */
-public class Coordinates implements Validatable {
+public class Coordinates implements Validatable, Serializable {
+    private static final long serialVersionUID = 9987122L;
+
     private final Float x;
     private final Long y;
 

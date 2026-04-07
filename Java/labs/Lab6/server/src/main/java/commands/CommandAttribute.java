@@ -1,5 +1,7 @@
 package commands;
 
+import java.io.Serializable;
+
 import commands.interfaces.Describable;
 import common.transfer.request.Request;
 
@@ -8,7 +10,9 @@ import common.transfer.request.Request;
  * Класс для хранения атрибутов команды
  * @author Septyq
  */
-public class CommandAttribute implements Describable {
+public class CommandAttribute implements Describable, Serializable {
+    private static final long serialVersionUID = 847238174L;
+
     private final String name;
     private final String description;
     private final Class<? extends Request> argsType;

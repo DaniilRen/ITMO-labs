@@ -10,6 +10,8 @@ import common.models.Entity;
  * @author Septyq
  */
 public class CombinedRequest extends IdRequest {
+    private static final long serialVersionUID = 927249874L;
+
     private final Entity entity;
 
     public CombinedRequest(String name, Entity entity, int id) {

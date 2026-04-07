@@ -9,6 +9,6 @@ controller/DefaultRecursionController.class
 console/Console.class
 forms/CoordinatesForm.class
 Main.class
+network/ClientNetwork.class
 util/RequestBuilder.class
-managers/ClientNetworkManager.class
 NetClient.class

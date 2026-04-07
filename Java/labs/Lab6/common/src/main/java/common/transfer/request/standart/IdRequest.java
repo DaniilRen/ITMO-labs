@@ -8,6 +8,8 @@ import java.util.List;
  * @author Septyq
  */
 public class IdRequest extends StandartRequest {
+    private static final long serialVersionUID = 181349374L;
+
     private final Integer id;
 
     public IdRequest(String name, Integer id) {

@@ -10,6 +10,8 @@ import common.models.Entity;
  * @author Septyq
  */
 public class EntityRequest extends StandartRequest {
+    private static final long serialVersionUID = 2593749874L;
+
     private final Entity entity;
 
     public EntityRequest(String name, Entity entity) {

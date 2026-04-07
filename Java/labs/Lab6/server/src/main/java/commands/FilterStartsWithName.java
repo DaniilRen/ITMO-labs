@@ -14,6 +14,8 @@ import common.transfer.response.Response;
  * @author Septyq
  */
 public class FilterStartsWithName extends Command<StringRequest> {
+    private static final long serialVersionUID = 981734983L;
+
     private final CollectionManager<Entity> collectionManager;
 
     public FilterStartsWithName(CollectionManager<Entity> collectionManager) {

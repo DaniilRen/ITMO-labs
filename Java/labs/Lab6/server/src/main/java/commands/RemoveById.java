@@ -15,6 +15,8 @@ import common.transfer.response.Response;
  * @author Septyq
  */
 public class RemoveById extends Command<IdRequest> {
+    private static final long serialVersionUID = 8986213L;
+
     private final CollectionManager<Entity> collectionManager;
 
     public RemoveById(CollectionManager<Entity> collectionManager) {

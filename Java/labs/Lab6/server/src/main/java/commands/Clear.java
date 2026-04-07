@@ -13,6 +13,8 @@ import common.transfer.response.Response;
  * @author Septyq
  */
 public class Clear extends Command<StandartRequest> {
+    private static final long serialVersionUID = 8932432L;
+
     private final CollectionManager<Entity> collectionManager;
 
     public Clear(CollectionManager<Entity> collectionManager) {

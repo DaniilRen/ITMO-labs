@@ -12,6 +12,8 @@ import managers.CommandManager;
  * @author Septyq
  */
 public class Help extends Command<StandartRequest> {
+  private static final long serialVersionUID = 698347L;
+
   private final CommandManager commandManager;
 
   public Help(CommandManager commandManager) {

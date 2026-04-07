@@ -15,6 +15,8 @@ import common.models.Route;;
  * @author Septyq
  */
 public class RemoveLower extends Command<EntityRequest> {
+    private static final long serialVersionUID = 982013478L;
+
     private final CollectionManager<Entity> collectionManager;
 
     public RemoveLower(CollectionManager<Entity> collectionManager) {

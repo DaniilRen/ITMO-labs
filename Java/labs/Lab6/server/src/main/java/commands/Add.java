@@ -13,6 +13,8 @@ import common.transfer.response.Response;
  * @author Septyq
  */
 public class Add extends Command<EntityRequest> {
+    private static final long serialVersionUID = 1932432L;
+
     private final CollectionManager<Entity> collectionManager;
 
     public Add(CollectionManager<Entity> collectionManager) {

@@ -10,7 +10,7 @@
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/common/src/main/java/common/models/Location3Dimension.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/common/src/main/java/common/models/Route.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/common/src/main/java/common/models/Validatable.java
-/home/danb/Code/ITMO-labs/Java/labs/Lab6/common/src/main/java/common/network/NetworkManager.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab6/common/src/main/java/common/network/Network.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/common/src/main/java/common/transfer/Status.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/common/src/main/java/common/transfer/request/Request.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/common/src/main/java/common/transfer/request/empty/InitRequest.java

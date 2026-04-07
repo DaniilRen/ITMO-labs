@@ -14,6 +14,8 @@ import common.transfer.response.Response;
  * @author Septyq
  */
 public class Update extends Command<CombinedRequest> {
+    private static final long serialVersionUID = 19788876L;
+
     private final CollectionManager<Entity> collectionManager;
 
     public Update(CollectionManager<Entity> collectionManager) {

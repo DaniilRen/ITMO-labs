@@ -1,5 +1,6 @@
 package commands;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 import commands.interfaces.Executable;
@@ -10,7 +11,9 @@ import common.transfer.response.Response;
  * @param <T> тип запроса
  * @author Septyq
  */
-public abstract class Command<T extends StandartRequest> implements Executable<T> {
+public abstract class Command<T extends StandartRequest> implements Executable<T>, Serializable {
+    private static final long serialVersionUID = 987349874L;
+
     private final CommandAttribute commandAttribute;
 
     public Command(CommandAttribute commandAttribute) {

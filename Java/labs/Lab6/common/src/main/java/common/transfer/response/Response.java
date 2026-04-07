@@ -1,5 +1,6 @@
 package common.transfer.response;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,9 @@ import common.transfer.Status;
  * @author Septyq
  * @param <T> объект, хранящийся в теле ответа
  */
-public class Response<T> {
+public class Response<T> implements Serializable {
+    private static final long serialVersionUID = 12093749874L;
+
     private List<T> body = new ArrayList<>();
     private Status status = Status.OK;
 

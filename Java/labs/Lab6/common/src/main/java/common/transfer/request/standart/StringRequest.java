@@ -8,6 +8,8 @@ import java.util.List;
  * @author Septyq
  */
 public class StringRequest extends StandartRequest {
+    private static final long serialVersionUID = 120822749874L;
+
     private final String row;
 
     public StringRequest(String name, String row) {
