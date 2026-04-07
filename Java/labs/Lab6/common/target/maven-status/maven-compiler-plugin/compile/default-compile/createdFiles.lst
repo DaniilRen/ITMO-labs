@@ -3,6 +3,7 @@ common/transfer/response/Response.class
 common/transfer/Status.class
 common/exceptions/IncorrectRequestException.class
 common/transfer/request/standart/EntityRequest.class
+common/transfer/request/standart/NextChunkRequest.class
 common/exceptions/ScriptSyntaxException.class
 common/network/Network.class
 common/transfer/request/standart/CombinedRequest.class

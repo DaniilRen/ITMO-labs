@@ -17,15 +17,12 @@ import common.exceptions.ScriptSyntaxException;
 import common.transfer.request.Request;
 import util.RequestBuilder;
 import common.transfer.request.empty.InitRequest;
+import common.transfer.request.standart.NextChunkRequest;
 import common.transfer.response.Response;
 import controller.RecursionController;
 import network.ClientNetwork;
 
 
-/**
- * Считывает команды из консоли или скрипта, выводит результат.
- * @author Septyq
- */
 public class NetClient implements Client {
     private final IOConsole console;
     private final Scanner scanner;
@@ -122,7 +119,6 @@ public class NetClient implements Client {
 
         String[] userCommand = {"", ""};
         
-        // Загружаем атрибуты команд
         if (!attributesLoaded) {
             Status status = setCommandAttributes();
             if (status != Status.OK) {
@@ -187,6 +183,10 @@ public class NetClient implements Client {
     }
 
     private Status processCommandResponse(Response<?> response) {
+        if (response.isChunked()) {
+            return processChunkedResponse(response);
+        }
+        
         Status status = response.getStatus();
         if (status == Status.OK) {
             printCommandResponse(response.getBody());
@@ -199,6 +199,48 @@ public class NetClient implements Client {
             }
         }
         return status;
+    }
+
+    @SuppressWarnings("unchecked")
+    private Status processChunkedResponse(Response<?> firstChunk) {
+        String streamId = firstChunk.getStreamId();
+        int totalChunks = firstChunk.getTotalChunks();
+        
+        List<Object> allData = new ArrayList<>();
+        
+        if (firstChunk.getBody() != null) {
+            allData.addAll((List<Object>) firstChunk.getBody());
+        }
+        
+        console.println(String.format("Loading data (%d/%d chunks)...", 1, totalChunks));
+        
+        for (int chunkNum = 2; chunkNum <= totalChunks; chunkNum++) {
+            try {
+                NextChunkRequest chunkRequest = new NextChunkRequest(streamId, chunkNum);
+                network.write(chunkRequest);
+                Response<?> nextChunk = (Response<?>) network.read();
+                
+                if (nextChunk.getStatus() == Status.ERROR) {
+                    console.printError("Failed to load chunk " + chunkNum);
+                    return Status.ERROR;
+                }
+                
+                if (nextChunk.getBody() != null) {
+                    allData.addAll((List<Object>) nextChunk.getBody());
+                }
+                
+                console.print(".");
+                
+            } catch (IOException | ClassNotFoundException e) {
+                console.printError("\nFailed to load chunk " + chunkNum + ": " + e.getMessage());
+                return Status.ERROR;
+            }
+        }
+        
+        console.println(" Done!");
+        printCommandResponse(allData);
+        
+        return Status.OK;
     }
 
     private void printCommandResponse(List<?> body) {

@@ -17,6 +17,7 @@
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/common/src/main/java/common/transfer/request/standart/CombinedRequest.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/common/src/main/java/common/transfer/request/standart/EntityRequest.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/common/src/main/java/common/transfer/request/standart/IdRequest.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab6/common/src/main/java/common/transfer/request/standart/NextChunkRequest.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/common/src/main/java/common/transfer/request/standart/StandartRequest.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/common/src/main/java/common/transfer/request/standart/StringRequest.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab6/common/src/main/java/common/transfer/response/Response.java
