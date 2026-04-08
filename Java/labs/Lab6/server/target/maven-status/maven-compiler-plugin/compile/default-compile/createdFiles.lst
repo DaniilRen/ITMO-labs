@@ -1,4 +1,5 @@
 commands\CommandAttribute.class
+logging\LoggerBlueprint.class
 managers\CommandManager.class
 network\ServerNetwork.class
 commands\Help.class
@@ -9,6 +10,7 @@ commands\Info.class
 util\LocalEnvironment.class
 commands\Update.class
 commands\Command.class
+logging\ServerLogger.class
 commands\RemoveLower.class
 commands\Show.class
 NetServer.class
@@ -16,8 +18,8 @@ managers\DefaultCommandManager.class
 commands\Add.class
 managers\FileManager.class
 util\LocalDateTimeAdapter.class
-controller\ChunkController.class
 commands\interfaces\Executable.class
+network\ChunkUtil.class
 commands\interfaces\Describable.class
 commands\RemoveById.class
 commands\Sort.class

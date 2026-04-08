@@ -8,6 +8,7 @@ import java.net.Socket;
 import java.net.SocketException;
 
 import common.network.Network;
+import logging.LoggerBlueprint;
 
 public class ServerNetwork implements Network {
     private ObjectInputStream ois;
@@ -16,18 +17,20 @@ public class ServerNetwork implements Network {
     private ServerSocket serverSocket;
     private final int port;
     private boolean connectedToClient = false;
+		private final LoggerBlueprint logger;
 
-    public ServerNetwork(int port) {
+    public ServerNetwork(int port, LoggerBlueprint logger) {
         this.port = port;
+				this.logger = logger;
     }
 
     public void connect() throws IOException {
         try {
             serverSocket = new ServerSocket(port);
-            System.out.println("waiting for connection...");
+            logger.info("waiting for connection...");
             
             clientSocket = serverSocket.accept();
-            System.out.println("new connection: " + clientSocket.getInetAddress());
+            logger.info("new connection: " + clientSocket.getInetAddress());
             
             oos = new ObjectOutputStream(clientSocket.getOutputStream());
             oos.flush();
@@ -37,7 +40,7 @@ public class ServerNetwork implements Network {
             connectedToClient = true;
             
         } catch (IOException e) {
-            System.err.println("Server error: " + e.getMessage());
+            logger.error("connection error: ", e);
             throw e;
         }
     }
@@ -57,7 +60,7 @@ public class ServerNetwork implements Network {
         try {
             return ois.readObject();
         } catch (SocketException e) {
-            System.err.println("Client disconnected: " + e.getMessage());
+            logger.error("client disconnected");
             connectedToClient = false;
             throw e;
         }
@@ -68,17 +71,5 @@ public class ServerNetwork implements Network {
         ois.close();
         oos.close();
         serverSocket.close();
-        // if (ois != null) {
-        //     try { ois.close(); } catch (IOException e) {}
-        // }
-        // if (oos != null) {
-        //     try { oos.close(); } catch (IOException e) {}
-        // }
-        // if (clientSocket != null) {
-        //     try { clientSocket.close(); } catch (IOException e) {}
-        // }
-        // if (serverSocket != null) {
-        //     try { serverSocket.close(); } catch (IOException e) {}
-        // }
     }
 }

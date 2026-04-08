@@ -15,7 +15,8 @@ D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\commands\RemoveLower.java
 D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\commands\Show.java
 D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\commands\Sort.java
 D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\commands\Update.java
-D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\controller\ChunkController.java
+D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\logging\LoggerBlueprint.java
+D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\logging\ServerLogger.java
 D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\Main.java
 D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\managers\ArrayListCollectionManager.java
 D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\managers\CollectionManager.java
@@ -24,6 +25,7 @@ D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\managers\DefaultCommandMan
 D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\managers\FileManager.java
 D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\managers\JSONManager.java
 D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\NetServer.java
+D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\network\ChunkUtil.java
 D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\network\ServerNetwork.java
 D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\util\LocalDateTimeAdapter.java
 D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\util\LocalEnvironment.java

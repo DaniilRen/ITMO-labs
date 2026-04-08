@@ -5,9 +5,11 @@ import java.util.Collection;
 import java.util.List;
 import commands.*;
 import managers.*;
+import network.ChunkUtil;
 import network.ServerNetwork;
 import util.LocalEnvironment;
-import controller.ChunkController;
+import logging.LoggerBlueprint;
+import logging.ServerLogger;
 import common.models.Entity;
 import common.network.Network;
 import common.runtime.Runtime;
@@ -27,11 +29,13 @@ public class NetServer implements Runtime {
     private final CommandManager commandManager;
     private final Network networkManager;
     private final int port;
+		private final LoggerBlueprint logger;
 
     public NetServer(int port) throws RuntimeInitException {
         this.commandManager = new DefaultCommandManager();
+				this.logger = new ServerLogger("Server log");
         this.port = port;
-        this.networkManager = new ServerNetwork(port);
+        this.networkManager = new ServerNetwork(port, logger);
 
         String collectionFile = LocalEnvironment.getCollectionPath();
         if (collectionFile == null) {
@@ -47,6 +51,7 @@ public class NetServer implements Runtime {
         }
         this.collectionManager = new ArrayListCollectionManager<Entity>(collection);
         registerCommands();
+				logger.info("collection loaded successfully");
     }
 
 
@@ -54,24 +59,28 @@ public class NetServer implements Runtime {
         try {
             boolean running = true;
             networkManager.connect();
-            System.out.println("Server started on port " + port);
+            logger.info("Server started on port " + port);
             
             while (running) {
                 try {
                     Request request = (Request) networkManager.read();
+										logger.info("new request: " + request);
+
                     Response<?> response = processRequest(request);
+										logger.info("sending response: " + response);
                     networkManager.write(response);
                     
                 } catch (IOException e) {
                     networkManager.close();
+										logger.warn("connection closed. Reconnecting");
                     networkManager.connect();
                     
                 } catch (ClassNotFoundException e) {
-                    System.err.println("Protocol error: " + e.getMessage());
+                    logger.error("Protocol error: ", e);
                 }
             }
         } catch (IOException e) {
-            System.err.println("Server failed to start: " + e.getMessage());
+            logger.error("Server failed to start: ", e);
         }
     }
 
@@ -79,7 +88,7 @@ public class NetServer implements Runtime {
         if (request instanceof InitRequest) {
             return new Response<>(List.of(commandManager.getCommandAttributes()));
         } else if (request instanceof NextChunkRequest) {
-            return ChunkController.handleNextChunk((NextChunkRequest) request);
+            return ChunkUtil.handleNextChunk((NextChunkRequest) request);
         } else if (request instanceof StandartRequest) {
             return executeCommand((StandartRequest) request);
         } else {
@@ -121,8 +130,8 @@ public class NetServer implements Runtime {
         Command<StandartRequest> typedCommand = (Command<StandartRequest>) command;
         Response<?> response = typedCommand.execute(request);
         
-        if (ChunkController.shouldChunkify(response)) {
-            return ChunkController.chunkify(response);
+        if (ChunkUtil.shouldChunkify(response)) {
+            return ChunkUtil.chunkify(response);
         }
         
         return response;

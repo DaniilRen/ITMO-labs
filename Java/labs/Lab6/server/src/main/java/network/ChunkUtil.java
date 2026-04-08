@@ -1,4 +1,4 @@
-package controller;
+package network;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -12,10 +12,10 @@ import common.transfer.Status;
 import common.transfer.request.standart.NextChunkRequest;
 import common.transfer.response.Response;
 
-public class ChunkController {
+public class ChunkUtil {
 	private static Map<String, List<Response<?>>> chunkStorage = new HashMap<>();
-	private static final int MAX_CHUNK_SIZE_ITEMS = 100;
-	private static final int MAX_CHUNK_SIZE_BYTES = 1024 * 1024;
+	private static final int MAX_CHUNK_SIZE_ITEMS = 1000;
+	private static final int MAX_CHUNK_SIZE_BYTES = 1024 * 64;
 
 	public static boolean shouldChunkify(Response<?> response) {
 			List<?> body = response.getBody();
