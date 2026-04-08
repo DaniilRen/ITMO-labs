@@ -16,13 +16,13 @@ managers\DefaultCommandManager.class
 commands\Add.class
 managers\FileManager.class
 util\LocalDateTimeAdapter.class
+controller\ChunkController.class
 commands\interfaces\Executable.class
 commands\interfaces\Describable.class
 commands\RemoveById.class
 commands\Sort.class
 commands\FilterStartsWithName.class
 managers\CollectionManager.class
-Server.class
 commands\PrintFieldDescendingDistance.class
 managers\JSONManager.class
 commands\Clear.class

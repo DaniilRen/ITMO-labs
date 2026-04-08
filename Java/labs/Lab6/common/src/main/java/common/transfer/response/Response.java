@@ -33,7 +33,7 @@ public class Response<T> implements Serializable {
         this.status = status;
     }
     
-    public static <T> List<Response<T>> splitIntoChunks(List<T> data, int chunkSize) {
+    public static <T> List<Response<T>> split(List<T> data, int chunkSize) {
         List<Response<T>> chunks = new ArrayList<>();
         
         if (data == null || data.isEmpty()) {

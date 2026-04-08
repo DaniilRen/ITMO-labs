@@ -29,44 +29,42 @@
 'server 1.0-SNAPSHOT API'
 commands
 commands.interfaces
+controller
 managers
 network
 util
 'D:/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/Main.java'
 'D:/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/NetServer.java'
-'D:/Code/ITMO-labs/Java/labs/Lab6/server/src/main/java/Server.java'
-D:\Code\ITMO-labs\Java\labs\Lab6\common\target\common-1.0-SNAPSHOT.jar = 1775587389326
+D:\Code\ITMO-labs\Java\labs\Lab6\common\target\common-1.0-SNAPSHOT.jar = 1775649855387
 C:\Users\Tayzeront\.m2\repository\com\google\code\gson\gson\2.11.0\gson-2.11.0.jar = 1772215135888
 C:\Users\Tayzeront\.m2\repository\com\google\errorprone\error_prone_annotations\2.27.0\error_prone_annotations-2.27.0.jar = 1772215136359
-D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\Main.java = 1775585524150
-D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\NetServer.java = 1775585524150
-D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\Server.java = 1775585524150
-D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java = 1775585524158
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\generated-sources\annotations = 1775587391724
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\allclasses-index.html = 1775587394396
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\allpackages-index.html = 1775587394399
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\copy.svg = 1775587394450
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\element-list = 1775587394112
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\help-doc.html = 1775587394437
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\index-all.html = 1775587394426
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\index.html = 1775587394359
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\link.svg = 1775587394451
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\Main.html = 1775587394029
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\member-search-index.js = 1775587394406
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\module-search-index.js = 1775587394400
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\NetServer.html = 1775587394038
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\overview-summary.html = 1775587394431
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\overview-tree.html = 1775587394354
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\package-search-index.js = 1775587394404
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\package-summary.html = 1775587394120
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\package-tree.html = 1775587394124
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\package-use.html = 1775587394327
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\script.js = 1775587394444
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\search-page.js = 1775587394459
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\search.html = 1775587394429
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\search.js = 1775587394454
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\serialized-form.html = 1775587394201
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\Server.html = 1775587394074
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\stylesheet.css = 1775587394439
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\tag-search-index.js = 1775587394407
-D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\type-search-index.js = 1775587394405
+D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\Main.java = 1775647434517
+D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java\NetServer.java = 1775649613600
+D:\Code\ITMO-labs\Java\labs\Lab6\server\src\main\java = 1775649311119
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\generated-sources\annotations = 1775649857523
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\allclasses-index.html = 1775649859776
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\allpackages-index.html = 1775649859778
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\copy.svg = 1775649859807
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\element-list = 1775649859551
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\help-doc.html = 1775649859803
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\index-all.html = 1775649859797
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\index.html = 1775649859748
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\link.svg = 1775649859808
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\Main.html = 1775649859489
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\member-search-index.js = 1775649859783
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\module-search-index.js = 1775649859780
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\NetServer.html = 1775649859496
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\overview-summary.html = 1775649859800
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\overview-tree.html = 1775649859738
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\package-search-index.js = 1775649859781
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\package-summary.html = 1775649859558
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\package-tree.html = 1775649859561
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\package-use.html = 1775649859710
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\script.js = 1775649859806
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\search-page.js = 1775649859811
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\search.html = 1775649859799
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\search.js = 1775649859809
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\serialized-form.html = 1775649859612
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\stylesheet.css = 1775649859804
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\tag-search-index.js = 1775649859783
+D:\Code\ITMO-labs\Java\labs\Lab6\server\target\apidocs\type-search-index.js = 1775649859782

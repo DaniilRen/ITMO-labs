@@ -20,4 +20,5 @@ common\models\Location3Dimension.class
 common\models\Coordinates.class
 common\transfer\response\Response.class
 common\exceptions\InvalidFormException.class
+common\runtime\Runtime.class
 common\transfer\Status.class

@@ -17,8 +17,8 @@ import common.transfer.Status;
  */
 public class ArrayListCollectionManager<T extends Entity> implements CollectionManager<T> {
     private Collection<T> collection = new ArrayList<>();
-    private LocalDateTime lastInitTime;
-    private LocalDateTime lastSaveTime = LocalDateTime.now();
+    private LocalDateTime lastInitTime = LocalDateTime.now();
+    private LocalDateTime lastSaveTime;
     private int maxId;
 
     public ArrayListCollectionManager(Collection<T> collection) {

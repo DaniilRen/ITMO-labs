@@ -14,6 +14,7 @@ import console.IOConsole;
 import common.exceptions.IncorrectRequestException;
 import common.exceptions.RuntimeInitException;
 import common.exceptions.ScriptSyntaxException;
+import common.runtime.Runtime;
 import common.transfer.request.Request;
 import util.RequestBuilder;
 import common.transfer.request.empty.InitRequest;
@@ -23,7 +24,7 @@ import controller.RecursionController;
 import network.ClientNetwork;
 
 
-public class NetClient implements Client {
+public class NetClient implements Runtime {
     private final IOConsole console;
     private final Scanner scanner;
     private Map<String, Class<? extends Request>> commandsAttributes = new HashMap<>(); 
@@ -202,7 +203,7 @@ public class NetClient implements Client {
             allData.addAll((List<Object>) firstChunk.getBody());
         }
         
-        console.println(String.format("Loading data (%d chunks)...", totalChunks));
+        console.println(String.format("Loading data (%d chunks)...\n", totalChunks));
 				int loadBarSectionIdx = totalChunks / 10;
         for (int chunkNum = 2; chunkNum <= totalChunks; chunkNum++) {
             try {
@@ -220,7 +221,7 @@ public class NetClient implements Client {
                 }
                 
 								if (chunkNum % loadBarSectionIdx == 0) {
-									console.println("o".repeat(chunkNum / loadBarSectionIdx) + "-".repeat(10-(chunkNum / loadBarSectionIdx)));
+									console.println("o".repeat(chunkNum / loadBarSectionIdx) + ".".repeat(10-(chunkNum / loadBarSectionIdx)));
 								}                
             } catch (IOException | ClassNotFoundException e) {
                 console.printError("\nFailed to load chunk " + chunkNum + ": " + e.getMessage());

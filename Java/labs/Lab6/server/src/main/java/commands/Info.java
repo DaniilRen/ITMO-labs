@@ -29,7 +29,7 @@ public class Info extends Command<StandartRequest> {
 
     public Response<?> execute(StandartRequest request) {
         LocalDateTime lastInitTime = collectionManager.getLastInitTime();
-        String lastInitTimeString = (lastInitTime == null) ? "no collection init (load) occured in current session" :
+        String lastInitTimeString = (lastInitTime == null) ? "invalid collection load time" :
             lastInitTime.toLocalDate().toString() + " " + lastInitTime.toLocalTime().toString();
 
         LocalDateTime lastSaveTime = collectionManager.getLastSaveTime();
@@ -38,7 +38,7 @@ public class Info extends Command<StandartRequest> {
 
         Response<String> response = new Response<>();
   
-        response.put("Collection info:");
+        response.put("<Collection info:>");
         response.put(String.format("Collection Type (Class): %s", collectionManager.getCollectionType()));
         response.put(String.format("Collection size: %d", collectionManager.getCollectionSize()));
         response.put(String.format("Last saved: %s", lastSaveTimeString));
