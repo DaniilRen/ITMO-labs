@@ -512,44 +512,48 @@ tabsize=2
     \newpage
 
     \Section{Выполнение задания.}
-Задание было выполнено в редакторе кода Visual Studio Code, собрано в \verb|jar| файл \verb|lab3.jar| и загружено в Git репозиторий на GitHub \cite{github}.
+		Задание было выполнено в редакторе кода Visual Studio Code, затем при помощи системы сборки Maven собрано в несколько \verb|jar| архивов:
+		\begin{enumerate}
+			\item \verb|server-1.0-SNAPSHOT.jar|
+			\item \verb|client-1.0-SNAPSHOT.jar|
+			\item \verb|common-1.0-SNAPSHOT.jar|
+		\end{enumerate}
+		Исходный код программы был загружен в Git репозиторий на GitHub \cite{github}.
     \Subsection{Исходный код программы}
     
     \url{https://github.com/DaniilRen/ITMO-labs/tree/main/Java/labs/Lab6}
 
     \Subsection{UML-диаграмма классов}
     
-    \begin{figure}[H] % 'H' -- вставить тут же (подключен модуль), обычный вариант: 'htpb'
+    \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth*1/2]{Lab5.png}
+        \includegraphics[width=\textwidth]{Lab6.png}
         \caption{UML диаграмма}
         \label{fig:diagr}
     \end{figure}
 
-    Ссылка на диаграмму: \url{https://github.com/DaniilRen/ITMO-labs/blob/main/Java/labs/Lab5/docs/assets/Lab6.png}
+    Ссылка на диаграмму: \url{https://github.com/DaniilRen/ITMO-labs/blob/main/Java/labs/Lab6/docs/assets/Lab6.png}
 
     % \newpage
 
     \Subsection{Упрощенная архитектурная схема}
     
-    \begin{figure}[H] % 'H' -- вставить тут же (подключен модуль), обычный вариант: 'htpb'
+    \begin{figure}[H]
         \centering
-        \includegraphics[width=\textwidth]{simple.png}
+        \includegraphics[width=\textwidth]{scheme.png}
         \caption{архитектурная схема}
-        \label{fig:diagr}
+        \label{fig:scheme}
     \end{figure}
 
 
     \Section{Вывод}
-% Вывод...
-     Во время выполнения лабораторной работы я изучил различные структуры данных в Java и файлы, методы работы с ними, углубил свои знания в ООП и SOLID, изучил параметризованные типы, wildcard-параметры и утилиту javadoc.
-% -- из biblist
+     Во время выполнения лабораторной работы я изучил передачу данных при помощи протокола TCP, принципы построения клиент-серверного приложения и организацию взаимодействия между ними.
     \newpage
 %<<<<<<<<<<<<<<<<<<<<<< КОД РАБОТЫ <<<<<<<<<<<<<<<<<<<<<<<<
 
 
 %>>>>>>>>>>>>>>>> СПИСОК ЛИТЕРАТУРЫ >>>>>>>>>>>>>>>>>>>>>>>
-    \include{biblist}  % Для соответсвия гост, придется доработать. Нужен файл .bib
+    \include{biblist}
 %<<<<<<<<<<<<<<<<<<<< СПИСОК ЛИТЕРАТУРЫ <<<<<<<<<<<<<<<<<<<
 
 
