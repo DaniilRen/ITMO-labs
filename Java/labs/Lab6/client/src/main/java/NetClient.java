@@ -204,7 +204,7 @@ public class NetClient implements Runtime {
         }
         
         console.println(String.format("Loading data (%d chunks)...\n", totalChunks));
-				int loadBarSectionIdx = totalChunks / 10;
+        int loadBarSectionIdx = totalChunks / 10;
         for (int chunkNum = 2; chunkNum <= totalChunks; chunkNum++) {
             try {
                 NextChunkRequest chunkRequest = new NextChunkRequest(streamId, chunkNum);
@@ -219,10 +219,11 @@ public class NetClient implements Runtime {
                 if (nextChunk.getBody() != null) {
                     allData.addAll((List<Object>) nextChunk.getBody());
                 }
-                
-								if (chunkNum % loadBarSectionIdx == 0) {
-									console.println("o".repeat(chunkNum / loadBarSectionIdx) + ".".repeat(10-(chunkNum / loadBarSectionIdx)));
-								}                
+                if (chunkNum % loadBarSectionIdx == 0) {
+                    int percent = chunkNum * 100 / totalChunks;
+                    console.println(percent + "% " +
+                        "o".repeat(chunkNum / loadBarSectionIdx) + ".".repeat(10-(chunkNum / loadBarSectionIdx)));
+                }                
             } catch (IOException | ClassNotFoundException e) {
                 console.printError("\nFailed to load chunk " + chunkNum + ": " + e.getMessage());
                 return Status.ERROR;
