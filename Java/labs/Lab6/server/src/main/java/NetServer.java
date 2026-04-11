@@ -1,20 +1,10 @@
-import java.util.Set;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import commands.*;
-import managers.*;
 import network.ChunkUtil;
 import network.ServerNetwork;
-import util.LocalEnvironment;
-import logging.LoggerBlueprint;
-import logging.ServerLogger;
-import common.models.Entity;
 import common.network.Network;
-import common.runtime.Runtime;
 import common.transfer.Status;
-import common.exceptions.CollectionLoadException;
 import common.exceptions.RuntimeInitException;
 import common.transfer.request.empty.InitRequest;
 import common.transfer.request.standart.StandartRequest;
@@ -23,35 +13,14 @@ import common.transfer.response.Response;
 import common.transfer.request.Request;
 
 
-public class NetServer implements Runtime {
-    private final FileManager fileManager;
-    private final CollectionManager<Entity> collectionManager;
-    private final CommandManager commandManager;
+public class NetServer extends AbstractServer {
     private final Network networkManager;
     private final int port;
-		private final LoggerBlueprint logger;
 
     public NetServer(int port) throws RuntimeInitException {
-        this.commandManager = new DefaultCommandManager();
-				this.logger = new ServerLogger("Server log");
+        super();
         this.port = port;
         this.networkManager = new ServerNetwork(port, logger);
-
-        String collectionFile = LocalEnvironment.getCollectionPath();
-        if (collectionFile == null) {
-            throw new RuntimeInitException("Invalid collection path");
-        }
-        this.fileManager = new JSONManager(collectionFile);
-
-        Collection<Entity> collection = new ArrayList<>();
-        try {
-            collection = fileManager.readCollectionFromFile();
-        } catch (CollectionLoadException e) {
-            throw new RuntimeInitException(e.getMessage());
-        }
-        this.collectionManager = new ArrayListCollectionManager<Entity>(collection);
-        registerCommands();
-				logger.info("collection loaded successfully");
     }
 
 
@@ -84,7 +53,7 @@ public class NetServer implements Runtime {
         }
     }
 
-    private Response<?> processRequest(Request request) {
+    protected Response<?> processRequest(Request request) {
         if (request instanceof InitRequest) {
             return new Response<>(List.of(commandManager.getCommandAttributes()));
         } else if (request instanceof NextChunkRequest) {
@@ -98,7 +67,7 @@ public class NetServer implements Runtime {
 
 
 
-    private void registerCommands() {
+    protected void registerCommands() {
         commandManager.register("help", new Help(commandManager));
         commandManager.register("info", new Info(collectionManager));
         commandManager.register("show", new Show(collectionManager));
@@ -114,31 +83,9 @@ public class NetServer implements Runtime {
         commandManager.register("print_field_descending_distance", new PrintFieldDescendingDistance(collectionManager));
     }
 
-    public Response<?> proccessRequest(Request request) {
-        return processRequest(request);
-    }
-
-    private Response<?> executeCommand(StandartRequest request) {
-        String commandName = request.getName();
-        if (!validateCommandName(commandName)) {
-            return new Response<>(List.of("Unknown command"), Status.ERROR);
-        }
-        Command<?> command = commandManager.getCommands().get(commandName);
-        commandManager.addToHistory(command.getAttribute().getName());
-        
-        @SuppressWarnings("unchecked")
-        Command<StandartRequest> typedCommand = (Command<StandartRequest>) command;
-        Response<?> response = typedCommand.execute(request);
-        
-        if (ChunkUtil.shouldChunkify(response)) {
-            return ChunkUtil.chunkify(response);
-        }
-        
+    protected Response<?> executeCommand(StandartRequest request) {
+        Response<?> response = super.executeCommand(request);
+        if (ChunkUtil.shouldChunkify(response)) return ChunkUtil.chunkify(response);
         return response;
-    }
-
-    private boolean validateCommandName(String command) {
-        Set<String> commandsNames = commandManager.getCommands().keySet();
-        return commandsNames.contains(command);
     }
 }

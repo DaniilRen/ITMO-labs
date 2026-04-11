@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 import common.models.Location2Dimension;
 import console.IOConsole;
 import common.exceptions.InvalidFormException;
-import common.exceptions.ScriptSyntaxException;
+import common.exceptions.InvalidScriptException;
 
 
 /**
@@ -26,12 +26,12 @@ public class Location2DimensionForm extends Form<Location2Dimension>{
             Location2Dimension location = new Location2Dimension(askX(), askY(), askName());
             if (!location.validate()) throw new InvalidFormException("Location FROM validation failed");
             return location;   
-        } catch (InvalidFormException | ScriptSyntaxException e) {
+        } catch (InvalidFormException | InvalidScriptException e) {
             throw new InvalidFormException(e.getMessage());
         }
     }
 
-    private Integer askX() throws ScriptSyntaxException {
+    private Integer askX() throws InvalidScriptException {
         Integer x = 0;
         boolean asked = false;
         do {
@@ -45,7 +45,7 @@ public class Location2DimensionForm extends Form<Location2Dimension>{
             } catch (NoSuchElementException | NumberFormatException e) {
                 if (fileMode) {
                     asked = true;
-                    throw new ScriptSyntaxException("Invalid input data in script -> operation stopped");
+                    throw new InvalidScriptException("Invalid input data in script -> operation stopped");
                 } else {
                     console.printError("Coordinate X was not recognized, enter it again");
                 }
@@ -55,7 +55,7 @@ public class Location2DimensionForm extends Form<Location2Dimension>{
         return x;
     }
 
-    private Double askY() throws ScriptSyntaxException {
+    private Double askY() throws InvalidScriptException {
         Double y = 0.0;
         boolean asked = false;
         do {
@@ -70,7 +70,7 @@ public class Location2DimensionForm extends Form<Location2Dimension>{
             } catch (NoSuchElementException | NumberFormatException e) {
                 if (fileMode) {
                     asked = true;
-                    throw new ScriptSyntaxException("Invalid input data in script -> operation stopped");
+                    throw new InvalidScriptException("Invalid input data in script -> operation stopped");
                 } else {
                     console.printError("Coordinate Y was not recognized, enter it again");
                 }
@@ -80,7 +80,7 @@ public class Location2DimensionForm extends Form<Location2Dimension>{
         return y;
     }
 
-    private String askName() throws ScriptSyntaxException {
+    private String askName() throws InvalidScriptException {
         String name = "";
         boolean asked = false;
         do {
@@ -93,7 +93,7 @@ public class Location2DimensionForm extends Form<Location2Dimension>{
             } catch (InvalidFormException e) {
                 if (fileMode) {
                     asked = true;
-                    throw new ScriptSyntaxException("Invalid input data in script -> operation stopped");
+                    throw new InvalidScriptException("Invalid input data in script -> operation stopped");
                 } else {
                     console.printError("Name was not recognized, enter it again");
                 }

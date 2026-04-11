@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 import common.models.Location3Dimension;
 import console.IOConsole;
 import common.exceptions.InvalidFormException;
-import common.exceptions.ScriptSyntaxException;
+import common.exceptions.InvalidScriptException;
 
 
 /**
@@ -26,12 +26,12 @@ public class Location3DimensionForm extends Form<Location3Dimension>{
             Location3Dimension location = new Location3Dimension(askX(), askY(), askZ(), askName());
             if (!location.validate()) throw new InvalidFormException("Location TO validation failed");
             return location;   
-        } catch (InvalidFormException | ScriptSyntaxException e) {
+        } catch (InvalidFormException | InvalidScriptException e) {
             throw new InvalidFormException(e.getMessage());
         }
     }
 
-    private Double askX() throws ScriptSyntaxException {
+    private Double askX() throws InvalidScriptException {
         Double x = 0.0;
         boolean asked = false;
         do {
@@ -46,7 +46,7 @@ public class Location3DimensionForm extends Form<Location3Dimension>{
             } catch (NoSuchElementException | NumberFormatException e) {
                 if (fileMode) {
                     asked = true;
-                    throw new ScriptSyntaxException("Invalid input data in script -> operation stopped");
+                    throw new InvalidScriptException("Invalid input data in script -> operation stopped");
                 } else {
                     console.printError("Coordinate X was not recognized, enter it again");
                 }
@@ -56,7 +56,7 @@ public class Location3DimensionForm extends Form<Location3Dimension>{
         return x;
     }
 
-    private Double askY() throws ScriptSyntaxException {
+    private Double askY() throws InvalidScriptException {
         Double y = 0.0;
         boolean asked = false;
         do {
@@ -70,7 +70,7 @@ public class Location3DimensionForm extends Form<Location3Dimension>{
             } catch (NoSuchElementException | NumberFormatException e) {
                 if (fileMode) {
                     asked = true;
-                    throw new ScriptSyntaxException("Invalid input data in script -> operation stopped");
+                    throw new InvalidScriptException("Invalid input data in script -> operation stopped");
                 } else {
                     console.printError("Coordinate Y was not recognized, enter it again");
                 }
@@ -80,7 +80,7 @@ public class Location3DimensionForm extends Form<Location3Dimension>{
         return y;
     }
 
-    private Integer askZ() throws ScriptSyntaxException {
+    private Integer askZ() throws InvalidScriptException {
         Integer z = 0;
         boolean asked = false;
         do {
@@ -94,7 +94,7 @@ public class Location3DimensionForm extends Form<Location3Dimension>{
             } catch (NoSuchElementException | NumberFormatException e) {
                 if (fileMode) {
                     asked = true;
-                    throw new ScriptSyntaxException("Invalid input data in script -> operation stopped");
+                    throw new InvalidScriptException("Invalid input data in script -> operation stopped");
                 } else {
                     console.printError("Coordinate Z was not recognized, enter it again");
                 }
@@ -104,7 +104,7 @@ public class Location3DimensionForm extends Form<Location3Dimension>{
         return z;
     }
 
-    private String askName() throws ScriptSyntaxException {
+    private String askName() throws InvalidScriptException {
         String name = "";
         boolean asked = false;
         do {
@@ -118,7 +118,7 @@ public class Location3DimensionForm extends Form<Location3Dimension>{
             } catch (InvalidFormException e) {
                 if (fileMode) {
                     asked = true;
-                    throw new ScriptSyntaxException("Invalid input data in script -> operation stopped");
+                    throw new InvalidScriptException("Invalid input data in script -> operation stopped");
                 } else {
                     console.printError("Name was not recognized, enter it again");
                 }

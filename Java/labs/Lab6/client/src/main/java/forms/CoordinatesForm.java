@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 import common.models.Coordinates;
 import console.IOConsole;
 import common.exceptions.InvalidFormException;
-import common.exceptions.ScriptSyntaxException;
+import common.exceptions.InvalidScriptException;
 
 /**
  * Класс формы для координат.
@@ -30,7 +30,7 @@ public class CoordinatesForm extends Form<Coordinates> {
         }
     }
 
-    private Float askX() throws ScriptSyntaxException {
+    private Float askX() throws InvalidScriptException {
         Float x = Float.valueOf(0);
         boolean asked = false;
         do {
@@ -44,7 +44,7 @@ public class CoordinatesForm extends Form<Coordinates> {
             } catch (NoSuchElementException | NumberFormatException e) {
                 if (fileMode) {
                     asked = true;
-                    throw new ScriptSyntaxException("Invalid input data in script -> operation stopped");
+                    throw new InvalidScriptException("Invalid input data in script -> operation stopped");
                 } else {
                     console.printError("Coordinate X was not recognized, enter it again");
                 }
@@ -54,7 +54,7 @@ public class CoordinatesForm extends Form<Coordinates> {
         return x;
     }
 
-    private Long askY() throws ScriptSyntaxException {
+    private Long askY() throws InvalidScriptException {
         Long y = Long.valueOf(0);
         boolean asked = false;
         do {
@@ -69,7 +69,7 @@ public class CoordinatesForm extends Form<Coordinates> {
             } catch (NoSuchElementException | NumberFormatException e) {
                 if (fileMode) {
                     asked = true;
-                    throw new ScriptSyntaxException("Invalid input data in script -> operation stopped");
+                    throw new InvalidScriptException("Invalid input data in script -> operation stopped");
                 } else {
                     console.printError("Coordinate Y was not recognized, enter it again");
                 }

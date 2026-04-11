@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 
 import console.IOConsole;
 import common.exceptions.InvalidFormException;
-import common.exceptions.ScriptSyntaxException;
+import common.exceptions.InvalidScriptException;
 import common.models.Route;
 import common.models.Coordinates;
 import common.models.Location2Dimension;
@@ -38,13 +38,13 @@ public class RouteForm extends Form<Route> {
             );
             if (!route.validate()) throw new InvalidFormException("Final Route validation failed");
             return route;
-        } catch (InvalidFormException | ScriptSyntaxException e) {
+        } catch (InvalidFormException | InvalidScriptException e) {
             console.printError(e.getMessage());
             return null;
         }
     };
 
-    private String askName() throws ScriptSyntaxException {
+    private String askName() throws InvalidScriptException {
         String name = "";
         boolean asked = false;
         do {
@@ -57,7 +57,7 @@ public class RouteForm extends Form<Route> {
             } catch (InvalidFormException e) {
                 if (fileMode) {
                     asked = true;
-                    throw new ScriptSyntaxException("Invalid input data in script -> operation stopped");
+                    throw new InvalidScriptException("Invalid input data in script -> operation stopped");
                 } else {
                     console.printError("Name not recognized, enter it again");
                 }
@@ -67,19 +67,19 @@ public class RouteForm extends Form<Route> {
         return name;
     };
 
-    private Coordinates askCoordinates() throws InvalidFormException, ScriptSyntaxException {
+    private Coordinates askCoordinates() throws InvalidFormException, InvalidScriptException {
         return new CoordinatesForm(console).build();
     };
 
-    private Location2Dimension askLocationFrom() throws InvalidFormException, ScriptSyntaxException {
+    private Location2Dimension askLocationFrom() throws InvalidFormException, InvalidScriptException {
         return new Location2DimensionForm(console).build();
     };
 
-    private Location3Dimension askLocationTo() throws InvalidFormException, ScriptSyntaxException {
+    private Location3Dimension askLocationTo() throws InvalidFormException, InvalidScriptException {
         return new Location3DimensionForm(console).build();
     };
 
-    private int askDistance() throws ScriptSyntaxException {
+    private int askDistance() throws InvalidScriptException {
         int distance = 0;
         boolean asked = false;
         do {
@@ -94,7 +94,7 @@ public class RouteForm extends Form<Route> {
             } catch (NoSuchElementException | NumberFormatException exception) {
                 if (fileMode) {
                     asked = true;
-                    throw new ScriptSyntaxException("Invalid input data in script -> operation stopped");
+                    throw new InvalidScriptException("Invalid input data in script -> operation stopped");
                 } else {
                     console.printError("Distance was not recognized, enter it again");
                 }

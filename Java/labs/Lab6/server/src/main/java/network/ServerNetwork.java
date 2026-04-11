@@ -10,6 +10,7 @@ import java.net.SocketException;
 import common.network.Network;
 import logging.LoggerBlueprint;
 
+
 public class ServerNetwork implements Network {
     private ObjectInputStream ois;
     private ObjectOutputStream oos;
@@ -21,7 +22,7 @@ public class ServerNetwork implements Network {
 
     public ServerNetwork(int port, LoggerBlueprint logger) {
         this.port = port;
-				this.logger = logger;
+        this.logger = logger;
     }
 
     public void connect() throws IOException {

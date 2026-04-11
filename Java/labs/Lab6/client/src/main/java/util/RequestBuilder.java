@@ -6,7 +6,7 @@ import java.util.Map;
 import common.models.Entity;
 import console.IOConsole;
 import common.exceptions.IncorrectRequestException;
-import common.exceptions.ScriptSyntaxException;
+import common.exceptions.InvalidScriptException;
 import forms.RouteForm;
 import common.transfer.request.Request;
 import common.transfer.request.standart.CombinedRequest;
@@ -28,7 +28,7 @@ public class RequestBuilder {
     }
 
     public Request buildRequest(Map<String, Class<? extends Request>> commandsAttributes, String name, List<?> args) 
-                                        throws IncorrectRequestException, ScriptSyntaxException {
+                                        throws IncorrectRequestException, InvalidScriptException {
 
         Class<? extends Request> requestType = commandsAttributes.get(name);
         if (requestType == null) {
@@ -46,7 +46,7 @@ public class RequestBuilder {
 
             if (result == null || !EntityRequest.validate(List.of(result))) {
                 if (console.fileMode()) {
-                    throw new ScriptSyntaxException("Stopped script running because of invalid syntax");
+                    throw new InvalidScriptException("Stopped script running because of invalid syntax");
                 }
                 throw new IncorrectRequestException("Invalid request");
             }
