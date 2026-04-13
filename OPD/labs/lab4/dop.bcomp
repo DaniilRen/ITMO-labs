@@ -38,9 +38,11 @@ FUNCTION:   LD &2
 
             MAIN_LOOP:
                         ; getting new address with offset
-                        LD &1
+                        LD &4
                         ADD index
                         ST old_address
+                        CMP &1
+                        BMI STANDART_EXECUTION
                         ADD offset
                         ST new_address
 
@@ -95,14 +97,12 @@ FUNCTION:   LD &2
                                             AND rel_payload  
                                             ST temp
                                             LD (temp)
-                                            ST 0xE      ; WRITES HERE 0x302
                                             CMP &1
                                             BMI STANDART_EXECUTION
                                             CMP prog_end
                                             BPL STANDART_EXECUTION
                                             LD (temp)
                                             ADD offset
-                                            ST 0xF      ; WRITES HERE 0x402
                                             ST (temp)
                                             JUMP STANDART_EXECUTION
 
