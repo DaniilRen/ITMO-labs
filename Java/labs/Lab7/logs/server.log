@@ -2274,3 +2274,167 @@ from=(x=2, y=2.000000, name=2)
 to=(x=2.000000, y=2.000000, z=2, name=2)
 distance=2
 ]}
+2026-04-22 21:58:37.366 [main] INFO  Server log - collection loaded from database
+2026-04-22 21:58:37.369 [main] INFO  Server log - waiting for connection...
+2026-04-22 21:59:39.456 [main] INFO  Server log - collection loaded from database
+2026-04-22 21:59:39.459 [main] INFO  Server log - waiting for connection...
+2026-04-22 21:59:40.457 [main] INFO  Server log - new connection: /127.0.0.1
+2026-04-22 21:59:40.462 [main] INFO  Server log - Server started on port 9000
+2026-04-22 21:59:40.495 [main] INFO  Server log - new request: common.transfer.request.empty.InitRequest@3403e2ac
+2026-04-22 21:59:40.496 [main] INFO  Server log - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest}]}
+2026-04-22 21:59:41.960 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@7efaad5a
+2026-04-22 21:59:41.963 [main] INFO  Server log - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-22 21:59:39.450954078]}
+2026-04-22 21:59:44.192 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@632ceb35
+2026-04-22 21:59:44.203 [main] INFO  Server log - sending response: Response{status=OK, body=[id=6
+creation date=2026-04-22T20:19:35.742875
+name=Route Zeta
+coordinates=(x=10.500000, y=20)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=200
+, id=1
+creation date=2026-04-22T20:19:35.742875
+name=Route Alpha
+coordinates=(x=10.500000, y=20)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=150
+, id=7
+creation date=2026-04-22T20:19:35.742875
+name=Route Eta
+coordinates=(x=25.500000, y=35)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=300
+, id=2
+creation date=2026-04-22T20:19:35.742875
+name=Route Beta
+coordinates=(x=25.500000, y=35)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=250
+, id=8
+creation date=2026-04-22T20:19:35.742875
+name=Route Theta
+coordinates=(x=40.200001, y=50)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=400
+, id=3
+creation date=2026-04-22T20:19:35.742875
+name=Route Gamma
+coordinates=(x=40.200001, y=50)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=350
+, id=9
+creation date=2026-04-22T20:19:35.742875
+name=Route Iota
+coordinates=(x=55.799999, y=65)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=500
+, id=4
+creation date=2026-04-22T20:19:35.742875
+name=Route Delta
+coordinates=(x=55.799999, y=65)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=450
+, id=10
+creation date=2026-04-22T20:19:35.742875
+name=Route Kappa
+coordinates=(x=70.300003, y=80)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=600
+, id=5
+creation date=2026-04-22T20:19:35.742875
+name=Route Epsilon
+coordinates=(x=70.300003, y=80)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=550
+]}
+2026-04-22 22:07:36.604 [main] INFO  Server log - collection loaded from database
+2026-04-22 22:07:36.606 [main] INFO  Server log - waiting for connection...
+2026-04-22 22:07:37.899 [main] INFO  Server log - new connection: /127.0.0.1
+2026-04-22 22:07:37.902 [main] INFO  Server log - Server started on port 9000
+2026-04-22 22:07:37.940 [main] INFO  Server log - new request: common.transfer.request.empty.InitRequest@3403e2ac
+2026-04-22 22:07:37.941 [main] INFO  Server log - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest}]}
+2026-04-22 22:07:39.306 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@7efaad5a
+2026-04-22 22:07:39.309 [main] INFO  Server log - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-22 22:07:36.600894559]}
+2026-04-22 22:07:40.615 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@632ceb35
+2026-04-22 22:07:40.624 [main] INFO  Server log - sending response: Response{status=OK, body=[id=1
+creation date=2026-04-22T20:19:35.742875
+name=Route Alpha
+coordinates=(x=10.500000, y=20)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=150
+, id=2
+creation date=2026-04-22T20:19:35.742875
+name=Route Beta
+coordinates=(x=25.500000, y=35)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=250
+, id=4
+creation date=2026-04-22T20:19:35.742875
+name=Route Delta
+coordinates=(x=55.799999, y=65)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=450
+, id=5
+creation date=2026-04-22T20:19:35.742875
+name=Route Epsilon
+coordinates=(x=70.300003, y=80)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=550
+, id=7
+creation date=2026-04-22T20:19:35.742875
+name=Route Eta
+coordinates=(x=25.500000, y=35)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=300
+, id=3
+creation date=2026-04-22T20:19:35.742875
+name=Route Gamma
+coordinates=(x=40.200001, y=50)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=350
+, id=9
+creation date=2026-04-22T20:19:35.742875
+name=Route Iota
+coordinates=(x=55.799999, y=65)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=500
+, id=10
+creation date=2026-04-22T20:19:35.742875
+name=Route Kappa
+coordinates=(x=70.300003, y=80)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=600
+, id=8
+creation date=2026-04-22T20:19:35.742875
+name=Route Theta
+coordinates=(x=40.200001, y=50)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=400
+, id=6
+creation date=2026-04-22T20:19:35.742875
+name=Route Zeta
+coordinates=(x=10.500000, y=20)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=200
+]}
+2026-04-22 22:07:41.421 [main] WARN  Server log - connection closed. Reconnecting
+2026-04-22 22:07:41.422 [main] INFO  Server log - waiting for connection...

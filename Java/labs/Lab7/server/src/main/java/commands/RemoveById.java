@@ -2,7 +2,7 @@ package commands;
 
 import java.util.List;
 
-import managers.CollectionManager;
+import managers.AbstractCollectionManager;
 import common.models.Entity;
 import common.models.Route;
 import common.transfer.Status;
@@ -17,9 +17,9 @@ import common.transfer.response.Response;
 public class RemoveById extends Command<IdRequest> {
     private static final long serialVersionUID = 8986213L;
 
-    private final CollectionManager<Entity> collectionManager;
+    private final AbstractCollectionManager<Entity> collectionManager;
 
-    public RemoveById(CollectionManager<Entity> collectionManager) {
+    public RemoveById(AbstractCollectionManager<Entity> collectionManager) {
         super(new CommandAttribute(
             "remove_by_id <ID>", 
             "удалить элемент из коллекции по ID",

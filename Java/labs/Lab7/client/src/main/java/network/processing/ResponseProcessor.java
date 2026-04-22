@@ -8,13 +8,14 @@ import common.transfer.Status;
 import common.transfer.request.standart.NextChunkRequest;
 import common.transfer.response.Response;
 import console.IOConsole;
-import network.ClientNetwork;
+import network.AbstractClientNetwork;
+
 
 public class ResponseProcessor {
     private final IOConsole console;
-    private final ClientNetwork network;
+    private final AbstractClientNetwork network;
 
-    public ResponseProcessor(IOConsole console, ClientNetwork network) {
+    public ResponseProcessor(IOConsole console, AbstractClientNetwork network) {
         this.console = console;
         this.network = network;
     }

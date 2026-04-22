@@ -12,28 +12,28 @@ import common.transfer.request.Request;
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.response.Response;
 import logging.ServerLogger;
-import managers.ArrayListCollectionManager;
 import managers.CollectionManager;
+import managers.AbstractCommandManager;
+import managers.AbstractDatabaseManager;
+import managers.AbstractCollectionManager;
 import managers.CommandManager;
-import managers.DefaultCommandManager;
-import managers.SourceManager;
 import managers.PostgresManager;
 import logging.LoggerBlueprint;
 import util.LocalEnvironment;
 
 
 public abstract class AbstractServer {
-    protected final CollectionManager<Entity> collectionManager;
-    protected final SourceManager fileManager;
-    protected final CommandManager commandManager;
+    protected final AbstractCollectionManager<Entity> collectionManager;
+    protected final AbstractDatabaseManager databaseManager;
+    protected final AbstractCommandManager commandManager;
     protected final LoggerBlueprint logger;
 
 
     public AbstractServer() throws RuntimeInitException {
-        this.commandManager = new DefaultCommandManager();
+        this.commandManager = new CommandManager();
         this.logger = new ServerLogger("Server log");
 
-        this.fileManager = new PostgresManager(
+        this.databaseManager = new PostgresManager(
             LocalEnvironment.getDatabaseURL(),
             LocalEnvironment.getDatabaseUser(),
             LocalEnvironment.getDatabasePassword()
@@ -41,11 +41,11 @@ public abstract class AbstractServer {
 
         Collection<Entity> collection = new ArrayList<>();
         try {
-            collection = fileManager.readCollection();
+            collection = databaseManager.readCollection();
         } catch (CollectionLoadException e) {
             throw new RuntimeInitException(e.getMessage());
         }
-        this.collectionManager = new ArrayListCollectionManager<Entity>(collection);
+        this.collectionManager = new CollectionManager<Entity>(collection);
         registerCommands();
         logger.info("collection loaded from database");
     }

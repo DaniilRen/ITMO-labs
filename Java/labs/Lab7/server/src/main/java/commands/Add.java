@@ -2,7 +2,7 @@ package commands;
 
 import java.util.List;
 
-import managers.CollectionManager;
+import managers.AbstractCollectionManager;
 import common.models.Entity;
 import common.transfer.request.standart.EntityRequest;
 import common.transfer.response.Response;
@@ -15,9 +15,9 @@ import common.transfer.response.Response;
 public class Add extends Command<EntityRequest> {
     private static final long serialVersionUID = 1932432L;
 
-    private final CollectionManager<Entity> collectionManager;
+    private final AbstractCollectionManager<Entity> collectionManager;
 
-    public Add(CollectionManager<Entity> collectionManager) {
+    public Add(AbstractCollectionManager<Entity> collectionManager) {
         super(new CommandAttribute(
             "add {element}", 
             "добавить новый элемент в коллекцию", 

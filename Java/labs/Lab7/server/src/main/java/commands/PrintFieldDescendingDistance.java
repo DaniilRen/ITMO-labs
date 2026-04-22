@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import managers.CollectionManager;
+import managers.AbstractCollectionManager;
 import common.models.Entity;
 import common.models.Route;
 import common.transfer.request.standart.StandartRequest;
@@ -18,9 +18,9 @@ import common.transfer.response.Response;
 public class PrintFieldDescendingDistance extends Command<StandartRequest> {
     private static final long serialVersionUID = 65829432L;
 
-    private CollectionManager<Entity> collectionManager;
+    private AbstractCollectionManager<Entity> collectionManager;
 
-    public PrintFieldDescendingDistance(CollectionManager<Entity> collectionManager) {
+    public PrintFieldDescendingDistance(AbstractCollectionManager<Entity> collectionManager) {
         super(new CommandAttribute(
             "print_field_descending_distance",
             "вывести значения поля distance всех элементов в порядке убывания",

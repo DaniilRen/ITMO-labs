@@ -9,23 +9,17 @@ import java.net.SocketException;
 
 import console.IOConsole;
 
-public class ClientNetwork {
+public class ClientNetwork extends AbstractClientNetwork {
     private ObjectInputStream ois;
     private ObjectOutputStream oos;
     private Socket socket;
-    private final String address;
-    private final int port;
-    private boolean connected = false;
-    private final IOConsole console;
     
     private final int MAX_RETRIES = 3;
     private final int RETRY_DELAY_MS = 2000;
     private final int CONNECTION_TIMEOUT_MS = 5000;
 
     public ClientNetwork(String address, int port, IOConsole console) {
-        this.address = address;
-        this.port = port;
-        this.console = console;
+        super(address, port, console);
     }
 
     public void connect() throws IOException {

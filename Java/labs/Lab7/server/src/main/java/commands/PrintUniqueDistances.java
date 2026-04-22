@@ -4,11 +4,11 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import managers.CollectionManager;
+import managers.AbstractCollectionManager;
 import common.models.Entity;
 import common.models.Route;
 import common.transfer.request.standart.StandartRequest;
-import common.transfer.response.Response;;
+import common.transfer.response.Response;
 
 
 /**
@@ -18,9 +18,9 @@ import common.transfer.response.Response;;
 public class PrintUniqueDistances extends Command<StandartRequest> {
     private static final long serialVersionUID = 88282837L;
 
-    private CollectionManager<Entity> collectionManager;
+    private AbstractCollectionManager<Entity> collectionManager;
 
-    public PrintUniqueDistances(CollectionManager<Entity> collectionManager) {
+    public PrintUniqueDistances(AbstractCollectionManager<Entity> collectionManager) {
         super(new CommandAttribute(
             "print_unique_distance",
             "вывести уникальные значения поля distance всех элементов в коллекции",

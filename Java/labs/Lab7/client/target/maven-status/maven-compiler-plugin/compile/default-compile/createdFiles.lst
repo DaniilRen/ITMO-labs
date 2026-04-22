@@ -1,4 +1,3 @@
-controller/RecursionController.class
 network/processing/RequestProcessor.class
 forms/Form.class
 forms/RouteForm.class
@@ -10,7 +9,9 @@ console/Console.class
 forms/CoordinatesForm.class
 Main.class
 network/ClientNetwork.class
+util/script/RecursionController.class
 util/RequestBuilder.class
 network/processing/ResponseProcessor.class
+network/AbstractClientNetwork.class
 NetClient.class
-util/ScriptProcessor.class
+util/script/ScriptProcessor.class

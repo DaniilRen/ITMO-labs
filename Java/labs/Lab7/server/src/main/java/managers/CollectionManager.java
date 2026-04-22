@@ -1,30 +1,135 @@
 package managers;
 
-import common.transfer.Status;
-
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collection;
-
+import java.util.Iterator;
 import common.models.Entity;
+import common.transfer.Status;
 
 
 /**
- * Абстрактный класс для манипуляций элементами коллекции.
+ * Класс для манипуляций элементами коллекции вида Arraylist.
+ * @param <T> создаваемый объект
  * @author Septyq
- * @param <T> элемент коллекции
  */
-public interface CollectionManager<T extends Entity> {
-    Collection<T> getCollection();
-    int getCollectionSize();
-    String getCollectionType();
-    Status clearCollection();
-    Status saveCollection(SourceManager fileManager);
-    Status addToCollection(T element);
-    Status removeFromCollection(T element);
-    Status updateById(int id, T newElement);
-    boolean checkExist(int id);
-    T getById(int id);
-    T getByValue(T targetElement);
-    LocalDateTime getLastInitTime();
-    LocalDateTime getLastSaveTime();
+public class CollectionManager<T extends Entity> extends AbstractCollectionManager<T> {
+    private Collection<T> collection = new ArrayList<>();
+    private LocalDateTime lastInitTime = LocalDateTime.now();
+    private LocalDateTime lastSaveTime;
+
+    public CollectionManager(Collection<T> collection) {
+        this.collection = collection;
+    }
+
+
+    public Status saveCollection(AbstractDatabaseManager databaseManager){
+        try {
+            databaseManager.writeCollection(collection);
+            this.lastSaveTime = LocalDateTime.now();
+            return Status.OK;
+        } catch (Exception e) {
+            return Status.ERROR;
+        }
+    }
+
+
+    public Status clearCollection() {
+        try {
+            collection.clear();
+            return Status.OK;
+        } catch (Exception e) {
+            return Status.ERROR;
+        }
+
+    }
+
+    public Status removeFromCollection(T element) {
+        try {
+            collection.remove(element);
+            return Status.OK;
+        } catch (Exception e) {
+            return Status.ERROR;
+        }
+
+    }
+
+    public Status addToCollection(T element) {
+        try {
+            collection.add(element);
+            return Status.OK;
+        } catch (Exception e) {
+            return Status.ERROR;
+        }
+    }
+
+    public Status updateById(int id, T newElement) {
+        Status status = Status.ERROR;
+        Iterator<T> iterator = this.collection.iterator();
+        while (iterator.hasNext()) {
+            T route = iterator.next();
+            if (route.getId() == id) {
+                iterator.remove();
+                this.collection.add(newElement);
+                status = Status.OK;
+                break;
+            }
+        }
+        return status;
+    }
+
+
+    public boolean checkExist(int id) {
+        for (Entity element : collection) {
+            if (element.getId() == id) return true;
+        }
+        return false;
+    }
+
+    public T getById(int id) {
+        for (T element : collection) {
+        if (element.getId() == id) return element;
+        }
+        return null;
+    }
+
+    public T getByValue(T targetElement) {
+        for (T element : collection) {
+            if (element.equals(targetElement)) return element;
+        }
+        return null;
+    }
+
+    public Collection<T> getCollection() {
+        return collection;
+    }
+
+    public String getCollectionType() {
+        return collection.getClass().getName();
+    }
+
+    public int getCollectionSize() {
+        return collection.size();
+    }
+
+    public LocalDateTime getLastInitTime() {
+        return this.lastInitTime;
+    }
+
+    public LocalDateTime getLastSaveTime() {
+        return this.lastSaveTime;
+    }
+
+    @Override
+    public String toString() {
+        if (collection.isEmpty()) {
+            return "Collection is empty";
+        }
+
+        StringBuilder result = new StringBuilder();
+        for (T entity: collection) {
+            result.append(entity + "\n\n");
+        }
+        return result.toString();
+    }
 }

@@ -4,7 +4,7 @@ import java.util.List;
 
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.response.Response;
-import managers.CommandManager;
+import managers.AbstractCommandManager;
 
 
 /**
@@ -14,9 +14,9 @@ import managers.CommandManager;
 public class Help extends Command<StandartRequest> {
   private static final long serialVersionUID = 698347L;
 
-  private final CommandManager commandManager;
+  private final AbstractCommandManager commandManager;
 
-  public Help(CommandManager commandManager) {
+  public Help(AbstractCommandManager commandManager) {
     super(new CommandAttribute(
       "help", 
       "вывести справку по доступным командам",

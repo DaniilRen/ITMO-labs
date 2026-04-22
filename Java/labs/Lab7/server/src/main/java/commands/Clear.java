@@ -1,6 +1,6 @@
 package commands;
 
-import managers.CollectionManager;
+import managers.AbstractCollectionManager;
 import common.models.Entity;
 
 import java.util.List;
@@ -15,9 +15,9 @@ import common.transfer.response.Response;
 public class Clear extends Command<StandartRequest> {
     private static final long serialVersionUID = 8932432L;
 
-    private final CollectionManager<Entity> collectionManager;
+    private final AbstractCollectionManager<Entity> collectionManager;
 
-    public Clear(CollectionManager<Entity> collectionManager) {
+    public Clear(AbstractCollectionManager<Entity> collectionManager) {
         super(new CommandAttribute(
             "clear", 
             "очистить коллекцию", 

@@ -2,7 +2,7 @@ package commands;
 
 import java.util.List;
 
-import managers.CollectionManager;
+import managers.AbstractCollectionManager;
 import common.models.Entity;
 import common.transfer.Status;
 import common.transfer.request.standart.CombinedRequest;
@@ -16,9 +16,9 @@ import common.transfer.response.Response;
 public class Update extends Command<CombinedRequest> {
     private static final long serialVersionUID = 19788876L;
 
-    private final CollectionManager<Entity> collectionManager;
+    private final AbstractCollectionManager<Entity> collectionManager;
 
-    public Update(CollectionManager<Entity> collectionManager) {
+    public Update(AbstractCollectionManager<Entity> collectionManager) {
         super(new CommandAttribute(
             "update <ID> {element}", 
             "обновить значение элемента коллекции по ID",

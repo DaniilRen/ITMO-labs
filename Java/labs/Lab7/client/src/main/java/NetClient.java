@@ -6,15 +6,16 @@ import java.util.List;
 import common.exceptions.InvalidAttributesException;
 import common.exceptions.InvalidScriptException;
 import common.transfer.response.Response;
+import network.AbstractClientNetwork;
 import network.ClientNetwork;
 import network.processing.RequestProcessor;
 import network.processing.ResponseProcessor;
-import util.ScriptProcessor;
+import util.script.ScriptProcessor;
 
 
 public class NetClient extends AbstractClient {
     private final ScriptProcessor scriptProcessor;
-    private final ClientNetwork network;
+    private final AbstractClientNetwork network;
     private ResponseProcessor responseProcessor;
     private RequestProcessor requestProcessor;
     private final int port;

@@ -2,7 +2,7 @@ package commands;
 
 import java.util.ArrayList;
 
-import managers.CollectionManager;
+import managers.AbstractCollectionManager;
 import common.models.Entity;
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.response.Response;
@@ -15,9 +15,9 @@ import common.transfer.response.Response;
 public class Show extends Command<StandartRequest> {
     private static final long serialVersionUID = 6099871L;
 
-    private final CollectionManager<Entity>collectionManager;
+    private final AbstractCollectionManager<Entity>collectionManager;
 
-    public Show(CollectionManager<Entity> collectionManager) {
+    public Show(AbstractCollectionManager<Entity> collectionManager) {
         super(new CommandAttribute(
             "show", 
             "вывести все элементы коллекции",

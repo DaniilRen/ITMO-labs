@@ -3,7 +3,7 @@ package commands;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import managers.CollectionManager;
+import managers.AbstractCollectionManager;
 import common.models.Entity;
 import common.models.Route;
 import common.transfer.request.standart.StringRequest;
@@ -16,9 +16,9 @@ import common.transfer.response.Response;
 public class FilterStartsWithName extends Command<StringRequest> {
     private static final long serialVersionUID = 981734983L;
 
-    private final CollectionManager<Entity> collectionManager;
+    private final AbstractCollectionManager<Entity> collectionManager;
 
-    public FilterStartsWithName(CollectionManager<Entity> collectionManager) {
+    public FilterStartsWithName(AbstractCollectionManager<Entity> collectionManager) {
         super(new CommandAttribute(
             "filter_starts_with_name name <name>", 
             "вывести элементы, значение поля name которых начинается с заданной подстроки",

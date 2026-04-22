@@ -3,7 +3,7 @@ package commands;
 import java.util.Iterator;
 import java.util.List;
 
-import managers.CollectionManager;
+import managers.AbstractCollectionManager;
 import common.transfer.request.standart.EntityRequest;
 import common.transfer.response.Response;
 import common.models.Entity;
@@ -17,9 +17,9 @@ import common.models.Route;;
 public class RemoveLower extends Command<EntityRequest> {
     private static final long serialVersionUID = 982013478L;
 
-    private final CollectionManager<Entity> collectionManager;
+    private final AbstractCollectionManager<Entity> collectionManager;
 
-    public RemoveLower(CollectionManager<Entity> collectionManager) {
+    public RemoveLower(AbstractCollectionManager<Entity> collectionManager) {
         super(new CommandAttribute(
             "remove_lower {element}", 
             "удалить из коллекции все элементы, меньшие, чем заданный",

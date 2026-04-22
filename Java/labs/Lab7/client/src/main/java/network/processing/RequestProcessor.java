@@ -14,15 +14,15 @@ import common.transfer.request.Request;
 import common.transfer.request.empty.InitRequest;
 import common.transfer.response.Response;
 import console.IOConsole;
-import network.ClientNetwork;
+import network.AbstractClientNetwork;
 import util.RequestBuilder;
 
 public class RequestProcessor {
     private Map<String, Class<? extends Request>> commandsAttributes = new HashMap<>(); 
     private final IOConsole console;
-    private final ClientNetwork network;
+    private final AbstractClientNetwork network;
 
-    public RequestProcessor(IOConsole console, ClientNetwork network) {
+    public RequestProcessor(IOConsole console, AbstractClientNetwork network) {
         this.console = console;
         this.network = network;
     }

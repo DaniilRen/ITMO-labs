@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class PostgresManager implements SourceManager {
+public class PostgresManager implements AbstractDatabaseManager {
     
     private final String url;
     private final String user;

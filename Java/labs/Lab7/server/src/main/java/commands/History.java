@@ -1,6 +1,6 @@
 package commands;
 
-import managers.CommandManager;
+import managers.AbstractCommandManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,9 +15,9 @@ import common.transfer.response.Response;
 public class History extends Command<StandartRequest> {
     private static final long serialVersionUID = 436542L;
 
-    private final CommandManager commandManager;
+    private final AbstractCommandManager commandManager;
 
-    public History(CommandManager commandManager) {
+    public History(AbstractCommandManager commandManager) {
         super(new CommandAttribute(
             "history", 
             "вывести последние 13 команд (без их аргументов)",
