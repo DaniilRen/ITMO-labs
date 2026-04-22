@@ -1,0 +1,70 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+@argfile
+-classpath
+'/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/common-1.0-SNAPSHOT.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'17'
+-sourcepath
+'/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java:/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2026. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'client 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'client 1.0-SNAPSHOT API'
+forms
+console
+controller
+util
+network.processing
+network
+'/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/NetClient.java'
+'/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/Main.java'
+'/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/AbstractClient.java'
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/common-1.0-SNAPSHOT.jar = 1776880840722
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/NetClient.java = 1776853723672
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/Main.java = 1776853723672
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/AbstractClient.java = 1776853723672
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java = 1776853723672
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/generated-sources/annotations = 1776880846330
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/allclasses-index.html = 1776880847936
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/search-page.js = 1776880847970
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/NetClient.html = 1776880847741
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/package-use.html = 1776880847908
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/index.html = 1776880847923
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/script.js = 1776880847967
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/overview-tree.html = 1776880847919
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/AbstractClient.html = 1776880847598
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/type-search-index.js = 1776880847940
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/package-summary.html = 1776880847810
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/module-search-index.js = 1776880847938
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/tag-search-index.js = 1776880847940
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/member-search-index.js = 1776880847940
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/package-tree.html = 1776880847814
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/overview-summary.html = 1776880847960
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/package-search-index.js = 1776880847940
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/search.html = 1776880847959
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/stylesheet.css = 1776880847966
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/Main.html = 1776880847725
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/allpackages-index.html = 1776880847938
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/copy.svg = 1776880847967
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/help-doc.html = 1776880847964
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/element-list = 1776880847804
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/index-all.html = 1776880847958
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/search.js = 1776880847969
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/link.svg = 1776880847968

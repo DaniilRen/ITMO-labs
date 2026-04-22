@@ -1,0 +1,2276 @@
+2026-04-11 19:35:11.874 [main] WARN  Server log - connection closed. Reconnecting
+2026-04-11 19:35:11.875 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:35:14.143 [main] INFO  Server log - new connection: /127.0.0.1
+2026-04-11 19:35:14.176 [main] INFO  Server log - new request: common.transfer.request.empty.InitRequest@490caf5f
+2026-04-11 19:35:14.176 [main] INFO  Server log - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest}]}
+2026-04-11 19:35:16.859 [main] WARN  Server log - connection closed. Reconnecting
+2026-04-11 19:35:16.859 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:35:19.060 [main] INFO  Server log - new connection: /127.0.0.1
+2026-04-11 19:35:19.093 [main] INFO  Server log - new request: common.transfer.request.empty.InitRequest@4032d386
+2026-04-11 19:35:19.093 [main] INFO  Server log - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest}]}
+2026-04-11 19:36:46.481 [main] WARN  Server log - connection closed. Reconnecting
+2026-04-11 19:36:46.482 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:37:02.685 [main] INFO  Server log - collection loaded successfully
+2026-04-11 19:37:02.690 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:37:03.648 [main] INFO  Server log - new connection: /127.0.0.1
+2026-04-11 19:37:03.654 [main] INFO  Server log - Server started on port 9001
+2026-04-11 19:37:03.701 [main] INFO  Server log - new request: common.transfer.request.empty.InitRequest@5d99c6b5
+2026-04-11 19:37:03.703 [main] INFO  Server log - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest}]}
+2026-04-11 19:37:05.545 [main] WARN  Server log - connection closed. Reconnecting
+2026-04-11 19:37:05.546 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:39:47.317 [main] INFO  Server log - collection loaded successfully
+2026-04-11 19:39:47.323 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:39:48.113 [main] INFO  Server log - new connection: /127.0.0.1
+2026-04-11 19:39:48.119 [main] INFO  Server log - Server started on port 9001
+2026-04-11 19:39:48.168 [main] INFO  Server log - new request: common.transfer.request.empty.InitRequest@5d99c6b5
+2026-04-11 19:39:48.170 [main] INFO  Server log - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest}]}
+2026-04-11 19:39:52.121 [main] WARN  Server log - connection closed. Reconnecting
+2026-04-11 19:39:52.122 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:43:11.630 [main] INFO  Server log - collection loaded successfully
+2026-04-11 19:43:11.635 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:43:12.177 [main] INFO  Server log - new connection: /127.0.0.1
+2026-04-11 19:43:12.181 [main] INFO  Server log - Server started on port 9001
+2026-04-11 19:43:12.231 [main] INFO  Server log - new request: common.transfer.request.empty.InitRequest@5d99c6b5
+2026-04-11 19:43:12.233 [main] INFO  Server log - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest}]}
+2026-04-11 19:44:48.195 [main] WARN  Server log - connection closed. Reconnecting
+2026-04-11 19:44:48.196 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:44:52.844 [main] INFO  Server log - collection loaded successfully
+2026-04-11 19:44:52.851 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:45:15.290 [main] INFO  Server log - collection loaded successfully
+2026-04-11 19:45:15.295 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:45:16.724 [main] INFO  Server log - new connection: /127.0.0.1
+2026-04-11 19:45:16.730 [main] INFO  Server log - Server started on port 9001
+2026-04-11 19:45:16.779 [main] INFO  Server log - new request: common.transfer.request.empty.InitRequest@5d99c6b5
+2026-04-11 19:45:16.782 [main] INFO  Server log - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest}]}
+2026-04-11 19:45:26.420 [main] WARN  Server log - connection closed. Reconnecting
+2026-04-11 19:45:26.421 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:45:27.096 [main] INFO  Server log - new connection: /127.0.0.1
+2026-04-11 19:45:27.128 [main] INFO  Server log - new request: common.transfer.request.empty.InitRequest@490caf5f
+2026-04-11 19:45:27.129 [main] INFO  Server log - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest}]}
+2026-04-11 19:49:59.962 [main] WARN  Server log - connection closed. Reconnecting
+2026-04-11 19:49:59.963 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:50:16.819 [main] INFO  Server log - collection loaded successfully
+2026-04-11 19:50:16.827 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:50:17.768 [main] INFO  Server log - new connection: /127.0.0.1
+2026-04-11 19:50:17.771 [main] INFO  Server log - Server started on port 9001
+2026-04-11 19:50:17.821 [main] INFO  Server log - new request: common.transfer.request.empty.InitRequest@5d99c6b5
+2026-04-11 19:50:17.822 [main] INFO  Server log - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest}]}
+2026-04-11 19:50:20.454 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@5b3f61ff
+2026-04-11 19:50:20.463 [main] INFO  Server log - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 21, Last saved: no save occured in current session, Last initialized: 2026-04-11 19:50:16.811924593]}
+2026-04-11 19:50:21.759 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@57576994
+2026-04-11 19:50:21.777 [main] INFO  Server log - sending response: Response{status=OK, body=[id=14
+creation date=2026-03-10T12:19:04.810561421
+name=2
+coordinates=(x=3.000000, y=null)
+from=(x=4, y=null, name=ww)
+to=(x=null, y=23.000000, z=23, name=sds)
+distance=3
+, id=1
+creation date=2026-02-13T11:45
+name=Expressway A1
+coordinates=(x=33.500000, y=106)
+from=(x=95, y=34.567000, name=Novosibirsk)
+to=(x=175.800000, y=52.300000, z=220, name=ewfefew)
+distance=290
+, id=3
+creation date=2026-02-14T16:20
+name=Mountain Pass
+coordinates=(x=78.900002, y=99)
+from=(x=250, y=67.890000, name=Kazan)
+to=(x=310.250000, y=88.100000, z=450, name=Ufa)
+distance=680
+, id=9
+creation date=2026-02-28T13:00:57.753265883
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=10
+creation date=2026-03-04T11:22:57.926140246
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=11
+creation date=2026-03-05T14:02:38.582976090
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=12
+creation date=2026-03-05T14:05:57.131637935
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=13
+creation date=2026-03-05T16:40:23.179839587
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=15
+creation date=2026-03-10T12:20:45.863567205
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=17
+creation date=2026-03-10T12:45:02.896338222
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=18
+creation date=2026-03-10T12:45:06.716830182
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=19
+creation date=2026-03-10T13:43:34.504340677
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=20
+creation date=2026-03-10T13:43:35.446077727
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=21
+creation date=2026-03-10T13:43:36.266114180
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=22
+creation date=2026-03-10T13:43:37.330356842
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=23
+creation date=2026-03-10T17:20:31.866996059
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=24
+creation date=2026-03-25T18:24:35.668461461
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=6
+creation date=2026-02-11T19:05
+name=Northern Trail
+coordinates=(x=89.699997, y=81)
+from=(x=410, y=71.234000, name=Arkhangelsk)
+to=(x=470.600000, y=89.900000, z=95, name=sdsd)
+distance=420
+, id=5
+creation date=2026-02-12T07:15
+name=River Road
+coordinates=(x=67.099998, y=23)
+from=(x=320, y=12.789000, name=Rostov)
+to=(x=380.900000, y=28.400000, z=180, name=Volgograd)
+distance=510
+, id=7
+creation date=2026-02-10T13:25
+name=Trans-Siberian Link
+coordinates=(x=22.400000, y=56)
+from=(x=180, y=45.678000, name=Irkutsk)
+to=(x=240.300000, y=63.200000, z=380, name=Chita)
+distance=750
+, id=16
+creation date=2026-03-10T12:25:28.046112067
+name=sd
+coordinates=(x=232.000000, y=null)
+from=(x=2, y=2.000000, name=3)
+to=(x=null, y=3.000000, z=2, name=2)
+distance=2
+]}
+2026-04-11 19:50:23.842 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@6cce16f4
+2026-04-11 19:50:23.850 [main] INFO  Server log - sending response: Response{status=OK, body=[id=14
+creation date=2026-03-10T12:19:04.810561421
+name=2
+coordinates=(x=3.000000, y=null)
+from=(x=4, y=null, name=ww)
+to=(x=null, y=23.000000, z=23, name=sds)
+distance=3
+, id=1
+creation date=2026-02-13T11:45
+name=Expressway A1
+coordinates=(x=33.500000, y=106)
+from=(x=95, y=34.567000, name=Novosibirsk)
+to=(x=175.800000, y=52.300000, z=220, name=ewfefew)
+distance=290
+, id=3
+creation date=2026-02-14T16:20
+name=Mountain Pass
+coordinates=(x=78.900002, y=99)
+from=(x=250, y=67.890000, name=Kazan)
+to=(x=310.250000, y=88.100000, z=450, name=Ufa)
+distance=680
+, id=9
+creation date=2026-02-28T13:00:57.753265883
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=10
+creation date=2026-03-04T11:22:57.926140246
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=11
+creation date=2026-03-05T14:02:38.582976090
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=12
+creation date=2026-03-05T14:05:57.131637935
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=13
+creation date=2026-03-05T16:40:23.179839587
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=15
+creation date=2026-03-10T12:20:45.863567205
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=17
+creation date=2026-03-10T12:45:02.896338222
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=18
+creation date=2026-03-10T12:45:06.716830182
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=19
+creation date=2026-03-10T13:43:34.504340677
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=20
+creation date=2026-03-10T13:43:35.446077727
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=21
+creation date=2026-03-10T13:43:36.266114180
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=22
+creation date=2026-03-10T13:43:37.330356842
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=23
+creation date=2026-03-10T17:20:31.866996059
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=24
+creation date=2026-03-25T18:24:35.668461461
+name=NAME
+coordinates=(x=1.000000, y=1)
+from=(x=2, y=2.000000, name=FROM)
+to=(x=3.000000, y=3.000000, z=3, name=TO)
+distance=4
+, id=6
+creation date=2026-02-11T19:05
+name=Northern Trail
+coordinates=(x=89.699997, y=81)
+from=(x=410, y=71.234000, name=Arkhangelsk)
+to=(x=470.600000, y=89.900000, z=95, name=sdsd)
+distance=420
+, id=5
+creation date=2026-02-12T07:15
+name=River Road
+coordinates=(x=67.099998, y=23)
+from=(x=320, y=12.789000, name=Rostov)
+to=(x=380.900000, y=28.400000, z=180, name=Volgograd)
+distance=510
+, id=7
+creation date=2026-02-10T13:25
+name=Trans-Siberian Link
+coordinates=(x=22.400000, y=56)
+from=(x=180, y=45.678000, name=Irkutsk)
+to=(x=240.300000, y=63.200000, z=380, name=Chita)
+distance=750
+, id=16
+creation date=2026-03-10T12:25:28.046112067
+name=sd
+coordinates=(x=232.000000, y=null)
+from=(x=2, y=2.000000, name=3)
+to=(x=null, y=3.000000, z=2, name=2)
+distance=2
+]}
+2026-04-11 19:50:27.169 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@ca30bc1
+2026-04-11 19:50:27.170 [main] INFO  Server log - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 21, Last saved: no save occured in current session, Last initialized: 2026-04-11 19:50:16.811924593]}
+2026-04-11 19:50:29.387 [main] WARN  Server log - connection closed. Reconnecting
+2026-04-11 19:50:29.387 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:51:21.545 [main] INFO  Server log - collection loaded successfully
+2026-04-11 19:51:21.550 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:51:24.482 [main] INFO  Server log - new connection: /127.0.0.1
+2026-04-11 19:51:24.498 [main] INFO  Server log - Server started on port 9001
+2026-04-11 19:51:24.569 [main] INFO  Server log - new request: common.transfer.request.empty.InitRequest@5d99c6b5
+2026-04-11 19:51:24.570 [main] INFO  Server log - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest}]}
+2026-04-11 19:51:27.512 [main] WARN  Server log - connection closed. Reconnecting
+2026-04-11 19:51:27.513 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:54:01.171 [main] INFO  Server log - collection loaded successfully
+2026-04-11 19:54:01.177 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:54:01.897 [main] INFO  Server log - new connection: /127.0.0.1
+2026-04-11 19:54:01.913 [main] INFO  Server log - Server started on port 9001
+2026-04-11 19:54:01.983 [main] INFO  Server log - new request: common.transfer.request.empty.InitRequest@6b6776cb
+2026-04-11 19:54:01.985 [main] INFO  Server log - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest}]}
+2026-04-11 19:54:03.976 [main] WARN  Server log - connection closed. Reconnecting
+2026-04-11 19:54:03.977 [main] INFO  Server log - waiting for connection...
+2026-04-11 19:54:04.748 [main] INFO  Server log - new connection: /127.0.0.1
+2026-04-11 19:54:04.781 [main] INFO  Server log - new request: common.transfer.request.empty.InitRequest@2b175c00
+2026-04-11 19:54:04.781 [main] INFO  Server log - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest}]}
+2026-04-11 19:54:06.741 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@30c8681
+2026-04-11 19:54:06.751 [main] INFO  Server log - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 100352, Last saved: no save occured in current session, Last initialized: 2026-04-11 19:54:01.144889672]}
+2026-04-11 19:54:08.624 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@19e7a160
+2026-04-11 19:54:10.126 [main] INFO  Server log - sending response: Response{chunk 1/221, size=456}
+2026-04-11 19:54:10.199 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@62e8d54a
+2026-04-11 19:54:10.200 [main] INFO  Server log - sending response: Response{chunk 2/221, size=456}
+2026-04-11 19:54:10.298 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3c4534fe
+2026-04-11 19:54:10.298 [main] INFO  Server log - sending response: Response{chunk 3/221, size=456}
+2026-04-11 19:54:10.388 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@78a33ef9
+2026-04-11 19:54:10.388 [main] INFO  Server log - sending response: Response{chunk 4/221, size=456}
+2026-04-11 19:54:10.476 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1e69c600
+2026-04-11 19:54:10.476 [main] INFO  Server log - sending response: Response{chunk 5/221, size=456}
+2026-04-11 19:54:10.565 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@24e51b3e
+2026-04-11 19:54:10.565 [main] INFO  Server log - sending response: Response{chunk 6/221, size=456}
+2026-04-11 19:54:10.675 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@39a1035f
+2026-04-11 19:54:10.675 [main] INFO  Server log - sending response: Response{chunk 7/221, size=456}
+2026-04-11 19:54:10.795 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3a25ee1f
+2026-04-11 19:54:10.795 [main] INFO  Server log - sending response: Response{chunk 8/221, size=456}
+2026-04-11 19:54:10.914 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@433b6940
+2026-04-11 19:54:10.914 [main] INFO  Server log - sending response: Response{chunk 9/221, size=456}
+2026-04-11 19:54:11.026 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2641e604
+2026-04-11 19:54:11.026 [main] INFO  Server log - sending response: Response{chunk 10/221, size=456}
+2026-04-11 19:54:11.145 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1df5c993
+2026-04-11 19:54:11.145 [main] INFO  Server log - sending response: Response{chunk 11/221, size=456}
+2026-04-11 19:54:11.268 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5985d639
+2026-04-11 19:54:11.268 [main] INFO  Server log - sending response: Response{chunk 12/221, size=456}
+2026-04-11 19:54:11.389 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@315a0472
+2026-04-11 19:54:11.389 [main] INFO  Server log - sending response: Response{chunk 13/221, size=456}
+2026-04-11 19:54:11.484 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@54990bdf
+2026-04-11 19:54:11.485 [main] INFO  Server log - sending response: Response{chunk 14/221, size=456}
+2026-04-11 19:54:11.591 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@500e76d6
+2026-04-11 19:54:11.592 [main] INFO  Server log - sending response: Response{chunk 15/221, size=456}
+2026-04-11 19:54:11.726 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@361eaffb
+2026-04-11 19:54:11.726 [main] INFO  Server log - sending response: Response{chunk 16/221, size=456}
+2026-04-11 19:54:11.848 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1d311879
+2026-04-11 19:54:11.848 [main] INFO  Server log - sending response: Response{chunk 17/221, size=456}
+2026-04-11 19:54:11.905 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1efd9eab
+2026-04-11 19:54:11.905 [main] INFO  Server log - sending response: Response{chunk 18/221, size=456}
+2026-04-11 19:54:12.030 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6f0f5d99
+2026-04-11 19:54:12.030 [main] INFO  Server log - sending response: Response{chunk 19/221, size=456}
+2026-04-11 19:54:12.124 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@31a9ef2
+2026-04-11 19:54:12.124 [main] INFO  Server log - sending response: Response{chunk 20/221, size=456}
+2026-04-11 19:54:12.245 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@617a6be6
+2026-04-11 19:54:12.246 [main] INFO  Server log - sending response: Response{chunk 21/221, size=456}
+2026-04-11 19:54:12.368 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@63100885
+2026-04-11 19:54:12.369 [main] INFO  Server log - sending response: Response{chunk 22/221, size=456}
+2026-04-11 19:54:12.461 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@443bd232
+2026-04-11 19:54:12.461 [main] INFO  Server log - sending response: Response{chunk 23/221, size=456}
+2026-04-11 19:54:12.583 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3394caa7
+2026-04-11 19:54:12.583 [main] INFO  Server log - sending response: Response{chunk 24/221, size=456}
+2026-04-11 19:54:12.702 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@673f7e05
+2026-04-11 19:54:12.703 [main] INFO  Server log - sending response: Response{chunk 25/221, size=456}
+2026-04-11 19:54:12.825 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@9b10567
+2026-04-11 19:54:12.825 [main] INFO  Server log - sending response: Response{chunk 26/221, size=456}
+2026-04-11 19:54:12.899 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7daee385
+2026-04-11 19:54:12.900 [main] INFO  Server log - sending response: Response{chunk 27/221, size=456}
+2026-04-11 19:54:13.020 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@32abe199
+2026-04-11 19:54:13.020 [main] INFO  Server log - sending response: Response{chunk 28/221, size=456}
+2026-04-11 19:54:13.142 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3ecca657
+2026-04-11 19:54:13.142 [main] INFO  Server log - sending response: Response{chunk 29/221, size=456}
+2026-04-11 19:54:13.264 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7ab21b23
+2026-04-11 19:54:13.264 [main] INFO  Server log - sending response: Response{chunk 30/221, size=456}
+2026-04-11 19:54:13.328 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@20097ef1
+2026-04-11 19:54:13.329 [main] INFO  Server log - sending response: Response{chunk 31/221, size=456}
+2026-04-11 19:54:13.452 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5ba272aa
+2026-04-11 19:54:13.452 [main] INFO  Server log - sending response: Response{chunk 32/221, size=456}
+2026-04-11 19:54:13.572 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@53163a5b
+2026-04-11 19:54:13.573 [main] INFO  Server log - sending response: Response{chunk 33/221, size=456}
+2026-04-11 19:54:13.694 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@268adfb3
+2026-04-11 19:54:13.695 [main] INFO  Server log - sending response: Response{chunk 34/221, size=456}
+2026-04-11 19:54:13.816 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6d0388e8
+2026-04-11 19:54:13.816 [main] INFO  Server log - sending response: Response{chunk 35/221, size=456}
+2026-04-11 19:54:13.935 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2ea054ba
+2026-04-11 19:54:13.935 [main] INFO  Server log - sending response: Response{chunk 36/221, size=456}
+2026-04-11 19:54:14.058 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7504aa66
+2026-04-11 19:54:14.058 [main] INFO  Server log - sending response: Response{chunk 37/221, size=456}
+2026-04-11 19:54:14.178 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@130b436d
+2026-04-11 19:54:14.178 [main] INFO  Server log - sending response: Response{chunk 38/221, size=456}
+2026-04-11 19:54:14.306 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2d9ada6
+2026-04-11 19:54:14.307 [main] INFO  Server log - sending response: Response{chunk 39/221, size=456}
+2026-04-11 19:54:14.428 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6773d5cb
+2026-04-11 19:54:14.428 [main] INFO  Server log - sending response: Response{chunk 40/221, size=456}
+2026-04-11 19:54:14.527 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5dd3311a
+2026-04-11 19:54:14.527 [main] INFO  Server log - sending response: Response{chunk 41/221, size=456}
+2026-04-11 19:54:14.643 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@15c0e33
+2026-04-11 19:54:14.643 [main] INFO  Server log - sending response: Response{chunk 42/221, size=456}
+2026-04-11 19:54:14.764 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3f36f2a3
+2026-04-11 19:54:14.764 [main] INFO  Server log - sending response: Response{chunk 43/221, size=456}
+2026-04-11 19:54:14.868 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@286d1b7f
+2026-04-11 19:54:14.869 [main] INFO  Server log - sending response: Response{chunk 44/221, size=456}
+2026-04-11 19:54:14.990 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6c0af593
+2026-04-11 19:54:14.990 [main] INFO  Server log - sending response: Response{chunk 45/221, size=456}
+2026-04-11 19:54:15.095 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@55cbed39
+2026-04-11 19:54:15.096 [main] INFO  Server log - sending response: Response{chunk 46/221, size=456}
+2026-04-11 19:54:15.228 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7324bec3
+2026-04-11 19:54:15.228 [main] INFO  Server log - sending response: Response{chunk 47/221, size=456}
+2026-04-11 19:54:15.351 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@156d0021
+2026-04-11 19:54:15.351 [main] INFO  Server log - sending response: Response{chunk 48/221, size=456}
+2026-04-11 19:54:15.474 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@52a97006
+2026-04-11 19:54:15.474 [main] INFO  Server log - sending response: Response{chunk 49/221, size=456}
+2026-04-11 19:54:15.587 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@45d9ea59
+2026-04-11 19:54:15.588 [main] INFO  Server log - sending response: Response{chunk 50/221, size=456}
+2026-04-11 19:54:15.706 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4d3dedd5
+2026-04-11 19:54:15.706 [main] INFO  Server log - sending response: Response{chunk 51/221, size=456}
+2026-04-11 19:54:15.828 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@70ece8b9
+2026-04-11 19:54:15.828 [main] INFO  Server log - sending response: Response{chunk 52/221, size=456}
+2026-04-11 19:54:15.948 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@10e94431
+2026-04-11 19:54:15.948 [main] INFO  Server log - sending response: Response{chunk 53/221, size=456}
+2026-04-11 19:54:16.071 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6f621ee1
+2026-04-11 19:54:16.071 [main] INFO  Server log - sending response: Response{chunk 54/221, size=456}
+2026-04-11 19:54:16.140 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7d15fa6e
+2026-04-11 19:54:16.141 [main] INFO  Server log - sending response: Response{chunk 55/221, size=456}
+2026-04-11 19:54:16.266 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3477dc9c
+2026-04-11 19:54:16.266 [main] INFO  Server log - sending response: Response{chunk 56/221, size=456}
+2026-04-11 19:54:16.388 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3958d835
+2026-04-11 19:54:16.389 [main] INFO  Server log - sending response: Response{chunk 57/221, size=456}
+2026-04-11 19:54:16.509 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1ca9df09
+2026-04-11 19:54:16.509 [main] INFO  Server log - sending response: Response{chunk 58/221, size=456}
+2026-04-11 19:54:16.631 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@22169658
+2026-04-11 19:54:16.631 [main] INFO  Server log - sending response: Response{chunk 59/221, size=456}
+2026-04-11 19:54:16.700 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@57c5b4c2
+2026-04-11 19:54:16.700 [main] INFO  Server log - sending response: Response{chunk 60/221, size=456}
+2026-04-11 19:54:16.824 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2b1308dd
+2026-04-11 19:54:16.824 [main] INFO  Server log - sending response: Response{chunk 61/221, size=456}
+2026-04-11 19:54:16.945 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@76c3a3a5
+2026-04-11 19:54:16.945 [main] INFO  Server log - sending response: Response{chunk 62/221, size=456}
+2026-04-11 19:54:17.040 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@127a0149
+2026-04-11 19:54:17.040 [main] INFO  Server log - sending response: Response{chunk 63/221, size=456}
+2026-04-11 19:54:17.155 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2bcb0aeb
+2026-04-11 19:54:17.155 [main] INFO  Server log - sending response: Response{chunk 64/221, size=456}
+2026-04-11 19:54:17.277 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@56091d33
+2026-04-11 19:54:17.277 [main] INFO  Server log - sending response: Response{chunk 65/221, size=456}
+2026-04-11 19:54:17.400 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@15d0c7e7
+2026-04-11 19:54:17.400 [main] INFO  Server log - sending response: Response{chunk 66/221, size=456}
+2026-04-11 19:54:17.463 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3109a7b9
+2026-04-11 19:54:17.464 [main] INFO  Server log - sending response: Response{chunk 67/221, size=456}
+2026-04-11 19:54:17.586 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@538e349
+2026-04-11 19:54:17.586 [main] INFO  Server log - sending response: Response{chunk 68/221, size=456}
+2026-04-11 19:54:17.654 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@448ce23f
+2026-04-11 19:54:17.654 [main] INFO  Server log - sending response: Response{chunk 69/221, size=456}
+2026-04-11 19:54:17.777 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@f102b64
+2026-04-11 19:54:17.777 [main] INFO  Server log - sending response: Response{chunk 70/221, size=456}
+2026-04-11 19:54:17.900 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7c1eb86c
+2026-04-11 19:54:17.900 [main] INFO  Server log - sending response: Response{chunk 71/221, size=456}
+2026-04-11 19:54:18.023 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5c49c635
+2026-04-11 19:54:18.023 [main] INFO  Server log - sending response: Response{chunk 72/221, size=456}
+2026-04-11 19:54:18.144 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@400952f0
+2026-04-11 19:54:18.144 [main] INFO  Server log - sending response: Response{chunk 73/221, size=456}
+2026-04-11 19:54:18.268 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2f3a5506
+2026-04-11 19:54:18.268 [main] INFO  Server log - sending response: Response{chunk 74/221, size=456}
+2026-04-11 19:54:18.391 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@681b2e38
+2026-04-11 19:54:18.391 [main] INFO  Server log - sending response: Response{chunk 75/221, size=456}
+2026-04-11 19:54:18.460 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@60723a73
+2026-04-11 19:54:18.461 [main] INFO  Server log - sending response: Response{chunk 76/221, size=456}
+2026-04-11 19:54:18.568 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1f8d9e43
+2026-04-11 19:54:18.569 [main] INFO  Server log - sending response: Response{chunk 77/221, size=456}
+2026-04-11 19:54:18.678 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@76bb37f
+2026-04-11 19:54:18.678 [main] INFO  Server log - sending response: Response{chunk 78/221, size=456}
+2026-04-11 19:54:18.801 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1354fa56
+2026-04-11 19:54:18.801 [main] INFO  Server log - sending response: Response{chunk 79/221, size=456}
+2026-04-11 19:54:18.921 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3743d532
+2026-04-11 19:54:18.921 [main] INFO  Server log - sending response: Response{chunk 80/221, size=456}
+2026-04-11 19:54:19.041 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@38b2199f
+2026-04-11 19:54:19.041 [main] INFO  Server log - sending response: Response{chunk 81/221, size=456}
+2026-04-11 19:54:19.142 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2544afae
+2026-04-11 19:54:19.142 [main] INFO  Server log - sending response: Response{chunk 82/221, size=456}
+2026-04-11 19:54:19.262 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@353cd345
+2026-04-11 19:54:19.262 [main] INFO  Server log - sending response: Response{chunk 83/221, size=456}
+2026-04-11 19:54:19.385 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@426365a3
+2026-04-11 19:54:19.385 [main] INFO  Server log - sending response: Response{chunk 84/221, size=456}
+2026-04-11 19:54:19.507 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@19688dd6
+2026-04-11 19:54:19.507 [main] INFO  Server log - sending response: Response{chunk 85/221, size=456}
+2026-04-11 19:54:19.586 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1629f470
+2026-04-11 19:54:19.587 [main] INFO  Server log - sending response: Response{chunk 86/221, size=456}
+2026-04-11 19:54:19.710 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5937f181
+2026-04-11 19:54:19.710 [main] INFO  Server log - sending response: Response{chunk 87/221, size=456}
+2026-04-11 19:54:19.832 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@71bec4cc
+2026-04-11 19:54:19.832 [main] INFO  Server log - sending response: Response{chunk 88/221, size=456}
+2026-04-11 19:54:19.905 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@78440fe1
+2026-04-11 19:54:19.905 [main] INFO  Server log - sending response: Response{chunk 89/221, size=456}
+2026-04-11 19:54:20.028 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@43f96f0a
+2026-04-11 19:54:20.028 [main] INFO  Server log - sending response: Response{chunk 90/221, size=456}
+2026-04-11 19:54:20.149 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5734bfa4
+2026-04-11 19:54:20.149 [main] INFO  Server log - sending response: Response{chunk 91/221, size=456}
+2026-04-11 19:54:20.272 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2fe4ac00
+2026-04-11 19:54:20.272 [main] INFO  Server log - sending response: Response{chunk 92/221, size=456}
+2026-04-11 19:54:20.393 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@108cfe3f
+2026-04-11 19:54:20.393 [main] INFO  Server log - sending response: Response{chunk 93/221, size=456}
+2026-04-11 19:54:20.515 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3e76b54c
+2026-04-11 19:54:20.515 [main] INFO  Server log - sending response: Response{chunk 94/221, size=456}
+2026-04-11 19:54:20.582 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1a1e7978
+2026-04-11 19:54:20.582 [main] INFO  Server log - sending response: Response{chunk 95/221, size=456}
+2026-04-11 19:54:20.701 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2fe1653
+2026-04-11 19:54:20.701 [main] INFO  Server log - sending response: Response{chunk 96/221, size=456}
+2026-04-11 19:54:20.823 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@dd64997
+2026-04-11 19:54:20.823 [main] INFO  Server log - sending response: Response{chunk 97/221, size=456}
+2026-04-11 19:54:20.891 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@21d4b630
+2026-04-11 19:54:20.891 [main] INFO  Server log - sending response: Response{chunk 98/221, size=456}
+2026-04-11 19:54:21.014 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@11b81403
+2026-04-11 19:54:21.014 [main] INFO  Server log - sending response: Response{chunk 99/221, size=456}
+2026-04-11 19:54:21.099 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1b1e5578
+2026-04-11 19:54:21.099 [main] INFO  Server log - sending response: Response{chunk 100/221, size=456}
+2026-04-11 19:54:21.221 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@32462c59
+2026-04-11 19:54:21.221 [main] INFO  Server log - sending response: Response{chunk 101/221, size=456}
+2026-04-11 19:54:21.290 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@649bb59f
+2026-04-11 19:54:21.290 [main] INFO  Server log - sending response: Response{chunk 102/221, size=456}
+2026-04-11 19:54:21.409 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@33fb5831
+2026-04-11 19:54:21.409 [main] INFO  Server log - sending response: Response{chunk 103/221, size=456}
+2026-04-11 19:54:21.530 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4df1198d
+2026-04-11 19:54:21.530 [main] INFO  Server log - sending response: Response{chunk 104/221, size=456}
+2026-04-11 19:54:21.649 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@492ad11b
+2026-04-11 19:54:21.649 [main] INFO  Server log - sending response: Response{chunk 105/221, size=456}
+2026-04-11 19:54:21.770 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@458933bf
+2026-04-11 19:54:21.770 [main] INFO  Server log - sending response: Response{chunk 106/221, size=456}
+2026-04-11 19:54:21.889 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1dbb95dc
+2026-04-11 19:54:21.889 [main] INFO  Server log - sending response: Response{chunk 107/221, size=456}
+2026-04-11 19:54:22.007 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3f64eab
+2026-04-11 19:54:22.007 [main] INFO  Server log - sending response: Response{chunk 108/221, size=456}
+2026-04-11 19:54:22.105 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@21d51d00
+2026-04-11 19:54:22.105 [main] INFO  Server log - sending response: Response{chunk 109/221, size=456}
+2026-04-11 19:54:22.223 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@401660fa
+2026-04-11 19:54:22.223 [main] INFO  Server log - sending response: Response{chunk 110/221, size=456}
+2026-04-11 19:54:22.324 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7887a178
+2026-04-11 19:54:22.325 [main] INFO  Server log - sending response: Response{chunk 111/221, size=456}
+2026-04-11 19:54:22.445 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6cceca59
+2026-04-11 19:54:22.445 [main] INFO  Server log - sending response: Response{chunk 112/221, size=456}
+2026-04-11 19:54:22.567 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@53f0182b
+2026-04-11 19:54:22.567 [main] INFO  Server log - sending response: Response{chunk 113/221, size=456}
+2026-04-11 19:54:22.638 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3d2a7f3d
+2026-04-11 19:54:22.638 [main] INFO  Server log - sending response: Response{chunk 114/221, size=456}
+2026-04-11 19:54:22.758 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@a965de4
+2026-04-11 19:54:22.758 [main] INFO  Server log - sending response: Response{chunk 115/221, size=456}
+2026-04-11 19:54:22.880 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6a25a3db
+2026-04-11 19:54:22.880 [main] INFO  Server log - sending response: Response{chunk 116/221, size=456}
+2026-04-11 19:54:22.999 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4c01855c
+2026-04-11 19:54:23.000 [main] INFO  Server log - sending response: Response{chunk 117/221, size=456}
+2026-04-11 19:54:23.117 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7951e66d
+2026-04-11 19:54:23.117 [main] INFO  Server log - sending response: Response{chunk 118/221, size=456}
+2026-04-11 19:54:23.231 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@33de82be
+2026-04-11 19:54:23.231 [main] INFO  Server log - sending response: Response{chunk 119/221, size=456}
+2026-04-11 19:54:23.350 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@78e1af35
+2026-04-11 19:54:23.350 [main] INFO  Server log - sending response: Response{chunk 120/221, size=456}
+2026-04-11 19:54:23.470 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@709ef101
+2026-04-11 19:54:23.470 [main] INFO  Server log - sending response: Response{chunk 121/221, size=456}
+2026-04-11 19:54:23.589 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2d9c4c47
+2026-04-11 19:54:23.589 [main] INFO  Server log - sending response: Response{chunk 122/221, size=456}
+2026-04-11 19:54:23.710 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@57c4f0c4
+2026-04-11 19:54:23.710 [main] INFO  Server log - sending response: Response{chunk 123/221, size=456}
+2026-04-11 19:54:23.833 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1ec61b94
+2026-04-11 19:54:23.833 [main] INFO  Server log - sending response: Response{chunk 124/221, size=456}
+2026-04-11 19:54:23.908 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6f3192c3
+2026-04-11 19:54:23.908 [main] INFO  Server log - sending response: Response{chunk 125/221, size=456}
+2026-04-11 19:54:24.031 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@139378a4
+2026-04-11 19:54:24.031 [main] INFO  Server log - sending response: Response{chunk 126/221, size=456}
+2026-04-11 19:54:24.088 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@68dd5e3f
+2026-04-11 19:54:24.089 [main] INFO  Server log - sending response: Response{chunk 127/221, size=456}
+2026-04-11 19:54:24.213 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@675eb050
+2026-04-11 19:54:24.213 [main] INFO  Server log - sending response: Response{chunk 128/221, size=456}
+2026-04-11 19:54:24.334 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@67851890
+2026-04-11 19:54:24.334 [main] INFO  Server log - sending response: Response{chunk 129/221, size=456}
+2026-04-11 19:54:24.456 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6b7491dc
+2026-04-11 19:54:24.456 [main] INFO  Server log - sending response: Response{chunk 130/221, size=456}
+2026-04-11 19:54:24.544 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@691e785e
+2026-04-11 19:54:24.544 [main] INFO  Server log - sending response: Response{chunk 131/221, size=456}
+2026-04-11 19:54:24.668 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@706f52c2
+2026-04-11 19:54:24.668 [main] INFO  Server log - sending response: Response{chunk 132/221, size=456}
+2026-04-11 19:54:24.810 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3d376ab6
+2026-04-11 19:54:24.810 [main] INFO  Server log - sending response: Response{chunk 133/221, size=456}
+2026-04-11 19:54:24.932 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@711ed41
+2026-04-11 19:54:24.932 [main] INFO  Server log - sending response: Response{chunk 134/221, size=456}
+2026-04-11 19:54:25.020 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1f951451
+2026-04-11 19:54:25.020 [main] INFO  Server log - sending response: Response{chunk 135/221, size=456}
+2026-04-11 19:54:25.115 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7197b085
+2026-04-11 19:54:25.115 [main] INFO  Server log - sending response: Response{chunk 136/221, size=456}
+2026-04-11 19:54:25.231 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@256e6131
+2026-04-11 19:54:25.232 [main] INFO  Server log - sending response: Response{chunk 137/221, size=456}
+2026-04-11 19:54:25.352 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@43580f01
+2026-04-11 19:54:25.352 [main] INFO  Server log - sending response: Response{chunk 138/221, size=456}
+2026-04-11 19:54:25.473 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@304c56c8
+2026-04-11 19:54:25.473 [main] INFO  Server log - sending response: Response{chunk 139/221, size=456}
+2026-04-11 19:54:25.594 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4714db2b
+2026-04-11 19:54:25.594 [main] INFO  Server log - sending response: Response{chunk 140/221, size=456}
+2026-04-11 19:54:25.716 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@69ae5416
+2026-04-11 19:54:25.716 [main] INFO  Server log - sending response: Response{chunk 141/221, size=456}
+2026-04-11 19:54:25.796 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@13563c89
+2026-04-11 19:54:25.796 [main] INFO  Server log - sending response: Response{chunk 142/221, size=456}
+2026-04-11 19:54:25.924 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@44d03666
+2026-04-11 19:54:25.924 [main] INFO  Server log - sending response: Response{chunk 143/221, size=456}
+2026-04-11 19:54:26.045 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@266bf2da
+2026-04-11 19:54:26.045 [main] INFO  Server log - sending response: Response{chunk 144/221, size=456}
+2026-04-11 19:54:26.167 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1a81416f
+2026-04-11 19:54:26.167 [main] INFO  Server log - sending response: Response{chunk 145/221, size=456}
+2026-04-11 19:54:26.234 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@65fa57d8
+2026-04-11 19:54:26.234 [main] INFO  Server log - sending response: Response{chunk 146/221, size=456}
+2026-04-11 19:54:26.357 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7a1fea4
+2026-04-11 19:54:26.357 [main] INFO  Server log - sending response: Response{chunk 147/221, size=456}
+2026-04-11 19:54:26.436 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@fc8c470
+2026-04-11 19:54:26.436 [main] INFO  Server log - sending response: Response{chunk 148/221, size=456}
+2026-04-11 19:54:26.560 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4df5654d
+2026-04-11 19:54:26.560 [main] INFO  Server log - sending response: Response{chunk 149/221, size=456}
+2026-04-11 19:54:26.681 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3ce74359
+2026-04-11 19:54:26.681 [main] INFO  Server log - sending response: Response{chunk 150/221, size=456}
+2026-04-11 19:54:26.798 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@48d801b9
+2026-04-11 19:54:26.798 [main] INFO  Server log - sending response: Response{chunk 151/221, size=456}
+2026-04-11 19:54:26.917 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@29a03ae7
+2026-04-11 19:54:26.917 [main] INFO  Server log - sending response: Response{chunk 152/221, size=456}
+2026-04-11 19:54:27.035 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3db06e3
+2026-04-11 19:54:27.035 [main] INFO  Server log - sending response: Response{chunk 153/221, size=456}
+2026-04-11 19:54:27.162 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2424ec6d
+2026-04-11 19:54:27.162 [main] INFO  Server log - sending response: Response{chunk 154/221, size=456}
+2026-04-11 19:54:27.283 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5b05866b
+2026-04-11 19:54:27.283 [main] INFO  Server log - sending response: Response{chunk 155/221, size=456}
+2026-04-11 19:54:27.403 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@11dfe58e
+2026-04-11 19:54:27.403 [main] INFO  Server log - sending response: Response{chunk 156/221, size=456}
+2026-04-11 19:54:27.524 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2427819a
+2026-04-11 19:54:27.524 [main] INFO  Server log - sending response: Response{chunk 157/221, size=456}
+2026-04-11 19:54:27.645 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@666f7bc2
+2026-04-11 19:54:27.645 [main] INFO  Server log - sending response: Response{chunk 158/221, size=456}
+2026-04-11 19:54:27.765 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1ede8876
+2026-04-11 19:54:27.765 [main] INFO  Server log - sending response: Response{chunk 159/221, size=456}
+2026-04-11 19:54:27.886 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5f515491
+2026-04-11 19:54:27.886 [main] INFO  Server log - sending response: Response{chunk 160/221, size=456}
+2026-04-11 19:54:28.005 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6e00ce19
+2026-04-11 19:54:28.005 [main] INFO  Server log - sending response: Response{chunk 161/221, size=456}
+2026-04-11 19:54:28.126 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4fa8cd36
+2026-04-11 19:54:28.126 [main] INFO  Server log - sending response: Response{chunk 162/221, size=456}
+2026-04-11 19:54:28.234 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@130e8ed3
+2026-04-11 19:54:28.234 [main] INFO  Server log - sending response: Response{chunk 163/221, size=456}
+2026-04-11 19:54:28.330 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@430be0ef
+2026-04-11 19:54:28.330 [main] INFO  Server log - sending response: Response{chunk 164/221, size=456}
+2026-04-11 19:54:28.453 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6e61238f
+2026-04-11 19:54:28.453 [main] INFO  Server log - sending response: Response{chunk 165/221, size=456}
+2026-04-11 19:54:28.513 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@433f4e98
+2026-04-11 19:54:28.513 [main] INFO  Server log - sending response: Response{chunk 166/221, size=456}
+2026-04-11 19:54:28.636 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2f73a4df
+2026-04-11 19:54:28.636 [main] INFO  Server log - sending response: Response{chunk 167/221, size=456}
+2026-04-11 19:54:28.690 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@50445997
+2026-04-11 19:54:28.690 [main] INFO  Server log - sending response: Response{chunk 168/221, size=456}
+2026-04-11 19:54:28.812 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5269aea5
+2026-04-11 19:54:28.812 [main] INFO  Server log - sending response: Response{chunk 169/221, size=456}
+2026-04-11 19:54:28.909 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7cd21920
+2026-04-11 19:54:28.909 [main] INFO  Server log - sending response: Response{chunk 170/221, size=456}
+2026-04-11 19:54:29.022 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3dc1f335
+2026-04-11 19:54:29.022 [main] INFO  Server log - sending response: Response{chunk 171/221, size=456}
+2026-04-11 19:54:29.118 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@16712d8a
+2026-04-11 19:54:29.118 [main] INFO  Server log - sending response: Response{chunk 172/221, size=456}
+2026-04-11 19:54:29.226 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3c57ccda
+2026-04-11 19:54:29.226 [main] INFO  Server log - sending response: Response{chunk 173/221, size=456}
+2026-04-11 19:54:29.347 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@243f3cde
+2026-04-11 19:54:29.348 [main] INFO  Server log - sending response: Response{chunk 174/221, size=456}
+2026-04-11 19:54:29.471 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@68aa5545
+2026-04-11 19:54:29.471 [main] INFO  Server log - sending response: Response{chunk 175/221, size=456}
+2026-04-11 19:54:29.536 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@ed1f0fa
+2026-04-11 19:54:29.537 [main] INFO  Server log - sending response: Response{chunk 176/221, size=456}
+2026-04-11 19:54:29.659 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@20398963
+2026-04-11 19:54:29.659 [main] INFO  Server log - sending response: Response{chunk 177/221, size=456}
+2026-04-11 19:54:29.726 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@f881e23
+2026-04-11 19:54:29.726 [main] INFO  Server log - sending response: Response{chunk 178/221, size=456}
+2026-04-11 19:54:29.851 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@56cfddc8
+2026-04-11 19:54:29.851 [main] INFO  Server log - sending response: Response{chunk 179/221, size=456}
+2026-04-11 19:54:29.972 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@b2e40f4
+2026-04-11 19:54:29.972 [main] INFO  Server log - sending response: Response{chunk 180/221, size=456}
+2026-04-11 19:54:30.101 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@21aadf7
+2026-04-11 19:54:30.101 [main] INFO  Server log - sending response: Response{chunk 181/221, size=456}
+2026-04-11 19:54:30.221 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3e5180ea
+2026-04-11 19:54:30.221 [main] INFO  Server log - sending response: Response{chunk 182/221, size=456}
+2026-04-11 19:54:30.340 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7d003cc6
+2026-04-11 19:54:30.340 [main] INFO  Server log - sending response: Response{chunk 183/221, size=456}
+2026-04-11 19:54:30.460 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7bd979aa
+2026-04-11 19:54:30.460 [main] INFO  Server log - sending response: Response{chunk 184/221, size=456}
+2026-04-11 19:54:30.565 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@971ccce
+2026-04-11 19:54:30.565 [main] INFO  Server log - sending response: Response{chunk 185/221, size=456}
+2026-04-11 19:54:30.666 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2eb83b74
+2026-04-11 19:54:30.667 [main] INFO  Server log - sending response: Response{chunk 186/221, size=456}
+2026-04-11 19:54:30.789 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@8fff56b
+2026-04-11 19:54:30.789 [main] INFO  Server log - sending response: Response{chunk 187/221, size=456}
+2026-04-11 19:54:30.910 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7277681d
+2026-04-11 19:54:30.910 [main] INFO  Server log - sending response: Response{chunk 188/221, size=456}
+2026-04-11 19:54:31.032 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5c056804
+2026-04-11 19:54:31.032 [main] INFO  Server log - sending response: Response{chunk 189/221, size=456}
+2026-04-11 19:54:31.104 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@43557f0b
+2026-04-11 19:54:31.105 [main] INFO  Server log - sending response: Response{chunk 190/221, size=456}
+2026-04-11 19:54:31.211 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5f9c2d00
+2026-04-11 19:54:31.211 [main] INFO  Server log - sending response: Response{chunk 191/221, size=456}
+2026-04-11 19:54:31.332 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@e456d82
+2026-04-11 19:54:31.332 [main] INFO  Server log - sending response: Response{chunk 192/221, size=456}
+2026-04-11 19:54:31.452 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@78c684d2
+2026-04-11 19:54:31.452 [main] INFO  Server log - sending response: Response{chunk 193/221, size=456}
+2026-04-11 19:54:31.573 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@13ed0a6
+2026-04-11 19:54:31.573 [main] INFO  Server log - sending response: Response{chunk 194/221, size=456}
+2026-04-11 19:54:31.677 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@762463f9
+2026-04-11 19:54:31.677 [main] INFO  Server log - sending response: Response{chunk 195/221, size=456}
+2026-04-11 19:54:31.799 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@442e9403
+2026-04-11 19:54:31.799 [main] INFO  Server log - sending response: Response{chunk 196/221, size=456}
+2026-04-11 19:54:31.878 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@a1795c
+2026-04-11 19:54:31.878 [main] INFO  Server log - sending response: Response{chunk 197/221, size=456}
+2026-04-11 19:54:31.999 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@38c49ac4
+2026-04-11 19:54:31.999 [main] INFO  Server log - sending response: Response{chunk 198/221, size=456}
+2026-04-11 19:54:32.120 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@dc5c4ed
+2026-04-11 19:54:32.120 [main] INFO  Server log - sending response: Response{chunk 199/221, size=456}
+2026-04-11 19:54:32.241 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3ce26214
+2026-04-11 19:54:32.241 [main] INFO  Server log - sending response: Response{chunk 200/221, size=456}
+2026-04-11 19:54:32.336 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3f6748ba
+2026-04-11 19:54:32.336 [main] INFO  Server log - sending response: Response{chunk 201/221, size=456}
+2026-04-11 19:54:32.459 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@27daca20
+2026-04-11 19:54:32.459 [main] INFO  Server log - sending response: Response{chunk 202/221, size=456}
+2026-04-11 19:54:32.539 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6ae80ba1
+2026-04-11 19:54:32.539 [main] INFO  Server log - sending response: Response{chunk 203/221, size=456}
+2026-04-11 19:54:32.661 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@746248d8
+2026-04-11 19:54:32.661 [main] INFO  Server log - sending response: Response{chunk 204/221, size=456}
+2026-04-11 19:54:32.729 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@d459818
+2026-04-11 19:54:32.729 [main] INFO  Server log - sending response: Response{chunk 205/221, size=456}
+2026-04-11 19:54:32.852 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@263530e4
+2026-04-11 19:54:32.852 [main] INFO  Server log - sending response: Response{chunk 206/221, size=456}
+2026-04-11 19:54:32.933 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@561a5b84
+2026-04-11 19:54:32.933 [main] INFO  Server log - sending response: Response{chunk 207/221, size=456}
+2026-04-11 19:54:33.051 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@519117b
+2026-04-11 19:54:33.051 [main] INFO  Server log - sending response: Response{chunk 208/221, size=456}
+2026-04-11 19:54:33.172 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7f3a3105
+2026-04-11 19:54:33.172 [main] INFO  Server log - sending response: Response{chunk 209/221, size=456}
+2026-04-11 19:54:33.270 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@43b74a45
+2026-04-11 19:54:33.270 [main] INFO  Server log - sending response: Response{chunk 210/221, size=456}
+2026-04-11 19:54:33.386 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4a421b1f
+2026-04-11 19:54:33.386 [main] INFO  Server log - sending response: Response{chunk 211/221, size=456}
+2026-04-11 19:54:33.505 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1fbbe1a5
+2026-04-11 19:54:33.505 [main] INFO  Server log - sending response: Response{chunk 212/221, size=456}
+2026-04-11 19:54:33.625 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3dc16920
+2026-04-11 19:54:33.625 [main] INFO  Server log - sending response: Response{chunk 213/221, size=456}
+2026-04-11 19:54:33.744 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@42a59aa1
+2026-04-11 19:54:33.744 [main] INFO  Server log - sending response: Response{chunk 214/221, size=456}
+2026-04-11 19:54:33.870 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@43a6726b
+2026-04-11 19:54:33.870 [main] INFO  Server log - sending response: Response{chunk 215/221, size=456}
+2026-04-11 19:54:33.966 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@58114a98
+2026-04-11 19:54:33.966 [main] INFO  Server log - sending response: Response{chunk 216/221, size=456}
+2026-04-11 19:54:34.111 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3e6d637e
+2026-04-11 19:54:34.111 [main] INFO  Server log - sending response: Response{chunk 217/221, size=456}
+2026-04-11 19:54:34.233 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@b248a9c
+2026-04-11 19:54:34.233 [main] INFO  Server log - sending response: Response{chunk 218/221, size=456}
+2026-04-11 19:54:34.313 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5d7c32d8
+2026-04-11 19:54:34.313 [main] INFO  Server log - sending response: Response{chunk 219/221, size=456}
+2026-04-11 19:54:34.435 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@79269d77
+2026-04-11 19:54:34.435 [main] INFO  Server log - sending response: Response{chunk 220/221, size=456}
+2026-04-11 19:54:34.504 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@64f4ab55
+2026-04-11 19:54:34.504 [main] INFO  Server log - sending response: Response{chunk 221/221, size=32}
+2026-04-11 19:54:41.335 [main] WARN  Server log - connection closed. Reconnecting
+2026-04-11 19:54:41.336 [main] INFO  Server log - waiting for connection...
+2026-04-22 13:26:06.972 [main] INFO  Server log - collection loaded successfully
+2026-04-22 13:26:06.979 [main] INFO  Server log - waiting for connection...
+2026-04-22 13:26:14.896 [main] INFO  Server log - new connection: /127.0.0.1
+2026-04-22 13:26:14.901 [main] INFO  Server log - Server started on port 9001
+2026-04-22 13:26:14.957 [main] INFO  Server log - new request: common.transfer.request.empty.InitRequest@6b6776cb
+2026-04-22 13:26:14.959 [main] INFO  Server log - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest}]}
+2026-04-22 13:26:16.730 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@61eaec38
+2026-04-22 13:26:16.741 [main] INFO  Server log - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 100352, Last saved: no save occured in current session, Last initialized: 2026-04-22 13:26:06.954205246]}
+2026-04-22 13:26:18.683 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@2609b277
+2026-04-22 13:26:20.186 [main] INFO  Server log - sending response: Response{chunk 1/221, size=456}
+2026-04-22 13:26:20.253 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@75699e74
+2026-04-22 13:26:20.253 [main] INFO  Server log - sending response: Response{chunk 2/221, size=456}
+2026-04-22 13:26:20.351 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7b28710e
+2026-04-22 13:26:20.351 [main] INFO  Server log - sending response: Response{chunk 3/221, size=456}
+2026-04-22 13:26:20.440 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3bd81f27
+2026-04-22 13:26:20.440 [main] INFO  Server log - sending response: Response{chunk 4/221, size=456}
+2026-04-22 13:26:20.529 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5460746a
+2026-04-22 13:26:20.529 [main] INFO  Server log - sending response: Response{chunk 5/221, size=456}
+2026-04-22 13:26:20.618 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@63fd1867
+2026-04-22 13:26:20.618 [main] INFO  Server log - sending response: Response{chunk 6/221, size=456}
+2026-04-22 13:26:20.737 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2772d677
+2026-04-22 13:26:20.738 [main] INFO  Server log - sending response: Response{chunk 7/221, size=456}
+2026-04-22 13:26:20.863 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@57dd5298
+2026-04-22 13:26:20.863 [main] INFO  Server log - sending response: Response{chunk 8/221, size=456}
+2026-04-22 13:26:20.986 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3633e189
+2026-04-22 13:26:20.986 [main] INFO  Server log - sending response: Response{chunk 9/221, size=456}
+2026-04-22 13:26:21.087 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@28a23390
+2026-04-22 13:26:21.088 [main] INFO  Server log - sending response: Response{chunk 10/221, size=456}
+2026-04-22 13:26:21.198 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@46b84f6d
+2026-04-22 13:26:21.198 [main] INFO  Server log - sending response: Response{chunk 11/221, size=456}
+2026-04-22 13:26:21.317 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2c669d42
+2026-04-22 13:26:21.317 [main] INFO  Server log - sending response: Response{chunk 12/221, size=456}
+2026-04-22 13:26:21.417 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@32849887
+2026-04-22 13:26:21.417 [main] INFO  Server log - sending response: Response{chunk 13/221, size=456}
+2026-04-22 13:26:21.514 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@307be37b
+2026-04-22 13:26:21.514 [main] INFO  Server log - sending response: Response{chunk 14/221, size=456}
+2026-04-22 13:26:21.639 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7cdf66f
+2026-04-22 13:26:21.639 [main] INFO  Server log - sending response: Response{chunk 15/221, size=456}
+2026-04-22 13:26:21.768 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7ad7646e
+2026-04-22 13:26:21.768 [main] INFO  Server log - sending response: Response{chunk 16/221, size=456}
+2026-04-22 13:26:21.862 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@382aa31e
+2026-04-22 13:26:21.862 [main] INFO  Server log - sending response: Response{chunk 17/221, size=456}
+2026-04-22 13:26:21.958 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@b4debc5
+2026-04-22 13:26:21.959 [main] INFO  Server log - sending response: Response{chunk 18/221, size=456}
+2026-04-22 13:26:22.076 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@44fffc59
+2026-04-22 13:26:22.076 [main] INFO  Server log - sending response: Response{chunk 19/221, size=456}
+2026-04-22 13:26:22.197 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@49e2afca
+2026-04-22 13:26:22.197 [main] INFO  Server log - sending response: Response{chunk 20/221, size=456}
+2026-04-22 13:26:22.305 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@36a7f21b
+2026-04-22 13:26:22.306 [main] INFO  Server log - sending response: Response{chunk 21/221, size=456}
+2026-04-22 13:26:22.416 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7a99709b
+2026-04-22 13:26:22.417 [main] INFO  Server log - sending response: Response{chunk 22/221, size=456}
+2026-04-22 13:26:22.540 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2e93ec6e
+2026-04-22 13:26:22.540 [main] INFO  Server log - sending response: Response{chunk 23/221, size=456}
+2026-04-22 13:26:22.601 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4b5ba8e9
+2026-04-22 13:26:22.602 [main] INFO  Server log - sending response: Response{chunk 24/221, size=456}
+2026-04-22 13:26:22.727 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7be20b02
+2026-04-22 13:26:22.727 [main] INFO  Server log - sending response: Response{chunk 25/221, size=456}
+2026-04-22 13:26:22.849 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3ccd91de
+2026-04-22 13:26:22.850 [main] INFO  Server log - sending response: Response{chunk 26/221, size=456}
+2026-04-22 13:26:22.921 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2512856c
+2026-04-22 13:26:22.922 [main] INFO  Server log - sending response: Response{chunk 27/221, size=456}
+2026-04-22 13:26:23.047 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@12f56061
+2026-04-22 13:26:23.047 [main] INFO  Server log - sending response: Response{chunk 28/221, size=456}
+2026-04-22 13:26:23.147 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4ea304ee
+2026-04-22 13:26:23.148 [main] INFO  Server log - sending response: Response{chunk 29/221, size=456}
+2026-04-22 13:26:23.261 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7cb669a
+2026-04-22 13:26:23.261 [main] INFO  Server log - sending response: Response{chunk 30/221, size=456}
+2026-04-22 13:26:23.357 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7a73a791
+2026-04-22 13:26:23.357 [main] INFO  Server log - sending response: Response{chunk 31/221, size=456}
+2026-04-22 13:26:23.482 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4f456e93
+2026-04-22 13:26:23.482 [main] INFO  Server log - sending response: Response{chunk 32/221, size=456}
+2026-04-22 13:26:23.605 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@746bdf85
+2026-04-22 13:26:23.605 [main] INFO  Server log - sending response: Response{chunk 33/221, size=456}
+2026-04-22 13:26:23.716 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@16da9ef4
+2026-04-22 13:26:23.716 [main] INFO  Server log - sending response: Response{chunk 34/221, size=456}
+2026-04-22 13:26:23.833 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@559a0fe1
+2026-04-22 13:26:23.834 [main] INFO  Server log - sending response: Response{chunk 35/221, size=456}
+2026-04-22 13:26:23.948 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@132f8f30
+2026-04-22 13:26:23.949 [main] INFO  Server log - sending response: Response{chunk 36/221, size=456}
+2026-04-22 13:26:24.057 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5f51cd73
+2026-04-22 13:26:24.057 [main] INFO  Server log - sending response: Response{chunk 37/221, size=456}
+2026-04-22 13:26:24.176 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7ee0a42c
+2026-04-22 13:26:24.177 [main] INFO  Server log - sending response: Response{chunk 38/221, size=456}
+2026-04-22 13:26:24.302 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7e0a42b
+2026-04-22 13:26:24.303 [main] INFO  Server log - sending response: Response{chunk 39/221, size=456}
+2026-04-22 13:26:24.424 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1deaf342
+2026-04-22 13:26:24.424 [main] INFO  Server log - sending response: Response{chunk 40/221, size=456}
+2026-04-22 13:26:24.545 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@63aeb9dc
+2026-04-22 13:26:24.545 [main] INFO  Server log - sending response: Response{chunk 41/221, size=456}
+2026-04-22 13:26:24.665 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@11ba3524
+2026-04-22 13:26:24.665 [main] INFO  Server log - sending response: Response{chunk 42/221, size=456}
+2026-04-22 13:26:24.785 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2ce88f43
+2026-04-22 13:26:24.785 [main] INFO  Server log - sending response: Response{chunk 43/221, size=456}
+2026-04-22 13:26:24.893 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2ccaa4fd
+2026-04-22 13:26:24.893 [main] INFO  Server log - sending response: Response{chunk 44/221, size=456}
+2026-04-22 13:26:25.013 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@440bbdc8
+2026-04-22 13:26:25.013 [main] INFO  Server log - sending response: Response{chunk 45/221, size=456}
+2026-04-22 13:26:25.108 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7d58d3d4
+2026-04-22 13:26:25.108 [main] INFO  Server log - sending response: Response{chunk 46/221, size=456}
+2026-04-22 13:26:25.235 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@38ff1b89
+2026-04-22 13:26:25.235 [main] INFO  Server log - sending response: Response{chunk 47/221, size=456}
+2026-04-22 13:26:25.345 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2cf33729
+2026-04-22 13:26:25.346 [main] INFO  Server log - sending response: Response{chunk 48/221, size=456}
+2026-04-22 13:26:25.471 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@f78a244
+2026-04-22 13:26:25.471 [main] INFO  Server log - sending response: Response{chunk 49/221, size=456}
+2026-04-22 13:26:25.584 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@12ac1b81
+2026-04-22 13:26:25.585 [main] INFO  Server log - sending response: Response{chunk 50/221, size=456}
+2026-04-22 13:26:25.707 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4b40637a
+2026-04-22 13:26:25.707 [main] INFO  Server log - sending response: Response{chunk 51/221, size=456}
+2026-04-22 13:26:25.781 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@602b29ab
+2026-04-22 13:26:25.781 [main] INFO  Server log - sending response: Response{chunk 52/221, size=456}
+2026-04-22 13:26:25.879 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7dc0ef3c
+2026-04-22 13:26:25.879 [main] INFO  Server log - sending response: Response{chunk 53/221, size=456}
+2026-04-22 13:26:25.985 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3f71f4ba
+2026-04-22 13:26:25.986 [main] INFO  Server log - sending response: Response{chunk 54/221, size=456}
+2026-04-22 13:26:26.080 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6410fff1
+2026-04-22 13:26:26.081 [main] INFO  Server log - sending response: Response{chunk 55/221, size=456}
+2026-04-22 13:26:26.197 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@fe97
+2026-04-22 13:26:26.197 [main] INFO  Server log - sending response: Response{chunk 56/221, size=456}
+2026-04-22 13:26:26.295 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3a5ba7f6
+2026-04-22 13:26:26.295 [main] INFO  Server log - sending response: Response{chunk 57/221, size=456}
+2026-04-22 13:26:26.417 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@574aaf5
+2026-04-22 13:26:26.418 [main] INFO  Server log - sending response: Response{chunk 58/221, size=456}
+2026-04-22 13:26:26.486 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@639ee26e
+2026-04-22 13:26:26.487 [main] INFO  Server log - sending response: Response{chunk 59/221, size=456}
+2026-04-22 13:26:26.588 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@709210bd
+2026-04-22 13:26:26.588 [main] INFO  Server log - sending response: Response{chunk 60/221, size=456}
+2026-04-22 13:26:26.701 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1573b4b3
+2026-04-22 13:26:26.702 [main] INFO  Server log - sending response: Response{chunk 61/221, size=456}
+2026-04-22 13:26:26.825 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@432cb308
+2026-04-22 13:26:26.826 [main] INFO  Server log - sending response: Response{chunk 62/221, size=456}
+2026-04-22 13:26:26.946 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@542964ac
+2026-04-22 13:26:26.946 [main] INFO  Server log - sending response: Response{chunk 63/221, size=456}
+2026-04-22 13:26:27.044 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@21004649
+2026-04-22 13:26:27.044 [main] INFO  Server log - sending response: Response{chunk 64/221, size=456}
+2026-04-22 13:26:27.149 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@461266c0
+2026-04-22 13:26:27.150 [main] INFO  Server log - sending response: Response{chunk 65/221, size=456}
+2026-04-22 13:26:27.255 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1a3dc352
+2026-04-22 13:26:27.256 [main] INFO  Server log - sending response: Response{chunk 66/221, size=456}
+2026-04-22 13:26:27.375 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7b4a5287
+2026-04-22 13:26:27.375 [main] INFO  Server log - sending response: Response{chunk 67/221, size=456}
+2026-04-22 13:26:27.496 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@775aede5
+2026-04-22 13:26:27.496 [main] INFO  Server log - sending response: Response{chunk 68/221, size=456}
+2026-04-22 13:26:27.605 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@74c0fd10
+2026-04-22 13:26:27.605 [main] INFO  Server log - sending response: Response{chunk 69/221, size=456}
+2026-04-22 13:26:27.712 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@9f47efe
+2026-04-22 13:26:27.712 [main] INFO  Server log - sending response: Response{chunk 70/221, size=456}
+2026-04-22 13:26:27.826 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@191e1566
+2026-04-22 13:26:27.827 [main] INFO  Server log - sending response: Response{chunk 71/221, size=456}
+2026-04-22 13:26:27.949 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@aa10e31
+2026-04-22 13:26:27.949 [main] INFO  Server log - sending response: Response{chunk 72/221, size=456}
+2026-04-22 13:26:28.017 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5d98fccd
+2026-04-22 13:26:28.018 [main] INFO  Server log - sending response: Response{chunk 73/221, size=456}
+2026-04-22 13:26:28.136 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3ecf7f1d
+2026-04-22 13:26:28.136 [main] INFO  Server log - sending response: Response{chunk 74/221, size=456}
+2026-04-22 13:26:28.258 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4071b128
+2026-04-22 13:26:28.258 [main] INFO  Server log - sending response: Response{chunk 75/221, size=456}
+2026-04-22 13:26:28.315 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2bd69b16
+2026-04-22 13:26:28.315 [main] INFO  Server log - sending response: Response{chunk 76/221, size=456}
+2026-04-22 13:26:28.438 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3b371e38
+2026-04-22 13:26:28.438 [main] INFO  Server log - sending response: Response{chunk 77/221, size=456}
+2026-04-22 13:26:28.577 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4f8ec85a
+2026-04-22 13:26:28.577 [main] INFO  Server log - sending response: Response{chunk 78/221, size=456}
+2026-04-22 13:26:28.700 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@60aa9fdb
+2026-04-22 13:26:28.700 [main] INFO  Server log - sending response: Response{chunk 79/221, size=456}
+2026-04-22 13:26:28.773 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@16aa5214
+2026-04-22 13:26:28.773 [main] INFO  Server log - sending response: Response{chunk 80/221, size=456}
+2026-04-22 13:26:28.875 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7d515384
+2026-04-22 13:26:28.875 [main] INFO  Server log - sending response: Response{chunk 81/221, size=456}
+2026-04-22 13:26:28.995 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1f73f9bb
+2026-04-22 13:26:28.995 [main] INFO  Server log - sending response: Response{chunk 82/221, size=456}
+2026-04-22 13:26:29.118 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@40d974ce
+2026-04-22 13:26:29.118 [main] INFO  Server log - sending response: Response{chunk 83/221, size=456}
+2026-04-22 13:26:29.239 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@31f95c15
+2026-04-22 13:26:29.239 [main] INFO  Server log - sending response: Response{chunk 84/221, size=456}
+2026-04-22 13:26:29.362 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4bc07793
+2026-04-22 13:26:29.362 [main] INFO  Server log - sending response: Response{chunk 85/221, size=456}
+2026-04-22 13:26:29.477 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@12201f09
+2026-04-22 13:26:29.477 [main] INFO  Server log - sending response: Response{chunk 86/221, size=456}
+2026-04-22 13:26:29.595 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@79bdac87
+2026-04-22 13:26:29.595 [main] INFO  Server log - sending response: Response{chunk 87/221, size=456}
+2026-04-22 13:26:29.713 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3c4fae5c
+2026-04-22 13:26:29.713 [main] INFO  Server log - sending response: Response{chunk 88/221, size=456}
+2026-04-22 13:26:29.834 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@14190412
+2026-04-22 13:26:29.834 [main] INFO  Server log - sending response: Response{chunk 89/221, size=456}
+2026-04-22 13:26:29.955 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4aa0a282
+2026-04-22 13:26:29.955 [main] INFO  Server log - sending response: Response{chunk 90/221, size=456}
+2026-04-22 13:26:30.074 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1e5a2b0
+2026-04-22 13:26:30.075 [main] INFO  Server log - sending response: Response{chunk 91/221, size=456}
+2026-04-22 13:26:30.193 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1df1d0bc
+2026-04-22 13:26:30.193 [main] INFO  Server log - sending response: Response{chunk 92/221, size=456}
+2026-04-22 13:26:30.312 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@74fe82a3
+2026-04-22 13:26:30.312 [main] INFO  Server log - sending response: Response{chunk 93/221, size=456}
+2026-04-22 13:26:30.425 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@44ec84be
+2026-04-22 13:26:30.426 [main] INFO  Server log - sending response: Response{chunk 94/221, size=456}
+2026-04-22 13:26:30.547 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@e2b9466
+2026-04-22 13:26:30.547 [main] INFO  Server log - sending response: Response{chunk 95/221, size=456}
+2026-04-22 13:26:30.611 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1fd97a44
+2026-04-22 13:26:30.612 [main] INFO  Server log - sending response: Response{chunk 96/221, size=456}
+2026-04-22 13:26:30.715 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6b0cd3bc
+2026-04-22 13:26:30.715 [main] INFO  Server log - sending response: Response{chunk 97/221, size=456}
+2026-04-22 13:26:30.816 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@58875410
+2026-04-22 13:26:30.817 [main] INFO  Server log - sending response: Response{chunk 98/221, size=456}
+2026-04-22 13:26:30.939 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1b673b37
+2026-04-22 13:26:30.940 [main] INFO  Server log - sending response: Response{chunk 99/221, size=456}
+2026-04-22 13:26:31.018 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@599cad85
+2026-04-22 13:26:31.018 [main] INFO  Server log - sending response: Response{chunk 100/221, size=456}
+2026-04-22 13:26:31.142 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@59d2bd60
+2026-04-22 13:26:31.142 [main] INFO  Server log - sending response: Response{chunk 101/221, size=456}
+2026-04-22 13:26:31.244 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@52e2530
+2026-04-22 13:26:31.244 [main] INFO  Server log - sending response: Response{chunk 102/221, size=456}
+2026-04-22 13:26:31.361 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@20b02af4
+2026-04-22 13:26:31.362 [main] INFO  Server log - sending response: Response{chunk 103/221, size=456}
+2026-04-22 13:26:31.480 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7769de34
+2026-04-22 13:26:31.480 [main] INFO  Server log - sending response: Response{chunk 104/221, size=456}
+2026-04-22 13:26:31.574 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@57cf807e
+2026-04-22 13:26:31.574 [main] INFO  Server log - sending response: Response{chunk 105/221, size=456}
+2026-04-22 13:26:31.699 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@13ce5943
+2026-04-22 13:26:31.699 [main] INFO  Server log - sending response: Response{chunk 106/221, size=456}
+2026-04-22 13:26:31.796 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@14f7d5b4
+2026-04-22 13:26:31.796 [main] INFO  Server log - sending response: Response{chunk 107/221, size=456}
+2026-04-22 13:26:31.891 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@179ecc92
+2026-04-22 13:26:31.891 [main] INFO  Server log - sending response: Response{chunk 108/221, size=456}
+2026-04-22 13:26:31.990 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@aaf7fa
+2026-04-22 13:26:31.990 [main] INFO  Server log - sending response: Response{chunk 109/221, size=456}
+2026-04-22 13:26:32.109 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5c978669
+2026-04-22 13:26:32.109 [main] INFO  Server log - sending response: Response{chunk 110/221, size=456}
+2026-04-22 13:26:32.218 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2adff42a
+2026-04-22 13:26:32.218 [main] INFO  Server log - sending response: Response{chunk 111/221, size=456}
+2026-04-22 13:26:32.344 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@457ecda9
+2026-04-22 13:26:32.344 [main] INFO  Server log - sending response: Response{chunk 112/221, size=456}
+2026-04-22 13:26:32.467 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5d19f1be
+2026-04-22 13:26:32.467 [main] INFO  Server log - sending response: Response{chunk 113/221, size=456}
+2026-04-22 13:26:32.589 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@62f181df
+2026-04-22 13:26:32.589 [main] INFO  Server log - sending response: Response{chunk 114/221, size=456}
+2026-04-22 13:26:32.661 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@77567771
+2026-04-22 13:26:32.662 [main] INFO  Server log - sending response: Response{chunk 115/221, size=456}
+2026-04-22 13:26:32.786 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1bbcbb64
+2026-04-22 13:26:32.786 [main] INFO  Server log - sending response: Response{chunk 116/221, size=456}
+2026-04-22 13:26:32.845 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@45fba27d
+2026-04-22 13:26:32.846 [main] INFO  Server log - sending response: Response{chunk 117/221, size=456}
+2026-04-22 13:26:32.964 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@59e95c57
+2026-04-22 13:26:32.964 [main] INFO  Server log - sending response: Response{chunk 118/221, size=456}
+2026-04-22 13:26:33.086 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4dc85b9e
+2026-04-22 13:26:33.086 [main] INFO  Server log - sending response: Response{chunk 119/221, size=456}
+2026-04-22 13:26:33.155 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@735fc0e3
+2026-04-22 13:26:33.155 [main] INFO  Server log - sending response: Response{chunk 120/221, size=456}
+2026-04-22 13:26:33.272 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@13fd6d4f
+2026-04-22 13:26:33.272 [main] INFO  Server log - sending response: Response{chunk 121/221, size=456}
+2026-04-22 13:26:33.395 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@129d2de0
+2026-04-22 13:26:33.395 [main] INFO  Server log - sending response: Response{chunk 122/221, size=456}
+2026-04-22 13:26:33.463 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1a0069b3
+2026-04-22 13:26:33.464 [main] INFO  Server log - sending response: Response{chunk 123/221, size=456}
+2026-04-22 13:26:33.577 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5d076bd7
+2026-04-22 13:26:33.577 [main] INFO  Server log - sending response: Response{chunk 124/221, size=456}
+2026-04-22 13:26:33.685 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@18a32c2
+2026-04-22 13:26:33.686 [main] INFO  Server log - sending response: Response{chunk 125/221, size=456}
+2026-04-22 13:26:33.795 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2e9c52b9
+2026-04-22 13:26:33.795 [main] INFO  Server log - sending response: Response{chunk 126/221, size=456}
+2026-04-22 13:26:33.897 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@461e66de
+2026-04-22 13:26:33.898 [main] INFO  Server log - sending response: Response{chunk 127/221, size=456}
+2026-04-22 13:26:33.995 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6d1007dc
+2026-04-22 13:26:33.995 [main] INFO  Server log - sending response: Response{chunk 128/221, size=456}
+2026-04-22 13:26:34.119 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@76c733fd
+2026-04-22 13:26:34.119 [main] INFO  Server log - sending response: Response{chunk 129/221, size=456}
+2026-04-22 13:26:34.243 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5d3ef0f0
+2026-04-22 13:26:34.243 [main] INFO  Server log - sending response: Response{chunk 130/221, size=456}
+2026-04-22 13:26:34.369 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3cd5b483
+2026-04-22 13:26:34.370 [main] INFO  Server log - sending response: Response{chunk 131/221, size=456}
+2026-04-22 13:26:34.493 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@26581ca8
+2026-04-22 13:26:34.493 [main] INFO  Server log - sending response: Response{chunk 132/221, size=456}
+2026-04-22 13:26:34.608 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1de7965c
+2026-04-22 13:26:34.608 [main] INFO  Server log - sending response: Response{chunk 133/221, size=456}
+2026-04-22 13:26:34.729 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3e4da1ee
+2026-04-22 13:26:34.729 [main] INFO  Server log - sending response: Response{chunk 134/221, size=456}
+2026-04-22 13:26:34.829 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@63757e56
+2026-04-22 13:26:34.829 [main] INFO  Server log - sending response: Response{chunk 135/221, size=456}
+2026-04-22 13:26:34.935 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3a7ce84
+2026-04-22 13:26:34.936 [main] INFO  Server log - sending response: Response{chunk 136/221, size=456}
+2026-04-22 13:26:35.035 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7e9bb930
+2026-04-22 13:26:35.035 [main] INFO  Server log - sending response: Response{chunk 137/221, size=456}
+2026-04-22 13:26:35.130 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2a73410e
+2026-04-22 13:26:35.131 [main] INFO  Server log - sending response: Response{chunk 138/221, size=456}
+2026-04-22 13:26:35.234 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@345e239e
+2026-04-22 13:26:35.235 [main] INFO  Server log - sending response: Response{chunk 139/221, size=456}
+2026-04-22 13:26:35.357 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@12fc9081
+2026-04-22 13:26:35.357 [main] INFO  Server log - sending response: Response{chunk 140/221, size=456}
+2026-04-22 13:26:35.420 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@57ba7cc1
+2026-04-22 13:26:35.420 [main] INFO  Server log - sending response: Response{chunk 141/221, size=456}
+2026-04-22 13:26:35.543 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4ecf450e
+2026-04-22 13:26:35.543 [main] INFO  Server log - sending response: Response{chunk 142/221, size=456}
+2026-04-22 13:26:35.610 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7457da6f
+2026-04-22 13:26:35.611 [main] INFO  Server log - sending response: Response{chunk 143/221, size=456}
+2026-04-22 13:26:35.730 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@59f451fd
+2026-04-22 13:26:35.730 [main] INFO  Server log - sending response: Response{chunk 144/221, size=456}
+2026-04-22 13:26:35.825 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@242d831d
+2026-04-22 13:26:35.825 [main] INFO  Server log - sending response: Response{chunk 145/221, size=456}
+2026-04-22 13:26:35.921 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@55dea694
+2026-04-22 13:26:35.922 [main] INFO  Server log - sending response: Response{chunk 146/221, size=456}
+2026-04-22 13:26:36.040 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@698f7a77
+2026-04-22 13:26:36.040 [main] INFO  Server log - sending response: Response{chunk 147/221, size=456}
+2026-04-22 13:26:36.146 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@157efc8b
+2026-04-22 13:26:36.146 [main] INFO  Server log - sending response: Response{chunk 148/221, size=456}
+2026-04-22 13:26:36.264 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2abe566f
+2026-04-22 13:26:36.264 [main] INFO  Server log - sending response: Response{chunk 149/221, size=456}
+2026-04-22 13:26:36.372 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@55eed32c
+2026-04-22 13:26:36.373 [main] INFO  Server log - sending response: Response{chunk 150/221, size=456}
+2026-04-22 13:26:36.484 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@25039b43
+2026-04-22 13:26:36.484 [main] INFO  Server log - sending response: Response{chunk 151/221, size=456}
+2026-04-22 13:26:36.593 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5e6c49f1
+2026-04-22 13:26:36.593 [main] INFO  Server log - sending response: Response{chunk 152/221, size=456}
+2026-04-22 13:26:36.728 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1016ddbc
+2026-04-22 13:26:36.729 [main] INFO  Server log - sending response: Response{chunk 153/221, size=456}
+2026-04-22 13:26:36.860 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1bf57f
+2026-04-22 13:26:36.860 [main] INFO  Server log - sending response: Response{chunk 154/221, size=456}
+2026-04-22 13:26:36.998 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1d7a8c6f
+2026-04-22 13:26:36.998 [main] INFO  Server log - sending response: Response{chunk 155/221, size=456}
+2026-04-22 13:26:37.102 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@66330b9b
+2026-04-22 13:26:37.103 [main] INFO  Server log - sending response: Response{chunk 156/221, size=456}
+2026-04-22 13:26:37.234 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2c5f0e5d
+2026-04-22 13:26:37.235 [main] INFO  Server log - sending response: Response{chunk 157/221, size=456}
+2026-04-22 13:26:37.382 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3bf9e96
+2026-04-22 13:26:37.382 [main] INFO  Server log - sending response: Response{chunk 158/221, size=456}
+2026-04-22 13:26:37.479 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2cbf3266
+2026-04-22 13:26:37.479 [main] INFO  Server log - sending response: Response{chunk 159/221, size=456}
+2026-04-22 13:26:37.607 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6a8d7570
+2026-04-22 13:26:37.607 [main] INFO  Server log - sending response: Response{chunk 160/221, size=456}
+2026-04-22 13:26:37.719 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@73f1a488
+2026-04-22 13:26:37.719 [main] INFO  Server log - sending response: Response{chunk 161/221, size=456}
+2026-04-22 13:26:37.844 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6cadc143
+2026-04-22 13:26:37.844 [main] INFO  Server log - sending response: Response{chunk 162/221, size=456}
+2026-04-22 13:26:37.943 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2f218326
+2026-04-22 13:26:37.943 [main] INFO  Server log - sending response: Response{chunk 163/221, size=456}
+2026-04-22 13:26:38.055 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2677925f
+2026-04-22 13:26:38.055 [main] INFO  Server log - sending response: Response{chunk 164/221, size=456}
+2026-04-22 13:26:38.172 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4d00e51d
+2026-04-22 13:26:38.172 [main] INFO  Server log - sending response: Response{chunk 165/221, size=456}
+2026-04-22 13:26:38.269 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@604a7211
+2026-04-22 13:26:38.270 [main] INFO  Server log - sending response: Response{chunk 166/221, size=456}
+2026-04-22 13:26:38.379 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3e0e4b80
+2026-04-22 13:26:38.379 [main] INFO  Server log - sending response: Response{chunk 167/221, size=456}
+2026-04-22 13:26:38.504 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6fbded7e
+2026-04-22 13:26:38.504 [main] INFO  Server log - sending response: Response{chunk 168/221, size=456}
+2026-04-22 13:26:38.629 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5b20397
+2026-04-22 13:26:38.629 [main] INFO  Server log - sending response: Response{chunk 169/221, size=456}
+2026-04-22 13:26:38.723 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7f0c3563
+2026-04-22 13:26:38.723 [main] INFO  Server log - sending response: Response{chunk 170/221, size=456}
+2026-04-22 13:26:38.840 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6a78e78f
+2026-04-22 13:26:38.840 [main] INFO  Server log - sending response: Response{chunk 171/221, size=456}
+2026-04-22 13:26:38.962 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2b4b9098
+2026-04-22 13:26:38.962 [main] INFO  Server log - sending response: Response{chunk 172/221, size=456}
+2026-04-22 13:26:39.020 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@58be4b05
+2026-04-22 13:26:39.020 [main] INFO  Server log - sending response: Response{chunk 173/221, size=456}
+2026-04-22 13:26:39.118 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3200f1e3
+2026-04-22 13:26:39.119 [main] INFO  Server log - sending response: Response{chunk 174/221, size=456}
+2026-04-22 13:26:39.224 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@19ed6bf4
+2026-04-22 13:26:39.224 [main] INFO  Server log - sending response: Response{chunk 175/221, size=456}
+2026-04-22 13:26:39.325 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6edf9750
+2026-04-22 13:26:39.326 [main] INFO  Server log - sending response: Response{chunk 176/221, size=456}
+2026-04-22 13:26:39.445 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@31a21272
+2026-04-22 13:26:39.445 [main] INFO  Server log - sending response: Response{chunk 177/221, size=456}
+2026-04-22 13:26:39.569 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4a93ec34
+2026-04-22 13:26:39.570 [main] INFO  Server log - sending response: Response{chunk 178/221, size=456}
+2026-04-22 13:26:39.668 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@33790f8f
+2026-04-22 13:26:39.669 [main] INFO  Server log - sending response: Response{chunk 179/221, size=456}
+2026-04-22 13:26:39.766 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4edb23ff
+2026-04-22 13:26:39.766 [main] INFO  Server log - sending response: Response{chunk 180/221, size=456}
+2026-04-22 13:26:39.863 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@53dfc665
+2026-04-22 13:26:39.863 [main] INFO  Server log - sending response: Response{chunk 181/221, size=456}
+2026-04-22 13:26:39.959 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4b019ea8
+2026-04-22 13:26:39.959 [main] INFO  Server log - sending response: Response{chunk 182/221, size=456}
+2026-04-22 13:26:40.073 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6b447065
+2026-04-22 13:26:40.073 [main] INFO  Server log - sending response: Response{chunk 183/221, size=456}
+2026-04-22 13:26:40.195 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6a7edcb3
+2026-04-22 13:26:40.195 [main] INFO  Server log - sending response: Response{chunk 184/221, size=456}
+2026-04-22 13:26:40.271 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@13f4cdc8
+2026-04-22 13:26:40.271 [main] INFO  Server log - sending response: Response{chunk 185/221, size=456}
+2026-04-22 13:26:40.397 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2c4df3a6
+2026-04-22 13:26:40.397 [main] INFO  Server log - sending response: Response{chunk 186/221, size=456}
+2026-04-22 13:26:40.518 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@cf91dff
+2026-04-22 13:26:40.518 [main] INFO  Server log - sending response: Response{chunk 187/221, size=456}
+2026-04-22 13:26:40.638 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6552486d
+2026-04-22 13:26:40.638 [main] INFO  Server log - sending response: Response{chunk 188/221, size=456}
+2026-04-22 13:26:40.749 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@475de33f
+2026-04-22 13:26:40.749 [main] INFO  Server log - sending response: Response{chunk 189/221, size=456}
+2026-04-22 13:26:40.845 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4446c95d
+2026-04-22 13:26:40.845 [main] INFO  Server log - sending response: Response{chunk 190/221, size=456}
+2026-04-22 13:26:40.962 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@c57957f
+2026-04-22 13:26:40.962 [main] INFO  Server log - sending response: Response{chunk 191/221, size=456}
+2026-04-22 13:26:41.084 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@227ae6aa
+2026-04-22 13:26:41.084 [main] INFO  Server log - sending response: Response{chunk 192/221, size=456}
+2026-04-22 13:26:41.161 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3714f96
+2026-04-22 13:26:41.161 [main] INFO  Server log - sending response: Response{chunk 193/221, size=456}
+2026-04-22 13:26:41.259 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5874455b
+2026-04-22 13:26:41.259 [main] INFO  Server log - sending response: Response{chunk 194/221, size=456}
+2026-04-22 13:26:41.356 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4e5758bf
+2026-04-22 13:26:41.356 [main] INFO  Server log - sending response: Response{chunk 195/221, size=456}
+2026-04-22 13:26:41.465 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2e0c61ed
+2026-04-22 13:26:41.465 [main] INFO  Server log - sending response: Response{chunk 196/221, size=456}
+2026-04-22 13:26:41.564 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4b51f7f4
+2026-04-22 13:26:41.564 [main] INFO  Server log - sending response: Response{chunk 197/221, size=456}
+2026-04-22 13:26:41.661 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4f90d6c0
+2026-04-22 13:26:41.661 [main] INFO  Server log - sending response: Response{chunk 198/221, size=456}
+2026-04-22 13:26:41.758 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@44a24603
+2026-04-22 13:26:41.758 [main] INFO  Server log - sending response: Response{chunk 199/221, size=456}
+2026-04-22 13:26:41.879 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3e404ed2
+2026-04-22 13:26:41.879 [main] INFO  Server log - sending response: Response{chunk 200/221, size=456}
+2026-04-22 13:26:41.981 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2dfe9430
+2026-04-22 13:26:41.981 [main] INFO  Server log - sending response: Response{chunk 201/221, size=456}
+2026-04-22 13:26:42.078 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3aeb3257
+2026-04-22 13:26:42.078 [main] INFO  Server log - sending response: Response{chunk 202/221, size=456}
+2026-04-22 13:26:42.198 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@473d337
+2026-04-22 13:26:42.198 [main] INFO  Server log - sending response: Response{chunk 203/221, size=456}
+2026-04-22 13:26:42.312 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@47c24d0e
+2026-04-22 13:26:42.312 [main] INFO  Server log - sending response: Response{chunk 204/221, size=456}
+2026-04-22 13:26:42.435 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1dca4648
+2026-04-22 13:26:42.435 [main] INFO  Server log - sending response: Response{chunk 205/221, size=456}
+2026-04-22 13:26:42.496 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@774651e9
+2026-04-22 13:26:42.496 [main] INFO  Server log - sending response: Response{chunk 206/221, size=456}
+2026-04-22 13:26:42.593 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3e297a64
+2026-04-22 13:26:42.593 [main] INFO  Server log - sending response: Response{chunk 207/221, size=456}
+2026-04-22 13:26:42.688 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@101566a5
+2026-04-22 13:26:42.688 [main] INFO  Server log - sending response: Response{chunk 208/221, size=456}
+2026-04-22 13:26:42.784 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@17531ca7
+2026-04-22 13:26:42.784 [main] INFO  Server log - sending response: Response{chunk 209/221, size=456}
+2026-04-22 13:26:42.880 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6704c806
+2026-04-22 13:26:42.880 [main] INFO  Server log - sending response: Response{chunk 210/221, size=456}
+2026-04-22 13:26:42.978 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4cdfabd5
+2026-04-22 13:26:42.978 [main] INFO  Server log - sending response: Response{chunk 211/221, size=456}
+2026-04-22 13:26:43.074 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5f5669d8
+2026-04-22 13:26:43.074 [main] INFO  Server log - sending response: Response{chunk 212/221, size=456}
+2026-04-22 13:26:43.195 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@78ff064f
+2026-04-22 13:26:43.195 [main] INFO  Server log - sending response: Response{chunk 213/221, size=456}
+2026-04-22 13:26:43.324 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@20e4933d
+2026-04-22 13:26:43.324 [main] INFO  Server log - sending response: Response{chunk 214/221, size=456}
+2026-04-22 13:26:43.447 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@e7ee27e
+2026-04-22 13:26:43.447 [main] INFO  Server log - sending response: Response{chunk 215/221, size=456}
+2026-04-22 13:26:43.504 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5d50284e
+2026-04-22 13:26:43.504 [main] INFO  Server log - sending response: Response{chunk 216/221, size=456}
+2026-04-22 13:26:43.606 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3b7f880
+2026-04-22 13:26:43.606 [main] INFO  Server log - sending response: Response{chunk 217/221, size=456}
+2026-04-22 13:26:43.701 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@faf6146
+2026-04-22 13:26:43.701 [main] INFO  Server log - sending response: Response{chunk 218/221, size=456}
+2026-04-22 13:26:43.834 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6078a7dc
+2026-04-22 13:26:43.834 [main] INFO  Server log - sending response: Response{chunk 219/221, size=456}
+2026-04-22 13:26:43.930 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6658731c
+2026-04-22 13:26:43.930 [main] INFO  Server log - sending response: Response{chunk 220/221, size=456}
+2026-04-22 13:26:44.051 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@4cf87f5b
+2026-04-22 13:26:44.051 [main] INFO  Server log - sending response: Response{chunk 221/221, size=32}
+2026-04-22 13:27:10.182 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@6f9a856a
+2026-04-22 13:27:11.559 [main] INFO  Server log - sending response: Response{chunk 1/221, size=456}
+2026-04-22 13:27:11.561 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@1ccca834
+2026-04-22 13:27:11.561 [main] INFO  Server log - sending response: Response{chunk 2/221, size=456}
+2026-04-22 13:27:11.644 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@75988be2
+2026-04-22 13:27:11.645 [main] INFO  Server log - sending response: Response{chunk 3/221, size=456}
+2026-04-22 13:27:11.728 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3f522a3
+2026-04-22 13:27:11.728 [main] INFO  Server log - sending response: Response{chunk 4/221, size=456}
+2026-04-22 13:27:11.812 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2123a761
+2026-04-22 13:27:11.812 [main] INFO  Server log - sending response: Response{chunk 5/221, size=456}
+2026-04-22 13:27:11.894 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7f945c0b
+2026-04-22 13:27:11.894 [main] INFO  Server log - sending response: Response{chunk 6/221, size=456}
+2026-04-22 13:27:11.979 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@17776ebd
+2026-04-22 13:27:11.979 [main] INFO  Server log - sending response: Response{chunk 7/221, size=456}
+2026-04-22 13:27:12.062 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3775eccb
+2026-04-22 13:27:12.063 [main] INFO  Server log - sending response: Response{chunk 8/221, size=456}
+2026-04-22 13:27:12.145 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@75c159ba
+2026-04-22 13:27:12.145 [main] INFO  Server log - sending response: Response{chunk 9/221, size=456}
+2026-04-22 13:27:12.227 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@61defba0
+2026-04-22 13:27:12.228 [main] INFO  Server log - sending response: Response{chunk 10/221, size=456}
+2026-04-22 13:27:12.310 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@39aaf3f
+2026-04-22 13:27:12.310 [main] INFO  Server log - sending response: Response{chunk 11/221, size=456}
+2026-04-22 13:27:12.394 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@31cd6d4c
+2026-04-22 13:27:12.394 [main] INFO  Server log - sending response: Response{chunk 12/221, size=456}
+2026-04-22 13:27:12.478 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7a690e1d
+2026-04-22 13:27:12.479 [main] INFO  Server log - sending response: Response{chunk 13/221, size=456}
+2026-04-22 13:27:12.562 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@dc12b5e
+2026-04-22 13:27:12.562 [main] INFO  Server log - sending response: Response{chunk 14/221, size=456}
+2026-04-22 13:27:12.647 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@177a1e6f
+2026-04-22 13:27:12.647 [main] INFO  Server log - sending response: Response{chunk 15/221, size=456}
+2026-04-22 13:27:12.730 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@5920ce7f
+2026-04-22 13:27:12.731 [main] INFO  Server log - sending response: Response{chunk 16/221, size=456}
+2026-04-22 13:27:12.815 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@28197124
+2026-04-22 13:27:12.816 [main] INFO  Server log - sending response: Response{chunk 17/221, size=456}
+2026-04-22 13:27:12.899 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@2962272a
+2026-04-22 13:27:12.900 [main] INFO  Server log - sending response: Response{chunk 18/221, size=456}
+2026-04-22 13:27:12.984 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@3d75a3d9
+2026-04-22 13:27:12.985 [main] INFO  Server log - sending response: Response{chunk 19/221, size=456}
+2026-04-22 13:27:13.070 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@51316dd0
+2026-04-22 13:27:13.071 [main] INFO  Server log - sending response: Response{chunk 20/221, size=456}
+2026-04-22 13:27:13.153 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@7f3692f3
+2026-04-22 13:27:13.153 [main] INFO  Server log - sending response: Response{chunk 21/221, size=456}
+2026-04-22 13:27:13.236 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@24eaaaf0
+2026-04-22 13:27:13.237 [main] INFO  Server log - sending response: Response{chunk 22/221, size=456}
+2026-04-22 13:27:13.322 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@6cfce634
+2026-04-22 13:27:13.323 [main] INFO  Server log - sending response: Response{chunk 23/221, size=456}
+2026-04-22 13:27:13.407 [main] INFO  Server log - new request: common.transfer.request.standart.NextChunkRequest@100ec2ae
+2026-04-22 13:27:13.408 [main] INFO  Server log - sending response: Response{chunk 24/221, size=456}
+2026-04-22 13:27:13.476 [main] ERROR Server log - client disconnected
+2026-04-22 13:27:13.489 [main] WARN  Server log - connection closed. Reconnecting
+2026-04-22 13:27:13.489 [main] INFO  Server log - waiting for connection...
+2026-04-22 14:35:21.976 [main] INFO  Server log - collection loaded successfully
+2026-04-22 14:35:21.981 [main] INFO  Server log - waiting for connection...
+2026-04-22 14:35:27.727 [main] INFO  Server log - new connection: /127.0.0.1
+2026-04-22 14:35:27.732 [main] INFO  Server log - Server started on port 9001
+2026-04-22 14:35:27.816 [main] INFO  Server log - new request: common.transfer.request.empty.InitRequest@6b6776cb
+2026-04-22 14:35:27.817 [main] INFO  Server log - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest}]}
+2026-04-22 14:35:29.189 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@61eaec38
+2026-04-22 14:35:29.192 [main] INFO  Server log - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 100352, Last saved: no save occured in current session, Last initialized: 2026-04-22 14:35:21.954940124]}
+2026-04-22 14:35:30.587 [main] WARN  Server log - connection closed. Reconnecting
+2026-04-22 14:35:30.587 [main] INFO  Server log - waiting for connection...
+2026-04-22 20:32:04.225 [main] INFO  Server log - collection loaded successfully
+2026-04-22 20:32:04.227 [main] INFO  Server log - waiting for connection...
+2026-04-22 20:37:29.652 [main] INFO  Server log - collection loaded successfully
+2026-04-22 20:37:29.655 [main] INFO  Server log - waiting for connection...
+2026-04-22 20:37:35.251 [main] INFO  Server log - new connection: /127.0.0.1
+2026-04-22 20:37:35.255 [main] INFO  Server log - Server started on port 9001
+2026-04-22 20:37:35.287 [main] INFO  Server log - new request: common.transfer.request.empty.InitRequest@7164ca4c
+2026-04-22 20:37:35.289 [main] INFO  Server log - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest}]}
+2026-04-22 20:37:36.832 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@632ceb35
+2026-04-22 20:37:36.835 [main] INFO  Server log - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-22 20:37:29.646530223]}
+2026-04-22 20:37:40.373 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@61fe30
+2026-04-22 20:37:40.383 [main] INFO  Server log - sending response: Response{status=OK, body=[id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Zeta
+coordinates=(x=10.500000, y=20)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=200
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Alpha
+coordinates=(x=10.500000, y=20)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=150
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Eta
+coordinates=(x=25.500000, y=35)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=300
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Beta
+coordinates=(x=25.500000, y=35)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=250
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Theta
+coordinates=(x=40.200001, y=50)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=400
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Gamma
+coordinates=(x=40.200001, y=50)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=350
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Iota
+coordinates=(x=55.799999, y=65)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=500
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Delta
+coordinates=(x=55.799999, y=65)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=450
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Kappa
+coordinates=(x=70.300003, y=80)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=600
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Epsilon
+coordinates=(x=70.300003, y=80)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=550
+]}
+2026-04-22 20:42:20.409 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@7b94089b
+2026-04-22 20:42:20.420 [main] INFO  Server log - sending response: Response{status=OK, body=[id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Alpha
+coordinates=(x=10.500000, y=20)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=150
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Beta
+coordinates=(x=25.500000, y=35)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=250
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Delta
+coordinates=(x=55.799999, y=65)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=450
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Epsilon
+coordinates=(x=70.300003, y=80)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=550
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Eta
+coordinates=(x=25.500000, y=35)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=300
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Gamma
+coordinates=(x=40.200001, y=50)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=350
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Iota
+coordinates=(x=55.799999, y=65)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=500
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Kappa
+coordinates=(x=70.300003, y=80)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=600
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Theta
+coordinates=(x=40.200001, y=50)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=400
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Zeta
+coordinates=(x=10.500000, y=20)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=200
+]}
+2026-04-22 20:51:59.701 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@561868a0
+2026-04-22 20:51:59.702 [main] INFO  Server log - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-22 20:37:29.646530223]}
+2026-04-22 20:52:10.154 [main] INFO  Server log - new request: common.transfer.request.standart.EntityRequest@42bc14c1
+2026-04-22 20:52:10.155 [main] INFO  Server log - sending response: Response{status=OK, body=[element added]}
+2026-04-22 20:52:12.239 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@6f3c660a
+2026-04-22 20:52:12.240 [main] INFO  Server log - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 11, Last saved: no save occured in current session, Last initialized: 2026-04-22 20:37:29.646530223]}
+2026-04-22 20:52:14.413 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@79179359
+2026-04-22 20:52:14.420 [main] INFO  Server log - sending response: Response{status=OK, body=[id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Alpha
+coordinates=(x=10.500000, y=20)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=150
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Beta
+coordinates=(x=25.500000, y=35)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=250
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Delta
+coordinates=(x=55.799999, y=65)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=450
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Epsilon
+coordinates=(x=70.300003, y=80)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=550
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Eta
+coordinates=(x=25.500000, y=35)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=300
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Gamma
+coordinates=(x=40.200001, y=50)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=350
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Iota
+coordinates=(x=55.799999, y=65)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=500
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Kappa
+coordinates=(x=70.300003, y=80)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=600
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Theta
+coordinates=(x=40.200001, y=50)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=400
+, id=0
+creation date=2026-04-22T20:19:35.742875
+name=Route Zeta
+coordinates=(x=10.500000, y=20)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=200
+, id=1
+creation date=2026-04-22T20:52:06.760936522
+name=2
+coordinates=(x=2.000000, y=2)
+from=(x=2, y=2.000000, name=2)
+to=(x=2.000000, y=2.000000, z=2, name=2)
+distance=2
+]}
+2026-04-22 20:54:57.375 [main] INFO  Server log - collection loaded successfully
+2026-04-22 20:54:57.377 [main] INFO  Server log - waiting for connection...
+2026-04-22 20:54:58.407 [main] INFO  Server log - new connection: /127.0.0.1
+2026-04-22 20:54:58.411 [main] INFO  Server log - Server started on port 9001
+2026-04-22 20:54:58.447 [main] INFO  Server log - new request: common.transfer.request.empty.InitRequest@327bcebd
+2026-04-22 20:54:58.448 [main] INFO  Server log - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest}]}
+2026-04-22 20:54:59.940 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@1046d517
+2026-04-22 20:54:59.943 [main] INFO  Server log - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-22 20:54:57.372680021]}
+2026-04-22 20:55:02.102 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@1458ed9c
+2026-04-22 20:55:02.116 [main] INFO  Server log - sending response: Response{status=OK, body=[id=6
+creation date=2026-04-22T20:19:35.742875
+name=Route Zeta
+coordinates=(x=10.500000, y=20)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=200
+, id=1
+creation date=2026-04-22T20:19:35.742875
+name=Route Alpha
+coordinates=(x=10.500000, y=20)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=150
+, id=7
+creation date=2026-04-22T20:19:35.742875
+name=Route Eta
+coordinates=(x=25.500000, y=35)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=300
+, id=2
+creation date=2026-04-22T20:19:35.742875
+name=Route Beta
+coordinates=(x=25.500000, y=35)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=250
+, id=8
+creation date=2026-04-22T20:19:35.742875
+name=Route Theta
+coordinates=(x=40.200001, y=50)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=400
+, id=3
+creation date=2026-04-22T20:19:35.742875
+name=Route Gamma
+coordinates=(x=40.200001, y=50)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=350
+, id=9
+creation date=2026-04-22T20:19:35.742875
+name=Route Iota
+coordinates=(x=55.799999, y=65)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=500
+, id=4
+creation date=2026-04-22T20:19:35.742875
+name=Route Delta
+coordinates=(x=55.799999, y=65)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=450
+, id=10
+creation date=2026-04-22T20:19:35.742875
+name=Route Kappa
+coordinates=(x=70.300003, y=80)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=600
+, id=5
+creation date=2026-04-22T20:19:35.742875
+name=Route Epsilon
+coordinates=(x=70.300003, y=80)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=550
+]}
+2026-04-22 20:55:12.309 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@648c94da
+2026-04-22 20:55:12.310 [main] INFO  Server log - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-22 20:54:57.372680021]}
+2026-04-22 20:55:14.653 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@24111ef1
+2026-04-22 20:55:14.668 [main] INFO  Server log - sending response: Response{status=OK, body=[id=1
+creation date=2026-04-22T20:19:35.742875
+name=Route Alpha
+coordinates=(x=10.500000, y=20)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=150
+, id=2
+creation date=2026-04-22T20:19:35.742875
+name=Route Beta
+coordinates=(x=25.500000, y=35)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=250
+, id=4
+creation date=2026-04-22T20:19:35.742875
+name=Route Delta
+coordinates=(x=55.799999, y=65)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=450
+, id=5
+creation date=2026-04-22T20:19:35.742875
+name=Route Epsilon
+coordinates=(x=70.300003, y=80)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=550
+, id=7
+creation date=2026-04-22T20:19:35.742875
+name=Route Eta
+coordinates=(x=25.500000, y=35)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=300
+, id=3
+creation date=2026-04-22T20:19:35.742875
+name=Route Gamma
+coordinates=(x=40.200001, y=50)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=350
+, id=9
+creation date=2026-04-22T20:19:35.742875
+name=Route Iota
+coordinates=(x=55.799999, y=65)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=500
+, id=10
+creation date=2026-04-22T20:19:35.742875
+name=Route Kappa
+coordinates=(x=70.300003, y=80)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=600
+, id=8
+creation date=2026-04-22T20:19:35.742875
+name=Route Theta
+coordinates=(x=40.200001, y=50)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=400
+, id=6
+creation date=2026-04-22T20:19:35.742875
+name=Route Zeta
+coordinates=(x=10.500000, y=20)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=200
+]}
+2026-04-22 20:55:19.187 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@16ce702d
+2026-04-22 20:55:19.197 [main] INFO  Server log - sending response: Response{status=OK, body=[id=1
+creation date=2026-04-22T20:19:35.742875
+name=Route Alpha
+coordinates=(x=10.500000, y=20)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=150
+, id=2
+creation date=2026-04-22T20:19:35.742875
+name=Route Beta
+coordinates=(x=25.500000, y=35)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=250
+, id=4
+creation date=2026-04-22T20:19:35.742875
+name=Route Delta
+coordinates=(x=55.799999, y=65)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=450
+, id=5
+creation date=2026-04-22T20:19:35.742875
+name=Route Epsilon
+coordinates=(x=70.300003, y=80)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=550
+, id=7
+creation date=2026-04-22T20:19:35.742875
+name=Route Eta
+coordinates=(x=25.500000, y=35)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=300
+, id=3
+creation date=2026-04-22T20:19:35.742875
+name=Route Gamma
+coordinates=(x=40.200001, y=50)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=350
+, id=9
+creation date=2026-04-22T20:19:35.742875
+name=Route Iota
+coordinates=(x=55.799999, y=65)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=500
+, id=10
+creation date=2026-04-22T20:19:35.742875
+name=Route Kappa
+coordinates=(x=70.300003, y=80)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=600
+, id=8
+creation date=2026-04-22T20:19:35.742875
+name=Route Theta
+coordinates=(x=40.200001, y=50)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=400
+, id=6
+creation date=2026-04-22T20:19:35.742875
+name=Route Zeta
+coordinates=(x=10.500000, y=20)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=200
+]}
+2026-04-22 20:55:20.771 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@47f9738
+2026-04-22 20:55:20.779 [main] INFO  Server log - sending response: Response{status=OK, body=[id=1
+creation date=2026-04-22T20:19:35.742875
+name=Route Alpha
+coordinates=(x=10.500000, y=20)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=150
+, id=2
+creation date=2026-04-22T20:19:35.742875
+name=Route Beta
+coordinates=(x=25.500000, y=35)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=250
+, id=4
+creation date=2026-04-22T20:19:35.742875
+name=Route Delta
+coordinates=(x=55.799999, y=65)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=450
+, id=5
+creation date=2026-04-22T20:19:35.742875
+name=Route Epsilon
+coordinates=(x=70.300003, y=80)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=550
+, id=7
+creation date=2026-04-22T20:19:35.742875
+name=Route Eta
+coordinates=(x=25.500000, y=35)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=300
+, id=3
+creation date=2026-04-22T20:19:35.742875
+name=Route Gamma
+coordinates=(x=40.200001, y=50)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=350
+, id=9
+creation date=2026-04-22T20:19:35.742875
+name=Route Iota
+coordinates=(x=55.799999, y=65)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=500
+, id=10
+creation date=2026-04-22T20:19:35.742875
+name=Route Kappa
+coordinates=(x=70.300003, y=80)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=600
+, id=8
+creation date=2026-04-22T20:19:35.742875
+name=Route Theta
+coordinates=(x=40.200001, y=50)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=400
+, id=6
+creation date=2026-04-22T20:19:35.742875
+name=Route Zeta
+coordinates=(x=10.500000, y=20)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=200
+]}
+2026-04-22 20:55:22.146 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@561868a0
+2026-04-22 20:55:22.150 [main] INFO  Server log - sending response: Response{status=OK, body=[id=1
+creation date=2026-04-22T20:19:35.742875
+name=Route Alpha
+coordinates=(x=10.500000, y=20)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=150
+, id=2
+creation date=2026-04-22T20:19:35.742875
+name=Route Beta
+coordinates=(x=25.500000, y=35)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=250
+, id=4
+creation date=2026-04-22T20:19:35.742875
+name=Route Delta
+coordinates=(x=55.799999, y=65)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=450
+, id=5
+creation date=2026-04-22T20:19:35.742875
+name=Route Epsilon
+coordinates=(x=70.300003, y=80)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=550
+, id=7
+creation date=2026-04-22T20:19:35.742875
+name=Route Eta
+coordinates=(x=25.500000, y=35)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=300
+, id=3
+creation date=2026-04-22T20:19:35.742875
+name=Route Gamma
+coordinates=(x=40.200001, y=50)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=350
+, id=9
+creation date=2026-04-22T20:19:35.742875
+name=Route Iota
+coordinates=(x=55.799999, y=65)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=500
+, id=10
+creation date=2026-04-22T20:19:35.742875
+name=Route Kappa
+coordinates=(x=70.300003, y=80)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=600
+, id=8
+creation date=2026-04-22T20:19:35.742875
+name=Route Theta
+coordinates=(x=40.200001, y=50)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=400
+, id=6
+creation date=2026-04-22T20:19:35.742875
+name=Route Zeta
+coordinates=(x=10.500000, y=20)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=200
+]}
+2026-04-22 20:55:23.219 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@6138e79a
+2026-04-22 20:55:23.224 [main] INFO  Server log - sending response: Response{status=OK, body=[id=1
+creation date=2026-04-22T20:19:35.742875
+name=Route Alpha
+coordinates=(x=10.500000, y=20)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=150
+, id=2
+creation date=2026-04-22T20:19:35.742875
+name=Route Beta
+coordinates=(x=25.500000, y=35)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=250
+, id=4
+creation date=2026-04-22T20:19:35.742875
+name=Route Delta
+coordinates=(x=55.799999, y=65)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=450
+, id=5
+creation date=2026-04-22T20:19:35.742875
+name=Route Epsilon
+coordinates=(x=70.300003, y=80)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=550
+, id=7
+creation date=2026-04-22T20:19:35.742875
+name=Route Eta
+coordinates=(x=25.500000, y=35)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=300
+, id=3
+creation date=2026-04-22T20:19:35.742875
+name=Route Gamma
+coordinates=(x=40.200001, y=50)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=350
+, id=9
+creation date=2026-04-22T20:19:35.742875
+name=Route Iota
+coordinates=(x=55.799999, y=65)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=500
+, id=10
+creation date=2026-04-22T20:19:35.742875
+name=Route Kappa
+coordinates=(x=70.300003, y=80)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=600
+, id=8
+creation date=2026-04-22T20:19:35.742875
+name=Route Theta
+coordinates=(x=40.200001, y=50)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=400
+, id=6
+creation date=2026-04-22T20:19:35.742875
+name=Route Zeta
+coordinates=(x=10.500000, y=20)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=200
+]}
+2026-04-22 20:58:19.271 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@21a21c64
+2026-04-22 20:58:19.274 [main] INFO  Server log - sending response: Response{status=OK, body=[add {element}: добавить новый элемент в коллекцию
+
+print_field_descending_distance: вывести значения поля distance всех элементов в порядке убывания
+
+show: вывести все элементы коллекции
+
+clear: очистить коллекцию
+
+print_unique_distance: вывести уникальные значения поля distance всех элементов в коллекции
+
+update <ID> {element}: обновить значение элемента коллекции по ID
+
+remove_by_id <ID>: удалить элемент из коллекции по ID
+
+sort: отсортировать коллекцию в естественном порядке
+
+history: вывести последние 13 команд (без их аргументов)
+
+remove_lower {element}: удалить из коллекции все элементы, меньшие, чем заданный
+
+help: вывести справку по доступным командам
+
+filter_starts_with_name name <name>: вывести элементы, значение поля name которых начинается с заданной подстроки
+
+info: вывести информацию о коллекции
+
+]}
+2026-04-22 20:58:36.858 [main] INFO  Server log - new request: common.transfer.request.standart.CombinedRequest@460ebd80
+2026-04-22 20:58:36.859 [main] INFO  Server log - sending response: Response{status=OK, body=[element updated]}
+2026-04-22 20:58:38.822 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@1afdd473
+2026-04-22 20:58:38.829 [main] INFO  Server log - sending response: Response{status=OK, body=[id=1
+creation date=2026-04-22T20:19:35.742875
+name=Route Alpha
+coordinates=(x=10.500000, y=20)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=150
+, id=2
+creation date=2026-04-22T20:19:35.742875
+name=Route Beta
+coordinates=(x=25.500000, y=35)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=250
+, id=4
+creation date=2026-04-22T20:19:35.742875
+name=Route Delta
+coordinates=(x=55.799999, y=65)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=450
+, id=5
+creation date=2026-04-22T20:19:35.742875
+name=Route Epsilon
+coordinates=(x=70.300003, y=80)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=550
+, id=7
+creation date=2026-04-22T20:19:35.742875
+name=Route Eta
+coordinates=(x=25.500000, y=35)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=300
+, id=3
+creation date=2026-04-22T20:19:35.742875
+name=Route Gamma
+coordinates=(x=40.200001, y=50)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=350
+, id=9
+creation date=2026-04-22T20:19:35.742875
+name=Route Iota
+coordinates=(x=55.799999, y=65)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=500
+, id=10
+creation date=2026-04-22T20:19:35.742875
+name=Route Kappa
+coordinates=(x=70.300003, y=80)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=600
+, id=8
+creation date=2026-04-22T20:19:35.742875
+name=Route Theta
+coordinates=(x=40.200001, y=50)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=400
+, id=0
+creation date=2026-04-22T20:58:31.457097728
+name=2
+coordinates=(x=2.000000, y=2)
+from=(x=2, y=2.000000, name=2)
+to=(x=null, y=2.000000, z=2, name=2)
+distance=2
+]}
+2026-04-22 21:00:55.286 [main] INFO  Server log - collection loaded successfully
+2026-04-22 21:00:55.289 [main] INFO  Server log - waiting for connection...
+2026-04-22 21:00:56.476 [main] INFO  Server log - new connection: /127.0.0.1
+2026-04-22 21:00:56.481 [main] INFO  Server log - Server started on port 9001
+2026-04-22 21:00:56.516 [main] INFO  Server log - new request: common.transfer.request.empty.InitRequest@327bcebd
+2026-04-22 21:00:56.517 [main] INFO  Server log - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest}]}
+2026-04-22 21:00:57.803 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@1046d517
+2026-04-22 21:00:57.806 [main] INFO  Server log - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-22 21:00:55.282642767]}
+2026-04-22 21:01:00.815 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@1458ed9c
+2026-04-22 21:01:00.826 [main] INFO  Server log - sending response: Response{status=OK, body=[id=6
+creation date=2026-04-22T20:19:35.742875
+name=Route Zeta
+coordinates=(x=10.500000, y=20)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=200
+, id=1
+creation date=2026-04-22T20:19:35.742875
+name=Route Alpha
+coordinates=(x=10.500000, y=20)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=150
+, id=7
+creation date=2026-04-22T20:19:35.742875
+name=Route Eta
+coordinates=(x=25.500000, y=35)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=300
+, id=2
+creation date=2026-04-22T20:19:35.742875
+name=Route Beta
+coordinates=(x=25.500000, y=35)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=250
+, id=8
+creation date=2026-04-22T20:19:35.742875
+name=Route Theta
+coordinates=(x=40.200001, y=50)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=400
+, id=3
+creation date=2026-04-22T20:19:35.742875
+name=Route Gamma
+coordinates=(x=40.200001, y=50)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=350
+, id=9
+creation date=2026-04-22T20:19:35.742875
+name=Route Iota
+coordinates=(x=55.799999, y=65)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=500
+, id=4
+creation date=2026-04-22T20:19:35.742875
+name=Route Delta
+coordinates=(x=55.799999, y=65)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=450
+, id=10
+creation date=2026-04-22T20:19:35.742875
+name=Route Kappa
+coordinates=(x=70.300003, y=80)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=600
+, id=5
+creation date=2026-04-22T20:19:35.742875
+name=Route Epsilon
+coordinates=(x=70.300003, y=80)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=550
+]}
+2026-04-22 21:01:11.943 [main] INFO  Server log - new request: common.transfer.request.standart.CombinedRequest@648c94da
+2026-04-22 21:01:11.944 [main] INFO  Server log - sending response: Response{status=OK, body=[element updated]}
+2026-04-22 21:01:14.165 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@6c0d9d86
+2026-04-22 21:01:14.166 [main] INFO  Server log - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-22 21:00:55.282642767]}
+2026-04-22 21:01:16.946 [main] INFO  Server log - new request: common.transfer.request.standart.StandartRequest@16ce702d
+2026-04-22 21:01:16.954 [main] INFO  Server log - sending response: Response{status=OK, body=[id=6
+creation date=2026-04-22T20:19:35.742875
+name=Route Zeta
+coordinates=(x=10.500000, y=20)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=200
+, id=1
+creation date=2026-04-22T20:19:35.742875
+name=Route Alpha
+coordinates=(x=10.500000, y=20)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=150
+, id=7
+creation date=2026-04-22T20:19:35.742875
+name=Route Eta
+coordinates=(x=25.500000, y=35)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=300
+, id=2
+creation date=2026-04-22T20:19:35.742875
+name=Route Beta
+coordinates=(x=25.500000, y=35)
+from=(x=250, y=350.200000, name=Saint Petersburg Square)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=250
+, id=8
+creation date=2026-04-22T20:19:35.742875
+name=Route Theta
+coordinates=(x=40.200001, y=50)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance=400
+, id=3
+creation date=2026-04-22T20:19:35.742875
+name=Route Gamma
+coordinates=(x=40.200001, y=50)
+from=(x=400, y=450.800000, name=Novosibirsk Station)
+to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance=350
+, id=9
+creation date=2026-04-22T20:19:35.742875
+name=Route Iota
+coordinates=(x=55.799999, y=65)
+from=(x=700, y=750.000000, name=Sochi Park)
+to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance=500
+, id=4
+creation date=2026-04-22T20:19:35.742875
+name=Route Delta
+coordinates=(x=55.799999, y=65)
+from=(x=550, y=600.300000, name=Kazan Kremlin)
+to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance=450
+, id=10
+creation date=2026-04-22T20:19:35.742875
+name=Route Kappa
+coordinates=(x=70.300003, y=80)
+from=(x=100, y=200.500000, name=Moscow Central)
+to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance=600
+, id=5
+creation date=2026-04-22T21:01:09.098071896
+name=2
+coordinates=(x=2.000000, y=2)
+from=(x=2, y=2.000000, name=2)
+to=(x=2.000000, y=2.000000, z=2, name=2)
+distance=2
+]}

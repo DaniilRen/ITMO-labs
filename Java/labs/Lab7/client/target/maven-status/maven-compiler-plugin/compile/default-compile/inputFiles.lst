@@ -1,0 +1,16 @@
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/AbstractClient.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/Main.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/NetClient.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/console/Console.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/console/IOConsole.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/controller/RecursionController.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/forms/CoordinatesForm.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/forms/Form.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/forms/Location2DimensionForm.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/forms/Location3DimensionForm.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/forms/RouteForm.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/network/ClientNetwork.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/network/processing/RequestProcessor.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/network/processing/ResponseProcessor.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/util/RequestBuilder.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/util/ScriptProcessor.java

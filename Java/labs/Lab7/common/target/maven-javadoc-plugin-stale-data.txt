@@ -1,0 +1,57 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+-source
+'17'
+-sourcepath
+'/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java:/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2026. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'common 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'common 1.0-SNAPSHOT API'
+common.transfer.request.standart
+common.transfer.request.empty
+common.transfer.request
+common.transfer.response
+common.transfer
+common.network
+common.models
+common.exceptions
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java = 1776853723680
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/generated-sources/annotations = 1776880839098
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/allclasses-index.html = 1776880842625
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/search-page.js = 1776880842669
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/index.html = 1776880842601
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/script.js = 1776880842666
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/overview-tree.html = 1776880842599
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/type-search-index.js = 1776880842629
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/module-search-index.js = 1776880842627
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/tag-search-index.js = 1776880842629
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/member-search-index.js = 1776880842629
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/overview-summary.html = 1776880842658
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/package-search-index.js = 1776880842628
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/search.html = 1776880842656
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/serialized-form.html = 1776880842536
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/stylesheet.css = 1776880842665
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/allpackages-index.html = 1776880842626
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/copy.svg = 1776880842666
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/help-doc.html = 1776880842662
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/element-list = 1776880842470
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/index-all.html = 1776880842655
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/search.js = 1776880842668
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/link.svg = 1776880842666

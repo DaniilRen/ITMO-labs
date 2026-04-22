@@ -1,0 +1,468 @@
+@startuml Lab6
+left to right direction
+skinparam packageStyle rectangle
+
+package common {
+  package runtime {
+    interface Runtime {
+      + run(): void
+    }
+  }
+
+  package network {
+    interface Network {
+      + connect(): void
+      + write(object: Object): void
+      + read(): Object
+      + close(): void
+    }
+  }
+
+  package transfer {
+    enum Status
+
+    package "request" {
+      interface Request
+
+      class InitRequest {
+        + InitRequest()
+      }
+
+      class NextChunkRequest {
+        + NextChunkRequest(streamId: String, chunkNumber: int)
+        + getStreamId(): String
+        + getChunkNumber(): int
+      }
+
+      class StandartRequest {
+        + StandartRequest(name: String)
+        + getName(): String
+      }
+
+      class IdRequest {
+        + IdRequest(name: String, id: Integer)
+        + getId(): Integer
+        + validate(args: List): boolean
+      }
+
+      class EntityRequest {
+        + EntityRequest(name: String, entity: Entity)
+        + getEntity(): Entity
+        + validate(args: List): boolean
+      }
+
+      class StringRequest {
+        + StringRequest(name: String, row: String)
+        + getRow(): String
+        + validate(args: List): boolean
+      }
+
+      class CombinedRequest {
+        + CombinedRequest(name: String, entity: Entity, id: int)
+        + getEntity(): Entity
+        + validate(args: List): boolean
+      }
+    }
+
+    package "response" {
+      class Response {
+        + Response()
+        + Response(body: List)
+        + Response(status: Status)
+        + getBody(): List
+        + getStatus(): Status
+        + setStatus(status: Status): void
+        + put(element: Object): void
+        + isEmpty(): boolean
+      }
+    }
+  }
+
+  package models {
+    interface Validatable {
+      + validate(): boolean
+    }
+
+    abstract class Entity {
+      + update(newEntity: Entity): void
+      + setId(id: Integer): void
+      + compareTo(other: Entity): int
+    }
+
+    class Route {
+      + Route(name: String, coordinates: Coordinates, creationDate: LocalDateTime, from: Location2Dimension, to: Location3Dimension, distance: int)
+      + setId(id: Integer): void
+      + getId(): int
+      + getName(): String
+      + getDistance(): int
+      + validate(): boolean
+    }
+
+    class Coordinates {
+      + Coordinates(x: Float, y: Long)
+      + validate(): boolean
+    }
+
+    class Location2Dimension {
+      + Location2Dimension(x: Integer, y: Double, name: String)
+      + validate(): boolean
+    }
+
+    class Location3Dimension {
+      + Location3Dimension(x: Double, y: Double, z: Integer, name: String)
+      + validate(): boolean
+    }
+  }
+
+  package exceptions {
+    class CollectionLoadException {
+      + CollectionLoadException(message: String)
+    }
+    class CollectionWriteException {
+      + CollectionWriteException(message: String)
+    }
+    class IncorrectRequestException {
+      + IncorrectRequestException(message: String)
+    }
+    class InvalidFormException {
+      + InvalidFormException(message: String)
+    }
+    class RuntimeInitException {
+      + RuntimeInitException(message: String)
+    }
+    class ScriptSyntaxException {
+      + ScriptSyntaxException(message: String)
+    }
+  }
+}
+
+package client {
+  class ClientMain {
+    + main(args: String[]): void
+  }
+
+  class NetClient {
+    + NetClient(address: String, port: int)
+    + run(): void
+  }
+
+  package "console" {
+    interface Console {
+      + print(obj: Object): void
+      + println(obj: Object): void
+      + printError(obj: Object): void
+      + printPromptSymbol(): void
+      + getPromptSymbol(): String
+      + getScriptPromptSymbol(): String
+    }
+
+    class IOConsole {
+      + getUserScanner(): Scanner
+      + setUserScanner(scanner: Scanner): void
+      + fileMode(): boolean
+      + setUserMode(): void
+      + setFileMode(): void
+      + print(obj: Object): void
+      + println(obj: Object): void
+      + printError(obj: Object): void
+      + printPromptSymbol(): void
+      + getPromptSymbol(): String
+      + getScriptPromptSymbol(): String
+    }
+  }
+
+  package "forms" {
+    abstract class Form {
+      + build(): Object
+    }
+
+    class RouteForm {
+      + RouteForm(console: IOConsole)
+      + build(): Route
+    }
+
+    class CoordinatesForm {
+      + CoordinatesForm(console: IOConsole)
+      + build(): Coordinates
+    }
+
+    class Location2DimensionForm {
+      + Location2DimensionForm(console: IOConsole)
+      + build(): Location2Dimension
+    }
+
+    class Location3DimensionForm {
+      + Location3DimensionForm(console: IOConsole)
+      + build(): Location3Dimension
+    }
+  }
+
+  package "network" {
+    class ClientNetwork {
+      + ClientNetwork(address: String, port: int, console: IOConsole)
+      + connect(): void
+      + write(object: Object): void
+      + read(): Object
+      + isConnected(): boolean
+      + close(): void
+    }
+  }
+
+  package "controller" {
+    class RecursionController {
+      + pushScript(script: String): void
+      + popScript(script: String): void
+      + checkRecursion(script: String): boolean
+    }
+  }
+
+  package "util" {
+    class RequestBuilder {
+      + RequestBuilder(console: IOConsole)
+      + buildRequest(commandsAttributes: Map, name: String, args: List): Request
+    }
+  }
+}
+
+package server {
+  class ServerMain {
+    + main(args: String[]): void
+  }
+
+  class NetServer {
+    + NetServer(port: int)
+    + run(): void
+    + proccessRequest(request: Request): Response
+  }
+
+  package "network" {
+    class ServerNetwork {
+      + ServerNetwork(port: int, logger: LoggerBlueprint)
+      + connect(): void
+      + write(object: Object): void
+      + read(): Object
+      + close(): void
+    }
+
+    class ChunkUtil {
+      + shouldChunkify(response: Response): boolean
+      + chunkify(response: Response): Response
+      + handleNextChunk(request: NextChunkRequest): Response
+    }
+  }
+
+  package "logging" {
+    interface LoggerBlueprint {
+      + info(message: String): void
+      + error(message: String): void
+      + error(message: String, throwable: Throwable): void
+      + debug(message: String): void
+      + warn(message: String): void
+    }
+
+    class ServerLogger {
+      + ServerLogger(name: String)
+      + info(message: String): void
+      + error(message: String): void
+      + error(message: String, throwable: Throwable): void
+      + debug(message: String): void
+      + warn(message: String): void
+    }
+  }
+
+  package commands_interfaces {
+    interface Executable {
+      + execute(request: StandartRequest): Response
+    }
+    interface Describable {
+      + getName(): String
+      + getDescription(): String
+    }
+  }
+
+  package "commands" {
+    abstract class Command {
+      + Command(commandAttribute: CommandAttribute)
+      + getAttribute(): CommandAttribute
+      + execute(request: StandartRequest): Response
+    }
+
+    class CommandAttribute {
+      + CommandAttribute(name: String, description: String, argsType: Class)
+      + getName(): String
+      + getDescription(): String
+      + getArgsType(): Class
+    }
+
+    class Add {
+      + execute(request: EntityRequest): Response
+    }
+    class Clear {
+      + execute(request: StandartRequest): Response
+    }
+    class FilterStartsWithName {
+      + execute(request: StringRequest): Response
+    }
+    class Help {
+      + execute(request: StandartRequest): Response
+    }
+    class History {
+      + execute(request: StandartRequest): Response
+    }
+    class Info {
+      + execute(request: StandartRequest): Response
+    }
+    class PrintFieldDescendingDistance {
+      + execute(request: StandartRequest): Response
+    }
+    class PrintUniqueDistances {
+      + execute(request: StandartRequest): Response
+    }
+    class RemoveById {
+      + execute(request: IdRequest): Response
+    }
+    class RemoveLower {
+      + execute(request: EntityRequest): Response
+    }
+    class Show {
+      + execute(request: StandartRequest): Response
+    }
+    class Sort {
+      + execute(request: StandartRequest): Response
+    }
+    class Update {
+      + execute(request: CombinedRequest): Response
+    }
+  }
+
+  package "managers" {
+    interface CollectionManager {
+      + getCollection(): Collection
+      + getCollectionSize(): int
+      + getCollectionType(): String
+      + clearCollection(): Status
+      + saveCollection(fileManager: FileManager): Status
+      + addToCollection(element: Entity): Status
+      + removeFromCollection(element: Entity): Status
+      + updateById(id: int, newElement: Entity): Status
+      + checkExist(id: int): boolean
+      + getById(id: int): Entity
+    }
+
+    class ArrayListCollectionManager {
+      + ArrayListCollectionManager(collection: Collection)
+      + clearCollection(): Status
+      + saveCollection(fileManager: FileManager): Status
+      + addToCollection(element: Entity): Status
+      + removeFromCollection(element: Entity): Status
+      + updateById(id: int, newElement: Entity): Status
+      + checkExist(id: int): boolean
+      + getById(id: int): Entity
+    }
+
+    interface CommandManager {
+      + register(commandName: String, command: Command): void
+      + getCommands(): Map
+      + getCommandHistory(number: int): List<String>
+      + getCommandAttributes(): Map
+      + addToHistory(command: String): void
+    }
+
+    class DefaultCommandManager {
+      + register(commandName: String, command: Command): void
+      + getCommands(): Map
+      + getCommandHistory(number: int): List<String>
+      + getCommandAttributes(): Map
+      + addToHistory(command: String): void
+    }
+
+    interface FileManager {
+      + readCollectionFromFile(): Collection
+      + writeCollectionToFile(collection: Collection): void
+    }
+
+    class JSONManager {
+      + JSONManager(fileName: String)
+      + readCollectionFromFile(): Collection
+      + writeCollectionToFile(collection: Collection): void
+    }
+  }
+
+  package "util" {
+    class LocalDateTimeAdapter {
+      + serialize(dateTime: LocalDateTime, typeOfSrc: Type, context: JsonSerializationContext): JsonElement
+      + deserialize(json: JsonElement, type: Type, context: JsonDeserializationContext): LocalDateTime
+    }
+    class LocalEnvironment {
+      + getCollectionPath(): String
+    }
+  }
+}
+
+' Core model relations
+Entity <|-- Route
+Validatable <|.. Entity
+Validatable <|.. Coordinates
+Validatable <|.. Location2Dimension
+Validatable <|.. Location3Dimension
+Route --> Coordinates
+Route --> Location2Dimension
+Route --> Location3Dimension
+
+' Transfer hierarchy
+Request <|.. InitRequest
+Request <|.. NextChunkRequest
+Request <|.. StandartRequest
+StandartRequest <|-- IdRequest
+StandartRequest <|-- EntityRequest
+StandartRequest <|-- StringRequest
+IdRequest <|-- CombinedRequest
+Response --> Status
+
+' Client relations
+Runtime <|.. NetClient
+IOConsole <|.. Console
+Form <|-- RouteForm
+Form <|-- CoordinatesForm
+Form <|-- Location2DimensionForm
+Form <|-- Location3DimensionForm
+NetClient --> ClientNetwork
+NetClient --> RequestBuilder
+NetClient --> IOConsole
+ClientNetwork --> Request
+ClientNetwork --> Response
+RouteForm --> Route
+CoordinatesForm --> Coordinates
+Location2DimensionForm --> Location2Dimension
+Location3DimensionForm --> Location3Dimension
+
+' Server relations
+Runtime <|.. NetServer
+Network <|.. ServerNetwork
+ServerLogger <|.. LoggerBlueprint
+Executable <|.. Command
+Describable <|.. CommandAttribute
+Command <|-- Add
+Command <|-- Clear
+Command <|-- FilterStartsWithName
+Command <|-- Help
+Command <|-- History
+Command <|-- Info
+Command <|-- PrintFieldDescendingDistance
+Command <|-- PrintUniqueDistances
+Command <|-- RemoveById
+Command <|-- RemoveLower
+Command <|-- Show
+Command <|-- Sort
+Command <|-- Update
+CollectionManager <|.. ArrayListCollectionManager
+CommandManager <|.. DefaultCommandManager
+FileManager <|.. JSONManager
+DefaultCommandManager --> Command
+ArrayListCollectionManager --> Entity
+JSONManager --> LocalDateTimeAdapter
+NetServer --> ServerNetwork
+NetServer --> DefaultCommandManager
+NetServer --> CollectionManager
+
+@enduml
