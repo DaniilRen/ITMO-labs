@@ -40,14 +40,10 @@ public class NetClient extends AbstractClient {
             console.printConnectionError("[Init Request]: " + e.getMessage());
             return;
         }
-        runConsoleParsing();
-        network.close();
-    }
-
-    @Override
-    protected void runConsoleParsing() {
         console.println(String.format("<----- client started on port: %d ----->", port));
         super.runConsoleParsing();
+        
+        network.close();
     }
 
     protected Status executeCommand(String commandName, List<?> args) {
