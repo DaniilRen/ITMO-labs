@@ -2,6 +2,7 @@ package network.processing;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,6 +13,7 @@ import common.exceptions.InvalidScriptException;
 import common.transfer.Status;
 import common.transfer.request.Request;
 import common.transfer.request.empty.InitRequest;
+import common.transfer.request.standart.AuthRequest;
 import common.transfer.response.Response;
 import console.IOConsole;
 import network.AbstractClientNetwork;
@@ -21,21 +23,31 @@ public class RequestProcessor {
     private Map<String, Class<? extends Request>> commandsAttributes = new HashMap<>(); 
     private final IOConsole console;
     private final AbstractClientNetwork network;
+    private final AuthHandler authHandler;
+    private final List<Class<? extends Request>> alowedRequests = new ArrayList<>(Arrays.asList(AuthRequest.class, InitRequest.class));
 
-    public RequestProcessor(IOConsole console, AbstractClientNetwork network) {
+    public RequestProcessor(IOConsole console, AbstractClientNetwork network, AuthHandler authHandler) {
         this.console = console;
         this.network = network;
+        this.authHandler = authHandler;
     }
-
 
     public Response<?> makeRequest(String name, List<?> args) {
         Request request;
         if (name.equals("init")) {
             request = new InitRequest();
         } else {
+            Class<? extends Request> requestType = commandsAttributes.get(name);
+            if (!(authHandler.isAuthenticated()) && (!(alowedRequests.contains(requestType)))) {
+                return new Response<>(List.of("You must login before executing commands!"), Status.ERROR);
+            }
+
             try {
                 RequestBuilder requestBuilder = new RequestBuilder(console);
-                request = requestBuilder.buildRequest(commandsAttributes, name, args);   
+                request = requestBuilder.buildRequest(requestType, name, args);
+                if (!(alowedRequests.contains(requestType))) {
+                    request = authHandler.addCredentials(request);
+                }
             } catch (IncorrectRequestException e) {
                 return new Response<>(List.of(e.getMessage()), Status.ERROR);
             } catch (InvalidScriptException e) {
@@ -43,10 +55,13 @@ public class RequestProcessor {
             }
         }
 
+        return sendRequestToServer(request);
+    }
+
+    private Response<?> sendRequestToServer(Request request) {
         try {
             network.write(request);
             return (Response<?>) network.read();
-            
         } catch (IOException e) {            
             try {
                 console.printConnectionError("Connection lost: attempting to reconnect...");

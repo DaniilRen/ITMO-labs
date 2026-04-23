@@ -7,7 +7,6 @@ commands/RemoveLower.class
 managers/commands/CommandManager.class
 commands/Update.class
 util/database/handlers/table/CoordinatesHandler.class
-network/ChunkUtil.class
 AbstractServer.class
 commands/Command.class
 commands/History.class
@@ -21,6 +20,7 @@ managers/collection/CollectionManager.class
 util/local/LocalDateTimeAdapter.class
 util/logging/ServerLogger.class
 commands/PrintFieldDescendingDistance.class
+network/processing/RequestProcessor.class
 commands/PrintUniqueDistances.class
 commands/RemoveById.class
 managers/database/PostgresManager.class
@@ -28,6 +28,7 @@ NetServer.class
 managers/auth/AuthManager.class
 util/database/handlers/table/LocationFromHandler.class
 util/database/handlers/database/DatabaseHandler.class
+network/processing/ChunkProcessor.class
 managers/database/AbstractDatabaseManager.class
 commands/Register.class
 commands/Show.class

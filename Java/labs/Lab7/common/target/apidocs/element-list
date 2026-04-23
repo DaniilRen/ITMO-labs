@@ -3,6 +3,7 @@ common.models
 common.network
 common.transfer
 common.transfer.request
+common.transfer.request.authenticated
 common.transfer.request.empty
 common.transfer.request.standart
 common.transfer.response

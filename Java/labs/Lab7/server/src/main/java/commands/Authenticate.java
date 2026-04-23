@@ -26,7 +26,7 @@ public class Authenticate extends Command<AuthRequest> {
     public Response<?> execute(AuthRequest request) {
         try {
             authManager.authenticate(request.getUserName(), request.getPassword());
-            return new Response<>(List.of("logged in"));
+            return new Response<>(List.of(request.getUserName(), request.getPassword()), Status.LOGIN);
         } catch (AuthException e) {
             return new Response<>(List.of(e.getMessage()), Status.ERROR);
         }

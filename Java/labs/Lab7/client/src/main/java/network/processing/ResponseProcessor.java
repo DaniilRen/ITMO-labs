@@ -14,10 +14,12 @@ import network.AbstractClientNetwork;
 public class ResponseProcessor {
     private final IOConsole console;
     private final AbstractClientNetwork network;
+    private final AuthHandler authHandler;
 
-    public ResponseProcessor(IOConsole console, AbstractClientNetwork network) {
+    public ResponseProcessor(IOConsole console, AbstractClientNetwork network, AuthHandler authHandler) {
         this.console = console;
         this.network = network;
+        this.authHandler = authHandler;
     }
 
     public Status processCommandResponse(Response<?> response) {
@@ -33,6 +35,10 @@ public class ResponseProcessor {
             } else {
                 console.printError("Unknown error occurred");
             }
+        } else if (status == Status.LOGIN) {
+            authHandler.setAuthenticated(true);
+            List<?> body = response.getBody();
+            authHandler.setCredentials(body.get(0).toString(), body.get(1).toString());
         }
         return status;
     }

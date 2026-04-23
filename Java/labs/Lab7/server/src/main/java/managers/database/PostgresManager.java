@@ -40,9 +40,11 @@ public class PostgresManager extends AbstractDatabaseManager {
         
         List<Entity> routes = new ArrayList<>();
         
-        try (PreparedStatement query = api.prepareQuery(
-                api.getConnection(url, user, password), 
-                queryMessage)
+        try (
+            PreparedStatement query = api.prepareQuery (
+                api.getConnection(PostgreSQLurl, PostgreSQLuser, PostgreSQLpassword), 
+                queryMessage
+            );
             ) {
             ResultSet result = query.executeQuery();
             while (result.next()) {
@@ -70,7 +72,7 @@ public class PostgresManager extends AbstractDatabaseManager {
     
     @Override
     public void writeCollection(Collection<? extends Entity> collection) throws CollectionWriteException {
-        try (Connection connection = api.getConnection(url, user, password)) {
+        try (Connection connection = api.getConnection(PostgreSQLurl, PostgreSQLuser, PostgreSQLpassword)) {
             connection.setAutoCommit(false);
             
             try {

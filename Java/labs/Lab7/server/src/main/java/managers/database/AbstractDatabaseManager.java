@@ -16,20 +16,20 @@ import common.exceptions.CollectionWriteException;
  */
 public abstract class AbstractDatabaseManager {
     protected final DatabaseHandler api;
-    protected final String url;
-    protected final String user;
-    protected final String password;
+    protected final String PostgreSQLurl;
+    protected final String PostgreSQLuser;
+    protected final String PostgreSQLpassword;
 
-    public AbstractDatabaseManager(DatabaseHandler api, String url, String user, String password) {
+    public AbstractDatabaseManager(DatabaseHandler api, String PostgreSQLurl, String PostgreSQLuser, String PostgreSQLpassword) {
         this.api = api;
-        this.url = url;
-        this.user = user;
-        this.password = password;
+        this.PostgreSQLurl = PostgreSQLurl;
+        this.PostgreSQLuser = PostgreSQLuser;
+        this.PostgreSQLpassword = PostgreSQLpassword;
     }
 
     public boolean register(String user, String password) throws AuthException {
         try {
-            return api.register(api.getConnection(url, user, password), user, password);   
+            return api.register(api.getConnection(PostgreSQLurl, PostgreSQLuser, PostgreSQLpassword), user, password);   
         } catch (SQLException e) {
             throw new AuthException(e.getMessage());
         }
@@ -37,7 +37,7 @@ public abstract class AbstractDatabaseManager {
 
     public boolean authenticate(String user, String password) throws AuthException {
         try {
-            return api.authenticate(api.getConnection(url, user, password), user, password);   
+            return api.authenticate(api.getConnection(PostgreSQLurl, PostgreSQLuser, PostgreSQLpassword), user, password);   
         } catch (SQLException e) {
             throw new AuthException(e.getMessage());
         }

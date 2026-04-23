@@ -20,18 +20,6 @@ public class AuthManager extends AbstractAuthManager {
         this.pepper = pepper;
     };
 
-    public void register(String name, String password) throws AuthException {
-        String hashedPassword = generatePasswordHash(password);
-        boolean registered = databaseManager.register(name, hashedPassword);
-        if (registered) {
-            logger.info(String.format("registered new user: %s", name));
-            return;
-        }
-        String registerxceptionMessage = String.format("cannot register new user: %s", name);
-        logger.error(registerxceptionMessage);
-        throw new AuthException(registerxceptionMessage);
-    };
-
     public void authenticate(String name, String password) throws AuthException {
         boolean auth = databaseManager.authenticate(name, password);
         if (auth) {
@@ -41,6 +29,18 @@ public class AuthManager extends AbstractAuthManager {
         String authExceptionMessage = String.format("cannot authenticate user: %s", name);
         logger.error(authExceptionMessage);
         throw new AuthException(authExceptionMessage);
+    };
+
+    public void register(String name, String password) throws AuthException {
+        String hashedPassword = generatePasswordHash(password);
+        boolean registered = databaseManager.register(name, hashedPassword);
+        if (registered) {
+            logger.info(String.format("registered new user: %s", name));
+            return;
+        }
+        String registExceptionMessage = String.format("cannot register new user: %s", name);
+        logger.error(registExceptionMessage);
+        throw new AuthException(registExceptionMessage);
     };
 
     public String generatePasswordHash(String password) {

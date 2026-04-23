@@ -1,4 +1,4 @@
-package network;
+package network.processing;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -12,7 +12,7 @@ import common.transfer.Status;
 import common.transfer.request.standart.NextChunkRequest;
 import common.transfer.response.Response;
 
-public class ChunkUtil {
+public class ChunkProcessor {
 	private static Map<String, List<Response<?>>> chunkStorage = new HashMap<>();
 	private static final int MAX_CHUNK_SIZE_ITEMS = 1000;
 	private static final int MAX_CHUNK_SIZE_BYTES = 1024 * 64;

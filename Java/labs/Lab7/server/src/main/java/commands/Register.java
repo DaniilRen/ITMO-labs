@@ -26,7 +26,7 @@ public class Register extends Command<AuthRequest> {
     public Response<?> execute(AuthRequest request) {
         try {
             authManager.register(request.getUserName(), request.getPassword());
-            return new Response<>(List.of("registered new user: " + request.getUserName()));
+            return new Response<>(List.of(request.getUserName(), request.getPassword()), Status.LOGIN);
         } catch (AuthException e) {
             return new Response<>(List.of(e.getMessage()), Status.ERROR);
         }

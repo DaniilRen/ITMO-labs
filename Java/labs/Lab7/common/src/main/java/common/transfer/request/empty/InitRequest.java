@@ -7,4 +7,4 @@ import common.transfer.request.Request;
  * Пустой запрос при запуске клиента.
  * @author Septyq
  */
-public class InitRequest extends Request {}
+public class InitRequest implements Request {}

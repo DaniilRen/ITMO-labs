@@ -3,7 +3,7 @@ package common.transfer.request.standart;
 import common.transfer.request.Request;
 
 
-public class NextChunkRequest extends Request {
+public class NextChunkRequest implements Request {
     private static final long serialVersionUID = 7815544L;
     
     private final String streamId;

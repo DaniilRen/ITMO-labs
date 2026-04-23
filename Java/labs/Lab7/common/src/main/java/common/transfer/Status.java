@@ -7,5 +7,6 @@ package common.transfer;
 public enum Status {
     OK,
     ERROR,
+    LOGIN,
     EXIT;
 }

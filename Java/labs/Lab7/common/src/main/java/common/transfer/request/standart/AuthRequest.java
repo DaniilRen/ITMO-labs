@@ -1,5 +1,7 @@
 package common.transfer.request.standart;
 
+import java.util.List;
+
 /**
  * Запрос с данными пользователя
  * @author Septyq
@@ -20,5 +22,9 @@ public class AuthRequest extends StandartRequest  {
 
     public String getPassword() {
         return passsword;
+    }
+
+    public static boolean validate(List<?> args) {
+        return (args.size() == 2 && args.get(0).toString().length() > 0 && args.get(1).toString().length() > 0);
     }
 }

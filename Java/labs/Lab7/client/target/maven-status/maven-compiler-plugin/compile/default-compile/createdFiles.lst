@@ -6,11 +6,14 @@ forms/Location3DimensionForm.class
 AbstractClient.class
 console/IOConsole.class
 console/Console.class
+network/processing/AuthHandler.class
+forms/UserDataForm.class
 forms/CoordinatesForm.class
 Main.class
 network/ClientNetwork.class
 util/script/RecursionController.class
 util/RequestBuilder.class
+util/UserData.class
 network/processing/ResponseProcessor.class
 network/AbstractClientNetwork.class
 NetClient.class

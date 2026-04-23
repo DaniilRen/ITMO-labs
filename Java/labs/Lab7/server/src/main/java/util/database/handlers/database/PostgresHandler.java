@@ -44,10 +44,12 @@ public class PostgresHandler extends DatabaseHandler {
               "INSERT INTO users (name, password) VALUES(?, ?) RETURNING id"
             );
         ){
+            query.setString(1, user);
+            query.setString(2, password);
             ResultSet result = query.executeQuery();
             return result.next();
         } catch (SQLException e) {
-            return false;
+            throw new AuthException(e.getMessage());
         }
 
 
@@ -73,7 +75,7 @@ public class PostgresHandler extends DatabaseHandler {
             result.next();
             return result.getString("password");
         } catch (SQLException e) {
-            throw new AuthException("Unknown error while getting user password");
+            throw new AuthException(e.getMessage());
         }
     }
 

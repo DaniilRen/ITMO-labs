@@ -1,14 +1,8 @@
 import java.io.IOException;
-import java.util.List;
 import commands.*;
-import network.ChunkUtil;
 import network.ServerNetwork;
 import common.network.Network;
-import common.transfer.Status;
 import common.exceptions.RuntimeInitException;
-import common.transfer.request.empty.InitRequest;
-import common.transfer.request.standart.StandartRequest;
-import common.transfer.request.standart.NextChunkRequest;
 import common.transfer.response.Response;
 import common.transfer.request.Request;
 
@@ -38,7 +32,7 @@ public class NetServer extends AbstractServer {
                     Request request = (Request) networkManager.read();
 										logger.info("new request: " + request);
 
-                    Response<?> response = processRequest(request);
+                    Response<?> response = requestProcessor.processRequest(request);
 										logger.info("sending response: " + response);
                     networkManager.write(response);
                     
@@ -56,20 +50,6 @@ public class NetServer extends AbstractServer {
         }
     }
 
-    protected Response<?> processRequest(Request request) {
-        if (request instanceof InitRequest) {
-            return new Response<>(List.of(commandManager.getCommandAttributes()));
-        } else if (request instanceof NextChunkRequest) {
-            return ChunkUtil.handleNextChunk((NextChunkRequest) request);
-        } else if (request instanceof StandartRequest) {
-            return executeCommand((StandartRequest) request);
-        } else {
-            return new Response<>(List.of("Unknown request"), Status.ERROR);
-        }
-    }
-
-
-
     protected void registerCommands() {
         commandManager.register("help", new Help(commandManager));
         commandManager.register("info", new Info(collectionManager));
@@ -84,11 +64,7 @@ public class NetServer extends AbstractServer {
         commandManager.register("filter_starts_with_name", new FilterStartsWithName(collectionManager));
         commandManager.register("print_unique_distance", new PrintUniqueDistances(collectionManager));
         commandManager.register("print_field_descending_distance", new PrintFieldDescendingDistance(collectionManager));
-    }
-
-    protected Response<?> executeCommand(StandartRequest request) {
-        Response<?> response = super.executeCommand(request);
-        if (ChunkUtil.shouldChunkify(response)) return ChunkUtil.chunkify(response);
-        return response;
+        commandManager.register("register", new Register(authManager));
+        commandManager.register("login", new Authenticate(authManager));
     }
 }

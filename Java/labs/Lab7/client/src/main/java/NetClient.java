@@ -8,6 +8,7 @@ import common.exceptions.InvalidScriptException;
 import common.transfer.response.Response;
 import network.AbstractClientNetwork;
 import network.ClientNetwork;
+import network.processing.AuthHandler;
 import network.processing.RequestProcessor;
 import network.processing.ResponseProcessor;
 import util.script.ScriptProcessor;
@@ -18,6 +19,7 @@ public class NetClient extends AbstractClient {
     private final AbstractClientNetwork network;
     private ResponseProcessor responseProcessor;
     private RequestProcessor requestProcessor;
+    private AuthHandler authHandler;
     private final int port;
 
     public NetClient(String address, int port) {
@@ -30,8 +32,9 @@ public class NetClient extends AbstractClient {
 
     public void run() {
         try {
-            this.responseProcessor = new ResponseProcessor(console, network);
-            this.requestProcessor = new RequestProcessor(console, network);
+            this.authHandler = new AuthHandler();
+            this.responseProcessor = new ResponseProcessor(console, network, authHandler);
+            this.requestProcessor = new RequestProcessor(console, network, authHandler);
             network.connect();
             requestProcessor.setCommandAttributes();
         } catch (IOException e) {
