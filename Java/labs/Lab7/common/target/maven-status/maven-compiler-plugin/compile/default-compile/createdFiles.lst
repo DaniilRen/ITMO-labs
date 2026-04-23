@@ -5,6 +5,7 @@ common/transfer/request/standart/NextChunkRequest.class
 common/network/Network.class
 common/transfer/request/standart/CombinedRequest.class
 common/models/Entity.class
+common/transfer/request/standart/AuthRequest.class
 common/models/Location2Dimension.class
 common/exceptions/InvalidAttributesException.class
 common/models/Validatable.class
@@ -18,6 +19,7 @@ common/models/Location3Dimension.class
 common/transfer/request/standart/IdRequest.class
 common/transfer/response/Response.class
 common/transfer/request/Request.class
+common/exceptions/AuthException.class
 common/exceptions/RuntimeInitException.class
 common/transfer/request/standart/StandartRequest.class
 common/exceptions/CollectionLoadException.class

@@ -2,10 +2,10 @@ package commands;
 
 import java.util.ArrayList;
 
-import managers.AbstractCollectionManager;
 import common.models.Entity;
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.response.Response;
+import managers.collection.AbstractCollectionManager;
 
 
 /**

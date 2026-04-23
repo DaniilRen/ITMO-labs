@@ -6,4 +6,4 @@ import java.io.Serializable;
  * Запрос для команды.
  * @author Septyq
  */
-public interface Request extends Serializable {}
+public abstract class Request implements Serializable {}

@@ -47,6 +47,13 @@
             <artifactId>postgresql</artifactId>
             <version>42.7.10</version>
         </dependency>
+
+        <!-- For password hashing -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>33.4.0-jre</version>
+        </dependency>
     
     </dependencies>
 

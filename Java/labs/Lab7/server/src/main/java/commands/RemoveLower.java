@@ -3,9 +3,9 @@ package commands;
 import java.util.Iterator;
 import java.util.List;
 
-import managers.AbstractCollectionManager;
 import common.transfer.request.standart.EntityRequest;
 import common.transfer.response.Response;
+import managers.collection.AbstractCollectionManager;
 import common.models.Entity;
 import common.models.Route;;
 

@@ -12,7 +12,10 @@ import common.transfer.request.standart.NextChunkRequest;
 import common.transfer.response.Response;
 import common.transfer.request.Request;
 
-
+/**
+ * TCP сервер
+ * @author Septyq
+ */
 public class NetServer extends AbstractServer {
     private final Network networkManager;
     private final int port;

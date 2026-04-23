@@ -1,3 +1,4 @@
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/exceptions/AuthException.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/exceptions/CollectionLoadException.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/exceptions/CollectionWriteException.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/exceptions/IncorrectRequestException.java
@@ -16,6 +17,7 @@
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/Status.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/Request.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/empty/InitRequest.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/standart/AuthRequest.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/standart/CombinedRequest.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/standart/EntityRequest.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/standart/IdRequest.java

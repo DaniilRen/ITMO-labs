@@ -4,7 +4,7 @@ import java.util.List;
 
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.response.Response;
-import managers.AbstractCommandManager;
+import managers.commands.AbstractCommandManager;
 
 
 /**

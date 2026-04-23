@@ -1,7 +1,12 @@
 unnamed package
 commands
 commands.interfaces
-logging
-managers
+managers.auth
+managers.collection
+managers.commands
+managers.database
 network
-util
+util.database.handlers.database
+util.database.handlers.table
+util.local
+util.logging

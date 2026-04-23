@@ -7,7 +7,7 @@ import common.transfer.request.Request;
  * Стандартный запрос без аргументов.
  * @author Septyq
  */
-public class StandartRequest implements Request {
+public class StandartRequest extends Request {
     private static final long serialVersionUID = 876349874L;
 
     private final String name;

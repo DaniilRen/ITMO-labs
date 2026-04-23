@@ -8,9 +8,12 @@ import java.net.Socket;
 import java.net.SocketException;
 
 import common.network.Network;
-import logging.LoggerBlueprint;
+import util.logging.AbstractLogger;
 
-
+/**
+ * Общение сервера по протоколу TCP
+ * @author Septyq
+ */
 public class ServerNetwork implements Network {
     private ObjectInputStream ois;
     private ObjectOutputStream oos;
@@ -18,9 +21,9 @@ public class ServerNetwork implements Network {
     private ServerSocket serverSocket;
     private final int port;
     private boolean connectedToClient = false;
-		private final LoggerBlueprint logger;
+		private final AbstractLogger logger;
 
-    public ServerNetwork(int port, LoggerBlueprint logger) {
+    public ServerNetwork(int port, AbstractLogger logger) {
         this.port = port;
         this.logger = logger;
     }

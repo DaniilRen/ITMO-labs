@@ -2,11 +2,11 @@ package commands;
 
 import java.util.List;
 
-import managers.AbstractCollectionManager;
 import common.models.Entity;
 import common.transfer.Status;
 import common.transfer.request.standart.CombinedRequest;
 import common.transfer.response.Response;
+import managers.collection.AbstractCollectionManager;
 
 
 /**

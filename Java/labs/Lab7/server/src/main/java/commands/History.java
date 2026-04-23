@@ -1,12 +1,11 @@
 package commands;
 
-import managers.AbstractCommandManager;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.response.Response;
+import managers.commands.AbstractCommandManager;
 
 /**
  * Команда 'history'. Выводит последние 13 команд (без их аргументов).

@@ -1,12 +1,12 @@
 package commands;
 
-import managers.AbstractCollectionManager;
 import common.models.Entity;
 
 import java.util.List;
 
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.response.Response;
+import managers.collection.AbstractCollectionManager;
 
 /**
  * Команда 'clear'. Очищает коллекцию.
