@@ -15,5 +15,5 @@
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/network/handlers/RequestHandler.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/network/handlers/ResponseHandler.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/util/RequestBuilder.java
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/util/script/RecursionController.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/util/script/RecursionHandler.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/util/script/ScriptProcessor.java

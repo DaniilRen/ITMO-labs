@@ -28,7 +28,7 @@ public class ScriptProcessor {
             validateScript(fileName);   
         } catch (InvalidScriptException e) { throw e; }
 
-        RecursionController.pushScript(fileName);
+        RecursionHandler.pushScript(fileName);
 
         Status commandStatus = Status.OK;
         scriptStack.add(fileName);
@@ -78,7 +78,7 @@ public class ScriptProcessor {
             console.setUserScanner(oldScanner);
             console.setUserMode();
             scriptStack.remove(scriptStack.size() - 1);
-            RecursionController.popScript(fileName);
+            RecursionHandler.popScript(fileName);
         }
     }
 
@@ -86,7 +86,7 @@ public class ScriptProcessor {
         if (fileName == null || fileName.isEmpty()) {
             throw new InvalidScriptException("Script name is empty");
         }
-        if (RecursionController.checkRecursion(fileName)) {
+        if (RecursionHandler.checkRecursion(fileName)) {
             throw new InvalidScriptException("Script has recursion");
         }
     }

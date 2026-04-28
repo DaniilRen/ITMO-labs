@@ -71,7 +71,6 @@ public class RequestHandler {
                 
                 network.write(request);
                 Response<?> response = (Response<?>) network.read();
-                System.out.println("Resp: " + response);
                 return response;
                 
             } catch (IOException | ClassNotFoundException ex) {

@@ -1,3 +1,4 @@
+util/script/RecursionHandler.class
 forms/Form.class
 network/handlers/AuthHandler.class
 forms/RouteForm.class
@@ -11,7 +12,6 @@ forms/UserDataForm.class
 forms/CoordinatesForm.class
 Main.class
 network/ClientNetwork.class
-util/script/RecursionController.class
 util/RequestBuilder.class
 network/AbstractClientNetwork.class
 network/handlers/RequestHandler.class
