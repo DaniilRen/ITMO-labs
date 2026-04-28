@@ -1,163 +1,29 @@
-2026-04-28 18:36:33.349 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@5ba88be8
-2026-04-28 18:36:33.412 [main] ERROR Server standart logger - cannot authenticate user: 1
-2026-04-28 18:36:33.413 [main] INFO  Server standart logger - sending response: Response{status=ERROR, body=[cannot authenticate user: 1]}
-2026-04-28 18:36:43.990 [main] WARN  Server standart logger - connection closed. Reconnecting
-2026-04-28 18:36:43.990 [main] INFO  Server standart logger - waiting for connection...
-2026-04-28 18:36:46.410 [main] INFO  Server standart logger - new connection: /127.0.0.1
-2026-04-28 18:36:46.449 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@2bd08376
-2026-04-28 18:36:46.449 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-28 18:37:30.524 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@42b02722
-2026-04-28 18:37:30.581 [main] INFO  Server standart logger - authenticated user: admin
-2026-04-28 18:37:30.581 [main] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-28 18:37:32.195 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@4b79ac84
-2026-04-28 18:37:32.195 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[]}
-2026-04-28 18:37:34.404 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@2e6a5539
-2026-04-28 18:37:34.404 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[]}
-2026-04-28 18:37:35.991 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@27d4a09
-2026-04-28 18:37:35.991 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[]}
-2026-04-28 18:40:15.983 [main] WARN  Server standart logger - connection closed. Reconnecting
-2026-04-28 18:40:15.984 [main] INFO  Server standart logger - waiting for connection...
-2026-04-28 18:40:37.354 [main] INFO  Server standart logger - collection loaded from database
-2026-04-28 18:40:37.360 [main] INFO  Server standart logger - waiting for connection...
-2026-04-28 18:40:37.590 [main] INFO  Server standart logger - new connection: /127.0.0.1
-2026-04-28 18:40:37.594 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-28 18:40:37.644 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@7b205dbd
-2026-04-28 18:40:37.646 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-28 18:40:48.925 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@5ba88be8
-2026-04-28 18:40:49.000 [main] INFO  Server standart logger - authenticated user: admin
-2026-04-28 18:40:49.001 [main] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-28 18:40:51.337 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@29ca3d04
-2026-04-28 18:40:51.338 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[]}
-2026-04-28 18:40:54.394 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@6b88ca8c
-2026-04-28 18:40:54.394 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[]}
-2026-04-28 18:41:11.458 [main] WARN  Server standart logger - connection closed. Reconnecting
-2026-04-28 18:41:11.459 [main] INFO  Server standart logger - waiting for connection...
-2026-04-28 18:41:32.082 [main] INFO  Server standart logger - collection loaded from database
-2026-04-28 18:41:32.088 [main] INFO  Server standart logger - waiting for connection...
-2026-04-28 18:41:32.965 [main] INFO  Server standart logger - new connection: /127.0.0.1
-2026-04-28 18:41:32.968 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-28 18:41:33.016 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@7b205dbd
-2026-04-28 18:41:33.017 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-28 18:41:38.072 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@56928307
-2026-04-28 18:41:38.135 [main] INFO  Server standart logger - authenticated user: admin
-2026-04-28 18:41:38.136 [main] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-28 18:41:40.094 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@5812f68b
-2026-04-28 18:41:40.095 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[]}
-2026-04-28 18:42:17.515 [main] WARN  Server standart logger - connection closed. Reconnecting
-2026-04-28 18:42:17.515 [main] INFO  Server standart logger - waiting for connection...
-2026-04-28 18:42:51.079 [main] INFO  Server standart logger - collection loaded from database
-2026-04-28 18:42:51.083 [main] INFO  Server standart logger - waiting for connection...
-2026-04-28 18:42:53.985 [main] INFO  Server standart logger - collection loaded from database
-2026-04-28 18:42:53.988 [main] ERROR Server standart logger - connection error: 
-java.net.BindException: Address already in use
-	at sun.nio.ch.Net.bind0(Native Method) ~[?:?]
-	at sun.nio.ch.Net.bind(Net.java:565) ~[?:?]
-	at sun.nio.ch.Net.bind(Net.java:554) ~[?:?]
-	at sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636) ~[?:?]
-	at java.net.ServerSocket.bind(ServerSocket.java:391) ~[?:?]
-	at java.net.ServerSocket.<init>(ServerSocket.java:278) ~[?:?]
-	at java.net.ServerSocket.<init>(ServerSocket.java:171) ~[?:?]
-	at network.ServerNetwork.connect(ServerNetwork.java:33) [server-1.0-SNAPSHOT.jar:?]
-	at NetServer.run(NetServer.java:27) [server-1.0-SNAPSHOT.jar:?]
-	at Main.main(Main.java:8) [server-1.0-SNAPSHOT.jar:?]
-2026-04-28 18:42:53.996 [main] ERROR Server standart logger - Server failed to start: 
-java.net.BindException: Address already in use
-	at sun.nio.ch.Net.bind0(Native Method) ~[?:?]
-	at sun.nio.ch.Net.bind(Net.java:565) ~[?:?]
-	at sun.nio.ch.Net.bind(Net.java:554) ~[?:?]
-	at sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636) ~[?:?]
-	at java.net.ServerSocket.bind(ServerSocket.java:391) ~[?:?]
-	at java.net.ServerSocket.<init>(ServerSocket.java:278) ~[?:?]
-	at java.net.ServerSocket.<init>(ServerSocket.java:171) ~[?:?]
-	at network.ServerNetwork.connect(ServerNetwork.java:33) ~[server-1.0-SNAPSHOT.jar:?]
-	at NetServer.run(NetServer.java:27) [server-1.0-SNAPSHOT.jar:?]
-	at Main.main(Main.java:8) [server-1.0-SNAPSHOT.jar:?]
-2026-04-28 18:42:57.294 [main] INFO  Server standart logger - new connection: /127.0.0.1
-2026-04-28 18:42:57.300 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-28 18:42:57.345 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@7b205dbd
-2026-04-28 18:42:57.346 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-28 18:43:01.369 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@5ba88be8
-2026-04-28 18:43:01.436 [main] INFO  Server standart logger - authenticated user: admin
-2026-04-28 18:43:01.437 [main] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-28 18:43:03.386 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@29ca3d04
-2026-04-28 18:43:03.403 [main] INFO  Server standart logger - authenticated user: admin
-2026-04-28 18:43:03.404 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-28 18:42:51.076005424]}
-2026-04-28 18:43:05.341 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@53941c2f
-2026-04-28 18:43:05.385 [main] INFO  Server standart logger - authenticated user: admin
-2026-04-28 18:43:05.396 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[id=6
-creation date=2026-04-22T20:19:35.742875
-name=Route Zeta
-coordinates=(x=10.500000, y=20)
-from=(x=250, y=350.200000, name=Saint Petersburg Square)
-to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
-distance=200
-, id=1
-creation date=2026-04-22T20:19:35.742875
-name=Route Alpha
-coordinates=(x=10.500000, y=20)
-from=(x=100, y=200.500000, name=Moscow Central)
-to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
-distance=150
-, id=7
-creation date=2026-04-22T20:19:35.742875
-name=Route Eta
-coordinates=(x=25.500000, y=35)
-from=(x=400, y=450.800000, name=Novosibirsk Station)
-to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
-distance=300
-, id=2
-creation date=2026-04-22T20:19:35.742875
-name=Route Beta
-coordinates=(x=25.500000, y=35)
-from=(x=250, y=350.200000, name=Saint Petersburg Square)
-to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
-distance=250
-, id=8
-creation date=2026-04-22T20:19:35.742875
-name=Route Theta
-coordinates=(x=40.200001, y=50)
-from=(x=550, y=600.300000, name=Kazan Kremlin)
-to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
-distance=400
-, id=3
-creation date=2026-04-22T20:19:35.742875
-name=Route Gamma
-coordinates=(x=40.200001, y=50)
-from=(x=400, y=450.800000, name=Novosibirsk Station)
-to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
-distance=350
-, id=9
-creation date=2026-04-22T20:19:35.742875
-name=Route Iota
-coordinates=(x=55.799999, y=65)
-from=(x=700, y=750.000000, name=Sochi Park)
-to=(x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
-distance=500
-, id=4
-creation date=2026-04-22T20:19:35.742875
-name=Route Delta
-coordinates=(x=55.799999, y=65)
-from=(x=550, y=600.300000, name=Kazan Kremlin)
-to=(x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
-distance=450
-, id=10
-creation date=2026-04-22T20:19:35.742875
-name=Route Kappa
-coordinates=(x=70.300003, y=80)
-from=(x=100, y=200.500000, name=Moscow Central)
-to=(x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
-distance=600
-, id=5
-creation date=2026-04-22T20:19:35.742875
-name=Route Epsilon
-coordinates=(x=70.300003, y=80)
-from=(x=700, y=750.000000, name=Sochi Park)
-to=(x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
-distance=550
-]}
-2026-04-28 18:43:08.771 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@487db668
-2026-04-28 18:43:08.815 [main] INFO  Server standart logger - authenticated user: admin
-2026-04-28 18:43:08.826 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[id=1
+2026-04-28 22:39:00.855 [pool-2-thread-1] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-04-28 22:39:00.855 [pool-2-thread-1] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-04-28 22:39:00.892 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@430e4956
+2026-04-28 22:39:00.893 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
+2026-04-28 22:39:16.422 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@3db22a3d
+2026-04-28 22:39:16.463 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
+2026-04-28 22:39:16.464 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
+2026-04-28 22:39:25.987 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6895c259
+2026-04-28 22:39:26.000 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
+2026-04-28 22:39:26.001 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-28 22:38:09.883253230]}
+2026-04-28 22:55:24.469 [main] INFO  Server standart logger - collection loaded from database
+2026-04-28 22:55:24.474 [main] INFO  Server standart logger - Server started on port 9000
+2026-04-28 22:55:24.476 [main] INFO  Server standart logger - Server started on port 9000
+2026-04-28 22:55:26.121 [pool-2-thread-1] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-04-28 22:55:26.122 [pool-2-thread-1] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-04-28 22:55:26.188 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@68852aa7
+2026-04-28 22:55:26.189 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
+2026-04-28 22:55:32.135 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@1fe275f9
+2026-04-28 22:55:32.204 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
+2026-04-28 22:55:32.205 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
+2026-04-28 22:55:33.777 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@51cc4ab9
+2026-04-28 22:55:33.794 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
+2026-04-28 22:55:33.795 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-28 22:55:24.468067020]}
+2026-04-28 22:55:36.451 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@fe86281
+2026-04-28 22:55:36.496 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
+2026-04-28 22:55:36.503 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=OK, body=[id=1
 creation date=2026-04-22T20:19:35.742875
 name=Route Alpha
 coordinates=(x=10.500000, y=20)
@@ -228,26 +94,9 @@ from=(x=250, y=350.200000, name=Saint Petersburg Square)
 to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
 distance=200
 ]}
-2026-04-28 18:46:46.632 [main] WARN  Server standart logger - connection closed. Reconnecting
-2026-04-28 18:46:46.633 [main] INFO  Server standart logger - waiting for connection...
-2026-04-28 18:48:07.641 [main] INFO  Server standart logger - collection loaded from database
-2026-04-28 18:48:07.645 [main] INFO  Server standart logger - waiting for connection...
-2026-04-28 18:48:08.244 [main] INFO  Server standart logger - new connection: /127.0.0.1
-2026-04-28 18:48:08.251 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-28 18:48:08.299 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@7b205dbd
-2026-04-28 18:48:08.301 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-28 18:48:12.973 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@5ba88be8
-2026-04-28 18:48:13.041 [main] ERROR Server standart logger - cannot authenticate user: admin
-2026-04-28 18:48:13.041 [main] INFO  Server standart logger - sending response: Response{status=ERROR, body=[cannot authenticate user: admin]}
-2026-04-28 18:48:18.979 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@2bd08376
-2026-04-28 18:48:19.026 [main] INFO  Server standart logger - authenticated user: admin
-2026-04-28 18:48:19.026 [main] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-28 18:48:21.689 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@336f1079
-2026-04-28 18:48:21.709 [main] INFO  Server standart logger - authenticated user: admin
-2026-04-28 18:48:21.709 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-28 18:48:07.637975229]}
-2026-04-28 18:48:24.015 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@6d025197
-2026-04-28 18:48:24.057 [main] INFO  Server standart logger - authenticated user: admin
-2026-04-28 18:48:24.072 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[id=1
+2026-04-28 22:55:39.337 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@130689ef
+2026-04-28 22:55:39.385 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
+2026-04-28 22:55:39.393 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=OK, body=[id=1
 creation date=2026-04-22T20:19:35.742875
 name=Route Alpha
 coordinates=(x=10.500000, y=20)
@@ -318,40 +167,42 @@ from=(x=250, y=350.200000, name=Saint Petersburg Square)
 to=(x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
 distance=200
 ]}
-2026-04-28 18:48:45.836 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@43f82e78
-2026-04-28 18:48:45.886 [main] INFO  Server standart logger - authenticated user: admin
-2026-04-28 18:48:45.886 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-28 18:48:07.637975229]}
-2026-04-28 18:50:16.768 [main] WARN  Server standart logger - connection closed. Reconnecting
-2026-04-28 18:50:16.768 [main] INFO  Server standart logger - waiting for connection...
-2026-04-28 18:50:36.403 [main] INFO  Server standart logger - collection loaded from database
-2026-04-28 18:50:36.410 [main] INFO  Server standart logger - waiting for connection...
-2026-04-28 18:50:36.877 [main] INFO  Server standart logger - new connection: /127.0.0.1
-2026-04-28 18:50:36.880 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-28 18:50:36.930 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@7b205dbd
-2026-04-28 18:50:36.931 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-28 18:50:43.955 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@5ba88be8
-2026-04-28 18:50:44.026 [main] INFO  Server standart logger - authenticated user: admin
-2026-04-28 18:50:44.027 [main] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-28 18:50:45.975 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@29ca3d04
-2026-04-28 18:50:45.996 [main] INFO  Server standart logger - authenticated user: admin
-2026-04-28 18:50:45.997 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-28 18:50:36.399679877]}
-2026-04-28 18:50:56.469 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@53941c2f
-2026-04-28 18:50:56.512 [main] INFO  Server standart logger - authenticated user: admin
-2026-04-28 18:50:56.513 [main] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-28 18:50:57.331 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@2e6a5539
-2026-04-28 18:50:57.375 [main] INFO  Server standart logger - authenticated user: admin
-2026-04-28 18:50:57.376 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-28 18:50:36.399679877]}
-2026-04-28 18:51:24.594 [main] WARN  Server standart logger - connection closed. Reconnecting
-2026-04-28 18:51:24.595 [main] INFO  Server standart logger - waiting for connection...
-2026-04-28 20:24:40.427 [main] INFO  Server standart logger - collection loaded from database
-2026-04-28 20:24:40.431 [main] INFO  Server standart logger - waiting for connection...
-2026-04-28 20:24:41.562 [main] INFO  Server standart logger - new connection: /127.0.0.1
-2026-04-28 20:24:41.565 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-28 20:24:41.615 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@7b205dbd
-2026-04-28 20:24:41.616 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-28 20:27:13.070 [main] INFO  Server standart logger - collection loaded from database
-2026-04-28 20:27:13.076 [main] INFO  Server standart logger - waiting for connection...
-2026-04-28 20:27:13.464 [main] INFO  Server standart logger - new connection: /127.0.0.1
-2026-04-28 20:27:13.467 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-28 20:27:13.508 [main] INFO  Server standart logger - new request: common.transfer.request.wrapped.AuthenticatedRequest@7b205dbd
-2026-04-28 20:27:13.509 [main] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
+2026-04-28 23:07:09.028 [pool-2-thread-2] ERROR Server standart logger - Error in client handler: 
+java.io.EOFException: null
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:3232) ~[?:?]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1713) ~[?:?]
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:540) ~[?:?]
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:498) ~[?:?]
+	at network.handlers.ClientHandler.run(ClientHandler.java:37) ~[server-1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+2026-04-28 23:07:09.043 [pool-2-thread-2] INFO  Server standart logger - Client disconnected: /127.0.0.1
+2026-04-28 23:07:27.012 [main] INFO  Server standart logger - collection loaded from database
+2026-04-28 23:07:27.017 [main] INFO  Server standart logger - Server started on port 9000
+2026-04-28 23:07:27.019 [main] INFO  Server standart logger - Server started on port 9000
+2026-04-28 23:07:28.147 [pool-2-thread-1] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-04-28 23:07:28.148 [pool-2-thread-1] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-04-28 23:07:28.196 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@7d9f5df0
+2026-04-28 23:07:28.198 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
+2026-04-28 23:07:32.620 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@33a5cafc
+2026-04-28 23:07:32.671 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
+2026-04-28 23:07:32.671 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
+2026-04-28 23:07:34.912 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@45ae2bcc
+2026-04-28 23:07:34.936 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
+2026-04-28 23:07:34.936 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-28 23:07:27.010282329]}
+2026-04-28 23:07:38.514 [pool-2-thread-2] ERROR Server standart logger - Error in client handler: 
+java.io.EOFException: null
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:3232) ~[?:?]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1713) ~[?:?]
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:540) ~[?:?]
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:498) ~[?:?]
+	at network.handlers.ClientHandler.run(ClientHandler.java:37) ~[server-1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[?:?]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
+	at java.lang.Thread.run(Thread.java:1583) [?:?]
+2026-04-28 23:07:38.519 [pool-2-thread-2] INFO  Server standart logger - Client disconnected: /127.0.0.1

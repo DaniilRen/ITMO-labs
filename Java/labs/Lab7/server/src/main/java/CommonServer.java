@@ -1,6 +1,6 @@
 import java.io.IOException;
 import commands.*;
-import network.ServerNetwork;
+import network.CommonNetwork;
 import common.network.Network;
 import common.exceptions.RuntimeInitException;
 import common.transfer.response.Response;
@@ -10,14 +10,14 @@ import common.transfer.request.Request;
  * TCP сервер
  * @author Septyq
  */
-public class NetServer extends AbstractServer {
+public class CommonServer extends AbstractServer {
     private final Network networkManager;
     private final int port;
 
-    public NetServer(int port) throws RuntimeInitException {
+    public CommonServer(int port) throws RuntimeInitException {
         super();
         this.port = port;
-        this.networkManager = new ServerNetwork(port, logger);
+        this.networkManager = new CommonNetwork(port, logger);
     }
 
 

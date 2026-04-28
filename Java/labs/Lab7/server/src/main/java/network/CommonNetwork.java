@@ -14,7 +14,7 @@ import util.logging.AbstractLogger;
  * Общение сервера по протоколу TCP
  * @author Septyq
  */
-public class ServerNetwork implements Network {
+public class CommonNetwork implements Network {
     private ObjectInputStream ois;
     private ObjectOutputStream oos;
     private Socket clientSocket;
@@ -23,7 +23,7 @@ public class ServerNetwork implements Network {
     private boolean connectedToClient = false;
 		private final AbstractLogger logger;
 
-    public ServerNetwork(int port, AbstractLogger logger) {
+    public CommonNetwork(int port, AbstractLogger logger) {
         this.port = port;
         this.logger = logger;
     }
