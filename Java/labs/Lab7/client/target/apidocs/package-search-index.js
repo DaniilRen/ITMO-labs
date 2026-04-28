@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"console"},{"l":"forms"},{"l":"network"},{"l":"network.handlers"},{"l":"util"},{"l":"util.script"}];updateSearchResults();
