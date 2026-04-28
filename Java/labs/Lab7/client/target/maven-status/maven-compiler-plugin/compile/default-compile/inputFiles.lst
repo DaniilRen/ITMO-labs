@@ -11,10 +11,9 @@
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/forms/UserDataForm.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/network/AbstractClientNetwork.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/network/ClientNetwork.java
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/network/processing/AuthHandler.java
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/network/processing/RequestProcessor.java
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/network/processing/ResponseProcessor.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/network/handlers/AuthHandler.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/network/handlers/RequestHandler.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/network/handlers/ResponseHandler.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/util/RequestBuilder.java
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/util/UserData.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/util/script/RecursionController.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/util/script/ScriptProcessor.java

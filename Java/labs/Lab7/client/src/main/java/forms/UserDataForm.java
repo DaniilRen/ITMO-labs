@@ -1,9 +1,9 @@
 package forms;
 
+import common.blueprints.UserData;
 import common.exceptions.InvalidFormException;
 import common.exceptions.InvalidScriptException;
 import console.IOConsole;
-import util.UserData;
 
 public class UserDataForm extends Form<UserData> {
     private final IOConsole console;

@@ -24,35 +24,35 @@
 -version
 -windowtitle
 'common 1.0-SNAPSHOT API'
-common.transfer.request.authenticated
 common.transfer.request.standart
-common.transfer.request.empty
+common.transfer.request.wrapped
 common.transfer.request
 common.transfer.response
 common.transfer
+common.blueprints
 common.network
 common.models
 common.exceptions
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java = 1776853723680
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/generated-sources/annotations = 1777378331167
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/allclasses-index.html = 1777378335453
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/search-page.js = 1777378335494
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/index.html = 1777378335431
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/script.js = 1777378335487
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/overview-tree.html = 1777378335428
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/type-search-index.js = 1777378335455
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/module-search-index.js = 1777378335454
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/tag-search-index.js = 1777378335456
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/member-search-index.js = 1777378335456
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/overview-summary.html = 1777378335480
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/package-search-index.js = 1777378335455
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/search.html = 1777378335479
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/serialized-form.html = 1777378335322
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/stylesheet.css = 1777378335486
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/allpackages-index.html = 1777378335454
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/copy.svg = 1777378335487
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/help-doc.html = 1777378335485
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/element-list = 1777378335242
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/index-all.html = 1777378335478
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/search.js = 1777378335493
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/link.svg = 1777378335492
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/generated-sources/annotations = 1777391420872
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/allclasses-index.html = 1777391425271
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/search-page.js = 1777391425313
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/index.html = 1777391425245
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/script.js = 1777391425311
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/overview-tree.html = 1777391425242
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/type-search-index.js = 1777391425273
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/module-search-index.js = 1777391425272
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/tag-search-index.js = 1777391425274
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/member-search-index.js = 1777391425273
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/overview-summary.html = 1777391425307
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/package-search-index.js = 1777391425273
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/search.html = 1777391425305
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/serialized-form.html = 1777391425140
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/stylesheet.css = 1777391425311
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/allpackages-index.html = 1777391425272
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/copy.svg = 1777391425312
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/help-doc.html = 1777391425308
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/element-list = 1777391425051
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/index-all.html = 1777391425304
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/search.js = 1777391425312
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/apidocs/link.svg = 1777391425312

@@ -31,40 +31,40 @@ forms
 console
 util
 util.script
-network.processing
+network.handlers
 network
 '/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/NetClient.java'
 '/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/Main.java'
 '/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/AbstractClient.java'
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/common-1.0-SNAPSHOT.jar = 1777378333109
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/NetClient.java = 1776978886372
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/target/common-1.0-SNAPSHOT.jar = 1777391422750
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/NetClient.java = 1777388015081
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/Main.java = 1776884351284
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java/AbstractClient.java = 1776853723672
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/client/src/main/java = 1776882302070
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/generated-sources/annotations = 1777378339878
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/allclasses-index.html = 1777378341590
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/search-page.js = 1777378341625
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/NetClient.html = 1777378341354
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/package-use.html = 1777378341547
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/index.html = 1777378341566
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/script.js = 1777378341622
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/overview-tree.html = 1777378341562
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/AbstractClient.html = 1777378341203
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/type-search-index.js = 1777378341595
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/package-summary.html = 1777378341456
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/module-search-index.js = 1777378341593
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/tag-search-index.js = 1777378341595
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/member-search-index.js = 1777378341595
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/package-tree.html = 1777378341460
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/overview-summary.html = 1777378341617
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/package-search-index.js = 1777378341594
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/search.html = 1777378341615
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/stylesheet.css = 1777378341622
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/Main.html = 1777378341343
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/allpackages-index.html = 1777378341592
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/copy.svg = 1777378341623
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/help-doc.html = 1777378341619
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/element-list = 1777378341449
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/index-all.html = 1777378341614
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/search.js = 1777378341624
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/link.svg = 1777378341623
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/generated-sources/annotations = 1777391430924
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/allclasses-index.html = 1777391432982
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/search-page.js = 1777391433026
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/NetClient.html = 1777391432742
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/package-use.html = 1777391432946
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/index.html = 1777391432963
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/script.js = 1777391433022
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/overview-tree.html = 1777391432961
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/AbstractClient.html = 1777391432525
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/type-search-index.js = 1777391432988
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/package-summary.html = 1777391432829
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/module-search-index.js = 1777391432987
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/tag-search-index.js = 1777391432989
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/member-search-index.js = 1777391432988
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/package-tree.html = 1777391432835
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/overview-summary.html = 1777391433014
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/package-search-index.js = 1777391432988
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/search.html = 1777391433012
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/stylesheet.css = 1777391433022
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/Main.html = 1777391432727
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/allpackages-index.html = 1777391432986
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/copy.svg = 1777391433023
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/help-doc.html = 1777391433019
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/element-list = 1777391432823
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/index-all.html = 1777391433011
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/search.js = 1777391433025
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/client/target/apidocs/link.svg = 1777391433024

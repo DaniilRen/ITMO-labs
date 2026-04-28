@@ -1,3 +1,4 @@
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/blueprints/UserData.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/exceptions/AuthException.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/exceptions/CollectionLoadException.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/exceptions/CollectionWriteException.java
@@ -16,14 +17,14 @@
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/network/Network.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/Status.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/Request.java
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/authenticated/AuthenticatedRequest.java
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/authenticated/RequestWrapper.java
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/empty/InitRequest.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/standart/AuthRequest.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/standart/CombinedRequest.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/standart/EntityRequest.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/standart/IdRequest.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/standart/InitRequest.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/standart/NextChunkRequest.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/standart/StandartRequest.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/standart/StringRequest.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/wrapped/AuthenticatedRequest.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/request/wrapped/HeaderRequest.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/common/src/main/java/common/transfer/response/Response.java

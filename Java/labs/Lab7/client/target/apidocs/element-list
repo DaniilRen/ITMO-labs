@@ -2,6 +2,6 @@ unnamed package
 console
 forms
 network
-network.processing
+network.handlers
 util
 util.script

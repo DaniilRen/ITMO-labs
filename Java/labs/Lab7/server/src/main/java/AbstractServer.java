@@ -14,7 +14,7 @@ import managers.commands.AbstractCommandManager;
 import managers.commands.CommandManager;
 import managers.database.AbstractDatabaseManager;
 import managers.database.PostgresManager;
-import network.processing.RequestProcessor;
+import network.handlers.RequestHandler;
 import util.logging.AbstractLogger;
 import util.database.handlers.database.PostgresHandler;
 import util.local.LocalEnvironment;
@@ -28,7 +28,7 @@ public abstract class AbstractServer {
     protected final AbstractDatabaseManager databaseManager;
     protected final AbstractAuthManager authManager;
     protected final AbstractLogger logger;
-    protected final RequestProcessor requestProcessor;
+    protected final RequestHandler requestHandler;
     protected final AbstractCommandManager commandManager;
 
 
@@ -52,7 +52,7 @@ public abstract class AbstractServer {
         logger.info("collection loaded from database");
 
         this.authManager = new AuthManager(logger, databaseManager, LocalEnvironment.getPepper());
-        this.requestProcessor = new RequestProcessor(commandManager, this.authManager);
+        this.requestHandler = new RequestHandler(commandManager, this.authManager);
         registerCommands();
     }
 

@@ -32,7 +32,7 @@ public class NetServer extends AbstractServer {
                     Request request = (Request) networkManager.read();
 										logger.info("new request: " + request);
 
-                    Response<?> response = requestProcessor.processRequest(request);
+                    Response<?> response = requestHandler.handleRequest(request);
 										logger.info("sending response: " + response);
                     networkManager.write(response);
                     

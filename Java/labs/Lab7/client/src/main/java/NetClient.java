@@ -8,17 +8,17 @@ import common.exceptions.InvalidScriptException;
 import common.transfer.response.Response;
 import network.AbstractClientNetwork;
 import network.ClientNetwork;
-import network.processing.AuthHandler;
-import network.processing.RequestProcessor;
-import network.processing.ResponseProcessor;
+import network.handlers.AuthHandler;
+import network.handlers.RequestHandler;
+import network.handlers.ResponseHandler;
 import util.script.ScriptProcessor;
 
 
 public class NetClient extends AbstractClient {
     private final ScriptProcessor scriptProcessor;
     private final AbstractClientNetwork network;
-    private ResponseProcessor responseProcessor;
-    private RequestProcessor requestProcessor;
+    private ResponseHandler responseHandler;
+    private RequestHandler requestHandler;
     private AuthHandler authHandler;
     private final int port;
 
@@ -33,15 +33,15 @@ public class NetClient extends AbstractClient {
     public void run() {
         try {
             this.authHandler = new AuthHandler();
-            this.responseProcessor = new ResponseProcessor(console, network, authHandler);
-            this.requestProcessor = new RequestProcessor(console, network, authHandler);
+            this.responseHandler = new ResponseHandler(console, network, authHandler);
+            this.requestHandler = new RequestHandler(console, network, authHandler);
             network.connect();
-            requestProcessor.setCommandAttributes();
+            requestHandler.setCommandAttributes();
         } catch (IOException e) {
             console.printConnectionError("Failed to connect to server: " + e.getMessage());
             return;
         } catch (InvalidAttributesException e) {
-            console.printConnectionError("[Init Request]: " + e.getMessage());
+            console.printConnectionError("(Init Request): " + e.getMessage());
             return;
         }
         console.println(String.format("<----- client started on port: %d ----->", port));
@@ -70,7 +70,7 @@ public class NetClient extends AbstractClient {
                 return Status.ERROR;
             }
         }
-        Response<?> response = requestProcessor.makeRequest(commandName, args);
-        return responseProcessor.processCommandResponse(response);
+        Response<?> response = requestHandler.makeRequest(commandName, args);
+        return responseHandler.handleResponse(response);
     }
 }

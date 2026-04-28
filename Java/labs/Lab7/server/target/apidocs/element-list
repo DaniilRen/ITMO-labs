@@ -6,7 +6,7 @@ managers.collection
 managers.commands
 managers.database
 network
-network.processing
+network.handlers
 util.database.handlers.database
 util.database.handlers.table
 util.local

@@ -29,8 +29,8 @@
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/server/src/main/java/managers/database/AbstractDatabaseManager.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/server/src/main/java/managers/database/PostgresManager.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/server/src/main/java/network/ServerNetwork.java
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/server/src/main/java/network/processing/ChunkProcessor.java
-/home/danb/Code/ITMO-labs/Java/labs/Lab7/server/src/main/java/network/processing/RequestProcessor.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/server/src/main/java/network/handlers/ChunkHandler.java
+/home/danb/Code/ITMO-labs/Java/labs/Lab7/server/src/main/java/network/handlers/RequestHandler.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/server/src/main/java/util/database/handlers/database/DatabaseHandler.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/server/src/main/java/util/database/handlers/database/PostgresHandler.java
 /home/danb/Code/ITMO-labs/Java/labs/Lab7/server/src/main/java/util/database/handlers/table/CoordinatesHandler.java

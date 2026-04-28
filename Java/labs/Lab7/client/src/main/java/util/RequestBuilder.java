@@ -4,6 +4,7 @@ import java.util.List;
 
 import common.models.Entity;
 import console.IOConsole;
+import common.blueprints.UserData;
 import common.exceptions.IncorrectRequestException;
 import common.exceptions.InvalidScriptException;
 import forms.RouteForm;
@@ -13,6 +14,7 @@ import common.transfer.request.standart.AuthRequest;
 import common.transfer.request.standart.CombinedRequest;
 import common.transfer.request.standart.EntityRequest;
 import common.transfer.request.standart.IdRequest;
+import common.transfer.request.standart.InitRequest;
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.request.standart.StringRequest;
 
@@ -67,6 +69,8 @@ public class RequestBuilder {
                 throw new IncorrectRequestException("Invalid request");
             }
             return new AuthRequest(name, result.user(), result.password());
+        } else if (requestType == InitRequest.class && args.size() == 0) {
+            return new InitRequest();
         }
         
         throw new IncorrectRequestException("Invalid request");
