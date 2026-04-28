@@ -52,9 +52,9 @@ public class RequestProcessor {
             Class <? extends Request> originalRequestClass = originalRequest.getClass();
 
             if (originalRequestClass.equals(NextChunkRequest.class)) {
-                return ChunkProcessor.handleNextChunk((NextChunkRequest) request);
+                return ChunkProcessor.handleNextChunk((NextChunkRequest) originalRequest);
             } else if (originalRequestClass.equals(StandartRequest.class)) {
-                return executeCommand((StandartRequest) request);
+                return executeCommand((StandartRequest) originalRequest);
             } else {
                 return new Response<>(List.of("Unknown request"), Status.ERROR);
             }  

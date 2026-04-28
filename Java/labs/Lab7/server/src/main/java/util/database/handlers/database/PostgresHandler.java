@@ -29,15 +29,14 @@ public class PostgresHandler extends DatabaseHandler {
 
     public boolean authenticate(Connection connection, String user, String password) throws AuthException {
         try {
-            String hashedPassword = getHashedPassword(connection, user);
-            return password.equals(hashedPassword);
+            return password.equals(getHashedPassword(connection, user));
         } catch (AuthException e) {
             throw new AuthException(e.getMessage());
         }
     };
 
     public boolean register(Connection connection, String user, String password) throws AuthException {
-        if (userExists(connection, user)) throw new AuthException("Such user already exists. Choose another username!");
+        if (userExists(connection, user)) throw new AuthException("User already exists! Choose different username");
         try (
             PreparedStatement query = prepareQuery(
               connection, 
@@ -71,8 +70,7 @@ public class PostgresHandler extends DatabaseHandler {
             ResultSet result = query.executeQuery();
             if (!(result.next())) {
                 throw new AuthException("No such user");
-            } 
-            result.next();
+            }
             return result.getString("password");
         } catch (SQLException e) {
             throw new AuthException(e.getMessage());

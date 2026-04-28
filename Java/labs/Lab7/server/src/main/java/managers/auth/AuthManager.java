@@ -21,7 +21,7 @@ public class AuthManager extends AbstractAuthManager {
     };
 
     public void authenticate(String name, String password) throws AuthException {
-        boolean auth = databaseManager.authenticate(name, password);
+        boolean auth = databaseManager.authenticate(name, generatePasswordHash(password));
         if (auth) {
             logger.info(String.format("authenticated user: %s", name));
             return;
