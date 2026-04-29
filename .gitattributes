@@ -1,0 +1,4 @@
+*.tex linguist-vendored
+*.aux linguist-vendored
+*.toc linguist-vendored
+*.out linguist-vendored
