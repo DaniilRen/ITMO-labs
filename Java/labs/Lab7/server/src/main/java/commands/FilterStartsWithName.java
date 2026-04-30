@@ -20,7 +20,7 @@ public class FilterStartsWithName extends Command<StringRequest> {
 
     public FilterStartsWithName(AbstractCollectionManager<Entity> collectionManager) {
         super(new CommandAttribute(
-            "filter_starts_with_name name <name>", 
+            "filter_starts_with_name <name>", 
             "вывести элементы, значение поля name которых начинается с заданной подстроки",
             StringRequest.class
             ));

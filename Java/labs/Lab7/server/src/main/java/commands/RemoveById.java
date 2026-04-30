@@ -2,6 +2,7 @@ package commands;
 
 import java.util.List;
 
+import common.blueprints.UserData;
 import common.models.Entity;
 import common.models.Route;
 import common.transfer.Status;
@@ -14,7 +15,7 @@ import managers.collection.AbstractCollectionManager;
  * Команда 'remove_by_id'. Удаляет элемент из коллекции по ID.
  * @author Septyq
  */
-public class RemoveById extends Command<IdRequest> {
+public class RemoveById extends AuthAwareCommand<IdRequest> {
     private static final long serialVersionUID = 8986213L;
 
     private final AbstractCollectionManager<Entity> collectionManager;
@@ -28,12 +29,15 @@ public class RemoveById extends Command<IdRequest> {
         this.collectionManager = collectionManager;
     }
 
-    public Response<?> execute(IdRequest request) {
-        Route routeToRemove = (Route) collectionManager.getById(request.getId());
-        if (routeToRemove == null) {
+    public Response<?> execute(IdRequest request, UserData userData) {
+        Route route = (Route) collectionManager.getById(request.getId());
+        if (route == null) {
             return new Response<>(List.of("Item not found"), Status.ERROR);
         }
-        collectionManager.removeFromCollection(routeToRemove);
+        if (!(route.getAuthor().equals(userData.user()))) {
+            return new Response<>(List.of("You have no permission to remove this item"), Status.ERROR);
+        }
+        collectionManager.removeFromCollection(route);
         return new Response<>(List.of("element removed"));
     }
 }

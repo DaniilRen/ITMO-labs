@@ -3,7 +3,7 @@ package managers.commands;
 import java.util.List;
 import java.util.Map;
 
-import commands.Command;
+import commands.interfaces.Executable;
 import common.transfer.request.Request;
 
 
@@ -12,8 +12,8 @@ import common.transfer.request.Request;
  * @author Septyq
  */
 public interface AbstractCommandManager {
-    void register(String commandName, Command<?> command);
-    Map<String, Command<?>> getCommands();
+    void register(String commandName, Executable command);
+    Map<String, Executable> getCommands();
     List<String> getCommandHistory(int number);
     Map<String, Class<? extends Request>> getCommandAttributes();
     void addToHistory(String command);

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import commands.Command;
+import commands.interfaces.Executable;
 import common.transfer.request.Request;
 
 
@@ -14,14 +14,14 @@ import common.transfer.request.Request;
  * @author Septyq
  */
 public class CommandManager implements AbstractCommandManager {
-    private final Map<String, Command<?>> commands = new HashMap<>();
+    private final Map<String, Executable> commands = new HashMap<>();
     private final List<String> commandHistory = new ArrayList<>();
 
-    public void register(String commandName, Command<?> command) {
+    public void register(String commandName, Executable command) {
         commands.put(commandName, command);
     }
 
-    public Map<String, Command<?>> getCommands() {
+    public Map<String, Executable> getCommands() {
         return commands;
     }
 

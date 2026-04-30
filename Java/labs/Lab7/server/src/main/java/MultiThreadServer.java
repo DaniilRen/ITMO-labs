@@ -11,7 +11,6 @@ public class MultiThreadServer extends AbstractServer {
     public MultiThreadServer(int port) throws RuntimeInitException {
         super(port);
         this.networkManager = new MultiThreadNetwork(port, logger, 50);
-        
         this.networkManager.setMessageCallback(new CommonCallback(requestHandler, logger));
     }
 
@@ -20,11 +19,9 @@ public class MultiThreadServer extends AbstractServer {
             networkManager.connect();
             boolean running = true;
             logger.info("Server started on port " + port);
-            
             while (running) {
                 Thread.sleep(1000);
             }
-            
         } catch (IOException e) {
             logger.error("Server failed to start: ", e);
         } catch (InterruptedException e) {

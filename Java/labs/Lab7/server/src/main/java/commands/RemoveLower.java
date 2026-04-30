@@ -6,6 +6,7 @@ import java.util.List;
 import common.transfer.request.standart.EntityRequest;
 import common.transfer.response.Response;
 import managers.collection.AbstractCollectionManager;
+import common.blueprints.UserData;
 import common.models.Entity;
 import common.models.Route;;
 
@@ -14,7 +15,7 @@ import common.models.Route;;
  * Команда 'remove_lower {element}'. Удаляет из коллекции все элементы, меньшие, чем заданный.
  * @author Septyq
  */
-public class RemoveLower extends Command<EntityRequest> {
+public class RemoveLower extends AuthAwareCommand<EntityRequest> {
     private static final long serialVersionUID = 982013478L;
 
     private final AbstractCollectionManager<Entity> collectionManager;
@@ -28,7 +29,7 @@ public class RemoveLower extends Command<EntityRequest> {
         this.collectionManager = collectionManager;
     }
 
-    public Response<?> execute(EntityRequest request) {
+    public Response<?> execute(EntityRequest request, UserData userData) {
         Route targetRoute = (Route) request.getEntity(); 
         
         Iterator<Entity> iterator = collectionManager.getCollection().iterator();
@@ -36,7 +37,7 @@ public class RemoveLower extends Command<EntityRequest> {
         
         while (iterator.hasNext()) {
             Route route = (Route) iterator.next();
-            if (route.compareTo(targetRoute) < 0) {
+            if (route.getAuthor().equals(userData.user()) && route.compareTo(targetRoute) < 0) {
                 iterator.remove();
                 removedCount++;
             }

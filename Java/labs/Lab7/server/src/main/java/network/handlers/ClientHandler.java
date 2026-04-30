@@ -1,5 +1,6 @@
 package network.handlers;
 
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -47,11 +48,17 @@ public class ClientHandler extends RecursiveAction {
                             }
                         });
                     }
+                } catch (EOFException e) {
+                    logger.info("Client disconnected (EOF): " + clientSocket.getInetAddress());
+                    break;
                 } catch (SocketException e) {
                     logger.info("Client disconnected: " + clientSocket.getInetAddress());
                     break;
                 } catch (ClassNotFoundException e) {
                     logger.error("Unknown object type from " + clientSocket.getInetAddress(), e);
+                } catch (IOException e) {
+                    logger.error("IO Error reading from " + clientSocket.getInetAddress() + ": " + e.getMessage());
+                    break;
                 }
             }
         } catch (IOException e) {

@@ -4,14 +4,14 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import commands.interfaces.Executable;
-import common.transfer.request.standart.StandartRequest;
+import common.transfer.request.Request;
 import common.transfer.response.Response;
 /**
  * Абстрактная класс для реализации выполнения команды
  * @param <T> тип запроса
  * @author Septyq
  */
-public abstract class Command<T extends StandartRequest> implements Executable<T>, Serializable {
+public abstract class Command<T extends Request> implements Serializable, Executable {
     private static final long serialVersionUID = 987349874L;
 
     private final CommandAttribute commandAttribute;

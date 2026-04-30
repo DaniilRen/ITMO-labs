@@ -1,13 +1,7 @@
 package commands.interfaces;
 
-import common.transfer.request.standart.StandartRequest;
-import common.transfer.response.Response;
+import commands.CommandAttribute;
 
-
-/**
- * Определяет классы с возможностью запуска.
- * @author Septyq
- */
-public interface Executable<T extends StandartRequest> {
-    Response<?> execute(T request);
+public interface Executable {
+    CommandAttribute getAttribute();
 }
