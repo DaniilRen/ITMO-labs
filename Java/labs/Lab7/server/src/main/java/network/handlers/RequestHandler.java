@@ -2,6 +2,7 @@ package network.handlers;
 
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.locks.ReentrantLock;
 
 import commands.Command;
 import common.exceptions.AuthException;
@@ -17,17 +18,15 @@ import common.transfer.response.Response;
 import managers.auth.AbstractAuthManager;
 import managers.commands.AbstractCommandManager;
 
-/**
- * Класс обработки запросов с клиента
- * @author Septyq
- */
 public class RequestHandler {
     protected final AbstractCommandManager commandManager;
     protected final AbstractAuthManager authManager;
+    private final ReentrantLock collectionLock;
 
     public RequestHandler(AbstractCommandManager commandManager, AbstractAuthManager authManager) {
         this.commandManager = commandManager;
         this.authManager = authManager;
+        this.collectionLock = new ReentrantLock();  // Created here
     }
 
     public Response<?> handleRequest(Request request) {
@@ -79,13 +78,23 @@ public class RequestHandler {
         
         @SuppressWarnings("unchecked")
         Command<StandartRequest> typedCommand = (Command<StandartRequest>) command;
-        Response<?> response = typedCommand.execute(request);
-        if (ChunkHandler.shouldChunkify(response)) return ChunkHandler.chunkify(response);
-        return response;
-    };
+        
+        collectionLock.lock();
+        try {
+            Response<?> response = typedCommand.execute(request);
+            if (ChunkHandler.shouldChunkify(response)) return ChunkHandler.chunkify(response);
+            return response;
+        } finally {
+            collectionLock.unlock();
+        }
+    }
 
     private boolean validateCommandName(String command) {
         Set<String> commandsNames = commandManager.getCommands().keySet();
         return commandsNames.contains(command);
+    }
+    
+    public ReentrantLock getCollectionLock() {
+        return collectionLock;
     }
 }

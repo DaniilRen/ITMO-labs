@@ -54,3 +54,54 @@ java.io.EOFException: null
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[?:?]
 	at java.lang.Thread.run(Thread.java:1583) [?:?]
 2026-04-30 13:58:23.484 [pool-2-thread-3] INFO  Server standart logger - Client disconnected: /127.0.0.1
+2026-04-30 15:03:46.609 [main] INFO  Server standart logger - collection loaded from database
+2026-04-30 15:03:46.614 [main] INFO  Server standart logger - Started on port 9000
+2026-04-30 15:03:46.616 [main] INFO  Server standart logger - Server started on port 9000
+2026-04-30 15:03:49.758 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-04-30 15:03:49.759 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-04-30 15:03:49.824 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@51c85712
+2026-04-30 15:03:49.825 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
+2026-04-30 15:03:53.793 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@7b5b4c65
+2026-04-30 15:03:53.829 [pool-2-thread-2] INFO  Server standart logger - authenticated user: 1
+2026-04-30 15:03:53.830 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[1, 1]}
+2026-04-30 15:03:55.450 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6a9293d8
+2026-04-30 15:03:55.462 [pool-2-thread-3] INFO  Server standart logger - authenticated user: 1
+2026-04-30 15:03:55.463 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-30 15:03:46.607858624]}
+2026-04-30 15:04:01.363 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-04-30 15:04:01.363 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-04-30 15:04:01.402 [pool-2-thread-4] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@112b6823
+2026-04-30 15:04:01.402 [pool-2-thread-4] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
+2026-04-30 15:04:05.929 [pool-2-thread-5] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@198d9d2c
+2026-04-30 15:04:05.942 [pool-2-thread-5] INFO  Server standart logger - authenticated user: admin
+2026-04-30 15:04:05.942 [pool-2-thread-5] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
+2026-04-30 15:04:07.339 [pool-2-thread-6] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@23fae40c
+2026-04-30 15:04:07.353 [pool-2-thread-6] INFO  Server standart logger - authenticated user: admin
+2026-04-30 15:04:07.353 [pool-2-thread-6] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-30 15:03:46.607858624]}
+2026-04-30 15:04:11.244 [ForkJoinPool-1-worker-2] ERROR Server standart logger - Error in client handler: 
+java.io.EOFException: null
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:3232) ~[?:?]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1713) ~[?:?]
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:540) ~[?:?]
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:498) ~[?:?]
+	at network.handlers.ClientHandler.compute(ClientHandler.java:41) [server-1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194) [?:?]
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?]
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?]
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) [?:?]
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) [?:?]
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) [?:?]
+2026-04-30 15:04:11.249 [ForkJoinPool-1-worker-2] INFO  Server standart logger - Client disconnected: /127.0.0.1
+2026-04-30 15:04:11.984 [ForkJoinPool-1-worker-1] ERROR Server standart logger - Error in client handler: 
+java.io.EOFException: null
+	at java.io.ObjectInputStream$BlockDataInputStream.peekByte(ObjectInputStream.java:3232) ~[?:?]
+	at java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1713) ~[?:?]
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:540) ~[?:?]
+	at java.io.ObjectInputStream.readObject(ObjectInputStream.java:498) ~[?:?]
+	at network.handlers.ClientHandler.compute(ClientHandler.java:41) [server-1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194) [?:?]
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) [?:?]
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) [?:?]
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) [?:?]
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) [?:?]
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) [?:?]
+2026-04-30 15:04:11.985 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1

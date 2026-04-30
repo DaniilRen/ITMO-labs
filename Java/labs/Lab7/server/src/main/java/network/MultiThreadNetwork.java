@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ForkJoinPool;
 
 import common.network.Network;
 import network.callback.AbstractCallback;
@@ -18,8 +19,8 @@ public class MultiThreadNetwork implements Network {
     private final int port;
     private final AbstractLogger logger;
     private volatile boolean isRunning;
-    private ExecutorService clientHandlerPool;
-    private final int maxThreads;
+    private ForkJoinPool readingPool;
+    private ExecutorService processingPool;
     private final Map<Socket, ClientHandler> activeClients;
     private AbstractCallback messageCallback;
 
@@ -30,8 +31,9 @@ public class MultiThreadNetwork implements Network {
     public MultiThreadNetwork(int port, AbstractLogger logger, int maxThreads) {
         this.port = port;
         this.logger = logger;
-        this.maxThreads = maxThreads;
         this.activeClients = new ConcurrentHashMap<>();
+        this.readingPool = new ForkJoinPool();
+        this.processingPool = Executors.newFixedThreadPool(maxThreads);
         this.isRunning = false;
     }
 
@@ -43,15 +45,19 @@ public class MultiThreadNetwork implements Network {
         return messageCallback;
     }
 
+    public ExecutorService getProcessingPool() {
+        return processingPool;
+    }
+
+    @Override
     public void connect() throws IOException {
         try {
             serverSocket = new ServerSocket(port);
-            clientHandlerPool = Executors.newFixedThreadPool(maxThreads);
             isRunning = true;
             
             logger.info("Started on port " + port);
             
-            clientHandlerPool.submit(() -> {
+            Thread acceptorThread = new Thread(() -> {
                 while (isRunning) {
                     try {
                         Socket clientSocket = serverSocket.accept();
@@ -63,8 +69,7 @@ public class MultiThreadNetwork implements Network {
                         if (messageCallback != null) {
                             messageCallback.onClientConnected(handler);
                         }
-                        
-                        clientHandlerPool.submit(handler);
+                        readingPool.submit(handler);
                         
                     } catch (IOException e) {
                         if (isRunning) {
@@ -73,13 +78,15 @@ public class MultiThreadNetwork implements Network {
                     }
                 }
             });
+            acceptorThread.start();
             
         } catch (IOException e) {
-            logger.error("Server startup error: ", e);
+            logger.error("connection error: ", e);
             throw e;
         }
     }
 
+    @Override
     public void write(Object object) throws IOException {
         for (ClientHandler handler : activeClients.values()) {
             try {
@@ -90,19 +97,21 @@ public class MultiThreadNetwork implements Network {
         }
     }
 
-
- 
-
+    @Override
     public void close() throws IOException {
         isRunning = false;
         
-        for (ClientHandler handler: activeClients.values()) {
+        for (ClientHandler handler : activeClients.values()) {
             handler.close();
         }
         activeClients.clear();
         
-        if (clientHandlerPool != null) {
-            clientHandlerPool.shutdown();
+        if (processingPool != null) {
+            processingPool.shutdown();
+        }
+        
+        if (readingPool != null) {
+            readingPool.shutdown();
         }
         
         if (serverSocket != null && !serverSocket.isClosed()) {
