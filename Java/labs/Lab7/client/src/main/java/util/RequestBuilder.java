@@ -25,9 +25,12 @@ import common.transfer.request.standart.StringRequest;
  */
 public class RequestBuilder {
     private final IOConsole console;
+    private final String author;
 
-    public RequestBuilder(IOConsole console) {
+
+    public RequestBuilder(IOConsole console, String author) {
         this.console = console;
+        this.author = author;
     }
 
     public Request buildRequest(Class<? extends Request> requestType, String name, List<?> args) 
@@ -78,7 +81,7 @@ public class RequestBuilder {
 
 
     private Entity buildEntity() {
-        return new RouteForm(console).build();
+        return new RouteForm(console, author).build();
     }
 
     private UserData buildUserData() {

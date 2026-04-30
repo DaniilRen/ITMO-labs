@@ -1,5 +1,9 @@
 BEGIN;
 
+INSERT INTO users (name, password) VALUES
+('admin', '5d2fa642ee3c7daf8b0b4658bcd950fcf90c419c9ed47411c8d96c667e140f31'), -- admin --
+('user1', '2946e11fb8b7cac4149a7160a79e1be7bb630b5060c08bf49a0fd4dd67b80fb9'); -- password1 --
+
 INSERT INTO coordinates (x, y) VALUES
 (10.5, 20),
 (25.5, 35),
@@ -21,16 +25,16 @@ INSERT INTO location3Dimension (x, y, z, name) VALUES
 (5500.0, 6000.4, 750, 'Kazan Stadium'),
 (7000.6, 7500.9, 900, 'Sochi Beach');
 
-INSERT INTO route (name, distance, coordinates_id, from_location_id, to_location_id) VALUES
-('Route Alpha', 150, 1, 1, 1),
-('Route Beta', 250, 2, 2, 2),
-('Route Gamma', 350, 3, 3, 3),
-('Route Delta', 450, 4, 4, 4),
-('Route Epsilon', 550, 5, 5, 5),
-('Route Zeta', 200, 1, 2, 3),
-('Route Eta', 300, 2, 3, 4),
-('Route Theta', 400, 3, 4, 5),
-('Route Iota', 500, 4, 5, 1),
-('Route Kappa', 600, 5, 1, 2);
+INSERT INTO route (name, distance, coordinates_id, from_location_id, to_location_id, author) VALUES
+('Route Alpha', 150, 1, 1, 1, 'admin'),
+('Route Beta', 250, 2, 2, 2, 'admin'),
+('Route Gamma', 350, 3, 3, 3, 'admin'),
+('Route Delta', 450, 4, 4, 4, 'admin'),
+('Route Epsilon', 550, 5, 5, 5, 'admin'),
+('Route Zeta', 200, 1, 2, 3, 'user1'),
+('Route Eta', 300, 2, 3, 4, 'user1'),
+('Route Theta', 400, 3, 4, 5, 'user1'),
+('Route Iota', 500, 4, 5, 1, 'user1'),
+('Route Kappa', 600, 5, 1, 2, 'user1');
 
 COMMIT;

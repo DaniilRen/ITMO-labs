@@ -28,7 +28,7 @@ public class PostgresManager extends AbstractDatabaseManager {
     public Collection<Entity> readCollection() throws CollectionLoadException {
         String queryMessage = """
             SELECT 
-                r.id, r.name, r.distance, r.creation_date,
+                r.id, r.name, r.distance, r.creation_date, r.author,
                 c.x as coord_x, c.y as coord_y,
                 l2.x as from_x, l2.y as from_y, l2.name as from_name,
                 l3.x as to_x, l3.y as to_y, l3.z as to_z, l3.name as to_name
@@ -55,7 +55,8 @@ public class PostgresManager extends AbstractDatabaseManager {
                     result.getObject("creation_date", LocalDateTime.class),
                     new Location2Dimension(result.getInt("from_x"), result.getDouble("from_y"), result.getString("from_name")),
                     new Location3Dimension(result.getDouble("to_x"), result.getDouble("to_y"), result.getInt("to_z"), result.getString("to_name")),
-                    result.getInt("distance")
+                    result.getInt("distance"),
+                    result.getString("author")
                 );
                 
                 if (route.validate()) {
@@ -86,22 +87,20 @@ public class PostgresManager extends AbstractDatabaseManager {
                 for (Entity entity : collection) {
                     if (entity instanceof Route) {
                         Route route = (Route) entity; 
-                        int coordinatesId = api.getUpdatedCoordinatesId(connection, route.getCoordinates());
-                        int fromLocationId = api.getUpdatedLocationFromId(connection, route.getLocationFrom());
-                        int toLocationId = api.getUpdatedLocationToId(connection, route.getLocationTo());
                         
                         String insertSQL = """
-                            INSERT INTO route (name, distance, creation_date, coordinates_id, from_location_id, to_location_id)
-                            VALUES (?, ?, ?, ?, ?, ?)
+                            INSERT INTO route (name, distance, creation_date, coordinates_id, from_location_id, to_location_id, author)
+                            VALUES (?, ?, ?, ?, ?, ?, ?)
                         """;
                         
                         try (PreparedStatement statement = connection.prepareStatement(insertSQL)) {
                             statement.setString(1, route.getName());
                             statement.setInt(2, route.getDistance());
                             statement.setObject(3, route.getCreationDate());
-                            statement.setInt(4, coordinatesId);
-                            statement.setInt(5, fromLocationId);
-                            statement.setInt(6, toLocationId);
+                            statement.setInt(4, api.getUpdatedCoordinatesId(connection, route.getCoordinates()));
+                            statement.setInt(5, api.getUpdatedLocationFromId(connection, route.getLocationFrom()));
+                            statement.setInt(6, api.getUpdatedLocationToId(connection, route.getLocationTo()));
+                            statement.setString(7, route.getAuthor());
                             statement.executeUpdate();
                         }
                     } else {

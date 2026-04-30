@@ -8,6 +8,10 @@ public class AuthHandler {
     private boolean authenticated = false;
     private UserData credentials;
 
+    public AuthHandler() {
+        this.credentials = new UserData(null, null);
+    }
+
     public boolean isAuthenticated() {
         return authenticated;
     }

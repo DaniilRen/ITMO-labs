@@ -19,32 +19,24 @@ public class Route extends Entity {
     private Location2Dimension from;
     private Location3Dimension to;
     private int distance;
+    private String author;
 
     public Route(String name, Coordinates coordinates, LocalDateTime creationDate, 
-            Location2Dimension from, Location3Dimension to, int distance) {
+            Location2Dimension from, Location3Dimension to, int distance, String author) {
         this.name = name;
         this.coordinates = coordinates;
         this.creationDate = creationDate;
         this.from = from;
         this.to = to;
         this.distance = distance;
+        this.author = author;
     }
 
     public Route(int id, String name, Coordinates coordinates, LocalDateTime creationDate, 
-            Location2Dimension from, Location3Dimension to, int distance) {
-        this.id = id;
-        this.name = name;
-        this.coordinates = coordinates;
-        this.creationDate = creationDate;
-        this.from = from;
-        this.to = to;
-        this.distance = distance;
-    }
-
-    public void setId(Integer id) {
+            Location2Dimension from, Location3Dimension to, int distance, String author) {
+        this(name, coordinates, creationDate, from, to, distance, author);
         this.id = id;
     }
-
 
     public Coordinates getCoordinates() {
         return coordinates;
@@ -71,7 +63,10 @@ public class Route extends Entity {
     }
 
     public int getDistance() {
-        return this.distance;
+        return distance;
+    }
+    public String getAuthor() {
+        return author;
     }
 
     @Override
@@ -81,7 +76,8 @@ public class Route extends Entity {
             && creationDate != null
             && coordinates.validate()
             && from.validate()
-            && to.validate();
+            && to.validate()
+            && author != null;
     }
 
     @Override
@@ -95,7 +91,8 @@ public class Route extends Entity {
             && Objects.equals(coordinates, convertedObject.coordinates) 
             && Objects.equals(creationDate, convertedObject.creationDate)
             && Objects.equals(from, convertedObject.from)
-            && Objects.equals(to, convertedObject.to);
+            && Objects.equals(to, convertedObject.to)
+            && Objects.equals(author, convertedObject.author);
     }
 
     @Override
@@ -106,13 +103,14 @@ public class Route extends Entity {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
-        result.append(String.format("id=%d", id) + "\n");
-        result.append(String.format("creation date=%s", creationDate) + "\n");
-        result.append(String.format("name=%s", name) + "\n");
-        result.append(String.format("coordinates=%s", coordinates) + "\n");
-        result.append(String.format("from=%s", from) + "\n");
-        result.append(String.format("to=%s", to) + "\n");
-        result.append(String.format("distance=%d", distance) + "\n");
+        result.append(String.format("id = %d", id) + "\n");
+        result.append(String.format("creation date = %s", creationDate) + "\n");
+        result.append(String.format("name = %s", name) + "\n");
+        result.append(String.format("coordinates = %s", coordinates) + "\n");
+        result.append(String.format("from = %s", from) + "\n");
+        result.append(String.format("to = %s", to) + "\n");
+        result.append(String.format("distance = %d", distance) + "\n");
+        result.append(String.format("author = %s", author) + "\n");
         return result.toString();
     }
 

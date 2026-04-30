@@ -19,10 +19,12 @@ import common.models.Location3Dimension;
 public class RouteForm extends Form<Route> {
     private final IOConsole console;
     private final boolean fileMode;
+    private final String author;
 
-    public RouteForm(IOConsole console) {
+    public RouteForm(IOConsole console, String author) {
         this.console = console;
         this.fileMode = console.fileMode();
+        this.author = author;
     }
 
     @Override
@@ -34,9 +36,10 @@ public class RouteForm extends Form<Route> {
                 LocalDateTime.now(),
                 askLocationFrom(),
                 askLocationTo(),
-                askDistance()
+                askDistance(),
+                author
             );
-            if (!route.validate()) throw new InvalidFormException("Final Route validation failed");
+            if (!route.validate()) throw new InvalidFormException("invalid route");
             return route;
         } catch (InvalidFormException | InvalidScriptException e) {
             console.printError(e.getMessage());

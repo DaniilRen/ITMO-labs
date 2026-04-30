@@ -37,7 +37,8 @@ CREATE TABLE IF NOT EXISTS route (
     creation_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     coordinates_id INTEGER NOT NULL REFERENCES coordinates(id),
     from_location_id INTEGER NOT NULL REFERENCES location2Dimension(id),
-    to_location_id INTEGER NOT NULL REFERENCES location3Dimension(id)
+    to_location_id INTEGER NOT NULL REFERENCES location3Dimension(id),
+    author VARCHAR(64) NOT NULL
 );
 
 CREATE INDEX IF NOT EXISTS idx_routes_coordinates_id ON route(coordinates_id);
