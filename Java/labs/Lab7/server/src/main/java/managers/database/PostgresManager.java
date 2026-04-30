@@ -5,7 +5,7 @@ import common.models.Entity;
 import common.models.Location2Dimension;
 import common.models.Location3Dimension;
 import common.models.Route;
-import util.database.handlers.database.DatabaseHandler;
+import util.database.api.DatabaseHandler;
 import common.exceptions.CollectionLoadException;
 import common.exceptions.CollectionWriteException;
 

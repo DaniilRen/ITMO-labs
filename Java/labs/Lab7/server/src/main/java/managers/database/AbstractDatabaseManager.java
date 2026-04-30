@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.Collection;
 
 import common.models.Entity;
-import util.database.handlers.database.DatabaseHandler;
+import util.database.api.DatabaseHandler;
 import common.exceptions.AuthException;
 import common.exceptions.CollectionLoadException;
 import common.exceptions.CollectionWriteException;

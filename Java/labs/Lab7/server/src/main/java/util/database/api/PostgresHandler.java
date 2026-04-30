@@ -1,4 +1,4 @@
-package util.database.handlers.database;
+package util.database.api;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,9 +10,9 @@ import common.exceptions.AuthException;
 import common.models.Coordinates;
 import common.models.Location2Dimension;
 import common.models.Location3Dimension;
-import util.database.handlers.table.CoordinatesHandler;
-import util.database.handlers.table.LocationFromHandler;
-import util.database.handlers.table.LocationToHandler;
+import util.database.table.CoordinatesHandler;
+import util.database.table.LocationFromHandler;
+import util.database.table.LocationToHandler;
 
 /**
  * Определяет прямое взаимодействия с PostgreSQL

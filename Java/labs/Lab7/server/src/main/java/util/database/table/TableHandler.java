@@ -1,4 +1,4 @@
-package util.database.handlers.table;
+package util.database.table;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

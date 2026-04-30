@@ -1,29 +1,29 @@
-package util.database.handlers.table;
+package util.database.table;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import common.models.Location3Dimension;
+import common.models.Location2Dimension;
 
 /**
- * Определяет доступные операции с таблицой LocationTo
+ * Определяет доступные операции с таблицой LocationFrom
  * @author Septyq
  */
-public class LocationToHandler extends TableHandler<Location3Dimension> {
-    public LocationToHandler(Connection connection) {
+public class LocationFromHandler extends TableHandler<Location2Dimension> {
+    public LocationFromHandler(Connection connection) {
         super(connection);
     }
 
     @Override
-    public int getId(Location3Dimension object) {
+    public int getId(Location2Dimension object) {
         try (PreparedStatement query = prepareQuery(connection, "SELECT id FROM coordinates WHERE x = ? AND y = ?")) {
-            query.setDouble(1, object.getX());
+            query.setInt(1, object.getX());
             query.setDouble(2, object.getY());
-            query.setInt(3, object.getZ());
+            query.setString(3, object.getName());
             ResultSet result = query.executeQuery();
-            if (!(result.next())) throw new SQLException("No such location To row");;
+            if (!(result.next())) throw new SQLException("No such location From row");;
             return result.getInt("id");
         } catch (SQLException e) {
             return -1;
@@ -31,11 +31,11 @@ public class LocationToHandler extends TableHandler<Location3Dimension> {
     }
 
     @Override
-    public int insert(Location3Dimension object) throws SQLException {
+    public int insert(Location2Dimension object) throws SQLException {
         try (PreparedStatement query = prepareQuery(connection, "INSERT INTO coordinates (x, y) VALUES (?, ?) RETURNING id")) {
-            query.setDouble(1, object.getX());
+            query.setInt(1, object.getX());
             query.setDouble(2, object.getY());
-            query.setInt(3, object.getZ());
+            query.setString(3, object.getName());
             ResultSet rs = query.executeQuery();
 
             if (!(rs.next())) throw new SQLException("Error while adding entry");

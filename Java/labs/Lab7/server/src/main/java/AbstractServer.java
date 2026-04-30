@@ -15,7 +15,7 @@ import managers.database.AbstractDatabaseManager;
 import managers.database.PostgresManager;
 import network.handlers.RequestHandler;
 import util.logging.AbstractLogger;
-import util.database.handlers.database.PostgresHandler;
+import util.database.api.PostgresHandler;
 import util.local.LocalEnvironment;
 
 /**
