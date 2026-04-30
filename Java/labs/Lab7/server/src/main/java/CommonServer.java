@@ -52,7 +52,7 @@ public class CommonServer extends AbstractServer {
         commandManager.register("info", new Info(collectionManager));
         commandManager.register("show", new Show(collectionManager));
         commandManager.register("add", new Add(databaseManager, collectionManager));
-        commandManager.register("update", new Update(collectionManager));
+        commandManager.register("update", new Update(databaseManager, collectionManager));
         commandManager.register("remove_by_id", new RemoveById(collectionManager));
         commandManager.register("clear", new Clear(collectionManager));
         commandManager.register("remove_lower", new RemoveLower(collectionManager));

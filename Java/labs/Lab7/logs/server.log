@@ -838,3 +838,534 @@ to = (x=7.000000, y=7.000000, z=7, name=7)
 distance = 7
 author = admin
 ]}
+2026-04-30 19:49:36.025 [main] INFO  Server standart logger - collection loaded from database
+2026-04-30 19:49:36.036 [main] INFO  Server standart logger - Started on port 9000
+2026-04-30 19:49:36.038 [main] INFO  Server standart logger - Server started on port 9000
+2026-04-30 19:49:36.412 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-04-30 19:49:36.413 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-04-30 19:49:36.489 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@28017961
+2026-04-30 19:49:36.490 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
+2026-04-30 19:49:40.166 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@21428d9c
+2026-04-30 19:49:40.236 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
+2026-04-30 19:49:40.237 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
+2026-04-30 19:49:44.482 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6844d906
+2026-04-30 19:49:44.528 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
+2026-04-30 19:49:44.535 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-04-30T16:27:59.536713
+name = Route Zeta
+coordinates = (x=10.500000, y=20)
+from = (x=250, y=350.200000, name=Saint Petersburg Square)
+to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance = 200
+author = user1
+, id = 1
+creation date = 2026-04-30T16:27:59.536713
+name = Route Alpha
+coordinates = (x=10.500000, y=20)
+from = (x=100, y=200.500000, name=Moscow Central)
+to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance = 150
+author = admin
+, id = 7
+creation date = 2026-04-30T16:27:59.536713
+name = Route Eta
+coordinates = (x=25.500000, y=35)
+from = (x=400, y=450.800000, name=Novosibirsk Station)
+to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance = 300
+author = user1
+, id = 2
+creation date = 2026-04-30T16:27:59.536713
+name = Route Beta
+coordinates = (x=25.500000, y=35)
+from = (x=250, y=350.200000, name=Saint Petersburg Square)
+to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance = 250
+author = admin
+, id = 8
+creation date = 2026-04-30T16:27:59.536713
+name = Route Theta
+coordinates = (x=40.200001, y=50)
+from = (x=550, y=600.300000, name=Kazan Kremlin)
+to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance = 400
+author = user1
+, id = 3
+creation date = 2026-04-30T16:27:59.536713
+name = Route Gamma
+coordinates = (x=40.200001, y=50)
+from = (x=400, y=450.800000, name=Novosibirsk Station)
+to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance = 350
+author = admin
+, id = 9
+creation date = 2026-04-30T16:27:59.536713
+name = Route Iota
+coordinates = (x=55.799999, y=65)
+from = (x=700, y=750.000000, name=Sochi Park)
+to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance = 500
+author = user1
+, id = 4
+creation date = 2026-04-30T16:27:59.536713
+name = Route Delta
+coordinates = (x=55.799999, y=65)
+from = (x=550, y=600.300000, name=Kazan Kremlin)
+to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance = 450
+author = admin
+, id = 10
+creation date = 2026-04-30T16:27:59.536713
+name = Route Kappa
+coordinates = (x=70.300003, y=80)
+from = (x=100, y=200.500000, name=Moscow Central)
+to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance = 600
+author = user1
+, id = 5
+creation date = 2026-04-30T16:27:59.536713
+name = Route Epsilon
+coordinates = (x=70.300003, y=80)
+from = (x=700, y=750.000000, name=Sochi Park)
+to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance = 550
+author = admin
+, id = 11
+creation date = 2026-04-30T19:20:45.769286
+name = 9
+coordinates = (x=9.000000, y=9)
+from = (x=9, y=9.000000, name=9)
+to = (x=9.000000, y=9.000000, z=9, name=9)
+distance = 9
+author = admin
+, id = 14
+creation date = 2026-04-30T19:27:16.084045
+name = 7
+coordinates = (x=7.000000, y=7)
+from = (x=7, y=7.000000, name=7)
+to = (x=7.000000, y=7.000000, z=7, name=7)
+distance = 7
+author = admin
+, id = 12
+creation date = 2026-04-30T19:23:14.821059
+name = 3
+coordinates = (x=3.000000, y=3)
+from = (x=3, y=3.000000, name=3)
+to = (x=3.000000, y=3.000000, z=3, name=3)
+distance = 3
+author = admin
+, id = 13
+creation date = 2026-04-30T19:24:48.560361
+name = 8
+coordinates = (x=8.000000, y=8)
+from = (x=8, y=8.000000, name=8)
+to = (x=8.000000, y=8.000000, z=8, name=8)
+distance = 8
+author = admin
+]}
+2026-04-30 19:50:06.601 [pool-2-thread-4] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6d13ddb4
+2026-04-30 19:50:06.641 [pool-2-thread-4] INFO  Server standart logger - authenticated user: admin
+2026-04-30 19:50:06.692 [pool-2-thread-4] INFO  Server standart logger - sending response: Response{status=ERROR, body=[Item not found]}
+2026-04-30 19:52:50.224 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected (EOF): /127.0.0.1
+2026-04-30 19:52:50.226 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1
+2026-04-30 19:53:11.722 [main] INFO  Server standart logger - collection loaded from database
+2026-04-30 19:53:11.732 [main] INFO  Server standart logger - Started on port 9000
+2026-04-30 19:53:11.735 [main] INFO  Server standart logger - Server started on port 9000
+2026-04-30 19:53:12.660 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-04-30 19:53:12.660 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-04-30 19:53:12.747 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@518872a8
+2026-04-30 19:53:12.749 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
+2026-04-30 19:53:16.795 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@2981bb7b
+2026-04-30 19:53:16.860 [pool-2-thread-2] ERROR Server standart logger - wrong password for user: admin
+2026-04-30 19:53:16.861 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=ERROR, body=[wrong password for user: admin]}
+2026-04-30 19:53:22.126 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@66825104
+2026-04-30 19:53:22.176 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
+2026-04-30 19:53:22.176 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
+2026-04-30 19:53:23.971 [pool-2-thread-4] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@61f7bacc
+2026-04-30 19:53:24.011 [pool-2-thread-4] INFO  Server standart logger - authenticated user: admin
+2026-04-30 19:53:24.018 [pool-2-thread-4] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-04-30T16:27:59.536713
+name = Route Zeta
+coordinates = (x=10.500000, y=20)
+from = (x=250, y=350.200000, name=Saint Petersburg Square)
+to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance = 200
+author = user1
+, id = 1
+creation date = 2026-04-30T16:27:59.536713
+name = Route Alpha
+coordinates = (x=10.500000, y=20)
+from = (x=100, y=200.500000, name=Moscow Central)
+to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance = 150
+author = admin
+, id = 7
+creation date = 2026-04-30T16:27:59.536713
+name = Route Eta
+coordinates = (x=25.500000, y=35)
+from = (x=400, y=450.800000, name=Novosibirsk Station)
+to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance = 300
+author = user1
+, id = 2
+creation date = 2026-04-30T16:27:59.536713
+name = Route Beta
+coordinates = (x=25.500000, y=35)
+from = (x=250, y=350.200000, name=Saint Petersburg Square)
+to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance = 250
+author = admin
+, id = 8
+creation date = 2026-04-30T16:27:59.536713
+name = Route Theta
+coordinates = (x=40.200001, y=50)
+from = (x=550, y=600.300000, name=Kazan Kremlin)
+to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance = 400
+author = user1
+, id = 3
+creation date = 2026-04-30T16:27:59.536713
+name = Route Gamma
+coordinates = (x=40.200001, y=50)
+from = (x=400, y=450.800000, name=Novosibirsk Station)
+to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance = 350
+author = admin
+, id = 9
+creation date = 2026-04-30T16:27:59.536713
+name = Route Iota
+coordinates = (x=55.799999, y=65)
+from = (x=700, y=750.000000, name=Sochi Park)
+to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance = 500
+author = user1
+, id = 4
+creation date = 2026-04-30T16:27:59.536713
+name = Route Delta
+coordinates = (x=55.799999, y=65)
+from = (x=550, y=600.300000, name=Kazan Kremlin)
+to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance = 450
+author = admin
+, id = 10
+creation date = 2026-04-30T16:27:59.536713
+name = Route Kappa
+coordinates = (x=70.300003, y=80)
+from = (x=100, y=200.500000, name=Moscow Central)
+to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance = 600
+author = user1
+, id = 5
+creation date = 2026-04-30T16:27:59.536713
+name = Route Epsilon
+coordinates = (x=70.300003, y=80)
+from = (x=700, y=750.000000, name=Sochi Park)
+to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance = 550
+author = admin
+, id = 11
+creation date = 2026-04-30T19:20:45.769286
+name = 9
+coordinates = (x=9.000000, y=9)
+from = (x=9, y=9.000000, name=9)
+to = (x=9.000000, y=9.000000, z=9, name=9)
+distance = 9
+author = admin
+, id = 14
+creation date = 2026-04-30T19:27:16.084045
+name = 7
+coordinates = (x=7.000000, y=7)
+from = (x=7, y=7.000000, name=7)
+to = (x=7.000000, y=7.000000, z=7, name=7)
+distance = 7
+author = admin
+, id = 12
+creation date = 2026-04-30T19:23:14.821059
+name = 3
+coordinates = (x=3.000000, y=3)
+from = (x=3, y=3.000000, name=3)
+to = (x=3.000000, y=3.000000, z=3, name=3)
+distance = 3
+author = admin
+, id = 13
+creation date = 2026-04-30T19:24:48.560361
+name = 8
+coordinates = (x=8.000000, y=8)
+from = (x=8, y=8.000000, name=8)
+to = (x=8.000000, y=8.000000, z=8, name=8)
+distance = 8
+author = admin
+, id = 15
+creation date = 2026-04-30T19:50:04.393361
+name = 13
+coordinates = (x=13.000000, y=13)
+from = (x=13, y=13.000000, name=13)
+to = (x=13.000000, y=13.000000, z=1, name=13)
+distance = 13
+author = admin
+]}
+2026-04-30 19:53:31.563 [pool-2-thread-5] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@c2cf72c
+2026-04-30 19:53:31.575 [pool-2-thread-5] INFO  Server standart logger - authenticated user: admin
+2026-04-30 19:53:31.600 [pool-2-thread-5] INFO  Server standart logger - sending response: Response{status=OK, body=[element updated]}
+2026-04-30 19:53:34.044 [pool-2-thread-6] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@26cccb91
+2026-04-30 19:53:34.060 [pool-2-thread-6] INFO  Server standart logger - authenticated user: admin
+2026-04-30 19:53:34.061 [pool-2-thread-6] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info>, Collection Class: java.util.ArrayList, Collection size: 15, Last saved: no save occured in current session, Last initialized: 2026-04-30 19:53:11.719694996]}
+2026-04-30 19:53:35.408 [pool-2-thread-7] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@2e58bba6
+2026-04-30 19:53:35.450 [pool-2-thread-7] INFO  Server standart logger - authenticated user: admin
+2026-04-30 19:53:35.460 [pool-2-thread-7] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-04-30T16:27:59.536713
+name = Route Zeta
+coordinates = (x=10.500000, y=20)
+from = (x=250, y=350.200000, name=Saint Petersburg Square)
+to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance = 200
+author = user1
+, id = 1
+creation date = 2026-04-30T16:27:59.536713
+name = Route Alpha
+coordinates = (x=10.500000, y=20)
+from = (x=100, y=200.500000, name=Moscow Central)
+to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance = 150
+author = admin
+, id = 7
+creation date = 2026-04-30T16:27:59.536713
+name = Route Eta
+coordinates = (x=25.500000, y=35)
+from = (x=400, y=450.800000, name=Novosibirsk Station)
+to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance = 300
+author = user1
+, id = 2
+creation date = 2026-04-30T16:27:59.536713
+name = Route Beta
+coordinates = (x=25.500000, y=35)
+from = (x=250, y=350.200000, name=Saint Petersburg Square)
+to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance = 250
+author = admin
+, id = 8
+creation date = 2026-04-30T16:27:59.536713
+name = Route Theta
+coordinates = (x=40.200001, y=50)
+from = (x=550, y=600.300000, name=Kazan Kremlin)
+to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance = 400
+author = user1
+, id = 3
+creation date = 2026-04-30T16:27:59.536713
+name = Route Gamma
+coordinates = (x=40.200001, y=50)
+from = (x=400, y=450.800000, name=Novosibirsk Station)
+to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance = 350
+author = admin
+, id = 9
+creation date = 2026-04-30T16:27:59.536713
+name = Route Iota
+coordinates = (x=55.799999, y=65)
+from = (x=700, y=750.000000, name=Sochi Park)
+to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance = 500
+author = user1
+, id = 4
+creation date = 2026-04-30T16:27:59.536713
+name = Route Delta
+coordinates = (x=55.799999, y=65)
+from = (x=550, y=600.300000, name=Kazan Kremlin)
+to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance = 450
+author = admin
+, id = 10
+creation date = 2026-04-30T16:27:59.536713
+name = Route Kappa
+coordinates = (x=70.300003, y=80)
+from = (x=100, y=200.500000, name=Moscow Central)
+to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance = 600
+author = user1
+, id = 5
+creation date = 2026-04-30T16:27:59.536713
+name = Route Epsilon
+coordinates = (x=70.300003, y=80)
+from = (x=700, y=750.000000, name=Sochi Park)
+to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance = 550
+author = admin
+, id = 11
+creation date = 2026-04-30T19:20:45.769286
+name = 9
+coordinates = (x=9.000000, y=9)
+from = (x=9, y=9.000000, name=9)
+to = (x=9.000000, y=9.000000, z=9, name=9)
+distance = 9
+author = admin
+, id = 14
+creation date = 2026-04-30T19:27:16.084045
+name = 7
+coordinates = (x=7.000000, y=7)
+from = (x=7, y=7.000000, name=7)
+to = (x=7.000000, y=7.000000, z=7, name=7)
+distance = 7
+author = admin
+, id = 12
+creation date = 2026-04-30T19:23:14.821059
+name = 3
+coordinates = (x=3.000000, y=3)
+from = (x=3, y=3.000000, name=3)
+to = (x=3.000000, y=3.000000, z=3, name=3)
+distance = 3
+author = admin
+, id = 13
+creation date = 2026-04-30T19:24:48.560361
+name = 8
+coordinates = (x=8.000000, y=8)
+from = (x=8, y=8.000000, name=8)
+to = (x=8.000000, y=8.000000, z=8, name=8)
+distance = 8
+author = admin
+, id = 15
+creation date = 2026-04-30T19:53:28.943715110
+name = 14
+coordinates = (x=14.000000, y=14)
+from = (x=14, y=14.000000, name=14)
+to = (x=14.000000, y=14.000000, z=14, name=14)
+distance = 14
+author = admin
+]}
+2026-04-30 19:53:50.554 [pool-2-thread-8] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@4bb0c55d
+2026-04-30 19:53:50.595 [pool-2-thread-8] INFO  Server standart logger - sending response: Response{status=ERROR, body=[No such user]}
+2026-04-30 19:53:56.079 [pool-2-thread-9] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@37eaab06
+2026-04-30 19:53:56.123 [pool-2-thread-9] INFO  Server standart logger - authenticated user: user1
+2026-04-30 19:53:56.123 [pool-2-thread-9] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[user1, password1]}
+2026-04-30 19:54:12.404 [pool-2-thread-10] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@3a59f114
+2026-04-30 19:54:12.447 [pool-2-thread-10] INFO  Server standart logger - authenticated user: user1
+2026-04-30 19:54:12.448 [pool-2-thread-10] INFO  Server standart logger - sending response: Response{status=ERROR, body=[You have no permission to modify this item]}
+2026-04-30 19:54:15.362 [pool-2-thread-11] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@2c5fae6b
+2026-04-30 19:54:15.406 [pool-2-thread-11] INFO  Server standart logger - authenticated user: user1
+2026-04-30 19:54:15.406 [pool-2-thread-11] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info>, Collection Class: java.util.ArrayList, Collection size: 15, Last saved: no save occured in current session, Last initialized: 2026-04-30 19:53:11.719694996]}
+2026-04-30 19:54:16.855 [pool-2-thread-12] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@112f77c5
+2026-04-30 19:54:16.899 [pool-2-thread-12] INFO  Server standart logger - authenticated user: user1
+2026-04-30 19:54:16.907 [pool-2-thread-12] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-04-30T16:27:59.536713
+name = Route Zeta
+coordinates = (x=10.500000, y=20)
+from = (x=250, y=350.200000, name=Saint Petersburg Square)
+to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance = 200
+author = user1
+, id = 1
+creation date = 2026-04-30T16:27:59.536713
+name = Route Alpha
+coordinates = (x=10.500000, y=20)
+from = (x=100, y=200.500000, name=Moscow Central)
+to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance = 150
+author = admin
+, id = 7
+creation date = 2026-04-30T16:27:59.536713
+name = Route Eta
+coordinates = (x=25.500000, y=35)
+from = (x=400, y=450.800000, name=Novosibirsk Station)
+to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance = 300
+author = user1
+, id = 2
+creation date = 2026-04-30T16:27:59.536713
+name = Route Beta
+coordinates = (x=25.500000, y=35)
+from = (x=250, y=350.200000, name=Saint Petersburg Square)
+to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance = 250
+author = admin
+, id = 8
+creation date = 2026-04-30T16:27:59.536713
+name = Route Theta
+coordinates = (x=40.200001, y=50)
+from = (x=550, y=600.300000, name=Kazan Kremlin)
+to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance = 400
+author = user1
+, id = 3
+creation date = 2026-04-30T16:27:59.536713
+name = Route Gamma
+coordinates = (x=40.200001, y=50)
+from = (x=400, y=450.800000, name=Novosibirsk Station)
+to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance = 350
+author = admin
+, id = 9
+creation date = 2026-04-30T16:27:59.536713
+name = Route Iota
+coordinates = (x=55.799999, y=65)
+from = (x=700, y=750.000000, name=Sochi Park)
+to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance = 500
+author = user1
+, id = 4
+creation date = 2026-04-30T16:27:59.536713
+name = Route Delta
+coordinates = (x=55.799999, y=65)
+from = (x=550, y=600.300000, name=Kazan Kremlin)
+to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance = 450
+author = admin
+, id = 10
+creation date = 2026-04-30T16:27:59.536713
+name = Route Kappa
+coordinates = (x=70.300003, y=80)
+from = (x=100, y=200.500000, name=Moscow Central)
+to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance = 600
+author = user1
+, id = 5
+creation date = 2026-04-30T16:27:59.536713
+name = Route Epsilon
+coordinates = (x=70.300003, y=80)
+from = (x=700, y=750.000000, name=Sochi Park)
+to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance = 550
+author = admin
+, id = 11
+creation date = 2026-04-30T19:20:45.769286
+name = 9
+coordinates = (x=9.000000, y=9)
+from = (x=9, y=9.000000, name=9)
+to = (x=9.000000, y=9.000000, z=9, name=9)
+distance = 9
+author = admin
+, id = 14
+creation date = 2026-04-30T19:27:16.084045
+name = 7
+coordinates = (x=7.000000, y=7)
+from = (x=7, y=7.000000, name=7)
+to = (x=7.000000, y=7.000000, z=7, name=7)
+distance = 7
+author = admin
+, id = 12
+creation date = 2026-04-30T19:23:14.821059
+name = 3
+coordinates = (x=3.000000, y=3)
+from = (x=3, y=3.000000, name=3)
+to = (x=3.000000, y=3.000000, z=3, name=3)
+distance = 3
+author = admin
+, id = 13
+creation date = 2026-04-30T19:24:48.560361
+name = 8
+coordinates = (x=8.000000, y=8)
+from = (x=8, y=8.000000, name=8)
+to = (x=8.000000, y=8.000000, z=8, name=8)
+distance = 8
+author = admin
+, id = 15
+creation date = 2026-04-30T19:53:28.943715110
+name = 14
+coordinates = (x=14.000000, y=14)
+from = (x=14, y=14.000000, name=14)
+to = (x=14.000000, y=14.000000, z=14, name=14)
+distance = 14
+author = admin
+]}
+2026-04-30 19:54:18.564 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected (EOF): /127.0.0.1
+2026-04-30 19:54:18.565 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1

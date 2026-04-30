@@ -112,8 +112,33 @@ public class PostgresHandler extends DatabaseHandler {
 
             ResultSet result = query.executeQuery();
 
-            if (!(result.next())) throw new SQLException("Error while adding entry");
+            if (!(result.next())) throw new SQLException("Error while adding item");
             return result.getInt("id");
         }
     }
+
+    public int updateRoute(Connection connection, Route route, int id) throws SQLException {
+        try (PreparedStatement query = prepareQuery(connection, 
+                "UPDATE route \n" + 
+                "SET name = ?, distance = ?, creation_date = ?, coordinates_id = ?, from_location_id = ?, to_location_id = ?, author = ? \n" +
+                "WHERE id = ?"
+                )) {
+            query.setString(1, route.getName());
+            query.setInt(2, route.getDistance());
+            query.setObject(3, route.getCreationDate());
+            query.setInt(4, getUpdatedCoordinatesId(connection, route.getCoordinates()));
+            query.setInt(5, getUpdatedLocationFromId(connection, route.getLocationFrom()));
+            query.setInt(6, getUpdatedLocationToId(connection, route.getLocationTo()));
+            query.setString(7, route.getAuthor());
+            query.setInt(8, id);
+
+            int affectedRows = query.executeUpdate();
+        
+            if (affectedRows == 0) {
+                throw new SQLException("Error while updating item: no rows affected");
+            }
+            
+            return id; 
+        }
+    };
 }

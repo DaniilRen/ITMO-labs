@@ -9,6 +9,7 @@ import common.transfer.Status;
 import common.transfer.request.standart.CombinedRequest;
 import common.transfer.response.Response;
 import managers.collection.AbstractCollectionManager;
+import managers.database.AbstractDatabaseManager;
 
 
 /**
@@ -18,14 +19,16 @@ import managers.collection.AbstractCollectionManager;
 public class Update extends AuthAwareCommand<CombinedRequest> {
     private static final long serialVersionUID = 19788876L;
 
+    private final AbstractDatabaseManager databaseManager;
     private final AbstractCollectionManager<Entity> collectionManager;
 
-    public Update(AbstractCollectionManager<Entity> collectionManager) {
+    public Update(AbstractDatabaseManager databaseManager,  AbstractCollectionManager<Entity> collectionManager) {
         super(new CommandAttribute(
             "update <ID> {element}", 
             "обновить значение элемента коллекции по ID",
             CombinedRequest.class
             ));
+        this.databaseManager = databaseManager;
         this.collectionManager = collectionManager;
     }
 
@@ -34,6 +37,7 @@ public class Update extends AuthAwareCommand<CombinedRequest> {
             Integer id = request.getId();
             Entity entity = request.getEntity();
             entity.setId(id);
+
             Route route = (Route) collectionManager.getById(id); 
             if (route == null) {
                 return new Response<>(List.of("Item not found"), Status.ERROR);
@@ -41,6 +45,12 @@ public class Update extends AuthAwareCommand<CombinedRequest> {
             if (!(route.getAuthor().equals(userData.user()))) {
                 return new Response<>(List.of("You have no permission to modify this item"), Status.ERROR);
             }
+
+            id = databaseManager.updateEntity(entity, id);
+            if (id < 0) {
+                return new Response<>(List.of("Error while adding item"), Status.ERROR);
+            }
+
             Status result = collectionManager.updateById(id, entity);
             
             if (result == Status.OK) {

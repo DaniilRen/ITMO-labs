@@ -30,4 +30,6 @@ public abstract class DatabaseHandler {
     abstract public int getUpdatedCoordinatesId(Connection connection, Coordinates coords) throws SQLException;
 
     abstract public int insertRoute(Connection connection, Route route) throws SQLException;
+
+    abstract public int updateRoute(Connection connection, Route route, int id) throws SQLException;
 }

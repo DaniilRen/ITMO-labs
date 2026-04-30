@@ -52,6 +52,14 @@ public abstract class AbstractDatabaseManager {
         }
     };
 
+    public int updateEntity(Entity entity, int id) {
+        try {
+            return api.updateRoute(api.getConnection(PostgreSQLurl, PostgreSQLuser, PostgreSQLpassword), (Route) entity, id);
+        } catch (SQLException e) {
+            return -1;
+        }
+    };
+
     abstract public Collection<Entity> readCollection() throws CollectionLoadException;
     
     abstract public void writeCollection(Collection<? extends Entity> collection) throws CollectionWriteException;
