@@ -12,10 +12,8 @@ import managers.collection.CollectionManager;
 import managers.commands.AbstractCommandManager;
 import managers.commands.CommandManager;
 import managers.database.AbstractDatabaseManager;
-import managers.database.PostgresManager;
 import network.handlers.RequestHandler;
 import util.logging.AbstractLogger;
-import util.database.api.PostgresHandler;
 import util.local.LocalEnvironment;
 
 /**
@@ -31,16 +29,11 @@ public abstract class AbstractServer {
     protected final AbstractCommandManager commandManager;
     protected final int port;
 
-    public AbstractServer(int port) throws RuntimeInitException {
+    public AbstractServer(int port, AbstractDatabaseManager databaseManager) throws RuntimeInitException {
         this.port = port;
         this.logger = new ServerLogger("Server standart logger");
         this.commandManager = new CommandManager();
-        this.databaseManager = new PostgresManager(
-            new PostgresHandler(),
-            LocalEnvironment.getDatabaseURL(),
-            LocalEnvironment.getDatabaseUser(),
-            LocalEnvironment.getDatabasePassword()
-        );
+        this.databaseManager = databaseManager;
 
         Collection<Entity> collection = new ArrayList<>();
         try {

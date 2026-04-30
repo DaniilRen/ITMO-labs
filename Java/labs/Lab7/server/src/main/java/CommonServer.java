@@ -1,8 +1,11 @@
 import java.io.IOException;
 import commands.*;
 import network.CommonNetwork;
+import util.database.api.PostgresApi;
+import util.local.LocalEnvironment;
 import common.exceptions.RuntimeInitException;
 import common.transfer.response.Response;
+import managers.database.PostgresManager;
 import common.transfer.request.Request;
 
 /**
@@ -13,7 +16,12 @@ public class CommonServer extends AbstractServer {
     private final CommonNetwork networkManager;
 
     public CommonServer(int port) throws RuntimeInitException {
-        super(port);
+        super(port, new PostgresManager(
+            new PostgresApi(),
+            LocalEnvironment.getDatabaseURL(),
+            LocalEnvironment.getDatabaseUser(),
+            LocalEnvironment.getDatabasePassword()
+        ));
         this.networkManager = new CommonNetwork(port, logger);
     }
 

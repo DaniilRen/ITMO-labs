@@ -8,7 +8,10 @@ import common.transfer.request.standart.AuthRequest;
 import common.transfer.response.Response;
 import managers.auth.AbstractAuthManager;
 
-
+/**
+ * Команда 'register'. Регистрирует нового пользователя.
+ * @author Septyq
+ */
 public class Register extends Command<AuthRequest> {
     private static final long serialVersionUID = 8932432L;
 

@@ -5,7 +5,7 @@ import java.util.Collection;
 
 import common.models.Entity;
 import common.models.Route;
-import util.database.api.DatabaseHandler;
+import util.database.api.DatabaseApi;
 import common.exceptions.AuthException;
 import common.exceptions.CollectionLoadException;
 import common.exceptions.CollectionWriteException;
@@ -16,12 +16,12 @@ import common.exceptions.CollectionWriteException;
  * @author Septyq
  */
 public abstract class AbstractDatabaseManager {
-    protected final DatabaseHandler api;
+    protected final DatabaseApi api;
     protected final String PostgreSQLurl;
     protected final String PostgreSQLuser;
     protected final String PostgreSQLpassword;
 
-    public AbstractDatabaseManager(DatabaseHandler api, String PostgreSQLurl, String PostgreSQLuser, String PostgreSQLpassword) {
+    public AbstractDatabaseManager(DatabaseApi api, String PostgreSQLurl, String PostgreSQLuser, String PostgreSQLpassword) {
         this.api = api;
         this.PostgreSQLurl = PostgreSQLurl;
         this.PostgreSQLuser = PostgreSQLuser;

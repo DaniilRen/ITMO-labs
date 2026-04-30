@@ -2,14 +2,22 @@ import java.io.IOException;
 import commands.*;
 import network.MultiThreadNetwork;
 import network.callback.CommonCallback;
+import util.database.api.PostgresApi;
+import util.local.LocalEnvironment;
 import common.exceptions.RuntimeInitException;
+import managers.database.PostgresManager;
 
 
 public class MultiThreadServer extends AbstractServer {
     private final MultiThreadNetwork networkManager;
 
     public MultiThreadServer(int port) throws RuntimeInitException {
-        super(port);
+        super(port, new PostgresManager(
+            new PostgresApi(),
+            LocalEnvironment.getDatabaseURL(),
+            LocalEnvironment.getDatabaseUser(),
+            LocalEnvironment.getDatabasePassword()
+        ));
         this.networkManager = new MultiThreadNetwork(port, logger, 50);
         this.networkManager.setMessageCallback(new CommonCallback(requestHandler, logger));
     }

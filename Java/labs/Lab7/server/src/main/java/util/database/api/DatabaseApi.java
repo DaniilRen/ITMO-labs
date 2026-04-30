@@ -14,7 +14,7 @@ import common.models.Route;
  * Определяет доступные взаимодействия с базой данных
  * @author Septyq
  */
-public abstract class DatabaseHandler {
+public abstract class DatabaseApi{
     abstract public Connection getConnection(String url, String user, String password) throws SQLException;
 
     abstract public PreparedStatement prepareQuery(Connection conncetion, String queryMessage) throws SQLException;

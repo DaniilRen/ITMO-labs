@@ -5,7 +5,7 @@ import common.models.Entity;
 import common.models.Location2Dimension;
 import common.models.Location3Dimension;
 import common.models.Route;
-import util.database.api.DatabaseHandler;
+import util.database.api.DatabaseApi;
 import common.exceptions.CollectionLoadException;
 import common.exceptions.CollectionWriteException;
 
@@ -20,7 +20,7 @@ import java.util.List;
  * @author Septyq
  */
 public class PostgresManager extends AbstractDatabaseManager {
-    public PostgresManager(DatabaseHandler api, String url, String user, String password) {
+    public PostgresManager(DatabaseApi api, String url, String user, String password) {
         super(api, url, user, password);
     }
 

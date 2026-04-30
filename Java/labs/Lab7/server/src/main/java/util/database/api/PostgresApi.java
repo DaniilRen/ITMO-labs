@@ -19,7 +19,7 @@ import util.database.table.LocationToHandler;
  * Определяет прямое взаимодействия с PostgreSQL
  * @author Septyq
  */
-public class PostgresHandler extends DatabaseHandler {
+public class PostgresApi extends DatabaseApi {
     public Connection getConnection(String url, String user, String password) throws SQLException {
         return DriverManager.getConnection(url, user, password);
     }
