@@ -49,7 +49,7 @@ public class MultiThreadNetwork implements Network {
             clientHandlerPool = Executors.newFixedThreadPool(maxThreads);
             isRunning = true;
             
-            logger.info("Server started on port " + port);
+            logger.info("Started on port " + port);
             
             clientHandlerPool.submit(() -> {
                 while (isRunning) {
@@ -91,16 +91,12 @@ public class MultiThreadNetwork implements Network {
     }
 
 
-    public Object read() throws IOException, ClassNotFoundException {
-        throw new UnsupportedOperationException(
-            "Use ClientHandler for specific client communication"
-        );
-    }
+ 
 
     public void close() throws IOException {
         isRunning = false;
         
-        for (ClientHandler handler : activeClients.values()) {
+        for (ClientHandler handler: activeClients.values()) {
             handler.close();
         }
         activeClients.clear();

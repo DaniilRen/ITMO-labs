@@ -7,11 +7,9 @@ import common.exceptions.RuntimeInitException;
 
 public class MultiThreadServer extends AbstractServer {
     private final MultiThreadNetwork networkManager;
-    private final int port;
 
     public MultiThreadServer(int port) throws RuntimeInitException {
-        super();
-        this.port = port;
+        super(port);
         this.networkManager = new MultiThreadNetwork(port, logger, 50);
         
         this.networkManager.setMessageCallback(new CommonCallback(requestHandler, logger));

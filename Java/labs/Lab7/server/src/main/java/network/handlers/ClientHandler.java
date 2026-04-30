@@ -39,7 +39,6 @@ public class ClientHandler implements Runnable {
                         if (server.getMessageCallback() != null) {
                             server.getMessageCallback().onMessageReceived(this, received);
                         }
-                        
                     } catch (SocketException e) {
                         logger.info("Client disconnected: " + clientSocket.getInetAddress());
                         break;

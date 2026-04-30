@@ -4,7 +4,6 @@ import java.util.Collection;
 import common.exceptions.CollectionLoadException;
 import common.exceptions.RuntimeInitException;
 import common.models.Entity;
-
 import util.logging.ServerLogger;
 import managers.auth.AbstractAuthManager;
 import managers.auth.AuthManager;
@@ -30,9 +29,10 @@ public abstract class AbstractServer {
     protected final AbstractLogger logger;
     protected final RequestHandler requestHandler;
     protected final AbstractCommandManager commandManager;
+    protected final int port;
 
-
-    public AbstractServer() throws RuntimeInitException {
+    public AbstractServer(int port) throws RuntimeInitException {
+        this.port = port;
         this.logger = new ServerLogger("Server standart logger");
         this.commandManager = new CommandManager();
         this.databaseManager = new PostgresManager(

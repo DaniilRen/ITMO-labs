@@ -20,11 +20,11 @@ public class ChunkHandler {
 	public static boolean shouldChunkify(Response<?> response) {
 			List<?> body = response.getBody();
 			if (body == null || body.isEmpty()) {
-					return false;
+				return false;
 			}
 			
 			if (body.size() <= MAX_CHUNK_SIZE_ITEMS) {
-					return false;
+				return false;
 			}
 			
 			long estimatedSize = getTotalSize(body);
@@ -40,7 +40,7 @@ public class ChunkHandler {
 		List<Response<Object>> chunks = Response.split(body, dynamicChunkSize);
 		
 		if (chunks.isEmpty()) {
-				return response;
+			return response;
 		}
 		
 		String streamId = chunks.get(0).getStreamId();
@@ -52,7 +52,7 @@ public class ChunkHandler {
 	private static int calculateChunkSize(List<?> body) {
 		long totalSize = getTotalSize(body);
 		if (totalSize <= 0) {
-				return MAX_CHUNK_SIZE_ITEMS;
+			return MAX_CHUNK_SIZE_ITEMS;
 		}
 		
 		int targetChunks = Math.max(2, (int) (totalSize / MAX_CHUNK_SIZE_BYTES) + 1);
@@ -66,13 +66,13 @@ public class ChunkHandler {
 				return 0;
 		}
 		try {
-				ByteArrayOutputStream baos = new ByteArrayOutputStream();
-				ObjectOutputStream oos = new ObjectOutputStream(baos);
-				oos.writeObject(list);
-				oos.close();
-				return baos.size();
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			ObjectOutputStream oos = new ObjectOutputStream(baos);
+			oos.writeObject(list);
+			oos.close();
+			return baos.size();
 		} catch (IOException e) {
-				return list.size() * 500;
+			return list.size() * 500;
 		}
 	}
 
@@ -82,19 +82,18 @@ public class ChunkHandler {
 		int chunkNumber = request.getChunkNumber();
 		List<Response<?>> chunks = chunkStorage.get(streamId);
 		if (chunks == null) {
-				return new Response<>(List.of("Invalid chunk stream"), Status.ERROR);
+			return new Response<>(List.of("Invalid chunk stream"), Status.ERROR);
 		}
 		
 		if (chunkNumber < 1 || chunkNumber > chunks.size()) {
-				return new Response<>(List.of("Invalid chunk number"), Status.ERROR);
+			return new Response<>(List.of("Invalid chunk number"), Status.ERROR);
 		}
 		
 		Response<?> chunk = chunks.get(chunkNumber - 1);
 		
 		if (chunkNumber == chunks.size()) {
-				chunkStorage.remove(streamId);
+			chunkStorage.remove(streamId);
 		}
-		
 		return chunk;
 	}
 

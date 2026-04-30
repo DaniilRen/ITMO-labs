@@ -1,7 +1,6 @@
 import java.io.IOException;
 import commands.*;
 import network.CommonNetwork;
-import common.network.Network;
 import common.exceptions.RuntimeInitException;
 import common.transfer.response.Response;
 import common.transfer.request.Request;
@@ -11,12 +10,10 @@ import common.transfer.request.Request;
  * @author Septyq
  */
 public class CommonServer extends AbstractServer {
-    private final Network networkManager;
-    private final int port;
+    private final CommonNetwork networkManager;
 
     public CommonServer(int port) throws RuntimeInitException {
-        super();
-        this.port = port;
+        super(port);
         this.networkManager = new CommonNetwork(port, logger);
     }
 
@@ -30,10 +27,10 @@ public class CommonServer extends AbstractServer {
             while (running) {
                 try {
                     Request request = (Request) networkManager.read();
-										logger.info("new request: " + request);
+                    logger.info("new request: " + request);
 
                     Response<?> response = requestHandler.handleRequest(request);
-										logger.info("sending response: " + response);
+                    logger.info("sending response: " + response);
                     networkManager.write(response);
                     
                 } catch (IOException e) {

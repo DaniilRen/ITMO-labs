@@ -26,7 +26,7 @@ public class AuthManager extends AbstractAuthManager {
             logger.info(String.format("authenticated user: %s", name));
             return;
         }
-        String authExceptionMessage = String.format("cannot authenticate user: %s", name);
+        String authExceptionMessage = String.format("wrong password for user: %s", name);
         logger.error(authExceptionMessage);
         throw new AuthException(authExceptionMessage);
     };
