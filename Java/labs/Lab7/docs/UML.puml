@@ -13,7 +13,6 @@ package common {
     interface Network {
       + connect(): void
       + write(object: Object): void
-      + read(): Object
       + close(): void
     }
   }
