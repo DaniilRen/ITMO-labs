@@ -9,9 +9,15 @@ import java.util.Comparator;
  * @author Septyq
  */
 public abstract class Entity implements Validatable, Comparable<Entity>, Serializable {
-    abstract public int getId();
+    protected int id;
 
-    public void setId(Integer id) {};
+    public int getId() {
+        return id;
+    };
+
+    public void setId(Integer id) {
+        this.id = id;
+    };
 
     public void update(Entity newEntity) {}
     

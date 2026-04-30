@@ -8,6 +8,7 @@ import common.exceptions.AuthException;
 import common.models.Coordinates;
 import common.models.Location2Dimension;
 import common.models.Location3Dimension;
+import common.models.Route;
 
 /**
  * Определяет доступные взаимодействия с базой данных
@@ -27,4 +28,6 @@ public abstract class DatabaseHandler {
     abstract public int getUpdatedLocationToId(Connection connection, Location3Dimension location) throws SQLException;
 
     abstract public int getUpdatedCoordinatesId(Connection connection, Coordinates coords) throws SQLException;
+
+    abstract public int insertRoute(Connection connection, Route route) throws SQLException;
 }

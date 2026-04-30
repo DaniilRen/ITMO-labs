@@ -18,7 +18,7 @@ public class LocationFromHandler extends TableHandler<Location2Dimension> {
 
     @Override
     public int getId(Location2Dimension object) {
-        try (PreparedStatement query = prepareQuery(connection, "SELECT id FROM coordinates WHERE x = ? AND y = ?")) {
+        try (PreparedStatement query = prepareQuery(connection, "SELECT id FROM location2Dimension WHERE x = ? AND y = ? AND name = ?")) {
             query.setInt(1, object.getX());
             query.setDouble(2, object.getY());
             query.setString(3, object.getName());
@@ -32,7 +32,7 @@ public class LocationFromHandler extends TableHandler<Location2Dimension> {
 
     @Override
     public int insert(Location2Dimension object) throws SQLException {
-        try (PreparedStatement query = prepareQuery(connection, "INSERT INTO coordinates (x, y) VALUES (?, ?) RETURNING id")) {
+        try (PreparedStatement query = prepareQuery(connection, "INSERT INTO location2Dimension (x, y, name) VALUES (?, ?, ?) RETURNING id")) {
             query.setInt(1, object.getX());
             query.setDouble(2, object.getY());
             query.setString(3, object.getName());

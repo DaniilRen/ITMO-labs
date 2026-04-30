@@ -38,8 +38,8 @@ public class Info extends Command<StandartRequest> {
 
         Response<String> response = new Response<>();
   
-        response.put("<Collection info:>");
-        response.put(String.format("Collection Type (Class): %s", collectionManager.getCollectionType()));
+        response.put("<Collection info>");
+        response.put(String.format("Collection Class: %s", collectionManager.getCollectionType()));
         response.put(String.format("Collection size: %d", collectionManager.getCollectionSize()));
         response.put(String.format("Last saved: %s", lastSaveTimeString));
         response.put(String.format("Last initialized: %s", lastInitTimeString));

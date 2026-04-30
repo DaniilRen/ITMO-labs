@@ -77,32 +77,16 @@ public class PostgresManager extends AbstractDatabaseManager {
             connection.setAutoCommit(false);
             
             try {
-                try (Statement stmt = connection.createStatement()) {
-                    stmt.execute("DELETE FROM route");
-                    stmt.execute("DELETE FROM coordinates");
-                    stmt.execute("DELETE FROM location2Dimension");
-                    stmt.execute("DELETE FROM location3Dimension");
+                try (Statement statement = connection.createStatement()) {
+                    statement.execute("DELETE FROM route");
+                    statement.execute("DELETE FROM coordinates");
+                    statement.execute("DELETE FROM location2Dimension");
+                    statement.execute("DELETE FROM location3Dimension");
                 }
                 
                 for (Entity entity : collection) {
                     if (entity instanceof Route) {
-                        Route route = (Route) entity; 
-                        
-                        String insertSQL = """
-                            INSERT INTO route (name, distance, creation_date, coordinates_id, from_location_id, to_location_id, author)
-                            VALUES (?, ?, ?, ?, ?, ?, ?)
-                        """;
-                        
-                        try (PreparedStatement statement = connection.prepareStatement(insertSQL)) {
-                            statement.setString(1, route.getName());
-                            statement.setInt(2, route.getDistance());
-                            statement.setObject(3, route.getCreationDate());
-                            statement.setInt(4, api.getUpdatedCoordinatesId(connection, route.getCoordinates()));
-                            statement.setInt(5, api.getUpdatedLocationFromId(connection, route.getLocationFrom()));
-                            statement.setInt(6, api.getUpdatedLocationToId(connection, route.getLocationTo()));
-                            statement.setString(7, route.getAuthor());
-                            statement.executeUpdate();
-                        }
+                        api.insertRoute(connection, (Route) entity);
                     } else {
                         throw new SQLException("entity should be Route instance");
                     }

@@ -12,7 +12,6 @@ import java.util.Objects;
 public class Route extends Entity {
     private static final long serialVersionUID = 19388910L;
 
-    private int id;
     private String name;
     private Coordinates coordinates;
     private LocalDateTime creationDate;
@@ -52,10 +51,6 @@ public class Route extends Entity {
 
     public Location3Dimension getLocationTo() {
         return to;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getName() {

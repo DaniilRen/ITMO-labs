@@ -10,6 +10,7 @@ import common.exceptions.AuthException;
 import common.models.Coordinates;
 import common.models.Location2Dimension;
 import common.models.Location3Dimension;
+import common.models.Route;
 import util.database.table.CoordinatesHandler;
 import util.database.table.LocationFromHandler;
 import util.database.table.LocationToHandler;
@@ -99,4 +100,20 @@ public class PostgresHandler extends DatabaseHandler {
         return existingId;
     }
     
+    public int insertRoute(Connection connection, Route object) throws SQLException {
+        try (PreparedStatement query = prepareQuery(connection, "INSERT INTO route (name, distance, creation_date, coordinates_id, from_location_id, to_location_id, author) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id")) {
+            query.setString(1, object.getName());
+            query.setInt(2, object.getDistance());
+            query.setObject(3, object.getCreationDate());
+            query.setInt(4, getUpdatedCoordinatesId(connection, object.getCoordinates()));
+            query.setInt(5, getUpdatedLocationFromId(connection, object.getLocationFrom()));
+            query.setInt(6, getUpdatedLocationToId(connection, object.getLocationTo()));
+            query.setString(7, object.getAuthor());
+
+            ResultSet result = query.executeQuery();
+
+            if (!(result.next())) throw new SQLException("Error while adding entry");
+            return result.getInt("id");
+        }
+    }
 }

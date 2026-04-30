@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.Collection;
 
 import common.models.Entity;
+import common.models.Route;
 import util.database.api.DatabaseHandler;
 import common.exceptions.AuthException;
 import common.exceptions.CollectionLoadException;
@@ -40,6 +41,14 @@ public abstract class AbstractDatabaseManager {
             return api.authenticate(api.getConnection(PostgreSQLurl, PostgreSQLuser, PostgreSQLpassword), user, password);   
         } catch (SQLException e) {
             throw new AuthException(e.getMessage());
+        }
+    };
+
+    public int insertEntity(Entity entity) {
+        try {
+            return api.insertRoute(api.getConnection(PostgreSQLurl, PostgreSQLuser, PostgreSQLpassword), (Route) entity);
+        } catch (SQLException e) {
+            return -1;
         }
     };
 

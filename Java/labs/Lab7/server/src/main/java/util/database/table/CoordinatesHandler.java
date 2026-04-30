@@ -22,7 +22,7 @@ public class CoordinatesHandler extends TableHandler<Coordinates> {
             query.setDouble(1, object.getX());
             query.setLong(2, object.getY());
             ResultSet result = query.executeQuery();
-            if (!(result.next())) throw new SQLException("No such coordinates row");;
+            if (!(result.next())) throw new SQLException("No such coordinates row");
             return result.getInt("id");
         } catch (SQLException e) {
             return -1;
