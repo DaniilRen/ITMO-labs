@@ -1,14 +1,12 @@
 package common.models;
 
-import java.io.Serializable;
 import java.util.Objects;
 
-
 /**
- * Класс координат.
+ * Представление координат в коллекции
  * @author Septyq
  */
-public class Coordinates implements Validatable, Serializable {
+public class Coordinates extends Entity {
     private static final long serialVersionUID = 9987122L;
 
     private final Float x;

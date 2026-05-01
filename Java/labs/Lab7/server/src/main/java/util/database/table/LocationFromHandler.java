@@ -5,19 +5,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import common.models.Location2Dimension;
+import common.models.LocationFrom;
 
 /**
  * Определяет доступные операции с таблицой LocationFrom
  * @author Septyq
  */
-public class LocationFromHandler extends TableHandler<Location2Dimension> {
+public class LocationFromHandler extends TableHandler<LocationFrom> {
     public LocationFromHandler(Connection connection) {
         super(connection);
     }
 
     @Override
-    public int getId(Location2Dimension object) {
+    public int getId(LocationFrom object) {
         try (PreparedStatement query = prepareQuery(connection, "SELECT id FROM location2Dimension WHERE x = ? AND y = ? AND name = ?")) {
             query.setInt(1, object.getX());
             query.setDouble(2, object.getY());
@@ -31,7 +31,7 @@ public class LocationFromHandler extends TableHandler<Location2Dimension> {
     }
 
     @Override
-    public int insert(Location2Dimension object) throws SQLException {
+    public int insert(LocationFrom object) throws SQLException {
         try (PreparedStatement query = prepareQuery(connection, "INSERT INTO location2Dimension (x, y, name) VALUES (?, ?, ?) RETURNING id")) {
             query.setInt(1, object.getX());
             query.setDouble(2, object.getY());

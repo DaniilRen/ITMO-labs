@@ -1,989 +1,19 @@
-2026-04-30 18:25:34.018 [main] INFO  Server standart logger - collection loaded from database
-2026-04-30 18:25:34.030 [main] INFO  Server standart logger - Started on port 9000
-2026-04-30 18:25:34.031 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-30 18:25:36.078 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 18:25:36.079 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 18:25:36.145 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@62ab4532
-2026-04-30 18:25:36.148 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-30 18:25:41.738 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected (EOF): /127.0.0.1
-2026-04-30 18:25:41.742 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1
-2026-04-30 18:25:43.219 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 18:25:43.219 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 18:25:43.267 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@4598559c
-2026-04-30 18:25:43.267 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-30 18:26:01.013 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected (EOF): /127.0.0.1
-2026-04-30 18:26:01.014 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1
-2026-04-30 18:32:48.757 [main] INFO  Server standart logger - collection loaded from database
-2026-04-30 18:32:48.765 [main] INFO  Server standart logger - Started on port 9000
-2026-04-30 18:32:48.766 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-30 19:00:17.156 [main] INFO  Server standart logger - collection loaded from database
-2026-04-30 19:00:17.167 [main] INFO  Server standart logger - Started on port 9000
-2026-04-30 19:00:17.170 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-30 19:00:17.588 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:00:17.590 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:00:17.671 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@4f16f11
-2026-04-30 19:00:17.674 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-30 19:00:21.823 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@e62bd9b
-2026-04-30 19:00:21.882 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:00:21.883 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-30 19:00:23.102 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@7afc20cf
-2026-04-30 19:00:23.149 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:00:23.150 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-30 19:00:17.153456351]}
-2026-04-30 19:00:39.830 [pool-2-thread-4] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@3bfb5e5b
-2026-04-30 19:00:39.850 [pool-2-thread-4] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:00:39.871 [pool-2-thread-4] INFO  Server standart logger - sending response: Response{status=ERROR, body=[Error while adding item]}
-2026-04-30 19:00:43.018 [pool-2-thread-5] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@52d1b7ee
-2026-04-30 19:00:43.068 [pool-2-thread-5] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:00:43.070 [pool-2-thread-5] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-30 19:00:17.153456351]}
-2026-04-30 19:00:45.757 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected (EOF): /127.0.0.1
-2026-04-30 19:00:45.759 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1
-2026-04-30 19:00:47.577 [main] INFO  Server standart logger - collection loaded from database
-2026-04-30 19:00:47.588 [main] INFO  Server standart logger - Started on port 9000
-2026-04-30 19:00:47.590 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-30 19:00:48.375 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:00:48.375 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:00:48.436 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@4f16f11
-2026-04-30 19:00:48.438 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-30 19:00:52.946 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@e62bd9b
-2026-04-30 19:00:53.020 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:00:53.022 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-30 19:00:53.707 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@7afc20cf
-2026-04-30 19:00:53.755 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:00:53.757 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-30 19:00:47.575199682]}
-2026-04-30 19:03:00.530 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected (EOF): /127.0.0.1
-2026-04-30 19:03:00.532 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1
-2026-04-30 19:03:22.774 [main] INFO  Server standart logger - collection loaded from database
-2026-04-30 19:03:22.785 [main] INFO  Server standart logger - Started on port 9000
-2026-04-30 19:03:22.787 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-30 19:03:23.412 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:03:23.413 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:03:23.489 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@4f16f11
-2026-04-30 19:03:23.490 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-30 19:03:32.503 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@e62bd9b
-2026-04-30 19:03:32.545 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:03:32.546 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-30 19:03:34.574 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@1b86260d
-2026-04-30 19:03:34.599 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:03:34.600 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-30 19:03:22.771889256]}
-2026-04-30 19:03:40.497 [pool-2-thread-4] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@31925a1c
-2026-04-30 19:03:40.509 [pool-2-thread-4] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:03:40.524 [pool-2-thread-4] INFO  Server standart logger - sending response: Response{status=ERROR, body=[Error while adding item]}
-2026-04-30 19:07:03.440 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected (EOF): /127.0.0.1
-2026-04-30 19:07:03.443 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1
-2026-04-30 19:07:26.623 [main] INFO  Server standart logger - collection loaded from database
-2026-04-30 19:07:26.630 [main] INFO  Server standart logger - Started on port 9000
-2026-04-30 19:07:26.631 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-30 19:07:27.056 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:07:27.056 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:07:27.112 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@677d2398
-2026-04-30 19:07:27.113 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-30 19:07:30.556 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6867fcee
-2026-04-30 19:07:30.588 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:07:30.589 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-30 19:07:38.400 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@1b86260d
-2026-04-30 19:07:38.422 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:07:38.423 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-30 19:07:26.619448459]}
-2026-04-30 19:07:43.027 [pool-2-thread-4] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@31925a1c
-2026-04-30 19:07:43.040 [pool-2-thread-4] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:07:43.068 [pool-2-thread-4] INFO  Server standart logger - sending response: Response{status=ERROR, body=[Error while adding item]}
-2026-04-30 19:09:23.475 [main] INFO  Server standart logger - collection loaded from database
-2026-04-30 19:09:23.485 [main] INFO  Server standart logger - Started on port 9000
-2026-04-30 19:09:23.488 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-30 19:09:26.803 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:09:26.803 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:09:26.860 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@677d2398
-2026-04-30 19:09:26.861 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-30 19:09:31.858 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6867fcee
-2026-04-30 19:09:31.899 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:09:31.900 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-30 19:09:39.523 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@3307a8eb
-2026-04-30 19:09:39.546 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:09:39.579 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=ERROR, body=[Error while adding item]}
-2026-04-30 19:15:48.388 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected (EOF): /127.0.0.1
-2026-04-30 19:15:48.390 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1
-2026-04-30 19:16:05.717 [main] INFO  Server standart logger - collection loaded from database
-2026-04-30 19:16:05.727 [main] INFO  Server standart logger - Started on port 9000
-2026-04-30 19:16:05.728 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-30 19:16:06.366 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:16:06.366 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:16:06.426 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@677d2398
-2026-04-30 19:16:06.427 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-30 19:16:10.570 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6867fcee
-2026-04-30 19:16:10.621 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:16:10.621 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-30 19:16:18.074 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@4fcfdeb0
-2026-04-30 19:16:18.091 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:16:18.116 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=ERROR, body=[Error while adding item]}
-2026-04-30 19:16:52.728 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected (EOF): /127.0.0.1
-2026-04-30 19:16:52.731 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1
-2026-04-30 19:17:14.190 [main] INFO  Server standart logger - collection loaded from database
-2026-04-30 19:17:14.197 [main] INFO  Server standart logger - Started on port 9000
-2026-04-30 19:17:14.199 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-30 19:17:14.987 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:17:14.988 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:17:15.063 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@677d2398
-2026-04-30 19:17:15.065 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-30 19:17:18.377 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6867fcee
-2026-04-30 19:17:18.432 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:17:18.433 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-30 19:17:24.411 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@4fcfdeb0
-2026-04-30 19:17:24.428 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:17:24.459 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=ERROR, body=[Error while adding item]}
-2026-04-30 19:19:47.399 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected (EOF): /127.0.0.1
-2026-04-30 19:19:47.403 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1
-2026-04-30 19:20:35.041 [main] INFO  Server standart logger - collection loaded from database
-2026-04-30 19:20:35.048 [main] INFO  Server standart logger - Started on port 9000
-2026-04-30 19:20:35.049 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-30 19:20:35.406 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:20:35.407 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:20:35.486 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@677d2398
-2026-04-30 19:20:35.488 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-30 19:20:41.289 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6867fcee
-2026-04-30 19:20:41.356 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:20:41.357 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-30 19:20:43.032 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@1b86260d
-2026-04-30 19:20:43.080 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:20:43.082 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-30 19:20:35.038524588]}
-2026-04-30 19:20:48.058 [pool-2-thread-4] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@31925a1c
-2026-04-30 19:20:48.076 [pool-2-thread-4] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:20:48.100 [pool-2-thread-4] INFO  Server standart logger - sending response: Response{status=OK, body=[item added]}
-2026-04-30 19:20:53.895 [pool-2-thread-5] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@fb9682c
-2026-04-30 19:20:53.913 [pool-2-thread-5] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:20:53.913 [pool-2-thread-5] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 11, Last saved: no save occured in current session, Last initialized: 2026-04-30 19:20:35.038524588]}
-2026-04-30 19:20:56.313 [pool-2-thread-6] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@178220d
-2026-04-30 19:20:56.327 [pool-2-thread-6] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:20:56.330 [pool-2-thread-6] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
-creation date = 2026-04-30T16:27:59.536713
-name = Route Zeta
-coordinates = (x=10.500000, y=20)
-from = (x=250, y=350.200000, name=Saint Petersburg Square)
-to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
-distance = 200
-author = user1
-, id = 1
-creation date = 2026-04-30T16:27:59.536713
-name = Route Alpha
-coordinates = (x=10.500000, y=20)
-from = (x=100, y=200.500000, name=Moscow Central)
-to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
-distance = 150
-author = admin
-, id = 7
-creation date = 2026-04-30T16:27:59.536713
-name = Route Eta
-coordinates = (x=25.500000, y=35)
-from = (x=400, y=450.800000, name=Novosibirsk Station)
-to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
-distance = 300
-author = user1
-, id = 2
-creation date = 2026-04-30T16:27:59.536713
-name = Route Beta
-coordinates = (x=25.500000, y=35)
-from = (x=250, y=350.200000, name=Saint Petersburg Square)
-to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
-distance = 250
-author = admin
-, id = 8
-creation date = 2026-04-30T16:27:59.536713
-name = Route Theta
-coordinates = (x=40.200001, y=50)
-from = (x=550, y=600.300000, name=Kazan Kremlin)
-to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
-distance = 400
-author = user1
-, id = 3
-creation date = 2026-04-30T16:27:59.536713
-name = Route Gamma
-coordinates = (x=40.200001, y=50)
-from = (x=400, y=450.800000, name=Novosibirsk Station)
-to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
-distance = 350
-author = admin
-, id = 9
-creation date = 2026-04-30T16:27:59.536713
-name = Route Iota
-coordinates = (x=55.799999, y=65)
-from = (x=700, y=750.000000, name=Sochi Park)
-to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
-distance = 500
-author = user1
-, id = 4
-creation date = 2026-04-30T16:27:59.536713
-name = Route Delta
-coordinates = (x=55.799999, y=65)
-from = (x=550, y=600.300000, name=Kazan Kremlin)
-to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
-distance = 450
-author = admin
-, id = 10
-creation date = 2026-04-30T16:27:59.536713
-name = Route Kappa
-coordinates = (x=70.300003, y=80)
-from = (x=100, y=200.500000, name=Moscow Central)
-to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
-distance = 600
-author = user1
-, id = 5
-creation date = 2026-04-30T16:27:59.536713
-name = Route Epsilon
-coordinates = (x=70.300003, y=80)
-from = (x=700, y=750.000000, name=Sochi Park)
-to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
-distance = 550
-author = admin
-, id = 0
-creation date = 2026-04-30T19:20:45.769286391
-name = 9
-coordinates = (x=9.000000, y=9)
-from = (x=9, y=9.000000, name=9)
-to = (x=9.000000, y=9.000000, z=9, name=9)
-distance = 9
-author = admin
-]}
-2026-04-30 19:21:46.925 [pool-2-thread-7] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@54765cf
-2026-04-30 19:21:46.965 [pool-2-thread-7] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:21:46.965 [pool-2-thread-7] INFO  Server standart logger - sending response: Response{status=OK, body=[element removed]}
-2026-04-30 19:21:48.586 [pool-2-thread-8] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@71aecbda
-2026-04-30 19:21:48.632 [pool-2-thread-8] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:21:48.633 [pool-2-thread-8] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info:>, Collection Type (Class): java.util.ArrayList, Collection size: 10, Last saved: no save occured in current session, Last initialized: 2026-04-30 19:20:35.038524588]}
-2026-04-30 19:22:44.414 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected (EOF): /127.0.0.1
-2026-04-30 19:22:44.416 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1
-2026-04-30 19:23:02.617 [main] INFO  Server standart logger - collection loaded from database
-2026-04-30 19:23:02.626 [main] INFO  Server standart logger - Started on port 9000
-2026-04-30 19:23:02.627 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-30 19:23:03.164 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:23:03.164 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:23:03.267 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@677d2398
-2026-04-30 19:23:03.269 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-30 19:23:06.722 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6867fcee
-2026-04-30 19:23:06.748 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:23:06.749 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-30 19:23:07.608 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@46974827
-2026-04-30 19:23:07.642 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:23:07.643 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info>, Collection Class: java.util.ArrayList, Collection size: 11, Last saved: no save occured in current session, Last initialized: 2026-04-30 19:23:02.615821590]}
-2026-04-30 19:23:08.778 [pool-2-thread-4] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6844d906
-2026-04-30 19:23:08.794 [pool-2-thread-4] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:23:08.798 [pool-2-thread-4] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
-creation date = 2026-04-30T16:27:59.536713
-name = Route Zeta
-coordinates = (x=10.500000, y=20)
-from = (x=250, y=350.200000, name=Saint Petersburg Square)
-to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
-distance = 200
-author = user1
-, id = 1
-creation date = 2026-04-30T16:27:59.536713
-name = Route Alpha
-coordinates = (x=10.500000, y=20)
-from = (x=100, y=200.500000, name=Moscow Central)
-to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
-distance = 150
-author = admin
-, id = 7
-creation date = 2026-04-30T16:27:59.536713
-name = Route Eta
-coordinates = (x=25.500000, y=35)
-from = (x=400, y=450.800000, name=Novosibirsk Station)
-to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
-distance = 300
-author = user1
-, id = 2
-creation date = 2026-04-30T16:27:59.536713
-name = Route Beta
-coordinates = (x=25.500000, y=35)
-from = (x=250, y=350.200000, name=Saint Petersburg Square)
-to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
-distance = 250
-author = admin
-, id = 8
-creation date = 2026-04-30T16:27:59.536713
-name = Route Theta
-coordinates = (x=40.200001, y=50)
-from = (x=550, y=600.300000, name=Kazan Kremlin)
-to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
-distance = 400
-author = user1
-, id = 3
-creation date = 2026-04-30T16:27:59.536713
-name = Route Gamma
-coordinates = (x=40.200001, y=50)
-from = (x=400, y=450.800000, name=Novosibirsk Station)
-to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
-distance = 350
-author = admin
-, id = 9
-creation date = 2026-04-30T16:27:59.536713
-name = Route Iota
-coordinates = (x=55.799999, y=65)
-from = (x=700, y=750.000000, name=Sochi Park)
-to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
-distance = 500
-author = user1
-, id = 4
-creation date = 2026-04-30T16:27:59.536713
-name = Route Delta
-coordinates = (x=55.799999, y=65)
-from = (x=550, y=600.300000, name=Kazan Kremlin)
-to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
-distance = 450
-author = admin
-, id = 10
-creation date = 2026-04-30T16:27:59.536713
-name = Route Kappa
-coordinates = (x=70.300003, y=80)
-from = (x=100, y=200.500000, name=Moscow Central)
-to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
-distance = 600
-author = user1
-, id = 5
-creation date = 2026-04-30T16:27:59.536713
-name = Route Epsilon
-coordinates = (x=70.300003, y=80)
-from = (x=700, y=750.000000, name=Sochi Park)
-to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
-distance = 550
-author = admin
-, id = 11
-creation date = 2026-04-30T19:20:45.769286
-name = 9
-coordinates = (x=9.000000, y=9)
-from = (x=9, y=9.000000, name=9)
-to = (x=9.000000, y=9.000000, z=9, name=9)
-distance = 9
-author = admin
-]}
-2026-04-30 19:23:17.309 [pool-2-thread-5] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@7d1ecfc8
-2026-04-30 19:23:17.348 [pool-2-thread-5] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:23:17.381 [pool-2-thread-5] INFO  Server standart logger - sending response: Response{status=OK, body=[item added]}
-2026-04-30 19:23:20.000 [pool-2-thread-6] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@4bb5d3fc
-2026-04-30 19:23:20.022 [pool-2-thread-6] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:23:20.023 [pool-2-thread-6] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info>, Collection Class: java.util.ArrayList, Collection size: 12, Last saved: no save occured in current session, Last initialized: 2026-04-30 19:23:02.615821590]}
-2026-04-30 19:23:22.515 [pool-2-thread-7] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@48b338ca
-2026-04-30 19:23:22.553 [pool-2-thread-7] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:23:22.560 [pool-2-thread-7] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
-creation date = 2026-04-30T16:27:59.536713
-name = Route Zeta
-coordinates = (x=10.500000, y=20)
-from = (x=250, y=350.200000, name=Saint Petersburg Square)
-to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
-distance = 200
-author = user1
-, id = 1
-creation date = 2026-04-30T16:27:59.536713
-name = Route Alpha
-coordinates = (x=10.500000, y=20)
-from = (x=100, y=200.500000, name=Moscow Central)
-to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
-distance = 150
-author = admin
-, id = 7
-creation date = 2026-04-30T16:27:59.536713
-name = Route Eta
-coordinates = (x=25.500000, y=35)
-from = (x=400, y=450.800000, name=Novosibirsk Station)
-to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
-distance = 300
-author = user1
-, id = 2
-creation date = 2026-04-30T16:27:59.536713
-name = Route Beta
-coordinates = (x=25.500000, y=35)
-from = (x=250, y=350.200000, name=Saint Petersburg Square)
-to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
-distance = 250
-author = admin
-, id = 8
-creation date = 2026-04-30T16:27:59.536713
-name = Route Theta
-coordinates = (x=40.200001, y=50)
-from = (x=550, y=600.300000, name=Kazan Kremlin)
-to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
-distance = 400
-author = user1
-, id = 3
-creation date = 2026-04-30T16:27:59.536713
-name = Route Gamma
-coordinates = (x=40.200001, y=50)
-from = (x=400, y=450.800000, name=Novosibirsk Station)
-to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
-distance = 350
-author = admin
-, id = 9
-creation date = 2026-04-30T16:27:59.536713
-name = Route Iota
-coordinates = (x=55.799999, y=65)
-from = (x=700, y=750.000000, name=Sochi Park)
-to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
-distance = 500
-author = user1
-, id = 4
-creation date = 2026-04-30T16:27:59.536713
-name = Route Delta
-coordinates = (x=55.799999, y=65)
-from = (x=550, y=600.300000, name=Kazan Kremlin)
-to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
-distance = 450
-author = admin
-, id = 10
-creation date = 2026-04-30T16:27:59.536713
-name = Route Kappa
-coordinates = (x=70.300003, y=80)
-from = (x=100, y=200.500000, name=Moscow Central)
-to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
-distance = 600
-author = user1
-, id = 5
-creation date = 2026-04-30T16:27:59.536713
-name = Route Epsilon
-coordinates = (x=70.300003, y=80)
-from = (x=700, y=750.000000, name=Sochi Park)
-to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
-distance = 550
-author = admin
-, id = 11
-creation date = 2026-04-30T19:20:45.769286
-name = 9
-coordinates = (x=9.000000, y=9)
-from = (x=9, y=9.000000, name=9)
-to = (x=9.000000, y=9.000000, z=9, name=9)
-distance = 9
-author = admin
-, id = 0
-creation date = 2026-04-30T19:23:14.821059295
-name = 3
-coordinates = (x=3.000000, y=3)
-from = (x=3, y=3.000000, name=3)
-to = (x=3.000000, y=3.000000, z=3, name=3)
-distance = 3
-author = admin
-]}
-2026-04-30 19:24:35.277 [main] INFO  Server standart logger - collection loaded from database
-2026-04-30 19:24:35.285 [main] INFO  Server standart logger - Started on port 9000
-2026-04-30 19:24:35.286 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-30 19:24:35.878 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:24:35.879 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:24:35.968 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@677d2398
-2026-04-30 19:24:35.970 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-30 19:24:41.333 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6867fcee
-2026-04-30 19:24:41.400 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:24:41.401 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-30 19:24:45.104 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@1b86260d
-2026-04-30 19:24:45.127 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:24:45.128 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info>, Collection Class: java.util.ArrayList, Collection size: 12, Last saved: no save occured in current session, Last initialized: 2026-04-30 19:24:35.275056599]}
-2026-04-30 19:24:51.252 [pool-2-thread-4] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@31925a1c
-2026-04-30 19:24:51.265 [pool-2-thread-4] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:24:51.289 [pool-2-thread-4] INFO  Server standart logger - sending response: Response{status=OK, body=[item added]}
-2026-04-30 19:24:53.523 [pool-2-thread-5] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@fb9682c
-2026-04-30 19:24:53.543 [pool-2-thread-5] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:24:53.543 [pool-2-thread-5] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info>, Collection Class: java.util.ArrayList, Collection size: 13, Last saved: no save occured in current session, Last initialized: 2026-04-30 19:24:35.275056599]}
-2026-04-30 19:24:55.247 [pool-2-thread-6] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@178220d
-2026-04-30 19:24:55.268 [pool-2-thread-6] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:24:55.271 [pool-2-thread-6] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
-creation date = 2026-04-30T16:27:59.536713
-name = Route Zeta
-coordinates = (x=10.500000, y=20)
-from = (x=250, y=350.200000, name=Saint Petersburg Square)
-to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
-distance = 200
-author = user1
-, id = 1
-creation date = 2026-04-30T16:27:59.536713
-name = Route Alpha
-coordinates = (x=10.500000, y=20)
-from = (x=100, y=200.500000, name=Moscow Central)
-to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
-distance = 150
-author = admin
-, id = 7
-creation date = 2026-04-30T16:27:59.536713
-name = Route Eta
-coordinates = (x=25.500000, y=35)
-from = (x=400, y=450.800000, name=Novosibirsk Station)
-to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
-distance = 300
-author = user1
-, id = 2
-creation date = 2026-04-30T16:27:59.536713
-name = Route Beta
-coordinates = (x=25.500000, y=35)
-from = (x=250, y=350.200000, name=Saint Petersburg Square)
-to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
-distance = 250
-author = admin
-, id = 8
-creation date = 2026-04-30T16:27:59.536713
-name = Route Theta
-coordinates = (x=40.200001, y=50)
-from = (x=550, y=600.300000, name=Kazan Kremlin)
-to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
-distance = 400
-author = user1
-, id = 3
-creation date = 2026-04-30T16:27:59.536713
-name = Route Gamma
-coordinates = (x=40.200001, y=50)
-from = (x=400, y=450.800000, name=Novosibirsk Station)
-to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
-distance = 350
-author = admin
-, id = 9
-creation date = 2026-04-30T16:27:59.536713
-name = Route Iota
-coordinates = (x=55.799999, y=65)
-from = (x=700, y=750.000000, name=Sochi Park)
-to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
-distance = 500
-author = user1
-, id = 4
-creation date = 2026-04-30T16:27:59.536713
-name = Route Delta
-coordinates = (x=55.799999, y=65)
-from = (x=550, y=600.300000, name=Kazan Kremlin)
-to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
-distance = 450
-author = admin
-, id = 10
-creation date = 2026-04-30T16:27:59.536713
-name = Route Kappa
-coordinates = (x=70.300003, y=80)
-from = (x=100, y=200.500000, name=Moscow Central)
-to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
-distance = 600
-author = user1
-, id = 5
-creation date = 2026-04-30T16:27:59.536713
-name = Route Epsilon
-coordinates = (x=70.300003, y=80)
-from = (x=700, y=750.000000, name=Sochi Park)
-to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
-distance = 550
-author = admin
-, id = 11
-creation date = 2026-04-30T19:20:45.769286
-name = 9
-coordinates = (x=9.000000, y=9)
-from = (x=9, y=9.000000, name=9)
-to = (x=9.000000, y=9.000000, z=9, name=9)
-distance = 9
-author = admin
-, id = 12
-creation date = 2026-04-30T19:23:14.821059
-name = 3
-coordinates = (x=3.000000, y=3)
-from = (x=3, y=3.000000, name=3)
-to = (x=3.000000, y=3.000000, z=3, name=3)
-distance = 3
-author = admin
-, id = 0
-creation date = 2026-04-30T19:24:48.560360511
-name = 8
-coordinates = (x=8.000000, y=8)
-from = (x=8, y=8.000000, name=8)
-to = (x=8.000000, y=8.000000, z=8, name=8)
-distance = 8
-author = admin
-]}
-2026-04-30 19:26:50.830 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected (EOF): /127.0.0.1
-2026-04-30 19:26:50.833 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1
-2026-04-30 19:27:09.329 [main] INFO  Server standart logger - collection loaded from database
-2026-04-30 19:27:09.337 [main] INFO  Server standart logger - Started on port 9000
-2026-04-30 19:27:09.338 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-30 19:27:09.764 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:27:09.765 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:27:09.820 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@677d2398
-2026-04-30 19:27:09.822 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-30 19:27:13.027 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6867fcee
-2026-04-30 19:27:13.094 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:27:13.095 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-30 19:27:18.365 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@3307a8eb
-2026-04-30 19:27:18.384 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:27:18.406 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=OK, body=[item added]}
-2026-04-30 19:27:21.610 [pool-2-thread-4] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@29adc9e5
-2026-04-30 19:27:21.651 [pool-2-thread-4] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:27:21.661 [pool-2-thread-4] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
-creation date = 2026-04-30T16:27:59.536713
-name = Route Zeta
-coordinates = (x=10.500000, y=20)
-from = (x=250, y=350.200000, name=Saint Petersburg Square)
-to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
-distance = 200
-author = user1
-, id = 1
-creation date = 2026-04-30T16:27:59.536713
-name = Route Alpha
-coordinates = (x=10.500000, y=20)
-from = (x=100, y=200.500000, name=Moscow Central)
-to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
-distance = 150
-author = admin
-, id = 7
-creation date = 2026-04-30T16:27:59.536713
-name = Route Eta
-coordinates = (x=25.500000, y=35)
-from = (x=400, y=450.800000, name=Novosibirsk Station)
-to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
-distance = 300
-author = user1
-, id = 2
-creation date = 2026-04-30T16:27:59.536713
-name = Route Beta
-coordinates = (x=25.500000, y=35)
-from = (x=250, y=350.200000, name=Saint Petersburg Square)
-to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
-distance = 250
-author = admin
-, id = 8
-creation date = 2026-04-30T16:27:59.536713
-name = Route Theta
-coordinates = (x=40.200001, y=50)
-from = (x=550, y=600.300000, name=Kazan Kremlin)
-to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
-distance = 400
-author = user1
-, id = 3
-creation date = 2026-04-30T16:27:59.536713
-name = Route Gamma
-coordinates = (x=40.200001, y=50)
-from = (x=400, y=450.800000, name=Novosibirsk Station)
-to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
-distance = 350
-author = admin
-, id = 9
-creation date = 2026-04-30T16:27:59.536713
-name = Route Iota
-coordinates = (x=55.799999, y=65)
-from = (x=700, y=750.000000, name=Sochi Park)
-to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
-distance = 500
-author = user1
-, id = 4
-creation date = 2026-04-30T16:27:59.536713
-name = Route Delta
-coordinates = (x=55.799999, y=65)
-from = (x=550, y=600.300000, name=Kazan Kremlin)
-to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
-distance = 450
-author = admin
-, id = 10
-creation date = 2026-04-30T16:27:59.536713
-name = Route Kappa
-coordinates = (x=70.300003, y=80)
-from = (x=100, y=200.500000, name=Moscow Central)
-to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
-distance = 600
-author = user1
-, id = 5
-creation date = 2026-04-30T16:27:59.536713
-name = Route Epsilon
-coordinates = (x=70.300003, y=80)
-from = (x=700, y=750.000000, name=Sochi Park)
-to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
-distance = 550
-author = admin
-, id = 11
-creation date = 2026-04-30T19:20:45.769286
-name = 9
-coordinates = (x=9.000000, y=9)
-from = (x=9, y=9.000000, name=9)
-to = (x=9.000000, y=9.000000, z=9, name=9)
-distance = 9
-author = admin
-, id = 12
-creation date = 2026-04-30T19:23:14.821059
-name = 3
-coordinates = (x=3.000000, y=3)
-from = (x=3, y=3.000000, name=3)
-to = (x=3.000000, y=3.000000, z=3, name=3)
-distance = 3
-author = admin
-, id = 13
-creation date = 2026-04-30T19:24:48.560361
-name = 8
-coordinates = (x=8.000000, y=8)
-from = (x=8, y=8.000000, name=8)
-to = (x=8.000000, y=8.000000, z=8, name=8)
-distance = 8
-author = admin
-, id = 14
-creation date = 2026-04-30T19:27:16.084045261
-name = 7
-coordinates = (x=7.000000, y=7)
-from = (x=7, y=7.000000, name=7)
-to = (x=7.000000, y=7.000000, z=7, name=7)
-distance = 7
-author = admin
-]}
-2026-04-30 19:27:25.299 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected (EOF): /127.0.0.1
-2026-04-30 19:27:25.301 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1
-2026-04-30 19:27:26.362 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:27:26.362 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:27:26.402 [pool-2-thread-5] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@7c7729f4
-2026-04-30 19:27:26.402 [pool-2-thread-5] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-30 19:27:32.661 [pool-2-thread-6] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@7b132f1d
-2026-04-30 19:27:32.681 [pool-2-thread-6] INFO  Server standart logger - authenticated user: user1
-2026-04-30 19:27:32.681 [pool-2-thread-6] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[user1, password1]}
-2026-04-30 19:27:33.918 [pool-2-thread-7] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@5b7d196e
-2026-04-30 19:27:33.962 [pool-2-thread-7] INFO  Server standart logger - authenticated user: user1
-2026-04-30 19:27:33.971 [pool-2-thread-7] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
-creation date = 2026-04-30T16:27:59.536713
-name = Route Zeta
-coordinates = (x=10.500000, y=20)
-from = (x=250, y=350.200000, name=Saint Petersburg Square)
-to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
-distance = 200
-author = user1
-, id = 1
-creation date = 2026-04-30T16:27:59.536713
-name = Route Alpha
-coordinates = (x=10.500000, y=20)
-from = (x=100, y=200.500000, name=Moscow Central)
-to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
-distance = 150
-author = admin
-, id = 7
-creation date = 2026-04-30T16:27:59.536713
-name = Route Eta
-coordinates = (x=25.500000, y=35)
-from = (x=400, y=450.800000, name=Novosibirsk Station)
-to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
-distance = 300
-author = user1
-, id = 2
-creation date = 2026-04-30T16:27:59.536713
-name = Route Beta
-coordinates = (x=25.500000, y=35)
-from = (x=250, y=350.200000, name=Saint Petersburg Square)
-to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
-distance = 250
-author = admin
-, id = 8
-creation date = 2026-04-30T16:27:59.536713
-name = Route Theta
-coordinates = (x=40.200001, y=50)
-from = (x=550, y=600.300000, name=Kazan Kremlin)
-to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
-distance = 400
-author = user1
-, id = 3
-creation date = 2026-04-30T16:27:59.536713
-name = Route Gamma
-coordinates = (x=40.200001, y=50)
-from = (x=400, y=450.800000, name=Novosibirsk Station)
-to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
-distance = 350
-author = admin
-, id = 9
-creation date = 2026-04-30T16:27:59.536713
-name = Route Iota
-coordinates = (x=55.799999, y=65)
-from = (x=700, y=750.000000, name=Sochi Park)
-to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
-distance = 500
-author = user1
-, id = 4
-creation date = 2026-04-30T16:27:59.536713
-name = Route Delta
-coordinates = (x=55.799999, y=65)
-from = (x=550, y=600.300000, name=Kazan Kremlin)
-to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
-distance = 450
-author = admin
-, id = 10
-creation date = 2026-04-30T16:27:59.536713
-name = Route Kappa
-coordinates = (x=70.300003, y=80)
-from = (x=100, y=200.500000, name=Moscow Central)
-to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
-distance = 600
-author = user1
-, id = 5
-creation date = 2026-04-30T16:27:59.536713
-name = Route Epsilon
-coordinates = (x=70.300003, y=80)
-from = (x=700, y=750.000000, name=Sochi Park)
-to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
-distance = 550
-author = admin
-, id = 11
-creation date = 2026-04-30T19:20:45.769286
-name = 9
-coordinates = (x=9.000000, y=9)
-from = (x=9, y=9.000000, name=9)
-to = (x=9.000000, y=9.000000, z=9, name=9)
-distance = 9
-author = admin
-, id = 12
-creation date = 2026-04-30T19:23:14.821059
-name = 3
-coordinates = (x=3.000000, y=3)
-from = (x=3, y=3.000000, name=3)
-to = (x=3.000000, y=3.000000, z=3, name=3)
-distance = 3
-author = admin
-, id = 13
-creation date = 2026-04-30T19:24:48.560361
-name = 8
-coordinates = (x=8.000000, y=8)
-from = (x=8, y=8.000000, name=8)
-to = (x=8.000000, y=8.000000, z=8, name=8)
-distance = 8
-author = admin
-, id = 14
-creation date = 2026-04-30T19:27:16.084045261
-name = 7
-coordinates = (x=7.000000, y=7)
-from = (x=7, y=7.000000, name=7)
-to = (x=7.000000, y=7.000000, z=7, name=7)
-distance = 7
-author = admin
-]}
-2026-04-30 19:49:36.025 [main] INFO  Server standart logger - collection loaded from database
-2026-04-30 19:49:36.036 [main] INFO  Server standart logger - Started on port 9000
-2026-04-30 19:49:36.038 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-30 19:49:36.412 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:49:36.413 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:49:36.489 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@28017961
-2026-04-30 19:49:36.490 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-30 19:49:40.166 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@21428d9c
-2026-04-30 19:49:40.236 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:49:40.237 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-30 19:49:44.482 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6844d906
-2026-04-30 19:49:44.528 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:49:44.535 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
-creation date = 2026-04-30T16:27:59.536713
-name = Route Zeta
-coordinates = (x=10.500000, y=20)
-from = (x=250, y=350.200000, name=Saint Petersburg Square)
-to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
-distance = 200
-author = user1
-, id = 1
-creation date = 2026-04-30T16:27:59.536713
-name = Route Alpha
-coordinates = (x=10.500000, y=20)
-from = (x=100, y=200.500000, name=Moscow Central)
-to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
-distance = 150
-author = admin
-, id = 7
-creation date = 2026-04-30T16:27:59.536713
-name = Route Eta
-coordinates = (x=25.500000, y=35)
-from = (x=400, y=450.800000, name=Novosibirsk Station)
-to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
-distance = 300
-author = user1
-, id = 2
-creation date = 2026-04-30T16:27:59.536713
-name = Route Beta
-coordinates = (x=25.500000, y=35)
-from = (x=250, y=350.200000, name=Saint Petersburg Square)
-to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
-distance = 250
-author = admin
-, id = 8
-creation date = 2026-04-30T16:27:59.536713
-name = Route Theta
-coordinates = (x=40.200001, y=50)
-from = (x=550, y=600.300000, name=Kazan Kremlin)
-to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
-distance = 400
-author = user1
-, id = 3
-creation date = 2026-04-30T16:27:59.536713
-name = Route Gamma
-coordinates = (x=40.200001, y=50)
-from = (x=400, y=450.800000, name=Novosibirsk Station)
-to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
-distance = 350
-author = admin
-, id = 9
-creation date = 2026-04-30T16:27:59.536713
-name = Route Iota
-coordinates = (x=55.799999, y=65)
-from = (x=700, y=750.000000, name=Sochi Park)
-to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
-distance = 500
-author = user1
-, id = 4
-creation date = 2026-04-30T16:27:59.536713
-name = Route Delta
-coordinates = (x=55.799999, y=65)
-from = (x=550, y=600.300000, name=Kazan Kremlin)
-to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
-distance = 450
-author = admin
-, id = 10
-creation date = 2026-04-30T16:27:59.536713
-name = Route Kappa
-coordinates = (x=70.300003, y=80)
-from = (x=100, y=200.500000, name=Moscow Central)
-to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
-distance = 600
-author = user1
-, id = 5
-creation date = 2026-04-30T16:27:59.536713
-name = Route Epsilon
-coordinates = (x=70.300003, y=80)
-from = (x=700, y=750.000000, name=Sochi Park)
-to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
-distance = 550
-author = admin
-, id = 11
-creation date = 2026-04-30T19:20:45.769286
-name = 9
-coordinates = (x=9.000000, y=9)
-from = (x=9, y=9.000000, name=9)
-to = (x=9.000000, y=9.000000, z=9, name=9)
-distance = 9
-author = admin
-, id = 14
-creation date = 2026-04-30T19:27:16.084045
-name = 7
-coordinates = (x=7.000000, y=7)
-from = (x=7, y=7.000000, name=7)
-to = (x=7.000000, y=7.000000, z=7, name=7)
-distance = 7
-author = admin
-, id = 12
-creation date = 2026-04-30T19:23:14.821059
-name = 3
-coordinates = (x=3.000000, y=3)
-from = (x=3, y=3.000000, name=3)
-to = (x=3.000000, y=3.000000, z=3, name=3)
-distance = 3
-author = admin
-, id = 13
-creation date = 2026-04-30T19:24:48.560361
-name = 8
-coordinates = (x=8.000000, y=8)
-from = (x=8, y=8.000000, name=8)
-to = (x=8.000000, y=8.000000, z=8, name=8)
-distance = 8
-author = admin
-]}
-2026-04-30 19:50:06.601 [pool-2-thread-4] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6d13ddb4
-2026-04-30 19:50:06.641 [pool-2-thread-4] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:50:06.692 [pool-2-thread-4] INFO  Server standart logger - sending response: Response{status=ERROR, body=[Item not found]}
-2026-04-30 19:52:50.224 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected (EOF): /127.0.0.1
-2026-04-30 19:52:50.226 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1
-2026-04-30 19:53:11.722 [main] INFO  Server standart logger - collection loaded from database
-2026-04-30 19:53:11.732 [main] INFO  Server standart logger - Started on port 9000
-2026-04-30 19:53:11.735 [main] INFO  Server standart logger - Server started on port 9000
-2026-04-30 19:53:12.660 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:53:12.660 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
-2026-04-30 19:53:12.747 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@518872a8
-2026-04-30 19:53:12.749 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
-2026-04-30 19:53:16.795 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@2981bb7b
-2026-04-30 19:53:16.860 [pool-2-thread-2] ERROR Server standart logger - wrong password for user: admin
-2026-04-30 19:53:16.861 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=ERROR, body=[wrong password for user: admin]}
-2026-04-30 19:53:22.126 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@66825104
-2026-04-30 19:53:22.176 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:53:22.176 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
-2026-04-30 19:53:23.971 [pool-2-thread-4] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@61f7bacc
-2026-04-30 19:53:24.011 [pool-2-thread-4] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:53:24.018 [pool-2-thread-4] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+2026-05-01 22:33:16.986 [main] INFO  Server standart logger - collection loaded to memory
+2026-05-01 22:33:16.994 [main] INFO  Server standart logger - Started on port 9000
+2026-05-01 22:33:16.995 [main] INFO  Server standart logger - Server started on port 9000
+2026-05-01 22:35:41.076 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-05-01 22:35:41.077 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-05-01 22:35:41.132 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@44ecdb7
+2026-05-01 22:35:41.133 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
+2026-05-01 22:35:53.790 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@43bf6c6b
+2026-05-01 22:35:53.804 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:35:53.804 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
+2026-05-01 22:35:58.496 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6e5097a9
+2026-05-01 22:35:58.507 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:35:58.510 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info>, Collection Class: java.util.ArrayList, Collection size: 15, Last saved: no save occured in current session, Last initialized: 2026-05-01 22:33:16.962557975]}
+2026-05-01 22:38:34.781 [pool-2-thread-4] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@4c7e48f5
+2026-05-01 22:38:34.791 [pool-2-thread-4] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:38:34.795 [pool-2-thread-4] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
 creation date = 2026-04-30T16:27:59.536713
 name = Route Zeta
 coordinates = (x=10.500000, y=20)
@@ -1096,136 +126,7 @@ to = (x=8.000000, y=8.000000, z=8, name=8)
 distance = 8
 author = admin
 , id = 15
-creation date = 2026-04-30T19:50:04.393361
-name = 13
-coordinates = (x=13.000000, y=13)
-from = (x=13, y=13.000000, name=13)
-to = (x=13.000000, y=13.000000, z=1, name=13)
-distance = 13
-author = admin
-]}
-2026-04-30 19:53:31.563 [pool-2-thread-5] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@c2cf72c
-2026-04-30 19:53:31.575 [pool-2-thread-5] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:53:31.600 [pool-2-thread-5] INFO  Server standart logger - sending response: Response{status=OK, body=[element updated]}
-2026-04-30 19:53:34.044 [pool-2-thread-6] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@26cccb91
-2026-04-30 19:53:34.060 [pool-2-thread-6] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:53:34.061 [pool-2-thread-6] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info>, Collection Class: java.util.ArrayList, Collection size: 15, Last saved: no save occured in current session, Last initialized: 2026-04-30 19:53:11.719694996]}
-2026-04-30 19:53:35.408 [pool-2-thread-7] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@2e58bba6
-2026-04-30 19:53:35.450 [pool-2-thread-7] INFO  Server standart logger - authenticated user: admin
-2026-04-30 19:53:35.460 [pool-2-thread-7] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
-creation date = 2026-04-30T16:27:59.536713
-name = Route Zeta
-coordinates = (x=10.500000, y=20)
-from = (x=250, y=350.200000, name=Saint Petersburg Square)
-to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
-distance = 200
-author = user1
-, id = 1
-creation date = 2026-04-30T16:27:59.536713
-name = Route Alpha
-coordinates = (x=10.500000, y=20)
-from = (x=100, y=200.500000, name=Moscow Central)
-to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
-distance = 150
-author = admin
-, id = 7
-creation date = 2026-04-30T16:27:59.536713
-name = Route Eta
-coordinates = (x=25.500000, y=35)
-from = (x=400, y=450.800000, name=Novosibirsk Station)
-to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
-distance = 300
-author = user1
-, id = 2
-creation date = 2026-04-30T16:27:59.536713
-name = Route Beta
-coordinates = (x=25.500000, y=35)
-from = (x=250, y=350.200000, name=Saint Petersburg Square)
-to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
-distance = 250
-author = admin
-, id = 8
-creation date = 2026-04-30T16:27:59.536713
-name = Route Theta
-coordinates = (x=40.200001, y=50)
-from = (x=550, y=600.300000, name=Kazan Kremlin)
-to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
-distance = 400
-author = user1
-, id = 3
-creation date = 2026-04-30T16:27:59.536713
-name = Route Gamma
-coordinates = (x=40.200001, y=50)
-from = (x=400, y=450.800000, name=Novosibirsk Station)
-to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
-distance = 350
-author = admin
-, id = 9
-creation date = 2026-04-30T16:27:59.536713
-name = Route Iota
-coordinates = (x=55.799999, y=65)
-from = (x=700, y=750.000000, name=Sochi Park)
-to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
-distance = 500
-author = user1
-, id = 4
-creation date = 2026-04-30T16:27:59.536713
-name = Route Delta
-coordinates = (x=55.799999, y=65)
-from = (x=550, y=600.300000, name=Kazan Kremlin)
-to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
-distance = 450
-author = admin
-, id = 10
-creation date = 2026-04-30T16:27:59.536713
-name = Route Kappa
-coordinates = (x=70.300003, y=80)
-from = (x=100, y=200.500000, name=Moscow Central)
-to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
-distance = 600
-author = user1
-, id = 5
-creation date = 2026-04-30T16:27:59.536713
-name = Route Epsilon
-coordinates = (x=70.300003, y=80)
-from = (x=700, y=750.000000, name=Sochi Park)
-to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
-distance = 550
-author = admin
-, id = 11
-creation date = 2026-04-30T19:20:45.769286
-name = 9
-coordinates = (x=9.000000, y=9)
-from = (x=9, y=9.000000, name=9)
-to = (x=9.000000, y=9.000000, z=9, name=9)
-distance = 9
-author = admin
-, id = 14
-creation date = 2026-04-30T19:27:16.084045
-name = 7
-coordinates = (x=7.000000, y=7)
-from = (x=7, y=7.000000, name=7)
-to = (x=7.000000, y=7.000000, z=7, name=7)
-distance = 7
-author = admin
-, id = 12
-creation date = 2026-04-30T19:23:14.821059
-name = 3
-coordinates = (x=3.000000, y=3)
-from = (x=3, y=3.000000, name=3)
-to = (x=3.000000, y=3.000000, z=3, name=3)
-distance = 3
-author = admin
-, id = 13
-creation date = 2026-04-30T19:24:48.560361
-name = 8
-coordinates = (x=8.000000, y=8)
-from = (x=8, y=8.000000, name=8)
-to = (x=8.000000, y=8.000000, z=8, name=8)
-distance = 8
-author = admin
-, id = 15
-creation date = 2026-04-30T19:53:28.943715110
+creation date = 2026-04-30T19:53:28.943715
 name = 14
 coordinates = (x=14.000000, y=14)
 from = (x=14, y=14.000000, name=14)
@@ -1233,20 +134,12 @@ to = (x=14.000000, y=14.000000, z=14, name=14)
 distance = 14
 author = admin
 ]}
-2026-04-30 19:53:50.554 [pool-2-thread-8] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@4bb0c55d
-2026-04-30 19:53:50.595 [pool-2-thread-8] INFO  Server standart logger - sending response: Response{status=ERROR, body=[No such user]}
-2026-04-30 19:53:56.079 [pool-2-thread-9] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@37eaab06
-2026-04-30 19:53:56.123 [pool-2-thread-9] INFO  Server standart logger - authenticated user: user1
-2026-04-30 19:53:56.123 [pool-2-thread-9] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[user1, password1]}
-2026-04-30 19:54:12.404 [pool-2-thread-10] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@3a59f114
-2026-04-30 19:54:12.447 [pool-2-thread-10] INFO  Server standart logger - authenticated user: user1
-2026-04-30 19:54:12.448 [pool-2-thread-10] INFO  Server standart logger - sending response: Response{status=ERROR, body=[You have no permission to modify this item]}
-2026-04-30 19:54:15.362 [pool-2-thread-11] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@2c5fae6b
-2026-04-30 19:54:15.406 [pool-2-thread-11] INFO  Server standart logger - authenticated user: user1
-2026-04-30 19:54:15.406 [pool-2-thread-11] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info>, Collection Class: java.util.ArrayList, Collection size: 15, Last saved: no save occured in current session, Last initialized: 2026-04-30 19:53:11.719694996]}
-2026-04-30 19:54:16.855 [pool-2-thread-12] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@112f77c5
-2026-04-30 19:54:16.899 [pool-2-thread-12] INFO  Server standart logger - authenticated user: user1
-2026-04-30 19:54:16.907 [pool-2-thread-12] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+2026-05-01 22:38:42.929 [pool-2-thread-5] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@38303199
+2026-05-01 22:38:42.942 [pool-2-thread-5] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:38:43.000 [pool-2-thread-5] INFO  Server standart logger - sending response: Response{status=ERROR, body=[Error while adding item]}
+2026-05-01 22:39:03.651 [pool-2-thread-6] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@60707cb1
+2026-05-01 22:39:03.655 [pool-2-thread-6] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:39:03.666 [pool-2-thread-6] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
 creation date = 2026-04-30T16:27:59.536713
 name = Route Zeta
 coordinates = (x=10.500000, y=20)
@@ -1359,7 +252,7 @@ to = (x=8.000000, y=8.000000, z=8, name=8)
 distance = 8
 author = admin
 , id = 15
-creation date = 2026-04-30T19:53:28.943715110
+creation date = 2026-04-30T19:53:28.943715
 name = 14
 coordinates = (x=14.000000, y=14)
 from = (x=14, y=14.000000, name=14)
@@ -1367,5 +260,713 @@ to = (x=14.000000, y=14.000000, z=14, name=14)
 distance = 14
 author = admin
 ]}
-2026-04-30 19:54:18.564 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected (EOF): /127.0.0.1
-2026-04-30 19:54:18.565 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1
+2026-05-01 22:39:16.144 [pool-2-thread-7] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@2522849
+2026-05-01 22:39:16.150 [pool-2-thread-7] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:39:16.164 [pool-2-thread-7] INFO  Server standart logger - sending response: Response{status=OK, body=[element updated]}
+2026-05-01 22:39:19.314 [pool-2-thread-8] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@77bbfdd1
+2026-05-01 22:39:19.319 [pool-2-thread-8] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:39:19.325 [pool-2-thread-8] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-04-30T16:27:59.536713
+name = Route Zeta
+coordinates = (x=10.500000, y=20)
+from = (x=250, y=350.200000, name=Saint Petersburg Square)
+to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance = 200
+author = user1
+, id = 1
+creation date = 2026-04-30T16:27:59.536713
+name = Route Alpha
+coordinates = (x=10.500000, y=20)
+from = (x=100, y=200.500000, name=Moscow Central)
+to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance = 150
+author = admin
+, id = 7
+creation date = 2026-04-30T16:27:59.536713
+name = Route Eta
+coordinates = (x=25.500000, y=35)
+from = (x=400, y=450.800000, name=Novosibirsk Station)
+to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance = 300
+author = user1
+, id = 2
+creation date = 2026-04-30T16:27:59.536713
+name = Route Beta
+coordinates = (x=25.500000, y=35)
+from = (x=250, y=350.200000, name=Saint Petersburg Square)
+to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance = 250
+author = admin
+, id = 8
+creation date = 2026-04-30T16:27:59.536713
+name = Route Theta
+coordinates = (x=40.200001, y=50)
+from = (x=550, y=600.300000, name=Kazan Kremlin)
+to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance = 400
+author = user1
+, id = 3
+creation date = 2026-04-30T16:27:59.536713
+name = Route Gamma
+coordinates = (x=40.200001, y=50)
+from = (x=400, y=450.800000, name=Novosibirsk Station)
+to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance = 350
+author = admin
+, id = 9
+creation date = 2026-04-30T16:27:59.536713
+name = Route Iota
+coordinates = (x=55.799999, y=65)
+from = (x=700, y=750.000000, name=Sochi Park)
+to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance = 500
+author = user1
+, id = 4
+creation date = 2026-04-30T16:27:59.536713
+name = Route Delta
+coordinates = (x=55.799999, y=65)
+from = (x=550, y=600.300000, name=Kazan Kremlin)
+to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance = 450
+author = admin
+, id = 10
+creation date = 2026-04-30T16:27:59.536713
+name = Route Kappa
+coordinates = (x=70.300003, y=80)
+from = (x=100, y=200.500000, name=Moscow Central)
+to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance = 600
+author = user1
+, id = 5
+creation date = 2026-04-30T16:27:59.536713
+name = Route Epsilon
+coordinates = (x=70.300003, y=80)
+from = (x=700, y=750.000000, name=Sochi Park)
+to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance = 550
+author = admin
+, id = 11
+creation date = 2026-04-30T19:20:45.769286
+name = 9
+coordinates = (x=9.000000, y=9)
+from = (x=9, y=9.000000, name=9)
+to = (x=9.000000, y=9.000000, z=9, name=9)
+distance = 9
+author = admin
+, id = 14
+creation date = 2026-04-30T19:27:16.084045
+name = 7
+coordinates = (x=7.000000, y=7)
+from = (x=7, y=7.000000, name=7)
+to = (x=7.000000, y=7.000000, z=7, name=7)
+distance = 7
+author = admin
+, id = 12
+creation date = 2026-04-30T19:23:14.821059
+name = 3
+coordinates = (x=3.000000, y=3)
+from = (x=3, y=3.000000, name=3)
+to = (x=3.000000, y=3.000000, z=3, name=3)
+distance = 3
+author = admin
+, id = 13
+creation date = 2026-04-30T19:24:48.560361
+name = 8
+coordinates = (x=8.000000, y=8)
+from = (x=8, y=8.000000, name=8)
+to = (x=8.000000, y=8.000000, z=8, name=8)
+distance = 8
+author = admin
+, id = 15
+creation date = 2026-05-01T22:39:13.412034954
+name = 15
+coordinates = (x=15.000000, y=15)
+from = (x=15, y=15.000000, name=15)
+to = (x=15.000000, y=15.000000, z=15, name=15)
+distance = 15
+author = admin
+]}
+2026-05-01 22:40:40.241 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected (EOF): /127.0.0.1
+2026-05-01 22:40:40.244 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1
+2026-05-01 22:41:14.422 [main] INFO  Server standart logger - collection loaded to memory
+2026-05-01 22:41:14.432 [main] INFO  Server standart logger - started on port 9000
+2026-05-01 22:41:15.335 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-05-01 22:41:15.336 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-05-01 22:41:15.405 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@4cba9358
+2026-05-01 22:41:15.406 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
+2026-05-01 22:41:18.771 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6ef6c0b3
+2026-05-01 22:41:18.796 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:41:18.798 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
+2026-05-01 22:41:20.239 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@71943925
+2026-05-01 22:41:20.242 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:41:20.243 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info>, Collection Class: java.util.ArrayList, Collection size: 15, Last saved: no save occured in current session, Last initialized: 2026-05-01 22:41:14.393781251]}
+2026-05-01 22:41:32.137 [pool-2-thread-4] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@7d1ecfc8
+2026-05-01 22:41:32.143 [pool-2-thread-4] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:41:32.164 [pool-2-thread-4] INFO  Server standart logger - sending response: Response{status=ERROR, body=[Error while adding item]}
+2026-05-01 22:49:31.299 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected (EOF): /127.0.0.1
+2026-05-01 22:49:31.301 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1
+2026-05-01 22:50:07.027 [main] INFO  Server standart logger - collection loaded to memory
+2026-05-01 22:50:07.033 [main] INFO  Server standart logger - started on port 9000
+2026-05-01 22:50:07.865 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-05-01 22:50:07.866 [Thread-0] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-05-01 22:50:07.915 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@1c38448
+2026-05-01 22:50:07.916 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=class common.transfer.request.standart.EntityRequest, print_field_descending_distance=class common.transfer.request.standart.StandartRequest, show=class common.transfer.request.standart.StandartRequest, clear=class common.transfer.request.standart.StandartRequest, print_unique_distance=class common.transfer.request.standart.StandartRequest, update=class common.transfer.request.standart.CombinedRequest, remove_by_id=class common.transfer.request.standart.IdRequest, sort=class common.transfer.request.standart.StandartRequest, history=class common.transfer.request.standart.StandartRequest, remove_lower=class common.transfer.request.standart.EntityRequest, login=class common.transfer.request.standart.AuthRequest, help=class common.transfer.request.standart.StandartRequest, filter_starts_with_name=class common.transfer.request.standart.StringRequest, info=class common.transfer.request.standart.StandartRequest, register=class common.transfer.request.standart.AuthRequest}]}
+2026-05-01 22:50:12.301 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@57b9b35
+2026-05-01 22:50:12.312 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:50:12.312 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin]}
+2026-05-01 22:50:16.132 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@49dc23d6
+2026-05-01 22:50:16.141 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:50:16.141 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info>, Collection Class: java.util.ArrayList, Collection size: 15, Last saved: no save occured in current session, Last initialized: 2026-05-01 22:50:07.003739519]}
+2026-05-01 22:50:23.834 [pool-2-thread-4] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@4038fcff
+2026-05-01 22:50:23.837 [pool-2-thread-4] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:50:23.849 [pool-2-thread-4] INFO  Server standart logger - sending response: Response{status=OK, body=[item added]}
+2026-05-01 22:50:25.920 [pool-2-thread-5] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@21849ddf
+2026-05-01 22:50:25.928 [pool-2-thread-5] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:50:25.928 [pool-2-thread-5] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info>, Collection Class: java.util.ArrayList, Collection size: 16, Last saved: no save occured in current session, Last initialized: 2026-05-01 22:50:07.003739519]}
+2026-05-01 22:50:27.521 [pool-2-thread-6] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@4411dc6f
+2026-05-01 22:50:27.526 [pool-2-thread-6] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:50:27.533 [pool-2-thread-6] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-04-30T16:27:59.536713
+name = Route Zeta
+coordinates = (x=10.500000, y=20)
+from = (x=250, y=350.200000, name=Saint Petersburg Square)
+to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance = 200
+author = user1
+, id = 1
+creation date = 2026-04-30T16:27:59.536713
+name = Route Alpha
+coordinates = (x=10.500000, y=20)
+from = (x=100, y=200.500000, name=Moscow Central)
+to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance = 150
+author = admin
+, id = 7
+creation date = 2026-04-30T16:27:59.536713
+name = Route Eta
+coordinates = (x=25.500000, y=35)
+from = (x=400, y=450.800000, name=Novosibirsk Station)
+to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance = 300
+author = user1
+, id = 2
+creation date = 2026-04-30T16:27:59.536713
+name = Route Beta
+coordinates = (x=25.500000, y=35)
+from = (x=250, y=350.200000, name=Saint Petersburg Square)
+to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance = 250
+author = admin
+, id = 8
+creation date = 2026-04-30T16:27:59.536713
+name = Route Theta
+coordinates = (x=40.200001, y=50)
+from = (x=550, y=600.300000, name=Kazan Kremlin)
+to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance = 400
+author = user1
+, id = 3
+creation date = 2026-04-30T16:27:59.536713
+name = Route Gamma
+coordinates = (x=40.200001, y=50)
+from = (x=400, y=450.800000, name=Novosibirsk Station)
+to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance = 350
+author = admin
+, id = 9
+creation date = 2026-04-30T16:27:59.536713
+name = Route Iota
+coordinates = (x=55.799999, y=65)
+from = (x=700, y=750.000000, name=Sochi Park)
+to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance = 500
+author = user1
+, id = 4
+creation date = 2026-04-30T16:27:59.536713
+name = Route Delta
+coordinates = (x=55.799999, y=65)
+from = (x=550, y=600.300000, name=Kazan Kremlin)
+to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance = 450
+author = admin
+, id = 10
+creation date = 2026-04-30T16:27:59.536713
+name = Route Kappa
+coordinates = (x=70.300003, y=80)
+from = (x=100, y=200.500000, name=Moscow Central)
+to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance = 600
+author = user1
+, id = 5
+creation date = 2026-04-30T16:27:59.536713
+name = Route Epsilon
+coordinates = (x=70.300003, y=80)
+from = (x=700, y=750.000000, name=Sochi Park)
+to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance = 550
+author = admin
+, id = 11
+creation date = 2026-04-30T19:20:45.769286
+name = 9
+coordinates = (x=9.000000, y=9)
+from = (x=9, y=9.000000, name=9)
+to = (x=9.000000, y=9.000000, z=9, name=9)
+distance = 9
+author = admin
+, id = 14
+creation date = 2026-04-30T19:27:16.084045
+name = 7
+coordinates = (x=7.000000, y=7)
+from = (x=7, y=7.000000, name=7)
+to = (x=7.000000, y=7.000000, z=7, name=7)
+distance = 7
+author = admin
+, id = 12
+creation date = 2026-04-30T19:23:14.821059
+name = 3
+coordinates = (x=3.000000, y=3)
+from = (x=3, y=3.000000, name=3)
+to = (x=3.000000, y=3.000000, z=3, name=3)
+distance = 3
+author = admin
+, id = 13
+creation date = 2026-04-30T19:24:48.560361
+name = 8
+coordinates = (x=8.000000, y=8)
+from = (x=8, y=8.000000, name=8)
+to = (x=8.000000, y=8.000000, z=8, name=8)
+distance = 8
+author = admin
+, id = 15
+creation date = 2026-04-30T19:53:28.943715
+name = 15
+coordinates = (x=14.000000, y=14)
+from = (x=14, y=14.000000, name=14)
+to = (x=14.000000, y=14.000000, z=14, name=14)
+distance = 15
+author = admin
+, id = 18
+creation date = 2026-05-01T22:50:20.914845872
+name = 7
+coordinates = (x=7.000000, y=7)
+from = (x=7, y=7.000000, name=7)
+to = (x=7.000000, y=7.000000, z=7, name=7)
+distance = 7
+author = admin
+]}
+2026-05-01 22:51:16.856 [pool-2-thread-7] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@2842e82c
+2026-05-01 22:51:16.860 [pool-2-thread-7] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:51:16.884 [pool-2-thread-7] INFO  Server standart logger - sending response: Response{status=OK, body=[item added]}
+2026-05-01 22:51:18.744 [pool-2-thread-8] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@7aa1b5a9
+2026-05-01 22:51:18.750 [pool-2-thread-8] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:51:18.751 [pool-2-thread-8] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info>, Collection Class: java.util.ArrayList, Collection size: 17, Last saved: no save occured in current session, Last initialized: 2026-05-01 22:50:07.003739519]}
+2026-05-01 22:51:20.100 [pool-2-thread-9] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@5760c30d
+2026-05-01 22:51:20.105 [pool-2-thread-9] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:51:20.107 [pool-2-thread-9] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-04-30T16:27:59.536713
+name = Route Zeta
+coordinates = (x=10.500000, y=20)
+from = (x=250, y=350.200000, name=Saint Petersburg Square)
+to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance = 200
+author = user1
+, id = 1
+creation date = 2026-04-30T16:27:59.536713
+name = Route Alpha
+coordinates = (x=10.500000, y=20)
+from = (x=100, y=200.500000, name=Moscow Central)
+to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance = 150
+author = admin
+, id = 7
+creation date = 2026-04-30T16:27:59.536713
+name = Route Eta
+coordinates = (x=25.500000, y=35)
+from = (x=400, y=450.800000, name=Novosibirsk Station)
+to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance = 300
+author = user1
+, id = 2
+creation date = 2026-04-30T16:27:59.536713
+name = Route Beta
+coordinates = (x=25.500000, y=35)
+from = (x=250, y=350.200000, name=Saint Petersburg Square)
+to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance = 250
+author = admin
+, id = 8
+creation date = 2026-04-30T16:27:59.536713
+name = Route Theta
+coordinates = (x=40.200001, y=50)
+from = (x=550, y=600.300000, name=Kazan Kremlin)
+to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance = 400
+author = user1
+, id = 3
+creation date = 2026-04-30T16:27:59.536713
+name = Route Gamma
+coordinates = (x=40.200001, y=50)
+from = (x=400, y=450.800000, name=Novosibirsk Station)
+to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance = 350
+author = admin
+, id = 9
+creation date = 2026-04-30T16:27:59.536713
+name = Route Iota
+coordinates = (x=55.799999, y=65)
+from = (x=700, y=750.000000, name=Sochi Park)
+to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance = 500
+author = user1
+, id = 4
+creation date = 2026-04-30T16:27:59.536713
+name = Route Delta
+coordinates = (x=55.799999, y=65)
+from = (x=550, y=600.300000, name=Kazan Kremlin)
+to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance = 450
+author = admin
+, id = 10
+creation date = 2026-04-30T16:27:59.536713
+name = Route Kappa
+coordinates = (x=70.300003, y=80)
+from = (x=100, y=200.500000, name=Moscow Central)
+to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance = 600
+author = user1
+, id = 5
+creation date = 2026-04-30T16:27:59.536713
+name = Route Epsilon
+coordinates = (x=70.300003, y=80)
+from = (x=700, y=750.000000, name=Sochi Park)
+to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance = 550
+author = admin
+, id = 11
+creation date = 2026-04-30T19:20:45.769286
+name = 9
+coordinates = (x=9.000000, y=9)
+from = (x=9, y=9.000000, name=9)
+to = (x=9.000000, y=9.000000, z=9, name=9)
+distance = 9
+author = admin
+, id = 14
+creation date = 2026-04-30T19:27:16.084045
+name = 7
+coordinates = (x=7.000000, y=7)
+from = (x=7, y=7.000000, name=7)
+to = (x=7.000000, y=7.000000, z=7, name=7)
+distance = 7
+author = admin
+, id = 12
+creation date = 2026-04-30T19:23:14.821059
+name = 3
+coordinates = (x=3.000000, y=3)
+from = (x=3, y=3.000000, name=3)
+to = (x=3.000000, y=3.000000, z=3, name=3)
+distance = 3
+author = admin
+, id = 13
+creation date = 2026-04-30T19:24:48.560361
+name = 8
+coordinates = (x=8.000000, y=8)
+from = (x=8, y=8.000000, name=8)
+to = (x=8.000000, y=8.000000, z=8, name=8)
+distance = 8
+author = admin
+, id = 15
+creation date = 2026-04-30T19:53:28.943715
+name = 15
+coordinates = (x=14.000000, y=14)
+from = (x=14, y=14.000000, name=14)
+to = (x=14.000000, y=14.000000, z=14, name=14)
+distance = 15
+author = admin
+, id = 18
+creation date = 2026-05-01T22:50:20.914845872
+name = 7
+coordinates = (x=7.000000, y=7)
+from = (x=7, y=7.000000, name=7)
+to = (x=7.000000, y=7.000000, z=7, name=7)
+distance = 7
+author = admin
+, id = 19
+creation date = 2026-05-01T22:51:14.720631255
+name = 9
+coordinates = (x=9.000000, y=9)
+from = (x=9, y=9.000000, name=9)
+to = (x=9.000000, y=9.000000, z=9, name=9)
+distance = 9
+author = admin
+]}
+2026-05-01 22:51:33.794 [pool-2-thread-10] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@af24c49
+2026-05-01 22:51:33.799 [pool-2-thread-10] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:51:33.800 [pool-2-thread-10] INFO  Server standart logger - sending response: Response{status=OK, body=[element removed]}
+2026-05-01 22:51:38.306 [pool-2-thread-11] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@498a0e6e
+2026-05-01 22:51:38.308 [pool-2-thread-11] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:51:38.308 [pool-2-thread-11] INFO  Server standart logger - sending response: Response{status=OK, body=[element removed]}
+2026-05-01 22:51:39.959 [pool-2-thread-12] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@10a94166
+2026-05-01 22:51:39.963 [pool-2-thread-12] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:51:39.964 [pool-2-thread-12] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info>, Collection Class: java.util.ArrayList, Collection size: 15, Last saved: no save occured in current session, Last initialized: 2026-05-01 22:50:07.003739519]}
+2026-05-01 22:51:43.240 [pool-2-thread-13] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@a38feba
+2026-05-01 22:51:43.245 [pool-2-thread-13] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:51:43.250 [pool-2-thread-13] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-04-30T16:27:59.536713
+name = Route Zeta
+coordinates = (x=10.500000, y=20)
+from = (x=250, y=350.200000, name=Saint Petersburg Square)
+to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance = 200
+author = user1
+, id = 1
+creation date = 2026-04-30T16:27:59.536713
+name = Route Alpha
+coordinates = (x=10.500000, y=20)
+from = (x=100, y=200.500000, name=Moscow Central)
+to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance = 150
+author = admin
+, id = 7
+creation date = 2026-04-30T16:27:59.536713
+name = Route Eta
+coordinates = (x=25.500000, y=35)
+from = (x=400, y=450.800000, name=Novosibirsk Station)
+to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance = 300
+author = user1
+, id = 2
+creation date = 2026-04-30T16:27:59.536713
+name = Route Beta
+coordinates = (x=25.500000, y=35)
+from = (x=250, y=350.200000, name=Saint Petersburg Square)
+to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance = 250
+author = admin
+, id = 8
+creation date = 2026-04-30T16:27:59.536713
+name = Route Theta
+coordinates = (x=40.200001, y=50)
+from = (x=550, y=600.300000, name=Kazan Kremlin)
+to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance = 400
+author = user1
+, id = 3
+creation date = 2026-04-30T16:27:59.536713
+name = Route Gamma
+coordinates = (x=40.200001, y=50)
+from = (x=400, y=450.800000, name=Novosibirsk Station)
+to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance = 350
+author = admin
+, id = 9
+creation date = 2026-04-30T16:27:59.536713
+name = Route Iota
+coordinates = (x=55.799999, y=65)
+from = (x=700, y=750.000000, name=Sochi Park)
+to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance = 500
+author = user1
+, id = 4
+creation date = 2026-04-30T16:27:59.536713
+name = Route Delta
+coordinates = (x=55.799999, y=65)
+from = (x=550, y=600.300000, name=Kazan Kremlin)
+to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance = 450
+author = admin
+, id = 10
+creation date = 2026-04-30T16:27:59.536713
+name = Route Kappa
+coordinates = (x=70.300003, y=80)
+from = (x=100, y=200.500000, name=Moscow Central)
+to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance = 600
+author = user1
+, id = 5
+creation date = 2026-04-30T16:27:59.536713
+name = Route Epsilon
+coordinates = (x=70.300003, y=80)
+from = (x=700, y=750.000000, name=Sochi Park)
+to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance = 550
+author = admin
+, id = 11
+creation date = 2026-04-30T19:20:45.769286
+name = 9
+coordinates = (x=9.000000, y=9)
+from = (x=9, y=9.000000, name=9)
+to = (x=9.000000, y=9.000000, z=9, name=9)
+distance = 9
+author = admin
+, id = 14
+creation date = 2026-04-30T19:27:16.084045
+name = 7
+coordinates = (x=7.000000, y=7)
+from = (x=7, y=7.000000, name=7)
+to = (x=7.000000, y=7.000000, z=7, name=7)
+distance = 7
+author = admin
+, id = 12
+creation date = 2026-04-30T19:23:14.821059
+name = 3
+coordinates = (x=3.000000, y=3)
+from = (x=3, y=3.000000, name=3)
+to = (x=3.000000, y=3.000000, z=3, name=3)
+distance = 3
+author = admin
+, id = 13
+creation date = 2026-04-30T19:24:48.560361
+name = 8
+coordinates = (x=8.000000, y=8)
+from = (x=8, y=8.000000, name=8)
+to = (x=8.000000, y=8.000000, z=8, name=8)
+distance = 8
+author = admin
+, id = 15
+creation date = 2026-04-30T19:53:28.943715
+name = 15
+coordinates = (x=14.000000, y=14)
+from = (x=14, y=14.000000, name=14)
+to = (x=14.000000, y=14.000000, z=14, name=14)
+distance = 15
+author = admin
+]}
+2026-05-01 22:52:21.133 [pool-2-thread-14] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@216df3b6
+2026-05-01 22:52:21.138 [pool-2-thread-14] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:52:21.177 [pool-2-thread-14] INFO  Server standart logger - sending response: Response{status=OK, body=[item added]}
+2026-05-01 22:52:23.003 [pool-2-thread-15] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@7e6779ff
+2026-05-01 22:52:23.008 [pool-2-thread-15] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:52:23.008 [pool-2-thread-15] INFO  Server standart logger - sending response: Response{status=OK, body=[<Collection info>, Collection Class: java.util.ArrayList, Collection size: 16, Last saved: no save occured in current session, Last initialized: 2026-05-01 22:50:07.003739519]}
+2026-05-01 22:52:24.472 [pool-2-thread-16] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@766a517e
+2026-05-01 22:52:24.477 [pool-2-thread-16] INFO  Server standart logger - authenticated user: admin
+2026-05-01 22:52:24.481 [pool-2-thread-16] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-04-30T16:27:59.536713
+name = Route Zeta
+coordinates = (x=10.500000, y=20)
+from = (x=250, y=350.200000, name=Saint Petersburg Square)
+to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance = 200
+author = user1
+, id = 1
+creation date = 2026-04-30T16:27:59.536713
+name = Route Alpha
+coordinates = (x=10.500000, y=20)
+from = (x=100, y=200.500000, name=Moscow Central)
+to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance = 150
+author = admin
+, id = 7
+creation date = 2026-04-30T16:27:59.536713
+name = Route Eta
+coordinates = (x=25.500000, y=35)
+from = (x=400, y=450.800000, name=Novosibirsk Station)
+to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance = 300
+author = user1
+, id = 2
+creation date = 2026-04-30T16:27:59.536713
+name = Route Beta
+coordinates = (x=25.500000, y=35)
+from = (x=250, y=350.200000, name=Saint Petersburg Square)
+to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance = 250
+author = admin
+, id = 8
+creation date = 2026-04-30T16:27:59.536713
+name = Route Theta
+coordinates = (x=40.200001, y=50)
+from = (x=550, y=600.300000, name=Kazan Kremlin)
+to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance = 400
+author = user1
+, id = 3
+creation date = 2026-04-30T16:27:59.536713
+name = Route Gamma
+coordinates = (x=40.200001, y=50)
+from = (x=400, y=450.800000, name=Novosibirsk Station)
+to = (x=4000.800000, y=4500.100000, z=600, name=Novosibirsk Mall)
+distance = 350
+author = admin
+, id = 9
+creation date = 2026-04-30T16:27:59.536713
+name = Route Iota
+coordinates = (x=55.799999, y=65)
+from = (x=700, y=750.000000, name=Sochi Park)
+to = (x=1000.500000, y=2000.300000, z=300, name=Moscow Airport)
+distance = 500
+author = user1
+, id = 4
+creation date = 2026-04-30T16:27:59.536713
+name = Route Delta
+coordinates = (x=55.799999, y=65)
+from = (x=550, y=600.300000, name=Kazan Kremlin)
+to = (x=5500.000000, y=6000.400000, z=750, name=Kazan Stadium)
+distance = 450
+author = admin
+, id = 10
+creation date = 2026-04-30T16:27:59.536713
+name = Route Kappa
+coordinates = (x=70.300003, y=80)
+from = (x=100, y=200.500000, name=Moscow Central)
+to = (x=2500.200000, y=3500.700000, z=450, name=SPB Sea Port)
+distance = 600
+author = user1
+, id = 5
+creation date = 2026-04-30T16:27:59.536713
+name = Route Epsilon
+coordinates = (x=70.300003, y=80)
+from = (x=700, y=750.000000, name=Sochi Park)
+to = (x=7000.600000, y=7500.900000, z=900, name=Sochi Beach)
+distance = 550
+author = admin
+, id = 11
+creation date = 2026-04-30T19:20:45.769286
+name = 9
+coordinates = (x=9.000000, y=9)
+from = (x=9, y=9.000000, name=9)
+to = (x=9.000000, y=9.000000, z=9, name=9)
+distance = 9
+author = admin
+, id = 14
+creation date = 2026-04-30T19:27:16.084045
+name = 7
+coordinates = (x=7.000000, y=7)
+from = (x=7, y=7.000000, name=7)
+to = (x=7.000000, y=7.000000, z=7, name=7)
+distance = 7
+author = admin
+, id = 12
+creation date = 2026-04-30T19:23:14.821059
+name = 3
+coordinates = (x=3.000000, y=3)
+from = (x=3, y=3.000000, name=3)
+to = (x=3.000000, y=3.000000, z=3, name=3)
+distance = 3
+author = admin
+, id = 13
+creation date = 2026-04-30T19:24:48.560361
+name = 8
+coordinates = (x=8.000000, y=8)
+from = (x=8, y=8.000000, name=8)
+to = (x=8.000000, y=8.000000, z=8, name=8)
+distance = 8
+author = admin
+, id = 15
+creation date = 2026-04-30T19:53:28.943715
+name = 15
+coordinates = (x=14.000000, y=14)
+from = (x=14, y=14.000000, name=14)
+to = (x=14.000000, y=14.000000, z=14, name=14)
+distance = 15
+author = admin
+, id = 20
+creation date = 2026-05-01T22:52:17.735677871
+name = 0
+coordinates = (x=0.000000, y=0)
+from = (x=0, y=2.000000, name=2)
+to = (x=2.000000, y=2.000000, z=2, name=2)
+distance = 2
+author = admin
+]}
+2026-05-01 22:53:44.762 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected (EOF): /127.0.0.1
+2026-05-01 22:53:44.764 [ForkJoinPool-1-worker-1] INFO  Server standart logger - Client disconnected: /127.0.0.1

@@ -9,17 +9,17 @@ import java.net.SocketException;
 import java.util.concurrent.RecursiveAction;
 
 import network.MultiThreadNetwork;
-import util.logging.AbstractLogger;
+import logging.LoggingManager;
 
 public class ClientHandler extends RecursiveAction {
     private final Socket clientSocket;
-    private final AbstractLogger logger;
+    private final LoggingManager logger;
     private final MultiThreadNetwork server;
     private ObjectInputStream ois;
     private ObjectOutputStream oos;
     private volatile boolean connected;
 
-    public ClientHandler(Socket clientSocket, AbstractLogger logger, MultiThreadNetwork server) {
+    public ClientHandler(Socket clientSocket, LoggingManager logger, MultiThreadNetwork server) {
         this.clientSocket = clientSocket;
         this.logger = logger;
         this.server = server;

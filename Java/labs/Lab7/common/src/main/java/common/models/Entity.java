@@ -5,7 +5,7 @@ import java.util.Comparator;
 
 
 /**
- * Абстрактный класс элементов коллекции.
+ * Абстрактный класс для представления элементов коллекции.
  * @author Septyq
  */
 public abstract class Entity implements Validatable, Comparable<Entity>, Serializable {

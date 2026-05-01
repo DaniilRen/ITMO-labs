@@ -1,6 +1,6 @@
 package commands;
 
-import common.blueprints.UserData;
+import common.models.User;
 import common.transfer.request.Request;
 import common.transfer.response.Response;
 
@@ -20,5 +20,5 @@ public abstract class AuthAwareCommand<T extends Request> extends Command<T> {
         return this.execute(request, null);
     }
 
-    public abstract Response<?> execute(T request, UserData userData);
+    public abstract Response<?> execute(T request, User userData);
 }

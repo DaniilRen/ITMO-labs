@@ -47,7 +47,7 @@ public class RequestHandler {
             if (!(authHandler.isAuthenticated()) && (!(publicRequests.contains(requestType)))) {
                 return new Response<>(List.of("You must 'login' or 'register' before executing commands!"), Status.ERROR);
             }
-            RequestBuilder requestBuilder = new RequestBuilder(console, authHandler.getCredentials().user());
+            RequestBuilder requestBuilder = new RequestBuilder(console, authHandler.getCredentials().getName());
             Request request = requestBuilder.buildRequest(requestType, name, args);
             request = authHandler.wrapCredentials(request);
 

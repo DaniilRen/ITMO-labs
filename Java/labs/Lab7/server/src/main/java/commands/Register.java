@@ -2,11 +2,11 @@ package commands;
 
 import java.util.List;
 
+import auth.AuthManager;
 import common.exceptions.AuthException;
 import common.transfer.Status;
 import common.transfer.request.standart.AuthRequest;
 import common.transfer.response.Response;
-import managers.auth.AbstractAuthManager;
 
 /**
  * Команда 'register'. Регистрирует нового пользователя.
@@ -15,9 +15,9 @@ import managers.auth.AbstractAuthManager;
 public class Register extends Command<AuthRequest> {
     private static final long serialVersionUID = 8932432L;
 
-    private final AbstractAuthManager authManager;
+    private final AuthManager authManager;
 
-    public Register(AbstractAuthManager authManager) {
+    public Register(AuthManager authManager) {
         super(new CommandAttribute(
             "register", 
             "зарегистрировать нового пользователя", 

@@ -4,7 +4,7 @@ import common.exceptions.RuntimeInitException;
 public class Main {
     public static void main(String[] args) {
         try {
-            AbstractServer server = new MultiThreadServer(9000); 
+            Server server = new MultiThreadServer(9000); 
             server.run();
         } catch (RuntimeInitException e) {
             System.out.println(e.getMessage());

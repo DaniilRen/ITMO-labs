@@ -2,10 +2,10 @@ package commands;
 
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.response.Response;
-import managers.collection.AbstractCollectionManager;
 
 import java.time.LocalDateTime;
 
+import collection.CollectionManager;
 import common.models.Entity;
 
 
@@ -16,9 +16,9 @@ import common.models.Entity;
 public class Info extends Command<StandartRequest> {
     private static final long serialVersionUID = 134654192L;
 
-    private final AbstractCollectionManager<Entity> collectionManager;
+    private final CollectionManager<Entity> collectionManager;
 
-    public Info(AbstractCollectionManager<Entity> collectionManager) {
+    public Info(CollectionManager<Entity> collectionManager) {
         super(new CommandAttribute(
             "info",
             "вывести информацию о коллекции",

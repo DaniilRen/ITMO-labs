@@ -3,9 +3,9 @@ package commands;
 import java.util.ArrayList;
 import java.util.List;
 
+import commands.manager.CommandManager;
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.response.Response;
-import managers.commands.AbstractCommandManager;
 
 /**
  * Команда 'history'. Выводит последние 13 команд (без их аргументов).
@@ -14,9 +14,9 @@ import managers.commands.AbstractCommandManager;
 public class History extends Command<StandartRequest> {
     private static final long serialVersionUID = 436542L;
 
-    private final AbstractCommandManager commandManager;
+    private final CommandManager commandManager;
 
-    public History(AbstractCommandManager commandManager) {
+    public History(CommandManager commandManager) {
         super(new CommandAttribute(
             "history", 
             "вывести последние 13 команд (без их аргументов)",

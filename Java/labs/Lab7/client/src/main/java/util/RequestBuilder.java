@@ -3,8 +3,8 @@ package util;
 import java.util.List;
 
 import common.models.Entity;
+import common.models.User;
 import console.IOConsole;
-import common.blueprints.UserData;
 import common.exceptions.IncorrectRequestException;
 import common.exceptions.InvalidScriptException;
 import forms.RouteForm;
@@ -67,11 +67,11 @@ public class RequestBuilder {
                 throw new IncorrectRequestException("Invalid request");
             }
         } else if (requestType == AuthRequest.class && args.size() == 0) {
-            UserData result = buildUserData(); 
-            if (result == null || !AuthRequest.validate(List.of(result.user(), result.password()))) {
+            User result = buildUserData(); 
+            if (result == null || !AuthRequest.validate(List.of(result.getName(), result.getPassword()))) {
                 throw new IncorrectRequestException("Invalid request");
             }
-            return new AuthRequest(name, result.user(), result.password());
+            return new AuthRequest(name, result.getName(), result.getPassword());
         } else if (requestType == InitRequest.class && args.size() == 0) {
             return new InitRequest();
         }
@@ -84,7 +84,7 @@ public class RequestBuilder {
         return new RouteForm(console, author).build();
     }
 
-    private UserData buildUserData() {
+    private User buildUserData() {
         return new UserDataForm(console).build();
     }
 }

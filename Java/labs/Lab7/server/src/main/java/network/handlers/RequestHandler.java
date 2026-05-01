@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.locks.ReentrantLock;
 
+import auth.AuthManager;
 import commands.AuthAwareCommand;
 import commands.Command;
 import commands.interfaces.Executable;
-import common.blueprints.UserData;
+import commands.manager.CommandManager;
 import common.exceptions.AuthException;
+import common.models.User;
 import common.transfer.Status;
 import common.transfer.request.Request;
 import common.transfer.request.standart.AuthRequest;
@@ -18,15 +20,13 @@ import common.transfer.request.standart.StandartRequest;
 import common.transfer.request.wrapped.AuthenticatedRequest;
 import common.transfer.request.wrapped.HeaderRequest;
 import common.transfer.response.Response;
-import managers.auth.AbstractAuthManager;
-import managers.commands.AbstractCommandManager;
 
 public class RequestHandler {
-    protected final AbstractCommandManager commandManager;
-    protected final AbstractAuthManager authManager;
+    protected final CommandManager commandManager;
+    protected final AuthManager authManager;
     private final ReentrantLock collectionLock;
 
-    public RequestHandler(AbstractCommandManager commandManager, AbstractAuthManager authManager) {
+    public RequestHandler(CommandManager commandManager, AuthManager authManager) {
         this.commandManager = commandManager;
         this.authManager = authManager;
         this.collectionLock = new ReentrantLock();  // Created here
@@ -70,7 +70,7 @@ public class RequestHandler {
         return new Response<>();
     }
 
-    private Response<?> executeCommand(StandartRequest request, UserData userData) {
+    private Response<?> executeCommand(StandartRequest request, User userData) {
         String commandName = request.getName();
         if (!validateCommandName(commandName)) {
             return new Response<>(List.of("Unknown command"), Status.ERROR);
@@ -95,7 +95,7 @@ public class RequestHandler {
         }
     }
 
-    private Response<?> handleAuthAwareCommand(Command<StandartRequest> command, StandartRequest request, UserData userData) {
+    private Response<?> handleAuthAwareCommand(Command<StandartRequest> command, StandartRequest request, User userData) {
         AuthAwareCommand<StandartRequest> authCommand = (AuthAwareCommand<StandartRequest>) command;
 
         Response<?> response = authCommand.execute(request, userData);

@@ -4,9 +4,9 @@ import common.models.Entity;
 
 import java.util.List;
 
+import collection.CollectionManager;
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.response.Response;
-import managers.collection.AbstractCollectionManager;
 
 /**
  * Команда 'clear'. Очищает коллекцию.
@@ -15,9 +15,9 @@ import managers.collection.AbstractCollectionManager;
 public class Clear extends Command<StandartRequest> {
     private static final long serialVersionUID = 8932432L;
 
-    private final AbstractCollectionManager<Entity> collectionManager;
+    private final CollectionManager<Entity> collectionManager;
 
-    public Clear(AbstractCollectionManager<Entity> collectionManager) {
+    public Clear(CollectionManager<Entity> collectionManager) {
         super(new CommandAttribute(
             "clear", 
             "очистить коллекцию", 

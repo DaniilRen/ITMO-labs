@@ -3,10 +3,10 @@ package commands;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import collection.CollectionManager;
 import common.models.Entity;
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.response.Response;
-import managers.collection.AbstractCollectionManager;
 
 
 /**
@@ -16,9 +16,9 @@ import managers.collection.AbstractCollectionManager;
 public class Sort extends Command<StandartRequest> {
     private static final long serialVersionUID = 8765332L;
 
-    private final AbstractCollectionManager<Entity> collectionManager;
+    private final CollectionManager<Entity> collectionManager;
 
-    public Sort(AbstractCollectionManager<Entity> collectionManager) {
+    public Sort(CollectionManager<Entity> collectionManager) {
         super(new CommandAttribute(
             "sort", 
             "отсортировать коллекцию в естественном порядке",

@@ -8,8 +8,8 @@ import java.sql.SQLException;
 
 import common.exceptions.AuthException;
 import common.models.Coordinates;
-import common.models.Location2Dimension;
-import common.models.Location3Dimension;
+import common.models.LocationFrom;
+import common.models.LocationTo;
 import common.models.Route;
 import util.database.table.CoordinatesHandler;
 import util.database.table.LocationFromHandler;
@@ -86,14 +86,14 @@ public class PostgresApi extends DatabaseApi {
         return existingId;
     }
 
-    public int getUpdatedLocationFromId(Connection connection, Location2Dimension location) throws SQLException {
+    public int getUpdatedLocationFromId(Connection connection, LocationFrom location) throws SQLException {
         LocationFromHandler handler = new LocationFromHandler(connection);
         int existingId = handler.getId(location);   
         if (existingId < 0) return handler.insert(location);
         return existingId;
     }
 
-    public int getUpdatedLocationToId(Connection connection, Location3Dimension location) throws SQLException {
+    public int getUpdatedLocationToId(Connection connection, LocationTo location) throws SQLException {
         LocationToHandler handler = new LocationToHandler(connection);
         int existingId = handler.getId(location);   
         if (existingId < 0) return handler.insert(location);

@@ -1,11 +1,11 @@
 package forms;
 
-import common.blueprints.UserData;
 import common.exceptions.InvalidFormException;
 import common.exceptions.InvalidScriptException;
+import common.models.User;
 import console.IOConsole;
 
-public class UserDataForm extends Form<UserData> {
+public class UserDataForm extends Form<User> {
     private final IOConsole console;
     private final boolean fileMode;
 
@@ -14,9 +14,9 @@ public class UserDataForm extends Form<UserData> {
         this.fileMode = console.fileMode();
     }
 
-    public UserData build() {
+    public User build() {
         try {
-            UserData userData = new UserData(
+            User userData = new User(
                 askName(),
                 askPassword()
             );

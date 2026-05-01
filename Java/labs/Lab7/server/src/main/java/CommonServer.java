@@ -1,27 +1,19 @@
 import java.io.IOException;
 import commands.*;
 import network.CommonNetwork;
-import util.database.api.PostgresApi;
-import util.local.LocalEnvironment;
 import common.exceptions.RuntimeInitException;
 import common.transfer.response.Response;
-import managers.database.PostgresManager;
 import common.transfer.request.Request;
 
 /**
- * TCP сервер
+ * Однопоточный сервер
  * @author Septyq
  */
-public class CommonServer extends AbstractServer {
+public class CommonServer extends Server {
     private final CommonNetwork networkManager;
 
     public CommonServer(int port) throws RuntimeInitException {
-        super(port, new PostgresManager(
-            new PostgresApi(),
-            LocalEnvironment.getDatabaseURL(),
-            LocalEnvironment.getDatabaseUser(),
-            LocalEnvironment.getDatabasePassword()
-        ));
+        super(port);
         this.networkManager = new CommonNetwork(port, logger);
     }
 
@@ -30,7 +22,6 @@ public class CommonServer extends AbstractServer {
         try {
             boolean running = true;
             networkManager.connect();
-            logger.info("Server started on port " + port);
             
             while (running) {
                 try {
@@ -59,8 +50,8 @@ public class CommonServer extends AbstractServer {
         commandManager.register("help", new Help(commandManager));
         commandManager.register("info", new Info(collectionManager));
         commandManager.register("show", new Show(collectionManager));
-        commandManager.register("add", new Add(databaseManager, collectionManager));
-        commandManager.register("update", new Update(databaseManager, collectionManager));
+        commandManager.register("add", new Add(databaseService, collectionManager));
+        commandManager.register("update", new Update(databaseService, collectionManager));
         commandManager.register("remove_by_id", new RemoveById(collectionManager));
         commandManager.register("clear", new Clear(collectionManager));
         commandManager.register("remove_lower", new RemoveLower(collectionManager));

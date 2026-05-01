@@ -8,10 +8,10 @@ import java.net.Socket;
 import java.net.SocketException;
 
 import common.network.Network;
-import util.logging.AbstractLogger;
+import logging.LoggingManager;
 
 /**
- * Общение сервера по протоколу TCP
+ * Сетевое взаимодействие сервера в режиме однопоточности
  * @author Septyq
  */
 public class CommonNetwork implements Network {
@@ -21,9 +21,9 @@ public class CommonNetwork implements Network {
     private ServerSocket serverSocket;
     private final int port;
     private boolean connectedToClient = false;
-		private final AbstractLogger logger;
+		private final LoggingManager logger;
 
-    public CommonNetwork(int port, AbstractLogger logger) {
+    public CommonNetwork(int port, LoggingManager logger) {
         this.port = port;
         this.logger = logger;
     }
@@ -42,6 +42,7 @@ public class CommonNetwork implements Network {
             ois = new ObjectInputStream(clientSocket.getInputStream());
             
             connectedToClient = true;
+            logger.info("started on port " + port);
             
         } catch (IOException e) {
             logger.error("connection error: ", e);

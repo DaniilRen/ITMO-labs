@@ -10,25 +10,29 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ForkJoinPool;
 
 import common.network.Network;
-import network.callback.AbstractCallback;
+import network.callback.Callback;
 import network.handlers.ClientHandler;
-import util.logging.AbstractLogger;
+import logging.LoggingManager;
 
+/**
+ * Сетевое взаимодействие сервера в режиме мультипоточности
+ * @author Septyq
+ */
 public class MultiThreadNetwork implements Network {
     private ServerSocket serverSocket;
     private final int port;
-    private final AbstractLogger logger;
+    private final LoggingManager logger;
     private volatile boolean isRunning;
     private ForkJoinPool readingPool;
     private ExecutorService processingPool;
     private final Map<Socket, ClientHandler> activeClients;
-    private AbstractCallback messageCallback;
+    private Callback messageCallback;
 
-    public MultiThreadNetwork(int port, AbstractLogger logger) {
+    public MultiThreadNetwork(int port, LoggingManager logger) {
         this(port, logger, 10);
     }
 
-    public MultiThreadNetwork(int port, AbstractLogger logger, int maxThreads) {
+    public MultiThreadNetwork(int port, LoggingManager logger, int maxThreads) {
         this.port = port;
         this.logger = logger;
         this.activeClients = new ConcurrentHashMap<>();
@@ -37,11 +41,11 @@ public class MultiThreadNetwork implements Network {
         this.isRunning = false;
     }
 
-    public void setMessageCallback(AbstractCallback callback) {
+    public void setMessageCallback(Callback callback) {
         this.messageCallback = callback;
     }
 
-    public AbstractCallback getMessageCallback() {
+    public Callback getMessageCallback() {
         return messageCallback;
     }
 
@@ -55,7 +59,7 @@ public class MultiThreadNetwork implements Network {
             serverSocket = new ServerSocket(port);
             isRunning = true;
             
-            logger.info("Started on port " + port);
+            logger.info("started on port " + port);
             
             Thread acceptorThread = new Thread(() -> {
                 while (isRunning) {
@@ -86,7 +90,6 @@ public class MultiThreadNetwork implements Network {
         }
     }
 
-    @Override
     public void write(Object object) throws IOException {
         for (ClientHandler handler : activeClients.values()) {
             try {

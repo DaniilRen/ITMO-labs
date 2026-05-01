@@ -8,8 +8,8 @@ import common.exceptions.InvalidFormException;
 import common.exceptions.InvalidScriptException;
 import common.models.Route;
 import common.models.Coordinates;
-import common.models.Location2Dimension;
-import common.models.Location3Dimension;
+import common.models.LocationFrom;
+import common.models.LocationTo;
 
 
 /**
@@ -74,12 +74,12 @@ public class RouteForm extends Form<Route> {
         return new CoordinatesForm(console).build();
     };
 
-    private Location2Dimension askLocationFrom() throws InvalidFormException, InvalidScriptException {
-        return new Location2DimensionForm(console).build();
+    private LocationFrom askLocationFrom() throws InvalidFormException, InvalidScriptException {
+        return new LocatiobFromForm(console).build();
     };
 
-    private Location3Dimension askLocationTo() throws InvalidFormException, InvalidScriptException {
-        return new Location3DimensionForm(console).build();
+    private LocationTo askLocationTo() throws InvalidFormException, InvalidScriptException {
+        return new LocationToForm(console).build();
     };
 
     private int askDistance() throws InvalidScriptException {

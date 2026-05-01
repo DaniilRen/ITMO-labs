@@ -6,7 +6,7 @@ import java.util.Objects;
 
 
 /**
- * Класс пути.
+ * Представление пути в коллекции
  * @author Septyq
  */
 public class Route extends Entity {
@@ -15,13 +15,13 @@ public class Route extends Entity {
     private String name;
     private Coordinates coordinates;
     private LocalDateTime creationDate;
-    private Location2Dimension from;
-    private Location3Dimension to;
+    private LocationFrom from;
+    private LocationTo to;
     private int distance;
     private String author;
 
     public Route(String name, Coordinates coordinates, LocalDateTime creationDate, 
-            Location2Dimension from, Location3Dimension to, int distance, String author) {
+            LocationFrom from, LocationTo to, int distance, String author) {
         this.name = name;
         this.coordinates = coordinates;
         this.creationDate = creationDate;
@@ -32,7 +32,7 @@ public class Route extends Entity {
     }
 
     public Route(int id, String name, Coordinates coordinates, LocalDateTime creationDate, 
-            Location2Dimension from, Location3Dimension to, int distance, String author) {
+            LocationFrom from, LocationTo to, int distance, String author) {
         this(name, coordinates, creationDate, from, to, distance, author);
         this.id = id;
     }
@@ -45,11 +45,11 @@ public class Route extends Entity {
         return creationDate;
     }
 
-    public Location2Dimension getLocationFrom() {
+    public LocationFrom getLocationFrom() {
         return from;
     }
 
-    public Location3Dimension getLocationTo() {
+    public LocationTo getLocationTo() {
         return to;
     }
 

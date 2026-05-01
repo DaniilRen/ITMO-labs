@@ -6,13 +6,13 @@ import common.transfer.request.Request;
 import common.transfer.response.Response;
 import network.handlers.ClientHandler;
 import network.handlers.RequestHandler;
-import util.logging.AbstractLogger;
+import logging.LoggingManager;
 
-public class CommonCallback implements AbstractCallback {
-    private final AbstractLogger logger;
+public class CommonCallback implements Callback {
+    private final LoggingManager logger;
     private final RequestHandler requestHandler;
 
-    public CommonCallback(RequestHandler requestHandler, AbstractLogger logger) {
+    public CommonCallback(RequestHandler requestHandler, LoggingManager logger) {
         this.requestHandler = requestHandler;
         this.logger = logger;
     }

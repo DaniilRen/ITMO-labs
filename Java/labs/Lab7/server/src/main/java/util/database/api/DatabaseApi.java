@@ -6,8 +6,8 @@ import java.sql.SQLException;
 
 import common.exceptions.AuthException;
 import common.models.Coordinates;
-import common.models.Location2Dimension;
-import common.models.Location3Dimension;
+import common.models.LocationFrom;
+import common.models.LocationTo;
 import common.models.Route;
 
 /**
@@ -23,9 +23,9 @@ public abstract class DatabaseApi{
     
     abstract public boolean authenticate(Connection connection, String user, String password) throws AuthException;
 
-    abstract public int getUpdatedLocationFromId(Connection connection, Location2Dimension location) throws SQLException;
+    abstract public int getUpdatedLocationFromId(Connection connection, LocationFrom location) throws SQLException;
 
-    abstract public int getUpdatedLocationToId(Connection connection, Location3Dimension location) throws SQLException;
+    abstract public int getUpdatedLocationToId(Connection connection, LocationTo location) throws SQLException;
 
     abstract public int getUpdatedCoordinatesId(Connection connection, Coordinates coords) throws SQLException;
 

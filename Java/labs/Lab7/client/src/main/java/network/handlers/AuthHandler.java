@@ -1,15 +1,15 @@
 package network.handlers;
 
-import common.blueprints.UserData;
+import common.models.User;
 import common.transfer.request.Request;
 import common.transfer.request.wrapped.AuthenticatedRequest;
 
 public class AuthHandler {
     private boolean authenticated = false;
-    private UserData credentials;
+    private User credentials;
 
     public AuthHandler() {
-        this.credentials = new UserData(null, null);
+        this.credentials = new User(null, null);
     }
 
     public boolean isAuthenticated() {
@@ -17,16 +17,16 @@ public class AuthHandler {
     }
 
     public void setCredentials(String name, String password) {
-        this.credentials = new UserData(name, password);
+        this.credentials = new User(name, password);
         authenticated = true;
     }
 
-    public UserData getCredentials() {
+    public User getCredentials() {
         return credentials;
     }
 
     public void logOut() {
-        this.credentials = new UserData(null, null);
+        this.credentials = new User(null, null);
         authenticated = false;
     }
 
