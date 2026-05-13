@@ -488,7 +488,7 @@ tabsize=2
 2DB & 2F40 & AND $\#40$ & Проверка на ввод символа\\
 \hline
 \rowcolor{softblue}
-2DC & F0FD & BEQ IP-3 & Если нет, переход в 2D9 (Spin loop)\\
+2DC & F0FD & BEQ IP-3 & Если нет, переход в 2D9 (Spin loop 1)\\
 \hline
 \rowcolor{softgreen}
 2DD & 1206 & IN 6 & Чтение DR ВУ-3\\
@@ -500,7 +500,7 @@ tabsize=2
 2DF & 7F0D & CMP $\#0D$ & Проверка на стоп-слово\\
 \hline
 \rowcolor{softgreen}
-2E0 & F0FE & BEQ IP+15 & Если стоп-слово, выход\\
+2E0 & F00D & BEQ IP+13 & Если стоп-слово, выход\\
 \hline
 \rowcolor{softblue}
 2E1 & 0200 & CLA & Очистка аккумулятора\\
@@ -512,19 +512,19 @@ tabsize=2
 2E3 & 2F40 & AND $\#40$ & Проверка на ввод символа\\
 \hline
 \rowcolor{softblue}
-2E4 & F0FD & BEQ IP-3 & Если нет, переход в 2D9 (Spin loop)\\
+2E4 & F0FD & BEQ IP-3 & Если нет, переход в 2E1 (Spin loop 2)\\
 \hline
 \rowcolor{softgreen}
-2E5 & 1206 & IN 6 & Чтени DR ВУ-3\\
+2E5 & 1206 & IN 6 & Чтение DR ВУ-3\\
 \hline
 \rowcolor{softgreen}
 2E6 & 0680 & SWAB & Обмен старшего и младшего байтов AC\\
 \hline
 \rowcolor{softgreen}
-2E7 & 3EEF & OR IP-17 & OR с предыдущим значением\\
+2E7 & 38F1 & OR (IP-16) & OR с предыдущим значением\\
 \hline
 \rowcolor{softgreen}
-2E8 & EAF9 & ST (IP-20)+ & Сохранение результата\\
+2E8 & EAF0 & ST (IP-17)+ & Сохранение результата\\
 \hline
 \rowcolor{yellow}
 2E9 & 2F00 & AND $\#00$ & Снова получаем последний байт\\
