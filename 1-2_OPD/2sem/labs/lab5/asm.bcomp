@@ -1,0 +1,27 @@
+ORG 0x2D8
+res: WORD 0x63E
+
+START: CLA
+S1:             ; младший символ
+    IN 7
+    AND #0x40   ; проверка на ввод
+    BEQ S1
+    IN 6
+    ST (res)
+    CMP #0x0D   ; проверка на стоп-слово
+    BEQ exit
+S2:             ; старший символ
+    IN 7
+    AND #0x40   ; проверка на ввод
+    BEQ S2
+    IN 6
+    SWAB
+    OR (res)
+    ST (res)+   ; переход в следующую ячейку
+    AND #0x00   ; снова получаем старший байт для проверки
+    CMP #0x0D   ; проверка на стоп-слово
+    BEQ exit
+    JUMP START
+
+exit:
+    HLT

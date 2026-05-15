@@ -1,0 +1,722 @@
+%>>>>>>>>>>>>>>>>>>>>>>>>>> ПЕРЕМЕННЫЕ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+%>>>>> Информация о кафедре
+%\newcommand{\year}{2021 г.}  % Год устанавливается автоматически
+\newcommand{\city}{Санкт-Петербург}  %  Футер, нижний колонтитул на титульном листе
+\newcommand{\university}{Национальный исследовательский университет ИТМО}  % первая строка
+\newcommand{\department}{Факультет программной инженерии и компьютерной техники}  % Вторая строка
+\newcommand{\major}{Направление программная инженерия}  % Треьтя строка
+% Пусть будет. Проще закоментить лишнее.
+\newcommand{\education}{Образовательная программа системное и прикладное программное обеспечение}  % четвертая строка
+%\newcommand{\specialization}{}  % пятая строка
+
+%<<<<< Информация о кафедре
+
+%>>>>> Назание работы
+\newcommand{\reporttype}{ОТЧЕТ ПО ЛАБОРАТОРНОЙ РАБОТЕ} % тип работы, (главный заголовок титульного листа)
+\newcommand{\lab}{Лабораторная работа}          % вид работы
+\newcommand{\labnumber}{№ 5}                    % порядковый номер работы
+\newcommand{\subject}{Основы профессиональной деятельности}         % учебный предмет
+% \newcommand{\labtheme}{Принципы ООП}            % Тема лабораторной работы
+\newcommand{\variant}{№ 5402}                % номер варианта работы
+
+\newcommand{\student}{Бых Даниил Максимович}    % определение ФИО студента
+\newcommand{\studygroup}{P3109}                 % определение учебной группы
+\newcommand{\teacher}{% принимающий
+    Деменев Т. Г.% ФИО практика
+}
+%<<<<<<<<<<<<<<<<<<<<<<<<<< ПЕРЕМЕННЫЕ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+%>>>>>>>>>>>>>>>>>>>>>> ПРЕАМБУЛА >>>>>>>>>>>>>>>>>>>>>>>>>
+\documentclass[14pt,final,oneside]{extreport}% класс документа, характеристики
+%>>>>> Разметка документа
+\usepackage[a4paper, mag=1000, left=3cm, right=1.5cm, top=2cm, bottom=2cm, headsep=0.7cm, footskip=1cm]{geometry} % По ГОСТу: left>=3cm, right=1cm, top=2cm, bottom=2cm,
+\linespread{1} % межстройчный интервал по ГОСТу := 1.5
+%<<<<< Разметка документа
+\usepackage{tabularx}
+\setlength{\parindent}{1.25cm}
+
+%>>>>> babel c языковым пакетом НЕ должны быть первым импортируемым пакетом
+\usepackage[utf8]{inputenc}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[russian]{babel}
+% \usepackage{lmodern}
+%<<<<<
+
+%\usepackage{cmap} %поиск в pdf
+
+%>>>...>> прочие полезные пакеты
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{mathtext}
+\usepackage{braket}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{changepage}
+\graphicspath{{assets}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+%\usepackage{bookmark}
+
+\usepackage{longtable} % Добавьте в преамбулу
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage[table]{xcolor}
+\usepackage{hyperref}  % Использование ссылок
+\hypersetup{%  % Настройка разметки ссылок
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=magenta,
+%pdftitle={Overleaf Example},
+%pdfpagemode=FullScreen,
+}
+
+\usepackage{diagbox}
+\usepackage[letterspace=150]{microtype} % Спэйсинг (межбуквенный интервал для саголовка) \lsstyle
+% \usepackage{csvsimple} %импорт содержимого таблицы из csv
+
+%>>> верстка в 2 колонки
+\usepackage{multicol} % многоколоночная верстка
+\setlength{\columnsep}{.15\textwidth} % определение ширины разделителя между колонками
+
+\usepackage{tikz} % пакет для векторной графики, чтобы рисовать красивый разделитель колонок
+
+%>>>>> Использование листингов
+\usepackage{listings}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white} % Настройка вида описаний
+\lstset{  % Настройки вида листинга
+    inputencoding=utf8, extendedchars=\true, keepspaces = true, % поддержка кириллицы и пробелов в комментариях
+    language={},            % выбор языка для подсветки (здесь это Pascal)
+    basicstyle=\small\sffamily, % размер и начертание шрифта для подсветки кода
+    numbers=left,               % где поставить нумерацию строк (слева\справа)
+    numberstyle=\tiny,          % размер шрифта для номеров строк
+    stepnumber=1,               % размер шага между двумя номерами строк
+    numbersep=5pt,              % как далеко отстоят номера строк от подсвечиваемого кода
+    backgroundcolor=\color{white}, % цвет фона подсветки - используем \usepackage{color}
+    showspaces=false,           % показывать или нет пробелы специальными отступами
+    showstringspaces=false,     % показывать илигнет пробелы в строках
+    showtabs=false,             % показывать или нет табуляцию в строках
+    frame=single,               % рисовать рамку вокруг кода
+    tabsize=2,                  % размер табуляции по умолчанию равен 2 пробелам
+    captionpos=t,               % позиция заголовка вверху [t] или внизу [b]
+    breaklines=true,            % автоматически переносить строки (да\нет)
+    breakatwhitespace=false,    % переносить строки только если есть пробел
+    escapeinside={\%*}{*)}      % если нужно добавить комментарии в коде
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{blue}{rgb}{0.5,0.55,1}    % Light sky blue
+\definecolor{red}{rgb}{1,0.52,0.52}     % Light coral red
+\definecolor{lightyellow}{rgb}{1,1,0.9} % Soft yellow
+\definecolor{softgreen}{rgb}{0.9,1,0.9}    % Light mint green
+\definecolor{softblue}{rgb}{0.9,0.95,1}    % Light sky blue
+\definecolor{softred}{rgb}{1,0.92,0.92}     % Light coral red
+
+\lstdefinestyle{mystyle}{
+backgroundcolor=\color{backcolour},
+commentstyle=\color{codegreen},
+keywordstyle=\color{magenta},
+numberstyle=\tiny\color{codegray},
+stringstyle=\color{codepurple},
+basicstyle=\ttfamily\footnotesize,
+breakatwhitespace=false,
+breaklines=true,
+captionpos=b,
+keepspaces=true,
+numbers=left,
+numbersep=5pt,
+showspaces=false,
+showstringspaces=false,
+showtabs=false,
+tabsize=2
+}
+\lstset{style=mystyle}
+%<<<<< Использование листингов
+
+
+\sloppy % Решение проблем с переносами (с. 119 книга Львовского)
+\emergencystretch=25pt
+
+
+%>>>>>>>>>>>>>>>> ДОПОЛНИТЕЛЬНЫЕ КОМАНДЫ {Для соответствия ГОСТ} >>>>>>>>>>>>>>
+%>>>>>> математические функции для удобства
+\newcommand{\tx}{\text}
+\newcommand{\eps}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+\newcommand{\limit}{\displaystyle\lim}
+\newcommand{\oo}{\infty}
+\newcommand{\De}{\Delta}
+\newcommand{\cd}{\cdot}
+\newcommand{\df}{\partial}
+\newcommand{\ndash}{\textendash}
+\newcommand{\mdash}{\textemdash}
+
+%>>>>> Аннотирование
+\newcommand{\note}[2]{\overbrace{#1}^{#2}}% скобка сверху для комментария
+% \overset{}{}% для указания символа над другим смиволом
+% \underset{}{}% для указания символа под другим смиволом
+%<<<<< Аннотирование
+
+%>>>>>> Матрицы
+\DeclareMathOperator{\rank}{rank}
+\newcommand{\tvec}[1]{\mathbfit{#1}}% "text vector"
+\newcommand{\mtx}[1]{\mathrm{#1}}
+\newcommand{\transposed}[1]{{#1}^{\mathrm{T}}}
+%>>>>>> Матрицы
+
+%>>>>> Скобки
+\newcommand{\lt}{\left}
+\newcommand{\rt}{\right}
+\newcommand{\la}{\langle}% '<'
+\newcommand{\ra}{\rangle}% '>'
+\newcommand{\avg}[1]{\langle{#1}\rangle}% '<X>'
+%<<<<< Скобки
+
+%>>>>> Дроби
+\newcommand{\cf}[2]{\cfrac{#1}{#2}}
+\newcommand{\fr}[2]{\frac{#1}{#2}}
+%<<<<< Дроби
+
+
+%>>>>> Стрелки
+\newcommand{\Rarr}{\Rightarrow}% ⇒ следствие | лучше использовать \implies
+\newcommand{\LRarr}{\Leftrightarrow}% равносильно | лучше  использовать \iff
+\newcommand{\rarr}{\xrightarrow{}}% → стрелка вправо
+\newcommand{\nwarr}{\nwarrow}% ↖ север-запад стрелка
+\newcommand{\nearr}{\nearrow}% ↗ север-восток стрелка
+\newcommand{\swarr}{\swarrow}% ↙ юг-запад стрелка
+\newcommand{\searr}{\searrow}% ↘ юг-восток стрелка
+
+\newcommand{\raises}{\nwarrow}% возрастает
+\newcommand{\increases}{\nwarrow}% возрастает
+\newcommand{\falls}{\swarrow}% убывает
+\newcommand{\decreases}{\swarrow}% убывает
+
+%{{{
+\makeatletter
+\newcommand{\impliesby}[2][]{\ext@arrow 0359\Leftrightarrowfill@{#1}{#2}}% следствие с надписью
+\makeatother
+%}}}
+
+%{{{
+\makeatletter
+\newcommand{\iffby}[2][]{\ext@arrow 0359\Rightarrowfill@{#1}{#2}}% равносильность с надписью
+\makeatother
+%}}}
+%<<<<< Стрелки
+
+% Функции для удобного описания формул: https://tex.stackexchange.com/questions/95838/how-to-write-a-perfect-equation-parameters-description
+
+
+%<<<<<< математические функции для удобства
+%>>>>>> Стиль текста
+\newcommand{\hex}[1]{\texttt{0{\footnotesize{x}}#1}}
+\newcommand{\ttt}[1]{\texttt{#1}}
+%<<<<<< Стиль текста
+
+\newcommand\Chapter[3]{%
+% Принимает 3 аргумента - название главы и дополнительный заголовок и множитель ширины загловка (можно ничего)
+\refstepcounter{chapter}%
+\chapter*{%
+%\hfill % заполнение отступом пространства до заголовка
+\begin{minipage}{#3\textwidth} % Можно изменить ширину министраницы (заголовка)
+\flushleft % Выранивание заголовка по левому краю параграфа (заголовка)
+%\flushright % Выранивание заголовка по правому краю параграфа (заголовка)
+\begin{huge}%
+% Отключена нумерация глав в тексте:
+% \textbf{\chaptername\ \arabic{chapter}\\}
+\textbf{#1}% Первый заголовок
+\end{huge}%
+\\% Перенос сторки
+\begin{Huge}
+#2% Второй заголовок
+\end{Huge}
+\end{minipage}
+}%
+% Отключена нумерация для chapter в toc (table of contents), т.е. Оглавлении (Содержании):
+% \addcontentsline{toc}{chapter}{\arabic{chapter}. #1}
+% Представление главы в содержании:
+\addcontentsline{toc}{chapter}{#1. #2}%
+}
+
+\newcommand\Section[1]{
+% Принимает 1 аргумент - название секции
+\refstepcounter{section}
+\section*{%
+\raggedright
+% Отключена дополнительная нумерация chapter в section в тексте документа:
+% \arabic{chapter}.\arabic{section}. #1}
+% Отключена любая нумарация section в тексте документа:
+\arabic{section}. #1%
+}
+
+% Отключена дополнительная нумерация chapter в section в toc (table of contents) Оглавлении (Содержании):
+% \addcontentsline{toc}{section}{\arabic{chapter}.\arabic{section}. #1}
+\addcontentsline{toc}{section}{\arabic{section}. #1}
+}
+
+
+\newcommand\Subsection[1]{
+% Принимает 1 аргумент - название подсекции
+\refstepcounter{subsection}
+\subsection*{%
+\raggedright%
+% Отключена дополнительная нумерация chapter в section в тексте документа (можно добавить отступ с помощью \hspace*{12pt}):
+% \arabic{chapter}.\arabic{section}.\arabic{subsection}. #1}
+\arabic{section}. \arabic{subsection}. #1
+}
+% Отключена дополнительная нумерация chapter в section в Оглавлении (Содержании):
+%\addcontentsline{toc}{subsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}. #1}
+\addcontentsline{toc}{subsection}{\arabic{subsection}. #1}
+}
+
+
+\newcommand\Figure[4]{
+% Принимает 4 аргумента - название файла изображения, ее размер в тексте, описание, лэйбл (псевдоним в формате "fig:name")
+%
+\refstepcounter{figure}
+\begin{figure}[H] %- \usepackage {float} %[h]
+\begin{center}
+\fbox{
+\includegraphics[width=#2]{#1}
+}
+\end{center}
+\begin{center}
+Рис.~\arabic{figure}. #3.
+\end{center}
+%\caption{#3}
+\label{fig:#4}
+\end{figure}
+}
+
+
+\newcommand\Table[3]{
+% Принимает 3 аргумента --- лэйбл name(#1) (псевдоним в формате "tab:name"), ее описание(#2), содержание таблицы(#3)
+% ВАЖНО!: от этого способа страдает нумерация описаний, можно использовать создание таблиц через googlesheet
+%
+\renewcommand{\arraystretch}{1.2} % Установка высоты строки таблицы по умолчанию, увеличенное на 0.2 пункта
+% \refstepcounter{table}% увеличение счетчика таблиц
+\begin{table}[Htpb]% "right Here", "top", "new page", "bottom"
+\label{tab:#1}% лэйбл таблицы, для ссылок
+\resizebox{\columnwidth}{!}{% сжимает очень широкие таблицы, чтобы вместить на страницу
+#3% Содержимое таблицы
+}
+%
+\caption{#2}% Описание стандартными средствами для используемого окружения (table)
+% \captionof{table}{#2}% Описание стандартными средствами
+% \captionof*{figure}{\flushleft \textsc\textbf{Рис. 1.}}% Описание стандартными средствами, как рисунка
+%
+%%> кастомное описание
+% \begin{flushleft}% Кастомное описание
+%     % \textsf{%
+%         \textbf{%
+%             \\[2mm]
+%             #2% Описание к картинке
+%         }%
+%         % \\[8mm]% Отступ
+%     % }%
+% \end{flushleft}
+%%< кастомное описание
+\end{table}
+\renewcommand{\arraystretch}{1} % возврат установка высоты строки таблицы по умолчанию на 1
+}
+
+
+\newcommand\CustomFigure[4]{ % multicols не умеют в table и figure, поэтому приходится извращаться % вставка таблицы с меткой рисунка
+% Принимает 4 аргумента - название файла изображения, ее размер в тексте, описание, лэйбл (псевдоним в формате "fig:name")
+%
+\refstepcounter{figure}
+\begin{figure}[ht]% "here", "top"
+\begin{center}
+\includegraphics[width=#2]{#1}
+\end{center}
+%
+%\caption{#3}
+\captionof{figure}{#3}% описание стандартными средствами
+% \begin{center}
+\begin{flushleft} % Кастомное описание
+\textbf{%
+#3% Текст описания
+}
+\end{flushleft}
+% \end{center}
+%
+\label{fig:#4}% Лэйбл, для ссылок
+\end{figure}
+}
+
+
+\newcommand\CustomTableFigure[3]{% multicols не умеют в table и figure, поэтому приходится извращаться % вставка таблицы с меткой рисунка
+%
+% Принимает 3 аргумента --- лэйбл name(#1) (псевдоним в формате "tab:name"), ее описание(#2), содержание таблицы(#3)
+%
+\begin{center}
+\refstepcounter{figure}
+\label{tab:#1}% лэйбл таблицы, для ссылок
+\resizebox{\columnwidth}{!}{% сжимает очень широкие таблицы, чтобы вместить на страницу
+#3% Содержание таблицы
+}
+%
+\captionof{figure}{#2}% Описание стандартными средствами
+% \captionof*{figure}{\flushleft \textsc\textbf{Рис. 1.}}% Описание стандартными средствами
+%
+\begin{flushleft}% Кастомное описание
+% \textsf{%
+\textbf{%
+\\[2mm]
+#2% Описание к картинке
+}%
+% \\[8mm]% Отступ
+% }%
+\end{flushleft}
+\end{center}
+}
+
+
+\newcommand{\InkscapeFigure}[4]{% Вставки иллюстраций из Inkscape (pdf+latex)
+%
+% Принимает 4 параметра: #1 название файла, #2 описание, #3 лейбл #4 размер
+%
+% \begin{minipage}{#4}
+\begin{figure}[htbp]
+\centering
+\def\svgwidth{#4}
+\import{./figures/}{#1.pdf_tex}
+\caption{#2}
+\label{fig:#3}
+\end{figure}
+% \end{minipage}
+}
+
+
+\newcommand\Equation[3]{% Кастомное оформление выражений
+%
+% Принимает 3 аргумента --- лэйбл name (#1) (псевдоним в формате "tab:name"), его описание(#2), содержание выражения (#3)
+%
+\textbf{#2}% описание
+\begin{equation}
+#3% содержимое выражений
+\label{eq:#1}% лэйбл
+\end{equation}
+}
+
+%<<<<<<<<<<<<<<<<<<<<<<<<<<<< ДОПОЛНИТЕЛЬНЫЕ КОМАНДЫ <<<<<<<<<<<<<<<<<<<<<<<<<<
+%<<<<<<<<<<<<<<<<<<<<<< ПРЕАМБУЛА <<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+%%%%%%%%%%%%%%%%%%% СОДЕРЖИМОЕ ОТЧЕТА %%%%%%%%%%%%%%%%%%%%%
+%>>>>>>>>>>>>>>> ''''''''''''''''''''''' >>>>>>>>>>>>>>>>>>
+\begin{document}
+
+
+%>>>>>>>>>>>>>>>> ОПРЕДЕЛЕНИЕ НАЗВАНИЙ >>>>>>>>>>>>>>>>>>>>
+% Переоформление некоторых стандартных названий
+%\renewcommand{\chaptername}{Лабораторная работа}
+    \renewcommand{\chaptername}{\lab\ \labnumber} % переименование глав
+    \renewcommand{\contentsname}{Содержание} % переименование оглавления
+%<<<<<<<<<<<<<<<< ОПРЕДЕЛЕНИЕ НАЗВАНИЙ <<<<<<<<<<<<<<<<<<<<
+% \setlength{\itemsep}{0pt} % установка расстояния между строчками в списках можно использовать локально внутри списка списке
+% \setlength{\parskip}{0pt} % 
+% \setlength{\parsep}{0pt}  % 
+
+%>>>>>>>>>>>>>>>>> ТИТУЛЬНАЯ СТРАНИЦА >>>>>>>>>>>>>>>>>>>>>
+    \include{titlepage}
+%<<<<<<<<<<<<<<<<< ТИТУЛЬНАЯ СТРАНИЦА <<<<<<<<<<<<<<<<<<<<<
+
+
+%>>>>>>>>>>>>>>>>>>>>> СОДЕРЖАНИЕ >>>>>>>>>>>>>>>>>>>>>>>>>
+% Содержание
+    \tableofcontents
+%<<<<<<<<<<<<<<<<<<<<< СОДЕРЖАНИЕ <<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+%%%%%%%%%%%%%%%%%%%%%%% КОД РАБОТЫ %%%%%%%%%%%%%%%%%%%%%%%%
+%>>>>>>>>>>>>>>>>>>>'''''''''''''''''>>>>>>>>>>>>>>>>>>>>>
+    \newpage
+    % \Chapter{\lab\ \labnumber}{}{}
+
+    \Section{Задание}
+
+    \noindent
+%    \textbf{
+%    % Заглавное описание....:
+%        Заголовок
+%    }
+%
+%    \textit{
+%    % Описание задания...
+%        Описание
+%    }
+
+    \setlength{\itemsep}{0pt} % Сокращение межстрочных расстояний
+    \setlength{\parskip}{0pt}
+    \setlength{\parsep}{0pt}
+   По выданному преподавателем варианту разработать программу асинхронного обмена данными с внешним устройством. При помощи программы осуществить ввод или вывод информации, используя в качестве подтверждения данных сигнал (кнопку) готовности ВУ.
+    \begin{enumerate}
+        \item Программа осуществляет асинхронный вывод данных на ВУ-3
+        \item Программа начинается с адреса 2D8. Размещаемая строка находится по адресу 63E. 
+        \item Строка должна быть представлена в кодировке ISO-8859-5
+        \item Формат представления строки в памяти: АДР1: СИМВ2 СИМВ1 АДР2: СИМВ4 СИМВ3 ... СТОП СИМВ
+        \item Ввод или вывод строки должен быть завершен по символу c кодом 0D (CR). Стоп символ является обычным символом строки и подчиняется тем же правилам расположения в памяти что и другие символы строки.
+    \end{enumerate}
+    
+\newpage
+\Section{Ход работы}
+\Subsection{Исходная программа}
+\noindent
+{\small
+\begin{tabularx}{\textwidth}{|c|c|l|X|}
+\hline
+\textbf{Адрес} & \textbf{Код} & \textbf{Мнемоника} & \textbf{Комментарии} \\
+\hline
+2D8 & 63E & ADR & Адрес размешения результата\\
+\hline
+\rowcolor{softblue}
+2D9 & 0200 & CLA & Очистка аккумулятора\\
+\hline
+\rowcolor{softblue}
+2DA & 1207 & IN 7 & Чтение SR ВУ-3\\
+\hline
+\rowcolor{softblue}
+2DB & 2F40 & AND $\#40$ & Проверка на ввод символа\\
+\hline
+\rowcolor{softblue}
+2DC & F0FD & BEQ IP-3 & Если нет, переход в 2D9 (Spin loop 1)\\
+\hline
+\rowcolor{softgreen}
+2DD & 1206 & IN 6 & Чтение DR ВУ-3\\
+\hline
+\rowcolor{softgreen}
+2DE & E8F9 & ST IP-7 & Сохранение результата\\
+\hline
+\rowcolor{softgreen}
+2DF & 7F0D & CMP $\#0D$ & Проверка на стоп-слово\\
+\hline
+\rowcolor{softgreen}
+2E0 & F00D & BEQ IP+13 & Если стоп-слово, выход\\
+\hline
+\rowcolor{softblue}
+2E1 & 0200 & CLA & Очистка аккумулятора\\
+\hline
+\rowcolor{softblue}
+2E2 & 1207 & IN 7 & Чтение SR ВУ-3\\
+\hline
+\rowcolor{softblue}
+2E3 & 2F40 & AND $\#40$ & Проверка на ввод символа\\
+\hline
+\rowcolor{softblue}
+2E4 & F0FD & BEQ IP-3 & Если нет, переход в 2E1 (Spin loop 2)\\
+\hline
+\rowcolor{softgreen}
+2E5 & 1206 & IN 6 & Чтение DR ВУ-3\\
+\hline
+\rowcolor{softgreen}
+2E6 & 0680 & SWAB & Обмен старшего и младшего байтов AC\\
+\hline
+\rowcolor{softgreen}
+2E7 & 38F1 & OR (IP-16) & OR с предыдущим значением\\
+\hline
+\rowcolor{softgreen}
+2E8 & EAF0 & ST (IP-17)+ & Сохранение результата\\
+\hline
+\rowcolor{yellow}
+2E9 & 2F00 & AND $\#00$ & Снова получаем последний байт\\
+\hline
+\rowcolor{yellow}
+2EA & 0680 & SWAB & Обмен старшего и младшего байтов AC\\
+\hline
+\rowcolor{yellow}
+2EB & 7F0D & CMP $\#0D$ & Проверка на стоп-слово\\
+\hline
+\rowcolor{yellow}
+2EC & F001 & BEQ IP+1 & Если стоп-слово, выход\\
+\hline
+\rowcolor{blue}
+2ED & CEE9 & JUMP IP-23 & Возвращаемся в 2D9\\
+\hline
+\rowcolor{red}
+2EE & 0100 & HLT & Остановка\\
+\hline
+\end{tabularx}
+}
+
+
+\Subsection{Описание программы}
+Программа предназначена для нахождения значения выражения:
+
+
+\Subsection{ОПИ и ОДЗ}
+
+\textbf{Область представления} \\
+
+R - результат, 16-битная ячейка для хранения двух символов. Старший байт - код первого символа, млад-
+ший байт - код второго символа. \\
+
+0x63E - 0x7FF - 16-разрядные ячейки памяти для хранения результата \\
+
+ADR - адрес ячейки R, 11-битное беззнаковое число.\\
+
+\textbf{Область допустимых значений} \\
+
+ADR $\in$ [0x63E, 0x7FF] - адрес памяти \\
+
+Ограничения также связаны с ограничениями кодировки ISO-8859-5: символы отображают кириллические символы, имеющие соотвественно значения от 0xA1 до 0xFF.\\
+
+То есть введенный символ $\in$ [0xA1, 0xFF] \\
+
+Количество введенных символов = 0x7FF - 0x63E = 0x1C1 = $499_{10}$
+
+\Subsection{Таблица трассировки}
+{\footnotesize{\begin{longtable}{|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.7cm}|>{\centering\arraybackslash}p{0.7cm}|>{\centering\arraybackslash}p{0.7cm}|>{\centering\arraybackslash}p{0.7cm}|>{\centering\arraybackslash}p{0.7cm}|>{\centering\arraybackslash}p{0.8cm}|>{\centering\arraybackslash}p{0.8cm}|>{\centering\arraybackslash}p{0.6cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|}
+\hline
+\textbf{Адр} & \textbf{Знач} & \textbf{IP} & \textbf{CR} & \textbf{AR} & \textbf{DR} & \textbf{SP} & \textbf{BR} & \textbf{AC} & \textbf{PS} & \textbf{NZVC} & \textbf{Адр} & \textbf{Знач} \\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Адр} & \textbf{Знач} & \textbf{IP} & \textbf{CR} & \textbf{AR} & \textbf{DR} & \textbf{SP} & \textbf{BR} & \textbf{AC} & \textbf{PS} & \textbf{NZVC} & \textbf{Адр} & \textbf{Знач} \\
+\hline
+\endhead
+
+\endfoot
+
+\hline
+\endlastfoot
+
+2D9 & 0200 & 2D9 & 0000 & 000 & 0000 & 000 & 0000 & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2D9 & 0200 & 2DA & 0200 & 2D9 & 0200 & 000 & 02D9 & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DA & 1207 & 2DB & 1207 & 2DA & 1207 & 000 & 02DA & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DB & 2F40 & 2DC & 2F40 & 2DB & 0040 & 000 & 0040 & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DC & F0FD & 2DA & F0FD & 2DC & F0FD & 000 & FFFD & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DA & 1207 & 2DB & 1207 & 2DA & 1207 & 000 & 02DA & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DB & 2F40 & 2DC & 2F40 & 2DB & 0040 & 000 & 0040 & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DC & F0FD & 2DA & F0FD & 2DC & F0FD & 000 & FFFD & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DA & 1207 & 2DB & 1207 & 2DA & 1207 & 000 & 02DA & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DB & 2F40 & 2DC & 2F40 & 2DB & 0040 & 000 & 0040 & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DC & F0FD & 2DA & F0FD & 2DC & F0FD & 000 & FFFD & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DA & 1207 & 2DB & 1207 & 2DA & 1207 & 000 & 02DA & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DB & 2F40 & 2DC & 2F40 & 2DB & 0040 & 000 & 0040 & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DC & F0FD & 2DA & F0FD & 2DC & F0FD & 000 & FFFD & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DA & 1207 & 2DB & 1207 & 2DA & 1207 & 000 & 02DA & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DB & 2F40 & 2DC & 2F40 & 2DB & 0040 & 000 & 0040 & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DC & F0FD & 2DA & F0FD & 2DC & F0FD & 000 & FFFD & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DA & 1207 & 2DB & 1207 & 2DA & 1207 & 000 & 02DA & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DB & 2F40 & 2DC & 2F40 & 2DB & 0040 & 000 & 0040 & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DC & F0FD & 2DA & F0FD & 2DC & F0FD & 000 & FFFD & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DA & 1207 & 2DB & 1207 & 2DA & 1207 & 000 & 02DA & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DB & 2F40 & 2DC & 2F40 & 2DB & 0040 & 000 & 0040 & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DC & F0FD & 2DA & F0FD & 2DC & F0FD & 000 & FFFD & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DA & 1207 & 2DB & 1207 & 2DA & 1207 & 000 & 02DA & 0040 & 004 & 0100 & --- & --- \\
+\hline
+2DB & 2F40 & 2DC & 2F40 & 2DB & 0040 & 000 & 0040 & 0040 & 000 & 0000 & --- & --- \\
+\hline
+2DC & F0FD & 2DD & F0FD & 2DC & F0FD & 000 & 02DC & 0040 & 000 & 0000 & --- & --- \\
+\hline
+2DD & 1206 & 2DE & 1206 & 2DD & 1206 & 000 & 02DD & 00AA & 000 & 0000 & --- & --- \\
+\hline
+2DE & E8F9 & 2DF & E8F9 & 63E & 00AA & 000 & FFF9 & 00AA & 000 & 0000 & 63E & 00AA \\
+\hline
+2DF & 7F0D & 2E0 & 7F0D & 2DF & 000D & 000 & 000D & 00AA & 001 & 0001 & --- & --- \\
+\hline
+2E0 & F00B & 2E1 & F00B & 2E0 & F00B & 000 & 02E0 & 00AA & 001 & 0001 & --- & --- \\
+\hline
+2E1 & 1207 & 2E2 & 1207 & 2E1 & 1207 & 000 & 02E1 & 0000 & 001 & 0001 & --- & --- \\
+\hline
+2E2 & 2F40 & 2E3 & 2F40 & 2E2 & 0040 & 000 & 0040 & 0000 & 005 & 0101 & --- & --- \\
+\hline
+2E3 & F0FD & 2E1 & F0FD & 2E3 & F0FD & 000 & FFFD & 0000 & 005 & 0101 & --- & --- \\
+\hline
+2E1 & 1207 & 2E2 & 1207 & 2E1 & 1207 & 000 & 02E1 & 0000 & 005 & 0101 & --- & --- \\
+\hline
+2E2 & 2F40 & 2E3 & 2F40 & 2E2 & 0040 & 000 & 0040 & 0000 & 005 & 0101 & --- & --- \\
+\hline
+2E3 & F0FD & 2E1 & F0FD & 2E3 & F0FD & 000 & FFFD & 0000 & 005 & 0101 & --- & --- \\
+\hline
+2E1 & 1207 & 2E2 & 1207 & 2E1 & 1207 & 000 & 02E1 & 0000 & 005 & 0101 & --- & --- \\
+\hline
+2E2 & 2F40 & 2E3 & 2F40 & 2E2 & 0040 & 000 & 0040 & 0000 & 005 & 0101 & --- & --- \\
+\hline
+2E3 & F0FD & 2E1 & F0FD & 2E3 & F0FD & 000 & FFFD & 0000 & 005 & 0101 & --- & --- \\
+\hline
+2E1 & 1207 & 2E2 & 1207 & 2E1 & 1207 & 000 & 02E1 & 0040 & 005 & 0101 & --- & --- \\
+\hline
+2E2 & 2F40 & 2E3 & 2F40 & 2E2 & 0040 & 000 & 0040 & 0040 & 001 & 0001 & --- & --- \\
+\hline
+2E3 & F0FD & 2E4 & F0FD & 2E3 & F0FD & 000 & 02E3 & 0040 & 001 & 0001 & --- & --- \\
+\hline
+2E4 & 1206 & 2E5 & 1206 & 2E4 & 1206 & 000 & 02E4 & 0011 & 001 & 0001 & --- & --- \\
+\hline
+2E5 & 0680 & 2E6 & 0680 & 2E5 & 0680 & 000 & 02E5 & 1100 & 001 & 0001 & --- & --- \\
+\hline
+2E6 & 38F1 & 2E7 & 38F1 & 63E & 00AA & 000 & EE55 & 11AA & 001 & 0001 & --- & --- \\
+\hline
+2E7 & EAF0 & 2E8 & EAF0 & 63E & 11AA & 000 & FFF0 & 11AA & 001 & 0001 & 2D8 & 063F \\
+\hline
+2E8 & 2F00 & 2E9 & 2F00 & 2E8 & 0000 & 000 & 0000 & 0000 & 005 & 0101 & --- & --- \\
+\hline
+2E9 & 7F0D & 2EA & 7F0D & 2E9 & 000D & 000 & 000D & 0000 & 008 & 1000 & --- & --- \\
+\hline
+2EA & F001 & 2EB & F001 & 2EA & F001 & 000 & 02EA & 0000 & 008 & 1000 & --- & --- \\
+\hline
+2EB & CEED & 2D9 & CEED & 2EB & 02D9 & 000 & FFED & 0000 & 008 & 1000 & --- & --- \\
+\hline
+2D9 & 0200 & 2DA & 0200 & 2D9 & 0200 & 000 & 02D9 & 0000 & 004 & 0100 & --- & --- \\
+\hline
+2DA & 1207 & 2DB & 1207 & 2DA & 1207 & 000 & 02DA & 0040 & 004 & 0100 & --- & --- \\
+\hline
+2DB & 2F40 & 2DC & 2F40 & 2DB & 0040 & 000 & 0040 & 0040 & 000 & 0000 & --- & --- \\
+\hline
+2DC & F0FD & 2DD & F0FD & 2DC & F0FD & 000 & 02DC & 0040 & 000 & 0000 & --- & --- \\
+\hline
+2DD & 1206 & 2DE & 1206 & 2DD & 1206 & 000 & 02DD & 000D & 000 & 0000 & --- & --- \\
+\hline
+2DE & E8F9 & 2DF & E8F9 & 63F & 000D & 000 & FFF9 & 000D & 000 & 0000 & 63F & 000D \\
+\hline
+2DF & 7F0D & 2E0 & 7F0D & 2DF & 000D & 000 & 000D & 000D & 005 & 0101 & --- & --- \\
+\hline
+2E0 & F00B & 2EC & F00B & 2E0 & F00B & 000 & 000B & 000D & 005 & 0101 & --- & --- \\
+\hline
+2EC & 0100 & 2ED & 0100 & 2EC & 0100 & 000 & 02EC & 000D & 005 & 0101 & --- & --- \\
+
+\hline
+\end{longtable}}}
+
+\newpage
+
+\Section{Вывод}
+    Во время выполнения лабораторной работы я научился работать в БЭВМ с подпрограммами.
+    Я изучил способы передачи аргументов в подпрограммы, их вызов и как это работает на основе стека.
+\newpage
+
+\include{biblist}  % Для соответсвия гост, придется доработать. Нужен файл .bib
+\end{document}
