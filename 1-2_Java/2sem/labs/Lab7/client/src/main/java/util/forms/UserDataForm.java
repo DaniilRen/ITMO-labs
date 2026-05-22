@@ -1,17 +1,17 @@
-package forms;
+package util.forms;
 
 import common.exceptions.InvalidFormException;
 import common.exceptions.InvalidScriptException;
 import common.models.User;
-import console.IOConsole;
+import view.console.ui.IOConsole;
 
 public class UserDataForm extends Form<User> {
     private final IOConsole console;
     private final boolean fileMode;
 
-    public UserDataForm(IOConsole console) {
+    public UserDataForm(IOConsole console, boolean fileMode) {
         this.console = console;
-        this.fileMode = console.fileMode();
+        this.fileMode = fileMode;
     }
 
     public User build() {

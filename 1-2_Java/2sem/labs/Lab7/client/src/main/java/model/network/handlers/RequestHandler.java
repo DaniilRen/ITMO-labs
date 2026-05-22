@@ -1,4 +1,4 @@
-package network.handlers;
+package model.network.handlers;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,24 +15,27 @@ import common.transfer.request.Request;
 import common.transfer.request.standart.AuthRequest;
 import common.transfer.request.standart.InitRequest;
 import common.transfer.response.Response;
-import console.IOConsole;
-import network.AbstractClientNetwork;
-import util.RequestBuilder;
+import model.network.AbstractClientNetwork;
+import model.RequestBuilder;
+import model.script.ScriptProcessor;
+import view.View;
 
 public class RequestHandler {
     private Map<String, Class<? extends Request>> commandsAttributes = new HashMap<>(); 
-    private final IOConsole console;
+    private final View view;
     private final AbstractClientNetwork network;
     private final AuthHandler authHandler;
+    private ScriptProcessor scriptProcessor;
     private final List<Class<? extends Request>> publicRequests = new ArrayList<>(Arrays.asList(AuthRequest.class, InitRequest.class));
 
-    public RequestHandler(IOConsole console, AbstractClientNetwork network, AuthHandler authHandler) {
-        this.console = console;
+    public RequestHandler(View view, AbstractClientNetwork network, AuthHandler authHandler, ScriptProcessor scriptProcessor) {
+        this.view = view;
         this.network = network;
         this.authHandler = authHandler;
+        this.scriptProcessor = scriptProcessor;
     }
 
-    public Response<?> makeRequest(String name, List<?> args) {
+    public Response<?> makeRequest(String name, List<?> args, boolean fileMode) {
         try {
             if (name.equals("logout") && args.size() == 0) {
                 authHandler.logOut();
@@ -47,7 +50,7 @@ public class RequestHandler {
             if (!(authHandler.isAuthenticated()) && (!(publicRequests.contains(requestType)))) {
                 return new Response<>(List.of("You must 'login' or 'register' before executing commands!"), Status.ERROR);
             }
-            RequestBuilder requestBuilder = new RequestBuilder(console, authHandler.getCredentials().getName());
+            RequestBuilder requestBuilder = new RequestBuilder(view, authHandler.getCredentials().getName(), fileMode, scriptProcessor);
             Request request = requestBuilder.buildRequest(requestType, name, args);
             request = authHandler.wrapCredentials(request);
 
@@ -65,7 +68,7 @@ public class RequestHandler {
             return (Response<?>) network.read();
         } catch (IOException e) {            
             try {
-                console.printConnectionError("Connection lost: attempting to reconnect...");
+                view.displayError("Connection lost: attempting to reconnect...");
                 network.close();
                 network.connect();
                 
@@ -74,7 +77,7 @@ public class RequestHandler {
                 return response;
                 
             } catch (IOException | ClassNotFoundException ex) {
-                console.printConnectionError("Failed to reconnect: " + ex.getMessage());
+                view.displayError("Failed to reconnect: " + ex.getMessage());
                 return new Response<>(List.of("Server unavailable"), Status.ERROR);
             }
             
@@ -85,7 +88,7 @@ public class RequestHandler {
 
     @SuppressWarnings("unchecked")
     public void setCommandAttributes() throws InvalidAttributesException {
-        Response<?> response = makeRequest("init", new ArrayList<>());
+        Response<?> response = makeRequest("init", new ArrayList<>(), false);
 
         List<?> body = response.getBody();
     

@@ -1,9 +1,9 @@
-package forms;
+package util.forms;
 
 import java.util.NoSuchElementException;
 
 import common.models.Coordinates;
-import console.IOConsole;
+import view.console.ui.IOConsole;
 import common.exceptions.InvalidFormException;
 import common.exceptions.InvalidScriptException;
 
@@ -15,9 +15,9 @@ public class CoordinatesForm extends Form<Coordinates> {
     private final IOConsole console;
     private final boolean fileMode;
 
-    public CoordinatesForm(IOConsole console) {
+    public CoordinatesForm(IOConsole console, boolean fileMode) {
         this.console = console;
-        this.fileMode = console.fileMode();
+        this.fileMode = fileMode;
     }
 
     public Coordinates build() throws InvalidFormException {

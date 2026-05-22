@@ -1,14 +1,12 @@
-package util;
+package model;
 
 import java.util.List;
 
 import common.models.Entity;
 import common.models.User;
-import console.IOConsole;
 import common.exceptions.IncorrectRequestException;
 import common.exceptions.InvalidScriptException;
-import forms.RouteForm;
-import forms.UserDataForm;
+import view.View;
 import common.transfer.request.Request;
 import common.transfer.request.standart.AuthRequest;
 import common.transfer.request.standart.CombinedRequest;
@@ -17,6 +15,7 @@ import common.transfer.request.standart.IdRequest;
 import common.transfer.request.standart.InitRequest;
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.request.standart.StringRequest;
+import model.script.ScriptProcessor;
 
 
 /**
@@ -24,13 +23,16 @@ import common.transfer.request.standart.StringRequest;
  * @author Septyq
  */
 public class RequestBuilder {
-    private final IOConsole console;
+    private final View view;
     private final String author;
+    private final boolean fileMode;
+    private ScriptProcessor scriptProcessor;
 
-
-    public RequestBuilder(IOConsole console, String author) {
-        this.console = console;
+    public RequestBuilder(View view, String author, boolean fileMode, ScriptProcessor scriptProcessor) {
+        this.view = view;
         this.author = author;
+        this.fileMode = fileMode;
+        this.scriptProcessor = scriptProcessor;
     }
 
     public Request buildRequest(Class<? extends Request> requestType, String name, List<?> args) 
@@ -46,19 +48,16 @@ public class RequestBuilder {
         } else if (requestType == IdRequest.class && IdRequest.validate(args)) {
             return new IdRequest(name, Integer.valueOf(args.get(0).toString()));
         } else if (requestType == EntityRequest.class) {
-            Entity result = buildEntity();
+            Entity result = buildEntity(author);
 
             if (result == null || !EntityRequest.validate(List.of(result))) {
-                if (console.fileMode()) {
-                    throw new InvalidScriptException("Stopped script running because of invalid syntax");
-                }
                 throw new IncorrectRequestException("Invalid request");
             }
             return new EntityRequest(name, result);
         } else if (requestType == CombinedRequest.class && args.size() == 1) {
             try {
                 Integer id = Integer.valueOf(args.get(0).toString());
-                Entity result = buildEntity();
+                Entity result = buildEntity(author);
                 if (result == null || !CombinedRequest.validate(List.of(result, id))) {
                     throw new IncorrectRequestException("Invalid request");
                 }
@@ -67,7 +66,7 @@ public class RequestBuilder {
                 throw new IncorrectRequestException("Invalid request");
             }
         } else if (requestType == AuthRequest.class && args.size() == 0) {
-            User result = buildUserData(); 
+            User result = buildUser(); 
             if (result == null || !AuthRequest.validate(List.of(result.getName(), result.getPassword()))) {
                 throw new IncorrectRequestException("Invalid request");
             }
@@ -79,12 +78,17 @@ public class RequestBuilder {
         throw new IncorrectRequestException("Invalid request");
     }
 
-
-    private Entity buildEntity() {
-        return new RouteForm(console, author).build();
+    private Entity buildEntity(String author) {
+        if (fileMode) {
+            return scriptProcessor.onEntityAdd(author);
+        }
+        return view.onEntityAdd(author);
     }
 
-    private User buildUserData() {
-        return new UserDataForm(console).build();
+    private User buildUser() {
+        if (fileMode) {
+            return scriptProcessor.onUserAdd();
+        }
+        return view.onUserAdd();
     }
 }

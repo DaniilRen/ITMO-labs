@@ -1,6 +1,9 @@
+import view.View;
+import view.console.ConsoleView;
+
 public class Main {
     public static void main(String[] args) {
-        AbstractClient client = new NetClient("localhost", 9000);
-        client.run();
+        View consolView = new ConsoleView();
+        consolView.onCreate();
     }
 }

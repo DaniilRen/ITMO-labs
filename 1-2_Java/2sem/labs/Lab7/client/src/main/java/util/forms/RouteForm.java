@@ -1,9 +1,9 @@
-package forms;
+package util.forms;
 
 import java.time.LocalDateTime;
 import java.util.NoSuchElementException;
 
-import console.IOConsole;
+import view.console.ui.IOConsole;
 import common.exceptions.InvalidFormException;
 import common.exceptions.InvalidScriptException;
 import common.models.Route;
@@ -21,9 +21,9 @@ public class RouteForm extends Form<Route> {
     private final boolean fileMode;
     private final String author;
 
-    public RouteForm(IOConsole console, String author) {
+    public RouteForm(IOConsole console, String author, boolean fileMode) {
         this.console = console;
-        this.fileMode = console.fileMode();
+        this.fileMode = fileMode;
         this.author = author;
     }
 
@@ -71,15 +71,15 @@ public class RouteForm extends Form<Route> {
     };
 
     private Coordinates askCoordinates() throws InvalidFormException, InvalidScriptException {
-        return new CoordinatesForm(console).build();
+        return new CoordinatesForm(console, fileMode).build();
     };
 
     private LocationFrom askLocationFrom() throws InvalidFormException, InvalidScriptException {
-        return new LocatiobFromForm(console).build();
+        return new LocationFromForm(console, fileMode).build();
     };
 
     private LocationTo askLocationTo() throws InvalidFormException, InvalidScriptException {
-        return new LocationToForm(console).build();
+        return new LocationToForm(console, fileMode).build();
     };
 
     private int askDistance() throws InvalidScriptException {

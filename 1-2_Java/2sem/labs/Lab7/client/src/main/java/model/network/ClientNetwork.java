@@ -1,4 +1,4 @@
-package network;
+package model.network;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -7,7 +7,7 @@ import java.net.ConnectException;
 import java.net.Socket;
 import java.net.SocketException;
 
-import console.IOConsole;
+import view.View;
 
 public class ClientNetwork extends AbstractClientNetwork {
     private ObjectInputStream ois;
@@ -18,8 +18,8 @@ public class ClientNetwork extends AbstractClientNetwork {
     private final int RETRY_DELAY_MS = 2000;
     private final int CONNECTION_TIMEOUT_MS = 5000;
 
-    public ClientNetwork(String address, int port, IOConsole console) {
-        super(address, port, console);
+    public ClientNetwork(String address, int port, View view) {
+        super(address, port, view);
     }
 
     public void connect() throws IOException {
@@ -37,7 +37,7 @@ public class ClientNetwork extends AbstractClientNetwork {
                 return;
             } catch (ConnectException e) {
                 attempts++;
-                console.printConnectionError("connection refused (attempt " + attempts + "/" + MAX_RETRIES + ")");
+                view.displayError("connection refused (attempt " + attempts + "/" + MAX_RETRIES + ")");
                 if (attempts >= MAX_RETRIES) {
                     throw new IOException("Cannot connect to server after " + MAX_RETRIES + " attempts", e);
                 }
@@ -45,7 +45,7 @@ public class ClientNetwork extends AbstractClientNetwork {
                 delay = Math.min(delay * 2, 30000);
             } catch (IOException e) {
                 attempts++;
-                console.printConnectionError("Connection failed (attempt " + attempts + "/" + MAX_RETRIES + "): " + e.getMessage());
+                view.displayError("Connection failed (attempt " + attempts + "/" + MAX_RETRIES + "): " + e.getMessage());
                 if (attempts >= MAX_RETRIES) {
                     throw new IOException("Cannot connect to server after " + MAX_RETRIES + " attempts", e);
                 }

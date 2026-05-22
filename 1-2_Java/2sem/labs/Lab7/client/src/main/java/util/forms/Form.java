@@ -1,4 +1,4 @@
-package forms;
+package util.forms;
 
 import common.exceptions.InvalidFormException;
 

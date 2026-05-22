@@ -1,20 +1,20 @@
-package network;
+package model.network;
 
 
 import java.io.IOException;
 
-import console.IOConsole;
+import view.View;
 
 public abstract class AbstractClientNetwork {
     protected final String address;
     protected final int port;
     protected boolean connected = false;
-    protected final IOConsole console;
+    protected final View view;
 
-    public AbstractClientNetwork(String address, int port, IOConsole console) {
+    public AbstractClientNetwork(String address, int port, View view) {
         this.address = address;
         this.port = port;
-        this.console = console;
+        this.view = view;
     }
 
     abstract public void connect() throws IOException;

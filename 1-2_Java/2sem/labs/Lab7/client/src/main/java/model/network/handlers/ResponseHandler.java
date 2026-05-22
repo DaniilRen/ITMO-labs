@@ -1,4 +1,4 @@
-package network.handlers;
+package model.network.handlers;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -7,17 +7,17 @@ import java.util.List;
 import common.transfer.Status;
 import common.transfer.request.standart.NextChunkRequest;
 import common.transfer.response.Response;
-import console.IOConsole;
-import network.AbstractClientNetwork;
+import model.network.AbstractClientNetwork;
+import view.View;
 
 
 public class ResponseHandler {
-    private final IOConsole console;
+    private final View view;
     private final AbstractClientNetwork network;
     private final AuthHandler authHandler;
 
-    public ResponseHandler(IOConsole console, AbstractClientNetwork network, AuthHandler authHandler) {
-        this.console = console;
+    public ResponseHandler(View view, AbstractClientNetwork network, AuthHandler authHandler) {
+        this.view = view;
         this.network = network;
         this.authHandler = authHandler;
     }
@@ -31,9 +31,9 @@ public class ResponseHandler {
         } else if (status == Status.ERROR) {
             List<?> body = response.getBody();
             if (body != null && !body.isEmpty()) {
-                console.printError(body.get(0).toString());
+                view.displayError(body.get(0).toString());
             } else {
-                console.printError("Unknown error occurred");
+                view.displayError("Unknown error occurred");
             }
         } else if (status == Status.LOGIN) {
             List<?> body = response.getBody();
@@ -53,7 +53,7 @@ public class ResponseHandler {
             allData.addAll((List<Object>) firstChunk.getBody());
         }
         
-        console.println(String.format("Loading data (%d chunks)...\n", totalChunks));
+        view.displayMessage(String.format("Loading data (%d chunks)...\n", totalChunks));
         int loadBarSectionIdx = totalChunks / 10;
         for (int chunkNum = 2; chunkNum <= totalChunks; chunkNum++) {
             try {
@@ -62,7 +62,7 @@ public class ResponseHandler {
                 Response<?> nextChunk = (Response<?>) network.read();
                 
                 if (nextChunk.getStatus() == Status.ERROR) {
-                    console.printError("Failed to load chunk " + chunkNum);
+                    view.displayError("Failed to load chunk " + chunkNum);
                     return Status.ERROR;
                 }
                 
@@ -71,11 +71,11 @@ public class ResponseHandler {
                 }
                 if (chunkNum % loadBarSectionIdx == 0) {
                     int percent = chunkNum * 100 / totalChunks;
-                    console.println(percent + "% " +
+                    view.displayMessage(percent + "% " +
                         "o".repeat(chunkNum / loadBarSectionIdx) + ".".repeat(10-(chunkNum / loadBarSectionIdx)));
                 }                
             } catch (IOException | ClassNotFoundException e) {
-                console.printError("\nFailed to load chunk " + chunkNum + ": " + e.getMessage());
+                view.displayError("\nFailed to load chunk " + chunkNum + ": " + e.getMessage());
                 return Status.ERROR;
             }
         }
@@ -86,7 +86,7 @@ public class ResponseHandler {
     private void printCommandResponse(List<?> body) {
         if (body != null && !body.isEmpty()) {
             body.forEach((element) -> {
-                console.println(element);
+                view.displayMessage(element.toString());
             });
         }
     }

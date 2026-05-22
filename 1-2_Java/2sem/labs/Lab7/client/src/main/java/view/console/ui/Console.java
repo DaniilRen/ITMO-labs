@@ -1,4 +1,4 @@
-package console;
+package view.console.ui;
 
 /**
  * Определяет поведение консоли.

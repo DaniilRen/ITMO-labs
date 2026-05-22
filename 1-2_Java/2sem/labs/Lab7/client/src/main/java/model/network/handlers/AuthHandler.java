@@ -1,4 +1,4 @@
-package network.handlers;
+package model.network.handlers;
 
 import common.models.User;
 import common.transfer.request.Request;

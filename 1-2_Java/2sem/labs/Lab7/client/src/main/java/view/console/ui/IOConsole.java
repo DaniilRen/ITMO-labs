@@ -1,4 +1,4 @@
-package console;
+package view.console.ui;
 
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;

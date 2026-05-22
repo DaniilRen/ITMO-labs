@@ -1,46 +1,45 @@
-package forms;
+package util.forms;
 
 import java.util.NoSuchElementException;
 
-import common.models.LocationTo;
-import console.IOConsole;
+import common.models.LocationFrom;
+import view.console.ui.IOConsole;
 import common.exceptions.InvalidFormException;
 import common.exceptions.InvalidScriptException;
 
 
 /**
- * Класс формы для локации (куда).
+ * Класс формы для локации (откуда).
  * @author Septyq
  */
-public class LocationToForm extends Form<LocationTo>{
+public class LocationFromForm extends Form<LocationFrom>{
     private final IOConsole console;
     private final boolean fileMode;
 
-    public LocationToForm(IOConsole console) {
+    public LocationFromForm(IOConsole console, boolean fileMode) {
         this.console = console;
-        this.fileMode = console.fileMode();
+        this.fileMode = fileMode;
     }
 
-    public LocationTo build() throws InvalidFormException {
+    public LocationFrom build() throws InvalidFormException {
         try {
-            LocationTo location = new LocationTo(askX(), askY(), askZ(), askName());
-            if (!location.validate()) throw new InvalidFormException("Location TO validation failed");
+            LocationFrom location = new LocationFrom(askX(), askY(), askName());
+            if (!location.validate()) throw new InvalidFormException("Location FROM validation failed");
             return location;   
         } catch (InvalidFormException | InvalidScriptException e) {
             throw new InvalidFormException(e.getMessage());
         }
     }
 
-    private Double askX() throws InvalidScriptException {
-        Double x = 0.0;
+    private Integer askX() throws InvalidScriptException {
+        Integer x = 0;
         boolean asked = false;
         do {
-             try {
-                console.print("Enter location TO X (Double): ");
+            try {
+                console.print("Enter location FROM X (Integer): ");
                 String strX = console.getUserScanner().nextLine().trim();
                 if (fileMode) console.println(strX);
-                if (strX == "") {return null;}
-                x = Double.parseDouble(strX);
+                x = Integer.parseInt(strX);
                 asked = true;
                 break;
             } catch (NoSuchElementException | NumberFormatException e) {
@@ -52,7 +51,7 @@ public class LocationToForm extends Form<LocationTo>{
                 }
             }
         } while (!asked);
-
+        
         return x;
     }
 
@@ -60,10 +59,11 @@ public class LocationToForm extends Form<LocationTo>{
         Double y = 0.0;
         boolean asked = false;
         do {
-             try {
-                console.print("Enter location TO Y (Double): ");
+            try {   
+                console.print("Enter location FROM Y (Double): ");
                 String strY = console.getUserScanner().nextLine().trim();
                 if (fileMode) console.println(strY);
+                if (strY == "") {return null;}
                 y = Double.parseDouble(strY);
                 asked = true;
                 break;
@@ -80,40 +80,15 @@ public class LocationToForm extends Form<LocationTo>{
         return y;
     }
 
-    private Integer askZ() throws InvalidScriptException {
-        Integer z = 0;
-        boolean asked = false;
-        do {
-            try {
-                console.print("Enter location TO Z (Integer): ");
-                String strZ = console.getUserScanner().nextLine().trim();
-                if (fileMode) console.println(strZ);
-                z = Integer.parseInt(strZ);
-                asked = true;
-                break;
-            } catch (NoSuchElementException | NumberFormatException e) {
-                if (fileMode) {
-                    asked = true;
-                    throw new InvalidScriptException("Invalid input data in script -> operation stopped");
-                } else {
-                    console.printError("Coordinate Z was not recognized, enter it again");
-                }
-            }  
-        } while (!asked);
-
-        return z;
-    }
-
     private String askName() throws InvalidScriptException {
         String name = "";
         boolean asked = false;
         do {
             try {
-                console.print("Enter location TO name (String): ");
+                console.print("Enter location FROM name (String): ");
                 name = console.getUserScanner().nextLine().trim();
                 if (fileMode) console.println(name);
                 if (name.equals("")) throw new InvalidFormException("");
-                asked = true;
                 break;
             } catch (InvalidFormException e) {
                 if (fileMode) {
@@ -122,9 +97,9 @@ public class LocationToForm extends Form<LocationTo>{
                 } else {
                     console.printError("Name was not recognized, enter it again");
                 }
-            }            
+            }          
         } while (!asked);
-
+ 
         return name;
     };
 }
