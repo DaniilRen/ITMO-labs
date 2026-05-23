@@ -13,7 +13,6 @@ import common.models.Entity;
 import database.loader.DatabaseLoader;
 import database.pool.ConnectionPool;
 import database.service.DatabaseService;
-import database.writer.DatabaseWriter;
 import logging.ServerLogger;
 import network.handlers.RequestHandler;
 import logging.LoggingManager;
@@ -27,7 +26,6 @@ public abstract class Server {
     protected final CollectionManager<Entity> collectionManager;
     protected final DatabaseService databaseService;
     private final DatabaseLoader<Entity> databaseLoader;
-    private final DatabaseWriter databaseWriter;
     protected final AuthManager authManager;
     protected final LoggingManager logger;
     protected final RequestHandler requestHandler;
@@ -47,7 +45,6 @@ public abstract class Server {
         
         this.databaseService = new DatabaseService();
         this.databaseLoader = new DatabaseLoader<Entity>(databaseService);
-        this.databaseWriter = new DatabaseWriter(databaseService);
 
         Collection<Entity> collection = new ArrayList<>();
         this.collectionManager = new ArrayListManager<Entity>(collection, databaseLoader);

@@ -29,7 +29,7 @@ public class RequestHandler {
     public RequestHandler(CommandManager commandManager, AuthManager authManager) {
         this.commandManager = commandManager;
         this.authManager = authManager;
-        this.collectionLock = new ReentrantLock();  // Created here
+        this.collectionLock = new ReentrantLock();
     }
 
     public Response<?> handleRequest(Request request) {
@@ -112,9 +112,5 @@ public class RequestHandler {
     private boolean validateCommandName(String command) {
         Set<String> commandsNames = commandManager.getCommands().keySet();
         return commandsNames.contains(command);
-    }
-    
-    public ReentrantLock getCollectionLock() {
-        return collectionLock;
     }
 }

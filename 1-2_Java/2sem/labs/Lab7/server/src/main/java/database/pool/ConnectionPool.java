@@ -52,7 +52,7 @@ public class ConnectionPool {
     
     public static Connection getConnection() throws SQLException {
         if (instance == null) {
-            throw new SQLException("ConnectionPool not initialized. Call initialize() first.");
+            throw new SQLException("ConnectionPool not initialized");
         }
         
         Connection conn = instance.pool.poll();
