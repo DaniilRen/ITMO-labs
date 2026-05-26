@@ -4,6 +4,7 @@ import java.util.List;
 
 import auth.AuthManager;
 import collection.CollectionManager;
+import commands.util.AccessHandler;
 import common.command.CommandAttribute;
 import common.command.PublicityMarker;
 import common.models.Entity;
@@ -41,7 +42,7 @@ public class RemoveById extends Command<IdRequest> {
         if (route == null) {
             return new Response<>(List.of("Item not found"), Status.ERROR);
         }
-        if (!(route.getAuthor().equals(userData.getName()))) {
+        if (!(AccessHandler.accessVerified(route, userData))) {
             return new Response<>(List.of("You have no permission to remove this item"), Status.ERROR);
         }
         collectionManager.removeFromCollection(route);

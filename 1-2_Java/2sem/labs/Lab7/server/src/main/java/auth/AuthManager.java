@@ -37,5 +37,4 @@ public abstract class AuthManager {
     public void dropCachedCredentials() {
         this.credentials = null;
     }
-
 }

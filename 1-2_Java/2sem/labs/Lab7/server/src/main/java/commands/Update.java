@@ -5,6 +5,7 @@ import java.util.List;
 
 import auth.AuthManager;
 import collection.CollectionManager;
+import commands.util.AccessHandler;
 import common.command.CommandAttribute;
 import common.command.PublicityMarker;
 import common.models.Entity;
@@ -49,7 +50,7 @@ public class Update extends Command<CombinedRequest> {
         if (existingRoute == null) {
             return new Response<>(List.of("Item not found"), Status.ERROR);
         }
-        if (!(existingRoute.getAuthor().equals(userData.getName()))) {
+        if (!(AccessHandler.accessVerified(existingRoute, userData))) {
             return new Response<>(List.of("You have no permission to modify this item"), Status.ERROR);
         }
 

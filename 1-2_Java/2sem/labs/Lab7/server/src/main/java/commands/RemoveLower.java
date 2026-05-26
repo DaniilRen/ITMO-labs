@@ -5,6 +5,7 @@ import java.util.List;
 
 import auth.AuthManager;
 import collection.CollectionManager;
+import commands.util.AccessHandler;
 import common.transfer.request.standart.EntityRequest;
 import common.transfer.response.Response;
 import common.command.CommandAttribute;
@@ -45,7 +46,7 @@ public class RemoveLower extends Command<EntityRequest> {
         
         while (iterator.hasNext()) {
             Route route = (Route) iterator.next();
-            if (route.getAuthor().equals(userData.getName()) && route.compareTo(targetRoute) < 0) {
+            if (AccessHandler.accessVerified(route, userData) && route.compareTo(targetRoute) < 0) {
                 iterator.remove();
                 removedCount++;
             }
