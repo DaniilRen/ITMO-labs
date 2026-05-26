@@ -12,16 +12,19 @@ public class User extends Entity {
     private int id;
     private String name;
     private String password;
+    private boolean isAdmin;
     
-    public User(String name, String password) {
+    public User(String name, String password, boolean isAdmin) {
         this.name = name;
         this.password = password;
+        this.isAdmin = isAdmin;
     }
     
-    public User(int id, String name, String password) {
+    public User(int id, String name, String password, boolean isAdmin) {
         this.id = id;
         this.name = name;
         this.password = password;
+        this.isAdmin = isAdmin;
     }
     
     public int getId() {
@@ -48,6 +51,14 @@ public class User extends Entity {
         this.password = password;
     }
 
+    public boolean getIsAdmin() {
+        return isAdmin;
+    } 
+
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
     @Override
     public boolean validate() {
         return name != null && password != null;
@@ -59,11 +70,17 @@ public class User extends Entity {
         if (o == null || getClass() != o.getClass()) return false;
         User convertedObject = (User) o;
         return Objects.equals(name, convertedObject.getName()) 
-            && Objects.equals(password, convertedObject.getPassword());
+            && Objects.equals(password, convertedObject.getPassword())
+            && Objects.equals(isAdmin, convertedObject.getIsAdmin());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, password);
+        return Objects.hash(name, password, isAdmin);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("id=%d, name=%s, password=%s, isAdmin=%b", id, name, password, isAdmin);
     }
 }

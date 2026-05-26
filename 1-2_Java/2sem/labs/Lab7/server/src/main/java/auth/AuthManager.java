@@ -26,7 +26,6 @@ public abstract class AuthManager {
     public abstract String generatePasswordHash(String password);
 
     public void setCachedCredentials(User credentials) {
-        // System.out.println(String.format("setting sredentials: name=%s, passw=%s", credentials.getName(), credentials.getPassword()));
         this.credentials = credentials;
     }
 

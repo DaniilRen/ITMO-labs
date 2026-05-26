@@ -25,5 +25,9 @@ public abstract class View {
 
     abstract public Entity onEntityAdd(String author);
 
-    abstract public User onUserAdd();
+    abstract public User onLogin();
+
+    abstract public User onRegister();
+
+    public abstract User getCurrentUser();
 }

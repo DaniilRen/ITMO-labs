@@ -3,7 +3,8 @@ BEGIN;
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     name VARCHAR(64) NOT NULL UNIQUE,
-    password VARCHAR(64) NOT NULL
+    password VARCHAR(64) NOT NULL,
+    is_admin BOOLEAN NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS coordinates (

@@ -46,8 +46,8 @@ public class MultiThreadServer extends Server {
         commandManager.register("filter_starts_with_name", new FilterStartsWithName(collectionManager));
         commandManager.register("print_unique_distance", new PrintUniqueDistances(collectionManager));
         commandManager.register("print_field_descending_distance", new PrintFieldDescendingDistance(collectionManager));
-        commandManager.register("register", new Register(authManager));
-        commandManager.register("login", new Authenticate(authManager));
+        commandManager.register("register", new Register(authManager, databaseService));
+        commandManager.register("login", new Authenticate(authManager, databaseService));
         commandManager.register("init", new Init(commandManager));
     }
 }

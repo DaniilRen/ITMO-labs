@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import common.exceptions.InvalidAttributesException;
+import common.models.User;
 import model.local.CommandHandler;
 import model.network.AbstractClientNetwork;
 import model.network.ClientNetwork;
@@ -50,5 +51,9 @@ public class Model {
 
     public void logOut() {
         authHandler.logOut();
+    }
+
+    public User getCurrentUser() {
+        return authHandler.getCredentials();
     }
 }

@@ -6,5 +6,5 @@ import common.models.User;
 public abstract class FormBuidler {
     abstract public Entity buildEntity(String author);
 
-    abstract public User buildUser();
+    abstract public User buildUser(boolean newUser);
 }

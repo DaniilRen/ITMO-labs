@@ -12,6 +12,7 @@ import common.transfer.request.standart.AuthRequest;
 import common.transfer.request.standart.CombinedRequest;
 import common.transfer.request.standart.EntityRequest;
 import common.transfer.request.standart.IdRequest;
+import common.transfer.request.standart.RegisterRequest;
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.request.standart.StringRequest;
 import model.local.script.ScriptProcessor;
@@ -65,11 +66,17 @@ public class RequestBuilder {
                 throw new IncorrectRequestException("Invalid request");
             }
         } else if (requestType == AuthRequest.class && args.size() == 0) {
-            User result = buildUser(); 
+            User result = buildUser(false); 
             if (result == null || !AuthRequest.validate(List.of(result.getName(), result.getPassword()))) {
                 throw new IncorrectRequestException("Invalid request");
             }
             return new AuthRequest(name, result.getName(), result.getPassword());
+        } else if (requestType == RegisterRequest.class && args.size() == 0) {
+            User result = buildUser(true); 
+            if (result == null || !RegisterRequest.validate(List.of(result.getName(), result.getPassword(), result.getIsAdmin()))) {
+                throw new IncorrectRequestException("Invalid request");
+            }
+            return new RegisterRequest(name, result.getName(), result.getPassword(), result.getIsAdmin());
         }
         
         throw new IncorrectRequestException("Invalid request");
@@ -82,10 +89,16 @@ public class RequestBuilder {
         return view.onEntityAdd(author);
     }
 
-    private User buildUser() {
+    private User buildUser(boolean newUser) {
         if (fileMode) {
-            return scriptProcessor.onUserAdd();
+            if (newUser) {
+                return scriptProcessor.onRegister();
+            }
+            return scriptProcessor.onLogin();
         }
-        return view.onUserAdd();
+        if (newUser) {
+            return view.onRegister();
+        }
+        return view.onLogin();
     }
 }

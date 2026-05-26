@@ -1,8 +1,8 @@
 BEGIN;
 
-INSERT INTO users (name, password) VALUES
-('admin', '5d2fa642ee3c7daf8b0b4658bcd950fcf90c419c9ed47411c8d96c667e140f31'), -- admin --
-('user1', '2946e11fb8b7cac4149a7160a79e1be7bb630b5060c08bf49a0fd4dd67b80fb9'); -- password1 --
+INSERT INTO users (name, password, is_admin) VALUES
+('admin', '5d2fa642ee3c7daf8b0b4658bcd950fcf90c419c9ed47411c8d96c667e140f31', TRUE), -- admin --
+('user1', '2946e11fb8b7cac4149a7160a79e1be7bb630b5060c08bf49a0fd4dd67b80fb9', FALSE); -- password1 --
 
 INSERT INTO coordinates (x, y) VALUES
 (10.5, 20),

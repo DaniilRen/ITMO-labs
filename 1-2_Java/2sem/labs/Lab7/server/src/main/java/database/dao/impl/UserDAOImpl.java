@@ -16,7 +16,7 @@ public class UserDAOImpl implements UserDAO {
     
     @Override
     public User findById(Connection conn, Integer id) throws SQLException {
-        PreparedStatement stmt = QueryBuilder.select("id", "name", "password")
+        PreparedStatement stmt = QueryBuilder.select("id", "name", "password", "is_admin")
             .from("users")
             .where("id = ?", id)
             .build(conn);
@@ -30,7 +30,7 @@ public class UserDAOImpl implements UserDAO {
     
     @Override
     public List<User> findAll(Connection conn) throws SQLException {
-        PreparedStatement stmt = QueryBuilder.select("id", "name", "password")
+        PreparedStatement stmt = QueryBuilder.select("id", "name", "password", "is_admin")
             .from("users")
             .build(conn);
         
@@ -47,6 +47,7 @@ public class UserDAOImpl implements UserDAO {
         PreparedStatement stmt = QueryBuilder.insert("users")
             .column("name", user.getName())
             .column("password", user.getPassword())
+            .column("is_admin", user.getIsAdmin())
             .returning("id")
             .build(conn);
         
@@ -61,6 +62,7 @@ public class UserDAOImpl implements UserDAO {
         PreparedStatement stmt = QueryBuilder.update("users")
             .set("name", user.getName())
             .set("password", user.getPassword())
+            .set("is_admin", user.getIsAdmin())
             .where("id = ?", user.getId())
             .build(conn);
         
@@ -89,14 +91,16 @@ public class UserDAOImpl implements UserDAO {
     
     @Override
     public User findByName(Connection conn, String name) throws SQLException {
-        PreparedStatement stmt = QueryBuilder.select("id", "name", "password")
+        PreparedStatement stmt = QueryBuilder.select("id", "name", "password", "is_admin")
             .from("users")
             .where("name = ?", name)
             .build(conn);
-        
+
         ResultSet rs = stmt.executeQuery();
+
         if (rs.next()) {
-            return mapper.mapRow(rs);
+            User user = mapper.mapRow(rs);
+            return user;
         }
         return null;
     }

@@ -44,13 +44,22 @@ public class ScriptProcessor {
         return builder.buildEntity(author);
     }
 
-    public User onUserAdd() {
+    public User onLogin() {
         Scanner scanner = getScanner();
         if (scanner == null) {
             throw new IllegalStateException("Scanner is not initialized");
         }
         ScriptFormBuidler builder = new ScriptFormBuidler(scanner);
-        return builder.buildUser();
+        return builder.buildUser(false);
+    }
+
+    public User onRegister() {
+        Scanner scanner = getScanner();
+        if (scanner == null) {
+            throw new IllegalStateException("Scanner is not initialized");
+        }
+        ScriptFormBuidler builder = new ScriptFormBuidler(scanner);
+        return builder.buildUser(true);
     }
 
     public void executeScript(String fileName) throws InvalidScriptException {

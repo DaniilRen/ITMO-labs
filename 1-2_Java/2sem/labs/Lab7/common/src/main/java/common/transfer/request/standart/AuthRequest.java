@@ -27,7 +27,7 @@ public class AuthRequest extends StandartRequest  {
     }
 
     public User getCredetials() {
-        return new User(userName, passsword);
+        return new User(userName, passsword, false);
     }
 
     public static boolean validate(List<?> args) {

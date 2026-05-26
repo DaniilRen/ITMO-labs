@@ -55,8 +55,8 @@ public class DatabaseService {
         return userService.authenticate(username, password);
     }
     
-    public void registerUser(String username, String password) throws SQLException {
-        userService.registerUser(username, password);
+    public void registerUser(String username, String password, boolean isAdmin) throws SQLException {
+        userService.registerUser(username, password, isAdmin);
     }
     
     public boolean userExists(String username) throws SQLException {

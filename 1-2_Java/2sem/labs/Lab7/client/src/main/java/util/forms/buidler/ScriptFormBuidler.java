@@ -17,10 +17,10 @@ public class ScriptFormBuidler {
     }
 
     public Entity buildEntity(String author) {
-        return new RouteForm(console, author, false).build();
+        return new RouteForm(console, author, true).build();
     };
 
-    public User buildUser() {
-        return new UserDataForm(console, false).build();
+    public User buildUser(boolean newUser) {
+        return new UserDataForm(console, true, newUser).build();
     };
 }

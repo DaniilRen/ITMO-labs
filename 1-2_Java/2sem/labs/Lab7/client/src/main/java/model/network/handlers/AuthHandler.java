@@ -9,15 +9,15 @@ public class AuthHandler {
     private User credentials;
 
     public AuthHandler() {
-        this.credentials = new User(null, null);
+        this.credentials = new User(null, null, false);
     }
 
     public boolean isAuthenticated() {
         return authenticated;
     }
 
-    public void setCredentials(String name, String password) {
-        this.credentials = new User(name, password);
+    public void setCredentials(String name, String password, boolean isAdmin) {
+        this.credentials = new User(name, password, isAdmin);
         authenticated = true;
     }
 
@@ -26,7 +26,7 @@ public class AuthHandler {
     }
 
     public void logOut() {
-        this.credentials = new User(null, null);
+        this.credentials = new User(null, null, false);
         authenticated = false;
     }
 

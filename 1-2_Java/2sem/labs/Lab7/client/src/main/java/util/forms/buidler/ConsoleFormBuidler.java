@@ -17,7 +17,7 @@ public class ConsoleFormBuidler extends FormBuidler {
         return new RouteForm(console, author, false).build();
     };
 
-    public User buildUser() {
-        return new UserDataForm(console, false).build();
+    public User buildUser(boolean newUser) {
+        return new UserDataForm(console, false, newUser).build();
     };
 }

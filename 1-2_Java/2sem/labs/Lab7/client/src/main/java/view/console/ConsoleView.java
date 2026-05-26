@@ -18,11 +18,12 @@ public class ConsoleView extends View {
 
     public void onCreate() {
         this.console = new IOConsole();
-        this.formBuidler = new ConsoleFormBuidler(console);
         this.scanner = new Scanner(System.in);
         console.setUserScanner(scanner);
 
         this.presenter = PresenterFactory.providePresenter(this);
+
+        this.formBuidler = new ConsoleFormBuidler(console);
         runConsole();
     }
 
@@ -69,7 +70,15 @@ public class ConsoleView extends View {
         return formBuidler.buildEntity(author);
     };
 
-    public User onUserAdd() {
-        return formBuidler.buildUser();
+    public User onRegister() {
+        return formBuidler.buildUser(true);
     }
+
+    public User onLogin() {
+        return formBuidler.buildUser(false);
+    }
+
+    public User getCurrentUser() {
+        return presenter.getCurrentUser();
+    };
 }

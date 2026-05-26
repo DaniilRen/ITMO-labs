@@ -44,12 +44,12 @@ public class UserService {
         }
     }
     
-    public void registerUser(String username, String password) throws SQLException {
+    public void registerUser(String username, String password, boolean isAdmin) throws SQLException {
         Connection conn = null;
         try {
             conn = ConnectionPool.getConnection();
             conn.setAutoCommit(false);
-            User user = new User(username, password);
+            User user = new User(username, password, isAdmin);
             userDAO.insert(conn, user);
             conn.commit();
         } catch (SQLException e) {

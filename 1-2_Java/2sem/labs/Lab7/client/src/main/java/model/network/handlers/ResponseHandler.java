@@ -37,7 +37,7 @@ public class ResponseHandler {
             }
         } else if (status == Status.LOGIN) {
             List<?> body = response.getBody();
-            authHandler.setCredentials(body.get(0).toString(), body.get(1).toString());
+            authHandler.setCredentials(body.get(0).toString(), body.get(1).toString(), Boolean.parseBoolean(body.get(2).toString()));
         }
         return status;
     }

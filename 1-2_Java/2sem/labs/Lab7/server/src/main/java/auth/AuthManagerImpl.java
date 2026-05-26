@@ -39,9 +39,10 @@ public class AuthManagerImpl extends AuthManager {
     public void register(User userData) throws AuthException {
         String name = userData.getName();
         String password = userData.getPassword();
+        boolean isAdmin = userData.getIsAdmin();
         try {
             String hashedPassword = generatePasswordHash(password);
-            databaseService.registerUser(name, hashedPassword);
+            databaseService.registerUser(name, hashedPassword, isAdmin);
             logger.info(String.format("registered new user: %s", name));
         } catch (SQLException e) {
             String registExceptionMessage = String.format("cannot register new user: %s", name);
