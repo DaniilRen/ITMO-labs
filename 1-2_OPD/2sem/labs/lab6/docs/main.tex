@@ -460,235 +460,35 @@ tabsize=2
     \setlength{\parsep}{0pt}
     По выданному преподавателем варианту разработать и исследовать работу комплекса программ обмена данными в режиме прерывания программы. Основная программа должна изменять содержимое заданной ячейки памяти (Х), которое должно быть представлено как знаковое число. Область допустимых значений изменения Х должна быть ограничена заданной функцией F(X) и конструктивными особенностями регистра данных ВУ (8-ми битное знаковое представление). Программа обработки прерывания должна выводить на ВУ модифицированное значение Х в соответствии с вариантом задания, а также игнорировать все необрабатываемые прерывания.
     \begin{enumerate}
-        \item Основная программа должна уменьшать на 3 содержимое X (ячейки памяти с адресом $04F\_16$) в цикле. 
+        \item Основная программа должна уменьшать на 3 содержимое X (ячейки памяти с адресом 04F) в цикле. 
         \item Обработчик прерывания должен по нажатию кнопки готовности ВУ-3 осуществлять вывод результата вычисления функции F(X)=-6X+3 на данное ВУ, a по нажатию кнопки готовности ВУ-2 вычесть Х из утроенного содержимого РД данного ВУ, результат записать в Х 
         \item Если Х оказывается вне ОДЗ при выполнении любой операции по его изменению, то необходимо в Х записать максимальное по ОДЗ число.
     \end{enumerate}
-
 \newpage
 \Section{Ход работы}
 \Subsection{Исходная программа}
-\noindent
-{\small
-\begin{tabularx}{\textwidth}{|c|c|l|X|}
-\hline
-\textbf{Адрес} & \textbf{Код} & \textbf{Мнемоника} & \textbf{Комментарии} \\
-\hline
-141 & 0200 & CLA & Очистка аккумулятора \\
-\hline
-142 & EE18 & ST IP+24 & Очистка R \\
-\hline
-143 & AE14 & LD IP+20 & Загрузка Z \\
-\hline
-144 & 0C00 & PUSH & Выгрузка аргумента \\
-\hline
-\rowcolor{yellow}
-145 & D666 & CALL 666 & Вызов F(Z) \\
-\hline
-146 & 0800 & POP & Загрузка результата \\
-\hline
-147 & 0740 & DEC & AC - 1 -> AC \\
-\hline
-148 & 6E12 & SUB IP+18 & AC - R -> AC \\
-\hline
-149 & EE11 & ST IP+17 & Сохранение R \\
-\hline
-14A & AE0F & LD IP+15 & Загрузка X \\
-\hline
-14B & 0740 & DEC & AC - 1 -> AC \\
-\hline
-14C & 0C00 & PUSH & Выгрузка аргумента \\
-\hline
-\rowcolor{yellow}
-14D & D666 & CALL 666 & Вызов F(X-1) \\
-\hline
-14E & 0800 & POP & Загрузка результата \\
-\hline
-14F & 6E0B & SUB IP+11 & AC - R -> AC \\
-\hline
-150 & EE0A & ST IP+10 & Сохранение R \\
-\hline
-151 & AE07 & LD IP+7 & Загрузка Y \\
-\hline
-152 & 0C00 & PUSH & Выгрузка аргумента \\
-\hline
-\rowcolor{yellow}
-153 & D666 & CALL 666 & Вызов F(Y) \\
-\hline
-154 & 0800 & POP & Загрузка результата \\
-\hline
-155 & 6E05 & SUB IP+5 & AC - R -> AC \\
-\hline
-156 & EE04 & ST IP+4 & Сохранение R \\
-\hline
-\rowcolor{red}
-157 & 0100 & HLT & Остановка \\
-\hline
-\rowcolor{softblue}
-158 & ZZZZ & Z & Значение Z \\
-\hline
-\rowcolor{softblue}
-159 & YYYY & Y & Значение Y \\
-\hline
-\rowcolor{softblue}
-15A & XXXX & X & Значение X \\
-\hline
-\rowcolor{softgreen}
-15B & 0B3F & R & Результат \\
-\hline
-\end{tabularx}
-}
 
-\textbf{Подпрограмма}
-
-\noindent
-{\small
-\begin{tabularx}{\textwidth}{|c|c|l|X|}
-\hline
-\textbf{Адрес} & \textbf{Код} & \textbf{Мнемоника} & \textbf{Комментарии} \\
-\hline
-\rowcolor{blue}
-666 & AC01 & LD (SP+1) & Загрузка аргумента \\
-\hline
-667 & F303 & BPL 3 & Если > 0, переход на 66B \\
-\hline
-668 & 7E0A & CMP IP+10 & Знаки по AC - Q \\
-\hline
-669 & F201 & BMI 1 & Если AC < Q , переход на 66B \\
-\hline
-66A & CE05 & JUMP IP+5 & Переход на 670 \\
-\hline
-66B & 0500 & ASL & Умножение на 2 \\
-\hline
-66C & 0500 & ASL & Умножение на 2 \\
-\hline
-66D & 4C01 & ADD (SP+1) & Прибавляем аргумент \\
-\hline
-66E & 4E05 & ADD IP+5 & Прибавляем W \\
-\hline
-66F & CE01 & JUMP IP+1 & Переход на 671 \\
-\hline
-670 & AE02 & LD IP+2 & Загрузка Q \\
-\hline
-671 & EC01 & ST (SP+1) & Сохранение результата \\
-\hline
-\rowcolor{red}
-672 & 0A00 & RET & Возврат \\
-\hline
-\rowcolor{softblue}
-673 & F55A & F55A  & Константа Q = -2726 \\
-\hline
-\rowcolor{softblue}
-674 & 004D & 004D & Константа W = 77 \\
-\hline
-\end{tabularx}
-}
-
-\Subsection{Таблица трассировки}
-
-X = 100, Y = 100, Z = 101 \\
-Ожидаемый результат: $100*5+77 - (99*5+77) + 101*5+77 - 1 = 586_{10}$ \\
-Результат программы: $024A_{16}$ = $586_{10}$
-
-{\footnotesize{\begin{longtable}{|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.7cm}|>{\centering\arraybackslash}p{0.7cm}|>{\centering\arraybackslash}p{0.7cm}|>{\centering\arraybackslash}p{0.7cm}|>{\centering\arraybackslash}p{0.7cm}|>{\centering\arraybackslash}p{0.8cm}|>{\centering\arraybackslash}p{0.8cm}|>{\centering\arraybackslash}p{0.6cm}|>{\centering\arraybackslash}p{1.0cm}|>{\centering\arraybackslash}p{0.9cm}|>{\centering\arraybackslash}p{0.9cm}|}
-\hline
-\textbf{Адр} & \textbf{Знач} & \textbf{IP} & \textbf{CR} & \textbf{AR} & \textbf{DR} & \textbf{SP} & \textbf{BR} & \textbf{AC} & \textbf{PS} & \textbf{NZVC} & \textbf{Адр} & \textbf{Знач} \\
-\hline
-\endfirsthead
-
-\hline
-\textbf{Адр} & \textbf{Знач} & \textbf{IP} & \textbf{CR} & \textbf{AR} & \textbf{DR} & \textbf{SP} & \textbf{BR} & \textbf{AC} & \textbf{PS} & \textbf{NZVC} & \textbf{Адр} & \textbf{Знач} \\
-\hline
-\endhead
-
-\endfoot
-
-\hline
-\endlastfoot
-
-141 & 0200 & 141 & 0000 & 000 & 0000 & 000 & 0000 & 0000 & 004 & 0100 & $-$ & $-$ \\
-\hline
-141 & 0200 & 142 & 0200 & 141 & 0200 & 000 & 0141 & 0000 & 004 & 0100 & $-$ & $-$ \\
-\hline
-\end{longtable}}}
-
-\Subsection{Описание программы}
-Программа предназначена для нахождения значения выражения:
-
-R = F(Y) - (F(X-1) - F(Z) + 1)
-
-R = F(Y) - F(X-1) + F(Z) - 1
-
-\[ F(x) = \begin{cases} 
-  5x + 77 & x < -2726, x \geq 0 \\
-  -2726 & -2726 \leq x < 0 
-\end{cases} \]
-
-\begin{figure}[H] % 'H' -- вставить тут же (подключен модуль), обычный вариант: 'htpb'
-    \centering
-    \includegraphics[width={\textwidth * 2 / 3}]{function.png}
-    \caption{График функции}
-    \label{fig:enter-label}
-\end{figure}
-
+\lstinputlisting[label={lst:asm},language=]{../asm.bcomp}
 
 \Subsection{ОПИ и ОДЗ}
 
-\textbf{Область представления} \\
+\textbf{Область представления}
 
-X, Y, Z, R, Q, W – целые знаковые шестнадцатеричные числа в дополнительном коде. \\
+X - знаковое 8-битное число \\
 
-\textbf{Область допустимых значений} \\
+\textbf{Область представления}
 
-Проанализируем функцию F(x). \\
+$-128 \leq -6x+3 \leq 127$
 
-При x $\in$ [-2726; 0) функция вернет результат -2726. 
-При использовании любого значения из заданного промежутка в функции не возникнет переполнения. \\
+$-131 \leq -6x \leq 124$
 
-При оставшихся значениях аргумента функция вернет 5*x + 77. 
-На промежутках [$-2^{15}$; -2726) и [0, $2^{15}-1$] эта функция монотонно возрастающая, 
-поэтому рассмотрим минимальное и максимальное значение: \\
+$-131 \leq -6x \leq 124$
 
-При x = $-2^{15}$ или x = $2^{15}-1$ получим переполнение. Тогда найдем граничные минимальное и максимальное значения, не вызывающие переполнения для F. \\
-Для F(a) такими значениями будут -6569 и 6538. Для выражения R получим, что Y, Z $\in$ [-6569; 6538] и соотвественно X $\in$ [-6568; 6539]. \\
-\begin{itemize}
-    \item $\mathbf{F_{\min}}$: $F(-6568) = -32840 + 77 = \mathbf{-32763}$
-    \item $\mathbf{F_{\max}}$: $F(6538) = \mathbf{32767}$
-\end{itemize}
-что означает, что на всем промежутке значений аргумента, результат функции будет находиться на интервале: [-32768; 32767]. \\
+$-21.833... \leq -x \leq 20.667...$
 
-Теперь необходимо выделенное ОДЗ ограничить так, чтобы значение выражения R также было верным. \\ 
-Вспомним, что основная программа вычисляет следующее выражение: R = F(Y) - F(X-1) + F(Z) - 1 \\
-Тогда метод перебора мы можем получить:
-\begin{itemize}
-    \item X $\in$ [-2725; 5448]
-    \item Y $\in$ [-2726; 2988]
-    \item Z $\in$ [-2726; 2989]
-\end{itemize}
+$-20.667... \leq x \leq 21.833...$
 
-\[
-\begin{aligned}
-R_{\min} &= F(-2726) - F(5448 - 1) + F(-2726) - 1 = -32765, \\ 
-& X = -5448,\; Y = -2726,\; Z = -2726.
-\end{aligned}
-\]
-
-\[
-\begin{aligned}
-R_{\max} &= F(2988) - F(-2725 - 1) + F(2989) - 1 = 32764, \\ 
-& X = -2725,\; Y = 2988,\; Z = 2989.
-\end{aligned}
-\]
-
-В обоих случаях переполнения нет. \\
-
-Значит, искомое ОДЗ:
-\begin{itemize}
-    \item X $\in$ [-2725; 5448]
-    \item Y $\in$ [-2726; 2988]
-    \item Z $\in$ [-2726; 2989]
-    \item R $\in$ [-32765; 32766]
-\end{itemize}
+Так как число X целое, то X $\in$ [-20, 21], то есть X $\in$ [FFEC, 0014]
 
 \newpage
 

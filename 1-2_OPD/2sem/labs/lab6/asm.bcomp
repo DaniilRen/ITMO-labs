@@ -1,0 +1,82 @@
+ORG 0x0
+V0: WORD $default, 0X180
+V1: WORD $default, 0X180
+V2: WORD $int2,    0X180
+V3: WORD $int3,    0x180
+V4: WORD $default, 0X180
+V5: WORD $default, 0X180
+V6: WORD $default, 0X180
+V7: WORD $default, 0X180
+
+ORG 0x04F
+X: WORD ?
+
+max: WORD 0x0014 		; 21, максимальное значение Х
+min: WORD 0xFFEC 		; -20, минимальное значение Х
+
+tmp: WORD 0x0
+
+default:    IRET 		; Обработка прерывания по умолчанию
+
+START:  DI
+
+        CLA
+        OUT 0x1 	; Запрет прерываний для неиспользуемых ВУ
+        OUT 0x7
+        OUT 0xB
+        OUT 0xD
+        OUT 0x11
+        OUT 0x15
+        OUT 0x19
+        OUT 0x1D
+
+        LD #0xA  	; Загрузка в аккумулятор MR (1000|0010=1010)
+        OUT 5 		; Разрешение прерываний для 2 ВУ
+        LD #0xB  	; Загрузка в аккумулятор MR (1000|0011=1011)
+        OUT 7 		; Разрешение прерываний для 3 ВУ
+
+        EI
+main:   DI 		   	; Запрет прерываний чтобы обеспечить атомарность операции
+        LD X
+        INC
+        INC
+        INC
+        CALL check
+        ST X
+        EI
+        JUMP main
+
+int3:   DI			; Обработка прерывания на ВУ-3
+        LD X
+        NOP
+        ASL         ; -6X + 3
+        ASL
+        ADD X
+        ADD X
+        NEG
+        SUB #3
+        NOP
+        OUT 6
+        EI
+        IRET
+int2:   DI			; Обработка прерывания на ВУ-2
+        IN 4
+        NOP
+        LD tmp      ; IN_4 * 3 - X
+        ASL
+        ADD tmp
+        SUB X
+        ST X
+        NOP
+        EI
+        IRET
+
+
+check:  					; Проверка принадлежности X к ОДЗ
+check_min:  CMP min 		; Если x > min переход на проверку верхней границы
+            BPL check_max   
+            JUMP ld_min 	; Иначе загрузка min в аккумулятор
+check_max:  CMP max 		; Проверка пересечения верхней границы X
+            BMI return  	; Если x < max переход
+ld_min:     LD min  		; Загрузка минимального значения в X 
+return:     RET  			; Метка возврата из проверки на ОДЗ  
