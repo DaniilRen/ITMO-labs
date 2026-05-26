@@ -2,7 +2,6 @@ package presenter;
 
 import java.util.List;
 
-import common.transfer.Status;
 import model.Model;
 
 public class Presenter {
@@ -20,7 +19,11 @@ public class Presenter {
         this.model.stopConnection();
     }
 
-    public Status executeCommand(String commandName, List<?> args, boolean fileMode) {
-        return this.model.executeCommand(commandName, args, fileMode);
+    public void logOut() {
+        model.logOut();
+    }
+
+    public void executeCommand(String commandName, List<?> args, boolean fileMode) {
+        this.model.executeCommand(commandName, args, fileMode);
     }
 }

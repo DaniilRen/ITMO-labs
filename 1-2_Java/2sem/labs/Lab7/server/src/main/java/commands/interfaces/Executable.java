@@ -1,6 +1,6 @@
 package commands.interfaces;
 
-import commands.CommandAttribute;
+import common.command.CommandAttribute;
 
 public interface Executable {
     CommandAttribute getAttribute();

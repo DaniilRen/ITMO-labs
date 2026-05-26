@@ -3,7 +3,10 @@ package commands;
 import java.sql.SQLException;
 import java.util.List;
 
+import auth.AuthManager;
 import collection.CollectionManager;
+import common.command.CommandAttribute;
+import common.command.PublicityMarker;
 import common.models.Entity;
 import common.models.Route;
 import common.models.User;
@@ -16,23 +19,28 @@ import database.service.DatabaseService;
  * Команда 'update'. Обновляет значение элемента коллекции по ID.
  * @author Septyq
  */
-public class Update extends AuthAwareCommand<CombinedRequest> {
+public class Update extends Command<CombinedRequest> {
     private static final long serialVersionUID = 19788876L;
 
     private final DatabaseService databaseService;
     private final CollectionManager<Entity> collectionManager;
+    private final AuthManager authManager;
 
-    public Update(DatabaseService databaseService,  CollectionManager<Entity> collectionManager) {
+    public Update(DatabaseService databaseService,  CollectionManager<Entity> collectionManager, AuthManager authManager) {
         super(new CommandAttribute(
             "update <ID> {element}", 
             "обновить значение элемента коллекции по ID",
-            CombinedRequest.class
+            CombinedRequest.class,
+            PublicityMarker.PRIVATE
             ));
         this.databaseService = databaseService;
         this.collectionManager = collectionManager;
+        this.authManager = authManager;
     }
 
-    public Response<?> execute(CombinedRequest request, User userData) {
+    @Override
+    public Response<?> execute(CombinedRequest request) {
+        User userData = authManager.getCachedCredentials();
         Integer id = request.getId();
         Entity entity = request.getEntity();
         entity.setId(id);

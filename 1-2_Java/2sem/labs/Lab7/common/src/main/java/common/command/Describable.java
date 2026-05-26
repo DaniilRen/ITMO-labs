@@ -1,4 +1,4 @@
-package commands.interfaces;
+package common.command;
 
 
 /**

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import collection.CollectionManager;
+import common.command.CommandAttribute;
+import common.command.PublicityMarker;
 import common.models.Entity;
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.response.Response;
@@ -22,7 +24,8 @@ public class Sort extends Command<StandartRequest> {
         super(new CommandAttribute(
             "sort", 
             "отсортировать коллекцию в естественном порядке",
-            StandartRequest.class
+            StandartRequest.class,
+            PublicityMarker.PRIVATE
             ));
         this.collectionManager = collectionManager;
     }

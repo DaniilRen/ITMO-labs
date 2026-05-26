@@ -1,32 +1,24 @@
 package model.network.handlers;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import common.exceptions.IncorrectRequestException;
-import common.exceptions.InvalidAttributesException;
 import common.exceptions.InvalidScriptException;
 import common.transfer.Status;
 import common.transfer.request.Request;
-import common.transfer.request.standart.AuthRequest;
-import common.transfer.request.standart.InitRequest;
+import common.transfer.request.standart.StandartRequest;
 import common.transfer.response.Response;
 import model.network.AbstractClientNetwork;
 import model.RequestBuilder;
-import model.script.ScriptProcessor;
+import model.local.script.ScriptProcessor;
 import view.View;
 
 public class RequestHandler {
-    private Map<String, Class<? extends Request>> commandsAttributes = new HashMap<>(); 
     private final View view;
     private final AbstractClientNetwork network;
     private final AuthHandler authHandler;
     private ScriptProcessor scriptProcessor;
-    private final List<Class<? extends Request>> publicRequests = new ArrayList<>(Arrays.asList(AuthRequest.class, InitRequest.class));
 
     public RequestHandler(View view, AbstractClientNetwork network, AuthHandler authHandler, ScriptProcessor scriptProcessor) {
         this.view = view;
@@ -35,21 +27,17 @@ public class RequestHandler {
         this.scriptProcessor = scriptProcessor;
     }
 
-    public Response<?> makeRequest(String name, List<?> args, boolean fileMode) {
+    public Response<?> makeRequest(String name, Class<? extends Request> requestType, List<?> args, boolean fileMode) {
         try {
-            if (name.equals("logout") && args.size() == 0) {
-                authHandler.logOut();
-                return new Response<>(List.of("Logged out"));
+            if (name.equals("init") && args.size() == 0) {
+                Request request = new StandartRequest(name);
+                return sendRequest(authHandler.wrapCredentials(request));
             }
 
-            Class<? extends Request> requestType = getRequestType(name);
             if (requestType == null) {
-                return new Response<>(List.of("Invalid command!"), Status.ERROR);
+                return new Response<>(List.of("Invalid request type"), Status.ERROR);
             }
   
-            if (!(authHandler.isAuthenticated()) && (!(publicRequests.contains(requestType)))) {
-                return new Response<>(List.of("You must 'login' or 'register' before executing commands!"), Status.ERROR);
-            }
             RequestBuilder requestBuilder = new RequestBuilder(view, authHandler.getCredentials().getName(), fileMode, scriptProcessor);
             Request request = requestBuilder.buildRequest(requestType, name, args);
             request = authHandler.wrapCredentials(request);
@@ -58,7 +46,8 @@ public class RequestHandler {
         } catch (IncorrectRequestException e) {
             return new Response<>(List.of(e.getMessage()), Status.ERROR);
         } catch (InvalidScriptException e) {
-            return new Response<>(List.of(e.getMessage()), Status.EXIT);
+            scriptProcessor.stopScript();
+            return new Response<>(List.of(e.getMessage()));
         }
     }
 
@@ -84,29 +73,5 @@ public class RequestHandler {
         } catch (ClassNotFoundException e) {
             return new Response<>(List.of("Protocol error"), Status.ERROR);
         }
-    }
-
-    @SuppressWarnings("unchecked")
-    public void setCommandAttributes() throws InvalidAttributesException {
-        Response<?> response = makeRequest("init", new ArrayList<>(), false);
-
-        List<?> body = response.getBody();
-    
-        if (body == null || body.isEmpty()) {
-            throw new InvalidAttributesException("Empty response body");
-        }
-
-        Object item = body.get(0);
-        if (!(item instanceof Map<?, ?>)) {
-            throw new InvalidAttributesException("Expected attributes Map<?, ?>, but received: " + item);
-        }
-
-        commandsAttributes = (Map<String, Class<? extends Request>>) item;
-    }
-
-    private Class<? extends Request> getRequestType(String name) {
-        Class<? extends Request> requestType = commandsAttributes.get(name);
-        if ((requestType == null) && (name.equals("init"))) return InitRequest.class;
-        return requestType;
     }
 }

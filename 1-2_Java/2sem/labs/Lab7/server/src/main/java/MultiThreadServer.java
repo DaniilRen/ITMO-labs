@@ -37,10 +37,10 @@ public class MultiThreadServer extends Server {
         commandManager.register("info", new Info(collectionManager));
         commandManager.register("show", new Show(collectionManager));
         commandManager.register("add", new Add(databaseService, collectionManager));
-        commandManager.register("update", new Update(databaseService, collectionManager));
-        commandManager.register("remove_by_id", new RemoveById(collectionManager));
+        commandManager.register("update", new Update(databaseService, collectionManager, authManager));
+        commandManager.register("remove_by_id", new RemoveById(collectionManager, authManager));
         commandManager.register("clear", new Clear(collectionManager));
-        commandManager.register("remove_lower", new RemoveLower(collectionManager));
+        commandManager.register("remove_lower", new RemoveLower(collectionManager, authManager));
         commandManager.register("sort", new Sort(collectionManager));
         commandManager.register("history", new History(commandManager));
         commandManager.register("filter_starts_with_name", new FilterStartsWithName(collectionManager));
@@ -48,5 +48,6 @@ public class MultiThreadServer extends Server {
         commandManager.register("print_field_descending_distance", new PrintFieldDescendingDistance(collectionManager));
         commandManager.register("register", new Register(authManager));
         commandManager.register("login", new Authenticate(authManager));
+        commandManager.register("init", new Init(commandManager));
     }
 }

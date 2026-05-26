@@ -5,6 +5,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import collection.CollectionManager;
+import common.command.CommandAttribute;
+import common.command.PublicityMarker;
 import common.models.Entity;
 import common.models.Route;
 import common.transfer.request.standart.StandartRequest;
@@ -24,7 +26,8 @@ public class PrintUniqueDistances extends Command<StandartRequest> {
         super(new CommandAttribute(
             "print_unique_distance",
             "вывести уникальные значения поля distance всех элементов в коллекции",
-            StandartRequest.class
+            StandartRequest.class,
+            PublicityMarker.PRIVATE
             ));
         this.collectionManager = collectionManager;
     }

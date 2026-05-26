@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import com.google.common.hash.Hashing;
 
 import common.exceptions.AuthException;
+import common.models.User;
 import database.service.DatabaseService;
 import logging.LoggingManager;
 
@@ -21,7 +22,9 @@ public class AuthManagerImpl extends AuthManager {
         this.pepper = pepper;
     };
 
-    public void authenticate(String name, String password) throws AuthException {
+    public void authenticate(User userData) throws AuthException {
+        String name = userData.getName();
+        String password = userData.getPassword();
         try {
             boolean auth = databaseService.authenticate(name, generatePasswordHash(password));
             if (!auth) throw new SQLException("auth error");
@@ -33,7 +36,9 @@ public class AuthManagerImpl extends AuthManager {
         }
     };
 
-    public void register(String name, String password) throws AuthException {
+    public void register(User userData) throws AuthException {
+        String name = userData.getName();
+        String password = userData.getPassword();
         try {
             String hashedPassword = generatePasswordHash(password);
             databaseService.registerUser(name, hashedPassword);

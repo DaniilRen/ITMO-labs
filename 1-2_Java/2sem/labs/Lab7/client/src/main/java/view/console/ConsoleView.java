@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 import common.models.Entity;
 import common.models.User;
-import common.transfer.Status;
 import util.forms.buidler.ConsoleFormBuidler;
 import view.View;
 import view.console.ui.IOConsole;
@@ -15,6 +14,7 @@ public class ConsoleView extends View {
     protected IOConsole console;
     protected Scanner scanner;
     protected ConsoleFormBuidler formBuidler;
+    private boolean running = false;
 
     public void onCreate() {
         this.console = new IOConsole();
@@ -27,7 +27,14 @@ public class ConsoleView extends View {
     }
 
     public void onDestroy() {
+        displayMessage("Bye!");
         this.presenter.disconnect();
+        running = false;
+    }
+
+    public void onLogOut() {
+        displayMessage("Logged out");
+        this.presenter.logOut();
     }
 
     private void runConsole() {
@@ -35,7 +42,8 @@ public class ConsoleView extends View {
 
         String[] userCommand = {"", ""};
 
-        while (true) {
+        this.running = true;
+        while (running) {
             console.printPromptSymbol();
 
             userCommand = (scanner.nextLine().trim() + " ").split(" ", 2);
@@ -45,11 +53,8 @@ public class ConsoleView extends View {
             List<?> args = List.of(userCommand[1]);
             if (args.size() == 1 && args.get(0).equals("")) args = List.of();
 
-            Status commandStatus = executeCommand(commandName, args, false);
-            if (commandStatus == Status.EXIT) break;
+            executeCommand(commandName, args, false);
         }
-
-        onDestroy();
     }
 
     public void displayError(String errorMessage) {

@@ -4,6 +4,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 import collection.CollectionManager;
+import common.command.CommandAttribute;
+import common.command.PublicityMarker;
 import common.models.Entity;
 import common.models.Route;
 import common.transfer.Status;
@@ -25,7 +27,8 @@ public class Add extends Command<EntityRequest> {
         super(new CommandAttribute(
             "add {element}", 
             "добавить новый элемент в коллекцию", 
-            EntityRequest.class
+            EntityRequest.class,
+            PublicityMarker.PRIVATE
             ));
         this.collectionManager = collectionManager;
         this.databaseService = databaseService;

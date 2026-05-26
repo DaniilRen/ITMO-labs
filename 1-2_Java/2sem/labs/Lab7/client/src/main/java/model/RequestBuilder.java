@@ -12,10 +12,9 @@ import common.transfer.request.standart.AuthRequest;
 import common.transfer.request.standart.CombinedRequest;
 import common.transfer.request.standart.EntityRequest;
 import common.transfer.request.standart.IdRequest;
-import common.transfer.request.standart.InitRequest;
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.request.standart.StringRequest;
-import model.script.ScriptProcessor;
+import model.local.script.ScriptProcessor;
 
 
 /**
@@ -71,8 +70,6 @@ public class RequestBuilder {
                 throw new IncorrectRequestException("Invalid request");
             }
             return new AuthRequest(name, result.getName(), result.getPassword());
-        } else if (requestType == InitRequest.class && args.size() == 0) {
-            return new InitRequest();
         }
         
         throw new IncorrectRequestException("Invalid request");

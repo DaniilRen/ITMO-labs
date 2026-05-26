@@ -6,6 +6,8 @@ import common.transfer.response.Response;
 import java.time.LocalDateTime;
 
 import collection.CollectionManager;
+import common.command.CommandAttribute;
+import common.command.PublicityMarker;
 import common.models.Entity;
 
 
@@ -22,7 +24,8 @@ public class Info extends Command<StandartRequest> {
         super(new CommandAttribute(
             "info",
             "вывести информацию о коллекции",
-            StandartRequest.class
+            StandartRequest.class,
+            PublicityMarker.PRIVATE
             ));
         this.collectionManager = collectionManager;
     }

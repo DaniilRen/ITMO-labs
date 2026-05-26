@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import collection.CollectionManager;
+import common.command.CommandAttribute;
+import common.command.PublicityMarker;
 import common.models.Entity;
 import common.models.Route;
 import common.transfer.request.standart.StandartRequest;
@@ -24,7 +26,8 @@ public class PrintFieldDescendingDistance extends Command<StandartRequest> {
         super(new CommandAttribute(
             "print_field_descending_distance",
             "вывести значения поля distance всех элементов в порядке убывания",
-            StandartRequest.class
+            StandartRequest.class,
+            PublicityMarker.PRIVATE
             ));
         this.collectionManager = collectionManager;
     }

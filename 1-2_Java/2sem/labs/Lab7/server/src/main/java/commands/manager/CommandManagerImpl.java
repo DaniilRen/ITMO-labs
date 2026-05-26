@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import commands.interfaces.Executable;
-import common.transfer.request.Request;
+import common.command.CommandAttribute;
 
 
 /**
@@ -29,10 +29,10 @@ public class CommandManagerImpl implements CommandManager {
         return commandHistory.subList(0, Math.min(number, commandHistory.size()));
     }
 
-    public Map<String, Class<? extends Request>> getCommandAttributes() {
-        Map<String, Class<? extends Request>> commandAttributes = new HashMap<>();
+    public Map<String, CommandAttribute> getCommandAttributes() {
+        Map<String, CommandAttribute> commandAttributes = new HashMap<>();
         commands.forEach((name, command) -> {
-            commandAttributes.put(name, command.getAttribute().getArgsType());
+            commandAttributes.put(name, command.getAttribute());
         });
         return commandAttributes;
     };

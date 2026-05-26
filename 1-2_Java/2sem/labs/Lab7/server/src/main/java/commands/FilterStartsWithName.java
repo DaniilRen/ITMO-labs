@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import collection.CollectionManager;
+import common.command.CommandAttribute;
+import common.command.PublicityMarker;
 import common.models.Entity;
 import common.models.Route;
 import common.transfer.request.standart.StringRequest;
@@ -22,7 +24,8 @@ public class FilterStartsWithName extends Command<StringRequest> {
         super(new CommandAttribute(
             "filter_starts_with_name <name>", 
             "вывести элементы, значение поля name которых начинается с заданной подстроки",
-            StringRequest.class
+            StringRequest.class,
+            PublicityMarker.PRIVATE
             ));
         this.collectionManager = collectionManager;
     }

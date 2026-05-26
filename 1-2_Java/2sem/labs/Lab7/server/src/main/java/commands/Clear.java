@@ -1,5 +1,7 @@
 package commands;
 
+import common.command.CommandAttribute;
+import common.command.PublicityMarker;
 import common.models.Entity;
 
 import java.util.List;
@@ -21,7 +23,8 @@ public class Clear extends Command<StandartRequest> {
         super(new CommandAttribute(
             "clear", 
             "очистить коллекцию", 
-            StandartRequest.class
+            StandartRequest.class,
+            PublicityMarker.PRIVATE
             ));
         this.collectionManager = collectionManager;
     }

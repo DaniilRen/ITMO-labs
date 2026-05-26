@@ -3,6 +3,8 @@ package commands;
 import java.util.List;
 
 import commands.manager.CommandManager;
+import common.command.CommandAttribute;
+import common.command.PublicityMarker;
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.response.Response;
 
@@ -20,7 +22,8 @@ public class Help extends Command<StandartRequest> {
     super(new CommandAttribute(
       "help", 
       "вывести справку по доступным командам",
-      StandartRequest.class
+      StandartRequest.class,
+      PublicityMarker.PRIVATE
       ));
     this.commandManager = commandManager;
   }

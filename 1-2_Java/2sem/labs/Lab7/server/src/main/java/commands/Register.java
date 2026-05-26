@@ -3,6 +3,8 @@ package commands;
 import java.util.List;
 
 import auth.AuthManager;
+import common.command.CommandAttribute;
+import common.command.PublicityMarker;
 import common.exceptions.AuthException;
 import common.transfer.Status;
 import common.transfer.request.standart.AuthRequest;
@@ -21,14 +23,15 @@ public class Register extends Command<AuthRequest> {
         super(new CommandAttribute(
             "register", 
             "зарегистрировать нового пользователя", 
-            AuthRequest.class
+            AuthRequest.class,
+            PublicityMarker.PUBLIC
             ));
         this.authManager = authManager;
     }
 
     public Response<?> execute(AuthRequest request) {
         try {
-            authManager.register(request.getUserName(), request.getPassword());
+            authManager.register(request.getCredetials());
             return new Response<>(List.of(request.getUserName(), request.getPassword()), Status.LOGIN);
         } catch (AuthException e) {
             return new Response<>(List.of(e.getMessage()), Status.ERROR);

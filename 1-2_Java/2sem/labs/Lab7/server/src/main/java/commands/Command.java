@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import commands.interfaces.Executable;
+import common.command.CommandAttribute;
 import common.transfer.request.Request;
 import common.transfer.response.Response;
 

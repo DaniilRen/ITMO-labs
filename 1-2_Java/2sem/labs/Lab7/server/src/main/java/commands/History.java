@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import commands.manager.CommandManager;
+import common.command.CommandAttribute;
+import common.command.PublicityMarker;
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.response.Response;
 
@@ -20,7 +22,8 @@ public class History extends Command<StandartRequest> {
         super(new CommandAttribute(
             "history", 
             "вывести последние 13 команд (без их аргументов)",
-            StandartRequest.class
+            StandartRequest.class,
+            PublicityMarker.PRIVATE
             ));
         this.commandManager = commandManager;
     }
