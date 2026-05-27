@@ -9,74 +9,76 @@ V6: WORD $default, 0X180
 V7: WORD $default, 0X180
 
 ORG 0x04F
-X: WORD ?
-
+X: WORD 0x6
 max: WORD 0x0014 		; 21, максимальное значение Х
 min: WORD 0xFFEC 		; -20, минимальное значение Х
-
-tmp: WORD 0x0
 
 default:    IRET 		; Обработка прерывания по умолчанию
 
 START:  DI
-
         CLA
-        OUT 0x1 	; Запрет прерываний для неиспользуемых ВУ
-        OUT 0x7
+        OUT 0x1 	; Запрет адресов векторов прерываний для неиспользуемых ВУ
+        OUT 0x3
         OUT 0xB
-        OUT 0xD
-        OUT 0x11
-        OUT 0x15
-        OUT 0x19
-        OUT 0x1D
+        OUT 0xE
+        OUT 0x12
+        OUT 0x16
+        OUT 0x1A
+        OUT 0x1E
 
-        LD #0xA  	; Загрузка в аккумулятор MR (1000|0010=1010)
-        OUT 5 		; Разрешение прерываний для 2 ВУ
-        LD #0xB  	; Загрузка в аккумулятор MR (1000|0011=1011)
-        OUT 7 		; Разрешение прерываний для 3 ВУ
+        LD #0xA  	; Загрузка MR в ВУ-2 (1000|0010=1010)
+        OUT 5
+        LD #0xB  	; Загрузка MR в ВУ-3 (1000|0011=1011)
+        OUT 7
 
         EI
-main:   DI 		   	; Запрет прерываний чтобы обеспечить атомарность операции
+
+MAIN:   DI 		; Запрет прерываний
         LD X
-        INC
-        INC
-        INC
-        CALL check
+        DEC
+        DEC
+        DEC
+        CALL SAVE
         ST X
         EI
-        JUMP main
+        HLT
+        JUMP MAIN
 
-int3:   DI			; Обработка прерывания на ВУ-3
+int3:   NOP
+        PUSH        ; сохраняем AC
         LD X
-        NOP
         ASL         ; -6X + 3
         ASL
         ADD X
         ADD X
         NEG
-        SUB #3
-        NOP
+        INC
+        INC
+        INC
         OUT 6
-        EI
+        NOP
+        POP          ; возвращаем AC
         IRET
-int2:   DI			; Обработка прерывания на ВУ-2
+
+int2:   NOP
+        PUSH        ; сохраняем AC
         IN 4
-        NOP
-        LD tmp      ; IN_4 * 3 - X
-        ASL
-        ADD tmp
+        SXTB        ; расширение знака
+        PUSH        ; сохранение число в стек для арифметики
+        ASL         ; IN_4 * 3 - X
+        ADD (SP+0) 
         SUB X
-        ST X
+        POP         ; убираем число из стека
+        CALL SAVE
         NOP
-        EI
+        POP          ; возвращаем AC
         IRET
 
 
-check:  					; Проверка принадлежности X к ОДЗ
-check_min:  CMP min 		; Если x > min переход на проверку верхней границы
-            BPL check_max   
-            JUMP ld_min 	; Иначе загрузка min в аккумулятор
-check_max:  CMP max 		; Проверка пересечения верхней границы X
-            BMI return  	; Если x < max переход
-ld_min:     LD min  		; Загрузка минимального значения в X 
-return:     RET  			; Метка возврата из проверки на ОДЗ  
+SAVE:   CMP max
+        BGE ldMax
+        CMP min
+        BGE storeX
+ldMax:  LD max
+storeX: ST X
+        RET

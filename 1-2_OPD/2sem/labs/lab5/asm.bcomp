@@ -1,5 +1,6 @@
 ORG 0x2D8
 res: WORD 0x63E
+tmp: WORD 0x00
 
 START: CLA
 S1:             ; младший символ
@@ -15,10 +16,11 @@ S2:             ; старший символ
     AND #0x40   ; проверка на ввод
     BEQ S2
     IN 6
+    ST tmp
     SWAB
     OR (res)
     ST (res)+   ; переход в следующую ячейку
-    AND #0x00   ; снова получаем старший байт для проверки
+    LD tmp
     CMP #0x0D   ; проверка на стоп-слово
     BEQ exit
     JUMP START
