@@ -1,3 +1,3 @@
-from .JNF_service import JNFService
+from .JNFSolver import JNFSolver
 
-__all__ = ['JNFService']
+__all__ = ['JNFSolver']

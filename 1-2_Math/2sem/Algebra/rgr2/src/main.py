@@ -1,16 +1,26 @@
-from JNF.JNF_service import JNFService
-from test.test import TestService
+from JNF.JNFSolver import JNFSolver
+from test.test_service import TestService
+from test.test_carrier import TestCarrier
+import numpy as np
 
 
 def main():
-    JNF_service = JNFService()
+    test_service = TestService()
 
-    test_service = TestService(JNF_service)
-    test_service.add_test(test_service.get_diagonal())
-    test_service.add_test(test_service.get_single_block())
-    test_service.add_test(test_service.get_2_blocks())
-    test_service.add_test(test_service.get_nilpotent())
-    test_service.add_test(test_service.get_mixed())
+    test_service.add_test(TestCarrier(np.array([[4, 1], [1, 4]]), "Диагонализуемая 2x2"))
+    test_service.add_test(TestCarrier(np.array([[2, 0, 0], [0, 3, 0], [0, 0, 5]]), "Диагональная 3x3"))
+    test_service.add_test(TestCarrier(np.array([[0, 1, 0], [0, 0, 1], [0, 0, 0]]), "Нильпотентная 3x3"))
+    test_service.add_test(TestCarrier(np.array([[3, 1], [0, 3]]), "Жорданова клетка 2x2"))
+    test_service.add_test(TestCarrier(np.array([[2, 1, 0], [0, 2, 0], [0, 0, 3]]), "Клетка 2x2 и 1x1"))
+    test_service.add_test(TestCarrier(np.array([[2, 1, 0, 0], [0, 2, 0, 0], [0, 0, 2, 0], [0, 0, 0, 2]]), "Клетка 2x2 + две 1x1"))
+    test_service.add_test(TestCarrier(np.array([[2, 1, 0, 0], [0, 2, 0, 0], [0, 0, 2, 1], [0, 0, 0, 2]]), "Две клетки 2x2"))
+    test_service.add_test(TestCarrier(np.eye(4), "Единичная 4x4"))
+    test_service.add_test(TestCarrier(np.array([[3, 1, 0, 0], [0, 3, 0, 0], [0, 0, 5, 1], [0, 0, 0, 5]]), "Две клетки 2x2 (λ=3 и λ=5)"))
+    test_service.add_test(TestCarrier(np.array([[1, 2, 3], [0, 4, 5], [0, 0, 6]]), "Верхнетреугольная"))
+    test_service.add_test(TestCarrier(np.array([[1, 1, 0, 0, 0], [0, 1, 1, 0, 0], [0, 0, 1, 0, 0], [0, 0, 0, 2, 1], [0, 0, 0, 0, 2]]), "Клетки 3x3 (λ=1) и 2x2 (λ=2)"))
+    test_service.add_test(TestCarrier(np.array([[1, 1, 0], [0, 1, 0], [0, 0, 1]]), "Клетка 2x2 и 1x1 (λ=1)"))
+    test_service.add_test(TestCarrier(np.array([[0, 1, 0, 0, 0, 0], [0, 0, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 2, 1, 0], [0, 0, 0, 0, 2, 0], [0, 0, 0, 0, 0, 3]]), "Клетки 3x3 (λ=0), 2x2 (λ=2), 1x1 (λ=3)"))
+
     
     test_service.run_tests()
     
