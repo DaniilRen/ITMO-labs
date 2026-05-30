@@ -6,68 +6,90 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.net.SocketException;
-import java.util.concurrent.RecursiveAction;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import network.MultiThreadNetwork;
 import logging.LoggingManager;
 
-public class ClientHandler extends RecursiveAction {
+public class ClientHandler {
     private final Socket clientSocket;
     private final LoggingManager logger;
     private final MultiThreadNetwork server;
+    private final ExecutorService commonPool;
+    private final ExecutorService processingPool;
+    private final ExecutorService sendingPool;
+    
     private ObjectInputStream ois;
     private ObjectOutputStream oos;
     private volatile boolean connected;
+    private CompletableFuture<Void> readLoop;
 
-    public ClientHandler(Socket clientSocket, LoggingManager logger, MultiThreadNetwork server) {
+    public ClientHandler(Socket clientSocket, 
+                         LoggingManager logger, 
+                         MultiThreadNetwork server,
+                         ExecutorService commonPool,
+                         ExecutorService processingPool) {
         this.clientSocket = clientSocket;
         this.logger = logger;
         this.server = server;
+        this.commonPool = commonPool;
+        this.processingPool = processingPool;
+        this.sendingPool = Executors.newCachedThreadPool();
         this.connected = true;
     }
 
-    public void init() throws IOException {
+    private void init() throws IOException {
         oos = new ObjectOutputStream(clientSocket.getOutputStream());
         oos.flush();
         ois = new ObjectInputStream(clientSocket.getInputStream());
     }
 
-    @Override
-    protected void compute() {
+    public void startLoop() {
+        readLoop = readAndProcess();
+    }
+    
+    private CompletableFuture<Void> readAndProcess() {
+        if (!connected) {
+            return CompletableFuture.completedFuture(null);
+        }
+        
+        return CompletableFuture
+            .supplyAsync(this::readObject, commonPool)
+            .thenCompose(this::handleResult)
+            .thenCompose(ignored -> readAndProcess());
+    }
+    
+    private CompletableFuture<Void> handleResult(Object received) {
+        if (received == null) {
+            return CompletableFuture.completedFuture(null);
+        }
+        
+        return CompletableFuture
+            .runAsync(() -> processMessage(received), processingPool);
+    }
+    
+    private Object readObject() {
         try {
-            init();
-            
-            while (connected && !Thread.currentThread().isInterrupted()) {
-                try {
-                    Object received = ois.readObject();
-                    
-                    if (received != null && server.getProcessingPool() != null) {
-                        server.getProcessingPool().submit(() -> {
-                            if (server.getMessageCallback() != null) {
-                                server.getMessageCallback().onMessageReceived(this, received);
-                            }
-                        });
-                    }
-                } catch (EOFException e) {
-                    logger.info("Client disconnected (EOF): " + clientSocket.getInetAddress());
-                    break;
-                } catch (SocketException e) {
-                    logger.info("Client disconnected: " + clientSocket.getInetAddress());
-                    break;
-                } catch (ClassNotFoundException e) {
-                    logger.error("Unknown object type from " + clientSocket.getInetAddress(), e);
-                } catch (IOException e) {
-                    logger.error("IO Error reading from " + clientSocket.getInetAddress() + ": " + e.getMessage());
-                    break;
-                }
+            if (ois == null) {
+                init();
             }
-        } catch (IOException e) {
-            if (connected) {
-                logger.error("Error in client handler: ", e);
-            }
-        } finally {
-            close();
-            server.removeClient(clientSocket);
+            return ois.readObject();
+        } catch (EOFException | SocketException e) {
+            logger.info("Client disconnected: " + clientSocket.getInetAddress());
+            connected = false;
+            return null;
+        } catch (IOException | ClassNotFoundException e) {
+            logger.error("Read error: " + e.getMessage());
+            connected = false;
+            return null;
+        }
+    }
+    
+    private void processMessage(Object received) {
+        if (server.getMessageCallback() != null) {
+            server.getMessageCallback().onMessageReceived(this, received);
         }
     }
 
@@ -76,22 +98,26 @@ public class ClientHandler extends RecursiveAction {
             throw new IOException("Not connected to client");
         }
         
-        Thread sendThread = new Thread(() -> {
+        CompletableFuture.runAsync(() -> {
             synchronized (oos) {
                 try {
                     oos.writeObject(object);
                     oos.flush();
                 } catch (IOException e) {
-                    logger.error("Failed to send response: " + e.getMessage());
+                    logger.error("Failed to send: " + e.getMessage());
                     connected = false;
                 }
             }
-        });
-        sendThread.start();
+        }, sendingPool);
     }
 
     public void close() {
         connected = false;
+        
+        if (readLoop != null) {
+            readLoop.cancel(true);
+        }
+        
         try {
             if (ois != null) ois.close();
             if (oos != null) oos.close();
@@ -99,8 +125,11 @@ public class ClientHandler extends RecursiveAction {
                 clientSocket.close();
             }
         } catch (IOException e) {
-            logger.error("Error closing client connection: ", e);
+            logger.error("Error closing: ", e);
         }
+        
+        sendingPool.shutdown();
+        server.removeClient(clientSocket);
     }
 
     public Socket getClientSocket() {

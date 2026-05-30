@@ -1,9 +1,9 @@
 package commands.manager;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 import commands.interfaces.Executable;
 import common.command.CommandAttribute;
@@ -14,7 +14,7 @@ import common.command.CommandAttribute;
  * @author Septyq
  */
 public class CommandManagerImpl implements CommandManager {
-    private final Map<String, Executable> commands = new HashMap<>();
+    private final Map<String, Executable> commands = new ConcurrentHashMap<>();
     private final List<String> commandHistory = new ArrayList<>();
 
     public void register(String commandName, Executable command) {
@@ -26,11 +26,13 @@ public class CommandManagerImpl implements CommandManager {
     }
 
     public List<String> getCommandHistory(int number) {
-        return commandHistory.subList(0, Math.min(number, commandHistory.size()));
+        synchronized (commandHistory) {
+            return new ArrayList<>(commandHistory.subList(0, Math.min(number, commandHistory.size())));
+        }
     }
 
     public Map<String, CommandAttribute> getCommandAttributes() {
-        Map<String, CommandAttribute> commandAttributes = new HashMap<>();
+        Map<String, CommandAttribute> commandAttributes = new ConcurrentHashMap<>();
         commands.forEach((name, command) -> {
             commandAttributes.put(name, command.getAttribute());
         });
@@ -38,6 +40,8 @@ public class CommandManagerImpl implements CommandManager {
     };
 
     public void addToHistory(String command) {
-        commandHistory.add(command);
+        synchronized(commandHistory) {
+            commandHistory.add(command);
+        }
     }
 }

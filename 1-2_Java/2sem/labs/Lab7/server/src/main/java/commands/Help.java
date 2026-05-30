@@ -33,6 +33,11 @@ public class Help extends Command<StandartRequest> {
     commandManager.getCommands().values().forEach(command -> {
       infoText.append(command.getAttribute().getName() + ": " + command.getAttribute().getDescription() + "\n\n");
     });
+    try {
+      Thread.sleep(3000);
+    } catch (Exception e) {
+      System.out.println(e.getMessage());
+    }
     return new Response<String>(List.of(infoText.toString()));
   }
 }

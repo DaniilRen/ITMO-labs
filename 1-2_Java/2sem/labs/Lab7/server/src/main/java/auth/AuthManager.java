@@ -1,5 +1,8 @@
 package auth;
 
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
 import common.exceptions.AuthException;
 import common.models.User;
 import database.service.DatabaseService;
@@ -13,6 +16,7 @@ public abstract class AuthManager {
     protected final LoggingManager logger;
     protected final DatabaseService databaseService;
     protected User credentials;
+    protected Lock credentialsLock = new ReentrantLock();
 
     public AuthManager(LoggingManager logger, DatabaseService databaseService) {
         this.logger = logger;
@@ -26,14 +30,20 @@ public abstract class AuthManager {
     public abstract String generatePasswordHash(String password);
 
     public void setCachedCredentials(User credentials) {
-        this.credentials = credentials;
+        synchronized(credentialsLock) {
+            this.credentials = credentials;
+        }
     }
 
     public User getCachedCredentials() {
-        return credentials;
+        synchronized(credentialsLock) {
+            return credentials;
+        }
     }
 
     public void dropCachedCredentials() {
-        this.credentials = null;
+        synchronized(credentialsLock) {
+            this.credentials = null;
+        }
     }
 }

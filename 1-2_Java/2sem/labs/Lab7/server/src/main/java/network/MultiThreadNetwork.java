@@ -4,27 +4,27 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ForkJoinPool;
 
 import common.network.Network;
 import network.callback.Callback;
 import network.handlers.ClientHandler;
 import logging.LoggingManager;
 
-/**
- * Сетевое взаимодействие сервера в режиме мультипоточности
- * @author Septyq
- */
+
 public class MultiThreadNetwork implements Network {
     private ServerSocket serverSocket;
     private final int port;
     private final LoggingManager logger;
     private volatile boolean isRunning;
-    private ForkJoinPool readingPool;
-    private ExecutorService processingPool;
+    
+    private final ExecutorService processingPool;
+
+    private final ExecutorService commonPool;
+    
     private final Map<Socket, ClientHandler> activeClients;
     private Callback messageCallback;
 
@@ -36,8 +36,11 @@ public class MultiThreadNetwork implements Network {
         this.port = port;
         this.logger = logger;
         this.activeClients = new ConcurrentHashMap<>();
-        this.readingPool = new ForkJoinPool();
+        
         this.processingPool = Executors.newFixedThreadPool(maxThreads);
+        
+        this.commonPool = Executors.newCachedThreadPool();
+        
         this.isRunning = false;
     }
 
@@ -49,10 +52,6 @@ public class MultiThreadNetwork implements Network {
         return messageCallback;
     }
 
-    public ExecutorService getProcessingPool() {
-        return processingPool;
-    }
-
     @Override
     public void connect() throws IOException {
         try {
@@ -61,19 +60,20 @@ public class MultiThreadNetwork implements Network {
             
             logger.info("started on port " + port);
             
-            Thread acceptorThread = new Thread(() -> {
+            CompletableFuture.runAsync(() -> {
                 while (isRunning) {
                     try {
                         Socket clientSocket = serverSocket.accept();
                         logger.info("Client connected: " + clientSocket.getInetAddress());
                         
-                        ClientHandler handler = new ClientHandler(clientSocket, logger, this);
+                        ClientHandler handler = new ClientHandler(clientSocket, logger, this, commonPool, processingPool);
                         activeClients.put(clientSocket, handler);
                         
                         if (messageCallback != null) {
                             messageCallback.onClientConnected(handler);
                         }
-                        readingPool.submit(handler);
+                        
+                        handler.startLoop();
                         
                     } catch (IOException e) {
                         if (isRunning) {
@@ -81,8 +81,7 @@ public class MultiThreadNetwork implements Network {
                         }
                     }
                 }
-            });
-            acceptorThread.start();
+            }, commonPool);
             
         } catch (IOException e) {
             logger.error("connection error: ", e);
@@ -113,8 +112,8 @@ public class MultiThreadNetwork implements Network {
             processingPool.shutdown();
         }
         
-        if (readingPool != null) {
-            readingPool.shutdown();
+        if (commonPool != null) {
+            commonPool.shutdown();
         }
         
         if (serverSocket != null && !serverSocket.isClosed()) {

@@ -39,6 +39,11 @@ public class Add extends Command<EntityRequest> {
         try {
             databaseService.saveRoute((Route) entity);
             collectionManager.addToCollection(entity);
+            try {
+                Thread.sleep(4000);   
+            } catch (Exception e) {
+                // TODO: handle exception
+            }
             return new Response<>(List.of("item added"));
         } catch (SQLException e) {
             System.out.println(e.getMessage());

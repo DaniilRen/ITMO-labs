@@ -78,7 +78,7 @@ public class RequestHandler {
         } catch (AuthException e) {
             return new Response<>(List.of(e.getMessage()), Status.ERROR);
         } finally {
-            authManager.dropCachedCredentials();
+            // authManager.dropCachedCredentials();
             collectionLock.unlock();
         }
     }

@@ -84,7 +84,7 @@ public class UserDataForm extends Form<User> {
         boolean asked = false;
         do {
             try {
-                console.print("Is admin? (y\n): ");
+                console.print("Is admin? (y, n): ");
                 String isAdminStr;
                 isAdminStr = console.getUserScanner().nextLine().trim();
                 if (fileMode) console.println(isAdminStr);
