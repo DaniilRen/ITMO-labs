@@ -1,0 +1,70 @@
+; works fine. Gets IP, SP and ACC correctly
+
+ORG 0x0
+V0: WORD $int0,    0X180
+V1: WORD $default, 0X180
+V2: WORD $default, 0X180
+V3: WORD $default, 0x180
+V4: WORD $default, 0X180
+V5: WORD $default, 0X180
+V6: WORD $default, 0X180
+V7: WORD $default, 0X180
+
+default:    IRET 		; Обработка прерывания по умолчанию
+
+ORG 0x100
+
+X: WORD 0x0
+Y: WORD 0x0
+I: WORD 0x0             ; IP
+S: WORD 0x0             ; PS
+ACC: WORD 0x0           ; ACCUMUL
+
+
+START:  DI
+        CLA
+        OUT 0x3 	; Запрет адресов векторов прерываний для неиспользуемых ВУ
+        OUT 0x5
+        OUT 0x7
+        OUT 0xB
+        OUT 0xE
+        OUT 0x12
+        OUT 0x16
+        OUT 0x1A
+        OUT 0x1E
+
+        LD #0x8  	; Загрузка MR в ВУ-0 (1000)
+        OUT 1
+        LD #0xA    ; тик 10*100мс = 1с
+        OUT 0
+        EI
+
+TASK0:  LD X
+        INC
+        ST X
+        JUMP TASK0
+
+
+int0:   DI
+        PUSH
+
+        POP
+        ST ACC
+        POP
+        ST S
+        POP
+        ST I
+        PUSH
+        LD S
+        PUSH
+
+        LD Y
+        INC
+        ST Y
+
+        LD ACC
+        HLT
+
+        
+        EI
+        IRET

@@ -1,0 +1,119 @@
+ORG 0x0
+V0: WORD $int0,    0X180
+V1: WORD $default, 0X180
+V2: WORD $default, 0X180
+V3: WORD $default, 0x180
+V4: WORD $default, 0X180
+V5: WORD $default, 0X180
+V6: WORD $default, 0X180
+V7: WORD $default, 0X180
+
+default:    IRET 		; Обработка прерывания по умолчанию
+
+
+ORG 0x100
+
+X: WORD 0x0
+Y: WORD 0x0
+
+TASK0_ACC: Word 0x0
+TASK1_ACC: Word 0x0
+TASK0_IP: Word 0x0
+TASK1_IP: Word 0x0
+TASK0_PS: Word 0x0
+TASK1_PS: Word 0x0
+CURRENT_TASK: Word 0x0
+TASK0_IP_BACKUP: Word 0x0
+TASK1_IP_BACKUP: Word 0x0
+INT_ADDR: Word 0x150
+
+
+START:  DI
+        CLA
+        OUT 0x3 	; Запрет адресов векторов прерываний для неиспользуемых ВУ
+        OUT 0x5
+        OUT 0x7
+        OUT 0xB
+        OUT 0xE
+        OUT 0x12
+        OUT 0x16
+        OUT 0x1A
+        OUT 0x1E
+
+        LD #0x8  	; Разрешение прерывания для  ВУ-0
+        OUT 1
+        LD #0x16        ; тик переключателя 0xA*100мс = 1с
+        OUT 0
+        EI
+
+ORG 0x120
+TASK0:  LD X
+        INC
+        ST X
+        JUMP TASK0
+
+ORG 0x140
+TASK1:  LD Y
+        INC
+        ST Y
+        JUMP TASK1
+
+ORG 0x150
+int0:   DI
+
+        PUSH
+        LD CURRENT_TASK
+        CMP #0x0
+        BEQ SWITCH_TO_1
+        JUMP SWITCH_TO_0
+
+        SWITCH_TO_1:    LD #0x1         
+                        ST CURRENT_TASK
+
+                        POP
+                        ST TASK0_ACC    ; сохраняем контекс 0 задачи
+                        POP             
+                        ST TASK0_PS
+                        POP
+                        ST TASK0_IP
+
+                        LD TASK1_IP     ; загружаем контекс 1 задачи
+                        CMP INT_ADDR
+                        BNE VALID_1
+                        LD TASK1_IP_BACKUP
+                        ST TASK1_IP
+
+                        VALID_1:  PUSH
+                                LD TASK1_PS
+                                PUSH
+                                LD TASK1_ACC
+
+                                NOP
+                                JUMP EXIT
+
+        SWITCH_TO_0:    LD #0x0         
+                        ST CURRENT_TASK
+
+                        POP
+                        ST TASK1_ACC    ; сохраняем контекс 1 задачи
+                        POP             
+                        ST TASK1_PS
+                        POP
+                        ST TASK1_IP
+
+                        LD TASK0_IP     ; загружаем контекс 0 задачи
+                        CMP INT_ADDR
+                        BNE VALID_0
+                        LD TASK0_IP_BACKUP
+                        ST TASK0_IP
+
+                        VALID_0:  PUSH
+                                LD TASK0_PS
+                                PUSH
+                                LD TASK0_ACC
+                        HLT
+                        JUMP EXIT
+
+        EXIT:   EI
+                NOP
+                IRET

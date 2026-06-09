@@ -41,10 +41,11 @@ MAIN:   DI 		; Запрет прерываний
         CALL SAVE
         ST X
         EI
-        HLT
+        NOP
         JUMP MAIN
 
 int3:   NOP
+        DI
         PUSH        ; сохраняем AC
         LD X
         ASL         ; -6X + 3
@@ -58,9 +59,11 @@ int3:   NOP
         OUT 6
         NOP
         POP          ; возвращаем AC
+        EI
         IRET
 
 int2:   NOP
+        DI
         PUSH        ; сохраняем AC
         IN 4
         SXTB        ; расширение знака
@@ -72,6 +75,7 @@ int2:   NOP
         CALL SAVE
         NOP
         POP          ; возвращаем AC
+        EI
         IRET
 
 
