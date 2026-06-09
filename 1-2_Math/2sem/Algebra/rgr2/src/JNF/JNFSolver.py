@@ -185,6 +185,8 @@ class JNFSolver:
     
     def compute(self) -> Tuple[np.ndarray, np.ndarray]:
         eigenvals_raw = self.eigenvalues()
+
+        print(f"Необработанные cобственные значения: {eigenvals_raw}")
         
         eigenvals = []
         for lam in set(eigenvals_raw):
@@ -193,12 +195,14 @@ class JNFSolver:
                     lam = int(round(lam))
             m = self.multiplicity(lam)
             eigenvals.extend([lam] * m)
-        
+
         vectors = []
         J = np.zeros((self.n, self.n))
         col = 0
         
         unique_vals = sorted(set(eigenvals), key=lambda x: (x if isinstance(x, (int, float)) else 0), reverse=True)
+
+        print(f"Собственные значения: {unique_vals}")
         
         for lam in unique_vals:
             blocks = self.jordan_blocks(lam)
