@@ -19,6 +19,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -34,6 +35,7 @@ import view.gui.dialogs.RouteFormDialog;
 
 public class HomeController {
     @FXML private Label userLabel;
+    @FXML private Label sortLabel;
     @FXML private Label serverStatusLabel;
     @FXML private Label syncStatusLabel;
     @FXML private TableView<Entity> tableView;
@@ -77,6 +79,7 @@ public class HomeController {
             userLabel.setText(i18n.format("main.user", presenter.getCurrentUser().getName()));
         }
         filterButton.setText(i18n.get("main.filter"));
+        updateSortStatusLabel();
         historyButton.setText(i18n.get("main.history"));
         helpButton.setText(i18n.get("main.help"));
         infoButton.setText(i18n.get("main.info"));
@@ -110,19 +113,20 @@ public class HomeController {
         }
         tableView.setItems(mainView.getCollectionStore().getItems());
         tableView.setPlaceholder(new Label(I18nManager.get().get("table.empty")));
-        tableView.getSortOrder().addListener((javafx.collections.ListChangeListener<TableColumn<Entity, ?>>) change -> applySortFromTable());
+        tableView.setSortPolicy(table -> false);
         tableView.getColumns().add(createActionsColumn());
-        tableView.getColumns().add(createColumn("table.id", "id", true));
-        tableView.getColumns().add(createColumn("table.coord.x", "x", true));
-        tableView.getColumns().add(createColumn("table.coord.y", "y", true));
-        tableView.getColumns().add(createColumn("table.name", "name", true));
-        tableView.getColumns().add(createColumn("table.distance", "distance", true));
-        tableView.getColumns().add(createColumn("table.author", "author", true));
+        tableView.getColumns().add(createColumn("table.id", "id"));
+        tableView.getColumns().add(createColumn("table.coord.x", "x"));
+        tableView.getColumns().add(createColumn("table.coord.y", "y"));
+        tableView.getColumns().add(createColumn("table.name", "name"));
+        tableView.getColumns().add(createColumn("table.distance", "distance"));
+        tableView.getColumns().add(createColumn("table.author", "author"));
         tableView.getColumns().add(createDateColumn());
         tableView.getColumns().add(createObjectColumn("table.from", "from"));
         tableView.getColumns().add(createObjectColumn("table.to", "to"));
         tableInitialized = true;
         refreshColumnTitles();
+        updateSortStatusLabel();
     }
 
     public void applyCollection() {
@@ -130,6 +134,8 @@ public class HomeController {
         List<Entity> filtered = EntityFilter.apply(master, activeFilters);
         List<Entity> sorted = EntityFilter.sort(filtered, sortField, sortAscending);
         mainView.getCollectionStore().applyFiltered(sorted);
+        refreshColumnTitles();
+        updateSortStatusLabel();
         bindTexts();
     }
 
@@ -259,6 +265,8 @@ public class HomeController {
     private TableColumn<Entity, Void> createActionsColumn() {
         TableColumn<Entity, Void> actionCol = new TableColumn<>();
         actionCol.setPrefWidth(120);
+        actionCol.setSortable(false);
+        actionCol.setUserData("table.actions");
         actionCol.setCellFactory(
                 col ->
                         new TableCell<>() {
@@ -305,30 +313,42 @@ public class HomeController {
         return ClientAccess.canModify(route, presenter.getCurrentUser());
     }
 
-    private TableColumn<Entity, String> createColumn(String titleKey, String field, boolean sortable) {
+    private TableColumn<Entity, String> createColumn(String titleKey, String field) {
         TableColumn<Entity, String> column = new TableColumn<>();
         column.setPrefWidth(90);
         column.setCellValueFactory(
                 data -> new SimpleStringProperty(extractField((Route) data.getValue(), field)));
-        if (sortable) {
-            column.setComparator((a, b) -> 0);
-            column.getProperties().put("sortField", field);
-        }
+        configureSortableColumn(column, field);
         column.setUserData(titleKey);
         return column;
     }
 
-    private void applySortFromTable() {
-        if (tableView.getSortOrder().isEmpty()) {
+    private void configureSortableColumn(TableColumn<Entity, ?> column, String field) {
+        column.getProperties().put("sortField", field);
+        column.setSortable(false);
+        Label headerLabel = new Label();
+        headerLabel.getStyleClass().add("sortable-header-label");
+        headerLabel.setMaxWidth(Double.MAX_VALUE);
+        headerLabel.setOnMouseClicked(e -> handleColumnHeaderSort(column));
+        StackPane headerPane = new StackPane(headerLabel);
+        headerPane.getStyleClass().add("sortable-column-header");
+        column.setGraphic(headerPane);
+        column.setText("");
+        column.getProperties().put("headerLabel", headerLabel);
+    }
+
+    private void handleColumnHeaderSort(TableColumn<Entity, ?> column) {
+        Object field = column.getProperties().get("sortField");
+        if (!(field instanceof String sortKey)) {
             return;
         }
-        TableColumn<?, ?> column = tableView.getSortOrder().get(0);
-        Object field = column.getProperties().get("sortField");
-        if (field instanceof String sortKey) {
+        if (sortKey.equals(sortField)) {
+            sortAscending = !sortAscending;
+        } else {
             sortField = sortKey;
-            sortAscending = column.getSortType() == TableColumn.SortType.ASCENDING;
-            applyCollection();
+            sortAscending = true;
         }
+        applyCollection();
     }
 
     private TableColumn<Entity, String> createDateColumn() {
@@ -343,6 +363,7 @@ public class HomeController {
                     return new SimpleStringProperty(
                             I18nManager.get().dateTimeFormatter().format(route.getCreationDate()));
                 });
+        configureSortableColumn(column, "creationDate");
         column.setUserData("table.date");
         return column;
     }
@@ -357,17 +378,71 @@ public class HomeController {
                             "from".equals(field) ? route.getLocationFrom() : route.getLocationTo();
                     return new SimpleStringProperty(value == null ? "" : value.toString());
                 });
+        configureSortableColumn(column, field);
         column.setUserData(titleKey);
         return column;
     }
 
     private void refreshColumnTitles() {
-        I18nManager i18n = I18nManager.get();
-        for (TableColumn<?, ?> column : tableView.getColumns()) {
-            if (column.getUserData() instanceof String key) {
-                column.setText(i18n.get(key));
-            }
+        if (!tableInitialized) {
+            return;
         }
+        I18nManager i18n = I18nManager.get();
+        String arrow =
+                sortAscending ? i18n.get("table.sort.asc") : i18n.get("table.sort.desc");
+        for (TableColumn<?, ?> column : tableView.getColumns()) {
+            if (!(column.getUserData() instanceof String key)) {
+                continue;
+            }
+            String title = i18n.get(key);
+            Object field = column.getProperties().get("sortField");
+            boolean sorted = field instanceof String sortKey && sortKey.equals(sortField);
+            if (sorted) {
+                title = title + " " + arrow;
+            }
+            Object headerLabelObj = column.getProperties().get("headerLabel");
+            if (headerLabelObj instanceof Label headerLabel) {
+                headerLabel.setText(title);
+                if (sorted) {
+                    if (!headerLabel.getStyleClass().contains("sorted-header-label")) {
+                        headerLabel.getStyleClass().add("sorted-header-label");
+                    }
+                } else {
+                    headerLabel.getStyleClass().remove("sorted-header-label");
+                }
+                continue;
+            }
+            column.setText(title);
+        }
+    }
+
+    private void updateSortStatusLabel() {
+        if (sortLabel == null) {
+            return;
+        }
+        I18nManager i18n = I18nManager.get();
+        sortLabel.setText(i18n.get("table.sort.hint"));
+        sortLabel.setTooltip(
+                new javafx.scene.control.Tooltip(
+                        i18n.format(
+                                "table.sort.current",
+                                i18n.get(sortFieldTitleKey(sortField)),
+                                sortAscending ? i18n.get("table.sort.asc") : i18n.get("table.sort.desc"))));
+    }
+
+    private String sortFieldTitleKey(String field) {
+        return switch (field) {
+            case "id" -> "table.id";
+            case "x" -> "table.coord.x";
+            case "y" -> "table.coord.y";
+            case "name" -> "table.name";
+            case "distance" -> "table.distance";
+            case "author" -> "table.author";
+            case "creationDate" -> "table.date";
+            case "from" -> "table.from";
+            case "to" -> "table.to";
+            default -> "table.id";
+        };
     }
 
     private String extractField(Route route, String field) {

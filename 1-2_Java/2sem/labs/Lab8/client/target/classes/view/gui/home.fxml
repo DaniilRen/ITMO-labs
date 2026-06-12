@@ -23,6 +23,7 @@
             </padding>
             <Label fx:id="userLabel" styleClass="user-label"/>
             <Button fx:id="filterButton" styleClass="primary-button" onAction="#handleFilter"/>
+            <Label fx:id="sortLabel" styleClass="sort-label"/>
             <Pane HBox.hgrow="ALWAYS"/>
             <Button fx:id="historyButton" styleClass="primary-button" onAction="#handleHistory"/>
             <Button fx:id="helpButton" styleClass="primary-button" onAction="#handleHelp"/>

@@ -1,5 +1,6 @@
 package util.filter;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -79,8 +80,10 @@ public final class EntityFilter {
       case "y" -> route.getCoordinates() != null ? route.getCoordinates().getY() : null;
       case "distance" -> route.getDistance();
       case "author" -> route.getAuthor();
-      case "creationDate" ->
-          route.getCreationDate() != null ? route.getCreationDate().toString() : null;
+      case "creationDate" -> route.getCreationDate();
+      case "from" ->
+          route.getLocationFrom() != null ? route.getLocationFrom().getName() : null;
+      case "to" -> route.getLocationTo() != null ? route.getLocationTo().getName() : null;
       default -> null;
     };
   }
@@ -117,6 +120,9 @@ public final class EntityFilter {
     }
     if (sample instanceof Double) {
       return Double.parseDouble(rawValue);
+    }
+    if (sample instanceof LocalDateTime) {
+      return LocalDateTime.parse(rawValue);
     }
     return rawValue;
   }

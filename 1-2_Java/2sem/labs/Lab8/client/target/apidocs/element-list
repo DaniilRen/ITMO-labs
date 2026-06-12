@@ -12,6 +12,7 @@ util.filter
 util.forms
 util.forms.buidler
 util.i18n
+util.script
 view
 view.console
 view.console.ui

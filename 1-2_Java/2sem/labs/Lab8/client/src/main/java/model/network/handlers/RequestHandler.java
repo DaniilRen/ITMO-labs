@@ -47,7 +47,7 @@ public class RequestHandler {
             return new Response<>(List.of(e.getMessage()), Status.ERROR);
         } catch (InvalidScriptException e) {
             scriptProcessor.stopScript();
-            return new Response<>(List.of(e.getMessage()));
+            return new Response<>(List.of(e.getMessage()), Status.ERROR);
         }
     }
 

@@ -39,4 +39,6 @@ public interface View {
     default void onConnectionStatusChanged(boolean connected) {}
 
     default void refreshCollectionView() {}
+
+    default void setScriptQuietMode(boolean quiet) {}
 }

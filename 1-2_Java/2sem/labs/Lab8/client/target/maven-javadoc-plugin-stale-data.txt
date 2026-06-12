@@ -40,6 +40,7 @@ util.filter
 util.forms.buidler
 util.forms
 util.i18n
+util.script
 view.console
 view.console.ui
 view.gui.controllers
@@ -48,7 +49,7 @@ view.gui
 view.gui.notification
 view
 'D:/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/src/main/java/Main.java'
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\common\target\common-1.0-SNAPSHOT.jar = 1781304727162
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\common\target\common-1.0-SNAPSHOT.jar = 1781305886040
 C:\Users\Tayzeront\.m2\repository\org\openjfx\javafx-controls\21\javafx-controls-21.jar = 1781299030289
 C:\Users\Tayzeront\.m2\repository\org\openjfx\javafx-fxml\21\javafx-fxml-21.jar = 1781299030360
 C:\Users\Tayzeront\.m2\repository\org\openjfx\javafx-graphics\21\javafx-graphics-21.jar = 1781299030250
@@ -59,22 +60,22 @@ C:\Users\Tayzeront\.m2\repository\org\openjfx\javafx-graphics\21\javafx-graphics
 C:\Users\Tayzeront\.m2\repository\org\openjfx\javafx-base\21\javafx-base-21-win.jar = 1781299030714
 D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\src\main\java\Main.java = 1781298770854
 D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\src\main\java = 1781298770870
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\generated-sources\annotations = 1781304733388
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\allclasses-index.html = 1781304736237
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\allpackages-index.html = 1781304736239
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\element-list = 1781304735834
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\help-doc.html = 1781304736277
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\index-all.html = 1781304736270
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\index.html = 1781304736216
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\Main.html = 1781304735723
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\member-search-index.js = 1781304736244
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\module-search-index.js = 1781304736241
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\overview-summary.html = 1781304736274
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\overview-tree.html = 1781304736211
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\package-search-index.js = 1781304736242
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\package-summary.html = 1781304735840
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\package-tree.html = 1781304735844
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\package-use.html = 1781304736148
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\search.html = 1781304736272
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\tag-search-index.js = 1781304736245
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\type-search-index.js = 1781304736243
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\generated-sources\annotations = 1781305892233
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\allclasses-index.html = 1781305895019
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\allpackages-index.html = 1781305895021
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\element-list = 1781305894640
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\help-doc.html = 1781305895052
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\index-all.html = 1781305895046
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\index.html = 1781305894997
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\Main.html = 1781305894540
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\member-search-index.js = 1781305895025
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\module-search-index.js = 1781305895022
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\overview-summary.html = 1781305895049
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\overview-tree.html = 1781305894994
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\package-search-index.js = 1781305895023
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\package-summary.html = 1781305894645
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\package-tree.html = 1781305894648
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\package-use.html = 1781305894946
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\search.html = 1781305895048
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\tag-search-index.js = 1781305895026
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\type-search-index.js = 1781305895024

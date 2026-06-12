@@ -34,7 +34,7 @@ public class CommandHandler {
 
     public CommandHandler(View view, AuthHandler authHandler, AbstractClientNetwork network) {
         this.view = view;
-        this.scriptProcessor = new ScriptProcessor(view);
+        this.scriptProcessor = new ScriptProcessor(view, this::handleCommandWithStatus);
         this.authHandler = authHandler;
         
         this.localCommandHandler = new LocalCommandHandler(view, scriptProcessor);
@@ -50,8 +50,7 @@ public class CommandHandler {
 
     public Status handleCommandWithStatus(String commandName, List<?> args, boolean fileMode) {
         if (localCommandHandler.isLocalCommand(commandName)) {
-            localCommandHandler.handleLocalCommand(commandName, args);
-            return Status.OK;
+            return localCommandHandler.handleLocalCommand(commandName, args);
         }
 
         if (!(validateCommandName(commandName)) || !(validateCommandPublicity(commandName))) {

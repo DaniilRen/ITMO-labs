@@ -222,10 +222,44 @@
 
 .table-view .column-header {
     -fx-background-color: #1a1d23;
+    -fx-cursor: default;
+}
+
+.table-view .column-header.sortable-column-header {
+    -fx-cursor: hand;
+}
+
+.table-view .column-header .sortable-header-label {
+    -fx-text-fill: #f2f4f8;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.table-view .column-header .sortable-header-label:hover {
+    -fx-text-fill: #ffd43b;
+}
+
+.table-view .column-header .sortable-header-label.sorted-header-label {
+    -fx-text-fill: #ffd43b;
 }
 
 .table-view .column-header .label {
     -fx-text-fill: #f2f4f8;
+    -fx-font-weight: bold;
+}
+
+.table-view .column-header.sorted-column .label {
+    -fx-text-fill: #ffd43b;
+}
+
+.table-view .column-header .arrow {
+    -fx-background-color: #ffd43b;
+}
+
+.sort-label {
+    -fx-text-fill: #9aa5b5;
+    -fx-font-size: 12px;
+    -fx-padding: 0 0 0 8;
 }
 
 .table-view .table-row-cell {
