@@ -42,13 +42,38 @@
 }
 
 .dialog-root .text-field,
-.dialog-root .password-field {
+.dialog-root .password-field,
+.dialog-root .combo-box {
     -fx-background-color: #2f3848;
     -fx-text-fill: #f8fafc;
     -fx-prompt-text-fill: #a8b4c4;
     -fx-border-color: #6b7689;
     -fx-border-radius: 4;
     -fx-background-radius: 4;
+}
+
+.dialog-root .combo-box .list-cell {
+    -fx-text-fill: #f8fafc;
+    -fx-background-color: #2f3848;
+}
+
+.dialog-root .combo-box .arrow-button .arrow {
+    -fx-background-color: #f8fafc;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #2f3848;
+    -fx-border-color: #6b7689;
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-text-fill: #f8fafc;
+    -fx-background-color: #2f3848;
+}
+
+.combo-box-popup .list-view .list-cell:filled:hover,
+.combo-box-popup .list-view .list-cell:filled:selected {
+    -fx-background-color: #3d4a60;
 }
 
 .dialog-root .check-box {
