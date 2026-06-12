@@ -1,0 +1,87 @@
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.auth-container, .register-container, .home-container, .vis-container {
+    -fx-background-color: linear-gradient(to bottom, #2c3e50, #1a2632);
+}
+
+.title-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.field-label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ecf0f1;
+}
+
+.text-field, .password-field {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #7f8c8d;
+    -fx-background-radius: 5;
+    -fx-padding: 8;
+}
+
+.button {
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+.primary-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.primary-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.secondary-button {
+    -fx-background-color: #2ecc71;
+    -fx-text-fill: white;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #27ae60;
+}
+
+.danger-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+}
+
+.danger-button:hover {
+    -fx-background-color: #c0392b;
+}
+
+.error-label {
+    -fx-text-fill: #e74c3c;
+    -fx-font-size: 12px;
+}
+
+.table-view {
+    -fx-background-color: #34495e;
+}
+
+.table-view .column-header {
+    -fx-background-color: #2c3e50;
+}
+
+.table-row-cell {
+    -fx-text-fill: white;
+}
+
+.top-bar {
+    -fx-background-color: #1a2632;
+    -fx-padding: 10;
+}
+
+.user-label {
+    -fx-text-fill: #3498db;
+    -fx-font-weight: bold;
+}

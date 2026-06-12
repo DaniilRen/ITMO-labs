@@ -1,0 +1,53 @@
+import java.io.IOException;
+import commands.*;
+import network.MultiThreadNetwork;
+import network.callback.CommonCallback;
+import common.exceptions.RuntimeInitException;
+
+/**
+ * Мультипоточный сервер
+ * @author Septyq
+ */
+public class MultiThreadServer extends Server {
+    private final MultiThreadNetwork networkManager;
+
+    public MultiThreadServer(int port) throws RuntimeInitException {
+        super(port);
+        this.networkManager = new MultiThreadNetwork(port, logger, 50);
+        this.networkManager.setMessageCallback(new CommonCallback(requestHandler, logger));
+    }
+
+    public void run() {
+        try {
+            networkManager.connect();
+            boolean running = true;
+            while (running) {
+                Thread.sleep(1000);
+            }
+        } catch (IOException e) {
+            logger.error("Server failed to start: ", e);
+        } catch (InterruptedException e) {
+            logger.info("Server stopped");
+            Thread.currentThread().interrupt();
+        }
+    }
+
+    protected void registerCommands() {
+        commandManager.register("help", new Help(commandManager));
+        commandManager.register("info", new Info(collectionManager));
+        commandManager.register("show", new Show(collectionManager));
+        commandManager.register("add", new Add(databaseService, collectionManager));
+        commandManager.register("update", new Update(databaseService, collectionManager, authManager));
+        commandManager.register("remove_by_id", new RemoveById(collectionManager, authManager));
+        commandManager.register("clear", new Clear(collectionManager));
+        commandManager.register("remove_lower", new RemoveLower(collectionManager, authManager));
+        commandManager.register("sort", new Sort(collectionManager));
+        commandManager.register("history", new History(commandManager));
+        commandManager.register("filter_starts_with_name", new FilterStartsWithName(collectionManager));
+        commandManager.register("print_unique_distance", new PrintUniqueDistances(collectionManager));
+        commandManager.register("print_field_descending_distance", new PrintFieldDescendingDistance(collectionManager));
+        commandManager.register("register", new Register(authManager, databaseService));
+        commandManager.register("login", new Authenticate(authManager, databaseService));
+        commandManager.register("init", new Init(commandManager));
+    }
+}

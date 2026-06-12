@@ -1,0 +1,35 @@
+package util.database.api;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import common.exceptions.AuthException;
+import common.models.Coordinates;
+import common.models.LocationFrom;
+import common.models.LocationTo;
+import common.models.Route;
+
+/**
+ * Определяет доступные взаимодействия с базой данных
+ * @author Septyq
+ */
+public abstract class DatabaseApi{
+    abstract public Connection getConnection(String url, String user, String password) throws SQLException;
+
+    abstract public PreparedStatement prepareQuery(Connection conncetion, String queryMessage) throws SQLException;
+
+    abstract public boolean register(Connection connection, String user, String password) throws AuthException;
+    
+    abstract public boolean authenticate(Connection connection, String user, String password) throws AuthException;
+
+    abstract public int getUpdatedLocationFromId(Connection connection, LocationFrom location) throws SQLException;
+
+    abstract public int getUpdatedLocationToId(Connection connection, LocationTo location) throws SQLException;
+
+    abstract public int getUpdatedCoordinatesId(Connection connection, Coordinates coords) throws SQLException;
+
+    abstract public int insertRoute(Connection connection, Route route) throws SQLException;
+
+    abstract public int updateRoute(Connection connection, Route route, int id) throws SQLException;
+}

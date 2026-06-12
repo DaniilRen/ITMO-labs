@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="view.gui.HomeController"
+            styleClass="home-container"
+            prefWidth="900"
+            prefHeight="600">
+
+    <stylesheets>
+        <URL value="@/css/style.css"/>
+    </stylesheets>
+
+    <top>
+        <VBox styleClass="top-bar" spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label fx:id="userLabel" styleClass="user-label"/>
+            <HBox spacing="10">
+                <Button text="История" onAction="#handleHistory" styleClass="primary-button"/>
+                <Button text="Помощь" onAction="#handleHelp" styleClass="primary-button"/>
+                <Button text="Информация" onAction="#handleInfo" styleClass="primary-button"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
+            <placeholder>
+                <Label text="No data available"/>
+            </placeholder>
+        </TableView>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER" styleClass="top-bar">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="Добавить пользователя" onAction="#handleAddUser" styleClass="secondary-button"/>
+            <Button text="Добавить элемент" onAction="#handleAddElement" styleClass="secondary-button"/>
+            <Button text="Исполнить файл" onAction="#handleExecuteFile" styleClass="primary-button"/>
+            <Button text="Визуализация" onAction="#handleVisualisation" styleClass="primary-button"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,90 @@
+package network.handlers;
+
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.locks.ReentrantLock;
+
+import auth.AuthManager;
+import commands.Command;
+import commands.interfaces.Executable;
+import commands.manager.CommandManager;
+import common.command.PublicityMarker;
+import common.exceptions.AuthException;
+import common.models.User;
+import common.transfer.Status;
+import common.transfer.request.Request;
+import common.transfer.request.standart.NextChunkRequest;
+import common.transfer.request.standart.StandartRequest;
+import common.transfer.request.wrapped.AuthenticatedRequest;
+import common.transfer.request.wrapped.HeaderRequest;
+import common.transfer.response.Response;
+
+public class RequestHandler {
+    protected final CommandManager commandManager;
+    protected final AuthManager authManager;
+    private final ReentrantLock collectionLock;
+
+    public RequestHandler(CommandManager commandManager, AuthManager authManager) {
+        this.commandManager = commandManager;
+        this.authManager = authManager;
+        this.collectionLock = new ReentrantLock();
+    }
+
+    public Response<?> handleRequest(Request request) {
+        if (!(request instanceof HeaderRequest)) {
+            return new Response<>(List.of("request has no required headers. Possibly you need to login"), Status.ERROR);
+        }
+        if (request instanceof AuthenticatedRequest) {
+            AuthenticatedRequest authenticatedRequest = (AuthenticatedRequest) request;
+            return handleAuthenticatedRequest(authenticatedRequest);
+        } 
+        return new Response<>(List.of("Unknown request headers"), Status.ERROR);
+    }
+
+    private Response<?> handleAuthenticatedRequest(AuthenticatedRequest authenticatedRequest) {
+        Request originalRequest = authenticatedRequest.unwrap();
+        authManager.setCachedCredentials(authenticatedRequest.getHeaders());
+        if (originalRequest instanceof NextChunkRequest) {
+            return ChunkHandler.handleNextChunk((NextChunkRequest) originalRequest);
+        } else if (originalRequest instanceof StandartRequest) {
+            StandartRequest request = (StandartRequest) originalRequest;
+            // System.out.println(String.format("Getting redentials: name=%s, passw=%s",  authManager.getCachedCredentials().getName(), authManager.getCachedCredentials().getPassword()));
+            return executeCommand(request, authenticatedRequest.getHeaders());
+        }
+        return new Response<>(List.of("Unknowm request class"), Status.ERROR);
+    }
+
+    private Response<?> executeCommand(StandartRequest request, User userData) {
+        String commandName = request.getName();
+        if (!validateCommandName(commandName)) {
+            return new Response<>(List.of("Unknown command"), Status.ERROR);
+        }
+
+        Executable command = commandManager.getCommands().get(commandName);
+        commandManager.addToHistory(command.getAttribute().getName());
+        
+        @SuppressWarnings("unchecked")
+        Command<StandartRequest> typedCommand = (Command<StandartRequest>) command;
+        
+        collectionLock.lock();
+        try {
+            if (typedCommand.getAttribute().getPublicity().equals(PublicityMarker.PRIVATE)) {
+                authManager.authenticate(authManager.getCachedCredentials());
+            }
+
+            Response<?> response = typedCommand.execute(request);
+            if (ChunkHandler.shouldChunkify(response)) return ChunkHandler.chunkify(response);
+            return response;
+        } catch (AuthException e) {
+            return new Response<>(List.of(e.getMessage()), Status.ERROR);
+        } finally {
+            // authManager.dropCachedCredentials();
+            collectionLock.unlock();
+        }
+    }
+
+    private boolean validateCommandName(String command) {
+        Set<String> commandsNames = commandManager.getCommands().keySet();
+        return commandsNames.contains(command);
+    }
+}
