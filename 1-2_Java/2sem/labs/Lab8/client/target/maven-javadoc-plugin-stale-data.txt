@@ -4,21 +4,21 @@
 @packages
 @argfile
 -classpath
-'/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/common/target/common-1.0-SNAPSHOT.jar:/home/danb/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21.jar:/home/danb/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21-linux.jar:/home/danb/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21.jar:/home/danb/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21-linux.jar:/home/danb/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21.jar:/home/danb/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21-linux.jar:/home/danb/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21.jar:/home/danb/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21-linux.jar'
+'D:/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/common/target/common-1.0-SNAPSHOT.jar;C:/Users/Tayzeront/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21.jar;C:/Users/Tayzeront/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21.jar;C:/Users/Tayzeront/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21.jar;C:/Users/Tayzeront/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21.jar;C:/Users/Tayzeront/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21-win.jar;C:/Users/Tayzeront/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21-win.jar;C:/Users/Tayzeront/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21-win.jar;C:/Users/Tayzeront/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21-win.jar'
 -encoding
 'UTF-8'
 -protected
 -source
 '17'
 -sourcepath
-'/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/src/main/java:/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/generated-sources/annotations'
+'D:/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/src/main/java;D:/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/generated-sources/annotations'
 -author
 -bottom
 'Copyright &#169; 2026. All rights reserved.'
 -charset
 'UTF-8'
 -d
-'/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs'
+'D:/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs'
 -docencoding
 'UTF-8'
 -doctitle
@@ -27,54 +27,54 @@
 -version
 -windowtitle
 'client 1.0-SNAPSHOT API'
-util.forms
-util.forms.buidler
+model.local
+model.local.localActions
+model.local.script
+model
+model.network
+model.network.handlers
+presenter
+util.access
 util.execution
-view.gui
+util.filter
+util.forms.buidler
+util.forms
+util.i18n
 view.console
 view.console.ui
+view.gui.controllers
+view.gui.dialogs
+view.gui
+view.gui.notification
 view
-presenter
-model.local
-model.local.script
-model.local.localActions
-model
-model.network.handlers
-model.network
-'/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/src/main/java/Main.java'
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/common/target/common-1.0-SNAPSHOT.jar = 1781296435663
-/home/danb/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21.jar = 1695031945000
-/home/danb/.m2/repository/org/openjfx/javafx-controls/21/javafx-controls-21-linux.jar = 1695031971000
-/home/danb/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21.jar = 1695032008000
-/home/danb/.m2/repository/org/openjfx/javafx-graphics/21/javafx-graphics-21-linux.jar = 1695032031000
-/home/danb/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21.jar = 1695031918000
-/home/danb/.m2/repository/org/openjfx/javafx-base/21/javafx-base-21-linux.jar = 1695031923000
-/home/danb/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21.jar = 1695031980000
-/home/danb/.m2/repository/org/openjfx/javafx-fxml/21/javafx-fxml-21-linux.jar = 1695031998000
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/src/main/java/Main.java = 1781296045254
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/src/main/java = 1781080933990
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/generated-sources/annotations = 1781296444668
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/allclasses-index.html = 1781296447986
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/search-page.js = 1781296448042
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/package-use.html = 1781296447925
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/index.html = 1781296447958
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/script.js = 1781296448039
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/overview-tree.html = 1781296447955
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/type-search-index.js = 1781296447989
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/package-summary.html = 1781296447740
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/module-search-index.js = 1781296447988
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/tag-search-index.js = 1781296447989
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/member-search-index.js = 1781296447989
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/package-tree.html = 1781296447744
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/overview-summary.html = 1781296448029
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/package-search-index.js = 1781296447989
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/search.html = 1781296448028
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/stylesheet.css = 1781296448038
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/Main.html = 1781296447567
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/allpackages-index.html = 1781296447987
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/copy.svg = 1781296448039
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/help-doc.html = 1781296448035
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/element-list = 1781296447727
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/index-all.html = 1781296448026
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/search.js = 1781296448041
-/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/target/apidocs/link.svg = 1781296448039
+'D:/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/client/src/main/java/Main.java'
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\common\target\common-1.0-SNAPSHOT.jar = 1781303844761
+C:\Users\Tayzeront\.m2\repository\org\openjfx\javafx-controls\21\javafx-controls-21.jar = 1781299030289
+C:\Users\Tayzeront\.m2\repository\org\openjfx\javafx-fxml\21\javafx-fxml-21.jar = 1781299030360
+C:\Users\Tayzeront\.m2\repository\org\openjfx\javafx-graphics\21\javafx-graphics-21.jar = 1781299030250
+C:\Users\Tayzeront\.m2\repository\org\openjfx\javafx-base\21\javafx-base-21.jar = 1781299030289
+C:\Users\Tayzeront\.m2\repository\org\openjfx\javafx-controls\21\javafx-controls-21-win.jar = 1781299030572
+C:\Users\Tayzeront\.m2\repository\org\openjfx\javafx-fxml\21\javafx-fxml-21-win.jar = 1781299030552
+C:\Users\Tayzeront\.m2\repository\org\openjfx\javafx-graphics\21\javafx-graphics-21-win.jar = 1781299031166
+C:\Users\Tayzeront\.m2\repository\org\openjfx\javafx-base\21\javafx-base-21-win.jar = 1781299030714
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\src\main\java\Main.java = 1781298770854
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\src\main\java = 1781298770870
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\generated-sources\annotations = 1781303851014
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\allclasses-index.html = 1781303853782
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\allpackages-index.html = 1781303853784
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\element-list = 1781303853394
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\help-doc.html = 1781303853817
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\index-all.html = 1781303853812
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\index.html = 1781303853755
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\Main.html = 1781303853298
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\member-search-index.js = 1781303853788
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\module-search-index.js = 1781303853785
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\overview-summary.html = 1781303853815
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\overview-tree.html = 1781303853752
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\package-search-index.js = 1781303853786
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\package-summary.html = 1781303853401
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\package-tree.html = 1781303853405
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\package-use.html = 1781303853701
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\search.html = 1781303853814
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\tag-search-index.js = 1781303853789
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\client\target\apidocs\type-search-index.js = 1781303853787

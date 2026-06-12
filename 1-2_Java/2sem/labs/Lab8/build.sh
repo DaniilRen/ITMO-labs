@@ -1,3 +1,5 @@
-# builds all modules
+#!/usr/bin/env bash
+set -euo pipefail
 
-mvn clean install
+cd "$(dirname "$0")"
+mvn clean install "$@"

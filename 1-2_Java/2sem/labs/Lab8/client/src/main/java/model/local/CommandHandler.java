@@ -8,6 +8,7 @@ import java.util.Map;
 import common.command.CommandAttribute;
 import common.command.PublicityMarker;
 import common.exceptions.InvalidAttributesException;
+import common.transfer.Status;
 import common.transfer.request.Request;
 import common.transfer.request.standart.StandartRequest;
 import common.transfer.response.Response;
@@ -44,23 +45,28 @@ public class CommandHandler {
     }
 
     public void handleCommand(String commandName, List<?> args, boolean fileMode) {
+        handleCommandWithStatus(commandName, args, fileMode);
+    }
+
+    public Status handleCommandWithStatus(String commandName, List<?> args, boolean fileMode) {
         if (localCommandHandler.isLocalCommand(commandName)) {
             localCommandHandler.handleLocalCommand(commandName, args);
-            return;
+            return Status.OK;
         }
 
         if (!(validateCommandName(commandName)) || !(validateCommandPublicity(commandName))) {
             view.displayError("Unknown command");
-            return;
-        };
+            return Status.ERROR;
+        }
 
         if (!(authHandler.isAuthenticated()) && getCommandPublicity(commandName) != PublicityMarker.PUBLIC) {
             view.displayError("You must 'login' or 'register' before executing commands!");
-            return;
+            return Status.ERROR;
         }
 
         Response<?> response = requestHandler.makeRequest(commandName, getRequestType(commandName), args, fileMode);
-        responseHandler.handleResponse(response);
+        Status status = responseHandler.handleResponse(response, commandName);
+        return status;
     }
 
     @SuppressWarnings("unchecked")

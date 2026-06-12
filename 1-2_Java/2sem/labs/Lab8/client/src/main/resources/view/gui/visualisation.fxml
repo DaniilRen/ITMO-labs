@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.canvas.Canvas?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
+<?import java.net.URL?>
 
 <BorderPane xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="view.gui.VisualisationController"
+            fx:controller="view.gui.controllers.VisualisationController"
             styleClass="vis-container"
-            prefWidth="800"
-            prefHeight="600">
+            prefWidth="900"
+            prefHeight="700">
 
     <stylesheets>
         <URL value="@/css/style.css"/>
     </stylesheets>
 
     <top>
-        <HBox styleClass="top-bar" spacing="10">
+        <HBox styleClass="top-bar" spacing="10" alignment="CENTER_LEFT">
             <padding>
                 <Insets top="10" right="10" bottom="10" left="10"/>
             </padding>
-            <Button text="← Back to Home" onAction="#handleBack" styleClass="primary-button"/>
-            <Label text="Visualisation" styleClass="title-label" HBox.hgrow="ALWAYS"/>
+            <Button fx:id="backButton" styleClass="primary-button" onAction="#handleBack"/>
+            <Label fx:id="titleLabel" styleClass="title-label"/>
         </HBox>
     </top>
 
     <center>
-        <VBox alignment="CENTER" spacing="20">
-            <Label text="Visualisation Window" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
-            <Label text="Visualisation content will be implemented here" style="-fx-font-size: 14px;"/>
-            <Label text="(Chart, graph, or diagram visualization)" style="-fx-font-size: 12px; -fx-text-fill: #7f8c8d;"/>
-        </VBox>
+        <StackPane fx:id="canvasPane" styleClass="canvas-pane" minWidth="860" minHeight="600">
+            <Canvas fx:id="canvas" width="860" height="600"/>
+        </StackPane>
     </center>
 
 </BorderPane>

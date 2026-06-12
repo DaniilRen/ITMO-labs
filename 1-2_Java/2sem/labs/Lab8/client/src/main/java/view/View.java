@@ -6,23 +6,37 @@ import common.models.Entity;
 import common.models.User;
 
 public interface View {
-    public void executeCommand(String commandName, List<?> args, boolean fileMode);
+    void executeCommand(String commandName, List<?> args, boolean fileMode);
 
-    public void onCreate();
+    void onCreate();
 
-    public void onDestroy();
+    void onDestroy();
 
-    public void onLogOut();
+    void onLogOut();
 
-    public void displayError(String errorMessage);
+    void displayError(String errorMessage);
 
-    public void displayMessage(String errorMessage);
+    void displayMessage(String message);
 
-    public Entity onEntityAdd(String author);
+    Entity onEntityAdd(String author);
 
-    public User onLogin();
+    User onLogin();
 
-    public User onRegister();
+    User onRegister();
 
-    public User getCurrentUser();
+    User getCurrentUser();
+
+    default void setPendingAuthUser(User user) {}
+
+    default void onCollectionReceived(List<Entity> entities) {
+        entities.forEach(entity -> displayMessage(entity.toString()));
+    }
+
+    default void showTextDialog(String title, String content) {
+        displayMessage(title + ":\n" + content);
+    }
+
+    default void onConnectionStatusChanged(boolean connected) {}
+
+    default void refreshCollectionView() {}
 }

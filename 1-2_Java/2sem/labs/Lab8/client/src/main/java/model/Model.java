@@ -33,20 +33,29 @@ public class Model {
 
         } catch (IOException e) {
             currentView.displayError("Failed to connect to server: " + e.getMessage());
+            currentView.onConnectionStatusChanged(false);
             return;
         } catch (InvalidAttributesException e) {
             currentView.displayError("(Init Request): " + e.getMessage());
+            currentView.onConnectionStatusChanged(false);
             return;
         }
         currentView.displayMessage(String.format("<----- client started on port: %d ----->", port));
+        currentView.onConnectionStatusChanged(network.isConnected());
     }
 
     public void stopConnection() {
-        network.close();
+        if (network != null) {
+            network.close();
+        }
     }
 
     public void executeCommand(String commandName, List<?> args, boolean fileMode) {
         commandHandler.handleCommand(commandName, args, fileMode);
+    }
+
+    public common.transfer.Status executeCommandWithStatus(String commandName, List<?> args, boolean fileMode) {
+        return commandHandler.handleCommandWithStatus(commandName, args, fileMode);
     }
 
     public void logOut() {
@@ -55,5 +64,17 @@ public class Model {
 
     public User getCurrentUser() {
         return authHandler.getCredentials();
+    }
+
+    public boolean isAuthenticated() {
+        return authHandler.isAuthenticated();
+    }
+
+    public boolean isConnected() {
+        return network != null && network.isConnected();
+    }
+
+    public View getView() {
+        return currentView;
     }
 }

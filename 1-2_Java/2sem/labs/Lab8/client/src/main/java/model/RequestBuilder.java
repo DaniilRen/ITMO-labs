@@ -48,22 +48,32 @@ public class RequestBuilder {
         } else if (requestType == IdRequest.class && IdRequest.validate(args)) {
             return new IdRequest(name, Integer.valueOf(args.get(0).toString()));
         } else if (requestType == EntityRequest.class) {
-            Entity result = buildEntity(author);
+            Entity result;
+            if (EntityRequest.validate(args)) {
+                result = (Entity) args.get(0);
+            } else {
+                result = buildEntity(author);
+            }
 
             if (result == null || !EntityRequest.validate(List.of(result))) {
                 throw new IncorrectRequestException("Invalid request");
             }
             return new EntityRequest(name, result);
-        } else if (requestType == CombinedRequest.class && args.size() == 1) {
-            try {
-                Integer id = Integer.valueOf(args.get(0).toString());
-                Entity result = buildEntity(author);
-                if (result == null || !CombinedRequest.validate(List.of(result, id))) {
+        } else if (requestType == CombinedRequest.class) {
+            if (args.size() == 2 && CombinedRequest.validate(args)) {
+                return new CombinedRequest(name, (Entity) args.get(0), Integer.parseInt(args.get(1).toString()));
+            }
+            if (args.size() == 1) {
+                try {
+                    Integer id = Integer.valueOf(args.get(0).toString());
+                    Entity result = buildEntity(author);
+                    if (result == null || !CombinedRequest.validate(List.of(result, id))) {
+                        throw new IncorrectRequestException("Invalid request");
+                    }
+                    return new CombinedRequest(name, result, id);
+                } catch (NumberFormatException e) {
                     throw new IncorrectRequestException("Invalid request");
                 }
-                return new CombinedRequest(name, result, id);
-            } catch (NumberFormatException e) {
-                throw new IncorrectRequestException("Invalid request");
             }
         } else if (requestType == AuthRequest.class && args.size() == 0) {
             User result = buildUser(false); 

@@ -1,34 +1,63 @@
 package view.gui.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import common.models.Entity;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import common.models.Route;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import presenter.Presenter;
+import util.access.ClientAccess;
+import util.filter.EntityFilter;
+import util.i18n.I18nManager;
 import view.gui.GraphicsView;
+import view.gui.dialogs.AddUserDialog;
+import view.gui.dialogs.ExecuteFileDialog;
+import view.gui.dialogs.FilterDialog;
+import view.gui.dialogs.RouteFormDialog;
 
 public class HomeController {
     @FXML private Label userLabel;
+    @FXML private Label serverStatusLabel;
+    @FXML private Label syncStatusLabel;
     @FXML private TableView<Entity> tableView;
-    
+    @FXML private Button filterButton;
+    @FXML private Button historyButton;
+    @FXML private Button helpButton;
+    @FXML private Button infoButton;
+    @FXML private Button logoutButton;
+    @FXML private Button clearButton;
+    @FXML private Button filterStartsButton;
+    @FXML private Button uniqueDistancesButton;
+    @FXML private Button descendingDistanceButton;
+    @FXML private Button addUserButton;
+    @FXML private Button addElementButton;
+    @FXML private Button executeFileButton;
+    @FXML private Button visualisationButton;
+
     private GraphicsView mainView;
     private Presenter presenter;
     private Stage stage;
-    private ObservableList<Entity> data;
-
-    @FXML
-    private void initialize() {
-        data = FXCollections.observableArrayList();
-        tableView.setItems(data);
-    }
+    private List<EntityFilter.Condition> activeFilters = new ArrayList<>();
+    private String sortField = "id";
+    private boolean sortAscending = true;
+    private boolean tableInitialized;
 
     public void setMainView(GraphicsView mainView) {
         this.mainView = mainView;
@@ -42,109 +71,180 @@ public class HomeController {
         this.stage = stage;
     }
 
+    public void bindTexts() {
+        I18nManager i18n = I18nManager.get();
+        if (presenter.getCurrentUser() != null && presenter.getCurrentUser().getName() != null) {
+            userLabel.setText(i18n.format("main.user", presenter.getCurrentUser().getName()));
+        }
+        filterButton.setText(i18n.get("main.filter"));
+        historyButton.setText(i18n.get("main.history"));
+        helpButton.setText(i18n.get("main.help"));
+        infoButton.setText(i18n.get("main.info"));
+        logoutButton.setText(i18n.get("main.logout"));
+        clearButton.setText(i18n.get("main.clear"));
+        filterStartsButton.setText(i18n.get("main.filter.starts_with"));
+        uniqueDistancesButton.setText(i18n.get("main.unique.distances"));
+        descendingDistanceButton.setText(i18n.get("main.descending.distance"));
+        addUserButton.setText(i18n.get("main.add.user"));
+        addElementButton.setText(i18n.get("main.add.element"));
+        executeFileButton.setText(i18n.get("main.execute.file"));
+        visualisationButton.setText(i18n.get("main.visualisation"));
+        boolean isAdmin =
+                presenter.getCurrentUser() != null && presenter.getCurrentUser().getIsAdmin();
+        addUserButton.setVisible(isAdmin);
+        addUserButton.setManaged(isAdmin);
+        if (tableInitialized) {
+            refreshColumnTitles();
+            tableView.setPlaceholder(new Label(i18n.get("table.empty")));
+        }
+    }
+
+    public void updateStatus(String serverStatus, String syncStatus) {
+        serverStatusLabel.setText(serverStatus);
+        syncStatusLabel.setText(syncStatus);
+    }
+
+    public void initializeTable() {
+        if (tableInitialized) {
+            return;
+        }
+        tableView.setItems(mainView.getCollectionStore().getItems());
+        tableView.setPlaceholder(new Label(I18nManager.get().get("table.empty")));
+        tableView.getSortOrder().addListener((javafx.collections.ListChangeListener<TableColumn<Entity, ?>>) change -> applySortFromTable());
+        tableView.getColumns().add(createActionsColumn());
+        tableView.getColumns().add(createColumn("table.id", "id", true));
+        tableView.getColumns().add(createColumn("table.coord.x", "x", true));
+        tableView.getColumns().add(createColumn("table.coord.y", "y", true));
+        tableView.getColumns().add(createColumn("table.name", "name", true));
+        tableView.getColumns().add(createColumn("table.distance", "distance", true));
+        tableView.getColumns().add(createColumn("table.author", "author", true));
+        tableView.getColumns().add(createDateColumn());
+        tableView.getColumns().add(createObjectColumn("table.from", "from"));
+        tableView.getColumns().add(createObjectColumn("table.to", "to"));
+        tableInitialized = true;
+        refreshColumnTitles();
+    }
+
+    public void applyCollection() {
+        List<Entity> master = mainView.getCollectionStore().getMaster();
+        List<Entity> filtered = EntityFilter.apply(master, activeFilters);
+        List<Entity> sorted = EntityFilter.sort(filtered, sortField, sortAscending);
+        mainView.getCollectionStore().applyFiltered(sorted);
+        bindTexts();
+    }
+
     @FXML
     private void handleHistory() {
-        presenter.executeCommand("history", null, false);
+        presenter.executeCommand("history", List.of(), false);
     }
 
     @FXML
     private void handleHelp() {
-        presenter.executeCommand("help", null, false);
+        presenter.executeCommand("help", List.of(), false);
     }
 
     @FXML
     private void handleInfo() {
-        presenter.executeCommand("info", null, false);
+        presenter.executeCommand("info", List.of(), false);
+    }
+
+    @FXML
+    private void handleLogout() {
+        presenter.logOut();
+        mainView.onLogOut();
+    }
+
+    @FXML
+    private void handleFilter() {
+        Optional<List<EntityFilter.Condition>> result = FilterDialog.show(stage, activeFilters);
+        result.ifPresent(
+                conditions -> {
+                    activeFilters = new ArrayList<>(conditions);
+                    applyCollection();
+                });
+    }
+
+    @FXML
+    private void handleClear() {
+        I18nManager i18n = I18nManager.get();
+        Stage modal = new Stage();
+        modal.initOwner(stage);
+        modal.initModality(Modality.APPLICATION_MODAL);
+
+        Button confirmBtn = new Button(i18n.get("button.execute"));
+        confirmBtn.getStyleClass().add("danger-button");
+        Button cancelBtn = new Button(i18n.get("button.cancel"));
+        cancelBtn.getStyleClass().add("secondary-dark-button");
+
+        confirmBtn.setOnAction(
+                e -> {
+                    presenter.executeCommand("clear", List.of(), false);
+                    modal.close();
+                });
+        cancelBtn.setOnAction(e -> modal.close());
+
+        VBox root =
+                new VBox(
+                        12,
+                        new Label(i18n.get("dialog.confirm.clear")),
+                        new HBox(10, cancelBtn, confirmBtn));
+        root.setAlignment(Pos.CENTER);
+        root.setPadding(new Insets(20));
+        root.getStyleClass().add("dialog-root");
+        Scene scene = new Scene(root, 360, 140);
+        scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
+        modal.setScene(scene);
+        modal.show();
+    }
+
+    @FXML
+    private void handleFilterStartsWith() {
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle(I18nManager.get().get("main.filter.starts_with"));
+        dialog.setHeaderText(I18nManager.get().get("main.filter.starts_with"));
+        dialog.showAndWait()
+                .ifPresent(
+                        prefix ->
+                                presenter.executeCommand(
+                                        "filter_starts_with_name", List.of(prefix), false));
+    }
+
+    @FXML
+    private void handleUniqueDistances() {
+        presenter.executeCommand("print_unique_distance", List.of(), false);
+    }
+
+    @FXML
+    private void handleDescendingDistance() {
+        sortField = "distance";
+        sortAscending = false;
+        applyCollection();
+        presenter.executeCommand("print_field_descending_distance", List.of(), false);
     }
 
     @FXML
     private void handleAddUser() {
-        Stage modal = new Stage();
-        VBox root = new VBox(15);
-        root.setAlignment(javafx.geometry.Pos.CENTER);
-        root.setPadding(new javafx.geometry.Insets(20));
-        
-        Label label = new Label("Register new user");
-        Button registerBtn = new Button("Register");
-        Button cancelBtn = new Button("Cancel");
-        
-        registerBtn.setOnAction(e -> {
-            mainView.onRegister();
-            modal.close();
-        });
-        
-        cancelBtn.setOnAction(e -> modal.close());
-        
-        root.getChildren().addAll(label, registerBtn, cancelBtn);
-        Scene scene = new Scene(root, 300, 150);
-        modal.setTitle("Add User");
-        modal.setScene(scene);
-        modal.show();
+        if (presenter.getCurrentUser() == null || !presenter.getCurrentUser().getIsAdmin()) {
+            mainView.displayError(I18nManager.get().get("error.not.admin"));
+            return;
+        }
+        AddUserDialog.show(stage, presenter, mainView);
     }
 
     @FXML
     private void handleAddElement() {
-        Stage modal = new Stage();
-        VBox root = new VBox(15);
-        root.setAlignment(javafx.geometry.Pos.CENTER);
-        root.setPadding(new javafx.geometry.Insets(20));
-        
-        Label label = new Label("Add new element");
-        Button addBtn = new Button("Add");
-        Button cancelBtn = new Button("Cancel");
-        
-        addBtn.setOnAction(e -> {
-            Entity entity = mainView.onEntityAdd(presenter.getCurrentUser().getName());
-            if (entity != null) {
-                presenter.executeCommand("add", List.of(entity), false);
-                refreshTable();
-            }
-            modal.close();
-        });
-        
-        cancelBtn.setOnAction(e -> modal.close());
-        
-        root.getChildren().addAll(label, addBtn, cancelBtn);
-        Scene scene = new Scene(root, 300, 150);
-        modal.setTitle("Add Element");
-        modal.setScene(scene);
-        modal.show();
+        Optional<Route> route =
+                RouteFormDialog.show(stage, presenter.getCurrentUser().getName(), null);
+        route.ifPresent(
+                value -> {
+                    presenter.executeCommand("add", List.of(value), false);
+                    presenter.refreshCollection();
+                });
     }
 
     @FXML
     private void handleExecuteFile() {
-        Stage modal = new Stage();
-        VBox root = new VBox(15);
-        root.setAlignment(javafx.geometry.Pos.CENTER);
-        root.setPadding(new javafx.geometry.Insets(20));
-        
-        TextField fileField = new TextField();
-        fileField.setPromptText("Enter script filename");
-        fileField.setMaxWidth(250);
-        
-        Label errorLabel = new Label();
-        errorLabel.setStyle("-fx-text-fill: red;");
-        
-        Button executeBtn = new Button("Execute");
-        Button cancelBtn = new Button("Cancel");
-        
-        executeBtn.setOnAction(e -> {
-            String filename = fileField.getText();
-            if (filename.isEmpty()) {
-                errorLabel.setText("Please enter filename");
-                return;
-            }
-            presenter.executeCommand("execute_script", List.of(filename), true);
-            modal.close();
-        });
-        
-        cancelBtn.setOnAction(e -> modal.close());
-        
-        root.getChildren().addAll(new Label("Execute Script File"), fileField, errorLabel, executeBtn, cancelBtn);
-        Scene scene = new Scene(root, 350, 200);
-        modal.setTitle("Execute File");
-        modal.setScene(scene);
-        modal.show();
+        ExecuteFileDialog.show(stage, presenter, mainView);
     }
 
     @FXML
@@ -152,127 +252,188 @@ public class HomeController {
         try {
             mainView.showVisualisationWindow();
         } catch (Exception e) {
-            e.printStackTrace();
+            mainView.displayError(e.getMessage());
         }
     }
 
-    public void refreshTable() {
-        tableView.getColumns().clear();
-        presenter.executeCommand("show", null, false);
-        
-        userLabel.setText("Current user: " + presenter.getCurrentUser().getName());
-        
-        TableColumn<Entity, Integer> idCol = new TableColumn<>("ID");
-        idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
-        
-        TableColumn<Entity, String> nameCol = new TableColumn<>("Name");
-        nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
-        
-        TableColumn<Entity, String> authorCol = new TableColumn<>("Author");
-        authorCol.setCellValueFactory(new PropertyValueFactory<>("author"));
-        
-        TableColumn<Entity, String> dateCol = new TableColumn<>("Date");
-        dateCol.setCellValueFactory(new PropertyValueFactory<>("creationDate"));
-        
-        tableView.getColumns().addAll(idCol, nameCol, authorCol, dateCol);
-        
-        TableColumn<Entity, Void> actionCol = new TableColumn<>("Actions");
-        actionCol.setCellFactory(col -> new TableCell<Entity, Void>() {
-            private final Button deleteBtn = new Button("Delete");
-            private final Button updateBtn = new Button("Update");
-            private final HBox buttons = new HBox(5, deleteBtn, updateBtn);
+    private TableColumn<Entity, Void> createActionsColumn() {
+        TableColumn<Entity, Void> actionCol = new TableColumn<>();
+        actionCol.setPrefWidth(120);
+        actionCol.setCellFactory(
+                col ->
+                        new TableCell<>() {
+                            private final Button deleteBtn = new Button("X");
+                            private final Button updateBtn = new Button("UPDATE");
+                            private final HBox buttons = new HBox(6, deleteBtn, updateBtn);
 
-            {
-                deleteBtn.getStyleClass().add("danger-button");
-                updateBtn.getStyleClass().add("primary-button");
-                
-                deleteBtn.setOnAction(e -> {
-                    Entity entity = getTableView().getItems().get(getIndex());
-                    showDeleteModal(entity);
-                });
-                updateBtn.setOnAction(e -> {
-                    Entity entity = getTableView().getItems().get(getIndex());
-                    showUpdateModal(entity);
-                });
-            }
+                            {
+                                deleteBtn.getStyleClass().add("danger-button");
+                                updateBtn.getStyleClass().add("update-button");
+                                deleteBtn.setOnAction(
+                                        e -> {
+                                            Entity entity = getTableView().getItems().get(getIndex());
+                                            confirmDelete(entity);
+                                        });
+                                updateBtn.setOnAction(
+                                        e -> {
+                                            Entity entity = getTableView().getItems().get(getIndex());
+                                            updateEntity(entity);
+                                        });
+                            }
 
-            @Override
-            protected void updateItem(Void item, boolean empty) {
-                super.updateItem(item, empty);
-                if (empty) {
-                    setGraphic(null);
-                } else {
-                    setGraphic(buttons);
-                }
-            }
-        });
-        tableView.getColumns().add(actionCol);
+                            @Override
+                            protected void updateItem(Void item, boolean empty) {
+                                super.updateItem(item, empty);
+                                if (empty) {
+                                    setGraphic(null);
+                                    return;
+                                }
+                                Entity entity = getTableView().getItems().get(getIndex());
+                                boolean canModify = canModifyEntity(entity);
+                                deleteBtn.setDisable(!canModify);
+                                updateBtn.setDisable(!canModify);
+                                setGraphic(buttons);
+                            }
+                        });
+        return actionCol;
     }
 
-    private void showDeleteModal(Entity entity) {
+    private boolean canModifyEntity(Entity entity) {
+        if (!(entity instanceof Route route)) {
+            return false;
+        }
+        return ClientAccess.canModify(route, presenter.getCurrentUser());
+    }
+
+    private TableColumn<Entity, String> createColumn(String titleKey, String field, boolean sortable) {
+        TableColumn<Entity, String> column = new TableColumn<>();
+        column.setPrefWidth(90);
+        column.setCellValueFactory(
+                data -> new SimpleStringProperty(extractField((Route) data.getValue(), field)));
+        if (sortable) {
+            column.setComparator((a, b) -> 0);
+            column.getProperties().put("sortField", field);
+        }
+        column.setUserData(titleKey);
+        return column;
+    }
+
+    private void applySortFromTable() {
+        if (tableView.getSortOrder().isEmpty()) {
+            return;
+        }
+        TableColumn<?, ?> column = tableView.getSortOrder().get(0);
+        Object field = column.getProperties().get("sortField");
+        if (field instanceof String sortKey) {
+            sortField = sortKey;
+            sortAscending = column.getSortType() == TableColumn.SortType.ASCENDING;
+            applyCollection();
+        }
+    }
+
+    private TableColumn<Entity, String> createDateColumn() {
+        TableColumn<Entity, String> column = new TableColumn<>();
+        column.setPrefWidth(160);
+        column.setCellValueFactory(
+                data -> {
+                    Route route = (Route) data.getValue();
+                    if (route.getCreationDate() == null) {
+                        return new SimpleStringProperty("");
+                    }
+                    return new SimpleStringProperty(
+                            I18nManager.get().dateTimeFormatter().format(route.getCreationDate()));
+                });
+        column.setUserData("table.date");
+        return column;
+    }
+
+    private TableColumn<Entity, String> createObjectColumn(String titleKey, String field) {
+        TableColumn<Entity, String> column = new TableColumn<>();
+        column.setPrefWidth(140);
+        column.setCellValueFactory(
+                data -> {
+                    Route route = (Route) data.getValue();
+                    Object value =
+                            "from".equals(field) ? route.getLocationFrom() : route.getLocationTo();
+                    return new SimpleStringProperty(value == null ? "" : value.toString());
+                });
+        column.setUserData(titleKey);
+        return column;
+    }
+
+    private void refreshColumnTitles() {
+        I18nManager i18n = I18nManager.get();
+        for (TableColumn<?, ?> column : tableView.getColumns()) {
+            if (column.getUserData() instanceof String key) {
+                column.setText(i18n.get(key));
+            }
+        }
+    }
+
+    private String extractField(Route route, String field) {
+        if (route == null) {
+            return "";
+        }
+        return switch (field) {
+            case "id" -> String.valueOf(route.getId());
+            case "name" -> route.getName();
+            case "x" ->
+                    route.getCoordinates() == null
+                        ? ""
+                        : I18nManager.get().numberFormat().format(route.getCoordinates().getX());
+            case "y" ->
+                    route.getCoordinates() == null
+                        ? ""
+                        : I18nManager.get().numberFormat().format(route.getCoordinates().getY());
+            case "distance" -> I18nManager.get().numberFormat().format(route.getDistance());
+            case "author" -> route.getAuthor();
+            default -> "";
+        };
+    }
+
+    private void confirmDelete(Entity entity) {
+        I18nManager i18n = I18nManager.get();
         Stage modal = new Stage();
-        VBox root = new VBox(15);
-        root.setAlignment(javafx.geometry.Pos.CENTER);
-        root.setPadding(new javafx.geometry.Insets(20));
-        
-        Label label = new Label("Are you sure you want to delete item ID: " + entity.getId() + "?");
-        Button confirmBtn = new Button("Delete");
-        Button cancelBtn = new Button("Cancel");
-        
-        HBox buttons = new HBox(10, confirmBtn, cancelBtn);
-        buttons.setAlignment(javafx.geometry.Pos.CENTER);
-        
+        modal.initOwner(stage);
+        modal.initModality(Modality.APPLICATION_MODAL);
+
+        Button confirmBtn = new Button(i18n.get("button.delete"));
         confirmBtn.getStyleClass().add("danger-button");
-        cancelBtn.getStyleClass().add("primary-button");
-        
-        confirmBtn.setOnAction(e -> {
-            presenter.executeCommand("remove", List.of(entity.getId()), false);
-            refreshTable();
-            modal.close();
-        });
-        
+        Button cancelBtn = new Button(i18n.get("button.cancel"));
+        cancelBtn.getStyleClass().add("secondary-dark-button");
+
+        confirmBtn.setOnAction(
+                e -> {
+                    presenter.executeCommand("remove_by_id", List.of(entity.getId()), false);
+                    presenter.refreshCollection();
+                    modal.close();
+                });
         cancelBtn.setOnAction(e -> modal.close());
-        
-        root.getChildren().addAll(label, buttons);
-        Scene scene = new Scene(root, 350, 150);
-        modal.setTitle("Confirm Delete");
+
+        VBox root =
+                new VBox(
+                        12,
+                        new Label(i18n.format("dialog.confirm.delete", entity.getId())),
+                        new HBox(10, cancelBtn, confirmBtn));
+        root.setAlignment(Pos.CENTER);
+        root.setPadding(new Insets(20));
+        root.getStyleClass().add("dialog-root");
+        Scene scene = new Scene(root, 360, 140);
+        scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
         modal.setScene(scene);
         modal.show();
     }
 
-    private void showUpdateModal(Entity entity) {
-        Stage modal = new Stage();
-        VBox root = new VBox(15);
-        root.setAlignment(javafx.geometry.Pos.CENTER);
-        root.setPadding(new javafx.geometry.Insets(20));
-        
-        Label label = new Label("Update item ID: " + entity.getId());
-        Button updateBtn = new Button("Update");
-        Button cancelBtn = new Button("Cancel");
-        
-        updateBtn.getStyleClass().add("secondary-button");
-        cancelBtn.getStyleClass().add("primary-button");
-        
-        updateBtn.setOnAction(e -> {
-            Entity updatedEntity = mainView.onEntityAdd(presenter.getCurrentUser().getName());
-            if (updatedEntity != null) {
-                presenter.executeCommand("update", List.of(entity.getId(), updatedEntity), false);
-                refreshTable();
-            }
-            modal.close();
-        });
-        
-        cancelBtn.setOnAction(e -> modal.close());
-        
-        root.getChildren().addAll(label, updateBtn, cancelBtn);
-        Scene scene = new Scene(root, 300, 150);
-        modal.setTitle("Update Item");
-        modal.setScene(scene);
-        modal.show();
+    private void updateEntity(Entity entity) {
+        if (!(entity instanceof Route route)) {
+            return;
+        }
+        RouteFormDialog.show(stage, route.getAuthor(), route)
+                .ifPresent(
+                        updated -> {
+                            presenter.executeCommand(
+                                    "update", List.of(updated, entity.getId()), false);
+                            presenter.refreshCollection();
+                        });
     }
-
-    public void setData(List<Entity> entities) {
-        data.clear();
-        data.addAll(entities);
-    }
-} 
+}

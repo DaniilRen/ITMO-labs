@@ -1,147 +1,306 @@
 package view.gui;
 
 import java.util.List;
+import java.util.Locale;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+
 import common.models.Entity;
 import common.models.User;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
+import model.local.CollectionStore;
 import presenter.Presenter;
 import presenter.PresenterFactory;
 import util.forms.buidler.GraphicsFormBuilder;
+import util.i18n.I18nManager;
 import view.View;
+import view.gui.notification.ToastService;
 import view.gui.controllers.AuthController;
 import view.gui.controllers.HomeController;
 import view.gui.controllers.RegisterController;
 import view.gui.controllers.VisualisationController;
 
 public class GraphicsView extends Application implements View {
+    private static final String HOST = "localhost";
+    private static final int PORT = 9000;
+
     private Presenter presenter;
-    private GraphicsFormBuilder formBuidler;
+    private GraphicsFormBuilder formBuilder;
     private Stage primaryStage;
     private HomeController homeController;
+    private VisualisationController visualisationController;
+    private AuthController authController;
+    private final CollectionStore collectionStore = new CollectionStore();
+    private User pendingAuthUser;
+    private String lastError = "";
+    private final ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 
     public void onCreate() {
         launch();
-    }
-
-    public void onDestroy() {
-        displayMessage("Bye!");
-        this.presenter.disconnect();
-    }
-
-    public void onLogOut() {
-        displayMessage("Logged out");
-        this.presenter.logOut();
-    }
-
-    public void displayError(String errorMessage) {
-        System.err.println(errorMessage);
-    }
-
-    public void displayMessage(String message) {
-        System.out.println(message);
-    }
-
-    public Entity onEntityAdd(String author) {
-        return formBuidler.buildEntity(author);
-    }
-
-    public User onRegister() {
-        return formBuidler.buildUser(true);
-    }
-
-    public User onLogin() {
-        return formBuidler.buildUser(false);
-    }
-
-    public User getCurrentUser() {
-        return presenter.getCurrentUser();
-    }
-
-    public void executeCommand(String commandName, List<?> args, boolean fileMode) {
-        this.presenter.executeCommand(commandName, args, fileMode);
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
         this.presenter = PresenterFactory.providePresenter(this);
-        this.formBuidler = new GraphicsFormBuilder();
+        this.formBuilder = new GraphicsFormBuilder();
+        formBuilder.setOwnerStage(primaryStage);
+
+        I18nManager.get().addListener(locale -> Platform.runLater(this::reloadTexts));
+        presenter.connect(HOST, PORT);
+        updateConnectionStatus(presenter.isConnected());
+        scheduler.scheduleAtFixedRate(
+                () -> {
+                    if (presenter.isAuthenticated()) {
+                        Platform.runLater(this::refreshCollectionView);
+                    }
+                },
+                5,
+                5,
+                TimeUnit.SECONDS);
         showAuthWindow();
     }
 
+    @Override
+    public void stop() {
+        scheduler.shutdownNow();
+        onDestroy();
+    }
+
+    public void onDestroy() {
+        presenter.disconnect();
+    }
+
+    @Override
+    public void onLogOut() {
+        try {
+            showAuthWindow();
+        } catch (Exception e) {
+            displayError(e.getMessage());
+        }
+    }
+
+    @Override
+    public void displayError(String errorMessage) {
+        lastError = errorMessage;
+        Platform.runLater(
+                () -> {
+                    ToastService.showError(primaryStage, errorMessage);
+                    System.err.println(errorMessage);
+                });
+    }
+
+    public String getLastError() {
+        return lastError;
+    }
+
+    @Override
+    public void displayMessage(String message) {
+        System.out.println(message);
+    }
+
+    @Override
+    public Entity onEntityAdd(String author) {
+        return formBuilder.buildEntity(author);
+    }
+
+    @Override
+    public User onLogin() {
+        return pendingAuthUser;
+    }
+
+    @Override
+    public User onRegister() {
+        return pendingAuthUser;
+    }
+
+    @Override
+    public void setPendingAuthUser(User user) {
+        this.pendingAuthUser = user;
+    }
+
+    @Override
+    public User getCurrentUser() {
+        return presenter.getCurrentUser();
+    }
+
+    @Override
+    public void executeCommand(String commandName, List<?> args, boolean fileMode) {
+        presenter.executeCommand(commandName, args, fileMode);
+    }
+
+    @Override
+    public void onCollectionReceived(List<Entity> entities) {
+        Platform.runLater(
+                () -> {
+                    collectionStore.setAll(entities);
+                    if (homeController != null) {
+                        homeController.applyCollection();
+                    }
+                    if (visualisationController != null) {
+                        visualisationController.render(collectionStore.getMaster());
+                    }
+                });
+    }
+
+    @Override
+    public void showTextDialog(String title, String content) {
+        Platform.runLater(
+                () -> {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION, content, ButtonType.OK);
+                    alert.setTitle(I18nManager.get().get("dialog.result"));
+                    alert.setHeaderText(resolveDialogTitle(title));
+                    alert.showAndWait();
+                });
+    }
+
+    @Override
+    public void onConnectionStatusChanged(boolean connected) {
+        Platform.runLater(() -> updateConnectionStatus(connected));
+    }
+
+    @Override
+    public void refreshCollectionView() {
+        if (presenter.isAuthenticated()) {
+            presenter.refreshCollection();
+        }
+    }
+
+    public CollectionStore getCollectionStore() {
+        return collectionStore;
+    }
+
+    public Presenter getPresenter() {
+        return presenter;
+    }
+
+    public GraphicsFormBuilder getFormBuilder() {
+        return formBuilder;
+    }
+
     public void showAuthWindow() throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/auth.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/gui/auth.fxml"));
         Parent root = loader.load();
-        
-        AuthController controller = loader.getController();
-        controller.setMainView(this);
-        controller.setPresenter(presenter);
-        controller.setStage(primaryStage);
-        
-        Scene scene = new Scene(root, 350, 400);
-        primaryStage.setTitle("Login");
+        authController = loader.getController();
+        authController.setMainView(this);
+        authController.setPresenter(presenter);
+        authController.setStage(primaryStage);
+        authController.bindTexts();
+
+        Scene scene = new Scene(root, 520, 420);
+        scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
+        primaryStage.setTitle(I18nManager.get().get("auth.login.button"));
         primaryStage.setScene(scene);
         primaryStage.show();
+        updateConnectionStatus(presenter.isConnected());
     }
 
     public void showRegisterWindow() throws Exception {
         Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/register.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/gui/register.fxml"));
         Parent root = loader.load();
-        
         RegisterController controller = loader.getController();
         controller.setMainView(this);
         controller.setPresenter(presenter);
         controller.setStage(stage);
-        
-        Scene scene = new Scene(root, 350, 450);
-        stage.setTitle("Register");
+        controller.bindTexts();
+
+        Scene scene = new Scene(root, 420, 460);
+        scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
+        stage.setTitle(I18nManager.get().get("register.title"));
         stage.setScene(scene);
         stage.show();
     }
 
     public void showHomeWindow() throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/gui/home.fxml"));
         Parent root = loader.load();
-        
         homeController = loader.getController();
         homeController.setMainView(this);
         homeController.setPresenter(presenter);
         homeController.setStage(primaryStage);
-        homeController.refreshTable();
-        
-        Scene scene = new Scene(root, 900, 600);
-        primaryStage.setTitle("Home");
+        homeController.initializeTable();
+        homeController.bindTexts();
+        presenter.refreshCollection();
+
+        Scene scene = new Scene(root, 1100, 700);
+        scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
+        primaryStage.setTitle(I18nManager.get().get("main.title"));
         primaryStage.setScene(scene);
         primaryStage.show();
     }
 
     public void showVisualisationWindow() throws Exception {
         Stage stage = new Stage();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/visualisation.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/gui/visualisation.fxml"));
         Parent root = loader.load();
-        
-        VisualisationController controller = loader.getController();
-        controller.setMainView(this);
-        controller.setStage(stage);
-        
-        Scene scene = new Scene(root, 800, 600);
-        stage.setTitle("Visualisation");
+        visualisationController = loader.getController();
+        visualisationController.setMainView(this);
+        visualisationController.setStage(stage);
+        visualisationController.bindTexts();
+
+        Scene scene = new Scene(root, 900, 700);
+        scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
+        stage.setTitle(I18nManager.get().get("vis.title"));
         stage.setScene(scene);
         stage.show();
+        Platform.runLater(
+                () -> visualisationController.render(collectionStore.getMaster()));
     }
 
-    public void refreshHomeTable() {
+    public void cycleLanguage() {
+        Locale[] locales = I18nManager.supportedLocales();
+        Locale current = I18nManager.get().getLocale();
+        int index = 0;
+        for (int i = 0; i < locales.length; i++) {
+            if (locales[i].equals(current)) {
+                index = (i + 1) % locales.length;
+                break;
+            }
+        }
+        I18nManager.get().setLocale(locales[index]);
+    }
+
+    private void reloadTexts() {
+        if (authController != null) {
+            authController.bindTexts();
+        }
         if (homeController != null) {
-            homeController.refreshTable();
+            homeController.bindTexts();
+        }
+        if (visualisationController != null) {
+            visualisationController.bindTexts();
+        }
+        updateConnectionStatus(presenter.isConnected());
+    }
+
+    private void updateConnectionStatus(boolean connected) {
+        String status =
+                connected
+                    ? I18nManager.get().get("main.server.connected")
+                    : I18nManager.get().get("main.server.disconnected");
+        if (authController != null) {
+            authController.updateStatus(status, I18nManager.get().get("main.synchronized"));
+        }
+        if (homeController != null) {
+            homeController.updateStatus(status, I18nManager.get().get("main.synchronized"));
         }
     }
 
-    public static void main(String[] args) {
-        launch(args);
+    private String resolveDialogTitle(String commandName) {
+        return switch (commandName) {
+            case "history" -> I18nManager.get().get("dialog.history");
+            case "help" -> I18nManager.get().get("dialog.help");
+            case "info" -> I18nManager.get().get("dialog.info");
+            default -> I18nManager.get().get("dialog.result");
+        };
     }
 }

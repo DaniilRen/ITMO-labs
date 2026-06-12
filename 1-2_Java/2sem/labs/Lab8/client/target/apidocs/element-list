@@ -6,10 +6,16 @@ model.local.script
 model.network
 model.network.handlers
 presenter
+util.access
 util.execution
+util.filter
 util.forms
 util.forms.buidler
+util.i18n
 view
 view.console
 view.console.ui
 view.gui
+view.gui.controllers
+view.gui.dialogs
+view.gui.notification
