@@ -28,7 +28,7 @@
     <PasswordField fx:id="passwordField" styleClass="password-field" maxWidth="280"/>
     <PasswordField fx:id="confirmField" styleClass="password-field" maxWidth="280"/>
 
-    <Label fx:id="errorLabel" styleClass="error-label"/>
+    <Label fx:id="errorLabel" styleClass="error-label" visible="false" managed="false" wrapText="true" maxWidth="280"/>
 
     <Button fx:id="registerButton" styleClass="accent-button" maxWidth="280" onAction="#handleRegister"/>
     <Button fx:id="backButton" styleClass="primary-button" maxWidth="280" onAction="#handleBack"/>

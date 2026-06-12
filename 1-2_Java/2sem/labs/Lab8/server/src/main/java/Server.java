@@ -42,6 +42,7 @@ public abstract class Server {
             LocalEnvironment.getDatabasePassword(),
             10
         );
+        database.migration.DatabaseMigrator.migrate();
         
         this.databaseService = new DatabaseService();
         this.databaseLoader = new DatabaseLoader<Entity>(databaseService);

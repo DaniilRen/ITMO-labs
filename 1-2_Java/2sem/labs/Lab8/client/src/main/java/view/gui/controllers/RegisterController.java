@@ -47,32 +47,63 @@ public class RegisterController {
     }
 
     @FXML
+    private void initialize() {
+        Runnable clearError = this::clearFormError;
+        usernameField.textProperty().addListener((obs, oldVal, newVal) -> clearError.run());
+        passwordField.textProperty().addListener((obs, oldVal, newVal) -> clearError.run());
+        confirmField.textProperty().addListener((obs, oldVal, newVal) -> clearError.run());
+    }
+
+    @FXML
     private void handleRegister() {
         String username = usernameField.getText().trim();
         String password = passwordField.getText();
         String confirm = confirmField.getText();
         I18nManager i18n = I18nManager.get();
 
-        if (username.isEmpty() || password.isEmpty()) {
-            ToastService.showError(stage, i18n.get("register.error.empty"));
+        if (username.isEmpty() || password.isEmpty() || confirm.isEmpty()) {
+            showFormError(i18n.get("register.error.empty"));
             return;
         }
 
         if (!password.equals(confirm)) {
-            ToastService.showError(stage, i18n.get("register.error.mismatch"));
+            showFormError(i18n.get("register.error.mismatch"));
             return;
         }
+
+        clearFormError();
 
         if (presenter.register(new common.models.User(username, password, false))) {
             ToastService.showSuccess(stage, i18n.get("register.success"));
             stage.close();
+            try {
+                mainView.showHomeWindow();
+            } catch (Exception e) {
+                mainView.displayError(e.getMessage());
+            }
         } else {
-            ToastService.showError(stage, i18n.get("register.error.failed"));
+            String message = mainView.getLastError();
+            if (message == null || message.isBlank()) {
+                message = i18n.get("register.error.failed");
+            }
+            showFormError(message);
         }
     }
 
     @FXML
     private void handleBack() {
         stage.close();
+    }
+
+    private void showFormError(String message) {
+        errorLabel.setText(message);
+        errorLabel.setVisible(true);
+        errorLabel.setManaged(true);
+    }
+
+    private void clearFormError() {
+        errorLabel.setText("");
+        errorLabel.setVisible(false);
+        errorLabel.setManaged(false);
     }
 }

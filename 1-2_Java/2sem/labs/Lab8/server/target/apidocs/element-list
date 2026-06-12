@@ -10,6 +10,7 @@ database.dao
 database.dao.impl
 database.loader
 database.mapper
+database.migration
 database.pool
 database.service
 database.writer

@@ -41,11 +41,15 @@ public class AuthManagerImpl extends AuthManager {
         String password = userData.getPassword();
         boolean isAdmin = userData.getIsAdmin();
         try {
+            if (databaseService.userExists(name)) {
+                throw new AuthException(String.format("user already exists: %s", name));
+            }
             String hashedPassword = generatePasswordHash(password);
             databaseService.registerUser(name, hashedPassword, isAdmin);
             logger.info(String.format("registered new user: %s", name));
         } catch (SQLException e) {
-            String registExceptionMessage = String.format("cannot register new user: %s", name);
+            String registExceptionMessage =
+                    String.format("cannot register new user: %s (%s)", name, e.getMessage());
             logger.error(registExceptionMessage);
             throw new AuthException(registExceptionMessage);
         }

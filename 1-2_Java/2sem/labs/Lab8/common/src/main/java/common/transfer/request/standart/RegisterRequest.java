@@ -33,7 +33,26 @@ public class RegisterRequest extends StandartRequest {
     }
 
     public static boolean validate(List<?> args) {
-        return (args.size() == 3 && args.get(0).toString().length() > 0 && args.get(1).toString().length() > 0
-            && args.get(2).toString().length() > 0);
+        if (args.size() != 3) {
+            return false;
+        }
+        String name = toNonNullString(args.get(0)).trim();
+        String password = toNonNullString(args.get(1));
+        if (name.isEmpty() || password.isEmpty()) {
+            return false;
+        }
+        Object adminArg = args.get(2);
+        if (adminArg instanceof Boolean) {
+            return true;
+        }
+        if (adminArg == null) {
+            return false;
+        }
+        String adminStr = adminArg.toString().trim();
+        return "true".equalsIgnoreCase(adminStr) || "false".equalsIgnoreCase(adminStr);
+    }
+
+    private static String toNonNullString(Object value) {
+        return value == null ? "" : value.toString();
     }
 }

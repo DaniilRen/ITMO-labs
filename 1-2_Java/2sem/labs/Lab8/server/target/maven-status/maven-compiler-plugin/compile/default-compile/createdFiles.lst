@@ -35,6 +35,7 @@ database\mapper\UserMapper.class
 commands\Clear.class
 database\dao\BaseDAO.class
 database\dao\impl\CoordinatesDAOImpl.class
+database\migration\DatabaseMigrator.class
 database\pool\ConnectionPool.class
 database\builder\QueryBuilder$InsertBuilder.class
 MultiThreadServer.class

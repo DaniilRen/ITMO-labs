@@ -40,6 +40,7 @@ D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\src\main\java\database\mapper\L
 D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\src\main\java\database\mapper\RouteRowMapper.java
 D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\src\main\java\database\mapper\RowMapper.java
 D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\src\main\java\database\mapper\UserMapper.java
+D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\src\main\java\database\migration\DatabaseMigrator.java
 D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\src\main\java\database\pool\ConnectionPool.java
 D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\src\main\java\database\service\DatabaseService.java
 D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\src\main\java\database\service\RouteService.java

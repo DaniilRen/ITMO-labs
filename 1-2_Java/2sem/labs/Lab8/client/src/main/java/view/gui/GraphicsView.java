@@ -252,8 +252,6 @@ public class GraphicsView extends Application implements View {
         stage.setTitle(I18nManager.get().get("vis.title"));
         stage.setScene(scene);
         stage.show();
-        Platform.runLater(
-                () -> visualisationController.render(collectionStore.getMaster()));
     }
 
     public void cycleLanguage() {
