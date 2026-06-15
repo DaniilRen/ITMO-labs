@@ -23,6 +23,7 @@
                 <Insets top="10" right="10" bottom="10" left="10"/>
             </padding>
             <Button fx:id="backButton" styleClass="primary-button" onAction="#handleBack"/>
+						<Button styleClass="primary-button" text="Обновить объекты" onAction="#handleSyncObjects"/>
             <Label fx:id="titleLabel" styleClass="title-label"/>
         </HBox>
     </top>
