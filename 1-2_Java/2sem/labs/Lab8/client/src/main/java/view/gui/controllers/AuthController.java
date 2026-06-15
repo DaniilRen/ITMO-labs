@@ -53,11 +53,6 @@ public class AuthController {
         languageButton.setText("🌐");
     }
 
-    public void updateStatus(String serverStatus, String syncStatus) {
-        serverStatusLabel.setText(serverStatus);
-        syncStatusLabel.setText(syncStatus);
-    }
-
     private void showError(String message) {
         ToastService.showError(stage, message);
     }

@@ -36,7 +36,5 @@ public interface View {
         displayMessage(title + ":\n" + content);
     }
 
-    default void onConnectionStatusChanged(boolean connected) {}
-
     default void refreshCollectionView() {}
 }

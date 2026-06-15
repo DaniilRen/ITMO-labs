@@ -56,7 +56,6 @@ public class GraphicsView extends Application implements View {
 
         I18nManager.get().addListener(locale -> Platform.runLater(this::reloadTexts));
         presenter.connect(HOST, PORT);
-        updateConnectionStatus(presenter.isConnected());
         scheduler.scheduleAtFixedRate(
                 () -> {
                     if (presenter.isAuthenticated()) {
@@ -163,11 +162,6 @@ public class GraphicsView extends Application implements View {
     }
 
     @Override
-    public void onConnectionStatusChanged(boolean connected) {
-        Platform.runLater(() -> updateConnectionStatus(connected));
-    }
-
-    @Override
     public void refreshCollectionView() {
         if (presenter.isAuthenticated()) {
             presenter.refreshCollection();
@@ -200,7 +194,6 @@ public class GraphicsView extends Application implements View {
         primaryStage.setTitle(I18nManager.get().get("auth.login.button"));
         primaryStage.setScene(scene);
         primaryStage.show();
-        updateConnectionStatus(presenter.isConnected());
     }
 
     public void showRegisterWindow() throws Exception {
@@ -276,20 +269,6 @@ public class GraphicsView extends Application implements View {
         }
         if (visualisationController != null) {
             visualisationController.bindTexts();
-        }
-        updateConnectionStatus(presenter.isConnected());
-    }
-
-    private void updateConnectionStatus(boolean connected) {
-        String status =
-                connected
-                    ? I18nManager.get().get("main.server.connected")
-                    : I18nManager.get().get("main.server.disconnected");
-        if (authController != null) {
-            authController.updateStatus(status, I18nManager.get().get("main.synchronized"));
-        }
-        if (homeController != null) {
-            homeController.updateStatus(status, I18nManager.get().get("main.synchronized"));
         }
     }
 

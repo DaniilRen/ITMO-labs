@@ -16,18 +16,6 @@
         <URL value="@/css/style.css"/>
     </stylesheets>
 
-    <top>
-        <HBox alignment="CENTER_RIGHT" spacing="10">
-            <padding>
-                <Insets top="12" right="12" bottom="0" left="12"/>
-            </padding>
-            <VBox spacing="2" alignment="CENTER_RIGHT">
-                <Label fx:id="serverStatusLabel" styleClass="status-connected"/>
-                <Label fx:id="syncStatusLabel" styleClass="status-sync"/>
-            </VBox>
-        </HBox>
-    </top>
-
     <center>
         <VBox spacing="16" alignment="CENTER">
             <Label fx:id="welcomeLabel" styleClass="title-label"/>

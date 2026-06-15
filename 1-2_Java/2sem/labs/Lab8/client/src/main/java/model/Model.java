@@ -33,15 +33,12 @@ public class Model {
 
         } catch (IOException e) {
             currentView.displayError("Failed to connect to server: " + e.getMessage());
-            currentView.onConnectionStatusChanged(false);
             return;
         } catch (InvalidAttributesException e) {
             currentView.displayError("(Init Request): " + e.getMessage());
-            currentView.onConnectionStatusChanged(false);
             return;
         }
         currentView.displayMessage(String.format("<----- client started on port: %d ----->", port));
-        currentView.onConnectionStatusChanged(network.isConnected());
     }
 
     public void stopConnection() {

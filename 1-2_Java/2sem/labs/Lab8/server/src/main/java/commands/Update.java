@@ -45,7 +45,10 @@ public class Update extends Command<CombinedRequest> {
         Integer id = request.getId();
         Entity entity = request.getEntity();
         entity.setId(id);
-
+        try {
+            Thread.sleep(10);
+        } catch (Exception e) {
+        }
         Route existingRoute = (Route) collectionManager.getById(id); 
         if (existingRoute == null) {
             return new Response<>(List.of("Item not found"), Status.ERROR);

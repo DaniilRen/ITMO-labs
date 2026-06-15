@@ -99,11 +99,6 @@ public class HomeController {
         }
     }
 
-    public void updateStatus(String serverStatus, String syncStatus) {
-        serverStatusLabel.setText(serverStatus);
-        syncStatusLabel.setText(syncStatus);
-    }
-
     public void initializeTable() {
         if (tableInitialized) {
             return;

@@ -28,10 +28,6 @@
             <Button fx:id="helpButton" styleClass="primary-button" onAction="#handleHelp"/>
             <Button fx:id="infoButton" styleClass="primary-button" onAction="#handleInfo"/>
             <Button fx:id="logoutButton" styleClass="logout-button" onAction="#handleLogout"/>
-            <VBox spacing="2" alignment="CENTER_RIGHT">
-                <Label fx:id="serverStatusLabel" styleClass="status-connected"/>
-                <Label fx:id="syncStatusLabel" styleClass="status-sync"/>
-            </VBox>
         </HBox>
     </top>
 

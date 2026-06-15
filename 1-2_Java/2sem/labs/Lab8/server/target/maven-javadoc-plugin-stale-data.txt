@@ -4,21 +4,21 @@
 @packages
 @argfile
 -classpath
-'D:/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/common/target/common-1.0-SNAPSHOT.jar;C:/Users/Tayzeront/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar;C:/Users/Tayzeront/.m2/repository/org/apache/logging/log4j/log4j-core/2.20.0/log4j-core-2.20.0.jar;C:/Users/Tayzeront/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar;C:/Users/Tayzeront/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar;C:/Users/Tayzeront/.m2/repository/org/postgresql/postgresql/42.7.10/postgresql-42.7.10.jar;C:/Users/Tayzeront/.m2/repository/org/checkerframework/checker-qual/3.52.0/checker-qual-3.52.0.jar;C:/Users/Tayzeront/.m2/repository/com/google/guava/guava/33.4.0-jre/guava-33.4.0-jre.jar;C:/Users/Tayzeront/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar;C:/Users/Tayzeront/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:/Users/Tayzeront/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar;C:/Users/Tayzeront/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar'
+'/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/common/target/common-1.0-SNAPSHOT.jar:/home/danb/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar:/home/danb/.m2/repository/org/apache/logging/log4j/log4j-core/2.20.0/log4j-core-2.20.0.jar:/home/danb/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/home/danb/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar:/home/danb/.m2/repository/org/postgresql/postgresql/42.7.10/postgresql-42.7.10.jar:/home/danb/.m2/repository/org/checkerframework/checker-qual/3.52.0/checker-qual-3.52.0.jar:/home/danb/.m2/repository/com/google/guava/guava/33.4.0-jre/guava-33.4.0-jre.jar:/home/danb/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar:/home/danb/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/danb/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/danb/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar'
 -encoding
 'UTF-8'
 -protected
 -source
 '17'
 -sourcepath
-'D:/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/src/main/java;D:/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/generated-sources/annotations'
+'/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/src/main/java:/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/generated-sources/annotations'
 -author
 -bottom
 'Copyright &#169; 2026. All rights reserved.'
 -charset
 'UTF-8'
 -d
-'D:/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs'
+'/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs'
 -docencoding
 'UTF-8'
 -doctitle
@@ -27,66 +27,72 @@
 -version
 -windowtitle
 'server 1.0-SNAPSHOT API'
-auth
-collection
 commands
 commands.interfaces
-commands.manager
 commands.util
-database.builder
-database.dao
-database.dao.impl
-database.loader
-database.mapper
-database.migration
-database.pool
-database.service
-database.writer
-logging
-network.callback
-network
-network.handlers
+commands.manager
+util.local
 util.database.api
 util.database.table
-util.local
-'D:/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/src/main/java/Main.java'
-'D:/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/src/main/java/MultiThreadServer.java'
-'D:/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/src/main/java/Server.java'
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\common\target\common-1.0-SNAPSHOT.jar = 1781304727162
-C:\Users\Tayzeront\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar = 1775651527832
-C:\Users\Tayzeront\.m2\repository\org\apache\logging\log4j\log4j-core\2.20.0\log4j-core-2.20.0.jar = 1775651528006
-C:\Users\Tayzeront\.m2\repository\com\google\code\gson\gson\2.11.0\gson-2.11.0.jar = 1772215135888
-C:\Users\Tayzeront\.m2\repository\com\google\errorprone\error_prone_annotations\2.27.0\error_prone_annotations-2.27.0.jar = 1772215136359
-C:\Users\Tayzeront\.m2\repository\org\postgresql\postgresql\42.7.10\postgresql-42.7.10.jar = 1777397052735
-C:\Users\Tayzeront\.m2\repository\org\checkerframework\checker-qual\3.52.0\checker-qual-3.52.0.jar = 1777397052772
-C:\Users\Tayzeront\.m2\repository\com\google\guava\guava\33.4.0-jre\guava-33.4.0-jre.jar = 1777397053060
-C:\Users\Tayzeront\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar = 1777397052808
-C:\Users\Tayzeront\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar = 1777397052827
-C:\Users\Tayzeront\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar = 1777397052833
-C:\Users\Tayzeront\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar = 1777397052804
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\src\main\java\Main.java = 1781298771165
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\src\main\java\MultiThreadServer.java = 1781298771165
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\src\main\java\Server.java = 1781304676949
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\src\main\java = 1781298771191
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\generated-sources\annotations = 1781304729467
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\allclasses-index.html = 1781304732868
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\allpackages-index.html = 1781304732870
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\element-list = 1781304732398
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\help-doc.html = 1781304732902
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\index-all.html = 1781304732897
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\index.html = 1781304732846
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\Main.html = 1781304732243
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\member-search-index.js = 1781304732875
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\module-search-index.js = 1781304732871
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\MultiThreadServer.html = 1781304732256
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\overview-summary.html = 1781304732899
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\overview-tree.html = 1781304732841
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\package-search-index.js = 1781304732872
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\package-summary.html = 1781304732403
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\package-tree.html = 1781304732406
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\package-use.html = 1781304732774
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\search.html = 1781304732898
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\serialized-form.html = 1781304732573
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\Server.html = 1781304732346
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\tag-search-index.js = 1781304732876
-D:\Code\ITMO-labs\1-2_Java\2sem\labs\Lab8\server\target\apidocs\type-search-index.js = 1781304732874
+database.pool
+database.mapper
+database.migration
+database.loader
+database.writer
+database.builder
+database.dao.impl
+database.dao
+database.service
+network.handlers
+network
+network.callback
+collection
+logging
+auth
+'/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/src/main/java/Server.java'
+'/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/src/main/java/MultiThreadServer.java'
+'/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/src/main/java/Main.java'
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/common/target/common-1.0-SNAPSHOT.jar = 1781343453564
+/home/danb/.m2/repository/org/apache/logging/log4j/log4j-api/2.20.0/log4j-api-2.20.0.jar = 1676697622000
+/home/danb/.m2/repository/org/apache/logging/log4j/log4j-core/2.20.0/log4j-core-2.20.0.jar = 1676697665000
+/home/danb/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar = 1716144881000
+/home/danb/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar = 1714146969000
+/home/danb/.m2/repository/org/postgresql/postgresql/42.7.10/postgresql-42.7.10.jar = 1770836289000
+/home/danb/.m2/repository/org/checkerframework/checker-qual/3.52.0/checker-qual-3.52.0.jar = 1762276243000
+/home/danb/.m2/repository/com/google/guava/guava/33.4.0-jre/guava-33.4.0-jre.jar = 1734386196000
+/home/danb/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar = 1697548569000
+/home/danb/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar = 1536694843000
+/home/danb/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar = 1490936147000
+/home/danb/.m2/repository/com/google/j2objc/j2objc-annotations/3.0.0/j2objc-annotations-3.0.0.jar = 1710004379000
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/src/main/java/Server.java = 1781306017797
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/src/main/java/MultiThreadServer.java = 1781080934029
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/src/main/java/Main.java = 1781080934029
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/src/main/java = 1781306017797
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/generated-sources/annotations = 1781343458948
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/MultiThreadServer.html = 1781343466662
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/allclasses-index.html = 1781343467841
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/search-page.js = 1781343467945
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/package-use.html = 1781343467687
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/index.html = 1781343467771
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/script.js = 1781343467940
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/overview-tree.html = 1781343467760
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/type-search-index.js = 1781343467846
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/package-summary.html = 1781343467129
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/module-search-index.js = 1781343467845
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/tag-search-index.js = 1781343467848
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/member-search-index.js = 1781343467847
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/package-tree.html = 1781343467136
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/overview-summary.html = 1781343467930
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/package-search-index.js = 1781343467845
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/search.html = 1781343467928
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/serialized-form.html = 1781343467363
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/stylesheet.css = 1781343467939
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/Server.html = 1781343466953
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/Main.html = 1781343466636
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/allpackages-index.html = 1781343467844
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/copy.svg = 1781343467941
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/help-doc.html = 1781343467936
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/element-list = 1781343467112
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/index-all.html = 1781343467925
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/search.js = 1781343467943
+/home/danb/Code/ITMO-labs/1-2_Java/2sem/labs/Lab8/server/target/apidocs/link.svg = 1781343467941
