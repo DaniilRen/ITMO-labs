@@ -37,4 +37,6 @@ public interface View {
     }
 
     default void refreshCollectionView() {}
+
+    default void setScriptQuietMode(boolean quiet) {}
 }

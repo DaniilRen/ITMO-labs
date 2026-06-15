@@ -24,7 +24,6 @@ public final class AddFilterFieldDialog {
     if (owner != null) {
       stage.initOwner(owner);
     }
-    stage.initModality(Modality.APPLICATION_MODAL);
     I18nManager i18n = I18nManager.get();
 
     ComboBox<String> fieldBox = new ComboBox<>();
@@ -42,11 +41,11 @@ public final class AddFilterFieldDialog {
     GridPane grid = new GridPane();
     grid.setHgap(10);
     grid.setVgap(8);
-    grid.add(new Label(i18n.get("filter.field")), 0, 0);
+    grid.add(createFieldLabel(i18n.get("filter.field")), 0, 0);
     grid.add(fieldBox, 1, 0);
-    grid.add(new Label(i18n.get("filter.action")), 0, 1);
+    grid.add(createFieldLabel(i18n.get("filter.action")), 0, 1);
     grid.add(actionBox, 1, 1);
-    grid.add(new Label(i18n.get("filter.value")), 0, 2);
+    grid.add(createFieldLabel(i18n.get("filter.value")), 0, 2);
     grid.add(valueField, 1, 2);
 
     final EntityFilter.Condition[] result = {null};
@@ -74,22 +73,26 @@ public final class AddFilterFieldDialog {
     HBox buttons = new HBox(10, cancelBtn, applyBtn);
     buttons.setAlignment(Pos.CENTER_RIGHT);
 
-    VBox root =
-        new VBox(
-            12,
-            new Label(i18n.get("filter.add.title")),
-            grid,
-            errorLabel,
-            buttons,
-            new Label(i18n.get("error.output")));
-    root.setPadding(new Insets(16));
-    root.getStyleClass().add("dialog-root");
+    Label title = new Label(i18n.get("filter.add.title"));
+    title.getStyleClass().add("title-label");
 
+    Label outputLabel = new Label(i18n.get("error.output"));
+    outputLabel.getStyleClass().add("field-label");
+
+    VBox root = new VBox(12, title, grid, errorLabel, buttons, outputLabel);
+    root.setPadding(new Insets(16));
+
+    DialogStyles.setup(stage, root, 380, 280, owner);
+    stage.initModality(Modality.APPLICATION_MODAL);
     stage.setTitle(i18n.get("filter.add.title"));
-    stage.setScene(new javafx.scene.Scene(root, 380, 280));
-    stage.getScene().getStylesheets().add(AddFilterFieldDialog.class.getResource("/css/style.css").toExternalForm());
     stage.showAndWait();
 
     return Optional.ofNullable(result[0]);
+  }
+
+  private static Label createFieldLabel(String text) {
+    Label label = new Label(text);
+    label.getStyleClass().add("field-label");
+    return label;
   }
 }

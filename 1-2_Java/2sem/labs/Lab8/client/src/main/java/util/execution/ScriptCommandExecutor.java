@@ -2,7 +2,9 @@ package util.execution;
 
 import java.util.List;
 
+import common.transfer.Status;
+
 @FunctionalInterface
 public interface ScriptCommandExecutor {
-    void apply(String name, List<?> data, boolean fileMode);
+  Status apply(String name, List<?> data, boolean fileMode);
 }

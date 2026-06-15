@@ -32,7 +32,7 @@ public final class ExecuteFileDialog {
     prompt.getStyleClass().add("field-label");
 
     TextField fileField = new TextField();
-    fileField.setPromptText(i18n.get("dialog.file.name"));
+    fileField.setPromptText(i18n.get("dialog.file.data.hint"));
     fileField.getStyleClass().add("text-field");
     fileField.setMaxWidth(320);
 
@@ -56,6 +56,7 @@ public final class ExecuteFileDialog {
             errorBox.setText(i18n.get("auth.error.empty"));
             return;
           }
+          mainView.clearLastError();
           Status status =
               presenter.executeCommandWithStatus("execute_script", java.util.List.of(filename), true);
           if (status == Status.OK) {

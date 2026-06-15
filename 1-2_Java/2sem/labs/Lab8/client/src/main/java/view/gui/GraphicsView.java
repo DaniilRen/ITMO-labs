@@ -41,6 +41,7 @@ public class GraphicsView extends Application implements View {
     private final CollectionStore collectionStore = new CollectionStore();
     private User pendingAuthUser;
     private String lastError = "";
+    private int scriptQuietDepth;
     private final ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 
     public void onCreate() {
@@ -90,6 +91,10 @@ public class GraphicsView extends Application implements View {
     @Override
     public void displayError(String errorMessage) {
         lastError = errorMessage;
+        if (scriptQuietDepth > 0) {
+            System.err.println(errorMessage);
+            return;
+        }
         Platform.runLater(
                 () -> {
                     ToastService.showError(primaryStage, errorMessage);
@@ -97,8 +102,26 @@ public class GraphicsView extends Application implements View {
                 });
     }
 
+    @Override
+    public void setScriptQuietMode(boolean quiet) {
+        if (quiet) {
+            scriptQuietDepth++;
+        } else if (scriptQuietDepth > 0) {
+            scriptQuietDepth--;
+        }
+    }
+
     public String getLastError() {
         return lastError;
+    }
+
+    public void clearLastError() {
+        lastError = "";
+    }
+
+    public void setLastError(String errorMessage) {
+        lastError = errorMessage;
+        System.err.println(errorMessage);
     }
 
     @Override
@@ -152,6 +175,10 @@ public class GraphicsView extends Application implements View {
 
     @Override
     public void showTextDialog(String title, String content) {
+        if (scriptQuietDepth > 0) {
+            System.out.println(resolveDialogTitle(title) + ":\n" + content);
+            return;
+        }
         Platform.runLater(
                 () -> {
                     Alert alert = new Alert(Alert.AlertType.INFORMATION, content, ButtonType.OK);

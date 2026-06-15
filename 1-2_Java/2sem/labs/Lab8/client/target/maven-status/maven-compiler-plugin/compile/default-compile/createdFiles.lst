@@ -45,6 +45,7 @@ model/local/LocalCommandHandler.class
 view/gui/GraphicsView.class
 model/network/AbstractClientNetwork.class
 view/gui/controllers/HomeController.class
+util/script/ScriptPaths.class
 view/gui/controllers/VisualisationController$RouteShape.class
 view/gui/dialogs/AddFilterFieldDialog.class
 view/gui/controllers/AuthController.class
