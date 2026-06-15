@@ -35,6 +35,11 @@ public class Add extends Command<EntityRequest> {
     }
     
     public Response<?> execute(EntityRequest request) {
+			try {
+				Thread.sleep(3000);
+			} catch (Exception e) {
+
+			}
         Entity entity = request.getEntity();
         try {
             databaseService.saveRoute((Route) entity);

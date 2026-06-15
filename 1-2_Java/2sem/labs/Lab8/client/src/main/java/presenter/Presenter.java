@@ -4,10 +4,15 @@ import java.util.List;
 
 import common.models.User;
 import common.transfer.Status;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import model.Model;
 
 public class Presenter {
     private final Model model;
+
+		private final ExecutorService requestExecutor =
+			Executors.newSingleThreadExecutor();
 
     public Presenter(Model model) {
         this.model = model;
@@ -26,12 +31,22 @@ public class Presenter {
     }
 
     public void executeCommand(String commandName, List<?> args, boolean fileMode) {
-        this.model.executeCommand(commandName, args, fileMode);
-    }
+    requestExecutor.submit(() -> {
+        try {
+            model.executeCommand(commandName, args, fileMode);
+        } catch (Exception e) {
+            model.getView().displayError(e.getMessage());
+        }
+    });
+}
 
     public Status executeCommandWithStatus(String commandName, List<?> args, boolean fileMode) {
         return model.executeCommandWithStatus(commandName, args, fileMode);
     }
+
+		public void shutdown() {
+    requestExecutor.shutdownNow();
+}
 
     public User getCurrentUser() {
         return model.getCurrentUser();

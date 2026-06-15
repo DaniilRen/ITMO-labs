@@ -77,6 +77,7 @@ public class GraphicsView extends Application implements View {
 
     public void onDestroy() {
         presenter.disconnect();
+				presenter.shutdown();
     }
 
     @Override
