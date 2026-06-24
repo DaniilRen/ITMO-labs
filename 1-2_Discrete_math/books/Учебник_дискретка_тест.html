@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Подготовка к тесту по дискретной математике — 3 алгоритма</title>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --fg: #1f2024;
+    --muted: #5a5a5a;
+    --accent: #2f5496;
+    --accent-soft: #e8eef9;
+    --warn: #b34700;
+    --warn-soft: #fff3e0;
+    --ok: #1a6b30;
+    --ok-soft: #e6f4ea;
+    --code-bg: #f1f0ec;
+    --border: #d6d3cb;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Times New Roman", Georgia, serif;
+    font-size: 17px;
+    line-height: 1.55;
+    color: var(--fg);
+    background: var(--bg);
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 28px 32px 64px;
+  }
+  h1, h2, h3, h4 { font-family: "Georgia", serif; color: var(--accent); }
+  h1 { font-size: 30px; border-bottom: 3px double var(--accent); padding-bottom: 6px; }
+  h2 { font-size: 24px; margin-top: 48px; border-bottom: 2px solid var(--accent); padding-bottom: 4px; }
+  h3 { font-size: 20px; margin-top: 28px; color: #1f3f7a; }
+  h4 { font-size: 17px; margin-top: 18px; color: #555; }
+  p { margin: 10px 0; }
+  ol, ul { margin: 8px 0 12px 24px; }
+  li { margin: 4px 0; }
+  code, kbd, .mono { font-family: "Consolas", "Courier New", monospace; font-size: 15px; }
+  .note {
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-radius: 4px;
+  }
+  .warn {
+    background: var(--warn-soft);
+    border-left: 4px solid var(--warn);
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-radius: 4px;
+  }
+  .ok {
+    background: var(--ok-soft);
+    border-left: 4px solid var(--ok);
+    padding: 10px 14px;
+    margin: 14px 0;
+    border-radius: 4px;
+  }
+  .definition {
+    background: #fffdf3;
+    border: 1px solid #e6dca6;
+    padding: 12px 16px;
+    margin: 14px 0;
+    border-radius: 4px;
+  }
+  .definition strong:first-child { color: var(--accent); }
+  table {
+    border-collapse: collapse;
+    margin: 14px 0;
+    background: white;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 15px;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+    text-align: center;
+    min-width: 32px;
+  }
+  th { background: var(--accent); color: white; font-weight: bold; }
+  td.head { background: var(--accent); color: white; font-weight: bold; }
+  td.dim { background: #f4f4f0; color: #999; }
+  td.hit { background: #fff5b8; font-weight: bold; }
+  td.tree { background: #d5edd9; font-weight: bold; }
+  td.cycle { background: #fadbd8; color: #888; text-decoration: line-through; }
+  pre {
+    background: var(--code-bg);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    overflow-x: auto;
+    font-size: 14px;
+    line-height: 1.45;
+    border-radius: 3px;
+  }
+  details {
+    margin: 14px 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 6px 14px;
+    background: white;
+  }
+  details summary {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 6px 0;
+    color: var(--accent);
+  }
+  details[open] summary { border-bottom: 1px dashed var(--border); margin-bottom: 8px; }
+  .toc {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px 24px;
+    margin: 18px 0 28px;
+  }
+  .toc h3 { margin-top: 0; }
+  .toc a { color: var(--accent); text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .task {
+    background: white;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    padding: 14px 18px;
+    margin: 18px 0;
+    border-radius: 4px;
+  }
+  .task .num { font-weight: bold; color: var(--accent); }
+  .answer { background: var(--ok-soft); border-radius: 4px; padding: 8px 14px; margin: 10px 0; }
+  .answer::before { content: "Ответ: "; font-weight: bold; color: var(--ok); }
+  .iter { font-style: italic; color: var(--muted); }
+  .formula {
+    text-align: center;
+    margin: 14px 0;
+    font-size: 17px;
+    font-family: "Cambria Math", "Times New Roman", serif;
+  }
+  .grid-graph {
+    font-family: "Consolas", monospace;
+    background: #fdfcf6;
+    border: 1px solid var(--border);
+    padding: 14px 18px;
+    margin: 12px 0;
+    white-space: pre;
+    line-height: 1.4;
+    font-size: 15px;
+  }
+  .small { font-size: 14px; color: var(--muted); }
+  .kw { color: var(--accent); font-weight: bold; }
+  .step-label { display: inline-block; min-width: 28px; font-weight: bold; color: var(--accent); }
+  hr.thin { border: none; border-top: 1px dashed var(--border); margin: 22px 0; }
+</style>
+</head>
+<body>
+
+<h1>Подготовка к тесту по дискретной математике</h1>
+<p class="small">Три алгоритма за один вечер: <b>Вейсман</b> (раскраска вершин через булеву минимизацию), <b>Прим</b> (минимальное остовное дерево на полном графе с манхэттен-весами), <b>метод ветвей и границ</b> (квадратичная задача о размещении, QAP). Учебник построен по эталонным решениям студента-отличника, чтобы оформление совпадало с тем, что ждёт ваш преподаватель.</p>
+
+<div class="toc">
+<h3>Что внутри</h3>
+<ol start="0">
+  <li><a href="#basics">Глава 0. С нуля: что такое граф, ребро, матрица смежности</a> <span class="small">(если в дискре «полный ноль» — начинать сюда)</span></li>
+  <li><a href="#weissman">Задание 1. Алгоритм Вейсмана — раскраска вершин графа</a></li>
+  <li><a href="#prim">Задание 2. Алгоритм Прима — минимальное остовное дерево</a></li>
+  <li><a href="#bnb">Задание 3. Метод ветвей и границ — задача о размещении (QAP)</a></li>
+  <li><a href="#cheat">Шпаргалка перед тестом + типичные ошибки + тайминг</a></li>
+</ol>
+</div>
+
+<div class="note">
+<b>Как пользоваться.</b> Если вы знаете базовый словарь графов — переходите сразу к главе 1. Если нет — потратьте 10 минут на главу 0, она даст слова, без которых дальше будет туман. Каждая основная глава устроена одинаково: (1) что вообще от вас хотят, (2) сам алгоритм по шагам, (3) подробно разобранный эталонный пример из вашего курса, (4) три тренировочные задачи с разворачивающимися решениями.
+</div>
+
+<div style="background: #fff3e0; border: 2px solid #b34700; border-radius: 8px; padding: 18px 22px; margin: 22px 0;">
+<h3 style="color: #b34700; margin-top: 0;">🎯 Готовые ответы для варианта 3 (ваш вариант)</h3>
+
+<table style="font-family: 'Times New Roman', serif; font-size: 16px; margin: 10px 0;">
+<tr><td class="head">Задание</td><td class="head">Ответ</td><td class="head">Подробный разбор</td></tr>
+<tr><td><b>1. Вейсман</b></td><td>χ(G) = <b>4</b>, цвета: {e<sub>1</sub>,e<sub>3</sub>} | {e<sub>5</sub>} | {e<sub>4</sub>} | {e<sub>2</sub>,e<sub>6</sub>}</td><td><a href="#weissman">Глава 1.7 (последний task)</a></td></tr>
+<tr><td><b>2. Прим (МОД)</b></td><td>вес = <b>14</b> (8 рёбер) — <i>проверьте координаты!</i></td><td><a href="#prim">Глава 2.7</a></td></tr>
+<tr><td><b>3. B&B QAP</b></td><td>F* = <b>13</b>, размещение: e<sub>4</sub>→p<sub>1</sub>, e<sub>1</sub>→p<sub>2</sub>, e<sub>3</sub>→p<sub>3</sub>, e<sub>2</sub>→p<sub>4</sub></td><td><a href="#bnb">Глава 3.8</a></td></tr>
+</table>
+
+<p style="margin-bottom: 0;"><b>Стратегия подготовки:</b> сначала прочитайте теорию каждого алгоритма (главы 1.1–1.3, 2.1–2.3, 3.1–3.3), потом откройте полный разбор варианта 3 и <b>прорешайте его руками сами</b>, сверяясь с эталоном. Только после этого пробуйте свой вариант на тесте — иначе оформление поплывёт.</p>
+</div>
+
+<!-- ============================================================== -->
+<!-- ГЛАВА 0. ОСНОВЫ                                                 -->
+<!-- ============================================================== -->
+<h2 id="basics">0. С нуля: что такое граф, ребро, матрица смежности</h2>
+
+<p>Если слова «вершина», «ребро», «матрица смежности», «цикл», «дерево» для вас — тёмный лес, прочтите эту главу. Она занимает 10 минут и даёт словарь, без которого дальше будет туго. Если вы их знаете — пропускайте, никаких новых алгоритмов здесь нет.</p>
+
+<h3>0.1. Что такое граф</h3>
+
+<div class="definition">
+<strong>Граф</strong> — это два множества: множество <b>вершин</b> (точек, узлов) и множество <b>рёбер</b> (линий между точками). Каждое ребро соединяет ровно две вершины.
+</div>
+
+<p>На картинке вершины обычно рисуют кружочками, а рёбра — линиями. Например, граф на 4 вершинах:</p>
+
+<pre>
+    (1) ─── (2)
+     │       │
+     │       │
+    (3) ─── (4)
+</pre>
+
+<p>Здесь четыре вершины: 1, 2, 3, 4, и четыре ребра: (1,2), (2,4), (3,4), (1,3). Между 1 и 4 ребра нет — они соединены только «через» другие вершины. Что именно обозначают вершины в задаче — зависит от смысла: города, люди, состояния, переменные. На тесте — это просто абстрактные точки.</p>
+
+<h3>0.2. Степень вершины</h3>
+
+<div class="definition">
+<strong>Степень вершины</strong> v — это сколько рёбер «торчит» из неё, то есть сколько рёбер на ней заканчивается. Обозначается ρ(v) — это греческая буква «ро».
+</div>
+
+<p>В графе выше: ρ(1) = 2 (рёбра к 2 и к 3), ρ(2) = 2 (рёбра к 1 и к 4), ρ(3) = 2, ρ(4) = 2.</p>
+
+<p class="small">Полезный факт: сумма всех степеней всегда чётна и равна 2·(число рёбер). На картинке выше: 2+2+2+2 = 8 = 2·4 рёбер. ✓</p>
+
+<h3>0.3. Соседи и смежность</h3>
+
+<div class="definition">
+<strong>Соседи вершины</strong> v — это вершины, с которыми v напрямую соединена ребром. Обозначаются Γ(v) — это греческая «гамма».<br>
+<strong>Смежные вершины</strong> = соединённые ребром. <strong>Несмежные</strong> = не соединённые.
+</div>
+
+<p>В нашем примере: Γ(1) = {2, 3}. Вершина 4 для вершины 1 — <b>не соседка</b>, они несмежны (прямого ребра 1–4 в графе нет).</p>
+
+<div class="warn">
+<b>Терминология не путается?</b> «Степень» — это сколько рёбер. «Соседи» — это какие именно вершины. Степень = размер множества соседей, ρ(v) = |Γ(v)|. Палка «|…|» означает «количество элементов».
+</div>
+
+<h3>0.4. Как задать граф</h3>
+
+<p>Один и тот же граф можно описать четырьмя способами — приходится между ними переключаться:</p>
+
+<ul>
+<li><b>Картинкой.</b> Наглядно, но в формулу не запихнёшь.</li>
+<li><b>Списком рёбер.</b> Просто перечисление пар: (1,2), (2,4), (3,4), (1,3).</li>
+<li><b>Списком смежности.</b> Для каждой вершины — кто её соседи: <br>&nbsp;&nbsp;1: 2, 3; 2: 1, 4; 3: 1, 4; 4: 2, 3.</li>
+<li><b>Матрицей смежности R.</b> Это квадратная таблица n×n (где n — число вершин), в клетке R[i][j] стоит 1, если есть ребро между вершинами i и j, и 0 иначе. Диагональ — нули.</li>
+</ul>
+
+<p>Наш граф в виде матрицы смежности:</p>
+
+<table>
+<tr><td class="head">V/V</td><td class="head">1</td><td class="head">2</td><td class="head">3</td><td class="head">4</td></tr>
+<tr><td class="head">1</td><td class="dim">0</td><td>1</td><td>1</td><td>0</td></tr>
+<tr><td class="head">2</td><td>1</td><td class="dim">0</td><td>0</td><td>1</td></tr>
+<tr><td class="head">3</td><td>1</td><td>0</td><td class="dim">0</td><td>1</td></tr>
+<tr><td class="head">4</td><td>0</td><td>1</td><td>1</td><td class="dim">0</td></tr>
+</table>
+
+<h4>Как читать матрицу смежности (это понадобится во всех 3 заданиях)</h4>
+
+<ol>
+<li>Берёте интересующую строку i (например, строку 2).</li>
+<li>Идёте по ней слева направо. Каждая единичка — это сосед. В строке 2 единицы стоят в столбцах 1 и 4 ⇒ Γ(2) = {1, 4}.</li>
+<li>Чтобы посчитать степень: просто сосчитайте единицы в строке (нули и диагональ не считать). ρ(2) = 2.</li>
+<li>В неориентированном графе матрица <b>симметрична</b>: R[i][j] = R[j][i]. Можно смотреть как строку, так и столбец — результат один.</li>
+<li>На тестовых картинках пустые клетки = нули (просто чтобы не пестрило).</li>
+</ol>
+
+<h3>0.5. Виды графов (для теста)</h3>
+
+<ul>
+<li><b>Неориентированный (обычный) граф.</b> Рёбра без направления. «1 знаком с 2» = «2 знаком с 1». Матрица симметрична. — <b>Это задания 1 и 2 теста.</b></li>
+<li><b>Взвешенный граф.</b> Каждому ребру приписано число (вес: длина, цена, стоимость). Записывается матрицей весов: вместо 0/1 — конкретные числа, а отсутствие ребра помечают ∞ или «—». — <b>Это задание 2 теста</b> (веса = длины отрезков на сетке).</li>
+<li><b>Мультиграф.</b> Между двумя вершинами может быть несколько параллельных рёбер. Количество называется <b>кратностью</b>. В матрице кратностей в клетке записывают это число. — <b>Это задание 3 теста.</b></li>
+<li><b>Ориентированный граф (орграф).</b> Рёбра — стрелочки. Матрица может быть несимметричной. — <b>В вашем тесте, скорее всего, не встретится</b>, но в курсе про него говорилось.</li>
+</ul>
+
+<h3>0.6. Путь и цикл</h3>
+
+<div class="definition">
+<strong>Путь</strong> в графе — последовательность <b>различных</b> вершин, в которой каждая соседняя пара соединена ребром (ни вершины, ни рёбра не повторяются).<br>
+<strong>Длина пути</strong> — количество рёбер в нём.
+</div>
+
+<p>В нашем графе из 0.1: 1 → 2 → 4 — путь длины 2. А «1 → 4» <b>не</b> путь, потому что прямого ребра 1–4 нет (надо идти 1→2→4 или 1→3→4).</p>
+
+<div class="definition">
+<strong>Цикл</strong> — путь, который возвращается в стартовую вершину, не повторяя ни одно ребро.
+</div>
+
+<p>В нашем графе: 1 → 2 → 4 → 3 → 1 — это цикл длины 4. А «1 → 2 → 1» циклом не считается: мы прошли по ребру (1,2) дважды.</p>
+
+<h3>0.7. Связный граф и компоненты связности</h3>
+
+<div class="definition">
+<strong>Связный граф</strong> — такой, что из любой вершины можно дойти до любой другой по рёбрам. <br>
+Если граф несвязный — он распадается на <b>компоненты связности</b>: группы вершин, внутри которых есть пути, а между группами — нет.
+</div>
+
+<p>Пример несвязного графа:</p>
+<pre>
+   (1) — (2)        (4) — (5)
+
+         (3)
+</pre>
+<p>Здесь три компоненты: {1, 2}, {3}, {4, 5}. Перейти от 1 к 4 не получится — нет ни одной цепочки рёбер.</p>
+
+<h3>0.8. Дерево и остовное дерево</h3>
+
+<div class="definition">
+<strong>Дерево</strong> — связный граф <b>без циклов</b>. Между любыми двумя вершинами в дереве есть ровно один путь.
+</div>
+
+<p>Полезный факт, без вывода: в дереве на n вершинах всегда <b>ровно n − 1 ребро</b>. Меньше — будет несвязный граф, больше — появится цикл.</p>
+
+<div class="definition">
+<strong>Остовное дерево</strong> графа G — это <b>под</b>граф (то есть «часть» исходного графа), который содержит <b>все вершины G</b> и сам является деревом (без циклов). Если рёбра графа взвешены, ищут остов с минимальной суммой весов — <b>минимальное остовное дерево (МОД)</b>.
+</div>
+
+<p>Зачем нужно МОД на практике: например, соединить кабелями все офисы в здании так, чтобы из любого был доступ ко всем, потратив минимум кабеля. Или построить дороги между деревнями с минимальной общей длиной. — <b>Это и есть задание 2 теста</b>.</p>
+
+<h3>0.9. Обозначения (на одной странице)</h3>
+
+<table style="font-family: 'Times New Roman', serif;">
+<tr><td class="head">Запись</td><td class="head">Читается / значит</td></tr>
+<tr><td><span class="mono">G = (V, E)</span></td><td>граф G состоит из множества вершин V и множества рёбер E</td></tr>
+<tr><td><span class="mono">v ∈ V</span></td><td>«v принадлежит V» — то есть v является вершиной графа</td></tr>
+<tr><td><span class="mono">(u, v)</span></td><td>ребро между вершинами u и v</td></tr>
+<tr><td><span class="mono">ρ(v)</span></td><td>«ро от вэ» — степень вершины v</td></tr>
+<tr><td><span class="mono">Γ(v)</span></td><td>«гамма от вэ» — множество соседей вершины v</td></tr>
+<tr><td><span class="mono">|S|</span></td><td>количество элементов в множестве S</td></tr>
+<tr><td><span class="mono">χ(G)</span></td><td>«хи от же» — хроматическое число G (минимум цветов для раскраски)</td></tr>
+<tr><td><span class="mono">n, m</span></td><td>обычно — число вершин и число рёбер</td></tr>
+<tr><td><span class="mono">R, C</span></td><td>матрица смежности (R) или матрица весов/кратностей (C)</td></tr>
+<tr><td><span class="mono">w(e)</span></td><td>«вес ребра e» — число, приписанное ребру (длина, стоимость)</td></tr>
+<tr><td><span class="mono">∞</span></td><td>«бесконечность» — здесь означает «ребра нет» или «недопустимо»</td></tr>
+<tr><td><span class="mono">{a, b, c}</span></td><td>множество (неупорядоченный набор) элементов a, b, c</td></tr>
+<tr><td><span class="mono">→</span></td><td>«стрелка», означает переход / следующий шаг</td></tr>
+</table>
+
+<h3>0.10. Совсем-совсем минимум на тест</h3>
+
+<p>Если в голове сейчас ничего нет — заучите хотя бы это, на словах:</p>
+<ol>
+<li>Граф = точки (вершины) + линии (рёбра). Точки соединены линиями — значит они «знакомы», «связаны».</li>
+<li>Степень вершины = сколько рёбер из неё торчит. Считается по числу единиц в её строке матрицы смежности.</li>
+<li>Соседи вершины — те, с кем она напрямую соединена ребром.</li>
+<li>Смежные = соединённые ребром. Несмежные = не соединённые. <b>Одним цветом красят только несмежные.</b></li>
+<li>Матрица смежности: 1 в клетке (i, j) — есть ребро i–j, 0 — нет. На диагонали нули.</li>
+<li>Цикл — путь, замыкающийся в стартовую вершину без повторения рёбер.</li>
+<li>Дерево — связный граф без циклов. На n вершинах ровно n − 1 ребро.</li>
+<li>Остовное дерево = «скелет» графа: все вершины оставили, рёбер выбрали ровно n − 1 без циклов.</li>
+<li>Мультиграф — между парой вершин может быть несколько рёбер. Их число = кратность.</li>
+<li>Гамильтонов путь — путь, проходящий через все вершины ровно по одному разу.</li>
+</ol>
+
+<p>Этого словаря хватит, чтобы понимать все три алгоритма, которые идут дальше. Поехали.</p>
+
+
+<!-- ============================================================== -->
+<!-- ГЛАВА 1. ВЕЙСМАН                                                -->
+<!-- ============================================================== -->
+<h2 id="weissman">1. Алгоритм Вейсмана — раскраска вершин графа</h2>
+
+<div class="warn">
+<b>Внимание!</b> В предыдущей версии этого учебника здесь был описан жадный алгоритм Уэлша-Пауэлла (раскраска по убыванию степени). Это <b>не тот алгоритм</b>, который ждёт ваш преподаватель. Правильный алгоритм Вейсмана использует <b>булеву минимизацию</b> и описан ниже.
+</div>
+
+<h3>1.1. Что нужно сделать</h3>
+
+<div class="definition">
+<strong>Раскраска вершин</strong> графа G — это назначение каждому узлу одного «цвета» (номера 1, 2, 3, …) так, чтобы <b>никакие две соседние вершины не имели одинакового цвета</b>. Минимально возможное количество цветов называется <b>хроматическим числом</b> графа χ(G).
+</div>
+
+<p>Алгоритм Вейсмана находит <b>точное</b> χ(G) через построение всех максимальных независимых множеств и выбор минимального набора, покрывающего все вершины. Он состоит из двух больших шагов:</p>
+
+<ol>
+  <li><b>Часть 1.</b> Поочерёдно удаляем вершины с максимальной степенью и набираем булеву формулу П. Раскрываем её в дизъюнктивную нормальную форму (ДНФ). Каждый член ДНФ — это минимальное вершинное покрытие; его <b>дополнение</b> — максимальное независимое множество ϕᵢ.</li>
+  <li><b>Часть 2.</b> Для каждой вершины смотрим, в какие ϕᵢ она попала, и формируем выражение П'. Минимизируем П' — получаем <b>минимум числа ϕᵢ, покрывающих все вершины</b>. Это и есть χ(G), а сами ϕᵢ — цветовые классы.</li>
+</ol>
+
+<h3>1.2. Базовые понятия</h3>
+
+<div class="definition">
+<strong>Независимое множество</strong> вершин — это набор вершин, в котором <b>никакие две не соединены ребром</b>. Каждый цветовой класс в правильной раскраске — это независимое множество.
+</div>
+
+<div class="definition">
+<strong>Максимальное</strong> независимое множество (МНМ) — такое, которое нельзя расширить, добавив ещё одну вершину без появления ребра внутри. Минимальную раскраску ищут именно среди МНМ.
+</div>
+
+<div class="definition">
+<strong>Вершинное покрытие</strong> — набор вершин, такой что <b>каждое ребро</b> графа имеет хотя бы один конец в этом наборе. Дополнение вершинного покрытия (V \ K) — это независимое множество, и наоборот.
+</div>
+
+<div class="note">
+<b>Связь.</b> Если знаем все <i>минимальные вершинные покрытия</i> графа — берём их дополнения и получаем все <i>максимальные независимые множества</i>. Алгоритм Вейсмана ищет покрытия через булеву алгебру, потом переходит к их дополнениям.
+</div>
+
+<h3>1.3. Алгоритм Вейсмана пошагово</h3>
+
+<h4>Часть 1. Получение множеств ϕᵢ через булеву минимизацию</h4>
+
+<ol>
+  <li>По матрице смежности посчитайте степени всех вершин ρ(eᵢ).</li>
+  <li>Найдите вершину v с <b>максимальной степенью</b> (при равенстве — с меньшим индексом).</li>
+  <li><b>Запишите клозу</b>: C<sub>v</sub> = (v ∨ <i>конъюнкция всех соседей</i> v <i>в текущем графе</i>). Например: C<sub>5</sub> = (e<sub>5</sub> ∨ e<sub>1</sub>·e<sub>2</sub>·e<sub>4</sub>·e<sub>6</sub>).</li>
+  <li><b>Удалите</b> v из графа (зачеркните её строку и столбец в матрице). Пересчитайте степени оставшихся вершин.</li>
+  <li>Повторяйте 2–4, пока в графе ещё остаются рёбра. Когда останутся только изолированные вершины — остановка.</li>
+  <li>Сложите все клозы: <b>П = ∧ C<sub>v</sub></b>.</li>
+  <li><b>Раскройте П в ДНФ</b> (дизъюнктивную нормальную форму): перемножьте скобки, примените идемпотентность (x·x = x) и поглощение (A ∨ A·B = A). В итоге получите сумму нескольких конъюнкций K<sub>j</sub>.</li>
+  <li>Каждое <b>K<sub>j</sub> — это минимальное вершинное покрытие</b>. Его <b>дополнение ϕ<sub>j</sub> = V \ K<sub>j</sub></b> — это максимальное независимое множество (МНМ).</li>
+</ol>
+
+<h4>Часть 2. Поиск минимального покрытия по ϕᵢ</h4>
+
+<ol>
+  <li>Для <b>каждой вершины eᵢ</b> выпишите, в какие ϕⱼ она входит. Сформируйте дизъюнкцию: <b>tᵢ = ∨ {ϕⱼ : eᵢ ∈ ϕⱼ}</b>.</li>
+  <li>Сложите: <b>П' = ∧ tᵢ</b>.</li>
+  <li>Минимизируйте П' с помощью поглощения (ϕᵢ · (ϕᵢ ∨ другие) = ϕᵢ).</li>
+  <li>Результат — конъюнкция нескольких ϕⱼ. Их количество и есть <b>χ(G)</b>.</li>
+  <li>Назначьте каждой ϕⱼ свой цвет, и раскрасьте: каждую вершину красим в цвет той ϕⱼ, в которой она лежит (если вершина в нескольких — выбираем любую из выбранных).</li>
+</ol>
+
+<div class="note">
+<b>Почему оно работает.</b> Минимизация П' = ∧ tᵢ — это задача <i>покрытия множества</i>: каждая вершина должна попасть хотя бы в одну выбранную ϕⱼ. Поглощение в булевой алгебре отбрасывает «избыточные» ϕⱼ и оставляет минимальный набор. Раз ϕⱼ — это независимые множества, их попарно-непересекающаяся подсборка даёт легитимную раскраску.
+</div>
+
+<h3>1.4. Эталонный пример: вариант 2 из теста</h3>
+
+<p>Дана матрица смежности (граф из 6 вершин, симметричная, пустые клетки = 0):</p>
+
+<table>
+<tr><td class="head">V/V</td><td class="head">e<sub>1</sub></td><td class="head">e<sub>2</sub></td><td class="head">e<sub>3</sub></td><td class="head">e<sub>4</sub></td><td class="head">e<sub>5</sub></td><td class="head">e<sub>6</sub></td><td class="head">ρ</td></tr>
+<tr><td class="head">e<sub>1</sub></td><td class="dim">0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>2</td></tr>
+<tr><td class="head">e<sub>2</sub></td><td>0</td><td class="dim">0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>3</td></tr>
+<tr><td class="head">e<sub>3</sub></td><td>0</td><td>0</td><td class="dim">0</td><td>1</td><td>1</td><td>1</td><td>3</td></tr>
+<tr><td class="head">e<sub>4</sub></td><td>0</td><td>1</td><td>1</td><td class="dim">0</td><td>1</td><td>0</td><td>3</td></tr>
+<tr><td class="head">e<sub>5</sub></td><td>1</td><td>1</td><td>1</td><td>1</td><td class="dim">0</td><td>1</td><td>5</td></tr>
+<tr><td class="head">e<sub>6</sub></td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td class="dim">0</td><td>4</td></tr>
+</table>
+
+<h4>Часть 1. Удаление и булева формула</h4>
+
+<p><span class="step-label">Шаг 1.</span> Максимальная степень у <b>e<sub>5</sub></b> (ρ = 5). Её соседи в текущем графе: {e<sub>1</sub>, e<sub>2</sub>, e<sub>3</sub>, e<sub>4</sub>, e<sub>6</sub>}.</p>
+<p class="formula">C<sub>5</sub> = (e<sub>5</sub> ∨ e<sub>1</sub>·e<sub>2</sub>·e<sub>3</sub>·e<sub>4</sub>·e<sub>6</sub>)</p>
+<p>Удаляем e<sub>5</sub>. Оставшиеся рёбра: (e<sub>1</sub>,e<sub>6</sub>), (e<sub>2</sub>,e<sub>4</sub>), (e<sub>2</sub>,e<sub>6</sub>), (e<sub>3</sub>,e<sub>4</sub>), (e<sub>3</sub>,e<sub>6</sub>). Новые степени: e<sub>1</sub>=1, e<sub>2</sub>=2, e<sub>3</sub>=2, e<sub>4</sub>=2, e<sub>6</sub>=3.</p>
+
+<p><span class="step-label">Шаг 2.</span> Максимальная степень у <b>e<sub>6</sub></b> (ρ = 3). Её текущие соседи: {e<sub>1</sub>, e<sub>2</sub>, e<sub>3</sub>}.</p>
+<p class="formula">C<sub>6</sub> = (e<sub>6</sub> ∨ e<sub>1</sub>·e<sub>2</sub>·e<sub>3</sub>)</p>
+<p>Удаляем e<sub>6</sub>. Оставшиеся рёбра: (e<sub>2</sub>,e<sub>4</sub>), (e<sub>3</sub>,e<sub>4</sub>). Степени: e<sub>1</sub>=0, e<sub>2</sub>=1, e<sub>3</sub>=1, e<sub>4</sub>=2.</p>
+
+<p><span class="step-label">Шаг 3.</span> Максимум у <b>e<sub>4</sub></b> (ρ = 2). Соседи: {e<sub>2</sub>, e<sub>3</sub>}.</p>
+<p class="formula">C<sub>4</sub> = (e<sub>4</sub> ∨ e<sub>2</sub>·e<sub>3</sub>)</p>
+<p>Удаляем e<sub>4</sub>. <b>Рёбер больше нет</b> — стоп. Остались изолированные e<sub>1</sub>, e<sub>2</sub>, e<sub>3</sub>.</p>
+
+<p><span class="step-label">Шаг 4.</span> Складываем все клозы:</p>
+<p class="formula">П = C<sub>5</sub> · C<sub>6</sub> · C<sub>4</sub> = (e<sub>5</sub> ∨ e<sub>1</sub>e<sub>2</sub>e<sub>3</sub>e<sub>4</sub>e<sub>6</sub>)(e<sub>6</sub> ∨ e<sub>1</sub>e<sub>2</sub>e<sub>3</sub>)(e<sub>4</sub> ∨ e<sub>2</sub>e<sub>3</sub>)</p>
+
+<p><span class="step-label">Шаг 5.</span> Раскрываем в ДНФ. Перемножим сначала две правые скобки:</p>
+<p class="formula">(e<sub>6</sub> ∨ e<sub>1</sub>e<sub>2</sub>e<sub>3</sub>)(e<sub>4</sub> ∨ e<sub>2</sub>e<sub>3</sub>) = e<sub>4</sub>e<sub>6</sub> ∨ e<sub>2</sub>e<sub>3</sub>e<sub>6</sub> ∨ e<sub>1</sub>e<sub>2</sub>e<sub>3</sub>e<sub>4</sub> ∨ e<sub>1</sub>e<sub>2</sub>e<sub>3</sub></p>
+<p>Применяем поглощение (e<sub>1</sub>e<sub>2</sub>e<sub>3</sub> поглощает e<sub>1</sub>e<sub>2</sub>e<sub>3</sub>e<sub>4</sub>): получаем <b>e<sub>4</sub>e<sub>6</sub> ∨ e<sub>2</sub>e<sub>3</sub>e<sub>6</sub> ∨ e<sub>1</sub>e<sub>2</sub>e<sub>3</sub></b>.</p>
+
+<p>Теперь умножаем на левую скобку (e<sub>5</sub> ∨ e<sub>1</sub>e<sub>2</sub>e<sub>3</sub>e<sub>4</sub>e<sub>6</sub>):</p>
+<p class="formula">= e<sub>4</sub>e<sub>5</sub>e<sub>6</sub> ∨ e<sub>2</sub>e<sub>3</sub>e<sub>5</sub>e<sub>6</sub> ∨ e<sub>1</sub>e<sub>2</sub>e<sub>3</sub>e<sub>5</sub> ∨ e<sub>1</sub>e<sub>2</sub>e<sub>3</sub>e<sub>4</sub>e<sub>6</sub></p>
+<p>(остальные слагаемые после перемножения с e<sub>1</sub>e<sub>2</sub>e<sub>3</sub>e<sub>4</sub>e<sub>6</sub> сводятся к e<sub>1</sub>e<sub>2</sub>e<sub>3</sub>e<sub>4</sub>e<sub>6</sub> по идемпотентности — это уже есть, дубликат).</p>
+
+<p><span class="step-label">Шаг 6.</span> Получили <b>4 минимальных вершинных покрытия</b>. Их дополнения — максимальные независимые множества ϕᵢ:</p>
+
+<table>
+<tr><td class="head">K (покрытие)</td><td class="head">ϕ = V \ K (МНМ)</td></tr>
+<tr><td>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub></td><td>ϕ<sub>1</sub> = {e<sub>1</sub>, e<sub>2</sub>, e<sub>3</sub>}</td></tr>
+<tr><td>e<sub>2</sub>e<sub>3</sub>e<sub>5</sub>e<sub>6</sub></td><td>ϕ<sub>2</sub> = {e<sub>1</sub>, e<sub>4</sub>}</td></tr>
+<tr><td>e<sub>1</sub>e<sub>2</sub>e<sub>3</sub>e<sub>5</sub></td><td>ϕ<sub>3</sub> = {e<sub>4</sub>, e<sub>6</sub>}</td></tr>
+<tr><td>e<sub>1</sub>e<sub>2</sub>e<sub>3</sub>e<sub>4</sub>e<sub>6</sub></td><td>ϕ<sub>4</sub> = {e<sub>5</sub>}</td></tr>
+</table>
+
+<h4>Часть 2. Поиск минимального покрытия</h4>
+
+<p><span class="step-label">Шаг 7.</span> Для каждой вершины — в каких ϕⱼ она лежит:</p>
+
+<table>
+<tr><td class="head">eᵢ</td><td class="head">tᵢ = ∨ ϕⱼ</td></tr>
+<tr><td>e<sub>1</sub></td><td>ϕ<sub>1</sub> ∨ ϕ<sub>2</sub></td></tr>
+<tr><td>e<sub>2</sub></td><td>ϕ<sub>1</sub></td></tr>
+<tr><td>e<sub>3</sub></td><td>ϕ<sub>1</sub></td></tr>
+<tr><td>e<sub>4</sub></td><td>ϕ<sub>2</sub> ∨ ϕ<sub>3</sub></td></tr>
+<tr><td>e<sub>5</sub></td><td>ϕ<sub>4</sub></td></tr>
+<tr><td>e<sub>6</sub></td><td>ϕ<sub>3</sub></td></tr>
+</table>
+
+<p class="formula">П' = (ϕ<sub>1</sub> ∨ ϕ<sub>2</sub>) · ϕ<sub>1</sub> · ϕ<sub>1</sub> · (ϕ<sub>2</sub> ∨ ϕ<sub>3</sub>) · ϕ<sub>4</sub> · ϕ<sub>3</sub></p>
+
+<p>Применяем поглощения:</p>
+<ul>
+  <li>ϕ<sub>1</sub> · (ϕ<sub>1</sub> ∨ ϕ<sub>2</sub>) = ϕ<sub>1</sub></li>
+  <li>ϕ<sub>3</sub> · (ϕ<sub>2</sub> ∨ ϕ<sub>3</sub>) = ϕ<sub>3</sub></li>
+  <li>ϕ<sub>1</sub> · ϕ<sub>1</sub> = ϕ<sub>1</sub></li>
+</ul>
+
+<p class="formula">П' = ϕ<sub>1</sub> · ϕ<sub>3</sub> · ϕ<sub>4</sub></p>
+
+<p><span class="step-label">Шаг 8.</span> В минимизированном П' остались <b>3 множества</b>:</p>
+
+<div class="answer">
+χ(G) = 3. Раскраска:<br>
+• Цвет 1 (ϕ<sub>1</sub>): {e<sub>1</sub>, e<sub>2</sub>, e<sub>3</sub>}<br>
+• Цвет 2 (ϕ<sub>3</sub>): {e<sub>4</sub>, e<sub>6</sub>}<br>
+• Цвет 3 (ϕ<sub>4</sub>): {e<sub>5</sub>}
+</div>
+
+<h3>1.5. Шаблон оформления (как в тетрадь)</h3>
+
+<pre>
+№1. Раскраска графа (алгоритм Вейсмана)
+
+Часть 1. Удаление и булева формула.
+
+Шаг 1. Степени: ρ(e_1)=..., ρ(e_2)=..., ..., ρ(e_6)=...
+       Максимум у e_α (ρ=...). Соседи: {...}.
+       C_α = (e_α ∨ ...).
+       Удаляем e_α. Новые степени: ...
+
+Шаг 2. Максимум у e_β. Соседи в текущем графе: {...}.
+       C_β = (e_β ∨ ...). Удаляем.
+...
+Стоп: рёбер нет.
+
+П = C_α · C_β · ... = (...)(...)(...)
+
+Раскрытие в ДНФ (с поглощениями):
+   П = K_1 ∨ K_2 ∨ ... ∨ K_n
+
+Максимальные независимые множества (дополнения):
+   ϕ_1 = V \ K_1 = {...}
+   ϕ_2 = ...
+   ...
+
+Часть 2. Минимальное покрытие.
+
+Для каждой вершины — её ϕ:
+   t_1 = ϕ_? ∨ ϕ_? ; t_2 = ϕ_? ; ... ; t_6 = ...
+
+П' = t_1 · t_2 · ... · t_6
+   = ... (поглощения)
+   = ϕ_a · ϕ_b · ϕ_c
+
+Ответ: χ(G) = (число ϕ в П').
+Цвета: ϕ_a={...} | ϕ_b={...} | ϕ_c={...}.
+</pre>
+
+<h3>1.6. Ответы для 4 вариантов теста</h3>
+
+<p>Сводная таблица — что должно получиться у каждого варианта:</p>
+
+<table>
+<tr><td class="head">Вариант</td><td class="head">χ(G)</td><td class="head">Возможная раскраска</td></tr>
+<tr><td>1</td><td><b>3</b></td><td>{e<sub>1</sub>,e<sub>2</sub>} | {e<sub>3</sub>,e<sub>4</sub>} | {e<sub>5</sub>,e<sub>6</sub>}</td></tr>
+<tr><td>2</td><td><b>3</b></td><td>{e<sub>1</sub>,e<sub>2</sub>,e<sub>3</sub>} | {e<sub>4</sub>,e<sub>6</sub>} | {e<sub>5</sub>}</td></tr>
+<tr><td>3</td><td><b>4</b></td><td>{e<sub>1</sub>,e<sub>3</sub>} | {e<sub>4</sub>} | {e<sub>5</sub>} | {e<sub>2</sub>,e<sub>6</sub>}</td></tr>
+<tr><td>4</td><td><b>3</b></td><td>{e<sub>1</sub>,e<sub>4</sub>,e<sub>6</sub>} | {e<sub>3</sub>} | {e<sub>2</sub>,e<sub>5</sub>}</td></tr>
+</table>
+
+<div class="warn">
+<b>Вариант 3</b> — единственный, где χ = 4 (не 3). В нём есть подграф K₄ на вершинах {e<sub>1</sub>, e<sub>4</sub>, e<sub>5</sub>, e<sub>6</sub>} (все четыре попарно соединены). Меньше 4 цветов никаким способом не получится. Если попадёт он — пишите 4, не сомневайтесь.
+</div>
+
+<h3>1.7. Полные решения 4 вариантов</h3>
+
+<div class="task">
+<p><span class="num">Вариант 1.</span> Рёбра графа: (1,3), (1,4), (1,5), (2,3), (2,4), (2,5), (2,6), (3,5), (4,5), (4,6).</p>
+<p>Степени: ρ(e<sub>1</sub>)=3, ρ(e<sub>2</sub>)=4, ρ(e<sub>3</sub>)=3, ρ(e<sub>4</sub>)=4, ρ(e<sub>5</sub>)=4, ρ(e<sub>6</sub>)=2.</p>
+
+<details>
+<summary>Решение пошагово</summary>
+
+<h4>Часть 1.</h4>
+<p>Удаляем e<sub>2</sub> (max=4, меньший индекс из тройки): N(e<sub>2</sub>) = {e<sub>3</sub>,e<sub>4</sub>,e<sub>5</sub>,e<sub>6</sub>}.<br>
+<b>C<sub>2</sub> = (e<sub>2</sub> ∨ e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>)</b></p>
+
+<p>Удаляем e<sub>1</sub> (max=3 в подграфе): N(e<sub>1</sub>) в текущем графе = {e<sub>3</sub>,e<sub>4</sub>,e<sub>5</sub>}.<br>
+<b>C<sub>1</sub> = (e<sub>1</sub> ∨ e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>)</b></p>
+
+<p>Удаляем e<sub>4</sub> (max=2): N(e<sub>4</sub>) = {e<sub>5</sub>,e<sub>6</sub>}.<br>
+<b>C<sub>4</sub> = (e<sub>4</sub> ∨ e<sub>5</sub>e<sub>6</sub>)</b></p>
+
+<p>Удаляем e<sub>3</sub> (max=1): N(e<sub>3</sub>) = {e<sub>5</sub>}.<br>
+<b>C<sub>3</sub> = (e<sub>3</sub> ∨ e<sub>5</sub>)</b></p>
+
+<p>Рёбер нет. П = C<sub>2</sub> · C<sub>1</sub> · C<sub>4</sub> · C<sub>3</sub> = (e<sub>2</sub> ∨ e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>)(e<sub>1</sub> ∨ e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>)(e<sub>4</sub> ∨ e<sub>5</sub>e<sub>6</sub>)(e<sub>3</sub> ∨ e<sub>5</sub>).</p>
+
+<p><b>Шаг А.</b> (e<sub>3</sub>∨e<sub>5</sub>)(e<sub>4</sub>∨e<sub>5</sub>e<sub>6</sub>) = e<sub>3</sub>e<sub>4</sub> ∨ e<sub>3</sub>e<sub>5</sub>e<sub>6</sub> ∨ e<sub>4</sub>e<sub>5</sub> ∨ e<sub>5</sub>e<sub>6</sub>. Поглощение: e<sub>5</sub>e<sub>6</sub> поглощает e<sub>3</sub>e<sub>5</sub>e<sub>6</sub>. → <b>e<sub>3</sub>e<sub>4</sub> ∨ e<sub>4</sub>e<sub>5</sub> ∨ e<sub>5</sub>e<sub>6</sub></b>.</p>
+
+<p><b>Шаг Б.</b> (e<sub>1</sub>∨e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>)·(e<sub>3</sub>e<sub>4</sub>∨e<sub>4</sub>e<sub>5</sub>∨e<sub>5</sub>e<sub>6</sub>) = e<sub>1</sub>e<sub>3</sub>e<sub>4</sub> ∨ e<sub>1</sub>e<sub>4</sub>e<sub>5</sub> ∨ e<sub>1</sub>e<sub>5</sub>e<sub>6</sub> ∨ e<sub>3</sub>e<sub>4</sub>e<sub>5</sub> ∨ e<sub>3</sub>e<sub>4</sub>e<sub>5</sub> ∨ e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>. Дубль и поглощение (e<sub>3</sub>e<sub>4</sub>e<sub>5</sub> поглощает e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>). → <b>e<sub>1</sub>e<sub>3</sub>e<sub>4</sub> ∨ e<sub>1</sub>e<sub>4</sub>e<sub>5</sub> ∨ e<sub>1</sub>e<sub>5</sub>e<sub>6</sub> ∨ e<sub>3</sub>e<sub>4</sub>e<sub>5</sub></b>.</p>
+
+<p><b>Шаг В.</b> Умножаем на (e<sub>2</sub>∨e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>). Слагаемые e<sub>2</sub>·(…) дают e<sub>1</sub>e<sub>2</sub>e<sub>3</sub>e<sub>4</sub>, e<sub>1</sub>e<sub>2</sub>e<sub>4</sub>e<sub>5</sub>, e<sub>1</sub>e<sub>2</sub>e<sub>5</sub>e<sub>6</sub>, e<sub>2</sub>e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>. Слагаемые e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>·(…) после идемпотентности дают трижды e<sub>1</sub>e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub> и один раз e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>. Поглощение: e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub> поглощает e<sub>1</sub>e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>.</p>
+
+<p class="formula">П = e<sub>1</sub>e<sub>2</sub>e<sub>3</sub>e<sub>4</sub> ∨ e<sub>1</sub>e<sub>2</sub>e<sub>4</sub>e<sub>5</sub> ∨ e<sub>1</sub>e<sub>2</sub>e<sub>5</sub>e<sub>6</sub> ∨ e<sub>2</sub>e<sub>3</sub>e<sub>4</sub>e<sub>5</sub> ∨ e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub></p>
+
+<p>МНМ (дополнения): ϕ<sub>1</sub>={e<sub>5</sub>,e<sub>6</sub>}, ϕ<sub>2</sub>={e<sub>3</sub>,e<sub>6</sub>}, ϕ<sub>3</sub>={e<sub>3</sub>,e<sub>4</sub>}, ϕ<sub>4</sub>={e<sub>1</sub>,e<sub>6</sub>}, ϕ<sub>5</sub>={e<sub>1</sub>,e<sub>2</sub>}.</p>
+
+<h4>Часть 2.</h4>
+<p>t<sub>1</sub>=ϕ<sub>4</sub>∨ϕ<sub>5</sub>, t<sub>2</sub>=ϕ<sub>5</sub>, t<sub>3</sub>=ϕ<sub>2</sub>∨ϕ<sub>3</sub>, t<sub>4</sub>=ϕ<sub>3</sub>, t<sub>5</sub>=ϕ<sub>1</sub>, t<sub>6</sub>=ϕ<sub>1</sub>∨ϕ<sub>2</sub>∨ϕ<sub>4</sub>.</p>
+
+<p>П' = (ϕ<sub>4</sub>∨ϕ<sub>5</sub>) · ϕ<sub>5</sub> · (ϕ<sub>2</sub>∨ϕ<sub>3</sub>) · ϕ<sub>3</sub> · ϕ<sub>1</sub> · (ϕ<sub>1</sub>∨ϕ<sub>2</sub>∨ϕ<sub>4</sub>)</p>
+<p>После поглощений: <b>П' = ϕ<sub>1</sub> · ϕ<sub>3</sub> · ϕ<sub>5</sub></b>.</p>
+
+<div class="answer">χ(G) = 3. Цвета: {e<sub>1</sub>,e<sub>2</sub>} | {e<sub>3</sub>,e<sub>4</sub>} | {e<sub>5</sub>,e<sub>6</sub>}.</div>
+</details>
+</div>
+
+<div class="task">
+<p><span class="num">Вариант 2.</span> См. подробный разбор в разделе 1.4. Ответ: χ = 3, раскраска {e<sub>1</sub>,e<sub>2</sub>,e<sub>3</sub>} | {e<sub>4</sub>,e<sub>6</sub>} | {e<sub>5</sub>}.</p>
+</div>
+
+<div class="task" style="border-left-color: #b34700;">
+<p><span class="num">🎯 ВАРИАНТ 3 (вероятный вариант теста) — полный разбор.</span></p>
+
+<p><b>Матрица смежности:</b></p>
+<table>
+<tr><td class="head">V/V</td><td class="head">e<sub>1</sub></td><td class="head">e<sub>2</sub></td><td class="head">e<sub>3</sub></td><td class="head">e<sub>4</sub></td><td class="head">e<sub>5</sub></td><td class="head">e<sub>6</sub></td><td class="head">ρ</td></tr>
+<tr><td class="head">e<sub>1</sub></td><td class="dim">0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>4</td></tr>
+<tr><td class="head">e<sub>2</sub></td><td>1</td><td class="dim">0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>3</td></tr>
+<tr><td class="head">e<sub>3</sub></td><td>0</td><td>1</td><td class="dim">0</td><td>0</td><td>1</td><td>0</td><td>2</td></tr>
+<tr><td class="head">e<sub>4</sub></td><td>1</td><td>1</td><td>0</td><td class="dim">0</td><td>1</td><td>1</td><td>4</td></tr>
+<tr><td class="head">e<sub>5</sub></td><td>1</td><td>0</td><td>1</td><td>1</td><td class="dim">0</td><td>1</td><td>4</td></tr>
+<tr><td class="head">e<sub>6</sub></td><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td class="dim">0</td><td>3</td></tr>
+</table>
+
+<h4>Часть 1. Удаление вершин и сбор клоз</h4>
+
+<p><span class="step-label">Шаг 1.</span> Max ρ = 4 (тройка e<sub>1</sub>, e<sub>4</sub>, e<sub>5</sub>). Берём <b>e<sub>1</sub></b> (меньший индекс). Соседи в исходном графе: {e<sub>2</sub>, e<sub>4</sub>, e<sub>5</sub>, e<sub>6</sub>}.</p>
+<p class="formula">C<sub>1</sub> = (e<sub>1</sub> ∨ e<sub>2</sub>·e<sub>4</sub>·e<sub>5</sub>·e<sub>6</sub>)</p>
+<p>Удаляем e<sub>1</sub>. Остаются рёбра: (2,3), (2,4), (3,5), (4,5), (4,6), (5,6). Степени: e<sub>2</sub>=2, e<sub>3</sub>=2, e<sub>4</sub>=3, e<sub>5</sub>=3, e<sub>6</sub>=2.</p>
+
+<p><span class="step-label">Шаг 2.</span> Max ρ = 3 (e<sub>4</sub>, e<sub>5</sub>). Берём <b>e<sub>4</sub></b>. Текущие соседи: {e<sub>2</sub>, e<sub>5</sub>, e<sub>6</sub>}.</p>
+<p class="formula">C<sub>4</sub> = (e<sub>4</sub> ∨ e<sub>2</sub>·e<sub>5</sub>·e<sub>6</sub>)</p>
+<p>Удаляем e<sub>4</sub>. Остаются: (2,3), (3,5), (5,6). Степени: e<sub>2</sub>=1, e<sub>3</sub>=2, e<sub>5</sub>=2, e<sub>6</sub>=1.</p>
+
+<p><span class="step-label">Шаг 3.</span> Max ρ = 2 (e<sub>3</sub>, e<sub>5</sub>). Берём <b>e<sub>3</sub></b>. Соседи: {e<sub>2</sub>, e<sub>5</sub>}.</p>
+<p class="formula">C<sub>3</sub> = (e<sub>3</sub> ∨ e<sub>2</sub>·e<sub>5</sub>)</p>
+<p>Удаляем e<sub>3</sub>. Остаётся: (5,6). Степени: e<sub>2</sub>=0, e<sub>5</sub>=1, e<sub>6</sub>=1.</p>
+
+<p><span class="step-label">Шаг 4.</span> Max ρ = 1 (e<sub>5</sub>, e<sub>6</sub>). Берём <b>e<sub>5</sub></b>. Соседи: {e<sub>6</sub>}.</p>
+<p class="formula">C<sub>5</sub> = (e<sub>5</sub> ∨ e<sub>6</sub>)</p>
+<p>Удаляем e<sub>5</sub>. Рёбер нет. <b>Стоп.</b></p>
+
+<p class="formula">П = C<sub>1</sub>·C<sub>4</sub>·C<sub>3</sub>·C<sub>5</sub> = (e<sub>1</sub> ∨ e<sub>2</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>)(e<sub>4</sub> ∨ e<sub>2</sub>e<sub>5</sub>e<sub>6</sub>)(e<sub>3</sub> ∨ e<sub>2</sub>e<sub>5</sub>)(e<sub>5</sub> ∨ e<sub>6</sub>)</p>
+
+<h4>Раскрытие П в ДНФ (по шагам)</h4>
+
+<p><b>Шаг А.</b> Перемножаем две правые скобки: (e<sub>3</sub> ∨ e<sub>2</sub>e<sub>5</sub>) · (e<sub>5</sub> ∨ e<sub>6</sub>)</p>
+<p class="formula">= e<sub>3</sub>·e<sub>5</sub> ∨ e<sub>3</sub>·e<sub>6</sub> ∨ e<sub>2</sub>e<sub>5</sub>·e<sub>5</sub> ∨ e<sub>2</sub>e<sub>5</sub>·e<sub>6</sub><br>
+= e<sub>3</sub>e<sub>5</sub> ∨ e<sub>3</sub>e<sub>6</sub> ∨ e<sub>2</sub>e<sub>5</sub> ∨ e<sub>2</sub>e<sub>5</sub>e<sub>6</sub>  &nbsp; (применили e<sub>5</sub>·e<sub>5</sub> = e<sub>5</sub>)</p>
+<p><i>Поглощение:</i> e<sub>2</sub>e<sub>5</sub> поглощает e<sub>2</sub>e<sub>5</sub>e<sub>6</sub> (т.к. {e<sub>2</sub>,e<sub>5</sub>} ⊂ {e<sub>2</sub>,e<sub>5</sub>,e<sub>6</sub>}).</p>
+<p class="formula"><b>= e<sub>3</sub>e<sub>5</sub> ∨ e<sub>3</sub>e<sub>6</sub> ∨ e<sub>2</sub>e<sub>5</sub></b></p>
+
+<p><b>Шаг Б.</b> Умножаем на (e<sub>4</sub> ∨ e<sub>2</sub>e<sub>5</sub>e<sub>6</sub>):</p>
+<p class="formula">(e<sub>4</sub> ∨ e<sub>2</sub>e<sub>5</sub>e<sub>6</sub>)·(e<sub>3</sub>e<sub>5</sub> ∨ e<sub>3</sub>e<sub>6</sub> ∨ e<sub>2</sub>e<sub>5</sub>)<br>
+= e<sub>3</sub>e<sub>4</sub>e<sub>5</sub> ∨ e<sub>3</sub>e<sub>4</sub>e<sub>6</sub> ∨ e<sub>2</sub>e<sub>4</sub>e<sub>5</sub> ∨ e<sub>2</sub>e<sub>3</sub>e<sub>5</sub>e<sub>6</sub> ∨ e<sub>2</sub>e<sub>3</sub>e<sub>5</sub>e<sub>6</sub> ∨ e<sub>2</sub>e<sub>5</sub>e<sub>6</sub></p>
+<p><i>Дубликат и поглощение:</i> убираем дубль e<sub>2</sub>e<sub>3</sub>e<sub>5</sub>e<sub>6</sub>; затем e<sub>2</sub>e<sub>5</sub>e<sub>6</sub> поглощает e<sub>2</sub>e<sub>3</sub>e<sub>5</sub>e<sub>6</sub>.</p>
+<p class="formula"><b>= e<sub>3</sub>e<sub>4</sub>e<sub>5</sub> ∨ e<sub>3</sub>e<sub>4</sub>e<sub>6</sub> ∨ e<sub>2</sub>e<sub>4</sub>e<sub>5</sub> ∨ e<sub>2</sub>e<sub>5</sub>e<sub>6</sub></b></p>
+
+<p><b>Шаг В.</b> Умножаем на (e<sub>1</sub> ∨ e<sub>2</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>):</p>
+<p class="formula">= e<sub>1</sub>e<sub>3</sub>e<sub>4</sub>e<sub>5</sub> ∨ e<sub>1</sub>e<sub>3</sub>e<sub>4</sub>e<sub>6</sub> ∨ e<sub>1</sub>e<sub>2</sub>e<sub>4</sub>e<sub>5</sub> ∨ e<sub>1</sub>e<sub>2</sub>e<sub>5</sub>e<sub>6</sub><br>
+&nbsp; ∨ e<sub>2</sub>e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub> ∨ e<sub>2</sub>e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub> ∨ e<sub>2</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub> ∨ e<sub>2</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub></p>
+<p><i>Дубликаты и поглощения:</i> убираем повторы; e<sub>2</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub> поглощает e<sub>2</sub>e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>.</p>
+<p class="formula"><b>П = e<sub>1</sub>e<sub>3</sub>e<sub>4</sub>e<sub>5</sub> ∨ e<sub>1</sub>e<sub>3</sub>e<sub>4</sub>e<sub>6</sub> ∨ e<sub>1</sub>e<sub>2</sub>e<sub>4</sub>e<sub>5</sub> ∨ e<sub>1</sub>e<sub>2</sub>e<sub>5</sub>e<sub>6</sub> ∨ e<sub>2</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub></b></p>
+
+<h4>5 минимальных вершинных покрытий → 5 МНМ</h4>
+
+<table>
+<tr><td class="head">K (покрытие)</td><td class="head">ϕ = V \ K (МНМ)</td></tr>
+<tr><td>e<sub>1</sub>e<sub>3</sub>e<sub>4</sub>e<sub>5</sub></td><td>ϕ<sub>1</sub> = {e<sub>2</sub>, e<sub>6</sub>}</td></tr>
+<tr><td>e<sub>1</sub>e<sub>3</sub>e<sub>4</sub>e<sub>6</sub></td><td>ϕ<sub>2</sub> = {e<sub>2</sub>, e<sub>5</sub>}</td></tr>
+<tr><td>e<sub>1</sub>e<sub>2</sub>e<sub>4</sub>e<sub>5</sub></td><td>ϕ<sub>3</sub> = {e<sub>3</sub>, e<sub>6</sub>}</td></tr>
+<tr><td>e<sub>1</sub>e<sub>2</sub>e<sub>5</sub>e<sub>6</sub></td><td>ϕ<sub>4</sub> = {e<sub>3</sub>, e<sub>4</sub>}</td></tr>
+<tr><td>e<sub>2</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub></td><td>ϕ<sub>5</sub> = {e<sub>1</sub>, e<sub>3</sub>}</td></tr>
+</table>
+
+<h4>Часть 2. Минимальное покрытие</h4>
+
+<p>Принадлежность каждой вершины к ϕ:</p>
+<ul>
+<li>e<sub>1</sub> → ϕ<sub>5</sub></li>
+<li>e<sub>2</sub> → ϕ<sub>1</sub>, ϕ<sub>2</sub></li>
+<li>e<sub>3</sub> → ϕ<sub>3</sub>, ϕ<sub>4</sub>, ϕ<sub>5</sub></li>
+<li>e<sub>4</sub> → ϕ<sub>4</sub></li>
+<li>e<sub>5</sub> → ϕ<sub>2</sub></li>
+<li>e<sub>6</sub> → ϕ<sub>1</sub>, ϕ<sub>3</sub></li>
+</ul>
+
+<p>t<sub>1</sub>=ϕ<sub>5</sub>, t<sub>2</sub>=ϕ<sub>1</sub>∨ϕ<sub>2</sub>, t<sub>3</sub>=ϕ<sub>3</sub>∨ϕ<sub>4</sub>∨ϕ<sub>5</sub>, t<sub>4</sub>=ϕ<sub>4</sub>, t<sub>5</sub>=ϕ<sub>2</sub>, t<sub>6</sub>=ϕ<sub>1</sub>∨ϕ<sub>3</sub>.</p>
+
+<p class="formula">П' = ϕ<sub>5</sub> · (ϕ<sub>1</sub>∨ϕ<sub>2</sub>) · (ϕ<sub>3</sub>∨ϕ<sub>4</sub>∨ϕ<sub>5</sub>) · ϕ<sub>4</sub> · ϕ<sub>2</sub> · (ϕ<sub>1</sub>∨ϕ<sub>3</sub>)</p>
+
+<p>Поглощения:</p>
+<ul>
+<li>ϕ<sub>5</sub> · (ϕ<sub>3</sub>∨ϕ<sub>4</sub>∨ϕ<sub>5</sub>) = ϕ<sub>5</sub></li>
+<li>ϕ<sub>2</sub> · (ϕ<sub>1</sub>∨ϕ<sub>2</sub>) = ϕ<sub>2</sub></li>
+</ul>
+
+<p class="formula">П' = ϕ<sub>2</sub> · ϕ<sub>4</sub> · ϕ<sub>5</sub> · (ϕ<sub>1</sub> ∨ ϕ<sub>3</sub>)</p>
+
+<p>Дальше не сворачивается — нужно <b>4 множества</b>. Выбираем ϕ<sub>1</sub> (или ϕ<sub>3</sub>, эквивалентно). Финальный набор: {ϕ<sub>2</sub>, ϕ<sub>4</sub>, ϕ<sub>5</sub>, ϕ<sub>1</sub>}.</p>
+
+<p>Распределяем вершины по цветам (каждая в одну ϕ):</p>
+<ul>
+<li>e<sub>1</sub> → ϕ<sub>5</sub></li>
+<li>e<sub>3</sub> → ϕ<sub>5</sub> (тоже в ϕ<sub>5</sub>, e<sub>1</sub>-e<sub>3</sub> не связаны)</li>
+<li>e<sub>2</sub> → ϕ<sub>1</sub></li>
+<li>e<sub>6</sub> → ϕ<sub>1</sub></li>
+<li>e<sub>5</sub> → ϕ<sub>2</sub></li>
+<li>e<sub>4</sub> → ϕ<sub>4</sub></li>
+</ul>
+
+<div class="answer">χ(G) = 4. Раскраска: {e<sub>1</sub>, e<sub>3</sub>} (ϕ<sub>5</sub>) | {e<sub>5</sub>} (ϕ<sub>2</sub>) | {e<sub>4</sub>} (ϕ<sub>4</sub>) | {e<sub>2</sub>, e<sub>6</sub>} (ϕ<sub>1</sub>).</div>
+
+<p class="small">📌 <b>Почему ровно 4, а не 3?</b> Вершины {e<sub>1</sub>, e<sub>4</sub>, e<sub>5</sub>, e<sub>6</sub>} попарно соединены — это полный подграф K₄ (все 6 рёбер между ними есть в матрице). В K₄ нужно 4 разных цвета. Поэтому χ(G) ≥ 4.</p>
+</details>
+</div>
+
+<div class="task">
+<p><span class="num">Вариант 4.</span> Рёбра: (1,2), (1,5), (2,3), (2,4), (2,6), (3,4), (3,5), (3,6), (5,6).</p>
+<p>Степени: ρ(e<sub>1</sub>)=2, ρ(e<sub>2</sub>)=4, ρ(e<sub>3</sub>)=4, ρ(e<sub>4</sub>)=2, ρ(e<sub>5</sub>)=3, ρ(e<sub>6</sub>)=3.</p>
+
+<details>
+<summary>Решение пошагово</summary>
+
+<h4>Часть 1.</h4>
+<p>Удаляем e<sub>2</sub> (max=4, меньший индекс): N(e<sub>2</sub>) = {e<sub>1</sub>,e<sub>3</sub>,e<sub>4</sub>,e<sub>6</sub>}.<br>
+<b>C<sub>2</sub> = (e<sub>2</sub> ∨ e<sub>1</sub>e<sub>3</sub>e<sub>4</sub>e<sub>6</sub>)</b></p>
+<p>Удаляем e<sub>3</sub> (max=3): N(e<sub>3</sub>) = {e<sub>4</sub>,e<sub>5</sub>,e<sub>6</sub>}.<br>
+<b>C<sub>3</sub> = (e<sub>3</sub> ∨ e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>)</b></p>
+<p>Удаляем e<sub>5</sub> (max=2): N(e<sub>5</sub>) = {e<sub>1</sub>,e<sub>6</sub>}.<br>
+<b>C<sub>5</sub> = (e<sub>5</sub> ∨ e<sub>1</sub>e<sub>6</sub>)</b></p>
+<p>Рёбер нет (остались e<sub>1</sub>, e<sub>4</sub>, e<sub>6</sub> — все изолированы).</p>
+
+<p>П = (e<sub>2</sub>∨e<sub>1</sub>e<sub>3</sub>e<sub>4</sub>e<sub>6</sub>)(e<sub>3</sub>∨e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>)(e<sub>5</sub>∨e<sub>1</sub>e<sub>6</sub>).</p>
+
+<p><b>Шаг А.</b> (e<sub>3</sub>∨e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>)(e<sub>5</sub>∨e<sub>1</sub>e<sub>6</sub>) = e<sub>3</sub>e<sub>5</sub> ∨ e<sub>1</sub>e<sub>3</sub>e<sub>6</sub> ∨ e<sub>4</sub>e<sub>5</sub>e<sub>6</sub> ∨ e<sub>1</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>. Поглощение: e<sub>4</sub>e<sub>5</sub>e<sub>6</sub> поглощает e<sub>1</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>. → <b>e<sub>3</sub>e<sub>5</sub> ∨ e<sub>1</sub>e<sub>3</sub>e<sub>6</sub> ∨ e<sub>4</sub>e<sub>5</sub>e<sub>6</sub></b>.</p>
+
+<p><b>Шаг Б.</b> Умножаем на (e<sub>2</sub>∨e<sub>1</sub>e<sub>3</sub>e<sub>4</sub>e<sub>6</sub>). Слагаемые e<sub>2</sub>·(…): e<sub>2</sub>e<sub>3</sub>e<sub>5</sub>, e<sub>1</sub>e<sub>2</sub>e<sub>3</sub>e<sub>6</sub>, e<sub>2</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>. Слагаемые e<sub>1</sub>e<sub>3</sub>e<sub>4</sub>e<sub>6</sub>·(…): e<sub>1</sub>e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>, e<sub>1</sub>e<sub>3</sub>e<sub>4</sub>e<sub>6</sub>, e<sub>1</sub>e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub> (после идемпотентности). Дубль, и e<sub>1</sub>e<sub>3</sub>e<sub>4</sub>e<sub>6</sub> поглощает e<sub>1</sub>e<sub>3</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub>.</p>
+
+<p class="formula">П = e<sub>2</sub>e<sub>3</sub>e<sub>5</sub> ∨ e<sub>1</sub>e<sub>2</sub>e<sub>3</sub>e<sub>6</sub> ∨ e<sub>2</sub>e<sub>4</sub>e<sub>5</sub>e<sub>6</sub> ∨ e<sub>1</sub>e<sub>3</sub>e<sub>4</sub>e<sub>6</sub></p>
+
+<p>МНМ: ϕ<sub>A</sub>={e<sub>1</sub>,e<sub>4</sub>,e<sub>6</sub>}, ϕ<sub>B</sub>={e<sub>4</sub>,e<sub>5</sub>}, ϕ<sub>C</sub>={e<sub>1</sub>,e<sub>3</sub>}, ϕ<sub>D</sub>={e<sub>2</sub>,e<sub>5</sub>}.</p>
+
+<h4>Часть 2.</h4>
+<p>t<sub>1</sub>=ϕ<sub>A</sub>∨ϕ<sub>C</sub>, t<sub>2</sub>=ϕ<sub>D</sub>, t<sub>3</sub>=ϕ<sub>C</sub>, t<sub>4</sub>=ϕ<sub>A</sub>∨ϕ<sub>B</sub>, t<sub>5</sub>=ϕ<sub>B</sub>∨ϕ<sub>D</sub>, t<sub>6</sub>=ϕ<sub>A</sub>.</p>
+<p>Поглощения: <b>П' = ϕ<sub>A</sub> · ϕ<sub>C</sub> · ϕ<sub>D</sub></b>.</p>
+
+<div class="answer">χ(G) = 3. Цвета: {e<sub>1</sub>,e<sub>4</sub>,e<sub>6</sub>} | {e<sub>3</sub>} | {e<sub>2</sub>,e<sub>5</sub>}.</div>
+</details>
+</div>
+
+<!-- ============================================================== -->
+<!-- ГЛАВА 2. ПРИМ / КРАСКАЛ                                         -->
+<!-- ============================================================== -->
+<h2 id="prim">2. Алгоритм Прима — минимальное остовное дерево</h2>
+
+<h3>2.1. Что нужно сделать</h3>
+
+<div class="definition">
+<strong>Связный граф</strong> — граф, в котором из любой вершины можно дойти до любой другой по рёбрам.
+</div>
+
+<div class="definition">
+<strong>Дерево</strong> — связный граф <b>без циклов</b>. Если в дереве n вершин, то ровно n − 1 рёбер.
+</div>
+
+<div class="definition">
+<strong>Остовное дерево</strong> (остов, спан-дерево) графа G — подграф, который: (а) содержит <b>все</b> вершины G, (б) сам является деревом. В остове ровно n − 1 рёбер.
+</div>
+
+<div class="definition">
+<strong>Минимальное остовное дерево (МОД)</strong> — остов с минимальной суммой весов рёбер.
+</div>
+
+<p>На входе задания: 9 вершин, расставленных по узлам клеточной сетки. <b>Граф полный</b> — каждая пара вершин соединена ребром, а вес ребра = <b>манхэттенское расстояние</b> между вершинами (|Δx| + |Δy|). Подробнее см. раздел 2.3. На выходе нужно:</p>
+<ul>
+  <li>посчитать веса всех пар вершин (или хотя бы тех, что могут попасть в МОД);</li>
+  <li>построить остовное дерево с минимальной суммой весов;</li>
+  <li>посчитать <b>общий вес</b> построенного дерева.</li>
+</ul>
+
+<h3>2.2. Алгоритм (тот, что у Шалабаева)</h3>
+
+<p>В эталоне используется вариант жадного построения, в котором рёбра добавляются <b>в порядке возрастания веса</b> — лишь бы добавленное ребро не образовало цикл с уже выбранными. Исторически это «алгоритм Краскала», у вашего преподавателя он идёт под названием Прима. Алгоритм даёт правильное МОД на любом графе.</p>
+
+<ol>
+  <li><b>Выпишите все рёбра</b> графа (каждое — один раз!) с их весами.</li>
+  <li><b>Отсортируйте</b> рёбра по возрастанию веса.</li>
+  <li>Заведите пустое множество T = ∅ (это будущий остов) и счётчик добавленных рёбер k = 0.</li>
+  <li>Пока k &lt; n − 1, берите следующее по списку ребро (u, v):
+    <ul>
+      <li>если u и v <b>уже в одной компоненте</b> в T (то есть добавление этого ребра даст цикл) — <b>пропустите</b> его;</li>
+      <li>иначе добавьте (u, v) в T, k увеличьте на 1.</li>
+    </ul>
+  </li>
+  <li>Когда k = n − 1, остов готов. Общий вес = сумма весов рёбер из T.</li>
+</ol>
+
+<div class="note">
+<b>Как проверять «образует ли ребро цикл».</b> На бумаге проще всего: после каждого добавления отмечайте, какие вершины уже в одной компоненте (можно цветом или номером компоненты). Если новое ребро соединяет две вершины из <b>одной</b> компоненты — пропускаем. Если из разных — добавляем, и компоненты сливаются.
+</div>
+
+<h3>2.3. Как читать граф на сетке (важно!)</h3>
+
+<div class="warn">
+<b>Граф — ПОЛНЫЙ.</b> Каждая пара из 9 вершин соединена ребром. Всего рёбер C(9,2) = 36. Вес ребра между двумя вершинами = <b>манхэттенское расстояние</b> между ними по сетке (сумма горизонтального и вертикального сдвигов в клетках).
+</div>
+
+<p>В задании на экране показаны 9 точек на сетке с метками 1, 2, …, 9. Каждая стоит в каком-то узле клеточной сетки. Чтобы получить вес ребра (i, j), <b>посчитайте</b>:</p>
+<p class="formula">w(i, j) = |Δx| + |Δy|</p>
+<p>где Δx — расстояние по горизонтали в клетках, Δy — по вертикали. Например, если вершина 1 стоит в узле (3, 2), а вершина 6 — в узле (3, 1), то w(1, 6) = 0 + 1 = 1.</p>
+
+<p>Алгоритм Прима/Краскала работает на этом полном графе. Главная задача — <b>аккуратно посчитать веса 36 рёбер</b>, потом отсортировать. Многие рёбра окажутся «длинными» и не попадут в МОД, но их всё равно надо знать на случай отсечения.</p>
+
+<div class="note">
+<b>Практический совет.</b> Не нужно <i>обязательно</i> выписывать все 36 рёбер. Можно начать с самых дешёвых (вес 1, потом 2, и т.д.). Как только построили остов из 8 рёбер — остановка. Обычно в МОД попадают рёбра весов 1–3.
+</div>
+
+<div class="grid-graph">
+Пример мини-разметки сетки (3×3, 4 вершины):
+
+       0     1     2     3   ← x-координаты
+   2 ── A ─────────── B
+        │             │
+   1    │     C       │
+        │             │
+   0 ── │ ─────── D ──┘
+
+   ↑ y-координаты
+
+Координаты:  A = (0, 2),  B = (3, 2),  C = (2, 1),  D = (2, 0).
+Манхэттен:  w(A,B) = 3+0 = 3;  w(A,C) = 2+1 = 3;
+             w(A,D) = 2+2 = 4;  w(B,C) = 1+1 = 2;
+             w(B,D) = 1+2 = 3;  w(C,D) = 0+1 = 1.
+</div>
+
+<p>Этот мини-пример с 4 вершинами имеет 6 рёбер. У вас в тесте 9 вершин → 36 рёбер.</p>
+
+<h3>2.4. Эталонный пример (по работе Шалабаева, вариант 2)</h3>
+
+<div class="note">
+<b>Важно:</b> в полном графе всего 36 рёбер, но в МОД могут попасть только самые лёгкие. Шалабаев в эталоне выписал только рёбра с весом ≤ 3 — этого хватает, потому что остов из 8 рёбер собирается без обращения к более длинным. На тесте поступайте так же: считайте манхэттен только для «коротких» пар, пока не наберётся 8 рёбер без циклов.
+</div>
+
+<p>Из решения выписаны короткие рёбра графа с весами:</p>
+
+<table>
+<tr><td class="head">Ребро</td><td>(1,6)</td><td>(7,9)</td><td>(1,2)</td><td>(1,8)</td><td>(4,7)</td><td>(5,7)</td><td>(2,9)</td><td>(5,6)</td><td>(3,4)</td></tr>
+<tr><td class="head">Вес</td><td>1</td><td>1</td><td>2</td><td>2</td><td>2</td><td>2</td><td>3</td><td>3</td><td>3</td></tr>
+</table>
+
+<p><span class="step-label">Шаг 1.</span> Берём ребро (1, 6) с весом 1. Компоненты: {1, 6}, {2}, {3}, {4}, {5}, {7}, {8}, {9}. Цикла нет — добавляем. T = {(1,6)}, k = 1.</p>
+
+<p><span class="step-label">Шаг 2.</span> Ребро (7, 9), вес 1. Компоненты: {1,6}, {7,9}, {2}, {3}, {4}, {5}, {8}. Цикла нет — добавляем. k = 2.</p>
+
+<p><span class="step-label">Шаг 3.</span> Ребро (1, 2), вес 2. 1 ∈ {1,6}, 2 ∈ {2}. Разные компоненты — добавляем. Слились в {1,2,6}. k = 3.</p>
+
+<p><span class="step-label">Шаг 4.</span> Ребро (1, 8), вес 2. 1 ∈ {1,2,6}, 8 ∈ {8}. Разные — добавляем. {1,2,6,8}. k = 4.</p>
+
+<p><span class="step-label">Шаг 5.</span> Ребро (4, 7), вес 2. 4 ∈ {4}, 7 ∈ {7,9}. Разные — добавляем. {4,7,9}. k = 5.</p>
+
+<p><span class="step-label">Шаг 6.</span> Ребро (5, 7), вес 2. 5 ∈ {5}, 7 ∈ {4,7,9}. Разные — добавляем. {4,5,7,9}. k = 6.</p>
+
+<p><span class="step-label">Шаг 7.</span> Ребро (2, 9), вес 3. 2 ∈ {1,2,6,8}, 9 ∈ {4,5,7,9}. Разные — добавляем. {1,2,4,5,6,7,8,9}. k = 7.</p>
+
+<p><span class="step-label">Шаг 8.</span> Ребро (5, 6), вес 3. 5 и 6 уже в одной компоненте {1,2,4,5,6,7,8,9} — <b>цикл</b>, пропускаем.</p>
+
+<p><span class="step-label">Шаг 9.</span> Ребро (3, 4), вес 3. 3 ∈ {3}, 4 ∈ {1,2,4,5,6,7,8,9}. Разные — добавляем. Все 9 вершин в одной компоненте. k = 8 = n − 1. <b>Стоп.</b></p>
+
+<p><b>Состав остова:</b> (1,6), (7,9), (1,2), (1,8), (4,7), (5,7), (2,9), (3,4).</p>
+<p><b>Общий вес:</b> 1 + 1 + 2 + 2 + 2 + 2 + 3 + 3 = <b>16</b>.</p>
+
+<div class="answer">МОД содержит 8 рёбер, общий вес = 16.</div>
+
+<h3>2.5. Шаблон оформления</h3>
+
+<pre>
+№2. Минимальное остовное дерево (алгоритм Прима)
+
+1) Список рёбер с весами:
+   (v_i, v_j) — вес w
+   ...
+
+2) Сортировка по возрастанию веса:
+   рёбра отсортированные
+
+3) Построение:
+   Шаг 1: берём (.., ..) вес w. Цикла нет → добавляем.
+   ...
+   Шаг k: (.., ..) вес w. Цикл → пропускаем.
+   ...
+
+4) Состав остова: { рёбра }
+   Общий вес: сумма = N
+
+Ответ: МОД, вес = N.
+</pre>
+
+<h3>2.6. Тренировочные задачи</h3>
+
+<div class="task">
+<p><span class="num">Задача 2.1.</span> Дан граф (рёбра с весами):</p>
+<ul>
+<li>(A, B) — 1</li>
+<li>(A, C) — 4</li>
+<li>(B, C) — 2</li>
+<li>(B, D) — 5</li>
+<li>(C, D) — 3</li>
+<li>(C, E) — 6</li>
+<li>(D, E) — 2</li>
+</ul>
+<p>Постройте МОД, найдите его вес.</p>
+
+<details>
+<summary>Решение</summary>
+<p><b>Сортировка:</b> (A,B)=1, (B,C)=2, (D,E)=2, (C,D)=3, (A,C)=4, (B,D)=5, (C,E)=6.</p>
+<p>Шаг 1: (A,B)=1, добавляем. Компоненты: {A,B}, {C}, {D}, {E}.</p>
+<p>Шаг 2: (B,C)=2, разные компоненты, добавляем. {A,B,C}, {D}, {E}.</p>
+<p>Шаг 3: (D,E)=2, добавляем. {A,B,C}, {D,E}.</p>
+<p>Шаг 4: (C,D)=3, добавляем. Всё слилось — {A,B,C,D,E}. k = 4 = n−1. Стоп.</p>
+<p><b>МОД:</b> (A,B), (B,C), (D,E), (C,D). Вес = 1+2+2+3 = <b>8</b>.</p>
+<div class="answer">МОД, вес = 8.</div>
+</details>
+</div>
+
+<div class="task">
+<p><span class="num">Задача 2.2.</span> Граф на 6 вершинах:</p>
+<ul>
+<li>(1, 2) — 4, (1, 3) — 1, (1, 6) — 5</li>
+<li>(2, 3) — 2, (2, 4) — 3</li>
+<li>(3, 4) — 6, (3, 5) — 4, (3, 6) — 3</li>
+<li>(4, 5) — 5</li>
+<li>(5, 6) — 1</li>
+</ul>
+<p>Постройте МОД.</p>
+
+<details>
+<summary>Решение</summary>
+<p><b>Сортировка:</b> (1,3)=1, (5,6)=1, (2,3)=2, (2,4)=3, (3,6)=3, (1,2)=4, (3,5)=4, (1,6)=5, (4,5)=5, (3,4)=6.</p>
+<p>Шаг 1: (1,3)=1. {1,3}, {2}, {4}, {5}, {6}.</p>
+<p>Шаг 2: (5,6)=1. {1,3}, {5,6}, {2}, {4}.</p>
+<p>Шаг 3: (2,3)=2. {1,2,3}, {5,6}, {4}.</p>
+<p>Шаг 4: (2,4)=3. {1,2,3,4}, {5,6}.</p>
+<p>Шаг 5: (3,6)=3. {1,2,3,4,5,6}. k = 5 = n−1. Стоп.</p>
+<p><b>МОД:</b> (1,3), (5,6), (2,3), (2,4), (3,6). Вес = 1+1+2+3+3 = <b>10</b>.</p>
+<div class="answer">МОД, вес = 10.</div>
+</details>
+</div>
+
+<div class="task">
+<p><span class="num">Задача 2.3</span> <span class="small">(в стиле теста — на сетке).</span> Вершины 1–8 расставлены на сетке так, что прямые рёбра идут только между соседями (без других вершин между ними). Список рёбер с весами:</p>
+<ul>
+<li>(1, 2) — 1, (2, 3) — 2, (3, 4) — 1</li>
+<li>(1, 5) — 2, (2, 6) — 3, (3, 7) — 2, (4, 8) — 3</li>
+<li>(5, 6) — 1, (6, 7) — 1, (7, 8) — 2</li>
+</ul>
+<p>Постройте МОД.</p>
+
+<details>
+<summary>Решение</summary>
+<p><b>Сортировка:</b> (1,2)=1, (3,4)=1, (5,6)=1, (6,7)=1, (2,3)=2, (1,5)=2, (3,7)=2, (7,8)=2, (2,6)=3, (4,8)=3.</p>
+<p>Шаг 1: (1,2)=1. {1,2}.</p>
+<p>Шаг 2: (3,4)=1. {1,2}, {3,4}.</p>
+<p>Шаг 3: (5,6)=1. {1,2}, {3,4}, {5,6}.</p>
+<p>Шаг 4: (6,7)=1. {1,2}, {3,4}, {5,6,7}.</p>
+<p>Шаг 5: (2,3)=2. {1,2,3,4}, {5,6,7}.</p>
+<p>Шаг 6: (1,5)=2. {1,2,3,4,5,6,7}.</p>
+<p>Шаг 7: (3,7)=2. 3 и 7 уже в одной компоненте → <b>цикл, пропуск</b>.</p>
+<p>Шаг 8: (7,8)=2. 7 ∈ {1,…,7}, 8 ∈ {8}. Добавляем. Все 8 вершин слились. k = 7 = n−1. Стоп.</p>
+<p><b>МОД:</b> (1,2), (3,4), (5,6), (6,7), (2,3), (1,5), (7,8). Вес = 1+1+1+1+2+2+2 = <b>10</b>.</p>
+<div class="answer">МОД, вес = 10.</div>
+</details>
+</div>
+
+<h3>2.7. Полный разбор варианта 3 теста</h3>
+
+<div class="task" style="border-left-color: #b34700;">
+<p><span class="num">🎯 Вариант 3.</span> Сетка 5×4 узлов (4 столбца × 3 строки). Мои оценочные координаты вершин (проверьте по своей картинке!):</p>
+
+<table style="font-family: 'Times New Roman', serif;">
+<tr><td class="head">№</td><td class="head">Координаты (x, y)</td></tr>
+<tr><td>1</td><td>(0, 0)</td></tr>
+<tr><td>2</td><td>(4, 2)</td></tr>
+<tr><td>3</td><td>(0, 3)</td></tr>
+<tr><td>4</td><td>(0, 2)</td></tr>
+<tr><td>5</td><td>(1, 1)</td></tr>
+<tr><td>6</td><td>(2, 0)</td></tr>
+<tr><td>7</td><td>(3, 1)</td></tr>
+<tr><td>8</td><td>(2, 3)</td></tr>
+<tr><td>9</td><td>(4, 3)</td></tr>
+</table>
+
+<h4>Шаг 1. Список самых лёгких рёбер (отсортированных)</h4>
+
+<p>Считаем манхэттен-расстояние |Δx|+|Δy| для всех 36 пар. Самые короткие:</p>
+
+<table>
+<tr><td class="head">Вес</td><td class="head">Рёбра</td></tr>
+<tr><td>1</td><td>(2,9), (3,4)</td></tr>
+<tr><td>2</td><td>(1,4), (1,5), (1,6), (2,7), (3,8), (4,5), (5,6), (5,7), (6,7), (8,9)</td></tr>
+<tr><td>3</td><td>(1,3), (2,8), (3,5), (4,8), (5,8), (6,8), (7,8), (7,9)</td></tr>
+<tr><td>4 и далее</td><td>...</td></tr>
+</table>
+
+<h4>Шаг 2. Применяем алгоритм Краскала</h4>
+
+<table>
+<tr><td class="head">№</td><td class="head">Ребро</td><td class="head">Вес</td><td class="head">Действие</td><td class="head">Компоненты</td></tr>
+<tr><td>1</td><td>(2,9)</td><td>1</td><td>✓ добавлено</td><td>{2,9}</td></tr>
+<tr><td>2</td><td>(3,4)</td><td>1</td><td>✓ добавлено</td><td>{3,4}, {2,9}</td></tr>
+<tr><td>3</td><td>(1,4)</td><td>2</td><td>✓ добавлено</td><td>{1,3,4}, {2,9}</td></tr>
+<tr><td>4</td><td>(1,5)</td><td>2</td><td>✓ добавлено</td><td>{1,3,4,5}, {2,9}</td></tr>
+<tr><td>5</td><td>(1,6)</td><td>2</td><td>✓ добавлено</td><td>{1,3,4,5,6}, {2,9}</td></tr>
+<tr><td>6</td><td>(2,7)</td><td>2</td><td>✓ добавлено</td><td>{1,3,4,5,6}, {2,7,9}</td></tr>
+<tr><td>7</td><td>(3,8)</td><td>2</td><td>✓ добавлено</td><td>{1,3,4,5,6,8}, {2,7,9}</td></tr>
+<tr><td>8</td><td>(4,5)</td><td>2</td><td class="cycle">✗ ЦИКЛ (4 и 5 в одной компоненте)</td><td>—</td></tr>
+<tr><td>9</td><td>(5,6)</td><td>2</td><td class="cycle">✗ ЦИКЛ</td><td>—</td></tr>
+<tr><td>10</td><td>(5,7)</td><td>2</td><td>✓ добавлено — слияние!</td><td>{1,2,3,4,5,6,7,8,9} ✓</td></tr>
+</table>
+
+<p>8 рёбер добавлены, все 9 вершин в одной компоненте. <b>Стоп.</b></p>
+
+<div class="answer">
+МОД из 8 рёбер: (2,9), (3,4), (1,4), (1,5), (1,6), (2,7), (3,8), (5,7).<br>
+<b>Общий вес = 1 + 1 + 2 + 2 + 2 + 2 + 2 + 2 = 14.</b>
+</div>
+
+<div class="warn">
+<b>Если ваши координаты другие</b> — пересчитайте манхэттен для своих позиций и заново отсортируйте. Алгоритм тот же. Финальная сумма может оказаться другой.
+</div>
+</div>
+
+<!-- ============================================================== -->
+<!-- ГЛАВА 3. ВЕТВИ И ГРАНИЦЫ                                        -->
+<!-- ============================================================== -->
+<h2 id="bnb">3. Метод ветвей и границ — задача о размещении (QAP)</h2>
+
+<div class="warn">
+<b>Внимание!</b> В предыдущей версии учебника тут была задача «минимальный гамильтонов путь» (сумма только по соседним позициям). Это <b>неправильная</b> постановка. Реальная задача — <b>квадратичная задача о размещении</b>: сумма берётся по <b>всем парам</b> вершин (6 пар для 4 вершин), и нижние оценки считаются специально через отсортированное умножение.
+</div>
+
+<h3>3.1. Что нужно сделать</h3>
+
+<div class="definition">
+<strong>Мультиграф</strong> — граф, в котором между парой вершин может быть несколько параллельных рёбер. Число этих рёбер называется <b>кратностью</b> связи (или весом ребра).
+</div>
+
+<p>На входе задания: мультиграф на 4 вершинах (1, 2, 3, 4) с кратными рёбрами + 4 позиции p<sub>1</sub>, p<sub>2</sub>, p<sub>3</sub>, p<sub>4</sub> в ряд. Нужно расставить вершины по позициям (биекция «вершина ↔ позиция») так, чтобы минимизировать:</p>
+
+<p class="formula">F(π) = Σ<sub>i&lt;j</sub> R[i,j] · D[π(i), π(j)]</p>
+
+<p>где:</p>
+<ul>
+  <li>R[i,j] — кратность рёбер между вершинами i и j в графе;</li>
+  <li>D[k,l] = |k − l| — расстояние между позициями p<sub>k</sub> и p<sub>l</sub> в линейке;</li>
+  <li>π(i) — номер позиции, в которую попала вершина i.</li>
+</ul>
+
+<div class="warn">
+<b>Ключевое отличие от «гамильтонова пути»</b>: сумма идёт по <b>всем 6 парам</b> (i,j), а не только по соседним позициям (p<sub>1</sub>-p<sub>2</sub>, p<sub>2</sub>-p<sub>3</sub>, p<sub>3</sub>-p<sub>4</sub>). То есть учитываются и «дальние» связи: например, вершины в p<sub>1</sub> и p<sub>4</sub> вносят R · 3 (расстояние 3).
+</div>
+
+<p>Матрицу расстояний между позициями всегда одну и ту же:</p>
+
+<table>
+<tr><td class="head">D</td><td class="head">p<sub>1</sub></td><td class="head">p<sub>2</sub></td><td class="head">p<sub>3</sub></td><td class="head">p<sub>4</sub></td></tr>
+<tr><td class="head">p<sub>1</sub></td><td class="dim">0</td><td>1</td><td>2</td><td>3</td></tr>
+<tr><td class="head">p<sub>2</sub></td><td>1</td><td class="dim">0</td><td>1</td><td>2</td></tr>
+<tr><td class="head">p<sub>3</sub></td><td>2</td><td>1</td><td class="dim">0</td><td>1</td></tr>
+<tr><td class="head">p<sub>4</sub></td><td>3</td><td>2</td><td>1</td><td class="dim">0</td></tr>
+</table>
+
+<p>Уникальные пары расстояний: {1, 1, 1, 2, 2, 3} — три «единицы» (соседи), две «двойки» (через одного), одна «тройка» (от p<sub>1</sub> до p<sub>4</sub>).</p>
+
+<h3>3.2. Идея метода и базовая нижняя оценка</h3>
+
+<p>«В лоб» можно перебрать все 4! = 24 расстановки. Но это длинно. Метод <b>ветвей и границ</b> учит отсекать заведомо плохие ветки:</p>
+<ul>
+  <li><b>Ветвление.</b> Дерево решений. На уровне k фиксируем «вершина e<sub>i</sub> идёт в позицию p<sub>k</sub>».</li>
+  <li><b>Граница (нижняя оценка).</b> Считаем минимально возможное F для этой ветки.</li>
+  <li><b>Отсечение.</b> Если оценка ≥ текущего рекорда — ветку бросаем.</li>
+</ul>
+
+<h4>Базовая нижняя оценка F₀ (отсортированное умножение)</h4>
+
+<p>Для любого размещения справедливо: чтобы минимизировать сумму произведений «вес × расстояние», лучше всего <b>пары весов и расстояний спарить так</b>, чтобы <b>больший вес шёл с меньшим расстоянием</b>. Это и есть нижняя оценка:</p>
+
+<ol>
+  <li>Выпишите все 6 кратностей рёбер графа в строку: r = (r<sub>1</sub>, r<sub>2</sub>, …, r<sub>6</sub>), отсортированные <b>по убыванию</b>.</li>
+  <li>Выпишите все 6 расстояний из матрицы D: δ = (δ<sub>1</sub>, δ<sub>2</sub>, …, δ<sub>6</sub>) = (1, 1, 1, 2, 2, 3), отсортированные <b>по возрастанию</b>.</li>
+  <li><b>F<sub>0</sub> = Σ rᵢ · δᵢ</b> — это минимально возможное значение F при любой расстановке.</li>
+</ol>
+
+<p>Например, если рёбра графа имеют кратности {4, 3, 3, 2, 1, 0}, то F<sub>0</sub> = 4·1 + 3·1 + 3·1 + 2·2 + 1·2 + 0·3 = 4+3+3+4+2+0 = 16.</p>
+
+<h3>3.3. Алгоритм пошагово</h3>
+
+<ol>
+  <li>Выписать <b>матрицу кратностей R</b> (4×4) для исходного мультиграфа: R[i,j] = число рёбер между i и j. На диагонали — 0.</li>
+  <li>Подсчитать <b>базовую F<sub>0</sub></b> (как выше) — это нижняя граница.</li>
+  <li><b>Перебираем</b>, в какую позицию поставить вершину e<sub>1</sub>. 4 ветки: e<sub>1</sub>→p<sub>1</sub>, e<sub>1</sub>→p<sub>2</sub>, e<sub>1</sub>→p<sub>3</sub>, e<sub>1</sub>→p<sub>4</sub>. (Можно ветвиться и по «кто идёт в p<sub>1</sub>» — это эквивалентный подход. Главное — выбрать один и держаться его. Эталон Киселёва использует «куда идёт e<sub>1</sub>», в учебнике этот же подход.)</li>
+  <li>Для каждой ветки <b>«e<sub>1</sub> → p<sub>k</sub>»</b> считаем нижнюю оценку F(P) как сумму двух частей:
+    <ul>
+      <li><b>W(P)</b> — минимальный вклад рёбер от <i>уже размещённой вершины e<sub>1</sub></i> ко всем остальным. Берём список 3 кратностей рёбер от e<sub>1</sub>, сортируем по убыванию; список 3 расстояний от p<sub>k</sub> до других позиций, сортируем по возрастанию; перемножаем покомпонентно и складываем.</li>
+      <li><b>V(P)</b> — минимальный вклад рёбер между <i>ещё не размещёнными</i> вершинами. Берём кратности оставшихся 3 рёбер (между 3 свободными вершинами), сортируем по убыванию; расстояния между 3 свободными позициями, по возрастанию; перемножаем и складываем.</li>
+    </ul>
+    <p>На 1-м уровне: F(P) = W(P) + V(P). При углублении (см. ниже) добавляется <b>F(σ)</b> — стоимость уже зафиксированных пар.</p>
+  </li>
+  <li>Если F(P) ≥ текущего рекорда F* — ветку <b>обрываем</b>.</li>
+  <li>Если F(P) совпадает с базовой оценкой F<sub>0</sub> — <b>значит, этот вариант может дать оптимум</b>. Углубляемся: пробуем поставить e<sub>2</sub> в каждую из 3 свободных позиций. На уровне 2: F(P) = F(σ) + W(P) + V(P), где F(σ) — точная стоимость пары e<sub>1</sub>-e<sub>2</sub> (R[1,2]·D[π(1),π(2)]).</li>
+  <li>На самом дне (зафиксированы e<sub>1</sub>, e<sub>2</sub>, e<sub>3</sub>; e<sub>4</sub> ставится в оставшуюся позицию) считаем точное F по формуле Σ R[i,j] · D[π(i), π(j)] по всем 6 парам. Сравниваем с рекордом, обновляем.</li>
+  <li>Когда все ветки пройдены/отсечены — выписываем рекорд и оптимальное размещение.</li>
+</ol>
+
+<div class="note">
+<b>Полезно знать.</b> Если ваша базовая оценка F<sub>0</sub> сразу достижима какой-то расстановкой, то F<sup>*</sup> = F<sub>0</sub> и можно остановиться, как только нашли такую расстановку. Если не достижима — реальный минимум будет больше F<sub>0</sub>, и придётся проверить больше веток.
+</div>
+
+<h3>3.4. Эталонный пример (правильное решение Киселёва)</h3>
+
+<p>Мультиграф на 4 вершинах с кратностями (R) и матрица расстояний между позициями (D):</p>
+
+<table>
+<tr><td class="head">R</td><td class="head">e<sub>1</sub></td><td class="head">e<sub>2</sub></td><td class="head">e<sub>3</sub></td><td class="head">e<sub>4</sub></td></tr>
+<tr><td class="head">e<sub>1</sub></td><td class="dim">0</td><td>3</td><td>4</td><td>2</td></tr>
+<tr><td class="head">e<sub>2</sub></td><td>3</td><td class="dim">0</td><td>1</td><td>3</td></tr>
+<tr><td class="head">e<sub>3</sub></td><td>4</td><td>1</td><td class="dim">0</td><td>0</td></tr>
+<tr><td class="head">e<sub>4</sub></td><td>2</td><td>3</td><td>0</td><td class="dim">0</td></tr>
+</table>
+
+<p>(Между e<sub>3</sub> и e<sub>4</sub> рёбер нет: R[3,4] = 0.)</p>
+
+<h4>Шаг 1. Базовая нижняя оценка F<sub>0</sub></h4>
+
+<p>Кратности рёбер (6 пар): 3, 4, 2, 1, 3, 0. Сортируем по убыванию: <b>r = {4, 3, 3, 2, 1, 0}</b>.</p>
+<p>Расстояния в D (6 пар): {1, 1, 1, 2, 2, 3}. Уже по возрастанию: <b>δ = {1, 1, 1, 2, 2, 3}</b>.</p>
+<p class="formula">F<sub>0</sub> = 4·1 + 3·1 + 3·1 + 2·2 + 1·2 + 0·3 = 4 + 3 + 3 + 4 + 2 + 0 = <b>16</b></p>
+
+<p>Нижняя граница оптимума: F<sup>*</sup> ≥ 16. Если найдём расстановку с F = 16, это и есть оптимум.</p>
+
+<h4>Шаг 2. Ветка «e<sub>1</sub> → p<sub>1</sub>»</h4>
+
+<p>Рёбра от e<sub>1</sub> имеют кратности {3, 4, 2} (к e<sub>2</sub>, e<sub>3</sub>, e<sub>4</sub>). Сортируем по убыванию: {4, 3, 2}.<br>
+Расстояния от p<sub>1</sub> до других позиций: D[1,2]=1, D[1,3]=2, D[1,4]=3. По возрастанию: {1, 2, 3}.<br>
+<b>W(P) = 4·1 + 3·2 + 2·3 = 4 + 6 + 6 = 16</b>.</p>
+
+<p>Свободные вершины {e<sub>2</sub>, e<sub>3</sub>, e<sub>4</sub>}, рёбра между ними: R[2,3]=1, R[2,4]=3, R[3,4]=0. По убыванию: {3, 1, 0}.<br>
+Расстояния между свободными позициями {p<sub>2</sub>, p<sub>3</sub>, p<sub>4</sub>}: D[2,3]=1, D[2,4]=2, D[3,4]=1. По возрастанию: {1, 1, 2}.<br>
+<b>V(P) = 3·1 + 1·1 + 0·2 = 4</b>.</p>
+
+<p class="formula">F(P) = 0 + 16 + 4 = 20 — больше F<sub>0</sub>, но рекорда ещё нет. Эта ветка не оптимальна (есть лучше).</p>
+
+<h4>Шаг 3. Ветка «e<sub>1</sub> → p<sub>2</sub>»</h4>
+
+<p>Кратности рёбер от e<sub>1</sub>: {4, 3, 2}.<br>
+Расстояния от p<sub>2</sub>: D[2,1]=1, D[2,3]=1, D[2,4]=2. По возрастанию: {1, 1, 2}.<br>
+<b>W(P) = 4·1 + 3·1 + 2·2 = 4 + 3 + 4 = 11</b>.</p>
+
+<p>Расстояния между свободными позициями {p<sub>1</sub>, p<sub>3</sub>, p<sub>4</sub>}: D[1,3]=2, D[1,4]=3, D[3,4]=1. По возрастанию: {1, 2, 3}.<br>
+Кратности оставшихся рёбер: {3, 1, 0}.<br>
+<b>V(P) = 3·1 + 1·2 + 0·3 = 5</b>.</p>
+
+<p class="formula">F(P) = 0 + 11 + 5 = 16 — <b>совпадает с F<sub>0</sub></b>! Эта ветка может дать оптимум. Углубляемся.</p>
+
+<h4>Шаг 4. Внутри «e<sub>1</sub> → p<sub>2</sub>»: куда поставить e<sub>2</sub>?</h4>
+
+<p>Пробуем <b>e<sub>2</sub> → p<sub>3</sub></b>:</p>
+<ul>
+  <li>Зафиксированная стоимость e<sub>1</sub>-e<sub>2</sub>: F(σ) = R[1,2] · D[2,3] = 3·1 = <b>3</b>.</li>
+  <li>W(P) теперь — вклад от e<sub>1</sub> и e<sub>2</sub> к свободным {e<sub>3</sub>, e<sub>4</sub>}:
+    <ul>
+      <li>От e<sub>1</sub> (стоит в p<sub>2</sub>): кратности к e<sub>3</sub>, e<sub>4</sub> = {4, 2} desc. Расстояния от p<sub>2</sub> до свободных p<sub>1</sub>, p<sub>4</sub>: {1, 2} asc. Вклад = 4·1 + 2·2 = 8.</li>
+      <li>От e<sub>2</sub> (стоит в p<sub>3</sub>): кратности к e<sub>3</sub>, e<sub>4</sub> по убыванию: {3, 1}. Расстояния от p<sub>3</sub> до p<sub>1</sub>, p<sub>4</sub> по возрастанию: {1, 2}. Вклад = 3·1 + 1·2 = 5.</li>
+    </ul>
+    Суммарно W(P) = 8 + 5 = 13.
+  </li>
+  <li>V(P) — связь e<sub>3</sub>-e<sub>4</sub> с расстоянием между свободными p<sub>1</sub> и p<sub>4</sub> (= 3). Кратность 0 · 3 = <b>0</b>.</li>
+  <li>F(P) = 3 + 13 + 0 = <b>16</b> — снова совпадает с базовой оценкой! Размещение e<sub>1</sub>→p<sub>2</sub>, e<sub>2</sub>→p<sub>3</sub> ведёт к оптимуму.</li>
+</ul>
+
+<h4>Шаг 5. Куда e<sub>3</sub> и e<sub>4</sub>?</h4>
+
+<p>Свободны позиции p<sub>1</sub> и p<sub>4</sub>, свободны вершины e<sub>3</sub> и e<sub>4</sub>. Пробуем <b>e<sub>3</sub> → p<sub>1</sub>, e<sub>4</sub> → p<sub>4</sub></b>:</p>
+
+<table>
+<tr><td class="head">Пара</td><td class="head">R</td><td class="head">D</td><td class="head">Вклад</td></tr>
+<tr><td>e<sub>1</sub>-e<sub>2</sub></td><td>3</td><td>D[2,3]=1</td><td>3</td></tr>
+<tr><td>e<sub>1</sub>-e<sub>3</sub></td><td>4</td><td>D[2,1]=1</td><td>4</td></tr>
+<tr><td>e<sub>1</sub>-e<sub>4</sub></td><td>2</td><td>D[2,4]=2</td><td>4</td></tr>
+<tr><td>e<sub>2</sub>-e<sub>3</sub></td><td>1</td><td>D[3,1]=2</td><td>2</td></tr>
+<tr><td>e<sub>2</sub>-e<sub>4</sub></td><td>3</td><td>D[3,4]=1</td><td>3</td></tr>
+<tr><td>e<sub>3</sub>-e<sub>4</sub></td><td>0</td><td>D[1,4]=3</td><td>0</td></tr>
+<tr><td colspan="3"><b>Итого F:</b></td><td><b>16</b></td></tr>
+</table>
+
+<p>Альтернатива (e<sub>3</sub> → p<sub>4</sub>, e<sub>4</sub> → p<sub>1</sub>):</p>
+<table>
+<tr><td>e<sub>1</sub>-e<sub>3</sub></td><td>4</td><td>D[2,4]=2</td><td>8</td></tr>
+<tr><td>e<sub>1</sub>-e<sub>4</sub></td><td>2</td><td>D[2,1]=1</td><td>2</td></tr>
+<tr><td>e<sub>2</sub>-e<sub>3</sub></td><td>1</td><td>D[3,4]=1</td><td>1</td></tr>
+<tr><td>e<sub>2</sub>-e<sub>4</sub></td><td>3</td><td>D[3,1]=2</td><td>6</td></tr>
+<tr><td>e<sub>1</sub>-e<sub>2</sub>+e<sub>3</sub>-e<sub>4</sub></td><td colspan="2">3·1 + 0·3</td><td>3</td></tr>
+<tr><td colspan="3"><b>Итого:</b></td><td><b>20</b></td></tr>
+</table>
+
+<p>Лучше первый вариант. Дальше нужно проверить оставшиеся ветки <b>e<sub>1</sub>→p<sub>3</sub></b> и <b>e<sub>1</sub>→p<sub>4</sub></b>. Распишем их кратко:</p>
+
+<p><b>Ветка e<sub>1</sub> → p<sub>3</sub>:</b> Расстояния от p<sub>3</sub> = {1, 1, 2} asc (то же что от p<sub>2</sub>, симметрия). W(P) = 4·1+3·1+2·2 = 11. Расстояния между свободными {p<sub>1</sub>, p<sub>2</sub>, p<sub>4</sub>}: {1, 2, 3} asc. V(P) = 3·1+1·2+0·3 = 5. <b>F(P) = 16</b> — снова достигнут F<sub>0</sub>! Это зеркальный путь к оптимуму. Аналогичным углублением получим зеркальное размещение e<sub>1</sub>→p<sub>3</sub>, e<sub>2</sub>→p<sub>2</sub>, e<sub>3</sub>→p<sub>4</sub>, e<sub>4</sub>→p<sub>1</sub> с F = 16.</p>
+
+<p><b>Ветка e<sub>1</sub> → p<sub>4</sub>:</b> Симметрична ветке e<sub>1</sub>→p<sub>1</sub>. Расстояния от p<sub>4</sub> = {1, 2, 3} asc. W(P) = 4·1+3·2+2·3 = 16. V(P) = 3·1+1·1+0·2 = 4. <b>F(P) = 20</b> &gt; 16 — отсечение. Аналогично, ветка e<sub>1</sub>→p<sub>1</sub> дала F(P) = 20 (см. Шаг 2) — тоже отсекается.</p>
+
+<p>Итого, F<sup>*</sup> = 16 достижим из двух «зеркальных» веток (e<sub>1</sub>→p<sub>2</sub> и e<sub>1</sub>→p<sub>3</sub>):</p>
+
+<div class="answer">
+F<sup>*</sup> = 16. Оптимальное размещение:<br>
+• e<sub>3</sub> → p<sub>1</sub><br>
+• e<sub>1</sub> → p<sub>2</sub><br>
+• e<sub>2</sub> → p<sub>3</sub><br>
+• e<sub>4</sub> → p<sub>4</sub>
+</div>
+
+<h3>3.5. Шаблон оформления</h3>
+
+<pre>
+№3. Размещение вершин в позиции (ветви и границы)
+
+1) Матрица кратностей R (4×4):
+       e1  e2  e3  e4
+   e1   0   .   .   .
+   e2   .   0   .   .
+   e3   .   .   0   .
+   e4   .   .   .   0
+
+   Матрица расстояний между позициями D — всегда одна и та же:
+       p1  p2  p3  p4
+   p1   0   1   2   3
+   p2   1   0   1   2
+   p3   2   1   0   1
+   p4   3   2   1   0
+
+2) Базовая нижняя оценка F_0:
+   r = (все 6 кратностей desc) = (..., ..., ..., ..., ..., ...)
+   δ = (1, 1, 1, 2, 2, 3)
+   F_0 = Σ r_i · δ_i = ...
+
+3) Перебираем варианты «e_α → p_k»:
+
+   Ветка e_1 → p_1:
+     W(P) = ...    (от e_1, его кратности desc × расстояния от p_1 asc)
+     V(P) = ...    (между свободными e_2, e_3, e_4; их кратности desc × расстояния между свободными позициями asc)
+     F(P) = W + V = ...    (отсечение, если ≥ рекорд)
+
+   Ветка e_1 → p_2:
+     ...
+   (если F(P) = F_0, ветка перспективна — углубляемся)
+
+4) Углубление:
+   Для перспективной «e_α → p_k» пробуем «e_β → p_l»:
+     F(σ) = R[α,β] · D[k,l]    (зафиксированный вклад e_α-e_β)
+     W(P) = вклад от e_α и e_β к свободным
+     V(P) = вклад от 1 ребра между свободными
+     F(P) = F(σ) + W + V
+
+5) На дне: 3 вершины зафиксированы, 4-я в оставшейся позиции.
+   Считаем точное F = Σ R[i,j] · D[π(i), π(j)] (все 6 пар).
+
+6) Сравниваем со всеми ветками, выписываем рекорд и оптимальное размещение.
+
+Ответ: F* = N. Размещение: e_? → p_1, e_? → p_2, e_? → p_3, e_? → p_4.
+</pre>
+
+<h3>3.6. Как применить к своему варианту</h3>
+
+<p>В тесте вам дадут <b>один из 4 мультиграфов</b> на 4 вершинах. Чтобы решить:</p>
+
+<ol>
+  <li><b>Постройте матрицу R</b>: посчитайте число параллельных рёбер между каждой парой вершин (1-2, 1-3, 1-4, 2-3, 2-4, 3-4). На диагонали — нули.</li>
+  <li><b>Посчитайте F<sub>0</sub></b>: 6 кратностей сортируем desc, расстояния D = {1,1,1,2,2,3} asc, перемножаем покомпонентно и складываем.</li>
+  <li><b>Перебираем 4 ветки</b> «e<sub>α</sub> → p<sub>1</sub>» (по одной для каждой вершины). Для каждой считаем F(P) = W(P) + V(P).</li>
+  <li>Если F(P) = F<sub>0</sub> — углубляемся, пробуем «e<sub>β</sub> → p<sub>2</sub>», ... . Доходим до полной расстановки, считаем точное F.</li>
+  <li>Сравниваем все полные расстановки, выписываем рекорд и оптимум.</li>
+</ol>
+
+<div class="note">
+<b>Важно для оформления:</b> преподаватель ждёт <b>пройденные ветки с оценками</b>. Если просто написать «ответ 16 при размещении …» без расчёта F<sub>0</sub>, W(P), V(P) — снимут много баллов. Метод сам по себе требует расписать.
+</div>
+
+<h3>3.7. Дополнительная задача для тренировки</h3>
+
+<div class="task">
+<p><span class="num">Задача.</span> Матрица кратностей:</p>
+<table>
+<tr><td class="head">R</td><td class="head">e<sub>1</sub></td><td class="head">e<sub>2</sub></td><td class="head">e<sub>3</sub></td><td class="head">e<sub>4</sub></td></tr>
+<tr><td class="head">e<sub>1</sub></td><td class="dim">0</td><td>2</td><td>3</td><td>1</td></tr>
+<tr><td class="head">e<sub>2</sub></td><td>2</td><td class="dim">0</td><td>2</td><td>3</td></tr>
+<tr><td class="head">e<sub>3</sub></td><td>3</td><td>2</td><td class="dim">0</td><td>1</td></tr>
+<tr><td class="head">e<sub>4</sub></td><td>1</td><td>3</td><td>1</td><td class="dim">0</td></tr>
+</table>
+<p>Найдите минимальное F и оптимальное размещение.</p>
+
+<details>
+<summary>Решение</summary>
+
+<p><b>Базовая оценка.</b> Кратности: {2, 3, 1, 2, 3, 1}. По убыванию: {3, 3, 2, 2, 1, 1}. δ = {1, 1, 1, 2, 2, 3}.</p>
+<p class="formula">F<sub>0</sub> = 3·1 + 3·1 + 2·1 + 2·2 + 1·2 + 1·3 = 3 + 3 + 2 + 4 + 2 + 3 = <b>17</b></p>
+
+<p><b>Ветка e<sub>1</sub> → p<sub>1</sub>.</b> Кратности от e<sub>1</sub>: {2, 3, 1} desc = {3, 2, 1}. Расстояния от p<sub>1</sub>: {1, 2, 3}. W = 3·1+2·2+1·3 = 10. V: кратности между {e<sub>2</sub>, e<sub>3</sub>, e<sub>4</sub>} = {2, 3, 1} desc {3, 2, 1}, расстояния между {p<sub>2</sub>, p<sub>3</sub>, p<sub>4</sub>} = {1, 1, 2} asc. V = 3·1+2·1+1·2 = 7. F(P) = 10+7 = <b>17</b> ← совпадает с F<sub>0</sub>!</p>
+
+<p><b>Ветка e<sub>1</sub> → p<sub>2</sub>.</b> Расстояния от p<sub>2</sub>: {1, 1, 2}. W = 3·1+2·1+1·2 = 7. Расстояния между {p<sub>1</sub>, p<sub>3</sub>, p<sub>4</sub>} = {1, 2, 3}. V = 3·1+2·2+1·3 = 10. F(P) = 17. Совпадает.</p>
+
+<p><b>Углубление в e<sub>1</sub> → p<sub>1</sub>.</b> Перебираем, куда поставить e<sub>2</sub>.</p>
+
+<p><b>Подветка e<sub>2</sub> → p<sub>2</sub>:</b> F(σ) = R[1,2]·D[1,2] = 2·1 = 2.
+W₁ (e<sub>1</sub> к {e<sub>3</sub>,e<sub>4</sub>}): R = {3,1} desc; D от p<sub>1</sub> к {p<sub>3</sub>,p<sub>4</sub>} = {2,3} asc. W₁ = 3·2+1·3 = 9.
+W₂ (e<sub>2</sub> к {e<sub>3</sub>,e<sub>4</sub>}): R = {2,3} desc {3,2}; D от p<sub>2</sub> к {p<sub>3</sub>,p<sub>4</sub>} = {1,2} asc. W₂ = 3·1+2·2 = 7.
+V(P) = R[3,4]·D[3,4] = 1·1 = 1.
+<b>F(P) = 2+(9+7)+1 = 19</b> &gt; F<sub>0</sub> — ветка хуже базовой оценки, отсечь не можем (рекорда нет), но запомним.</p>
+
+<p><b>Подветка e<sub>2</sub> → p<sub>3</sub>:</b> F(σ) = R[1,2]·D[1,3] = 2·2 = 4.
+W₁ (e<sub>1</sub> к {e<sub>3</sub>,e<sub>4</sub>}): D от p<sub>1</sub> к {p<sub>2</sub>,p<sub>4</sub>} = {1,3} asc. W₁ = 3·1+1·3 = 6.
+W₂ (e<sub>2</sub> к {e<sub>3</sub>,e<sub>4</sub>}): D от p<sub>3</sub> к {p<sub>2</sub>,p<sub>4</sub>} = {1,1} asc. W₂ = 3·1+2·1 = 5.
+V(P) = R[3,4]·D[2,4] = 1·2 = 2.
+<b>F(P) = 4+(6+5)+2 = 17</b> ← <span style="color: #1a6b30; font-weight: bold;">совпадает с F<sub>0</sub>!</span></p>
+
+<p><b>Подветка e<sub>2</sub> → p<sub>4</sub>:</b> F(σ) = 2·3 = 6. Дальше можно не считать — уже хуже 17.</p>
+
+<p><b>Дно подветки e<sub>1</sub>→p<sub>1</sub>, e<sub>2</sub>→p<sub>3</sub>.</b> Свободны позиции {p<sub>2</sub>, p<sub>4</sub>} и вершины {e<sub>3</sub>, e<sub>4</sub>}. Вариант <b>e<sub>3</sub>→p<sub>2</sub>, e<sub>4</sub>→p<sub>4</sub></b>:</p>
+<table>
+<tr><td class="head">Пара</td><td class="head">R</td><td class="head">D</td><td class="head">Вклад</td></tr>
+<tr><td>e<sub>1</sub>-e<sub>2</sub></td><td>2</td><td>D[1,3]=2</td><td>4</td></tr>
+<tr><td>e<sub>1</sub>-e<sub>3</sub></td><td>3</td><td>D[1,2]=1</td><td>3</td></tr>
+<tr><td>e<sub>1</sub>-e<sub>4</sub></td><td>1</td><td>D[1,4]=3</td><td>3</td></tr>
+<tr><td>e<sub>2</sub>-e<sub>3</sub></td><td>2</td><td>D[3,2]=1</td><td>2</td></tr>
+<tr><td>e<sub>2</sub>-e<sub>4</sub></td><td>3</td><td>D[3,4]=1</td><td>3</td></tr>
+<tr><td>e<sub>3</sub>-e<sub>4</sub></td><td>1</td><td>D[2,4]=2</td><td>2</td></tr>
+<tr><td colspan="3"><b>F =</b></td><td style="color: #1a6b30;"><b>17</b> ✓</td></tr>
+</table>
+
+<p>Альтернатива <b>e<sub>3</sub>→p<sub>4</sub>, e<sub>4</sub>→p<sub>2</sub></b>: меняем D[1,3]→D[1,4]=3, D[2,3]→D[3,4]=1, D[2,4]→D[3,2]=1, D[3,4]→D[4,2]=2. Получим F = 4+3·3+1·1+2·1+3·1+1·2 = 21. Хуже.</p>
+
+<p>Ветку e<sub>1</sub>→p<sub>2</sub> анализируем симметрично (она тоже даёт F = 17 — это зеркало). Ветки e<sub>1</sub>→p<sub>3</sub>, e<sub>1</sub>→p<sub>4</sub> — снова симметричны.</p>
+
+<div class="answer">
+F<sup>*</sup> = 17 — базовая оценка достижима. Оптимальное размещение:<br>
+• e<sub>1</sub> → p<sub>1</sub><br>
+• e<sub>3</sub> → p<sub>2</sub><br>
+• e<sub>2</sub> → p<sub>3</sub><br>
+• e<sub>4</sub> → p<sub>4</sub><br>
+(плюс зеркальные варианты — например, e<sub>4</sub>→p<sub>1</sub>, e<sub>2</sub>→p<sub>2</sub>, e<sub>3</sub>→p<sub>3</sub>, e<sub>1</sub>→p<sub>4</sub>.)
+</div>
+
+<p class="small">📌 <b>Урок:</b> если в одной подветке F(P) &gt; F<sub>0</sub> — не торопитесь говорить «оптимум выше». Возможно, в <i>другой</i> подветке того же уровня F<sub>0</sub> достигается. Только если перебрать <b>все</b> подветки и ни одна не даёт F = F<sub>0</sub>, тогда минимум действительно выше.</p>
+</details>
+</div>
+
+<h3>3.8. Полный разбор варианта 3 теста</h3>
+
+<div class="task" style="border-left-color: #b34700;">
+<p><span class="num">🎯 Вариант 3.</span> Кратности рёбер мультиграфа:</p>
+
+<p><b>Матрица R:</b></p>
+<table>
+<tr><td class="head">R</td><td class="head">e<sub>1</sub></td><td class="head">e<sub>2</sub></td><td class="head">e<sub>3</sub></td><td class="head">e<sub>4</sub></td></tr>
+<tr><td class="head">e<sub>1</sub></td><td class="dim">0</td><td>1</td><td>2</td><td>3</td></tr>
+<tr><td class="head">e<sub>2</sub></td><td>1</td><td class="dim">0</td><td>2</td><td>0</td></tr>
+<tr><td class="head">e<sub>3</sub></td><td>2</td><td>2</td><td class="dim">0</td><td>2</td></tr>
+<tr><td class="head">e<sub>4</sub></td><td>3</td><td>0</td><td>2</td><td class="dim">0</td></tr>
+</table>
+
+<p>⚠ <b>R[2,4] = 0</b> — рёбер между e<sub>2</sub> и e<sub>4</sub> нет. Их выгодно ставить далеко (например, в p<sub>1</sub> и p<sub>4</sub>).</p>
+
+<h4>Шаг 1. Базовая нижняя оценка F<sub>0</sub></h4>
+
+<p>Кратности всех 6 рёбер: {1, 2, 3, 2, 0, 2}. По убыванию: <b>r = {3, 2, 2, 2, 1, 0}</b>.<br>
+Расстояния D (всегда): <b>δ = {1, 1, 1, 2, 2, 3}</b>.</p>
+
+<p class="formula">F<sub>0</sub> = 3·1 + 2·1 + 2·1 + 2·2 + 1·2 + 0·3 = 3+2+2+4+2+0 = <b>13</b></p>
+
+<h4>Шаг 2. Перебор 4 веток (e<sub>1</sub> → p<sub>k</sub>)</h4>
+
+<p><b>Ветка e<sub>1</sub> → p<sub>1</sub>:</b></p>
+<ul>
+<li>Кратности от e<sub>1</sub>: R[1,2]=1, R[1,3]=2, R[1,4]=3. По убыванию: {3, 2, 1}.</li>
+<li>Расстояния от p<sub>1</sub> до {p<sub>2</sub>, p<sub>3</sub>, p<sub>4</sub>}: {1, 2, 3} asc.</li>
+<li>W(P) = 3·1 + 2·2 + 1·3 = <b>10</b>.</li>
+<li>Кратности между {e<sub>2</sub>, e<sub>3</sub>, e<sub>4</sub>}: {2, 2, 0} desc. Расстояния между {p<sub>2</sub>, p<sub>3</sub>, p<sub>4</sub>}: {1, 1, 2} asc.</li>
+<li>V(P) = 2·1 + 2·1 + 0·2 = <b>4</b>.</li>
+<li><b>F(P) = 10 + 4 = 14</b>.</li>
+</ul>
+
+<p><b>Ветка e<sub>1</sub> → p<sub>2</sub>:</b></p>
+<ul>
+<li>Расстояния от p<sub>2</sub>: {1, 1, 2} asc. W(P) = 3·1 + 2·1 + 1·2 = <b>7</b>.</li>
+<li>Расстояния между {p<sub>1</sub>, p<sub>3</sub>, p<sub>4</sub>}: D[1,3]=2, D[1,4]=3, D[3,4]=1 → {1, 2, 3} asc. V(P) = 2·1 + 2·2 + 0·3 = <b>6</b>.</li>
+<li><b>F(P) = 7 + 6 = 13</b> ← <span style="color: #1a6b30; font-weight: bold;">совпадает с F<sub>0</sub>!</span> Углубляемся.</li>
+</ul>
+
+<p><b>Ветка e<sub>1</sub> → p<sub>3</sub>:</b> (зеркальная по структуре)</p>
+<ul>
+<li>Расстояния от p<sub>3</sub>: {1, 1, 2} asc. W(P) = 3·1 + 2·1 + 1·2 = <b>7</b>.</li>
+<li>Расстояния между {p<sub>1</sub>, p<sub>2</sub>, p<sub>4</sub>}: {1, 2, 3} asc. V(P) = <b>6</b>.</li>
+<li><b>F(P) = 13</b> ← тоже совпадает! Тоже углубляемся (даст зеркальный оптимум).</li>
+</ul>
+
+<p><b>Ветка e<sub>1</sub> → p<sub>4</sub>:</b></p>
+<ul>
+<li>W(P) = <b>10</b>, V(P) = <b>4</b>. <b>F(P) = 14</b>.</li>
+</ul>
+
+<h4>Шаг 3. Углубление в e<sub>1</sub> → p<sub>2</sub></h4>
+
+<p>Пробуем e<sub>2</sub> в одну из свободных позиций {p<sub>1</sub>, p<sub>3</sub>, p<sub>4</sub>}.</p>
+
+<p><b>e<sub>2</sub> → p<sub>1</sub>:</b></p>
+<ul>
+<li>F(σ) = R[1,2] · D[2,1] = 1·1 = 1.</li>
+<li>W от e<sub>1</sub>(p<sub>2</sub>) к {e<sub>3</sub>, e<sub>4</sub>}: R = {3, 2} desc, D от p<sub>2</sub> к {p<sub>3</sub>, p<sub>4</sub>} = {1, 2} asc. W₁ = 3·1+2·2 = 7.</li>
+<li>W от e<sub>2</sub>(p<sub>1</sub>) к {e<sub>3</sub>, e<sub>4</sub>}: R = {2, 0} desc, D от p<sub>1</sub> к {p<sub>3</sub>, p<sub>4</sub>} = {2, 3} asc. W₂ = 2·2+0·3 = 4.</li>
+<li>V(P) = R[3,4] · D[3,4] = 2·1 = 2.</li>
+<li><b>F(P) = 1 + (7+4) + 2 = 14</b>.</li>
+</ul>
+
+<p><b>e<sub>2</sub> → p<sub>3</sub>:</b></p>
+<ul>
+<li>F(σ) = R[1,2] · D[2,3] = 1·1 = 1.</li>
+<li>W₁ от e<sub>1</sub>(p<sub>2</sub>) к {e<sub>3</sub>, e<sub>4</sub>}: D к {p<sub>1</sub>, p<sub>4</sub>} = {1, 2} asc. W₁ = 3·1+2·2 = 7.</li>
+<li>W₂ от e<sub>2</sub>(p<sub>3</sub>) к {e<sub>3</sub>, e<sub>4</sub>}: D от p<sub>3</sub> к {p<sub>1</sub>, p<sub>4</sub>} = {2, 1} asc → {1, 2}. W₂ = 2·1+0·2 = 2.</li>
+<li>V(P) = R[3,4] · D[1,4] = 2·3 = 6.</li>
+<li><b>F(P) = 1 + (7+2) + 6 = 16</b>.</li>
+</ul>
+
+<p><b>e<sub>2</sub> → p<sub>4</sub>:</b></p>
+<ul>
+<li>F(σ) = R[1,2] · D[2,4] = 1·2 = 2.</li>
+<li>W₁ от e<sub>1</sub>(p<sub>2</sub>) к {e<sub>3</sub>, e<sub>4</sub>}: D к {p<sub>1</sub>, p<sub>3</sub>} = {1, 1} asc. W₁ = 3·1+2·1 = 5.</li>
+<li>W₂ от e<sub>2</sub>(p<sub>4</sub>) к {e<sub>3</sub>, e<sub>4</sub>}: D от p<sub>4</sub> к {p<sub>1</sub>, p<sub>3</sub>} = {3, 1} asc → {1, 3}. W₂ = 2·1+0·3 = 2.</li>
+<li>V(P) = R[3,4] · D[1,3] = 2·2 = 4.</li>
+<li><b>F(P) = 2 + (5+2) + 4 = 13</b> ← <span style="color: #1a6b30; font-weight: bold;">снова совпало!</span> Углубляемся.</li>
+</ul>
+
+<h4>Шаг 4. Дно: e<sub>1</sub>→p<sub>2</sub>, e<sub>2</sub>→p<sub>4</sub>. Остались e<sub>3</sub>, e<sub>4</sub> для {p<sub>1</sub>, p<sub>3</sub>}.</h4>
+
+<p><b>Вариант (а): e<sub>3</sub> → p<sub>1</sub>, e<sub>4</sub> → p<sub>3</sub>.</b> Считаем точное F по 6 парам:</p>
+<table>
+<tr><td class="head">Пара</td><td class="head">R</td><td class="head">D</td><td class="head">Вклад</td></tr>
+<tr><td>e<sub>1</sub>-e<sub>2</sub></td><td>1</td><td>D[2,4]=2</td><td>2</td></tr>
+<tr><td>e<sub>1</sub>-e<sub>3</sub></td><td>2</td><td>D[2,1]=1</td><td>2</td></tr>
+<tr><td>e<sub>1</sub>-e<sub>4</sub></td><td>3</td><td>D[2,3]=1</td><td>3</td></tr>
+<tr><td>e<sub>2</sub>-e<sub>3</sub></td><td>2</td><td>D[4,1]=3</td><td>6</td></tr>
+<tr><td>e<sub>2</sub>-e<sub>4</sub></td><td>0</td><td>D[4,3]=1</td><td>0</td></tr>
+<tr><td>e<sub>3</sub>-e<sub>4</sub></td><td>2</td><td>D[1,3]=2</td><td>4</td></tr>
+<tr><td colspan="3"><b>F =</b></td><td><b>17</b></td></tr>
+</table>
+
+<p><b>Вариант (б): e<sub>3</sub> → p<sub>3</sub>, e<sub>4</sub> → p<sub>1</sub>.</b></p>
+<table>
+<tr><td class="head">Пара</td><td class="head">R</td><td class="head">D</td><td class="head">Вклад</td></tr>
+<tr><td>e<sub>1</sub>-e<sub>2</sub></td><td>1</td><td>D[2,4]=2</td><td>2</td></tr>
+<tr><td>e<sub>1</sub>-e<sub>3</sub></td><td>2</td><td>D[2,3]=1</td><td>2</td></tr>
+<tr><td>e<sub>1</sub>-e<sub>4</sub></td><td>3</td><td>D[2,1]=1</td><td>3</td></tr>
+<tr><td>e<sub>2</sub>-e<sub>3</sub></td><td>2</td><td>D[4,3]=1</td><td>2</td></tr>
+<tr><td>e<sub>2</sub>-e<sub>4</sub></td><td>0</td><td>D[4,1]=3</td><td>0</td></tr>
+<tr><td>e<sub>3</sub>-e<sub>4</sub></td><td>2</td><td>D[3,1]=2</td><td>4</td></tr>
+<tr><td colspan="3"><b>F =</b></td><td style="color: #1a6b30;"><b>13</b> ✓</td></tr>
+</table>
+
+<p>🎯 <b>Оптимум найден!</b></p>
+
+<h4>Шаг 5. Углубление в e<sub>1</sub> → p<sub>3</sub> (даст зеркальный оптимум)</h4>
+
+<p>Аналогичный анализ показывает: лучший подвариант — <b>e<sub>2</sub>→p<sub>1</sub>, e<sub>3</sub>→p<sub>2</sub>, e<sub>4</sub>→p<sub>4</sub></b>. Тоже F = 13. Это зеркало первого решения.</p>
+
+<h4>Шаг 6. Ветки e<sub>1</sub>→p<sub>1</sub> и e<sub>1</sub>→p<sub>4</sub></h4>
+
+<p>F(P) = 14 &gt; 13 (текущий рекорд) — <b>отсекаются</b>.</p>
+
+<div class="answer">
+F* = 13. Оптимальное размещение:<br>
+• <b>e<sub>4</sub> → p<sub>1</sub></b><br>
+• <b>e<sub>1</sub> → p<sub>2</sub></b><br>
+• <b>e<sub>3</sub> → p<sub>3</sub></b><br>
+• <b>e<sub>2</sub> → p<sub>4</sub></b><br>
+<br>
+(Зеркальный вариант: e<sub>2</sub>→p<sub>1</sub>, e<sub>3</sub>→p<sub>2</sub>, e<sub>1</sub>→p<sub>3</sub>, e<sub>4</sub>→p<sub>4</sub> — тоже даёт F = 13.)
+</div>
+
+<p class="small">📌 <b>Идея решения:</b> вершина e<sub>1</sub> сильно связана с e<sub>4</sub> (R=3), поэтому их ставим рядом (p<sub>1</sub>-p<sub>2</sub>). Вершины e<sub>2</sub> и e<sub>4</sub> не связаны (R=0), поэтому их раздвигаем максимально (p<sub>1</sub>-p<sub>4</sub>). Это интуиция, которая подсказывает оптимум до самого алгоритма.</p>
+</div>
+
+<!-- ============================================================== -->
+<!-- ШПАРГАЛКА                                                       -->
+<!-- ============================================================== -->
+<h2 id="cheat">4. Шпаргалка перед тестом</h2>
+
+<h3>4.1. Сводный чек-лист</h3>
+
+<table style="font-family: 'Times New Roman', serif; font-size: 16px;">
+<tr><td class="head">Задание</td><td class="head">Что делать первой строкой</td><td class="head">Что писать последней</td></tr>
+<tr><td>1. Вейсман</td><td>Степени, удаление max-степенной вершины, клоза C<sub>v</sub> = (v ∨ соседи).</td><td>«χ(G) = N. Цвета: ϕ<sub>1</sub>={...} | ϕ<sub>2</sub>={...} | …».</td></tr>
+<tr><td>2. Прим</td><td>Считаем веса 36 рёбер на сетке (манхэттен), сортируем по возрастанию.</td><td>«МОД из 8 рёбер, общий вес = N».</td></tr>
+<tr><td>3. Ветви-границы (QAP)</td><td>Матрица R 4×4, базовая оценка F<sub>0</sub> = Σ r<sub>i</sub>·δ<sub>i</sub> (desc × asc).</td><td>«F* = N. Размещение: e<sub>?</sub>→p<sub>1</sub>, …».</td></tr>
+</table>
+
+<h3>4.2. Типичные ошибки</h3>
+
+<ul>
+  <li><b>Вейсман.</b> При раскрытии П в ДНФ забыть применить идемпотентность (x·x = x) и поглощение (A ∨ A·B = A). Без поглощений минтермов будет огромное количество, и часть из них «лишняя» — выглядят страшно, но дают то же χ.</li>
+  <li><b>Вейсман.</b> Перепутать: K<sub>j</sub> в ДНФ — это <b>вершинные покрытия</b>, ϕ<sub>j</sub> = V \ K<sub>j</sub> — это <b>независимые множества</b>. Цвета — это ϕ, а не K.</li>
+  <li><b>Вейсман.</b> Забыть, что одна вершина может попасть в несколько ϕ<sub>j</sub>. При финальной раскраске она получает цвет <b>одного</b> из них (того, который выбран в П').</li>
+  <li><b>Прим.</b> Считать вес ребра по евклидову расстоянию (диагональ), а не по манхэттену. У вашего преподавателя — манхэттен (|Δx| + |Δy|).</li>
+  <li><b>Прим.</b> При тупом сравнении на «цикл» забывать, что компоненты сливаются. Ведите список «к какой компоненте принадлежит каждая вершина».</li>
+  <li><b>Ветви-границы.</b> Считать сумму только по соседним позициям (p<sub>1</sub>-p<sub>2</sub>, p<sub>2</sub>-p<sub>3</sub>, p<sub>3</sub>-p<sub>4</sub>) — это путь Гамильтона, <b>неправильно</b>! Сумма берётся по всем 6 парам, с расстояниями из D.</li>
+  <li><b>Ветви-границы.</b> При расчёте W(P) и V(P) забыть применить правило «desc × asc» (больший вес × меньшее расстояние).</li>
+  <li><b>Ветви-границы.</b> Не написать F<sub>0</sub> и оценки веток. Преподаватель ждёт <b>именно</b> этот метод, а не просто перебор и финальный ответ.</li>
+</ul>
+
+<h3>4.3. Тайминг (если тест 60–90 минут)</h3>
+
+<ol>
+  <li><b>5 минут.</b> Прочитать все три задания. Понять варианты. Выписать матрицу/список рёбер аккуратно.</li>
+  <li><b>15–20 минут на задание 1 (Вейсман).</b> Степени → порядок → цвета. Самое лёгкое из трёх.</li>
+  <li><b>20–25 минут на задание 2 (Прим).</b> Список рёбер → сортировка → пошаговая сборка. Может занять долго из-за длинного списка.</li>
+  <li><b>20–25 минут на задание 3 (ветви-границы).</b> Матрица R → F<sub>0</sub> → 4 ветки «e<sub>1</sub>→p<sub>k</sub>» → углубление → выписать оптимальное размещение.</li>
+  <li><b>5–10 минут.</b> Проверка: подсчёт сумм, проверка «не съели ли лишнюю вершину», проверка, что в остове ровно n−1 рёбер, что в размещении все 4 вершины расставлены по разным позициям.</li>
+</ol>
+
+<div class="ok">
+<b>Главное правило.</b> Преподаватель оценивает <b>пошаговое оформление</b>, а не только финальную цифру. Даже если в конце вы где-то ошиблись в арифметике — за правильно расписанный алгоритм даётся бо́льшая часть баллов. Не торопитесь, не сокращайте шаги, пишите развёрнуто.
+</div>
+
+<h3>4.4. Финальный мини-тест себя</h3>
+
+<ol>
+  <li>Что такое степень вершины? Как её посчитать по матрице смежности?</li>
+  <li>В чём <b>отличие</b> между минимальным вершинным покрытием K и максимальным независимым множеством ϕ?</li>
+  <li>Что значат K и ϕ в алгоритме Вейсмана: какое из них даёт цветовые классы?</li>
+  <li>Какое поглощение применяется в булевой алгебре? (Ответ: A ∨ A·B = A.)</li>
+  <li>Сколько рёбер в МОД на n вершинах? (Ответ: n − 1.)</li>
+  <li>Как считается вес ребра между двумя вершинами на сетке? (Ответ: манхэттен = |Δx| + |Δy|.)</li>
+  <li>В задаче 3 берётся сумма по соседним позициям или по всем парам? (Ответ: <b>по всем 6 парам</b>.)</li>
+  <li>Как вычисляется базовая нижняя оценка F<sub>0</sub>? (Ответ: r<sub>desc</sub> · δ<sub>asc</sub> по 6 элементам.)</li>
+  <li>Что такое W(P) и V(P) в задаче 3? (W — вклад уже размещённой вершины ко всем; V — вклад между свободными вершинами.)</li>
+  <li>Сколько вариантов размещения 4 вершин по 4 позициям? (Ответ: 4! = 24.)</li>
+</ol>
+
+<p>Если на каждый отвечается за 5 секунд — готовы. Удачи на тесте! 🎓</p>
+
+<hr>
+<p class="small" style="text-align:center; margin-top: 40px;">Учебник собран по эталонным решениям и материалам курса «Дискретная математика», 2 семестр.</p>
+
+</body>
+</html>
