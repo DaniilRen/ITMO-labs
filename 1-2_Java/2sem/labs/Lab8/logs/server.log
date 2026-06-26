@@ -58176,3 +58176,4323 @@ distance = 280
 author = user1
 ]}
 2026-06-15 17:27:48.875 [pool-3-thread-2] INFO  Server standart logger - Client disconnected: /127.0.0.1
+2026-06-15 17:30:17.834 [main] INFO  Server standart logger - collection loaded to memory
+2026-06-15 17:30:17.843 [main] INFO  Server standart logger - started on port 9000
+2026-06-15 17:30:20.457 [pool-3-thread-1] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-06-15 17:30:20.457 [pool-3-thread-1] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-06-15 17:30:20.474 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@f59c23a
+2026-06-15 17:30:20.475 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=common.command.CommandAttribute@559c20f9, print_field_descending_distance=common.command.CommandAttribute@46512604, init=common.command.CommandAttribute@76845f2a, show=common.command.CommandAttribute@6cbdb4d5, clear=common.command.CommandAttribute@5812ca53, print_unique_distance=common.command.CommandAttribute@17bca653, update=common.command.CommandAttribute@4315c681, remove_by_id=common.command.CommandAttribute@428fc92a, sort=common.command.CommandAttribute@c01c37a, history=common.command.CommandAttribute@7efd7297, remove_lower=common.command.CommandAttribute@13319207, login=common.command.CommandAttribute@2f4bdfd2, help=common.command.CommandAttribute@2d53d352, filter_starts_with_name=common.command.CommandAttribute@38af75a5, info=common.command.CommandAttribute@2711691d, register=common.command.CommandAttribute@56d58762}]}
+2026-06-15 17:30:25.395 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@70068fc1
+2026-06-15 17:30:25.401 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:30:25.403 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin, true]}
+2026-06-15 17:30:25.440 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@2bb52758
+2026-06-15 17:30:25.442 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:30:25.444 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+]}
+2026-06-15 17:30:25.568 [pool-2-thread-4] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@11cf8002
+2026-06-15 17:30:25.570 [pool-2-thread-4] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:30:25.572 [pool-2-thread-4] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+]}
+2026-06-15 17:30:30.498 [pool-2-thread-5] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@34613383
+2026-06-15 17:30:30.501 [pool-2-thread-5] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:30:30.503 [pool-2-thread-5] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+]}
+2026-06-15 17:30:35.498 [pool-2-thread-6] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6c76bc7b
+2026-06-15 17:30:35.499 [pool-2-thread-6] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:30:35.500 [pool-2-thread-6] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+]}
+2026-06-15 17:30:38.041 [pool-2-thread-7] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@3febdb0e
+2026-06-15 17:30:38.042 [pool-2-thread-7] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:30:38.050 [pool-2-thread-7] INFO  Server standart logger - sending response: Response{status=OK, body=[element updated]}
+2026-06-15 17:30:38.051 [pool-2-thread-8] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@7d7af8
+2026-06-15 17:30:38.052 [pool-2-thread-8] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:30:38.052 [pool-2-thread-8] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=-333, y=-597,523220, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:30:38.055 [pool-2-thread-9] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@660ebdf
+2026-06-15 17:30:38.055 [pool-2-thread-9] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:30:38.056 [pool-2-thread-9] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=-333, y=-597,523220, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:30:40.498 [pool-2-thread-10] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@374f1371
+2026-06-15 17:30:40.499 [pool-2-thread-10] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:30:40.500 [pool-2-thread-10] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=-333, y=-597,523220, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:30:44.041 [pool-2-thread-11] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@3bd676a4
+2026-06-15 17:30:44.042 [pool-2-thread-11] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:30:44.048 [pool-2-thread-11] INFO  Server standart logger - sending response: Response{status=OK, body=[element updated]}
+2026-06-15 17:30:44.049 [pool-2-thread-12] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@532b8965
+2026-06-15 17:30:44.050 [pool-2-thread-12] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:30:44.051 [pool-2-thread-12] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:30:44.052 [pool-2-thread-13] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@4864b8bb
+2026-06-15 17:30:44.053 [pool-2-thread-13] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:30:44.053 [pool-2-thread-13] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:30:45.497 [pool-2-thread-14] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@2347f1e1
+2026-06-15 17:30:45.498 [pool-2-thread-14] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:30:45.498 [pool-2-thread-14] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:30:50.498 [pool-2-thread-15] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@d2f005
+2026-06-15 17:30:50.499 [pool-2-thread-15] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:30:50.500 [pool-2-thread-15] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:30:55.498 [pool-2-thread-16] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@fa4330
+2026-06-15 17:30:55.499 [pool-2-thread-16] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:30:55.500 [pool-2-thread-16] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:31:00.497 [pool-2-thread-17] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@38854684
+2026-06-15 17:31:00.499 [pool-2-thread-17] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:31:00.499 [pool-2-thread-17] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:31:02.849 [pool-3-thread-2] INFO  Server standart logger - Client disconnected: /127.0.0.1
+2026-06-15 17:35:39.573 [pool-3-thread-1] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-06-15 17:35:39.573 [pool-3-thread-1] INFO  Server standart logger - Client connected: /127.0.0.1
+2026-06-15 17:35:39.587 [pool-2-thread-18] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@7627bbd9
+2026-06-15 17:35:39.587 [pool-2-thread-18] INFO  Server standart logger - sending response: Response{status=OK, body=[{add=common.command.CommandAttribute@559c20f9, print_field_descending_distance=common.command.CommandAttribute@46512604, init=common.command.CommandAttribute@76845f2a, show=common.command.CommandAttribute@6cbdb4d5, clear=common.command.CommandAttribute@5812ca53, print_unique_distance=common.command.CommandAttribute@17bca653, update=common.command.CommandAttribute@4315c681, remove_by_id=common.command.CommandAttribute@428fc92a, sort=common.command.CommandAttribute@c01c37a, history=common.command.CommandAttribute@7efd7297, remove_lower=common.command.CommandAttribute@13319207, login=common.command.CommandAttribute@2f4bdfd2, help=common.command.CommandAttribute@2d53d352, filter_starts_with_name=common.command.CommandAttribute@38af75a5, info=common.command.CommandAttribute@2711691d, register=common.command.CommandAttribute@56d58762}]}
+2026-06-15 17:35:43.485 [pool-2-thread-19] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6ca1b289
+2026-06-15 17:35:43.486 [pool-2-thread-19] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:35:43.488 [pool-2-thread-19] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[admin, admin, true]}
+2026-06-15 17:35:43.523 [pool-2-thread-20] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@561ca0a9
+2026-06-15 17:35:43.524 [pool-2-thread-20] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:35:43.524 [pool-2-thread-20] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:35:44.609 [pool-2-thread-21] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@48dce2b2
+2026-06-15 17:35:44.610 [pool-2-thread-21] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:35:44.610 [pool-2-thread-21] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:35:49.608 [pool-2-thread-22] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@63a7f799
+2026-06-15 17:35:49.609 [pool-2-thread-22] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:35:49.609 [pool-2-thread-22] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:35:54.607 [pool-2-thread-23] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@32244d58
+2026-06-15 17:35:54.608 [pool-2-thread-23] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:35:54.608 [pool-2-thread-23] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:35:58.407 [pool-2-thread-24] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@37e4fa0b
+2026-06-15 17:35:58.408 [pool-2-thread-24] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:05.416 [pool-2-thread-24] INFO  Server standart logger - sending response: Response{status=OK, body=[item added]}
+2026-06-15 17:36:05.417 [pool-2-thread-25] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@79ca1b6
+2026-06-15 17:36:05.418 [pool-2-thread-25] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:05.418 [pool-2-thread-25] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 11
+creation date = 2026-06-15T17:35:58.397927200
+name = sadasdasd
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+]}
+2026-06-15 17:36:05.420 [pool-2-thread-26] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@257c481a
+2026-06-15 17:36:05.420 [pool-2-thread-26] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:05.421 [pool-2-thread-26] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 11
+creation date = 2026-06-15T17:35:58.397927200
+name = sadasdasd
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+]}
+2026-06-15 17:36:05.422 [pool-2-thread-27] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@4a286597
+2026-06-15 17:36:05.423 [pool-2-thread-27] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:05.423 [pool-2-thread-27] INFO  Server standart logger - sending response: Response{status=OK, body=[[240, 210, 180, 260, 150, 280, 120, 170, 220, 300, 15]]}
+2026-06-15 17:36:05.425 [pool-2-thread-28] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@418fb0ba
+2026-06-15 17:36:05.426 [pool-2-thread-28] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:05.426 [pool-2-thread-28] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 11
+creation date = 2026-06-15T17:35:58.397927200
+name = sadasdasd
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+]}
+2026-06-15 17:36:05.428 [pool-2-thread-29] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@667d1250
+2026-06-15 17:36:05.428 [pool-2-thread-29] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:05.429 [pool-2-thread-29] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 11
+creation date = 2026-06-15T17:35:58.397927200
+name = sadasdasd
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+]}
+2026-06-15 17:36:09.607 [pool-2-thread-30] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@13529483
+2026-06-15 17:36:09.608 [pool-2-thread-30] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:09.608 [pool-2-thread-30] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 11
+creation date = 2026-06-15T17:35:58.397927200
+name = sadasdasd
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+]}
+2026-06-15 17:36:14.608 [pool-2-thread-31] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@5adbd1ea
+2026-06-15 17:36:14.609 [pool-2-thread-31] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:14.609 [pool-2-thread-31] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 11
+creation date = 2026-06-15T17:35:58.397927200
+name = sadasdasd
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+]}
+2026-06-15 17:36:18.403 [pool-2-thread-32] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@100bb280
+2026-06-15 17:36:18.405 [pool-2-thread-32] INFO  Server standart logger - registered new user: i3
+2026-06-15 17:36:18.406 [pool-2-thread-32] INFO  Server standart logger - sending response: Response{status=LOGIN, body=[i3, iii3, true]}
+2026-06-15 17:36:19.607 [pool-2-thread-33] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@2d11c6fc
+2026-06-15 17:36:19.608 [pool-2-thread-33] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:19.608 [pool-2-thread-33] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 11
+creation date = 2026-06-15T17:35:58.397927200
+name = sadasdasd
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+]}
+2026-06-15 17:36:24.607 [pool-2-thread-34] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@6be7d599
+2026-06-15 17:36:24.608 [pool-2-thread-34] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:24.609 [pool-2-thread-34] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 11
+creation date = 2026-06-15T17:35:58.397927200
+name = sadasdasd
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+]}
+2026-06-15 17:36:26.654 [pool-2-thread-35] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@62efd376
+2026-06-15 17:36:26.655 [pool-2-thread-35] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:26.655 [pool-2-thread-35] INFO  Server standart logger - sending response: Response{status=OK, body=[element removed]}
+2026-06-15 17:36:26.656 [pool-2-thread-36] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@18f7f5a1
+2026-06-15 17:36:26.657 [pool-2-thread-36] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:26.657 [pool-2-thread-36] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:36:26.659 [pool-2-thread-37] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@33def593
+2026-06-15 17:36:26.659 [pool-2-thread-37] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:26.660 [pool-2-thread-37] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:36:29.607 [pool-2-thread-38] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@2c6b7a19
+2026-06-15 17:36:29.609 [pool-2-thread-38] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:29.609 [pool-2-thread-38] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:36:34.607 [pool-2-thread-39] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@62afe9be
+2026-06-15 17:36:34.608 [pool-2-thread-39] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:34.609 [pool-2-thread-39] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:36:39.608 [pool-2-thread-40] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@3c8870da
+2026-06-15 17:36:39.609 [pool-2-thread-40] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:39.610 [pool-2-thread-40] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:36:44.607 [pool-2-thread-41] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@afc7718
+2026-06-15 17:36:44.608 [pool-2-thread-41] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:44.608 [pool-2-thread-41] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:36:49.447 [pool-2-thread-42] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@63581375
+2026-06-15 17:36:49.448 [pool-2-thread-42] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:56.460 [pool-2-thread-42] INFO  Server standart logger - sending response: Response{status=OK, body=[item added]}
+2026-06-15 17:36:56.461 [pool-2-thread-43] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@12e6f31b
+2026-06-15 17:36:56.461 [pool-2-thread-43] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:56.462 [pool-2-thread-43] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 12
+creation date = 2026-06-15T17:36:49.441913
+name = asdasas
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+]}
+2026-06-15 17:36:56.463 [pool-2-thread-44] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@74e611d2
+2026-06-15 17:36:56.464 [pool-2-thread-44] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:56.464 [pool-2-thread-44] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 12
+creation date = 2026-06-15T17:36:49.441913
+name = asdasas
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+]}
+2026-06-15 17:36:56.465 [pool-2-thread-45] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@bda557d
+2026-06-15 17:36:56.465 [pool-2-thread-45] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:56.467 [pool-2-thread-45] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 12
+creation date = 2026-06-15T17:36:49.441913
+name = asdasas
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+]}
+2026-06-15 17:36:56.467 [pool-2-thread-46] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@1af20e4
+2026-06-15 17:36:56.468 [pool-2-thread-46] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:56.468 [pool-2-thread-46] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 12
+creation date = 2026-06-15T17:36:49.441913
+name = asdasas
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+]}
+2026-06-15 17:36:59.607 [pool-2-thread-47] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@637eda9a
+2026-06-15 17:36:59.609 [pool-2-thread-47] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:36:59.609 [pool-2-thread-47] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 12
+creation date = 2026-06-15T17:36:49.441913
+name = asdasas
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+]}
+2026-06-15 17:37:04.607 [pool-2-thread-48] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@685d826c
+2026-06-15 17:37:04.608 [pool-2-thread-48] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:37:04.609 [pool-2-thread-48] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 12
+creation date = 2026-06-15T17:36:49.441913
+name = asdasas
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+]}
+2026-06-15 17:37:09.607 [pool-2-thread-49] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@245cb682
+2026-06-15 17:37:09.608 [pool-2-thread-49] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:37:09.608 [pool-2-thread-49] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 12
+creation date = 2026-06-15T17:36:49.441913
+name = asdasas
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+]}
+2026-06-15 17:37:14.607 [pool-2-thread-50] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@456169bb
+2026-06-15 17:37:14.608 [pool-2-thread-50] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:37:14.608 [pool-2-thread-50] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=728, y=-869,969040, name=West Point)
+to = (x=-817,777778, y=383,900929, z=50, name=Airport)
+distance = 120
+author = admin
+, id = 12
+creation date = 2026-06-15T17:36:49.441913
+name = asdasas
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+]}
+2026-06-15 17:37:17.509 [pool-2-thread-1] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@391d83d4
+2026-06-15 17:37:17.510 [pool-2-thread-1] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:37:17.514 [pool-2-thread-1] INFO  Server standart logger - sending response: Response{status=OK, body=[element updated]}
+2026-06-15 17:37:17.515 [pool-2-thread-2] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@55f3f320
+2026-06-15 17:37:17.515 [pool-2-thread-2] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:37:17.515 [pool-2-thread-2] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 12
+creation date = 2026-06-15T17:36:49.441913
+name = asdasas
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=257, y=585,139319, name=West Point)
+to = (x=-708,888889, y=439,628483, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:37:17.517 [pool-2-thread-3] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@644fd665
+2026-06-15 17:37:17.518 [pool-2-thread-3] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:37:17.518 [pool-2-thread-3] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 12
+creation date = 2026-06-15T17:36:49.441913
+name = asdasas
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=257, y=585,139319, name=West Point)
+to = (x=-708,888889, y=439,628483, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:37:19.607 [pool-2-thread-4] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@1f086c4b
+2026-06-15 17:37:19.608 [pool-2-thread-4] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:37:19.608 [pool-2-thread-4] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 12
+creation date = 2026-06-15T17:36:49.441913
+name = asdasas
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=257, y=585,139319, name=West Point)
+to = (x=-708,888889, y=439,628483, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:37:24.607 [pool-2-thread-5] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@3aa6db7f
+2026-06-15 17:37:24.608 [pool-2-thread-5] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:37:24.608 [pool-2-thread-5] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 12
+creation date = 2026-06-15T17:36:49.441913
+name = asdasas
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=257, y=585,139319, name=West Point)
+to = (x=-708,888889, y=439,628483, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:37:25.394 [pool-2-thread-6] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@62b15f85
+2026-06-15 17:37:25.395 [pool-2-thread-6] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:37:25.397 [pool-2-thread-6] INFO  Server standart logger - sending response: Response{status=OK, body=[element updated]}
+2026-06-15 17:37:25.398 [pool-2-thread-7] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@7d945d7e
+2026-06-15 17:37:25.398 [pool-2-thread-7] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:37:25.398 [pool-2-thread-7] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 12
+creation date = 2026-06-15T17:36:49.441913
+name = asdasas
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=-448, y=854,489164, name=West Point)
+to = (x=-708,888889, y=439,628483, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:37:25.399 [pool-2-thread-8] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@eba9487
+2026-06-15 17:37:25.400 [pool-2-thread-8] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:37:25.400 [pool-2-thread-8] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 12
+creation date = 2026-06-15T17:36:49.441913
+name = asdasas
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=-448, y=854,489164, name=West Point)
+to = (x=-708,888889, y=439,628483, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:37:29.607 [pool-2-thread-9] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@8a70563
+2026-06-15 17:37:29.608 [pool-2-thread-9] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:37:29.608 [pool-2-thread-9] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 12
+creation date = 2026-06-15T17:36:49.441913
+name = asdasas
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=-448, y=854,489164, name=West Point)
+to = (x=-708,888889, y=439,628483, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:37:34.608 [pool-2-thread-10] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@3988fbe8
+2026-06-15 17:37:34.609 [pool-2-thread-10] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:37:34.609 [pool-2-thread-10] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 12
+creation date = 2026-06-15T17:36:49.441913
+name = asdasas
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=-448, y=854,489164, name=West Point)
+to = (x=-708,888889, y=439,628483, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:37:39.607 [pool-2-thread-11] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@35118fae
+2026-06-15 17:37:39.608 [pool-2-thread-11] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:37:39.608 [pool-2-thread-11] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 12
+creation date = 2026-06-15T17:36:49.441913
+name = asdasas
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=-448, y=854,489164, name=West Point)
+to = (x=-708,888889, y=439,628483, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:37:44.607 [pool-2-thread-12] INFO  Server standart logger - new request from /127.0.0.1: common.transfer.request.wrapped.AuthenticatedRequest@5dec7d70
+2026-06-15 17:37:44.608 [pool-2-thread-12] INFO  Server standart logger - authenticated user: admin
+2026-06-15 17:37:44.608 [pool-2-thread-12] INFO  Server standart logger - sending response: Response{status=OK, body=[id = 6
+creation date = 2026-06-15T17:22:54.045941
+name = Route Zeta
+coordinates = (x=10,000000, y=20)
+from = (x=-250, y=-180,000000, name=West Point)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 150
+author = user1
+, id = 7
+creation date = 2026-06-15T17:22:54.045941
+name = Route Eta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 170
+author = user1
+, id = 2
+creation date = 2026-06-15T17:22:54.045941
+name = Route Beta
+coordinates = (x=30,000000, y=40)
+from = (x=-120, y=140,000000, name=North City)
+to = (x=120,000000, y=220,000000, z=80, name=University)
+distance = 180
+author = admin
+, id = 8
+creation date = 2026-06-15T17:22:54.045941
+name = Route Theta
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 210
+author = user1
+, id = 3
+creation date = 2026-06-15T17:22:54.045941
+name = Route Gamma
+coordinates = (x=50,000000, y=60)
+from = (x=40, y=-60,000000, name=Central Hub)
+to = (x=280,000000, y=40,000000, z=120, name=Industrial Zone)
+distance = 220
+author = admin
+, id = 9
+creation date = 2026-06-15T17:22:54.045941
+name = Route Iota
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 240
+author = user1
+, id = 4
+creation date = 2026-06-15T17:22:54.045941
+name = Route Delta
+coordinates = (x=70,000000, y=80)
+from = (x=180, y=120,000000, name=East District)
+to = (x=-40,000000, y=-260,000000, z=150, name=Harbor)
+distance = 260
+author = admin
+, id = 10
+creation date = 2026-06-15T17:22:54.045941
+name = Route Kappa
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-150,000000, y=200,000000, z=50, name=Airport)
+distance = 280
+author = user1
+, id = 5
+creation date = 2026-06-15T17:22:54.045941
+name = Route Epsilon
+coordinates = (x=90,000000, y=100)
+from = (x=260, y=-140,000000, name=South Port)
+to = (x=-300,000000, y=20,000000, z=200, name=Old Town)
+distance = 300
+author = admin
+, id = 12
+creation date = 2026-06-15T17:36:49.441913
+name = asdasas
+coordinates = (x=15,000000, y=15)
+from = (x=15, y=15,000000, name=15)
+to = (x=15,000000, y=15,000000, z=15, name=15)
+distance = 15
+author = admin
+, id = 1
+creation date = 2026-06-15T17:22:54.045941
+name = Route Alpha
+coordinates = (x=10,000000, y=20)
+from = (x=-448, y=854,489164, name=West Point)
+to = (x=-708,888889, y=439,628483, z=50, name=Airport)
+distance = 120
+author = admin
+]}
+2026-06-15 17:37:45.635 [pool-3-thread-3] INFO  Server standart logger - Client disconnected: /127.0.0.1

@@ -18,41 +18,41 @@ import database.service.DatabaseService;
  * @author Septyq
  */
 public class Add extends Command<EntityRequest> {
-    private static final long serialVersionUID = 1932432L;
+	private static final long serialVersionUID = 1932432L;
 
-    private final DatabaseService databaseService;
-    private final CollectionManager<Entity> collectionManager;
+	private final DatabaseService databaseService;
+	private final CollectionManager<Entity> collectionManager;
 
-    public Add(DatabaseService databaseService,  CollectionManager<Entity> collectionManager) {
-        super(new CommandAttribute(
-            "add {element}", 
-            "добавить новый элемент в коллекцию", 
-            EntityRequest.class,
-            PublicityMarker.PRIVATE
-            ));
-        this.collectionManager = collectionManager;
-        this.databaseService = databaseService;
-    }
-    
-    public Response<?> execute(EntityRequest request) {
+	public Add(DatabaseService databaseService,  CollectionManager<Entity> collectionManager) {
+			super(new CommandAttribute(
+					"add {element}", 
+					"добавить новый элемент в коллекцию", 
+					EntityRequest.class,
+					PublicityMarker.PRIVATE
+					));
+			this.collectionManager = collectionManager;
+			this.databaseService = databaseService;
+	}
+	
+	public Response<?> execute(EntityRequest request) {
+		try {
+			Thread.sleep(3000);
+		} catch (Exception e) {
+
+		}
+			Entity entity = request.getEntity();
 			try {
-				Thread.sleep(3000);
-			} catch (Exception e) {
+					databaseService.saveRoute((Route) entity);
+					collectionManager.addToCollection(entity);
+					try {
+							Thread.sleep(4000);
+					} catch (Exception e) {
 
+					}
+					return new Response<>(List.of("item added"));
+			} catch (SQLException e) {
+					System.out.println(e.getMessage());
+					return new Response<>(List.of("Error while adding item"), Status.ERROR);
 			}
-        Entity entity = request.getEntity();
-        try {
-            databaseService.saveRoute((Route) entity);
-            collectionManager.addToCollection(entity);
-            try {
-                Thread.sleep(4000);   
-            } catch (Exception e) {
-                // TODO: handle exception
-            }
-            return new Response<>(List.of("item added"));
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            return new Response<>(List.of("Error while adding item"), Status.ERROR);
-        }
-    }
+	}
 }
