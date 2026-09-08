@@ -28,9 +28,10 @@
     padding: 20px 25px;
 }
 
-#R-input {
-    max-width: 200px;
+#r-input-holder input[type=button] {
+    max-width: 300px;
 }
+
 
 .gray-rounded-btn {
     background-color: var(--gray-bg-color);

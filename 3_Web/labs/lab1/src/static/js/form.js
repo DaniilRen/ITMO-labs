@@ -21,14 +21,18 @@ document.querySelectorAll('input[name="xInput"]').forEach(input => {
     });
 });
 
+document.querySelectorAll('input[name="R-input"]').forEach(input => {
+    input.addEventListener("click", function (ev) {
+        document.getElementById("R-value-display").textContent = ev.target.value;
+        state.r = parseFloat(ev.target.value);
+        console.log(parseFloat(ev.target.value), typeof(state.r));
+    });
+});
+
 document.getElementById('Y-input').addEventListener("input", function() {
     state.y = this.value.replace(",", ".");
 });
 
-document.getElementById('R-input').addEventListener("click", function() {
-    switchR();
-    state.r = document.getElementById("R-value-display").textContent;
-});
 
 function validateX() {
     const x = document.querySelector("input[name='xInput']:checked");
@@ -50,22 +54,24 @@ function validateY() {
     return true;
 }
 
+const rValues = [1, 1.5, 2, 2.5, 3];
+
 function validateR() {
     const r = state.r;
-    return isNumeric(r);
+    return isNumeric(r) && rValues.includes(r);
 }
 
 function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
-const rValues = [1, 1.5, 2, 2.5, 3];
-let currentIndex = 0;
 
-function switchR() {
-    currentIndex = (currentIndex + 1) % rValues.length;
-    document.getElementById('R-value-display').textContent = rValues[currentIndex];
-}
+// let currentIndex = 0;
+
+// function switchR() {
+//     currentIndex = (currentIndex + 1) % rValues.length;
+//     document.getElementById('R-value-display').textContent = rValues[currentIndex];
+// }
 
 function setRandomR() {
     const randomIndex = Math.floor(Math.random() * rValues.length);
