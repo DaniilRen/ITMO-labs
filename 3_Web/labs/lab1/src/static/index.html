@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/warning.css">
+    <link rel="stylesheet" href="css/result_table.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/canvas.css">
+    <title>Lab 1</title>
+</head>
+<body>
+    <div class="warning">
+        <h3 class="warning-title">Ошибка в вводе данных!</h2>
+        <p class="warning-text"></p>
+        <hr class="white-line">
+        <button class="warning-close" href="" class="close">OK</a>
+    </div>
+    <header>
+        <p>Веб-программирование, Лабораторная работа №1, Вариант 12641</p>
+        <p>Бых Даниил Максимович, P3209</p>
+    </header>
+    <div class="wrapper">
+        <canvas id="canvas"></canvas>
+
+        <form id="main-form" action="">
+            <div class="input-holder" id="x-input-holder">
+                <p>Выберите X</p>
+                <div class="row">
+                    <div class="half-col">
+                        <div class="radio-btn">
+                            <input type="radio" name="xInput" id="-3" value="-3">
+                            <label for="-3">-3</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" name="xInput" id="-2" value="-2">
+                            <label for="-2">-2</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" name="xInput" id="-1" value="-1">
+                            <label for="-1">-1</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" name="xInput" id="0" value="0">
+                            <label for="0">0</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" name="xInput" id="1" value="1">
+                            <label for="1">1</label>
+                        </div>
+                    </div>
+                    <div class="half-col">
+                        <div class="radio-btn">
+                            <input type="radio" name="xInput" id="2" value="2">
+                            <label for="2">2</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" name="xInput" id="3" value="3">
+                            <label for="3">3</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" name="xInput" id="4" value="4">
+                            <label for="4">4</label>
+                        </div>
+                        <div class="radio-btn">
+                            <input type="radio" name="xInput" id="5" value="5">
+                            <label for="5">5</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-holder" id="y-input-holder">
+                <p>Введите Y (-5, ..., 5)</p>
+                <input type="text" name="Y" id="Y-input" required>
+            </div>
+
+            <div class="input-holder" id="r-input-holder">
+                <p>Значение R: <span id="R-value-display"></span></p>
+                <input class="gray-rounded-btn" type="button" id="R-input" value="Изменить R">
+            </div>
+            <input class="gray-rounded-btn" id="submit" type="submit" value="Отправить">
+        </form>
+
+        <table id="result-table">
+            <tr>
+                <th>x</th>
+                <th>y</th>
+                <th>r</th>
+                <th>время</th>
+                <th>результат</th>
+            </tr>
+        </table>
+    </div>
+
+</body>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/warning.js"></script>
+<script type="text/javascript" src="js/canvas.js"></script>
+<script type="text/javascript" src="js/resultTable.js"></script>
+<script type="text/javascript" src="js/form.js"></script>
+</html>
